@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkMágico | Transforme qualquer página em um assistente de vendas com IA</title>
+<meta name="description" content="O Link Mágico responde dúvidas, conduz visitantes até a compra e captura leads automaticamente usando o conteúdo da sua própria página.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--radius:14px}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.6);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:.3s}
+.header.scrolled{border-bottom-color:var(--border);background:rgba(6,6,14,.92)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:flex;align-items:center;gap:8px;font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
+.logo-highlight{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav__cta{background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff;padding:10px 20px;border-radius:10px;font-size:.85rem;font-weight:700;transition:transform .2s,box-shadow .2s}
+.nav__cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,58,237,.35)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:12px;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:inherit;border:none;text-decoration:none}
+.btn--primary{background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff;padding:14px 28px;font-size:.95rem}
+.btn--primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(124,58,237,.35)}
+.btn--secondary{background:var(--surface2);border:2px solid var(--border);color:var(--text);padding:14px 28px;font-size:.95rem}
+.btn--secondary:hover{border-color:var(--purple-l);background:rgba(124,58,237,.08)}
+.btn--cta{background:linear-gradient(135deg,var(--green),#059669);color:#fff;padding:16px 32px;font-size:1.05rem;animation:ctaPulse 2.5s infinite}
+.btn--cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(16,185,129,.35)}
+@keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.3)}50%{box-shadow:0 0 0 12px rgba(16,185,129,0)}}
+
+/* SECTION UTILS */
+.section-tag{display:inline-block;padding:6px 16px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(124,58,237,.12);color:var(--purple-l);border:1px solid rgba(124,58,237,.2);margin-bottom:16px}
+.section-tag--green{background:rgba(16,185,129,.1);color:var(--green-l);border-color:rgba(16,185,129,.2)}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px}
+.section-subtitle{color:var(--muted);font-size:1.05rem;line-height:1.65;max-width:680px}
+.section--dark{background:var(--bg)}
+.section--surface{background:var(--surface)}
+.text-grad{background:linear-gradient(135deg,var(--purple),var(--purple-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.text-grad-g{background:linear-gradient(135deg,var(--green),var(--green-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* HERO */
+.hero{padding:140px 0 80px;position:relative;overflow:hidden}
+.hero__orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.15;pointer-events:none}
+.hero__orb--1{width:500px;height:500px;background:var(--purple);top:-100px;left:-100px}
+.hero__orb--2{width:400px;height:400px;background:var(--green);bottom:-80px;right:-80px}
+.hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero__content{position:relative;z-index:2}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.15;margin-bottom:20px}
+.hero__sub{color:var(--muted);font-size:1.1rem;line-height:1.7;margin-bottom:32px;max-width:520px}
+.hero__ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.hero__trust{display:flex;gap:20px;flex-wrap:wrap}
+.hero__trust span{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)}
+.hero__trust i{color:var(--green)}
+.hero__visual{position:relative;z-index:2}
+
+/* CHAT PREVIEW */
+.chat-preview{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.chat-preview__bar{background:var(--surface2);padding:14px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)}
+.chat-preview__dot{width:10px;height:10px;border-radius:50%;background:var(--green)}
+.chat-preview__name{font-weight:700;font-size:.85rem}
+.chat-preview__status{font-size:.72rem;color:var(--green)}
+.chat-preview__body{padding:18px;display:flex;flex-direction:column;gap:10px;min-height:280px}
+.chat-msg{max-width:80%;padding:10px 14px;border-radius:14px;font-size:.85rem;line-height:1.5;animation:fadeUp .5s ease both}
+.chat-msg--ai{background:var(--surface2);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px}
+.chat-msg--user{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.25);align-self:flex-end;border-bottom-right-radius:4px}
+.chat-msg--cta{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);align-self:flex-start;border-bottom-left-radius:4px}
+.chat-msg--cta a{color:var(--green-l);text-decoration:underline}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.chat-msg:nth-child(2){animation-delay:.3s}
+.chat-msg:nth-child(3){animation-delay:.6s}
+.chat-msg:nth-child(4){animation-delay:.9s}
+.chat-msg:nth-child(5){animation-delay:1.2s}
+
+/* CRM MINI */
+.crm-mini{position:absolute;bottom:-20px;right:-20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 18px;box-shadow:0 12px 40px rgba(0,0,0,.5);z-index:3;min-width:200px}
+.crm-mini__title{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.crm-mini__lead{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:.8rem}
+.crm-mini__dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.crm-mini__dot--hot{background:#ef4444}
+.crm-mini__dot--warm{background:#f59e0b}
+.crm-mini__dot--new{background:var(--green)}
+
+/* HOW IT WORKS */
+.how{padding:80px 0}
+.how__header{text-align:center;margin-bottom:60px}
+.how__header .section-subtitle{margin:0 auto}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative}
+.steps-grid::before{content:'';position:absolute;top:40px;left:16%;right:16%;height:2px;background:linear-gradient(90deg,var(--purple),var(--green));opacity:.2}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 24px;text-align:center;position:relative;transition:transform .3s,border-color .3s}
+.step-card:hover{transform:translateY(-6px);border-color:var(--purple)}
+.step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--green));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.2rem;margin:0 auto 18px}
+.step-card h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.step-card p{color:var(--muted);font-size:.9rem}
+.step-card .step-icon{font-size:2rem;margin-bottom:12px}
+
+/* DEMO REAL */
+.demo{padding:80px 0}
+.demo__header{text-align:center;margin-bottom:50px}
+.demo__header .section-subtitle{margin:0 auto}
+.demo__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.demo__chat{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.demo__chat-bar{background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(16,185,129,.08));padding:16px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border)}
+.demo__chat-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--green));display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.demo__chat-info .name{font-weight:700;font-size:.88rem}
+.demo__chat-info .status{font-size:.75rem;color:var(--green);display:flex;align-items:center;gap:4px}
+.demo__chat-info .status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green)}
+.demo__chat-msgs{padding:18px;display:flex;flex-direction:column;gap:10px;max-height:420px;overflow-y:auto}
+.demo__label{font-size:.68rem;color:var(--purple-l);font-weight:600;margin-bottom:2px}
+.demo__crm{display:flex;flex-direction:column;gap:20px}
+.crm-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;transition:transform .3s}
+.crm-card:hover{transform:translateY(-3px)}
+.crm-card__head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.crm-card__icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.crm-card__icon--lead{background:rgba(124,58,237,.15);color:var(--purple-l)}
+.crm-card__icon--pipe{background:rgba(16,185,129,.15);color:var(--green-l)}
+.crm-card__icon--chart{background:rgba(245,158,11,.15);color:#fbbf24}
+.crm-card h4{font-size:.92rem;font-weight:700}
+.crm-card p{font-size:.82rem;color:var(--muted)}
+.crm-pipe{display:flex;gap:6px;margin-top:10px}
+.crm-pipe__col{flex:1;text-align:center}
+.crm-pipe__bar{height:4px;border-radius:2px;margin-bottom:4px}
+.crm-pipe__label{font-size:.65rem;color:var(--muted)}
+
+/* MODULES */
+.modules{padding:80px 0}
+.modules__header{text-align:center;margin-bottom:50px}
+.modules__header .section-subtitle{margin:0 auto}
+.modules__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mod-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;transition:transform .3s,border-color .3s}
+.mod-card:hover{transform:translateY(-4px);border-color:var(--purple)}
+.mod-card__icon{font-size:1.4rem;margin-bottom:10px}
+.mod-card h4{font-size:.88rem;font-weight:700;margin-bottom:6px}
+.mod-card p{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* AUDIENCE */
+.audience{padding:80px 0}
+.audience__header{text-align:center;margin-bottom:50px}
+.audience__header .section-subtitle{margin:0 auto}
+.audience__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.aud-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 20px;display:flex;align-items:flex-start;gap:14px;transition:transform .3s,border-color .3s}
+.aud-card:hover{transform:translateY(-3px);border-color:var(--green)}
+.aud-card__icon{font-size:1.5rem;flex-shrink:0;margin-top:2px}
+.aud-card h4{font-size:.92rem;font-weight:700;margin-bottom:4px}
+.aud-card p{font-size:.8rem;color:var(--muted)}
+
+/* BENEFIT */
+.benefit{padding:80px 0}
+.benefit__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.benefit__list{display:flex;flex-direction:column;gap:16px}
+.benefit__item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;transition:border-color .3s}
+.benefit__item:hover{border-color:var(--green)}
+.benefit__item-icon{width:36px;height:36px;border-radius:10px;background:rgba(16,185,129,.12);color:var(--green-l);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.benefit__item h4{font-size:.9rem;font-weight:700;margin-bottom:2px}
+.benefit__item p{font-size:.82rem;color:var(--muted)}
+
+/* USE CASES */
+.cases{padding:80px 0}
+.cases__header{text-align:center;margin-bottom:50px}
+.cases__header .section-subtitle{margin:0 auto}
+.cases__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.case-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;transition:transform .3s,border-color .3s}
+.case-card:hover{transform:translateY(-4px);border-color:var(--purple)}
+.case-card__icon{font-size:1.6rem;margin-bottom:12px}
+.case-card h4{font-size:1rem;font-weight:700;margin-bottom:6px}
+.case-card p{font-size:.84rem;color:var(--muted);margin-bottom:12px}
+.case-card__example{background:var(--surface2);border-radius:10px;padding:10px 14px;font-size:.78rem;color:var(--muted);border-left:3px solid var(--purple)}
+
+/* PRICING */
+.pricing{padding:80px 0}
+.pricing__box{max-width:600px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden}
+.pricing__head{background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(16,185,129,.08));padding:32px;text-align:center;border-bottom:1px solid var(--border)}
+.pricing__price{font-family:'Space Grotesk',sans-serif;font-size:3.5rem;font-weight:900}
+.pricing__period{font-size:.9rem;color:var(--muted)}
+.pricing__body{padding:32px}
+.pricing__features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.pricing__features li{display:flex;align-items:center;gap:10px;font-size:.9rem}
+.pricing__features i{color:var(--green);font-size:.85rem}
+.pricing__foot{text-align:center;padding:0 32px 32px}
+.pricing__guarantee{display:flex;align-items:center;gap:10px;padding:14px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:12px;margin-top:16px;font-size:.82rem;color:var(--muted)}
+.pricing__guarantee i{color:var(--green);font-size:1.1rem;flex-shrink:0}
+
+/* FAQ */
+.faq{padding:80px 0}
+.faq__header{text-align:center;margin-bottom:50px}
+.faq__list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-item__q{width:100%;background:none;border:none;color:var(--text);padding:18px 20px;font-size:.95rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:inherit}
+.faq-item__q i{transition:transform .3s;color:var(--muted);font-size:.8rem}
+.faq-item.active .faq-item__q i{transform:rotate(180deg)}
+.faq-item__a{max-height:0;overflow:hidden;transition:max-height .3s;padding:0 20px}
+.faq-item.active .faq-item__a{max-height:200px;padding:0 20px 18px}
+.faq-item__a p{color:var(--muted);font-size:.88rem;line-height:1.65}
+
+/* FINAL CTA */
+.final-cta{padding:80px 0;text-align:center}
+.final-cta__box{max-width:640px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:48px 32px}
+
+/* FOOTER */
+.footer{padding:40px 0;border-top:1px solid var(--border)}
+.footer__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer__brand{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.1rem}
+.footer__links{display:flex;gap:20px}
+.footer__links a{color:var(--muted);font-size:.82rem;transition:color .2s}
+.footer__links a:hover{color:var(--text)}
+.footer__copy{width:100%;text-align:center;color:var(--muted);font-size:.75rem;margin-top:20px}
+
+/* FLOATING CTA */
+.floating-cta{position:fixed;bottom:24px;left:24px;z-index:99}
+.floating-cta a{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--green),#059669);color:#fff;padding:12px 20px;border-radius:50px;font-size:.85rem;font-weight:700;box-shadow:0 8px 24px rgba(16,185,129,.3);animation:ctaPulse 2.5s infinite;transition:transform .2s}
+.floating-cta a:hover{transform:translateY(-2px)}
+
+/* RESPONSIVE */
+@media(max-width:968px){
+.hero__grid,.demo__grid,.benefit__grid{grid-template-columns:1fr}
+.hero__visual{order:-1}
+.modules__grid{grid-template-columns:repeat(2,1fr)}
+.cases__grid{grid-template-columns:repeat(2,1fr)}
+.audience__grid{grid-template-columns:repeat(2,1fr)}
+.steps-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+.steps-grid::before{display:none}
+.crm-mini{position:relative;bottom:0;right:0;margin-top:16px}
+}
+@media(max-width:540px){
+.modules__grid,.audience__grid,.cases__grid{grid-template-columns:1fr}
+.hero__ctas{flex-direction:column}
+.hero__ctas .btn{width:100%;justify-content:center}
+.nav__cta{font-size:.75rem;padding:8px 14px}
+}
+
+/* ANIMATE IN */
+.anim{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.anim.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+<div class="nav container">
+<a href="#" class="nav__logo"><span>⚡</span> <span>Link<span class="logo-highlight">Mágico</span></span></a>
+<a href="https://vertical-ai-dktu.onrender.com/l/m3J1cv" class="nav__cta" target="_blank">Testar com meu link →</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero section--dark" id="hero">
+<div class="hero__orb hero__orb--1"></div>
+<div class="hero__orb hero__orb--2"></div>
+<div class="container">
+<div class="hero__grid">
+<div class="hero__content">
+<span class="section-tag"><i class="fas fa-bolt"></i> Infraestrutura de Conversão com IA</span>
+<h1>Transforme qualquer página em um <span class="text-grad">assistente de vendas</span> com IA</h1>
+<p class="hero__sub">O Link Mágico responde dúvidas, conduz visitantes até a compra e captura leads automaticamente — usando o conteúdo da sua própria página.</p>
+<div class="hero__ctas">
+<a href="https://vertical-ai-dktu.onrender.com/l/m3J1cv" class="btn btn--primary" target="_blank"><i class="fas fa-bolt"></i> Testar com meu link</a>
+<a href="#demo" class="btn btn--secondary"><i class="fas fa-play"></i> Ver demonstração</a>
+</div>
+<div class="hero__trust">
+<span><i class="fas fa-shield-alt"></i> Garantia 7 dias</span>
+<span><i class="fas fa-clock"></i> Setup em 2 min</span>
+<span><i class="fas fa-lock"></i> Pagamento seguro</span>
+</div>
+</div>
+<div class="hero__visual">
+<div class="chat-preview">
+<div class="chat-preview__bar">
+<div class="chat-preview__dot"></div>
+<div><div class="chat-preview__name">Assistente IA — Sua Página</div>
+<div class="chat-preview__status">● Online agora</div></div>
+</div>
+<div class="chat-preview__body">
+<div class="chat-msg chat-msg--ai">Olá! 👋 Vi que você se interessou. Posso te mostrar como isso resolve seu problema?</div>
+<div class="chat-msg chat-msg--user">Quanto custa? Tem garantia?</div>
+<div class="chat-msg chat-msg--ai">Claro! São R$ 97/ano, sem mensalidade. E tem garantia de 7 dias — se não gostar, 100% devolvido. 🚀</div>
+<div class="chat-msg chat-msg--user">Quero testar!</div>
+<div class="chat-msg chat-msg--cta">Perfeito! Aqui está o link para começar agora: <a href="#">Ativar meu acesso →</a></div>
+</div>
+</div>
+<div class="crm-mini">
+<div class="crm-mini__title">📊 CRM — Leads Recentes</div>
+<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--hot"></span> Ana M. — Quer comprar</div>
+<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--warm"></span> Carlos R. — Interesse alto</div>
+<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--new"></span> Julia S. — Lead novo</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="how section--surface" id="how">
+<div class="container">
+<div class="how__header">
+<span class="section-tag">SIMPLES DEMAIS</span>
+<h2 class="section-title">Funciona em <span class="text-grad">3 passos</span></h2>
+<p class="section-subtitle">Não precisa saber programar. É colar, personalizar e ativar.</p>
+</div>
+<div class="steps-grid">
+<div class="step-card anim">
+<div class="step-num">1</div>
+<div class="step-icon">🔗</div>
+<h3>Cole seu link</h3>
+<p>Página de vendas, site, Instagram, cardápio — qualquer URL. A IA lê e entende tudo automaticamente.</p>
+</div>
+<div class="step-card anim">
+<div class="step-num">2</div>
+<div class="step-icon">🧠</div>
+<h3>A IA entende sua página</h3>
+<p>Extrai produtos, preços, garantias, FAQ, contatos e monta um assistente treinado no seu negócio.</p>
+</div>
+<div class="step-card anim">
+<div class="step-num">3</div>
+<div class="step-icon">🚀</div>
+<h3>Seu visitante conversa e compra</h3>
+<p>O assistente responde dúvidas, conduz para a ação e captura leads direto no CRM — 24h por dia.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DEMONSTRAÇÃO REAL -->
+<section class="demo section--dark" id="demo">
+<div class="container">
+<div class="demo__header">
+<span class="section-tag section-tag--green"><i class="fas fa-circle" style="font-size:.5rem;animation:ctaPulse 2s infinite"></i> DEMONSTRAÇÃO REAL</span>
+<h2 class="section-title">Veja uma conversa <span class="text-grad">real</span> acontecendo</h2>
+<p class="section-subtitle">Não é mock. É exatamente assim que a IA atende seus visitantes.</p>
+</div>
+<div class="demo__grid">
+<div class="demo__chat anim">
+<div class="demo__chat-bar">
+<div class="demo__chat-avatar">🤖</div>
+<div class="demo__chat-info"><div class="name">Assistente — Curso de Marketing</div><div class="status">Respondendo ao vivo</div></div>
+</div>
+<div class="demo__chat-msgs">
+<div class="chat-msg chat-msg--ai">Olá! 👋 Seja bem-vindo! Vi que você se interessou pelo Curso de Marketing Digital. Posso te ajudar?</div>
+<div class="chat-msg chat-msg--user">Funciona pra quem tá começando do zero?</div>
+<div class="chat-msg chat-msg--ai">Sim! O curso foi feito justamente para iniciantes. Você aprende passo a passo, do zero até montar suas primeiras campanhas. Tem módulo específico pra quem nunca fez nada.</div>
+<div class="chat-msg chat-msg--user">Hmm, mas é caro demais...</div>
+<div class="chat-msg chat-msg--ai">Entendo essa preocupação! O investimento é de R$ 297 com acesso vitalício. E tem garantia de 7 dias — se não gostar, devolvemos 100%. Quer ver como ativar seu acesso?</div>
+<div class="chat-msg chat-msg--user">Sim, quero!</div>
+<div class="chat-msg chat-msg--cta">🔥 Perfeito! Aqui está seu link de acesso com garantia: <a href="#">Garantir minha vaga →</a></div>
+</div>
+</div>
+<div class="demo__crm anim">
+<div class="crm-card">
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--lead"><i class="fas fa-user-plus"></i></div><div><h4>Lead capturado</h4><p>Dados salvos automaticamente no CRM</p></div></div>
+<div style="background:var(--surface2);border-radius:10px;padding:12px;font-size:.82rem">
+<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Nome</span><span>João Silva</span></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Intenção</span><span style="color:var(--green-l)">🔥 Comprar</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Status</span><span style="color:#fbbf24">Objeção quebrada</span></div>
+</div>
+</div>
+<div class="crm-card">
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--pipe"><i class="fas fa-columns"></i></div><div><h4>Pipeline visual</h4><p>Saiba quem está pronto para comprar</p></div></div>
+<div class="crm-pipe">
+<div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:var(--green);height:32px"></div><div class="crm-pipe__label">Novo (12)</div></div>
+<div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:#fbbf24;height:24px"></div><div class="crm-pipe__label">Engajado (8)</div></div>
+<div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:#f97316;height:16px"></div><div class="crm-pipe__label">Quente (5)</div></div>
+<div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:var(--purple);height:10px"></div><div class="crm-pipe__label">Fechado (3)</div></div>
+</div>
+</div>
+<div class="crm-card">
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--chart"><i class="fas fa-chart-bar"></i></div><div><h4>Analytics em tempo real</h4><p>Conversas, leads, taxa de conversão</p></div></div>
+</div>
+</div>
+</div>
+<div style="text-align:center;margin-top:40px">
+<a href="https://vertical-ai-dktu.onrender.com/l/2Rf5vf" class="btn btn--primary" target="_blank"><i class="fas fa-external-link-alt"></i> Testar a IA ao vivo agora</a>
+</div>
+</div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="modules section--surface" id="modules">
+<div class="container">
+<div class="modules__header">
+<span class="section-tag">PLATAFORMA COMPLETA</span>
+<h2 class="section-title">Tudo que a plataforma <span class="text-grad">entrega</span></h2>
+<p class="section-subtitle">Não é só um chatbot. É uma infraestrutura completa de conversão.</p>
+</div>
+<div class="modules__grid">
+<div class="mod-card anim"><div class="mod-card__icon">🤖</div><h4>Assistente IA</h4><p>Conversa como humano, entende contexto e conduz para ação 24h.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">📊</div><h4>CRM de Leads</h4><p>Pipeline visual, classificação quente/morno/frio, histórico completo.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">📈</div><h4>Analytics</h4><p>Métricas de conversão, taxa de engajamento, exportação CSV.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">💬</div><h4>Widget Flutuante</h4><p>Instale em qualquer site com 1 linha de código.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">📱</div><h4>WhatsApp</h4><p>Integração direta com WhatsApp para atendimento.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">👥</div><h4>Multiassistentes</h4><p>Um assistente diferente para cada produto ou página.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">❓</div><h4>FAQ Inteligente</h4><p>Extrai perguntas frequentes da página automaticamente.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">🔗</div><h4>Webhooks + API</h4><p>25 endpoints para integrar com suas ferramentas.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">🏷️</div><h4>White Label</h4><p>Sua marca, suas cores, seu logo no chat.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">🧲</div><h4>Captura Automática</h4><p>Coleta nome, email, telefone sem formulário.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">🔄</div><h4>Pipeline CRM</h4><p>Arraste leads entre estágios e organize vendas.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">⚡</div><h4>Resposta em 1s</h4><p>3 motores de IA trabalhando juntos para velocidade máxima.</p></div>
+</div>
+</div>
+</section>
+
+<!-- PRA QUEM É -->
+<section class="audience section--dark" id="audience">
+<div class="container">
+<div class="audience__header">
+<span class="section-tag">PRA QUEM SERVE</span>
+<h2 class="section-title">Funciona para <span class="text-grad">qualquer negócio</span> que recebe visitantes</h2>
+<p class="section-subtitle">Se você tem uma página, um link ou um produto — o Link Mágico trabalha pra você.</p>
+</div>
+<div class="audience__grid">
+<div class="aud-card anim"><div class="aud-card__icon">📢</div><div><h4>Gestores de Tráfego</h4><p>Pare de perder leads que clicam e não convertem.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">📚</div><div><h4>Infoprodutores</h4><p>IA que vende seu curso enquanto você cria conteúdo.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🏢</div><div><h4>Agências</h4><p>Ofereça como serviço aos seus clientes com white label.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">💻</div><div><h4>SaaS</h4><p>Qualifique leads e conduza para trial automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🛒</div><div><h4>E-commerce</h4><p>Tire dúvidas sobre produtos e conduza para o carrinho.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🤝</div><div><h4>Afiliados</h4><p>IA que conhece o produto e vende pela sua página 24h.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🏥</div><div><h4>Negócios Locais</h4><p>Clínicas, salões, restaurantes — agende automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🔧</div><div><h4>Prestadores de Serviço</h4><p>Responda orçamentos e capture contatos 24h por dia.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">📄</div><div><h4>Páginas de Venda</h4><p>Transforme visitantes indecisos em compradores.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- BENEFÍCIO PRINCIPAL -->
+<section class="benefit section--surface" id="benefit">
+<div class="container">
+<div class="benefit__grid">
+<div>
+<span class="section-tag section-tag--green">O REAL BENEFÍCIO</span>
+<h2 class="section-title">O foco não é IA futurista.<br>O foco é <span class="text-grad-g">não perder visitantes</span>.</h2>
+<p class="section-subtitle" style="margin-bottom:32px">Cada pessoa que visita sua página e sai sem resposta é dinheiro perdido. O Link Mágico resolve isso.</p>
+<a href="https://vertical-ai-dktu.onrender.com/l/m3J1cv" class="btn btn--cta" target="_blank"><i class="fas fa-bolt"></i> Testar com meu link agora</a>
+</div>
+<div class="benefit__list">
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-comments"></i></div><div><h4>Responder automaticamente</h4><p>Dúvidas sobre preço, garantia, funcionamento — tudo respondido em 1 segundo.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-route"></i></div><div><h4>Conduzir para ação</h4><p>A IA não só responde — ela conduz o visitante até o checkout ou contato.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-exchange-alt"></i></div><div><h4>Transformar tráfego em conversa</h4><p>Visitante silencioso vira lead qualificado com nome, email e intenção.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-door-open"></i></div><div><h4>Reduzir abandono</h4><p>Quem tem dúvida e não acha resposta, sai. A IA garante que ninguém saia sem resposta.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-tasks"></i></div><div><h4>Organizar oportunidades</h4><p>CRM com pipeline visual — veja quem está quente, morno ou frio em tempo real.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EXEMPLOS DE USO -->
+<section class="cases section--dark" id="cases">
+<div class="container">
+<div class="cases__header">
+<span class="section-tag">EXEMPLOS REAIS</span>
+<h2 class="section-title">Veja como funciona em <span class="text-grad">cada tipo de negócio</span></h2>
+<p class="section-subtitle">Mini cenários reais de como a IA atende em diferentes segmentos.</p>
+</div>
+<div class="cases__grid">
+<div class="case-card anim">
+<div class="case-card__icon">📚</div>
+<h4>Curso Online</h4>
+<p>Visitante pergunta "funciona pra iniciante?" — IA responde com detalhes do curso e conduz para matrícula.</p>
+<div class="case-card__example">💬 "Sim! O curso começa do zero. Quer garantir sua vaga com 7 dias de garantia?"</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon">🏥</div>
+<h4>Clínica / Consultório</h4>
+<p>Paciente pergunta horários — IA informa disponibilidade e captura contato para agendamento.</p>
+<div class="case-card__example">💬 "Atendemos de segunda a sábado. Posso agendar um horário para você?"</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon">📢</div>
+<h4>Gestor de Tráfego</h4>
+<p>Lead do anúncio chega com dúvida às 23h — IA responde na hora e qualifica.</p>
+<div class="case-card__example">💬 "Olá! Vi que você clicou no anúncio. O produto tem garantia e entrega imediata."</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon">💪</div>
+<h4>Produto Digital</h4>
+<p>Visitante desconfia "é golpe?" — IA quebra objeção com dados reais da página.</p>
+<div class="case-card__example">💬 "Entendo a preocupação! O pagamento é via Hotmart, plataforma segura. Tem 7 dias de garantia."</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon">🏢</div>
+<h4>Agência</h4>
+<p>Oferece Link Mágico como serviço white label para seus clientes — receita recorrente.</p>
+<div class="case-card__example">💬 Configure assistentes com a marca dos seus clientes e cobre pelo serviço.</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon">🏠</div>
+<h4>Imobiliária</h4>
+<p>Visitante pergunta sobre imóvel — IA detalha características e agenda visita.</p>
+<div class="case-card__example">💬 "Esse apartamento tem 3 quartos, 2 vagas. Quer agendar uma visita esta semana?"</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing section--surface" id="pricing">
+<div class="container">
+<div style="text-align:center;margin-bottom:40px">
+<span class="section-tag section-tag--green"><i class="fas fa-tag"></i> PREÇO TRANSPARENTE</span>
+<h2 class="section-title">Tudo incluso. <span class="text-grad-g">Sem mensalidade.</span></h2>
+</div>
+<div class="pricing__box anim">
+<div class="pricing__head">
+<p style="color:var(--muted);font-size:.85rem;margin-bottom:8px">Acesso completo por 12 meses</p>
+<div class="pricing__price"><span class="text-grad-g">R$ 97</span></div>
+<p class="pricing__period">pagamento único · menos de R$ 8/mês</p>
+</div>
+<div class="pricing__body">
+<ul class="pricing__features">
+<li><i class="fas fa-check"></i> Assistente IA conversacional 24h</li>
+<li><i class="fas fa-check"></i> CRM completo com pipeline visual</li>
+<li><i class="fas fa-check"></i> Analytics com exportação CSV</li>
+<li><i class="fas fa-check"></i> White Label — sua marca no chat</li>
+<li><i class="fas fa-check"></i> Widget para qualquer site</li>
+<li><i class="fas fa-check"></i> Integração WhatsApp + Instagram</li>
+<li><i class="fas fa-check"></i> Multiassistentes ilimitados</li>
+<li><i class="fas fa-check"></i> Webhooks + 25 endpoints de API</li>
+<li><i class="fas fa-check"></i> Suporte prioritário 12 meses</li>
+<li><i class="fas fa-check"></i> Todas as atualizações futuras</li>
+</ul>
+</div>
+<div class="pricing__foot">
+<a href="https://pay.hotmart.com/G103177435I" class="btn btn--cta" style="width:100%"><i class="fas fa-bolt"></i> Ativar meu acesso — R$ 97</a>
+<div class="pricing__guarantee"><i class="fas fa-shield-alt"></i><div><strong>Garantia de 7 dias — Risco zero.</strong> Não gostou? 100% devolvido sem burocracia.</div></div>
+<div style="display:flex;justify-content:center;gap:16px;margin-top:16px;flex-wrap:wrap">
+<span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-lock" style="color:var(--green)"></i> Pagamento seguro via Hotmart</span>
+<span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-bolt" style="color:var(--green)"></i> Acesso imediato</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section--dark" id="faq">
+<div class="container">
+<div class="faq__header">
+<span class="section-tag">DÚVIDAS FREQUENTES</span>
+<h2 class="section-title">Tudo que você precisa saber</h2>
+</div>
+<div class="faq__list">
+<div class="faq-item"><button class="faq-item__q"><span>Funciona pra qualquer nicho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim. A IA aprende sobre qualquer produto ou serviço automaticamente — infoprodutos, SaaS, clínicas, restaurantes, e-commerce, consultoria. Basta colar o link.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Preciso saber programar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. Se você sabe copiar e colar um link, consegue usar. O setup leva 2 minutos.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>R$ 97 por 12 meses mesmo? Sem mensalidade?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Isso mesmo. Pagamento único de R$ 97 = 12 meses de acesso completo. Sem taxa escondida.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>E se eu não gostar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Garantia incondicional de 7 dias. Pediu reembolso, devolvemos 100%. Sem perguntas.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>O CRM está realmente incluso?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>100% incluso. Pipeline visual, classificação de leads, follow-up, analytics, exportação. Sem upsell.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Posso ter vários assistentes?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim. Crie múltiplos assistentes, um para cada produto ou página. Cada um com CRM e métricas próprias.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Funciona sem página de vendas?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Funciona para qualquer negócio — a IA tira dúvidas, agenda e captura leads sem precisar de checkout.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta section--surface" id="final">
+<div class="container">
+<div class="final-cta__box anim">
+<span class="section-tag section-tag--green">COMECE AGORA</span>
+<h2 class="section-title" style="margin-top:16px">Teste com um link seu e veja <span class="text-grad-g">funcionando na prática</span></h2>
+<p class="section-subtitle" style="margin:0 auto 32px;text-align:center">Coloque o link da sua página e veja a IA respondendo como se fosse um vendedor treinado no seu negócio.</p>
+<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px">
+<a href="https://vertical-ai-dktu.onrender.com/l/m3J1cv" class="btn btn--cta" target="_blank"><i class="fas fa-bolt"></i> Testar com meu link</a>
+<a href="https://pay.hotmart.com/G103177435I" class="btn btn--primary">Ativar acesso — R$ 97</a>
+</div>
+<p style="color:var(--muted);font-size:.82rem"><i class="fas fa-shield-alt" style="color:var(--green)"></i> 7 dias de garantia incondicional — Risco zero</p>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer__inner">
+<div class="footer__brand">⚡ Link<span class="logo-highlight">Mágico</span></div>
+<div class="footer__links">
+<a href="https://www.arsenalsecretodosceos.com.br/termosdeuso" target="_blank">Termos de Uso</a>
+<a href="https://www.arsenalsecretodosceos.com.br/politicasdeprivacidade" target="_blank">Privacidade</a>
+<a href="https://wa.me/5511925312151" target="_blank">WhatsApp</a>
+<a href="https://www.instagram.com/linkmagico.ia" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+</div>
+</div>
+<div class="footer__copy">
+<p>© 2025 LinkMágico | Todos os direitos reservados</p>
+<p style="margin-top:6px">Este produto não garante a obtenção de resultados. Qualquer referência a desempenho é meramente ilustrativa.</p>
+<p style="margin-top:6px">Vendido via <strong>Hotmart</strong> • Pagamento 100% Seguro</p>
+</div>
+</div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+<a href="https://vertical-ai-dktu.onrender.com/l/m3J1cv" target="_blank">⚡ Testar agora</a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+// Header scroll
+var h=document.querySelector('.header');
+window.addEventListener('scroll',function(){h.classList.toggle('scrolled',window.scrollY>80)});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t){var p=t.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:p,behavior:'smooth'})}})});
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(function(item){
+item.querySelector('.faq-item__q').addEventListener('click',function(){
+var active=item.classList.contains('active');
+document.querySelectorAll('.faq-item').forEach(function(f){f.classList.remove('active')});
+if(!active)item.classList.add('active')})});
+
+// Intersection observer for animations
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.anim').forEach(function(el){obs.observe(el)});
+
+// Chat typing animation
+var msgs=document.querySelectorAll('.chat-preview__body .chat-msg');
+msgs.forEach(function(m,i){m.style.opacity='0';m.style.transform='translateY(8px)';
+setTimeout(function(){m.style.transition='opacity .4s ease,transform .4s ease';m.style.opacity='1';m.style.transform='translateY(0)'},(i+1)*800)});
+
+console.log('🚀 LinkMágico — Novo site carregado')});
+</script>
+
+</body>
+</html>
