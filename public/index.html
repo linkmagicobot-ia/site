@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LinkMágico | Transforme qualquer página em um assistente de vendas com IA</title>
-<meta name="description" content="O Link Mágico responde dúvidas, conduz visitantes até a compra e captura leads automaticamente usando o conteúdo da sua própria página.">
+<title>LinkMágico | O link que impede seu visitante de sumir sem comprar</title>
+<meta name="description" content="Você já pagou pelo clique. O LinkMágico impede que visitantes saiam da sua página sem conversar — respondendo dúvidas, quebrando objeções e conduzindo para a compra automaticamente.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="LinkMágico">
 <meta name="theme-color" content="#06060e">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="LinkMágico — Assistente de Vendas com IA">
-<meta property="og:description" content="Transforme qualquer página em um assistente inteligente que responde dúvidas, conduz visitantes até a compra e captura leads 24h.">
+<meta property="og:title" content="LinkMágico — O link que vende por você">
+<meta property="og:description" content="Seu tráfego entra na página e vai embora sem comprar? O LinkMágico transforma visitantes silenciosos em conversas automáticas de vendas.">
 <meta property="og:site_name" content="LinkMágico">
 <meta property="og:locale" content="pt_BR">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LinkMágico — Assistente de Vendas com IA">
-<meta name="twitter:description" content="Transforme qualquer página em um assistente inteligente que responde dúvidas e converte visitantes 24h.">
+<meta name="twitter:title" content="LinkMágico — O link que vende por você">
+<meta name="twitter:description" content="Visitantes entram na sua página e somem sem comprar. O LinkMágico impede isso — respondendo, quebrando objeções e conduzindo para ação.">
 
 <!-- Favicon SVG -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -258,6 +258,38 @@ img{max-width:100%;height:auto;display:block}
 /* ANIMATE IN */
 .anim{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .anim.visible{opacity:1;transform:translateY(0)}
+
+/* PAIN BLOCK */
+.pain{padding:80px 0}
+.pain__header{text-align:center;margin-bottom:50px}
+.pain__header .section-subtitle{margin:0 auto}
+.pain__grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.pain__col{border-radius:20px;padding:32px 28px}
+.pain__col--without{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15)}
+.pain__col--with{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15)}
+.pain__col-title{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.pain__col--without .pain__col-title{color:#f87171}
+.pain__col--with .pain__col-title{color:var(--green-l)}
+.pain__item{display:flex;align-items:center;gap:12px;padding:10px 0;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.pain__item:last-child{border-bottom:none}
+.pain__item i{font-size:.8rem;flex-shrink:0}
+.pain__col--without .pain__item i{color:#f87171}
+.pain__col--with .pain__item i{color:var(--green)}
+.pain__arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--muted);align-self:center}
+@media(max-width:968px){.pain__grid{grid-template-columns:1fr}.pain__arrow{transform:rotate(90deg);padding:10px 0}}
+
+/* DOMINANCE PHRASE */
+.dominance{padding:48px 0;text-align:center}
+.dominance__text{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:700;color:var(--muted);line-height:1.5}
+.dominance__text em{font-style:normal;color:var(--text);background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* RECOVERY VISUAL */
+.hero__recovery-flow{display:flex;align-items:center;gap:6px;margin-top:16px;padding:14px 18px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.12);border-radius:14px}
+.hero__recovery-step{text-align:center;flex:1}
+.hero__recovery-step .icon{font-size:1.4rem;margin-bottom:4px}
+.hero__recovery-step .label{font-size:.68rem;color:var(--muted);line-height:1.3}
+.hero__recovery-arrow{color:var(--green);font-size:.7rem;flex-shrink:0}
+@media(max-width:540px){.hero__recovery-flow{flex-wrap:wrap;gap:8px}.hero__recovery-arrow{display:none}.hero__recovery-step{min-width:calc(50% - 8px)}}
 </style>
 </head>
 <body>
@@ -266,7 +298,7 @@ img{max-width:100%;height:auto;display:block}
 <header class="header" id="header">
 <div class="nav container">
 <a href="#" class="nav__logo"><span>⚡</span> <span>Link<span class="logo-highlight">Mágico</span></span></a>
-<a href="https://lkmdemo.onrender.com" class="nav__cta" target="_blank">Testar com meu link →</a>
+<a href="https://lkmdemo.onrender.com" class="nav__cta" target="_blank">Ativar vendedor automático →</a>
 </div>
 </header>
 
@@ -277,12 +309,12 @@ img{max-width:100%;height:auto;display:block}
 <div class="container">
 <div class="hero__grid">
 <div class="hero__content">
-<span class="section-tag"><i class="fas fa-bolt"></i> Infraestrutura de Conversão com IA</span>
-<h1>Transforme qualquer página em um <span class="text-grad">assistente de vendas</span> com IA</h1>
-<p class="hero__sub">O Link Mágico responde dúvidas, conduz visitantes até a compra e captura leads automaticamente — usando o conteúdo da sua própria página.</p>
+<span class="section-tag"><i class="fas fa-bolt"></i> Infraestrutura de Conversão</span>
+<h1>O link que <span class="text-grad">impede seu visitante</span> de sumir sem comprar.</h1>
+<p class="hero__sub">O LinkMágico transforma visitantes silenciosos em conversas automáticas de vendas — respondendo dúvidas, quebrando objeções e conduzindo para ação 24h por dia.</p>
 <div class="hero__ctas">
-<a href="https://lkmdemo.onrender.com" class="btn btn--primary" target="_blank"><i class="fas fa-bolt"></i> Testar com meu link</a>
-<a href="#demo" class="btn btn--secondary"><i class="fas fa-play"></i> Ver demonstração</a>
+<a href="https://lkmdemo.onrender.com" class="btn btn--primary" target="_blank"><i class="fas fa-bolt"></i> Ativar meu vendedor automático</a>
+<a href="#demo" class="btn btn--secondary"><i class="fas fa-play"></i> Ver uma venda sendo recuperada</a>
 </div>
 <div class="hero__trust">
 <span><i class="fas fa-shield-alt"></i> Garantia 7 dias</span>
@@ -294,25 +326,70 @@ img{max-width:100%;height:auto;display:block}
 <div class="chat-preview">
 <div class="chat-preview__bar">
 <div class="chat-preview__dot"></div>
-<div><div class="chat-preview__name">Assistente IA — Sua Página</div>
-<div class="chat-preview__status">● Online agora</div></div>
+<div><div class="chat-preview__name">Vendedor Automático — Sua Página</div>
+<div class="chat-preview__status">● Recuperando visitante agora</div></div>
 </div>
 <div class="chat-preview__body">
-<div class="chat-msg chat-msg--ai">Olá! 👋 Vi que você se interessou. Posso te mostrar como isso resolve seu problema?</div>
-<div class="chat-msg chat-msg--user">Quanto custa? Tem garantia?</div>
-<div class="chat-msg chat-msg--ai">Claro! São R$ 97/ano, sem mensalidade. E tem garantia de 7 dias — se não gostar, 100% devolvido. 🚀</div>
-<div class="chat-msg chat-msg--user">Quero testar!</div>
-<div class="chat-msg chat-msg--cta">Perfeito! Aqui está o link para começar agora: <a href="#">Ativar meu acesso →</a></div>
+<div class="chat-msg chat-msg--ai">👋 Vi que você está olhando. Posso tirar alguma dúvida antes de você sair?</div>
+<div class="chat-msg chat-msg--user">Funciona mesmo? Quanto custa?</div>
+<div class="chat-msg chat-msg--ai">Funciona sim! São R$ 97/ano, sem mensalidade. E se não gostar, devolvemos 100% em até 7 dias. Quer ativar agora?</div>
+<div class="chat-msg chat-msg--user">Quero sim!</div>
+<div class="chat-msg chat-msg--cta">🔥 Visitante recuperado! Aqui está seu acesso: <a href="#">Ativar agora →</a></div>
 </div>
+</div>
+<div class="hero__recovery-flow">
+<div class="hero__recovery-step"><div class="icon">👤</div><div class="label">Visitante chega</div></div>
+<div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="hero__recovery-step"><div class="icon">❓</div><div class="label">Dúvida aparece</div></div>
+<div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="hero__recovery-step"><div class="icon">💬</div><div class="label">Conversa inicia</div></div>
+<div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="hero__recovery-step"><div class="icon">✅</div><div class="label">Visitante recuperado</div></div>
 </div>
 <div class="crm-mini">
-<div class="crm-mini__title">📊 CRM — Leads Recentes</div>
-<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--hot"></span> Ana M. — Quer comprar</div>
-<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--warm"></span> Carlos R. — Interesse alto</div>
-<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--new"></span> Julia S. — Lead novo</div>
+<div class="crm-mini__title">📊 Visitantes recuperados hoje</div>
+<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--hot"></span> Ana M. — Ia sair, comprou</div>
+<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--warm"></span> Carlos R. — Objeção quebrada</div>
+<div class="crm-mini__lead"><span class="crm-mini__dot crm-mini__dot--new"></span> Julia S. — Lead capturado</div>
 </div>
 </div>
 </div>
+</div>
+</section>
+
+<!-- BLOCO DE DOR -->
+<section class="pain section--surface" id="pain">
+<div class="container">
+<div class="pain__header">
+<span class="section-tag" style="background:rgba(239,68,68,.12);color:#f87171;border-color:rgba(239,68,68,.2)">O CUSTO INVISÍVEL</span>
+<h2 class="section-title">O custo invisível do <span class="text-grad">visitante silencioso</span></h2>
+<p class="section-subtitle">A maioria das pessoas que entra na sua página não compra por um motivo simples: elas têm dúvidas… e ninguém responde.</p>
+</div>
+<div class="pain__grid">
+<div class="pain__col pain__col--without anim">
+<div class="pain__col-title"><i class="fas fa-times-circle"></i> Sem LinkMágico</div>
+<div class="pain__item"><i class="fas fa-arrow-right"></i> Visitante entra na página</div>
+<div class="pain__item"><i class="fas fa-question-circle"></i> Fica com dúvida sobre preço ou garantia</div>
+<div class="pain__item"><i class="fas fa-door-open"></i> Abandona a página em silêncio</div>
+<div class="pain__item"><i class="fas fa-user-slash"></i> Lead perdido para sempre</div>
+<div class="pain__item"><i class="fas fa-fire"></i> Dinheiro do tráfego queimado</div>
+</div>
+<div class="pain__col pain__col--with anim">
+<div class="pain__col-title"><i class="fas fa-check-circle"></i> Com LinkMágico</div>
+<div class="pain__item"><i class="fas fa-arrow-right"></i> Visitante entra na página</div>
+<div class="pain__item"><i class="fas fa-comments"></i> Conversa inicia automaticamente</div>
+<div class="pain__item"><i class="fas fa-hand-holding-heart"></i> Objeção é respondida na hora</div>
+<div class="pain__item"><i class="fas fa-user-check"></i> Lead é capturado com nome e contato</div>
+<div class="pain__item"><i class="fas fa-bullseye"></i> Visitante é conduzido para a ação</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FRASE DOMINANTE 1 -->
+<section class="dominance section--dark">
+<div class="container">
+<p class="dominance__text">Você já pagou pelo clique.<br><em>Agora impeça o abandono.</em></p>
 </div>
 </section>
 
@@ -321,27 +398,27 @@ img{max-width:100%;height:auto;display:block}
 <div class="container">
 <div class="how__header">
 <span class="section-tag">SIMPLES DEMAIS</span>
-<h2 class="section-title">Funciona em <span class="text-grad">3 passos</span></h2>
-<p class="section-subtitle">Não precisa saber programar. É colar, personalizar e ativar.</p>
+<h2 class="section-title">Ative em <span class="text-grad">3 passos</span></h2>
+<p class="section-subtitle">Sem programação. Sem complicação. Cole, personalize e comece a recuperar visitantes.</p>
 </div>
 <div class="steps-grid">
 <div class="step-card anim">
 <div class="step-num">1</div>
 <div class="step-icon">🔗</div>
 <h3>Cole seu link</h3>
-<p>Página de vendas, site, Instagram, cardápio — qualquer URL. A IA lê e entende tudo automaticamente.</p>
+<p>Seu site, landing page ou Instagram ganha um vendedor automático. Qualquer URL funciona.</p>
 </div>
 <div class="step-card anim">
 <div class="step-num">2</div>
 <div class="step-icon">🧠</div>
-<h3>A IA entende sua página</h3>
-<p>Extrai produtos, preços, garantias, FAQ, contatos e monta um assistente treinado no seu negócio.</p>
+<h3>O LinkMágico aprende seu negócio</h3>
+<p>Preço, produto, objeções, garantias e perguntas frequentes — tudo absorvido automaticamente.</p>
 </div>
 <div class="step-card anim">
 <div class="step-num">3</div>
 <div class="step-icon">🚀</div>
-<h3>Seu visitante conversa e compra</h3>
-<p>O assistente responde dúvidas, conduz para a ação e captura leads direto no CRM — 24h por dia.</p>
+<h3>Visitantes começam a conversar</h3>
+<p>A plataforma responde, conduz para ação e captura leads automaticamente — 24h por dia, sem você levantar um dedo.</p>
 </div>
 </div>
 </div>
@@ -351,51 +428,54 @@ img{max-width:100%;height:auto;display:block}
 <section class="demo section--dark" id="demo">
 <div class="container">
 <div class="demo__header">
-<span class="section-tag section-tag--green"><i class="fas fa-circle" style="font-size:.5rem;animation:ctaPulse 2s infinite"></i> DEMONSTRAÇÃO REAL</span>
-<h2 class="section-title">Veja uma conversa <span class="text-grad">real</span> acontecendo</h2>
-<p class="section-subtitle">Não é mock. É exatamente assim que a IA atende seus visitantes.</p>
+<span class="section-tag section-tag--green"><i class="fas fa-circle" style="font-size:.5rem;animation:ctaPulse 2s infinite"></i> VENDA SENDO RECUPERADA</span>
+<h2 class="section-title">Veja uma venda que <span class="text-grad">teria sido perdida</span></h2>
+<p class="section-subtitle">Enquanto a maioria dos sites perde visitantes silenciosamente… o LinkMágico inicia a conversa automaticamente.</p>
 </div>
 <div class="demo__grid">
 <div class="demo__chat anim">
 <div class="demo__chat-bar">
-<div class="demo__chat-avatar">🤖</div>
-<div class="demo__chat-info"><div class="name">Assistente — Curso de Marketing</div><div class="status">Respondendo ao vivo</div></div>
+<div class="demo__chat-avatar">💬</div>
+<div class="demo__chat-info"><div class="name">Vendedor Automático — Curso de Marketing</div><div class="status">Recuperando visitante agora</div></div>
 </div>
 <div class="demo__chat-msgs">
-<div class="chat-msg chat-msg--ai">Olá! 👋 Seja bem-vindo! Vi que você se interessou pelo Curso de Marketing Digital. Posso te ajudar?</div>
-<div class="chat-msg chat-msg--user">Funciona pra quem tá começando do zero?</div>
-<div class="chat-msg chat-msg--ai">Sim! O curso foi feito justamente para iniciantes. Você aprende passo a passo, do zero até montar suas primeiras campanhas. Tem módulo específico pra quem nunca fez nada.</div>
-<div class="chat-msg chat-msg--user">Hmm, mas é caro demais...</div>
-<div class="chat-msg chat-msg--ai">Entendo essa preocupação! O investimento é de R$ 297 com acesso vitalício. E tem garantia de 7 dias — se não gostar, devolvemos 100%. Quer ver como ativar seu acesso?</div>
-<div class="chat-msg chat-msg--user">Sim, quero!</div>
-<div class="chat-msg chat-msg--cta">🔥 Perfeito! Aqui está seu link de acesso com garantia: <a href="#">Garantir minha vaga →</a></div>
+<div class="demo__label">👤 Visitante ia sair da página…</div>
+<div class="chat-msg chat-msg--ai">👋 Vi que você está olhando o Curso de Marketing Digital. Tem alguma dúvida? Posso ajudar antes de você sair!</div>
+<div class="demo__label">❓ Objeção aparece:</div>
+<div class="chat-msg chat-msg--user">Hmm, mas é caro demais…</div>
+<div class="demo__label">🛡️ Objeção respondida:</div>
+<div class="chat-msg chat-msg--ai">Entendo! O investimento é de R$ 297 com acesso vitalício. E tem garantia de 7 dias — se não gostar, devolvemos 100%. O risco é zero.</div>
+<div class="demo__label">✅ Condução para ação:</div>
+<div class="chat-msg chat-msg--user">Tá, quero sim!</div>
+<div class="demo__label">🎯 Lead capturado + CTA enviado:</div>
+<div class="chat-msg chat-msg--cta">🔥 Visitante recuperado! Aqui está seu acesso: <a href="#">Garantir minha vaga →</a></div>
 </div>
 </div>
 <div class="demo__crm anim">
 <div class="crm-card">
-<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--lead"><i class="fas fa-user-plus"></i></div><div><h4>Lead capturado</h4><p>Dados salvos automaticamente no CRM</p></div></div>
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--lead"><i class="fas fa-user-plus"></i></div><div><h4>Visitante recuperado</h4><p>Essa venda teria sido perdida sem o LinkMágico</p></div></div>
 <div style="background:var(--surface2);border-radius:10px;padding:12px;font-size:.82rem">
 <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Nome</span><span>João Silva</span></div>
-<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Intenção</span><span style="color:var(--green-l)">🔥 Comprar</span></div>
-<div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Status</span><span style="color:#fbbf24">Objeção quebrada</span></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Situação</span><span style="color:var(--green-l)">🔥 Ia sair → Comprou</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Objeção</span><span style="color:#fbbf24">Preço → Quebrada</span></div>
 </div>
 </div>
 <div class="crm-card">
-<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--pipe"><i class="fas fa-columns"></i></div><div><h4>Pipeline visual</h4><p>Saiba quem está pronto para comprar</p></div></div>
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--pipe"><i class="fas fa-columns"></i></div><div><h4>Veja quem está pronto para comprar</h4><p>Pipeline vivo de oportunidades recuperadas</p></div></div>
 <div class="crm-pipe">
-<div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:var(--green);height:32px"></div><div class="crm-pipe__label">Novo (12)</div></div>
+<div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:var(--green);height:32px"></div><div class="crm-pipe__label">Recuperado (12)</div></div>
 <div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:#fbbf24;height:24px"></div><div class="crm-pipe__label">Engajado (8)</div></div>
 <div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:#f97316;height:16px"></div><div class="crm-pipe__label">Quente (5)</div></div>
-<div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:var(--purple);height:10px"></div><div class="crm-pipe__label">Fechado (3)</div></div>
+<div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:var(--purple);height:10px"></div><div class="crm-pipe__label">Comprou (3)</div></div>
 </div>
 </div>
 <div class="crm-card">
-<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--chart"><i class="fas fa-chart-bar"></i></div><div><h4>Analytics em tempo real</h4><p>Conversas, leads, taxa de conversão</p></div></div>
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--chart"><i class="fas fa-chart-bar"></i></div><div><h4>Inteligência comercial em tempo real</h4><p>Visitantes recuperados, objeções quebradas, conversas ativas</p></div></div>
 </div>
 </div>
 </div>
 <div style="text-align:center;margin-top:40px">
-<a href="https://vertical-ai-dktu.onrender.com/l/wjuQQF" class="btn btn--primary" target="_blank"><i class="fas fa-external-link-alt"></i> Testar a IA ao vivo agora</a>
+<a href="https://vertical-ai-dktu.onrender.com/l/wjuQQF" class="btn btn--primary" target="_blank"><i class="fas fa-external-link-alt"></i> Ver o vendedor automático ao vivo</a>
 </div>
 </div>
 </section>
@@ -404,22 +484,19 @@ img{max-width:100%;height:auto;display:block}
 <section class="modules section--surface" id="modules">
 <div class="container">
 <div class="modules__header">
-<span class="section-tag">PLATAFORMA COMPLETA</span>
-<h2 class="section-title">Tudo que a plataforma <span class="text-grad">entrega</span></h2>
-<p class="section-subtitle">Não é só um chatbot. É uma infraestrutura completa de conversão.</p>
+<span class="section-tag">PROBLEMAS ELIMINADOS</span>
+<h2 class="section-title">O que muda quando seu link <span class="text-grad">responde sozinho</span></h2>
+<p class="section-subtitle">Não é sobre tecnologia. É sobre parar de perder vendas.</p>
 </div>
 <div class="modules__grid">
-<div class="mod-card anim"><div class="mod-card__icon">🤖</div><h4>Assistente IA</h4><p>Conversa como humano, entende contexto e conduz para ação 24h.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">📊</div><h4>CRM de Leads</h4><p>Pipeline visual, classificação quente/morno/frio, histórico completo.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">📈</div><h4>Analytics</h4><p>Métricas de conversão, taxa de engajamento, exportação CSV.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">💬</div><h4>Widget Flutuante</h4><p>Instale em qualquer site com 1 linha de código.</p></div>
-
-<div class="mod-card anim"><div class="mod-card__icon">❓</div><h4>FAQ Inteligente</h4><p>Extrai perguntas frequentes da página automaticamente.</p></div>
-
-<div class="mod-card anim"><div class="mod-card__icon">🏷️</div><h4>White Label</h4><p>Sua marca, suas cores, seu logo no chat.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">🧲</div><h4>Captura Automática</h4><p>Coleta nome, email, telefone sem formulário.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">🔄</div><h4>Pipeline CRM</h4><p>Arraste leads entre estágios e organize vendas.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">⚡</div><h4>Resposta em 1s</h4><p>3 motores de IA trabalhando juntos para velocidade máxima.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">🛡️</div><h4>Ninguém sai sem resposta</h4><p>Cada visitante com dúvida recebe uma conversa automática na hora — 24h por dia.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">👤</div><h4>Visitantes silenciosos viram leads</h4><p>Captura nome, email e telefone sem formulário, durante a conversa.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">📈</div><h4>Objeções quebradas automaticamente</h4><p>Preço, garantia, desconfiança — o vendedor automático responde tudo.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">💬</div><h4>Conversa que conduz para ação</h4><p>Não só responde — direciona para checkout, WhatsApp ou agendamento.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">❓</div><h4>Dúvidas respondidas em segundos</h4><p>FAQ inteligente extraído da sua própria página, sem configuração.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">🏷️</div><h4>Sua marca no controle</h4><p>White Label: suas cores, seu logo, sua identidade no chat.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">📊</div><h4>Saiba quem queria comprar</h4><p>CRM com pipeline visual — veja quem está quente, morno ou pronto.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon">⚡</div><h4>Resposta em 1 segundo</h4><p>Enquanto você demora horas, o LinkMágico responde instantâneamente.</p></div>
 </div>
 </div>
 </section>
@@ -430,19 +507,26 @@ img{max-width:100%;height:auto;display:block}
 <div class="audience__header">
 <span class="section-tag">PRA QUEM SERVE</span>
 <h2 class="section-title">Funciona para <span class="text-grad">qualquer negócio</span> que recebe visitantes</h2>
-<p class="section-subtitle">Se você tem uma página, um link ou um produto — o Link Mágico trabalha pra você.</p>
+<p class="section-subtitle">Se você tem uma página e paga por tráfego — o LinkMágico impede que esse investimento seja desperdiçado.</p>
 </div>
 <div class="audience__grid">
-<div class="aud-card anim"><div class="aud-card__icon">📢</div><div><h4>Gestores de Tráfego</h4><p>Pare de perder leads que clicam e não convertem.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">📚</div><div><h4>Infoprodutores</h4><p>IA que vende seu curso enquanto você cria conteúdo.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🏢</div><div><h4>Agências</h4><p>Ofereça como serviço aos seus clientes com white label.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">💻</div><div><h4>SaaS</h4><p>Qualifique leads e conduza para trial automaticamente.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🛒</div><div><h4>E-commerce</h4><p>Tire dúvidas sobre produtos e conduza para o carrinho.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🤝</div><div><h4>Afiliados</h4><p>IA que conhece o produto e vende pela sua página 24h.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🏥</div><div><h4>Negócios Locais</h4><p>Clínicas, salões, restaurantes — agende automaticamente.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🔧</div><div><h4>Prestadores de Serviço</h4><p>Responda orçamentos e capture contatos 24h por dia.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">📄</div><div><h4>Páginas de Venda</h4><p>Transforme visitantes indecisos em compradores.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">📢</div><div><h4>Gestores de Tráfego</h4><p>Pare de perder leads que clicam e somem sem falar nada.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">📚</div><div><h4>Infoprodutores</h4><p>Seu link agora vende sozinho enquanto você cria conteúdo.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🏢</div><div><h4>Agências</h4><p>Ofereça como serviço para seus clientes e crie receita recorrente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">💻</div><div><h4>SaaS</h4><p>Qualifique visitantes e conduza para trial automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🛒</div><div><h4>E-commerce</h4><p>Tire dúvidas sobre produtos e conduza visitantes até o carrinho.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🤝</div><div><h4>Afiliados</h4><p>Seu link responde sozinho e vende pela sua página 24h por dia.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🏥</div><div><h4>Negócios Locais</h4><p>Clínicas, salões, restaurantes — recupere visitantes e agende automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">🔧</div><div><h4>Prestadores de Serviço</h4><p>Responda orçamentos e capture contatos 24h — sem deixar ninguém esperando.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon">📄</div><div><h4>Páginas de Venda</h4><p>Transforme visitantes indecisos em conversas que terminam em compra.</p></div></div>
 </div>
+</div>
+</section>
+
+<!-- FRASE DOMINANTE 2 -->
+<section class="dominance section--dark">
+<div class="container">
+<p class="dominance__text">Página parada não vende.<br><em>Conversa vende.</em></p>
 </div>
 </section>
 
@@ -451,17 +535,17 @@ img{max-width:100%;height:auto;display:block}
 <div class="container">
 <div class="benefit__grid">
 <div>
-<span class="section-tag section-tag--green">O REAL BENEFÍCIO</span>
-<h2 class="section-title">O foco não é IA futurista.<br>O foco é <span class="text-grad-g">não perder visitantes</span>.</h2>
-<p class="section-subtitle" style="margin-bottom:32px">Cada pessoa que visita sua página e sai sem resposta é dinheiro perdido. O Link Mágico resolve isso.</p>
-<a href="https://lkmdemo.onrender.com" class="btn btn--cta" target="_blank"><i class="fas fa-bolt"></i> Testar com meu link agora</a>
+<span class="section-tag section-tag--green">POR QUE ATIVAR HOJE</span>
+<h2 class="section-title">Enquanto você dorme, o LinkMágico<br><span class="text-grad-g">mostra quem está pronto para comprar</span>.</h2>
+<p class="section-subtitle" style="margin-bottom:32px">Todo visitante que entra na sua página e sai sem resposta é dinheiro perdido. O LinkMágico resolve isso.</p>
+<a href="https://lkmdemo.onrender.com" class="btn btn--cta" target="_blank"><i class="fas fa-bolt"></i> Ativar meu vendedor automático</a>
 </div>
 <div class="benefit__list">
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-comments"></i></div><div><h4>Responder automaticamente</h4><p>Dúvidas sobre preço, garantia, funcionamento — tudo respondido em 1 segundo.</p></div></div>
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-route"></i></div><div><h4>Conduzir para ação</h4><p>A IA não só responde — ela conduz o visitante até o checkout ou contato.</p></div></div>
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-exchange-alt"></i></div><div><h4>Transformar tráfego em conversa</h4><p>Visitante silencioso vira lead qualificado com nome, email e intenção.</p></div></div>
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-door-open"></i></div><div><h4>Reduzir abandono</h4><p>Quem tem dúvida e não acha resposta, sai. A IA garante que ninguém saia sem resposta.</p></div></div>
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-tasks"></i></div><div><h4>Organizar oportunidades</h4><p>CRM com pipeline visual — veja quem está quente, morno ou frio em tempo real.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-comments"></i></div><div><h4>Ninguém sai sem resposta</h4><p>Dúvidas sobre preço, garantia, funcionamento — tudo respondido em 1 segundo, automaticamente.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-route"></i></div><div><h4>Visitante é conduzido para a compra</h4><p>Não só responde — conduz o visitante até o checkout, WhatsApp ou agendamento.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-exchange-alt"></i></div><div><h4>Visitantes silenciosos viram leads</h4><p>Quem ia embora agora deixa nome, email e telefone durante a conversa.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-door-open"></i></div><div><h4>Abandono de página cai drasticamente</h4><p>Quem tem dúvida e não acha resposta, sai. O LinkMágico garante que ninguém saia em silêncio.</p></div></div>
+<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-tasks"></i></div><div><h4>Pipeline vivo de oportunidades</h4><p>CRM com pipeline visual — veja quem está quente, morno ou pronto para comprar.</p></div></div>
 </div>
 </div>
 </div>
@@ -471,45 +555,45 @@ img{max-width:100%;height:auto;display:block}
 <section class="cases section--dark" id="cases">
 <div class="container">
 <div class="cases__header">
-<span class="section-tag">EXEMPLOS REAIS</span>
-<h2 class="section-title">Veja como funciona em <span class="text-grad">cada tipo de negócio</span></h2>
-<p class="section-subtitle">Mini cenários reais de como a IA atende em diferentes segmentos.</p>
+<span class="section-tag">VENDAS RECUPERADAS</span>
+<h2 class="section-title">Vendas que seriam perdidas em <span class="text-grad">cada tipo de negócio</span></h2>
+<p class="section-subtitle">Cenários reais de visitantes que iam embora — e foram recuperados.</p>
 </div>
 <div class="cases__grid">
 <div class="case-card anim">
 <div class="case-card__icon">📚</div>
 <h4>Curso Online</h4>
-<p>Visitante pergunta "funciona pra iniciante?" — IA responde com detalhes do curso e conduz para matrícula.</p>
-<div class="case-card__example">💬 "Sim! O curso começa do zero. Quer garantir sua vaga com 7 dias de garantia?"</div>
+<p>Visitante ia sair com dúvida. O vendedor automático respondeu e conduziu para a matrícula.</p>
+<div class="case-card__example">💬 "Sim! O curso começa do zero e tem 7 dias de garantia. Quer garantir sua vaga agora?"</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon">🏥</div>
 <h4>Clínica / Consultório</h4>
-<p>Paciente pergunta horários — IA informa disponibilidade e captura contato para agendamento.</p>
+<p>Paciente perguntou horários às 23h. O LinkMágico respondeu e capturou o contato.</p>
 <div class="case-card__example">💬 "Atendemos de segunda a sábado. Posso agendar um horário para você?"</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon">📢</div>
 <h4>Gestor de Tráfego</h4>
-<p>Lead do anúncio chega com dúvida às 23h — IA responde na hora e qualifica.</p>
-<div class="case-card__example">💬 "Olá! Vi que você clicou no anúncio. O produto tem garantia e entrega imediata."</div>
+<p>Lead do anúncio chegou com dúvida fora do horário. Sem resposta = venda perdida. Com LinkMágico = lead recuperado.</p>
+<div class="case-card__example">💬 "Vi que você clicou no anúncio. O produto tem garantia e entrega imediata. Quer ativar?"</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon">💪</div>
 <h4>Produto Digital</h4>
-<p>Visitante desconfia "é golpe?" — IA quebra objeção com dados reais da página.</p>
-<div class="case-card__example">💬 "Entendo a preocupação! O pagamento é via Hotmart, plataforma segura. Tem 7 dias de garantia."</div>
+<p>Visitante desconfiou "é golpe?". O vendedor automático quebrou a objeção com dados reais.</p>
+<div class="case-card__example">💬 "O pagamento é via Hotmart, plataforma segura. Tem 7 dias de garantia total."</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon">🏢</div>
 <h4>Agência</h4>
-<p>Oferece Link Mágico como serviço white label para seus clientes — receita recorrente.</p>
-<div class="case-card__example">💬 Configure assistentes com a marca dos seus clientes e cobre pelo serviço.</div>
+<p>Ofereça o LinkMágico como serviço para seus clientes — com sua marca. Receita recorrente.</p>
+<div class="case-card__example">💬 Configure vendedores automáticos com a marca dos seus clientes e cobre pelo serviço.</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon">🏠</div>
 <h4>Imobiliária</h4>
-<p>Visitante pergunta sobre imóvel — IA detalha características e agenda visita.</p>
+<p>Visitante perguntou sobre imóvel e ia embora. O LinkMágico respondeu e agendou a visita.</p>
 <div class="case-card__example">💬 "Esse apartamento tem 3 quartos, 2 vagas. Quer agendar uma visita esta semana?"</div>
 </div>
 </div>
@@ -520,28 +604,27 @@ img{max-width:100%;height:auto;display:block}
 <section class="pricing section--surface" id="pricing">
 <div class="container">
 <div style="text-align:center;margin-bottom:40px">
-<span class="section-tag section-tag--green"><i class="fas fa-tag"></i> PREÇO TRANSPARENTE</span>
-<h2 class="section-title">Tudo incluso. <span class="text-grad-g">Sem mensalidade.</span></h2>
+<span class="section-tag section-tag--green"><i class="fas fa-tag"></i> INVESTIMENTO RIDICULAMENTE BAIXO</span>
+<h2 class="section-title">Menos de R$ 8/mês para colocar um <span class="text-grad-g">vendedor automático</span> em qualquer página.</h2>
 </div>
 <div class="pricing__box anim">
 <div class="pricing__head">
-<p style="color:var(--muted);font-size:.85rem;margin-bottom:8px">Acesso completo por 12 meses</p>
+<p style="color:var(--muted);font-size:.85rem;margin-bottom:8px">O equivalente a um café por semana para recuperar visitantes automaticamente</p>
 <div class="pricing__price"><span class="text-grad-g">R$ 97</span></div>
-<p class="pricing__period">pagamento único · menos de R$ 8/mês</p>
+<p class="pricing__period">pagamento único · 12 meses · sem mensalidade</p>
 </div>
 <div class="pricing__body">
 <ul class="pricing__features">
-<li><i class="fas fa-check"></i> Assistente IA conversacional 24h</li>
-<li><i class="fas fa-check"></i> CRM completo com pipeline visual</li>
-<li><i class="fas fa-check"></i> Analytics com exportação CSV</li>
+<li><i class="fas fa-check"></i> Vendedor automático 24h na sua página</li>
+<li><i class="fas fa-check"></i> CRM completo com pipeline de oportunidades</li>
+<li><i class="fas fa-check"></i> Captura automática de leads</li>
 <li><i class="fas fa-check"></i> White Label — sua marca no chat</li>
 <li><i class="fas fa-check"></i> Widget para qualquer site</li>
-
 <li><i class="fas fa-check"></i> Todas as atualizações futuras</li>
 </ul>
 </div>
 <div class="pricing__foot">
-<a href="https://pay.hotmart.com/G103177435I" class="btn btn--cta" style="width:100%"><i class="fas fa-bolt"></i> Ativar meu acesso — R$ 97</a>
+<a href="https://pay.hotmart.com/G103177435I" class="btn btn--cta" style="width:100%"><i class="fas fa-bolt"></i> Ativar meu vendedor automático — R$ 97</a>
 <div class="pricing__guarantee"><i class="fas fa-shield-alt"></i><div><strong>Garantia de 7 dias — Risco zero.</strong> Não gostou? 100% devolvido sem burocracia.</div></div>
 <div style="display:flex;justify-content:center;gap:16px;margin-top:16px;flex-wrap:wrap">
 <span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-lock" style="color:var(--green)"></i> Pagamento seguro via Hotmart</span>
@@ -560,29 +643,36 @@ img{max-width:100%;height:auto;display:block}
 <h2 class="section-title">Tudo que você precisa saber</h2>
 </div>
 <div class="faq__list">
-<div class="faq-item"><button class="faq-item__q"><span>Funciona pra qualquer nicho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim. A IA aprende sobre qualquer produto ou serviço automaticamente — infoprodutos, SaaS, clínicas, restaurantes, e-commerce, consultoria. Basta colar o link.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>Preciso saber programar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. Se você sabe copiar e colar um link, consegue usar. O setup leva 2 minutos.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>R$ 97 por 12 meses mesmo? Sem mensalidade?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Isso mesmo. Pagamento único de R$ 97 = 12 meses de acesso completo. Sem taxa escondida.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>E se eu não gostar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Garantia incondicional de 7 dias. Pediu reembolso, devolvemos 100%. Sem perguntas.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>O CRM está realmente incluso?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>100% incluso. Pipeline visual, classificação de leads, follow-up, analytics, exportação. Sem upsell.</p></div></div>
-
-<div class="faq-item"><button class="faq-item__q"><span>Funciona sem página de vendas?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Funciona para qualquer negócio — a IA tira dúvidas, agenda e captura leads sem precisar de checkout.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Funciona pra qualquer nicho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim. O LinkMágico aprende sobre qualquer produto ou serviço automaticamente — infoprodutos, SaaS, clínicas, restaurantes, e-commerce, consultoria. Basta colar o link e ele vira o vendedor automático da sua página.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Preciso saber programar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. Se você sabe copiar e colar um link, consegue ativar. O setup leva 2 minutos e seu link já começa a recuperar visitantes.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>R$ 97 por 12 meses mesmo? Sem mensalidade?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Exato. Pagamento único de R$ 97 = 12 meses de vendedor automático na sua página. Menos de R$ 8/mês. Sem taxa escondida.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>E se eu não gostar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Garantia incondicional de 7 dias. Pediu reembolso, devolvemos 100%. Sem perguntas. Risco zero.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>O CRM está realmente incluso?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>100% incluso. Pipeline visual de oportunidades, classificação de leads, histórico de conversas, exportação. Você vê exatamente quem queria comprar.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Funciona sem página de vendas?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Funciona para qualquer negócio que recebe visitantes — o vendedor automático tira dúvidas, agenda e captura leads sem precisar de checkout.</p></div></div>
 </div>
 </div>
 </section>
 
+<!-- FRASE DOMINANTE 3 -->
+<section class="dominance section--surface">
+<div class="container">
+<p class="dominance__text">Todo visitante tem uma objeção.<br><em>Quem responde primeiro, vende.</em></p>
+</div>
+</section>
+
 <!-- CTA FINAL -->
-<section class="final-cta section--surface" id="final">
+<section class="final-cta section--dark" id="final">
 <div class="container">
 <div class="final-cta__box anim">
-<span class="section-tag section-tag--green">COMECE AGORA</span>
-<h2 class="section-title" style="margin-top:16px">Teste com um link seu e veja <span class="text-grad-g">funcionando na prática</span></h2>
-<p class="section-subtitle" style="margin:0 auto 32px;text-align:center">Coloque o link da sua página e veja a IA respondendo como se fosse um vendedor treinado no seu negócio.</p>
+<span class="section-tag section-tag--green">SUA PÁGINA ESTÁ PERDENDO VENDAS AGORA</span>
+<h2 class="section-title" style="margin-top:16px">Enquanto você lê isso, visitantes estão saindo<br>da sua página <span class="text-grad-g">sem falar nada</span>.</h2>
+<p class="section-subtitle" style="margin:0 auto 32px;text-align:center">Ative o vendedor automático e pare de perder quem já chegou até sua página.</p>
 <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px">
-<a href="https://lkmdemo.onrender.com" class="btn btn--cta" target="_blank"><i class="fas fa-bolt"></i> Testar com meu link</a>
-<a href="https://pay.hotmart.com/G103177435I" class="btn btn--primary">Ativar acesso — R$ 97</a>
+<a href="https://lkmdemo.onrender.com" class="btn btn--cta" target="_blank"><i class="fas fa-bolt"></i> Recuperar meus visitantes agora</a>
+<a href="https://pay.hotmart.com/G103177435I" class="btn btn--primary">Ativar vendedor automático — R$ 97</a>
 </div>
 <p style="color:var(--muted);font-size:.82rem"><i class="fas fa-shield-alt" style="color:var(--green)"></i> 7 dias de garantia incondicional — Risco zero</p>
+<p style="color:var(--muted);font-size:.78rem;margin-top:12px;font-style:italic">"Você já pagou pelo clique. Agora impeça o abandono."</p>
 </div>
 </div>
 </section>
@@ -609,7 +699,7 @@ img{max-width:100%;height:auto;display:block}
 
 <!-- FLOATING CTA -->
 <div class="floating-cta">
-<a href="https://pay.hotmart.com/G103177435I" target="_blank">⚡ Ativar agora</a>
+<a href="https://pay.hotmart.com/G103177435I" target="_blank">⚡ Impedir abandono agora</a>
 </div>
 
 <script>
