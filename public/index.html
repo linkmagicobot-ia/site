@@ -80,6 +80,8 @@ img{max-width:100%;height:auto;display:block}
 .hero__trust span{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)}
 .hero__trust i{color:var(--green)}
 .hero__visual{position:relative;z-index:2}
+.hero__video-wrap{width:100%;max-width:340px;aspect-ratio:9/16;border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08);margin:0 auto}
+.hero__video-wrap iframe{width:100%;height:100%;border:none}
 
 /* CHAT PREVIEW */
 .chat-preview{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
@@ -241,6 +243,7 @@ img{max-width:100%;height:auto;display:block}
 @media(max-width:968px){
 .hero__grid,.demo__grid,.benefit__grid{grid-template-columns:1fr}
 .hero__content{order:1}.hero__visual{order:2}
+.hero__video-wrap{max-width:300px;max-height:70vh}
 .modules__grid{grid-template-columns:repeat(2,1fr)}
 .cases__grid{grid-template-columns:repeat(2,1fr)}
 .audience__grid{grid-template-columns:repeat(2,1fr)}
@@ -253,6 +256,7 @@ img{max-width:100%;height:auto;display:block}
 .hero__ctas{flex-direction:column}
 .hero__ctas .btn{width:100%;justify-content:center}
 .nav__cta{font-size:.75rem;padding:8px 14px}
+.hero__video-wrap{max-width:280px;max-height:65vh}
 }
 
 /* ANIMATE IN */
@@ -357,28 +361,11 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div>
 <div class="hero__visual">
-<p style="color:var(--muted);font-size:.78rem;text-align:center;margin-bottom:10px;font-style:italic">Toda página deveria ter um vendedor assim:</p>
-<div class="chat-preview">
-<div class="chat-preview__bar">
-<div class="chat-preview__dot"></div>
-<div><div class="chat-preview__name">Vendedor Automático — Curso Online</div>
-<div class="chat-preview__status">● Online — pronto para vender</div></div>
+<p style="color:var(--muted);font-size:.78rem;text-align:center;margin-bottom:10px;font-style:italic">Veja o vendedor automático em ação:</p>
+<div style="display:flex;justify-content:center;width:100%">
+<div class="hero__video-wrap">
+<iframe src="https://www.youtube.com/embed/nAkTR0-QgCw" title="LinkMágico — Vendedor Automático em Ação" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<div class="chat-preview__body">
-<div class="chat-msg chat-msg--user">Funciona pra quem tá começando?</div>
-<div class="chat-msg chat-msg--ai">Sim! O treinamento foi feito justamente para iniciantes. Você começa do zero com acompanhamento.</div>
-<div class="chat-msg chat-msg--user">Tem garantia?</div>
-<div class="chat-msg chat-msg--ai">Sim! Você tem 7 dias de garantia total. Se não gostar, devolvemos 100%.</div>
-<div class="chat-msg chat-msg--user">Quero entrar.</div>
-<div class="chat-msg chat-msg--cta">🔥 Perfeito! Aqui está seu acesso: <a href="#">Garantir minha vaga →</a></div>
-</div>
-</div>
-<div class="hero__recovery-flow">
-<div class="hero__recovery-step"><div class="icon">✅</div><div class="label">Conversa conduzida</div></div>
-<div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
-<div class="hero__recovery-step"><div class="icon">🛡️</div><div class="label">Objeção respondida</div></div>
-<div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
-<div class="hero__recovery-step"><div class="icon">💬</div><div class="label">Lead capturado</div></div>
 </div>
 </div>
 </div>
