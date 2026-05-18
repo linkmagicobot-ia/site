@@ -17,6 +17,7 @@ app.use(helmet({
             scriptSrcAttr: ["'unsafe-inline'"],
             imgSrc: ["'self'", "data:", "https:"],
             connectSrc: ["'self'", "https://vertical-ai-dktu.onrender.com"],
+            mediaSrc: ["'self'"],
             frameSrc: ["'self'", "https://www.youtube.com", "https://youtube.com"]
         }
     },
