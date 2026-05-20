@@ -332,6 +332,55 @@ img{max-width:100%;height:auto;display:block}
 .pricing__roi{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(124,58,237,.06));border:1px solid rgba(16,185,129,.2);border-radius:14px;padding:18px 20px;margin-bottom:20px;text-align:center}
 .pricing__roi-main{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:800;color:var(--green-l);margin-bottom:4px}
 .pricing__roi-sub{font-size:.82rem;color:var(--muted)}
+
+/* METRICS BAR */
+.metrics{padding:50px 0}
+.metrics__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:900px;margin:0 auto}
+.metric-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 16px;text-align:center;transition:transform .3s,border-color .3s}
+.metric-card:hover{transform:translateY(-4px);border-color:var(--purple)}
+.metric-card__number{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;line-height:1.2;margin-bottom:4px}
+.metric-card__label{font-size:.78rem;color:var(--muted);line-height:1.4}
+@media(max-width:640px){.metrics__grid{grid-template-columns:repeat(2,1fr)}}
+
+/* TESTIMONIALS */
+.testimonials{padding:80px 0}
+.testimonials__header{text-align:center;margin-bottom:50px}
+.testimonials__header .section-subtitle{margin:0 auto}
+.testimonials__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.test-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px 24px;transition:transform .3s,border-color .3s;position:relative}
+.test-card:hover{transform:translateY(-4px);border-color:var(--green)}
+.test-card__stars{color:#fbbf24;font-size:.85rem;margin-bottom:14px;letter-spacing:2px}
+.test-card__text{font-size:.9rem;color:var(--text);line-height:1.7;margin-bottom:18px;font-style:italic}
+.test-card__author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
+.test-card__photo{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--green)}
+.test-card__name{font-size:.88rem;font-weight:700}
+.test-card__role{font-size:.75rem;color:var(--muted)}
+.test-card__badge{position:absolute;top:16px;right:16px;background:rgba(16,185,129,.1);color:var(--green-l);font-size:.68rem;font-weight:700;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:4px}
+@media(max-width:768px){.testimonials__grid{grid-template-columns:1fr}}
+
+/* AUTHORITY */
+.authority{padding:80px 0}
+.authority__grid{display:grid;grid-template-columns:320px 1fr;gap:48px;align-items:center}
+.authority__photo-wrap{position:relative}
+.authority__photo{width:100%;max-width:300px;border-radius:20px;border:2px solid var(--border);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.authority__tag{display:inline-block;padding:6px 14px;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(124,58,237,.1);color:var(--purple-l);border:1px solid rgba(124,58,237,.2);margin-bottom:16px}
+.authority__name{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:4px}
+.authority__role{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+.authority__text{color:var(--muted);font-size:.9rem;line-height:1.75;margin-bottom:20px}
+.authority__text strong{color:var(--text)}
+.authority__credentials{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.authority__cred{display:flex;align-items:center;gap:6px;padding:6px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;font-size:.78rem;color:var(--muted)}
+.authority__cred i{color:var(--green);font-size:.7rem}
+.authority__bastidores{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.authority__bastidor-img{width:100%;border-radius:12px;border:1px solid var(--border);transition:transform .3s}
+.authority__bastidor-img:hover{transform:scale(1.03)}
+@media(max-width:768px){.authority__grid{grid-template-columns:1fr}.authority__photo{margin:0 auto;display:block}}
+
+/* MANIFESTO */
+.manifesto{padding:60px 0}
+.manifesto__box{max-width:720px;margin:0 auto;text-align:center;padding:40px 32px;background:linear-gradient(135deg,rgba(124,58,237,.06),rgba(16,185,129,.04));border:1px solid rgba(124,58,237,.12);border-radius:24px}
+.manifesto__big{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;line-height:1.3;margin-bottom:16px}
+.manifesto__sub{color:var(--muted);font-size:.95rem;line-height:1.7;max-width:580px;margin:0 auto}
 </style>
 </head>
 <body>
@@ -374,6 +423,18 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>
+
+<!-- MÉTRICAS VISUAIS -->
+<section class="metrics section--dark">
+<div class="container">
+<div class="metrics__grid">
+<div class="metric-card anim"><div class="metric-card__number text-grad-g" data-count="312">0</div><div class="metric-card__label">Leads capturados automaticamente</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad" data-count="3">0</div><div class="metric-card__label">Segundos de tempo médio de resposta</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad-g">24h</div><div class="metric-card__label">Online, vendendo sem parar</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad" data-count="47">0</div><div class="metric-card__label">Assistentes ativos na plataforma</div></div>
 </div>
 </div>
 </section>
@@ -564,6 +625,46 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </section>
 
+<!-- PROVA SOCIAL -->
+<section class="testimonials section--surface" id="depoimentos">
+<div class="container">
+<div class="testimonials__header">
+<span class="section-tag section-tag--green"><i class="fas fa-users"></i> QUEM JÁ USA</span>
+<h2 class="section-title">Quem ativou o vendedor automático <span class="text-grad-g">já está colhendo resultados</span></h2>
+<p class="section-subtitle">Veja o que dizem profissionais que transformaram suas páginas com o LinkMágico.</p>
+</div>
+<div class="testimonials__grid">
+<div class="test-card anim">
+<span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
+<div class="test-card__stars">★★★★★</div>
+<p class="test-card__text">"Ativei o LinkMágico na minha landing page e em 48h já tinha 23 leads novos no CRM — leads que antes iam embora sem falar nada. Nunca vi algo tão simples funcionar tão rápido."</p>
+<div class="test-card__author">
+<img src="testimonial-marcos.png" alt="Marcos R." class="test-card__photo">
+<div><div class="test-card__name">Marcos R.</div><div class="test-card__role">Gestor de Tráfego</div></div>
+</div>
+</div>
+<div class="test-card anim">
+<span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
+<div class="test-card__stars">★★★★★</div>
+<p class="test-card__text">"Eu perdia vendas porque meus alunos tinham dúvidas às 23h e eu não podia responder. Com o LinkMágico, o vendedor responde, quebra objeções e manda o link do checkout sozinho."</p>
+<div class="test-card__author">
+<img src="testimonial-camila.png" alt="Camila S." class="test-card__photo">
+<div><div class="test-card__name">Camila S.</div><div class="test-card__role">Infoprodutora — Cursos Online</div></div>
+</div>
+</div>
+<div class="test-card anim">
+<span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
+<div class="test-card__stars">★★★★★</div>
+<p class="test-card__text">"Meus pacientes perguntam horários de madrugada. Antes eu perdia esses contatos. Agora o LinkMágico responde, captura o telefone e eu acordo com a agenda cheia."</p>
+<div class="test-card__author">
+<img src="testimonial-rafael.png" alt="Rafael M." class="test-card__photo">
+<div><div class="test-card__name">Rafael M.</div><div class="test-card__role">Dentista — Clínica Odontológica</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- MÓDULOS -->
 <section class="modules section--surface" id="modules">
 <div class="container">
@@ -611,45 +712,13 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </section>
 
-<!-- FRASE DOMINANTE 2 -->
-<section class="dominance section--dark">
+<!-- MANIFESTO DE CATEGORIA -->
+<section class="manifesto section--dark">
 <div class="container">
-<p class="dominance__text">Página parada não vende.<br><em>Conversa vende.</em></p>
+<div class="manifesto__box anim">
+<div class="manifesto__big">Links estáticos são de 2019.<br><span class="text-grad">O futuro é conversa.</span></div>
+<p class="manifesto__sub">Todo criador, gestor e infoprodutor ainda usa páginas que não conversam. Visitantes chegam, leem sozinhos e vão embora. O LinkMágico é o primeiro vendedor automático que transforma qualquer link em uma conversa de venda — 24 horas por dia.</p>
 </div>
-</section>
-
-<!-- BENEFÍCIO PRINCIPAL -->
-<section class="benefit section--surface" id="benefit">
-<div class="container">
-<div class="benefit__grid">
-<div>
-<span class="section-tag section-tag--green">O QUE MUDA</span>
-<h2 class="section-title">O que muda quando sua página<br><span class="text-grad-g">ganha um vendedor automático</span></h2>
-<p class="section-subtitle" style="margin-bottom:32px">Seu vendedor trabalha 24h, responde instantaneamente e conduz visitantes até a compra.</p>
-<a href="https://pay.hotmart.com/G103177435I" class="btn btn--cta" target="_blank"><i class="fas fa-bolt"></i> Ativar meu vendedor automático</a>
-</div>
-<div class="benefit__list">
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-comments"></i></div><div><h4>Responde dúvidas automaticamente</h4><p>Visitante perguntou? O vendedor responde instantaneamente após o clique.</p></div></div>
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-shield-alt"></i></div><div><h4>Quebra objeções durante a conversa</h4><p>Preço, garantia, confiança — respondidos automaticamente.</p></div></div>
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-route"></i></div><div><h4>Conduz para compra</h4><p>A conversa leva o visitante até o checkout, WhatsApp ou agendamento.</p></div></div>
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-exchange-alt"></i></div><div><h4>Captura leads automaticamente</h4><p>Nome, email e telefone capturados durante a conversa.</p></div></div>
-<div class="benefit__item anim"><div class="benefit__item-icon"><i class="fas fa-tasks"></i></div><div><h4>Pipeline de conversas e oportunidades</h4><p>CRM visual — acompanhe leads, conversas e oportunidades em tempo real.</p></div></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- MICROCOPY 3 -->
-<section class="microcopy section--surface">
-<div class="container">
-<p class="microcopy__text"><i>🔥</i> Conversa vende mais que página.</p>
-</div>
-</section>
-
-<!-- FRASE DOMINANTE 2 -->
-<section class="dominance section--dark">
-<div class="container">
-<p class="dominance__text">Seu tráfego já existe.<br><em>Falta um vendedor.</em></p>
 </div>
 </section>
 
@@ -724,6 +793,37 @@ img{max-width:100%;height:auto;display:block}
 <span><i class="fas fa-check"></i> Sem cartão</span>
 <span><i class="fas fa-check"></i> Teste instantâneo</span>
 <span><i class="fas fa-check"></i> Veja funcionando ao vivo</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- AUTORIDADE -->
+<section class="authority section--dark" id="quem-criou">
+<div class="container">
+<div class="authority__grid">
+<div class="authority__photo-wrap anim">
+<img src="edvaldo-foto.png" alt="Edvaldo — Criador do LinkMágico" class="authority__photo">
+</div>
+<div class="anim">
+<span class="authority__tag"><i class="fas fa-user-shield"></i> POR QUE O LINK MÁGICO EXISTE</span>
+<h2 class="authority__name">Edvaldo</h2>
+<p class="authority__role">Criador do LinkMágico · Pesquisador em IA aplicada à conversão digital</p>
+<p class="authority__text">O LinkMágico nasceu após anos observando empresas, afiliados e criadores investindo em tráfego… mas <strong>perdendo vendas porque os visitantes chegavam em páginas frias, estáticas e sem interação.</strong></p>
+<p class="authority__text">A ideia era simples: transformar um link comum em um <strong>vendedor automático</strong> capaz de conversar, responder dúvidas e conduzir visitantes até a conversão — 24 horas por dia.</p>
+<p class="authority__text">Projeto desenvolvido unindo experiência em <strong>gestão comercial, automação e Inteligência Artificial</strong> aplicada ao comportamento de compra. Formação em Gestão Comercial e Tecnologia em IA pela UNINOVE.</p>
+<div class="authority__credentials">
+<span class="authority__cred"><i class="fas fa-check"></i> 18 meses de desenvolvimento</span>
+<span class="authority__cred"><i class="fas fa-check"></i> Multi-LLM</span>
+<span class="authority__cred"><i class="fas fa-check"></i> Arquitetura SaaS</span>
+<span class="authority__cred"><i class="fas fa-check"></i> IA + Automação + Playwright</span>
+<span class="authority__cred"><i class="fas fa-check"></i> Redis + Cache inteligente</span>
+</div>
+<p style="font-size:.78rem;color:var(--muted);margin-bottom:10px;font-weight:600">📸 Bastidores do produto:</p>
+<div class="authority__bastidores">
+<img src="bastidores-dev.png" alt="Ambiente de desenvolvimento do LinkMágico" class="authority__bastidor-img">
+<img src="bastidores-analytics.png" alt="Dashboard de analytics do LinkMágico" class="authority__bastidor-img">
+</div>
 </div>
 </div>
 </div>
@@ -870,6 +970,10 @@ document.querySelectorAll('.anim').forEach(function(el){obs.observe(el)});
 var msgs=document.querySelectorAll('.chat-preview__body .chat-msg');
 msgs.forEach(function(m,i){m.style.opacity='0';m.style.transform='translateY(8px)';
 setTimeout(function(){m.style.transition='opacity .4s ease,transform .4s ease';m.style.opacity='1';m.style.transform='translateY(0)'},(i+1)*800)});
+
+// Counter animation for metrics
+var counterObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var el=e.target;var target=parseInt(el.getAttribute('data-count'));if(!target)return;var duration=1500;var start=0;var startTime=null;function animate(ts){if(!startTime)startTime=ts;var progress=Math.min((ts-startTime)/duration,1);el.textContent=Math.floor(progress*target)+'+';if(progress<1)requestAnimationFrame(animate);else el.textContent=target+'+';}requestAnimationFrame(animate);counterObs.unobserve(el);}})},{threshold:0.3});
+document.querySelectorAll('.metric-card__number[data-count]').forEach(function(el){counterObs.observe(el)});
 
 console.log('🚀 LinkMágico — Novo site carregado')});
 </script>
