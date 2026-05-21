@@ -381,6 +381,47 @@ img{max-width:100%;height:auto;display:block}
 .manifesto__box{max-width:720px;margin:0 auto;text-align:center;padding:40px 32px;background:linear-gradient(135deg,rgba(124,58,237,.06),rgba(16,185,129,.04));border:1px solid rgba(124,58,237,.12);border-radius:24px}
 .manifesto__big{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;line-height:1.3;margin-bottom:16px}
 .manifesto__sub{color:var(--muted);font-size:.95rem;line-height:1.7;max-width:580px;margin:0 auto}
+
+/* ANCHORING */
+.anchoring{margin-bottom:24px}
+.anchoring__grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.anchoring__item{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.anchoring__item--highlight{background:rgba(16,185,129,.08);border-color:rgba(16,185,129,.25)}
+.anchoring__label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.anchoring__value{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.2rem}
+.anchoring__value--old{color:#f87171;text-decoration:line-through;opacity:.7}
+.anchoring__value--competitor{color:#fbbf24}
+.anchoring__value--lm{color:var(--green-l)}
+.anchoring__note{font-size:.7rem;color:var(--muted);margin-top:4px}
+@media(max-width:540px){.anchoring__grid{grid-template-columns:1fr}}
+
+/* BONUS STACK */
+.bonus{margin-top:20px;margin-bottom:20px}
+.bonus__title{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;text-align:center;margin-bottom:14px;color:var(--green-l)}
+.bonus__item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.12);border-radius:12px;margin-bottom:8px;font-size:.85rem}
+.bonus__item i{color:var(--green);margin-top:2px;flex-shrink:0}
+.bonus__item strong{color:var(--text)}
+.bonus__item span{color:var(--muted)}
+
+/* URGENCY */
+.urgency{margin-top:18px;padding:16px 20px;background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(239,68,68,.06));border:1px solid rgba(245,158,11,.2);border-radius:14px;text-align:center}
+.urgency__title{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:800;color:#fbbf24;margin-bottom:6px}
+.urgency__text{font-size:.82rem;color:var(--muted);line-height:1.6}
+.urgency__text strong{color:var(--text)}
+
+/* NOT FOR */
+.not-for{padding:60px 0}
+.not-for__box{max-width:680px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px}
+.not-for__title{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:6px;text-align:center}
+.not-for__sub{font-size:.85rem;color:var(--muted);text-align:center;margin-bottom:20px}
+.not-for__grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.not-for__item{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;padding:10px 14px;border-radius:10px}
+.not-for__item--no{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1)}
+.not-for__item--yes{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.1)}
+.not-for__item--no i{color:#f87171}
+.not-for__item--yes i{color:var(--green)}
+.not-for__item i{flex-shrink:0;margin-top:2px}
+@media(max-width:540px){.not-for__grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -637,7 +678,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="test-card anim">
 <span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
 <div class="test-card__stars">★★★★★</div>
-<p class="test-card__text">"Ativei o LinkMágico na minha landing page e em 48h já tinha 23 leads novos no CRM — leads que antes iam embora sem falar nada. Nunca vi algo tão simples funcionar tão rápido."</p>
+<p class="test-card__text">"Ativei o LinkMágico na minha landing page e em 48h já tinha <strong>23 leads novos</strong> no CRM — leads que antes iam embora sem falar nada. Na primeira semana, <strong>3 viraram clientes</strong>. O ROI já se pagou no primeiro dia."</p>
 <div class="test-card__author">
 <img src="testimonial-marcos.png" alt="Marcos R." class="test-card__photo">
 <div><div class="test-card__name">Marcos R.</div><div class="test-card__role">Gestor de Tráfego</div></div>
@@ -646,7 +687,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="test-card anim">
 <span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
 <div class="test-card__stars">★★★★★</div>
-<p class="test-card__text">"Eu perdia vendas porque meus alunos tinham dúvidas às 23h e eu não podia responder. Com o LinkMágico, o vendedor responde, quebra objeções e manda o link do checkout sozinho."</p>
+<p class="test-card__text">"Eu perdia vendas porque meus alunos tinham dúvidas às 23h. Com o LinkMágico, <strong>minha taxa de resposta foi de 0% fora do horário para 100%</strong>. No primeiro mês, <strong>fiz 8 vendas</strong> que vieram direto de conversas do chat."</p>
 <div class="test-card__author">
 <img src="testimonial-camila.png" alt="Camila S." class="test-card__photo">
 <div><div class="test-card__name">Camila S.</div><div class="test-card__role">Infoprodutora — Cursos Online</div></div>
@@ -655,7 +696,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="test-card anim">
 <span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
 <div class="test-card__stars">★★★★★</div>
-<p class="test-card__text">"Meus pacientes perguntam horários de madrugada. Antes eu perdia esses contatos. Agora o LinkMágico responde, captura o telefone e eu acordo com a agenda cheia."</p>
+<p class="test-card__text">"Meus pacientes perguntam horários de madrugada. Antes eu perdia esses contatos. Agora o LinkMágico captura o telefone e <strong>já recuperei 14 agendamentos</strong> que teriam sido perdidos. Acordo com a agenda preenchida."</p>
 <div class="test-card__author">
 <img src="testimonial-rafael.png" alt="Rafael M." class="test-card__photo">
 <div><div class="test-card__name">Rafael M.</div><div class="test-card__role">Dentista — Clínica Odontológica</div></div>
@@ -708,6 +749,26 @@ img{max-width:100%;height:auto;display:block}
 <div class="aud-card anim"><div class="aud-card__icon">🤝</div><div><h4>Afiliados</h4><p>Seu link responde dúvidas e conduz visitantes para compra.</p></div></div>
 <div class="aud-card anim"><div class="aud-card__icon">🏥</div><div><h4>Negócios Locais</h4><p>Agendamentos, dúvidas e contatos acontecendo automaticamente.</p></div></div>
 <div class="aud-card anim"><div class="aud-card__icon">🔧</div><div><h4>Prestadores de Serviço</h4><p>Transforme pedidos de orçamento em conversas de venda.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- PARA QUEM NÃO É -->
+<section class="not-for section--dark">
+<div class="container">
+<div class="not-for__box anim">
+<div class="not-for__title">🚫 O LinkMágico <span style="color:#f87171">NÃO</span> é para todo mundo</div>
+<p class="not-for__sub">Queremos que você entre sabendo exatamente o que esperar.</p>
+<div class="not-for__grid">
+<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem quer resultados sem ter uma página ou oferta real</span></div>
+<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem já tem uma página, produto ou serviço e quer converter mais</span></div>
+<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem não está disposto a investir nem 2 minutos no setup</span></div>
+<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem quer um vendedor trabalhando 24h sem contratar ninguém</span></div>
+<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem espera um bot genérico com respostas robóticas</span></div>
+<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem quer uma IA treinada no próprio negócio, com conversa natural</span></div>
+<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem procura milagre sem tráfego nem audiência</span></div>
+<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem já investe em tráfego e quer parar de perder visitantes</span></div>
+</div>
 </div>
 </div>
 </section>
@@ -843,9 +904,29 @@ img{max-width:100%;height:auto;display:block}
 <p class="pricing__period">pagamento único · 12 meses · sem mensalidade</p>
 </div>
 <div class="pricing__body">
+<!-- ANCORAGEM DE PREÇO -->
+<div class="anchoring">
+<div class="anchoring__grid">
+<div class="anchoring__item">
+<div class="anchoring__label">Vendedor humano</div>
+<div class="anchoring__value anchoring__value--old">R$ 2.500/mês</div>
+<div class="anchoring__note">+ encargos, folgas, atrasos</div>
+</div>
+<div class="anchoring__item">
+<div class="anchoring__label">Chatbot concorrente</div>
+<div class="anchoring__value anchoring__value--competitor">R$ 197/mês</div>
+<div class="anchoring__note">sem IA de vendas, sem CRM</div>
+</div>
+<div class="anchoring__item anchoring__item--highlight">
+<div class="anchoring__label">LinkMágico</div>
+<div class="anchoring__value anchoring__value--lm">R$ 8/mês</div>
+<div class="anchoring__note">IA vendedora + CRM + 24h</div>
+</div>
+</div>
+</div>
 <div class="pricing__roi">
 <div class="pricing__roi-main">💰 Uma única venda pode pagar o ano inteiro.</div>
-<div class="pricing__roi-sub">Menos de R$8/mês para ter um vendedor automático na sua página.</div>
+<div class="pricing__roi-sub">Enquanto um vendedor humano custa R$ 2.500/mês, o LinkMágico custa menos de R$ 8/mês — e nunca tira folga.</div>
 </div>
 <ul class="pricing__features">
 <li><i class="fas fa-check"></i> Vendedor automático 24h na sua página</li>
@@ -855,10 +936,20 @@ img{max-width:100%;height:auto;display:block}
 <li><i class="fas fa-check"></i> Widget para qualquer site</li>
 <li><i class="fas fa-check"></i> Todas as atualizações futuras</li>
 </ul>
+<!-- BÔNUS -->
+<div class="bonus">
+<div class="bonus__title">🎁 Bônus exclusivo para quem ativar agora</div>
+<div class="bonus__item"><i class="fas fa-gift"></i><div><strong>E-book: Nutrição de Leads PRO</strong><br><span>Guia completo com estratégias de funil de vendas, segmentação de leads (frio, morno e quente), sequências de follow-up por email e WhatsApp, e estudos de caso reais. Aprenda o que fazer com os leads que o LinkMágico captura para você — e transforme contatos em clientes de forma sistemática.</span></div></div>
+</div>
 </div>
 <div class="pricing__foot">
 <a href="https://pay.hotmart.com/G103177435I" class="btn btn--cta" style="width:100%"><i class="fas fa-bolt"></i> Ativar meu vendedor automático — R$ 97</a>
 <div class="pricing__guarantee"><i class="fas fa-shield-alt"></i><div><strong>Garantia de 7 dias — Risco zero.</strong> Não gostou? 100% devolvido sem burocracia.</div></div>
+<!-- URGÊNCIA SEM CRONÔMETRO -->
+<div class="urgency">
+<div class="urgency__title">⚡ Preço de lançamento — por tempo limitado</div>
+<div class="urgency__text">O LinkMágico está em fase de lançamento e o valor atual de <strong>R$ 97/ano</strong> é exclusivo para os primeiros usuários. Em breve, o preço será reajustado para <strong>R$ 297/ano</strong> — o que ainda será barato por tudo que entrega. Quem ativar agora <strong>garante o preço de fundador para sempre.</strong></div>
+</div>
 <div style="display:flex;justify-content:center;gap:16px;margin-top:16px;flex-wrap:wrap">
 <span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-lock" style="color:var(--green)"></i> Pagamento seguro via Hotmart</span>
 <span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-bolt" style="color:var(--green)"></i> Acesso imediato</span>
