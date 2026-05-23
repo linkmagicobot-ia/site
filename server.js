@@ -16,7 +16,7 @@ app.use(helmet({
             scriptSrc: ["'self'", "'unsafe-inline'"],
             scriptSrcAttr: ["'unsafe-inline'"],
             imgSrc: ["'self'", "data:", "https:"],
-            connectSrc: ["'self'", "https://vertical-ai-dktu.onrender.com"],
+            connectSrc: ["'self'", "https://linkmagico.app.br"],
             mediaSrc: ["'self'"],
             frameSrc: ["'self'", "https://www.youtube.com", "https://youtube.com"]
         }
