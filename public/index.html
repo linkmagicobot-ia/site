@@ -430,7 +430,7 @@ img{max-width:100%;height:auto;display:block}
 <header class="header" id="header">
 <div class="nav container">
 <a href="#" class="nav__logo"><span>⚡</span> <span>Link<span class="logo-highlight">Mágico</span></span></a>
-<a href="https://pay.hotmart.com/G103177435I" class="nav__cta" target="_blank">Ativar vendedor automático →</a>
+<a href="#pricing" class="nav__cta">Ativar vendedor automático →</a>
 </div>
 </header>
 
@@ -948,7 +948,12 @@ img{max-width:100%;height:auto;display:block}
 <span class="section-tag section-tag--green"><i class="fas fa-tag"></i> INVESTIMENTO QUE SE PAGA SOZINHO</span>
 <h2 class="section-title">Escolha o plano ideal para colocar um <span class="text-grad-g">vendedor automático</span> na sua página.</h2>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:1100px;margin:0 auto">
+<style>
+.pricing-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+@media(max-width: 992px) { .pricing-grid-4 { grid-template-columns: repeat(2, 1fr); max-width: 600px; } }
+@media(max-width: 540px) { .pricing-grid-4 { grid-template-columns: 1fr; max-width: 320px; } }
+</style>
+<div class="pricing-grid-4">
 
 <!-- FREE -->
 <div class="pricing__box anim" style="padding:32px 24px;border-color:rgba(16,185,129,.2)">
@@ -979,8 +984,8 @@ img{max-width:100%;height:auto;display:block}
 </div>
 
 <!-- PRO -->
-<div class="pricing__box anim" style="padding:32px 24px;border-color:rgba(124,58,237,.5);background:linear-gradient(180deg,rgba(124,58,237,.08),transparent);position:relative">
-<div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--purple-l));color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em">⭐ Mais Popular</div>
+<div class="pricing__box anim" style="padding:32px 24px;border-color:rgba(124,58,237,.5);background:linear-gradient(180deg,rgba(124,58,237,.08),transparent);position:relative;overflow:visible">
+<div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--purple-l));color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;z-index:2">⭐ Mais Popular</div>
 <h3 style="font-size:1.3rem;margin-bottom:8px">Pro</h3>
 <div style="margin-bottom:20px"><span style="font-size:1.1rem;color:var(--muted)">R$</span><span style="font-size:2.8rem;font-weight:800;color:#fff">69</span><span style="font-size:.9rem;color:var(--muted)">/mês</span></div>
 <ul class="pricing__features" style="font-size:.88rem">
