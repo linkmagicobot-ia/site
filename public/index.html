@@ -933,13 +933,24 @@ img{max-width:100%;height:auto;display:block}
 <i class="fab fa-linkedin" style="font-size:1.3rem;color:#0a66c2"></i> Conectar no LinkedIn
 </a>
 <p style="font-size:.95rem;color:var(--text);margin-bottom:14px;margin-top:36px;font-weight:700">📸 A estrutura real por trás da mágica:</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
-<img src="GITHUB.png" alt="Código-fonte e Versionamento" class="authority__bastidor-img" title="Ambiente de Código e Versionamento" style="width:100%;height:100px;object-fit:cover;object-position:top">
-<img src="printV2rdlinkedin.png" alt="Arquitetura de Servidor" class="authority__bastidor-img" title="Servidores e Requisições" style="width:100%;height:100px;object-fit:cover;object-position:top">
-<img src="printdashboardlinkedin.png" alt="Dashboard de Analytics" class="authority__bastidor-img" title="Painel de Métricas" style="width:100%;height:100px;object-fit:cover;object-position:top">
-<img src="prinSitelinkedin.png" alt="Interface Principal" class="authority__bastidor-img" title="Aplicação em Funcionamento" style="width:100%;height:100px;object-fit:cover;object-position:top">
-<img src="CENTRALDEAJUDa.png" alt="Central de Ajuda" class="authority__bastidor-img" title="Central de Ajuda Integrada" style="width:100%;height:100px;object-fit:cover;object-position:top">
-<img src="comunidadelk.png" alt="Comunidade" class="authority__bastidor-img" title="Comunidade de Membros" style="width:100%;height:100px;object-fit:cover;object-position:top">
+<style>
+.bastidores-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.bastidores-grid img{width:100%;height:120px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid rgba(100,150,255,.12);transition:transform .3s,box-shadow .3s;cursor:pointer}
+.bastidores-grid img:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(30,107,255,.25);z-index:2}
+@media(max-width:768px){.bastidores-grid{grid-template-columns:repeat(3,1fr)}.bastidores-grid img{height:90px}}
+@media(max-width:480px){.bastidores-grid{grid-template-columns:repeat(2,1fr)}.bastidores-grid img{height:80px}}
+</style>
+<div class="bastidores-grid">
+<img src="GITHUB.png" alt="Código-fonte e Versionamento" title="Repositório GitHub">
+<img src="printV2rdlinkedin.png" alt="Arquitetura de Servidor" title="Servidores e Requisições">
+<img src="printdashboardlinkedin.png" alt="Dashboard de Analytics" title="Painel de Métricas">
+<img src="prinSitelinkedin.png" alt="Interface Principal" title="Aplicação em Funcionamento">
+<img src="CENTRALDEAJUDa.png" alt="Central de Ajuda" title="Central de Ajuda Integrada">
+<img src="comunidadelk.png" alt="Comunidade" title="Comunidade de Membros">
+<img src="cytre.png" alt="Código do Chat Widget" title="Código-Fonte do Widget de Chat">
+<img src="df.png" alt="Follow-Up Worker" title="Worker de Automação e Follow-Up">
+<img src="sCASD.png" alt="Arquitetura SaaS" title="Documentação Técnica e Stack">
+<img src="xqcw.png" alt="Painel de Integrações" title="Dashboard de Integrações e Widget">
 </div>
 </div>
 </div>
