@@ -15,11 +15,16 @@
 <meta property="og:description" content="Cole seu link. O LinkMágico aprende seu negócio e conduz visitantes até a compra através de conversas automáticas.">
 <meta property="og:site_name" content="LinkMágico">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://site.linkmagico.app.br/">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LinkMágico — Transforme cliques em conversas de venda">
 <meta name="twitter:description" content="O visitante clica, o LinkMágico conduz. Responde dúvidas, quebra objeções e converte automaticamente.">
+<meta name="twitter:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
 
 <!-- Favicon SVG -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -634,7 +639,7 @@ img{max-width:100%;height:auto;display:block}
 <div style="max-width:720px;margin:40px auto 0;text-align:center" class="anim">
 <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic">🎬 Veja na prática como é simples:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
-<video controls playsinline preload="metadata" poster="" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<video controls playsinline preload="metadata" poster="poster-setup.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
 <source src="demo-setup.mp4" type="video/mp4">
 </video>
 </div>
@@ -651,7 +656,7 @@ img{max-width:100%;height:auto;display:block}
 <h2 class="section-title">A plataforma completa <span class="text-grad">por dentro</span></h2>
 <p class="section-subtitle">Assista o walkthrough real do LinkMágico v7.0 — do painel às conversas automáticas funcionando.</p>
 <div class="walkthrough__video">
-<video controls playsinline preload="metadata" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<video controls playsinline preload="metadata" poster="poster-walkthrough.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
 <source src="walkthrough-v7.mp4" type="video/mp4">
 </video>
 </div>
@@ -713,7 +718,7 @@ img{max-width:100%;height:auto;display:block}
 <div style="max-width:720px;margin:36px auto 0;text-align:center" class="anim">
 <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic">📊 Veja o CRM real capturando leads automaticamente:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
-<video controls playsinline preload="metadata" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<video controls playsinline preload="metadata" poster="poster-crm.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
 <source src="demo-crm.mp4" type="video/mp4">
 </video>
 </div>
@@ -1172,8 +1177,8 @@ img{max-width:100%;height:auto;display:block}
 <div class="footer__inner">
 <div class="footer__brand">⚡ Link<span class="logo-highlight">Mágico</span></div>
 <div class="footer__links">
-<a href="https://www.arsenalsecretodosceos.com.br/termosdeuso" target="_blank">Termos de Uso</a>
-<a href="https://www.arsenalsecretodosceos.com.br/politicasdeprivacidade" target="_blank">Privacidade</a>
+<a href="https://linkmagico.app.br/termos.html" target="_blank">Termos de Uso</a>
+<a href="https://linkmagico.app.br/privacidade.html" target="_blank">Privacidade</a>
 <a href="https://wa.me/5511925312151" target="_blank">WhatsApp</a>
 <a href="https://www.instagram.com/linkmagico.ia" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
 </div>
@@ -1221,21 +1226,26 @@ setTimeout(function(){m.style.transition='opacity .4s ease,transform .4s ease';m
 var counterObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var el=e.target;var target=parseInt(el.getAttribute('data-count'));if(!target)return;var duration=1500;var start=0;var startTime=null;function animate(ts){if(!startTime)startTime=ts;var progress=Math.min((ts-startTime)/duration,1);el.textContent=Math.floor(progress*target)+'+';if(progress<1)requestAnimationFrame(animate);else el.textContent=target+'+';}requestAnimationFrame(animate);counterObs.unobserve(el);}})},{threshold:0.3});
 document.querySelectorAll('.metric-card__number[data-count]').forEach(function(el){counterObs.observe(el)});
 
-// Dynamic assistant counter — realistic daily variation
+// Contadores reais via API (com fallback para valores estáticos)
 (function(){
-  var baseDate=new Date('2025-01-01').getTime();
-  var now=Date.now();
-  var daysSince=Math.floor((now-baseDate)/(1000*60*60*24));
-  // Crescimento orgânico: ~0.3 por dia + variação de ±2
-  var seed=daysSince*2654435761&0xFFFFFFFF;
-  var variation=(seed%5)-2;
-  var dynamicCount=47+Math.floor(daysSince*0.3)+variation;
-  if(dynamicCount<47)dynamicCount=47;
-  if(dynamicCount>300)dynamicCount=300;
-  var el=document.getElementById('dynamicAssistants');
-  if(el)el.setAttribute('data-count',dynamicCount);
-  var sc=document.getElementById('socialCount');
-  if(sc){var socialBase=170+Math.floor(daysSince*0.25);if(socialBase>500)socialBase=500;sc.textContent=socialBase+'+';}
+  // Fallback values (usados se a API falhar)
+  var fallbackLeads=312, fallbackAssistants=47;
+  function applyStats(leads, assistants){
+    var leadsEl=document.querySelector('.metric-card__number[data-count="312"]');
+    if(leadsEl)leadsEl.setAttribute('data-count',leads);
+    var assistEl=document.getElementById('dynamicAssistants');
+    if(assistEl)assistEl.setAttribute('data-count',assistants);
+  }
+  try{
+    fetch('https://linkmagico.app.br/api/analytics/public-stats')
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.success){
+          applyStats(d.totalLeads||fallbackLeads, d.totalAssistants||fallbackAssistants);
+        }
+      })
+      .catch(function(){ /* fallback silencioso — valores estáticos do HTML */ });
+  }catch(e){/* fallback */}
 })();
 
 // Mobile carousel for modules and audience grids
