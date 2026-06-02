@@ -459,6 +459,63 @@ img{max-width:100%;height:auto;display:block}
 .walkthrough__wrap{max-width:860px;margin:0 auto;text-align:center}
 .walkthrough__video{overflow:hidden;border-radius:18px;box-shadow:0 12px 48px rgba(0,0,0,.5);border:1px solid rgba(124,58,237,.18);margin-top:24px}
 .walkthrough__video video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000}
+
+/* MECHANISM — UNDER THE HOOD */
+.mech{padding:80px 0}
+.mech__pipeline{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:48px;flex-wrap:wrap}
+.mech__pipe-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px 10px;position:relative;flex:1;min-width:110px}
+.mech__pipe-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:10px;border:1px solid var(--border);background:var(--surface);transition:transform .3s,box-shadow .3s}
+.mech__pipe-step:hover .mech__pipe-icon{transform:translateY(-4px);box-shadow:0 8px 24px rgba(124,58,237,.15)}
+.mech__pipe-step:nth-child(1) .mech__pipe-icon{background:rgba(124,58,237,.1);border-color:rgba(124,58,237,.25)}
+.mech__pipe-step:nth-child(3) .mech__pipe-icon{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.25)}
+.mech__pipe-step:nth-child(5) .mech__pipe-icon{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25)}
+.mech__pipe-step:nth-child(7) .mech__pipe-icon{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2)}
+.mech__pipe-step:nth-child(9) .mech__pipe-icon{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.25)}
+.mech__pipe-name{font-size:.78rem;font-weight:700;margin-bottom:2px}
+.mech__pipe-desc{font-size:.68rem;color:var(--muted)}
+.mech__pipe-arrow{color:var(--muted);font-size:.65rem;flex-shrink:0;margin:0 -6px;align-self:center;padding-bottom:20px;opacity:.5}
+.mech__features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.mech__feat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 20px;transition:transform .3s,border-color .3s;position:relative;overflow:hidden}
+.mech__feat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--green));opacity:0;transition:opacity .3s}
+.mech__feat:hover{transform:translateY(-4px);border-color:var(--purple)}
+.mech__feat:hover::before{opacity:1}
+.mech__feat-icon{font-size:1.3rem;margin-bottom:10px}
+.mech__feat h4{font-size:.88rem;font-weight:700;margin-bottom:6px}
+.mech__feat p{font-size:.78rem;color:var(--muted);line-height:1.5}
+.mech__vs{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin:0 auto}
+.mech__vs-col{border-radius:16px;padding:24px 20px}
+.mech__vs-col--old{background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.1)}
+.mech__vs-col--new{background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.12)}
+.mech__vs-head{font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.mech__vs-col--old .mech__vs-head{color:#f87171}
+.mech__vs-col--new .mech__vs-head{color:var(--green-l)}
+.mech__vs-item{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;padding:6px 0;color:var(--muted)}
+.mech__vs-item i{font-size:.7rem;flex-shrink:0;margin-top:4px}
+.mech__vs-col--old .mech__vs-item i{color:#f87171}
+.mech__vs-col--new .mech__vs-item i{color:var(--green)}
+@media(max-width:768px){.mech__pipeline{gap:8px}.mech__pipe-arrow{display:none}.mech__pipe-step{min-width:calc(33.33% - 8px)}.mech__features{grid-template-columns:1fr}.mech__vs{grid-template-columns:1fr}}
+@media(max-width:480px){.mech__pipe-step{min-width:calc(50% - 4px)}}
+
+/* AFFILIATE PROGRAM */
+.affil{padding:80px 0}
+.affil__box{max-width:880px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden;position:relative}
+.affil__box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#f59e0b,#f97316,#ef4444)}
+.affil__head{padding:40px 40px 32px;text-align:center;border-bottom:1px solid var(--border)}
+.affil__badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;font-size:.78rem;font-weight:700;background:rgba(245,158,11,.1);color:#fbbf24;border:1px solid rgba(245,158,11,.2);margin-bottom:16px}
+.affil__steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:32px 40px;border-bottom:1px solid var(--border);position:relative}
+.affil__steps::before{content:'';position:absolute;top:52px;left:20%;right:20%;height:2px;background:linear-gradient(90deg,#f59e0b,#f97316);opacity:.15}
+.affil__step{text-align:center;position:relative}
+.affil__step-num{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#f97316);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 12px;color:#fff;position:relative;z-index:2}
+.affil__step h4{font-size:.9rem;font-weight:700;margin-bottom:4px}
+.affil__step p{font-size:.78rem;color:var(--muted)}
+.affil__sim{padding:32px 40px;border-bottom:1px solid var(--border)}
+.affil__sim-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.affil__table{width:100%;border-collapse:collapse}
+.affil__table th{text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:8px 12px;border-bottom:1px solid var(--border)}
+.affil__table td{padding:10px 12px;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.03)}
+.affil__comm{color:#fbbf24;font-weight:700}
+.affil__foot{padding:28px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+@media(max-width:640px){.affil__steps{grid-template-columns:1fr;gap:16px}.affil__steps::before{display:none}.affil__head,.affil__steps,.affil__sim,.affil__foot{padding-left:20px;padding-right:20px}}
 </style>
 </head>
 <body>
@@ -660,6 +717,104 @@ img{max-width:100%;height:auto;display:block}
 </div>
 <p style="color:var(--green-l);font-size:.82rem;margin-top:14px;font-weight:600"><i class="fas fa-check-circle"></i> Gravação real da plataforma — sem edição, sem enrolação</p>
 </div>
+</div>
+</section>
+
+<!-- MECANISMO ÚNICO — COMO FUNCIONA POR DENTRO -->
+<section class="mech section--surface" id="mecanismo">
+<div class="container">
+<div style="text-align:center;margin-bottom:50px">
+<span class="section-tag"><i class="fas fa-microchip"></i> TECNOLOGIA PROPRIETÁRIA</span>
+<h2 class="section-title">Isso <span class="text-grad">NÃO</span> é um chatbot genérico.</h2>
+<p class="section-subtitle" style="margin:0 auto">O LinkMágico opera um sistema de vendas completo com motor de decisão, pipeline de 13 fases e inteligência de nicho — tudo invisível para o visitante.</p>
+</div>
+
+<div class="mech__pipeline anim">
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">🔗</div>
+<div class="mech__pipe-name">Extração IA</div>
+<div class="mech__pipe-desc">Conteúdo extraído automaticamente</div>
+</div>
+<div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">🧠</div>
+<div class="mech__pipe-name">Decision Engine</div>
+<div class="mech__pipe-desc">Motor de decisão inteligente</div>
+</div>
+<div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">🎯</div>
+<div class="mech__pipe-name">Detecção de Intenção</div>
+<div class="mech__pipe-desc">Identifica o momento exato</div>
+</div>
+<div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">⚡</div>
+<div class="mech__pipe-name">Sales Layer</div>
+<div class="mech__pipe-desc">Pipeline de 13 fases</div>
+</div>
+<div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">✅</div>
+<div class="mech__pipe-name">Conversão</div>
+<div class="mech__pipe-desc">Lead qualificado ou venda</div>
+</div>
+</div>
+
+<div class="mech__features">
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🤖</div>
+<h4>Decision Engine</h4>
+<p>Motor de decisão próprio que analisa cada mensagem e define a melhor estratégia de resposta em tempo real — não é um wrapper de ChatGPT.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">📊</div>
+<h4>Sales Layer — 13 Fases</h4>
+<p>Pipeline de persuasão com 13 fases: do primeiro contato à conversão, cada mensagem move o visitante para a próxima etapa de venda.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🎯</div>
+<h4>Detecção de Intenção</h4>
+<p>Identifica automaticamente se o visitante quer comprar, tem dúvida, está com objeção ou pronto para agir — e adapta a resposta.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🧩</div>
+<h4>6 Perfis de Nicho</h4>
+<p>Presets inteligentes para infoprodutos, e-commerce, clínicas, SaaS, serviços e negócios locais — cada um com abordagem de venda otimizada.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🔄</div>
+<h4>Sistema Anti-Repetição</h4>
+<p>Garante respostas variadas e naturais em toda a conversa, eliminando a sensação de "bot" mesmo em diálogos longos.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🏗️</div>
+<h4>Multi-Tenant Nativo</h4>
+<p>Arquitetura SaaS com isolamento total por conta — dados, configurações e assistentes 100% independentes por cliente.</p>
+</div>
+</div>
+
+<div class="mech__vs anim">
+<div class="mech__vs-col mech__vs-col--old">
+<div class="mech__vs-head"><i class="fas fa-times-circle"></i> Chatbot genérico</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Responde perguntas de forma genérica</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Sem estratégia de venda estruturada</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Respostas repetitivas e robóticas</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Não detecta intenção de compra</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Sem captura ou qualificação de leads</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Configuração genérica para todos os nichos</div>
+</div>
+<div class="mech__vs-col mech__vs-col--new">
+<div class="mech__vs-head"><i class="fas fa-check-circle"></i> LinkMágico</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> Conduz ativamente a conversa para a venda</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> Pipeline de 13 fases de persuasão inteligente</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> Anti-repetição com conversa 100% natural</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> Detecta intenção e adapta em tempo real</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> CRM integrado com lead scoring automático</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> 6 perfis de nicho com abordagem otimizada</div>
+</div>
+</div>
+
 </div>
 </section>
 
@@ -1132,6 +1287,57 @@ img{max-width:100%;height:auto;display:block}
 <div class="faq-item"><button class="faq-item__q"><span>O pagamento é seguro?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim, processamos os pagamentos de forma totalmente segura através da Stripe (a mesma plataforma usada por Amazon e Google).</p></div></div>
 <div class="faq-item"><button class="faq-item__q"><span>O CRM está realmente incluso?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>100% incluso. Pipeline visual de oportunidades, classificação de leads, histórico de conversas, exportação. Você vê exatamente quem queria comprar.</p></div></div>
 <div class="faq-item"><button class="faq-item__q"><span>Funciona sem página de vendas?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Funciona para qualquer negócio que recebe visitantes — o vendedor automático tira dúvidas, agenda e captura leads sem precisar de checkout.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- PROGRAMA DE AFILIADOS — INDIQUE E GANHE -->
+<section class="affil section--surface" id="afiliados">
+<div class="container">
+<div style="text-align:center;margin-bottom:50px">
+<span class="section-tag" style="background:rgba(245,158,11,.1);color:#fbbf24;border-color:rgba(245,158,11,.2)"><i class="fas fa-handshake"></i> PROGRAMA DE PARCEIROS</span>
+<h2 class="section-title">Indique o LinkMágico. <span style="background:linear-gradient(135deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Ganhe comissão recorrente.</span></h2>
+<p class="section-subtitle" style="margin:0 auto">Compartilhe seu link exclusivo e receba 20% de comissão recorrente em cada plano pago — enquanto o indicado for cliente.</p>
+</div>
+<div class="affil__box anim">
+<div class="affil__head">
+<div class="affil__badge"><i class="fas fa-lock"></i> 20% de comissão recorrente</div>
+<h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:8px">Indique e Ganhe</h3>
+<p style="color:var(--muted);font-size:.9rem">Cada pessoa que assinar um plano pago pelo seu link gera comissão mensal para você — sem limite.</p>
+</div>
+<div class="affil__steps">
+<div class="affil__step">
+<div class="affil__step-num">1</div>
+<h4>Compartilhe</h4>
+<p>Envie seu link exclusivo para amigos, colegas e redes sociais.</p>
+</div>
+<div class="affil__step">
+<div class="affil__step-num">2</div>
+<h4>Eles se cadastram</h4>
+<p>O indicado cria uma conta grátis usando seu link de referência.</p>
+</div>
+<div class="affil__step">
+<div class="affil__step-num">3</div>
+<h4>Você ganha</h4>
+<p>Quando o indicado assinar um plano pago, você recebe 20% de comissão — todo mês.</p>
+</div>
+</div>
+<div class="affil__sim">
+<div class="affil__sim-title">💰 Simulação de Ganhos</div>
+<table class="affil__table">
+<thead><tr><th>Se indicar</th><th>Plano</th><th>Valor</th><th>Sua comissão</th></tr></thead>
+<tbody>
+<tr><td>5 clientes</td><td>Starter (R$29)</td><td>R$145/mês</td><td class="affil__comm">R$29/mês</td></tr>
+<tr><td>5 clientes</td><td>Pro (R$69)</td><td>R$345/mês</td><td class="affil__comm">R$69/mês</td></tr>
+<tr><td>10 clientes</td><td>Pro (R$69)</td><td>R$690/mês</td><td class="affil__comm">R$138/mês</td></tr>
+<tr><td>20 clientes</td><td>Mix</td><td>~R$1.000/mês</td><td class="affil__comm">~R$200/mês</td></tr>
+</tbody>
+</table>
+</div>
+<div class="affil__foot">
+<a href="https://linkmagico.app.br/affiliates.html" class="btn btn--primary" style="background:linear-gradient(135deg,#f59e0b,#f97316);padding:14px 32px;font-size:.95rem" target="_blank"><i class="fas fa-rocket"></i> Acessar Programa de Afiliados</a>
+<p style="color:var(--muted);font-size:.78rem"><i class="fas fa-info-circle" style="color:#fbbf24"></i> Disponível para todos os clientes LinkMágico — ative no seu painel.</p>
+</div>
 </div>
 </div>
 </section>
