@@ -44,6 +44,14 @@ app.get('/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// ===== ROTAS LIMPAS — Onboarding (sem .html) =====
+app.get('/BEMVINDO', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'BEMVINDO.html'));
+});
+app.get('/treinamento', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'treinamento.html'));
+});
+
 // ===== FALLBACK 404 → HOME =====
 app.use((req, res) => {
     res.status(302).redirect('/');
