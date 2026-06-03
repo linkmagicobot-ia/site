@@ -18,7 +18,7 @@ app.use(helmet({
             imgSrc: ["'self'", "data:", "https:"],
             connectSrc: ["'self'", "https://linkmagico.app.br"],
             mediaSrc: ["'self'"],
-            frameSrc: ["'self'", "https://www.youtube.com", "https://youtube.com"]
+            frameSrc: ["'self'", "https://www.youtube.com", "https://youtube.com", "https://www.youtube-nocookie.com", "https://drive.google.com"]
         }
     },
     crossOriginEmbedderPolicy: false
