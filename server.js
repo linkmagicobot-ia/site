@@ -17,12 +17,13 @@ app.use(helmet({
             scriptSrcAttr: ["'unsafe-inline'"],
             imgSrc: ["'self'", "data:", "https:"],
             connectSrc: ["'self'", "https://linkmagico.app.br"],
-            mediaSrc: ["'self'"],
-            frameSrc: ["'self'", "https://www.youtube.com", "https://youtube.com", "https://www.youtube-nocookie.com", "https://drive.google.com"]
+            mediaSrc: ["'self'", "https://*.google.com", "https://*.googleapis.com", "https://*.googleusercontent.com"],
+            frameSrc: ["'self'", "https://www.youtube.com", "https://youtube.com", "https://www.youtube-nocookie.com", "https://drive.google.com", "https://*.google.com", "https://*.googleapis.com", "https://*.googleusercontent.com"]
         }
     },
     crossOriginEmbedderPolicy: false,
     crossOriginOpenerPolicy: false,
+    crossOriginResourcePolicy: false,
     referrerPolicy: { policy: "strict-origin-when-cross-origin" }
 }));
 
