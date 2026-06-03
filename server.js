@@ -21,7 +21,9 @@ app.use(helmet({
             frameSrc: ["'self'", "https://www.youtube.com", "https://youtube.com", "https://www.youtube-nocookie.com", "https://drive.google.com"]
         }
     },
-    crossOriginEmbedderPolicy: false
+    crossOriginEmbedderPolicy: false,
+    crossOriginOpenerPolicy: false,
+    referrerPolicy: { policy: "strict-origin-when-cross-origin" }
 }));
 
 // ===== PERFORMANCE =====
