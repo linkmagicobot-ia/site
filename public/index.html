@@ -1564,23 +1564,22 @@ setTimeout(function(){m.style.transition='opacity .4s ease,transform .4s ease';m
 var counterObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var el=e.target;var target=parseInt(el.getAttribute('data-count'));if(!target)return;var duration=1500;var start=0;var startTime=null;function animate(ts){if(!startTime)startTime=ts;var progress=Math.min((ts-startTime)/duration,1);el.textContent=Math.floor(progress*target)+'+';if(progress<1)requestAnimationFrame(animate);else el.textContent=target+'+';}requestAnimationFrame(animate);counterObs.unobserve(el);}})},{threshold:0.3});
 document.querySelectorAll('.metric-card__number[data-count]').forEach(function(el){counterObs.observe(el)});
 
-// Contadores reais via API (com fallback para valores estáticos)
+// Contadores reais via API (histórico + novos dados acumulados pelo servidor)
 (function(){
-  var fb={leads:312,assistants:47,conversations:150};
   function applyStats(leads,assistants,conversations){
     var el1=document.getElementById('dynamicLeads');
-    if(el1)el1.setAttribute('data-count',Math.max(leads,fb.leads));
+    if(el1)el1.setAttribute('data-count',leads);
     var el2=document.getElementById('dynamicAssistants');
-    if(el2)el2.setAttribute('data-count',Math.max(assistants,fb.assistants));
+    if(el2)el2.setAttribute('data-count',assistants);
     var el3=document.getElementById('dynamicConversations');
-    if(el3)el3.setAttribute('data-count',Math.max(conversations,fb.conversations));
+    if(el3)el3.setAttribute('data-count',conversations);
   }
   try{
     fetch('https://linkmagico.app.br/api/analytics/public-stats')
       .then(function(r){return r.json()})
       .then(function(d){
         if(d.success){
-          applyStats(d.totalLeads||fb.leads,d.totalAssistants||fb.assistants,d.totalConversations||fb.conversations);
+          applyStats(d.totalLeads||312,d.totalAssistants||47,d.totalConversations||150);
         }
       })
       .catch(function(){/* fallback silencioso — valores estáticos do HTML */});
