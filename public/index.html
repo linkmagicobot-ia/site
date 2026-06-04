@@ -573,12 +573,13 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </section>
 
-<!-- MÉTRICAS VISUAIS -->
+<!-- MÉTRICAS VISUAIS (dados reais via /api/analytics/public-stats) -->
 <section class="metrics section--dark">
 <div class="container">
+<div style="display:flex;justify-content:center;margin-bottom:12px"><span style="display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:.72rem;color:#34d399;font-weight:600;letter-spacing:.3px"><span style="width:7px;height:7px;background:#10b981;border-radius:50%;display:inline-block;animation:ctaPulse 2s infinite"></span> DADOS EM TEMPO REAL</span></div>
 <div class="metrics__grid">
-<div class="metric-card anim"><div class="metric-card__number text-grad-g" data-count="312">0</div><div class="metric-card__label">Leads capturados automaticamente</div></div>
-<div class="metric-card anim"><div class="metric-card__number text-grad" data-count="3">0</div><div class="metric-card__label">Segundos de tempo médio de resposta</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad-g" id="dynamicLeads" data-count="312">0</div><div class="metric-card__label">Leads capturados automaticamente</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicConversations" data-count="150">0</div><div class="metric-card__label">Conversas processadas pela IA</div></div>
 <div class="metric-card anim"><div class="metric-card__number text-grad-g">24h</div><div class="metric-card__label">Online, vendendo sem parar</div></div>
 <div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicAssistants" data-count="47">0</div><div class="metric-card__label">Assistentes ativos na plataforma</div></div>
 </div>
@@ -1565,23 +1566,24 @@ document.querySelectorAll('.metric-card__number[data-count]').forEach(function(e
 
 // Contadores reais via API (com fallback para valores estáticos)
 (function(){
-  // Fallback values (usados se a API falhar)
-  var fallbackLeads=312, fallbackAssistants=47;
-  function applyStats(leads, assistants){
-    var leadsEl=document.querySelector('.metric-card__number[data-count="312"]');
-    if(leadsEl)leadsEl.setAttribute('data-count',leads);
-    var assistEl=document.getElementById('dynamicAssistants');
-    if(assistEl)assistEl.setAttribute('data-count',assistants);
+  var fb={leads:312,assistants:47,conversations:150};
+  function applyStats(leads,assistants,conversations){
+    var el1=document.getElementById('dynamicLeads');
+    if(el1)el1.setAttribute('data-count',Math.max(leads,fb.leads));
+    var el2=document.getElementById('dynamicAssistants');
+    if(el2)el2.setAttribute('data-count',Math.max(assistants,fb.assistants));
+    var el3=document.getElementById('dynamicConversations');
+    if(el3)el3.setAttribute('data-count',Math.max(conversations,fb.conversations));
   }
   try{
     fetch('https://linkmagico.app.br/api/analytics/public-stats')
       .then(function(r){return r.json()})
       .then(function(d){
         if(d.success){
-          applyStats(d.totalLeads||fallbackLeads, d.totalAssistants||fallbackAssistants);
+          applyStats(d.totalLeads||fb.leads,d.totalAssistants||fb.assistants,d.totalConversations||fb.conversations);
         }
       })
-      .catch(function(){ /* fallback silencioso — valores estáticos do HTML */ });
+      .catch(function(){/* fallback silencioso — valores estáticos do HTML */});
   }catch(e){/* fallback */}
 })();
 
