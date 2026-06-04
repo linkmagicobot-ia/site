@@ -15,11 +15,16 @@
 <meta property="og:description" content="Cole seu link. O LinkMágico aprende seu negócio e conduz visitantes até a compra através de conversas automáticas.">
 <meta property="og:site_name" content="LinkMágico">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://site.linkmagico.app.br/">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LinkMágico — Transforme cliques em conversas de venda">
 <meta name="twitter:description" content="O visitante clica, o LinkMágico conduz. Responde dúvidas, quebra objeções e converte automaticamente.">
+<meta name="twitter:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
 
 <!-- Favicon SVG -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -254,6 +259,8 @@ img{max-width:100%;height:auto;display:block}
 .steps-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
 .steps-grid::before{display:none}
 .crm-mini{position:relative;bottom:0;right:0;margin-top:16px}
+#whitelabel [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+#whitelabel [style*="grid-template-columns:repeat(4"]{grid-template-columns:repeat(2,1fr)!important}
 }
 @media(max-width:540px){
 .modules__grid,.audience__grid,.cases__grid{grid-template-columns:1fr}
@@ -261,6 +268,7 @@ img{max-width:100%;height:auto;display:block}
 .hero__ctas .btn{width:100%;justify-content:center}
 .nav__cta{font-size:.75rem;padding:8px 14px}
 .hero__video-wrap{max-width:280px;max-height:65vh}
+#whitelabel [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr!important}
 }
 
 /* ANIMATE IN */
@@ -422,6 +430,95 @@ img{max-width:100%;height:auto;display:block}
 .not-for__item--yes i{color:var(--green)}
 .not-for__item i{flex-shrink:0;margin-top:2px}
 @media(max-width:540px){.not-for__grid{grid-template-columns:1fr}}
+
+/* SOCIAL PROOF HERO */
+.hero-social{display:flex;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
+.hero-social__avatars{display:flex}
+.hero-social__avatars img{width:36px;height:36px;border-radius:50%;border:2px solid var(--bg);margin-left:-10px;object-fit:cover;display:block}
+.hero-social__avatars img:first-child{margin-left:0}
+.hero-social__text{font-size:.82rem;color:var(--muted);line-height:1.4}
+.hero-social__text strong{color:var(--green-l)}
+
+/* MOBILE CAROUSEL */
+@media(max-width:768px){
+.mobile-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:14px;padding-bottom:12px;scrollbar-width:none}
+.mobile-carousel::-webkit-scrollbar{display:none}
+.mobile-carousel>*{flex:0 0 80%;scroll-snap-align:start;min-width:250px}
+.modules__grid.mobile-carousel{grid-template-columns:unset!important}
+.audience__grid.mobile-carousel{grid-template-columns:unset!important}
+}
+
+/* INTEGRATIONS */
+.integrations{padding:50px 0}
+.integrations__logos{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:24px}
+.integrations__item{display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.8;transition:opacity .3s}
+.integrations__item:hover{opacity:1}
+.integrations__item img{height:40px;width:40px;border-radius:8px;object-fit:cover;transition:transform .3s;box-shadow:0 4px 12px rgba(0,0,0,.2);background:#fff}
+.integrations__item:hover img{transform:scale(1.1);box-shadow:0 6px 16px rgba(0,0,0,.3)}
+.integrations__item span{font-size:.7rem;color:var(--muted);font-weight:600}
+
+/* WALKTHROUGH VIDEO */
+.walkthrough{padding:60px 0}
+.walkthrough__wrap{max-width:860px;margin:0 auto;text-align:center}
+.walkthrough__video{overflow:hidden;border-radius:18px;box-shadow:0 12px 48px rgba(0,0,0,.5);border:1px solid rgba(124,58,237,.18);margin-top:24px}
+.walkthrough__video video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000}
+
+/* MECHANISM — UNDER THE HOOD */
+.mech{padding:80px 0}
+.mech__pipeline{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:48px;flex-wrap:wrap}
+.mech__pipe-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px 10px;position:relative;flex:1;min-width:110px}
+.mech__pipe-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:10px;border:1px solid var(--border);background:var(--surface);transition:transform .3s,box-shadow .3s}
+.mech__pipe-step:hover .mech__pipe-icon{transform:translateY(-4px);box-shadow:0 8px 24px rgba(124,58,237,.15)}
+.mech__pipe-step:nth-child(1) .mech__pipe-icon{background:rgba(124,58,237,.1);border-color:rgba(124,58,237,.25)}
+.mech__pipe-step:nth-child(3) .mech__pipe-icon{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.25)}
+.mech__pipe-step:nth-child(5) .mech__pipe-icon{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25)}
+.mech__pipe-step:nth-child(7) .mech__pipe-icon{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2)}
+.mech__pipe-step:nth-child(9) .mech__pipe-icon{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.25)}
+.mech__pipe-name{font-size:.78rem;font-weight:700;margin-bottom:2px}
+.mech__pipe-desc{font-size:.68rem;color:var(--muted)}
+.mech__pipe-arrow{color:var(--muted);font-size:.65rem;flex-shrink:0;margin:0 -6px;align-self:center;padding-bottom:20px;opacity:.5}
+.mech__features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.mech__feat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 20px;transition:transform .3s,border-color .3s;position:relative;overflow:hidden}
+.mech__feat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--green));opacity:0;transition:opacity .3s}
+.mech__feat:hover{transform:translateY(-4px);border-color:var(--purple)}
+.mech__feat:hover::before{opacity:1}
+.mech__feat-icon{font-size:1.3rem;margin-bottom:10px}
+.mech__feat h4{font-size:.88rem;font-weight:700;margin-bottom:6px}
+.mech__feat p{font-size:.78rem;color:var(--muted);line-height:1.5}
+.mech__vs{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin:0 auto}
+.mech__vs-col{border-radius:16px;padding:24px 20px}
+.mech__vs-col--old{background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.1)}
+.mech__vs-col--new{background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.12)}
+.mech__vs-head{font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.mech__vs-col--old .mech__vs-head{color:#f87171}
+.mech__vs-col--new .mech__vs-head{color:var(--green-l)}
+.mech__vs-item{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;padding:6px 0;color:var(--muted)}
+.mech__vs-item i{font-size:.7rem;flex-shrink:0;margin-top:4px}
+.mech__vs-col--old .mech__vs-item i{color:#f87171}
+.mech__vs-col--new .mech__vs-item i{color:var(--green)}
+@media(max-width:768px){.mech__pipeline{gap:8px}.mech__pipe-arrow{display:none}.mech__pipe-step{min-width:calc(33.33% - 8px)}.mech__features{grid-template-columns:1fr}.mech__vs{grid-template-columns:1fr}}
+@media(max-width:480px){.mech__pipe-step{min-width:calc(50% - 4px)}}
+
+/* AFFILIATE PROGRAM */
+.affil{padding:80px 0}
+.affil__box{max-width:880px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:24px;overflow:hidden;position:relative}
+.affil__box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#f59e0b,#f97316,#ef4444)}
+.affil__head{padding:40px 40px 32px;text-align:center;border-bottom:1px solid var(--border)}
+.affil__badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;font-size:.78rem;font-weight:700;background:rgba(245,158,11,.1);color:#fbbf24;border:1px solid rgba(245,158,11,.2);margin-bottom:16px}
+.affil__steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:32px 40px;border-bottom:1px solid var(--border);position:relative}
+.affil__steps::before{content:'';position:absolute;top:52px;left:20%;right:20%;height:2px;background:linear-gradient(90deg,#f59e0b,#f97316);opacity:.15}
+.affil__step{text-align:center;position:relative}
+.affil__step-num{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#f97316);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 12px;color:#fff;position:relative;z-index:2}
+.affil__step h4{font-size:.9rem;font-weight:700;margin-bottom:4px}
+.affil__step p{font-size:.78rem;color:var(--muted)}
+.affil__sim{padding:32px 40px;border-bottom:1px solid var(--border)}
+.affil__sim-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.affil__table{width:100%;border-collapse:collapse}
+.affil__table th{text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:8px 12px;border-bottom:1px solid var(--border)}
+.affil__table td{padding:10px 12px;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.03)}
+.affil__comm{color:#fbbf24;font-weight:700}
+.affil__foot{padding:28px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+@media(max-width:640px){.affil__steps{grid-template-columns:1fr;gap:16px}.affil__steps::before{display:none}.affil__head,.affil__steps,.affil__sim,.affil__foot{padding-left:20px;padding-right:20px}}
 </style>
 </head>
 <body>
@@ -430,7 +527,7 @@ img{max-width:100%;height:auto;display:block}
 <header class="header" id="header">
 <div class="nav container">
 <a href="#" class="nav__logo"><span>⚡</span> <span>Link<span class="logo-highlight">Mágico</span></span></a>
-<a href="https://pay.hotmart.com/G103177435I" class="nav__cta" target="_blank">Ativar vendedor automático →</a>
+<a href="#pricing" class="nav__cta">Ativar vendedor automático →</a>
 </div>
 </header>
 
@@ -445,13 +542,21 @@ img{max-width:100%;height:auto;display:block}
 <h1>Transforme qualquer página em um <span class="text-grad">vendedor automático.</span></h1>
 <p class="hero__sub">Cole o link do seu site, landing page, Instagram ou oferta. O LinkMágico aprende seu negócio e conduz visitantes até a compra através de conversas automáticas.</p>
 <div class="hero__ctas">
-<a href="https://pay.hotmart.com/G103177435I" class="btn btn--cta" target="_blank"><i class="fas fa-bolt"></i> Ativar meu vendedor automático</a>
-<a href="https://demo.linkmagico.app.br" class="btn btn--secondary" target="_blank"><i class="fas fa-play"></i> Testar meu vendedor</a>
+<a href="https://linkmagico.app.br/pricing.html" class="btn btn--cta"><i class="fas fa-bolt"></i> Ver Planos e Preços</a>
+<a href="#demos" class="btn btn--secondary"><i class="fas fa-play"></i> Testar meu vendedor</a>
 </div>
 <div class="hero__trust">
 <span><i class="fas fa-shield-alt"></i> Garantia 7 dias</span>
 <span><i class="fas fa-clock"></i> Setup em 2 min</span>
 <span><i class="fas fa-lock"></i> Pagamento seguro</span>
+</div>
+<div class="hero-social">
+<div class="hero-social__avatars">
+<img src="testimonial-camila.png" alt="Usuário">
+<img src="testimonial-marcos.png" alt="Usuário">
+<img src="testimonial-rafael.png" alt="Usuário">
+</div>
+<div class="hero-social__text">Junte-se a <strong id="socialCount">170+</strong> empresas que já têm<br>um vendedor automático ativo</div>
 </div>
 </div>
 <div class="hero__visual">
@@ -475,7 +580,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="metric-card anim"><div class="metric-card__number text-grad-g" data-count="312">0</div><div class="metric-card__label">Leads capturados automaticamente</div></div>
 <div class="metric-card anim"><div class="metric-card__number text-grad" data-count="3">0</div><div class="metric-card__label">Segundos de tempo médio de resposta</div></div>
 <div class="metric-card anim"><div class="metric-card__number text-grad-g">24h</div><div class="metric-card__label">Online, vendendo sem parar</div></div>
-<div class="metric-card anim"><div class="metric-card__number text-grad" data-count="47">0</div><div class="metric-card__label">Assistentes ativos na plataforma</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicAssistants" data-count="47">0</div><div class="metric-card__label">Assistentes ativos na plataforma</div></div>
 </div>
 </div>
 </section>
@@ -592,12 +697,127 @@ img{max-width:100%;height:auto;display:block}
 <div style="max-width:720px;margin:40px auto 0;text-align:center" class="anim">
 <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic">🎬 Veja na prática como é simples:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
-<video controls playsinline preload="metadata" poster="" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<video controls playsinline preload="metadata" poster="poster-setup.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
 <source src="demo-setup.mp4" type="video/mp4">
 </video>
 </div>
 <p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600">⚡ Setup real — menos de 2 minutos do zero à página vendendo</p>
 </div>
+</div>
+</section>
+
+<!-- WALKTHROUGH COMPLETO -->
+<section class="walkthrough section--dark">
+<div class="container">
+<div class="walkthrough__wrap anim">
+<span class="section-tag section-tag--green"><i class="fas fa-video"></i> VEJA COM SEUS OLHOS</span>
+<h2 class="section-title">A plataforma completa <span class="text-grad">por dentro</span></h2>
+<p class="section-subtitle">Assista o walkthrough real do LinkMágico v7.0 — do painel às conversas automáticas funcionando.</p>
+<div class="walkthrough__video">
+<video controls playsinline preload="metadata" poster="poster-walkthrough.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<source src="walkthrough-v7.mp4" type="video/mp4">
+</video>
+</div>
+<p style="color:var(--green-l);font-size:.82rem;margin-top:14px;font-weight:600"><i class="fas fa-check-circle"></i> Gravação real da plataforma — sem edição, sem enrolação</p>
+</div>
+</div>
+</section>
+
+<!-- MECANISMO ÚNICO — COMO FUNCIONA POR DENTRO -->
+<section class="mech section--surface" id="mecanismo">
+<div class="container">
+<div style="text-align:center;margin-bottom:50px">
+<span class="section-tag"><i class="fas fa-microchip"></i> TECNOLOGIA PROPRIETÁRIA</span>
+<h2 class="section-title">Isso <span class="text-grad">NÃO</span> é um chatbot genérico.</h2>
+<p class="section-subtitle" style="margin:0 auto">O LinkMágico opera um sistema de vendas completo com motor de decisão, pipeline de 13 fases e inteligência de nicho — tudo invisível para o visitante.</p>
+</div>
+
+<div class="mech__pipeline anim">
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">🔗</div>
+<div class="mech__pipe-name">Extração IA</div>
+<div class="mech__pipe-desc">Conteúdo extraído automaticamente</div>
+</div>
+<div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">🧠</div>
+<div class="mech__pipe-name">Decision Engine</div>
+<div class="mech__pipe-desc">Motor de decisão inteligente</div>
+</div>
+<div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">🎯</div>
+<div class="mech__pipe-name">Detecção de Intenção</div>
+<div class="mech__pipe-desc">Identifica o momento exato</div>
+</div>
+<div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">⚡</div>
+<div class="mech__pipe-name">Sales Layer</div>
+<div class="mech__pipe-desc">Pipeline de 13 fases</div>
+</div>
+<div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+<div class="mech__pipe-step">
+<div class="mech__pipe-icon">✅</div>
+<div class="mech__pipe-name">Conversão</div>
+<div class="mech__pipe-desc">Lead qualificado ou venda</div>
+</div>
+</div>
+
+<div class="mech__features">
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🤖</div>
+<h4>Decision Engine</h4>
+<p>Motor de decisão próprio que analisa cada mensagem e define a melhor estratégia de resposta em tempo real — não é um wrapper de ChatGPT.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">📊</div>
+<h4>Sales Layer — 13 Fases</h4>
+<p>Pipeline de persuasão com 13 fases: do primeiro contato à conversão, cada mensagem move o visitante para a próxima etapa de venda.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🎯</div>
+<h4>Detecção de Intenção</h4>
+<p>Identifica automaticamente se o visitante quer comprar, tem dúvida, está com objeção ou pronto para agir — e adapta a resposta.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🧩</div>
+<h4>6 Perfis de Nicho</h4>
+<p>Presets inteligentes para infoprodutos, e-commerce, clínicas, SaaS, serviços e negócios locais — cada um com abordagem de venda otimizada.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🔄</div>
+<h4>Sistema Anti-Repetição</h4>
+<p>Garante respostas variadas e naturais em toda a conversa, eliminando a sensação de "bot" mesmo em diálogos longos.</p>
+</div>
+<div class="mech__feat anim">
+<div class="mech__feat-icon">🏗️</div>
+<h4>Multi-Tenant Nativo</h4>
+<p>Arquitetura SaaS com isolamento total por conta — dados, configurações e assistentes 100% independentes por cliente.</p>
+</div>
+</div>
+
+<div class="mech__vs anim">
+<div class="mech__vs-col mech__vs-col--old">
+<div class="mech__vs-head"><i class="fas fa-times-circle"></i> Chatbot genérico</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Responde perguntas de forma genérica</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Sem estratégia de venda estruturada</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Respostas repetitivas e robóticas</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Não detecta intenção de compra</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Sem captura ou qualificação de leads</div>
+<div class="mech__vs-item"><i class="fas fa-times"></i> Configuração genérica para todos os nichos</div>
+</div>
+<div class="mech__vs-col mech__vs-col--new">
+<div class="mech__vs-head"><i class="fas fa-check-circle"></i> LinkMágico</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> Conduz ativamente a conversa para a venda</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> Pipeline de 13 fases de persuasão inteligente</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> Anti-repetição com conversa 100% natural</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> Detecta intenção e adapta em tempo real</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> CRM integrado com lead scoring automático</div>
+<div class="mech__vs-item"><i class="fas fa-check"></i> 6 perfis de nicho com abordagem otimizada</div>
+</div>
+</div>
+
 </div>
 </section>
 
@@ -654,7 +874,7 @@ img{max-width:100%;height:auto;display:block}
 <div style="max-width:720px;margin:36px auto 0;text-align:center" class="anim">
 <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic">📊 Veja o CRM real capturando leads automaticamente:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
-<video controls playsinline preload="metadata" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<video controls playsinline preload="metadata" poster="poster-crm.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
 <source src="demo-crm.mp4" type="video/mp4">
 </video>
 </div>
@@ -714,7 +934,7 @@ img{max-width:100%;height:auto;display:block}
 <h2 class="section-title">O que muda quando sua página ganha <span class="text-grad">um vendedor</span></h2>
 <p class="section-subtitle">Não é sobre tecnologia. É sobre transformar páginas estáticas em páginas que vendem.</p>
 </div>
-<div class="modules__grid">
+<div class="modules__grid" id="modulesGrid">
 <div class="mod-card anim"><div class="mod-card__icon">💬</div><h4>Responde dúvidas automaticamente</h4><p>Visitante perguntou? O vendedor responde instantaneamente.</p></div>
 <div class="mod-card anim"><div class="mod-card__icon">🛡️</div><h4>Quebra objeções durante a conversa</h4><p>Preço, garantia, confiança — tudo respondido automaticamente.</p></div>
 <div class="mod-card anim"><div class="mod-card__icon">🎯</div><h4>Conduz para compra</h4><p>A conversa leva o visitante até checkout, WhatsApp ou agendamento.</p></div>
@@ -740,7 +960,7 @@ img{max-width:100%;height:auto;display:block}
 <h2 class="section-title">Quem precisa de um <span class="text-grad">vendedor automático?</span></h2>
 <p class="section-subtitle">Se você tem uma página e recebe visitantes — o LinkMágico transforma ela em um vendedor.</p>
 </div>
-<div class="audience__grid">
+<div class="audience__grid" id="audienceGrid">
 <div class="aud-card anim"><div class="aud-card__icon">📢</div><div><h4>Gestores de Tráfego</h4><p>Transforme cliques de anúncios em conversas que convertem.</p></div></div>
 <div class="aud-card anim"><div class="aud-card__icon">📚</div><div><h4>Infoprodutores</h4><p>Sua página ganha um vendedor que responde e converte automaticamente.</p></div></div>
 <div class="aud-card anim"><div class="aud-card__icon">🏢</div><div><h4>Agências</h4><p>Entregue vendedores automáticos white label para clientes.</p></div></div>
@@ -779,6 +999,25 @@ img{max-width:100%;height:auto;display:block}
 <div class="manifesto__box anim">
 <div class="manifesto__big">Links estáticos são de 2019.<br><span class="text-grad">O futuro é conversa.</span></div>
 <p class="manifesto__sub">Todo criador, gestor e infoprodutor ainda usa páginas que não conversam. Visitantes chegam, leem sozinhos e vão embora. O LinkMágico é o primeiro vendedor automático que transforma qualquer link em uma conversa de venda — 24 horas por dia.</p>
+</div>
+</div>
+</section>
+
+<!-- INTEGRAÇÕES -->
+<section class="integrations section--surface">
+<div class="container" style="text-align:center">
+<span class="section-tag"><i class="fas fa-plug"></i> FUNCIONA COM AS FERRAMENTAS QUE VOCÊ JÁ USA</span>
+<h2 class="section-title" style="margin-top:16px">Integra com suas <span class="text-grad">plataformas favoritas</span></h2>
+<p class="section-subtitle">O LinkMágico se conecta nativamente com as maiores plataformas do mercado digital brasileiro.</p>
+<div class="integrations__logos">
+<div class="integrations__item"><img src="logo-hotmart.svg" alt="Hotmart"><span>Hotmart</span></div>
+<div class="integrations__item"><img src="logo-kiwify.svg" alt="Kiwify"><span>Kiwify</span></div>
+<div class="integrations__item"><img src="logo-rdstation.svg" alt="RD Station"><span>RD Station</span></div>
+<div class="integrations__item"><img src="logo-activecampaign.svg" alt="ActiveCampaign"><span>ActiveCampaign</span></div>
+<div class="integrations__item"><img src="logo-zapier.svg" alt="Zapier"><span>Zapier</span></div>
+<div class="integrations__item"><img src="logo-whatsapp.svg" alt="WhatsApp"><span>WhatsApp</span></div>
+<div class="integrations__item"><img src="logo-stripe.svg" alt="Stripe"><span>Stripe</span></div>
+<div class="integrations__item"><img src="logo-wordpress.svg" alt="WordPress"><span>WordPress</span></div>
 </div>
 </div>
 </section>
@@ -859,6 +1098,57 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </section>
 
+<!-- DEMOS PRÉ-CONFIGURADAS -->
+<section class="section--dark" style="padding:80px 0" id="demos">
+<div class="container">
+<div style="text-align:center;margin-bottom:50px">
+<span class="section-tag section-tag--green"><i class="fas fa-play-circle"></i> DEMOS AO VIVO</span>
+<h2 class="section-title">Veja <span class="text-grad">funcionando agora</span> — sem cadastro</h2>
+<p class="section-subtitle" style="margin:0 auto">Clique em qualquer nicho e veja o vendedor automático respondendo clientes reais. Zero fricção.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;margin:0 auto">
+<div onclick="openDemoChat('infoproduto','Academia Digital Pro')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(124,58,237,.2)">
+<div class="case-card__icon">📚</div>
+<h4>Curso Digital</h4>
+<p style="font-size:.82rem;color:var(--muted)">Infoproduto com perguntas de alunos</p>
+<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:var(--purple-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
+</div>
+<div onclick="openDemoChat('negocio_local','Clínica Bella Estética')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(16,185,129,.2)">
+<div class="case-card__icon">🏥</div>
+<h4>Clínica Estética</h4>
+<p style="font-size:.82rem;color:var(--muted)">Negócio local com agendamento</p>
+<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--green-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
+</div>
+<div onclick="openDemoChat('ecommerce','TechStore Brasil')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(245,158,11,.2)">
+<div class="case-card__icon">🛍️</div>
+<h4>Loja Virtual</h4>
+<p style="font-size:.82rem;color:var(--muted)">E-commerce com dúvidas de compra</p>
+<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:#fbbf24;padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:24px;color:var(--muted);font-size:.82rem"><i class="fas fa-info-circle" style="color:var(--green)"></i> Clique em qualquer card acima e teste a IA ao vivo, sem sair desta página.</p>
+
+<!-- DEMO CHAT MODAL -->
+<div id="demoChatOverlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:9999;align-items:center;justify-content:center;animation:fadeIn .3s ease">
+<div style="width:100%;max-width:440px;height:80vh;max-height:640px;background:var(--surface);border:1px solid var(--border);border-radius:24px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);margin:20px;position:relative">
+<div style="background:linear-gradient(135deg,var(--purple),#6d28d9);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
+<div style="display:flex;align-items:center;gap:12px">
+<div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem" id="demoAvatar">🤖</div>
+<div><div style="font-weight:700;font-size:.9rem;color:#fff" id="demoTitle">Demo</div><div style="font-size:.72rem;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:#34d399;display:inline-block"></span> Online agora</div></div>
+</div>
+<button onclick="closeDemoChat()" style="background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,.25)'" onmouseout="this.style.background='rgba(255,255,255,.15)'">✕</button>
+</div>
+<div id="demoChatMessages" style="flex:1;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:var(--bg)"></div>
+<div id="demoChatTyping" style="display:none;padding:4px 16px 0"><div style="background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:10px 16px;font-size:.82rem;color:var(--muted);display:inline-flex;align-items:center;gap:6px;align-self:flex-start"><span style="animation:typeDot 1.4s infinite">●</span><span style="animation:typeDot 1.4s .2s infinite">●</span><span style="animation:typeDot 1.4s .4s infinite">●</span></div></div>
+<div style="padding:14px 16px;background:var(--surface);border-top:1px solid var(--border);display:flex;gap:10px">
+<input type="text" id="demoChatInput" placeholder="Digite sua pergunta..." style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:24px;padding:12px 18px;color:var(--text);font-size:.9rem;outline:none;font-family:inherit;transition:border-color .2s" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border)'">
+<button onclick="sendDemoMessage()" id="demoSendBtn" style="width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"><i class="fas fa-paper-plane"></i></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- AUTORIDADE -->
 <section class="authority section--dark" id="quem-criou">
 <div class="container">
@@ -867,23 +1157,39 @@ img{max-width:100%;height:auto;display:block}
 <img src="edvaldo-foto.png" alt="Edvaldo — Criador do LinkMágico" class="authority__photo">
 </div>
 <div class="anim">
-<span class="authority__tag"><i class="fas fa-user-shield"></i> POR QUE O LINK MÁGICO EXISTE</span>
-<h2 class="authority__name">Edvaldo</h2>
-<p class="authority__role">Criador do LinkMágico · Pesquisador em IA aplicada à conversão digital</p>
-<p class="authority__text">O LinkMágico nasceu após anos observando empresas, afiliados e criadores investindo em tráfego… mas <strong>perdendo vendas porque os visitantes chegavam em páginas frias, estáticas e sem interação.</strong></p>
-<p class="authority__text">A ideia era simples: transformar um link comum em um <strong>vendedor automático</strong> capaz de conversar, responder dúvidas e conduzir visitantes até a conversão — 24 horas por dia.</p>
-<p class="authority__text">Projeto desenvolvido unindo experiência em <strong>gestão comercial, automação e Inteligência Artificial</strong> aplicada ao comportamento de compra. Formação em Gestão Comercial e Tecnologia em IA pela UNINOVE.</p>
+<span class="authority__tag"><i class="fas fa-user-shield"></i> SOBRE O FUNDADOR</span>
+<h2 class="authority__name">Edvaldo Luiz da Silva</h2>
+<p class="authority__role">Fundador do LinkMágico · Pesquisador em IA Aplicada</p>
+<p class="authority__text">O LinkMágico nasceu da minha experiência prática na gestão comercial. Acompanhei empresas e criadores investindo fortunas em tráfego, mas <strong>perdendo clientes todos os dias porque os visitantes chegavam em páginas frias e sem suporte.</strong></p>
+<p class="authority__text">Apliquei meu conhecimento acadêmico e técnico para construir a solução definitiva: transformar um simples link em um <strong>vendedor automático</strong>, treinado no seu negócio e focado 100% em conversão e objeções, trabalhando 24 horas por dia.</p>
 <div class="authority__credentials">
-<span class="authority__cred"><i class="fas fa-check"></i> 18 meses de desenvolvimento</span>
-<span class="authority__cred"><i class="fas fa-check"></i> Multi-LLM</span>
-<span class="authority__cred"><i class="fas fa-check"></i> Arquitetura SaaS</span>
-<span class="authority__cred"><i class="fas fa-check"></i> IA + Automação + Playwright</span>
-<span class="authority__cred"><i class="fas fa-check"></i> Redis + Cache inteligente</span>
+<span class="authority__cred" style="color:var(--green-l)"><i class="fas fa-graduation-cap"></i> Formação: Gestão Comercial & Tecnologia em IA (UNINOVE)</span>
+<span class="authority__cred"><i class="fas fa-certificate"></i> Credenciais Verificáveis em Automação</span>
+<span class="authority__cred"><i class="fas fa-code-branch"></i> Arquiteto de Software e IA</span>
+<span class="authority__cred"><i class="fas fa-check-circle"></i> 18 meses de Pesquisa & Desenvolvimento</span>
 </div>
-<p style="font-size:.78rem;color:var(--muted);margin-bottom:10px;font-weight:600">📸 Bastidores do produto:</p>
-<div class="authority__bastidores">
-<img src="bastidores-dev.png" alt="Ambiente de desenvolvimento do LinkMágico" class="authority__bastidor-img">
-<img src="bastidores-analytics.png" alt="Dashboard de analytics do LinkMágico" class="authority__bastidor-img">
+<a href="https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182" target="_blank" class="btn btn--secondary" style="margin-top:20px;display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-color:rgba(10,102,194,0.3)">
+<i class="fab fa-linkedin" style="font-size:1.3rem;color:#0a66c2"></i> Conectar no LinkedIn
+</a>
+<p style="font-size:.95rem;color:var(--text);margin-bottom:14px;margin-top:36px;font-weight:700">📸 A estrutura real por trás da mágica:</p>
+<style>
+.bastidores-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.bastidores-grid img{width:100%;height:120px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid rgba(100,150,255,.12);transition:transform .3s,box-shadow .3s;cursor:pointer}
+.bastidores-grid img:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(30,107,255,.25);z-index:2}
+@media(max-width:768px){.bastidores-grid{grid-template-columns:repeat(3,1fr)}.bastidores-grid img{height:90px}}
+@media(max-width:480px){.bastidores-grid{grid-template-columns:repeat(2,1fr)}.bastidores-grid img{height:80px}}
+</style>
+<div class="bastidores-grid">
+<img src="GITHUB.png" alt="Código-fonte e Versionamento" title="Repositório GitHub">
+<img src="printV2rdlinkedin.png" alt="Arquitetura de Servidor" title="Servidores e Requisições">
+<img src="printdashboardlinkedin.png" alt="Dashboard de Analytics" title="Painel de Métricas">
+<img src="prinSitelinkedin.png" alt="Interface Principal" title="Aplicação em Funcionamento">
+<img src="CENTRALDEAJUDa.png" alt="Central de Ajuda" title="Central de Ajuda Integrada">
+<img src="comunidadelk.png" alt="Comunidade" title="Comunidade de Membros">
+<img src="cytre.png" alt="Código do Chat Widget" title="Código-Fonte do Widget de Chat">
+<img src="df.png" alt="Follow-Up Worker" title="Worker de Automação e Follow-Up">
+<img src="sCASD.png" alt="Arquitetura SaaS" title="Documentação Técnica e Stack">
+<img src="xqcw.png" alt="Painel de Integrações" title="Dashboard de Integrações e Widget">
 </div>
 </div>
 </div>
@@ -894,67 +1200,77 @@ img{max-width:100%;height:auto;display:block}
 <section class="pricing section--surface" id="pricing">
 <div class="container">
 <div style="text-align:center;margin-bottom:40px">
-<span class="section-tag section-tag--green"><i class="fas fa-tag"></i> INVESTIMENTO RIDICULAMENTE BAIXO</span>
-<h2 class="section-title">Menos de R$ 8/mês para colocar um <span class="text-grad-g">vendedor automático</span> em qualquer página.</h2>
+<span class="section-tag section-tag--green"><i class="fas fa-tag"></i> INVESTIMENTO QUE SE PAGA SOZINHO</span>
+<h2 class="section-title">Escolha o plano ideal para colocar um <span class="text-grad-g">vendedor automático</span> na sua página.</h2>
 </div>
-<div class="pricing__box anim">
-<div class="pricing__head">
-<p style="color:var(--muted);font-size:.85rem;margin-bottom:8px">O equivalente a um café por semana para transformar cliques em conversas de venda</p>
-<div class="pricing__price"><span class="text-grad-g">R$ 97</span></div>
-<p class="pricing__period">pagamento único · 12 meses · sem mensalidade</p>
-</div>
-<div class="pricing__body">
-<!-- ANCORAGEM DE PREÇO -->
-<div class="anchoring">
-<div class="anchoring__grid">
-<div class="anchoring__item">
-<div class="anchoring__label">Vendedor humano</div>
-<div class="anchoring__value anchoring__value--old">R$ 2.500/mês</div>
-<div class="anchoring__note">+ encargos, folgas, atrasos</div>
-</div>
-<div class="anchoring__item">
-<div class="anchoring__label">Chatbot concorrente</div>
-<div class="anchoring__value anchoring__value--competitor">R$ 197/mês</div>
-<div class="anchoring__note">sem IA de vendas, sem CRM</div>
-</div>
-<div class="anchoring__item anchoring__item--highlight">
-<div class="anchoring__label">LinkMágico</div>
-<div class="anchoring__value anchoring__value--lm">R$ 8/mês</div>
-<div class="anchoring__note">IA vendedora + CRM + 24h</div>
-</div>
-</div>
-</div>
-<div class="pricing__roi">
-<div class="pricing__roi-main">💰 Uma única venda pode pagar o ano inteiro.</div>
-<div class="pricing__roi-sub">Enquanto um vendedor humano custa R$ 2.500/mês, o LinkMágico custa menos de R$ 8/mês — e nunca tira folga.</div>
-</div>
-<ul class="pricing__features">
-<li><i class="fas fa-check"></i> Vendedor automático 24h na sua página</li>
-<li><i class="fas fa-check"></i> CRM completo com pipeline de oportunidades</li>
-<li><i class="fas fa-check"></i> Captura automática de leads</li>
-<li><i class="fas fa-check"></i> White Label — sua marca no chat</li>
-<li><i class="fas fa-check"></i> Widget para qualquer site</li>
-<li><i class="fas fa-check"></i> Todas as atualizações futuras</li>
+<style>
+.pricing-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+@media(max-width: 992px) { .pricing-grid-4 { grid-template-columns: repeat(2, 1fr); max-width: 600px; } }
+@media(max-width: 540px) { .pricing-grid-4 { grid-template-columns: 1fr; max-width: 320px; } }
+</style>
+<div class="pricing-grid-4">
+
+<!-- FREE -->
+<div class="pricing__box anim" style="padding:32px 24px;border-color:rgba(16,185,129,.2)">
+<h3 style="font-size:1.3rem;margin-bottom:8px">Free</h3>
+<div style="margin-bottom:20px"><span style="font-size:2.8rem;font-weight:800;color:var(--green)">Grátis</span><span style="font-size:.9rem;color:var(--muted)">/para sempre</span></div>
+<ul class="pricing__features" style="font-size:.88rem">
+<li><i class="fas fa-check" style="color:var(--green)"></i> 1 chatbot</li>
+<li><i class="fas fa-check" style="color:var(--green)"></i> 500 mensagens/mês</li>
+<li><i class="fas fa-check" style="color:var(--green)"></i> 3 extrações</li>
+<li><i class="fas fa-check" style="color:var(--green)"></i> Widget para site</li>
+<li style="color:var(--muted)"><i class="fas fa-times" style="color:var(--border)"></i> Sem WhatsApp</li>
 </ul>
-<!-- BÔNUS -->
-<div class="bonus">
-<div class="bonus__title">🎁 Bônus exclusivo para quem ativar agora</div>
-<div class="bonus__item"><i class="fas fa-gift"></i><div><strong>E-book: Nutrição de Leads PRO</strong><br><span>Guia completo com estratégias de funil de vendas, segmentação de leads (frio, morno e quente), sequências de follow-up por email e WhatsApp, e estudos de caso reais. Aprenda o que fazer com os leads que o LinkMágico captura para você — e transforme contatos em clientes de forma sistemática.</span></div></div>
+<a href="https://linkmagico.app.br/signup.html" class="btn btn--secondary" style="width:100%;margin-top:20px;border-color:var(--green);color:var(--green)">Começar Grátis</a>
 </div>
+
+<!-- STARTER -->
+<div class="pricing__box anim" style="padding:32px 24px">
+<h3 style="font-size:1.3rem;margin-bottom:8px">Starter</h3>
+<div style="margin-bottom:20px"><span style="font-size:1.1rem;color:var(--muted)">R$</span><span style="font-size:2.8rem;font-weight:800;color:#fff">29</span><span style="font-size:.9rem;color:var(--muted)">/mês</span></div>
+<ul class="pricing__features" style="font-size:.88rem">
+<li><i class="fas fa-check"></i> 3 chatbots</li>
+<li><i class="fas fa-check"></i> 1.000 mensagens/mês</li>
+<li><i class="fas fa-check"></i> 50 extrações</li>
+<li><i class="fas fa-check"></i> API & Webhooks</li>
+<li style="color:var(--muted)"><i class="fas fa-times" style="color:var(--border)"></i> Sem WhatsApp</li>
+</ul>
+<a href="https://linkmagico.app.br/pricing.html" class="btn btn--secondary" style="width:100%;margin-top:20px">Assinar Starter</a>
 </div>
-<div class="pricing__foot">
-<a href="https://pay.hotmart.com/G103177435I" class="btn btn--cta" style="width:100%"><i class="fas fa-bolt"></i> Ativar meu vendedor automático — R$ 97</a>
-<div class="pricing__guarantee"><i class="fas fa-shield-alt"></i><div><strong>Garantia de 7 dias — Risco zero.</strong> Não gostou? 100% devolvido sem burocracia.</div></div>
-<!-- URGÊNCIA SEM CRONÔMETRO -->
-<div class="urgency">
-<div class="urgency__title">⚡ Preço de lançamento — por tempo limitado</div>
-<div class="urgency__text">O LinkMágico está em fase de lançamento e o valor atual de <strong>R$ 97/ano</strong> é exclusivo para os primeiros usuários. Em breve, o preço será reajustado para <strong>R$ 297/ano</strong> — o que ainda será barato por tudo que entrega. Quem ativar agora <strong>garante o preço de fundador para sempre.</strong></div>
+
+<!-- PRO -->
+<div class="pricing__box anim" style="padding:32px 24px;border-color:rgba(124,58,237,.5);background:linear-gradient(180deg,rgba(124,58,237,.08),transparent);position:relative;overflow:visible">
+<div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--purple-l));color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;z-index:2">⭐ Mais Popular</div>
+<h3 style="font-size:1.3rem;margin-bottom:8px">Pro</h3>
+<div style="margin-bottom:20px"><span style="font-size:1.1rem;color:var(--muted)">R$</span><span style="font-size:2.8rem;font-weight:800;color:#fff">69</span><span style="font-size:.9rem;color:var(--muted)">/mês</span></div>
+<ul class="pricing__features" style="font-size:.88rem">
+<li><i class="fas fa-check"></i> 10 chatbots</li>
+<li><i class="fas fa-check"></i> 5.000 mensagens/mês</li>
+<li><i class="fas fa-check"></i> 200 extrações</li>
+<li style="color:var(--purple-l);font-weight:600"><i class="fas fa-check"></i> WhatsApp ✅</li>
+<li><i class="fas fa-check"></i> Remover "Powered by"</li>
+</ul>
+<a href="https://linkmagico.app.br/pricing.html" class="btn btn--cta" style="width:100%;margin-top:20px">Assinar Pro</a>
 </div>
-<div style="display:flex;justify-content:center;gap:16px;margin-top:16px;flex-wrap:wrap">
-<span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-lock" style="color:var(--green)"></i> Pagamento seguro via Hotmart</span>
-<span style="font-size:.78rem;color:var(--muted)"><i class="fas fa-bolt" style="color:var(--green)"></i> Acesso imediato</span>
+
+<!-- BUSINESS -->
+<div class="pricing__box anim" style="padding:32px 24px">
+<h3 style="font-size:1.3rem;margin-bottom:8px">Business</h3>
+<div style="margin-bottom:20px"><span style="font-size:1.1rem;color:var(--muted)">R$</span><span style="font-size:2.8rem;font-weight:800;color:#fff">97</span><span style="font-size:.9rem;color:var(--muted)">/mês</span></div>
+<ul class="pricing__features" style="font-size:.88rem">
+<li><i class="fas fa-check"></i> Chatbots Ilimitados</li>
+<li><i class="fas fa-check"></i> Mensagens Ilimitadas</li>
+<li><i class="fas fa-check"></i> Extrações Ilimitadas</li>
+<li style="color:var(--purple-l);font-weight:600"><i class="fas fa-check"></i> WhatsApp ✅</li>
+<li><i class="fas fa-check"></i> WhiteLabel completo</li>
+</ul>
+<a href="https://linkmagico.app.br/pricing.html" class="btn btn--secondary" style="width:100%;margin-top:20px">Assinar Business</a>
 </div>
+
 </div>
+<div style="display:flex;justify-content:center;gap:16px;margin-top:32px;flex-wrap:wrap">
+<span style="font-size:.85rem;color:var(--muted)"><i class="fas fa-lock" style="color:var(--green)"></i> Pagamento seguro via Stripe</span>
+<span style="font-size:.85rem;color:var(--muted)"><i class="fas fa-shield-alt" style="color:var(--green)"></i> Cancele quando quiser</span>
 </div>
 </div>
 </section>
@@ -970,10 +1286,190 @@ img{max-width:100%;height:auto;display:block}
 <div class="faq-item"><button class="faq-item__q"><span>Funciona pra qualquer nicho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim. O LinkMágico aprende sobre qualquer produto ou serviço automaticamente — infoprodutos, SaaS, clínicas, restaurantes, e-commerce, consultoria. Basta colar o link e ele vira o vendedor automático da sua página.</p></div></div>
 <div class="faq-item"><button class="faq-item__q"><span>Preciso saber programar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. Se você sabe copiar e colar um link, consegue ativar. O setup leva 2 minutos.</p></div></div>
 <div class="faq-item"><button class="faq-item__q"><span>O LinkMágico inicia conversa sozinho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. O visitante inicia a conversa clicando no link, botão ou widget. Depois disso, o LinkMágico assume automaticamente — respondendo dúvidas, conduzindo para ação e capturando leads.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>R$ 97 por 12 meses mesmo? Sem mensalidade?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Exato. Pagamento único de R$ 97 = 12 meses de vendedor automático na sua página. Menos de R$ 8/mês. Sem taxa escondida.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>E se eu não gostar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Garantia incondicional de 7 dias. Pediu reembolso, devolvemos 100%. Sem perguntas. Risco zero.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Posso trocar de plano ou cancelar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Você pode fazer upgrade, downgrade ou cancelar a qualquer momento sem burocracia, direto pelo seu painel.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>O pagamento é seguro?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim, processamos os pagamentos de forma totalmente segura através da Stripe (a mesma plataforma usada por Amazon e Google).</p></div></div>
 <div class="faq-item"><button class="faq-item__q"><span>O CRM está realmente incluso?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>100% incluso. Pipeline visual de oportunidades, classificação de leads, histórico de conversas, exportação. Você vê exatamente quem queria comprar.</p></div></div>
 <div class="faq-item"><button class="faq-item__q"><span>Funciona sem página de vendas?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Funciona para qualquer negócio que recebe visitantes — o vendedor automático tira dúvidas, agenda e captura leads sem precisar de checkout.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- PROGRAMA DE AFILIADOS — INDIQUE E GANHE -->
+<section class="affil section--surface" id="afiliados">
+<div class="container">
+<div style="text-align:center;margin-bottom:50px">
+<span class="section-tag" style="background:rgba(245,158,11,.1);color:#fbbf24;border-color:rgba(245,158,11,.2)"><i class="fas fa-handshake"></i> PROGRAMA DE PARCEIROS</span>
+<h2 class="section-title">Indique o LinkMágico. <span style="background:linear-gradient(135deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Ganhe comissão recorrente.</span></h2>
+<p class="section-subtitle" style="margin:0 auto">Compartilhe seu link exclusivo e receba 20% de comissão recorrente em cada plano pago — enquanto o indicado for cliente.</p>
+</div>
+<div class="affil__box anim">
+<div class="affil__head">
+<div class="affil__badge"><i class="fas fa-lock"></i> 20% de comissão recorrente</div>
+<h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:8px">Indique e Ganhe</h3>
+<p style="color:var(--muted);font-size:.9rem">Cada pessoa que assinar um plano pago pelo seu link gera comissão mensal para você — sem limite.</p>
+</div>
+<div class="affil__steps">
+<div class="affil__step">
+<div class="affil__step-num">1</div>
+<h4>Compartilhe</h4>
+<p>Envie seu link exclusivo para amigos, colegas e redes sociais.</p>
+</div>
+<div class="affil__step">
+<div class="affil__step-num">2</div>
+<h4>Eles se cadastram</h4>
+<p>O indicado cria uma conta grátis usando seu link de referência.</p>
+</div>
+<div class="affil__step">
+<div class="affil__step-num">3</div>
+<h4>Você ganha</h4>
+<p>Quando o indicado assinar um plano pago, você recebe 20% de comissão — todo mês.</p>
+</div>
+</div>
+<div class="affil__sim">
+<div class="affil__sim-title">💰 Simulação de Ganhos</div>
+<table class="affil__table">
+<thead><tr><th>Se indicar</th><th>Plano</th><th>Valor</th><th>Sua comissão</th></tr></thead>
+<tbody>
+<tr><td>5 clientes</td><td>Starter (R$29)</td><td>R$145/mês</td><td class="affil__comm">R$29/mês</td></tr>
+<tr><td>5 clientes</td><td>Pro (R$69)</td><td>R$345/mês</td><td class="affil__comm">R$69/mês</td></tr>
+<tr><td>10 clientes</td><td>Pro (R$69)</td><td>R$690/mês</td><td class="affil__comm">R$138/mês</td></tr>
+<tr><td>20 clientes</td><td>Mix</td><td>~R$1.000/mês</td><td class="affil__comm">~R$200/mês</td></tr>
+</tbody>
+</table>
+</div>
+<div class="affil__foot">
+<a href="https://linkmagico.app.br/signup.html" class="btn btn--primary" style="background:linear-gradient(135deg,#f59e0b,#f97316);padding:14px 32px;font-size:.95rem" target="_blank"><i class="fas fa-user-plus"></i> Criar Conta Grátis e Começar a Indicar</a>
+<p style="color:var(--muted);font-size:.78rem"><i class="fas fa-gift" style="color:#fbbf24"></i> Ao criar sua conta gratuita, você acessa o programa "Indique e Ganhe" direto no painel.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 🎨 WHITELABEL — BLOCO PARA AGÊNCIAS E GESTORES DE TRÁFEGO -->
+<section class="section--dark" id="whitelabel" style="padding:80px 0;position:relative;overflow:hidden">
+<!-- Background decorativo -->
+<div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.08) 0%,transparent 70%);pointer-events:none"></div>
+<div style="position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(16,185,129,.06) 0%,transparent 70%);pointer-events:none"></div>
+
+<div class="container" style="position:relative;z-index:2">
+<!-- Header -->
+<div style="text-align:center;margin-bottom:56px" class="anim">
+<span class="section-tag" style="background:rgba(168,85,247,.12);color:#c084fc;border-color:rgba(168,85,247,.25)"><i class="fas fa-paint-brush"></i> White Label para Agências</span>
+<h2 class="section-title">Sua marca. Sua agência.<br><span class="text-grad">Seus vendedores automáticos.</span></h2>
+<p class="section-subtitle" style="margin:0 auto">Gestores de tráfego e agências: entreguem vendedores automáticos com a <strong style="color:var(--text)">marca do cliente</strong> e multipliquem o faturamento de cada conta. Sem código, sem complicação.</p>
+</div>
+
+<!-- Grid principal: 2 colunas -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:48px">
+
+<!-- Coluna 1: A Oportunidade -->
+<div class="anim">
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),#c084fc,var(--green))"></div>
+<div style="font-size:1.5rem;margin-bottom:8px">🏢</div>
+<h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:16px;color:var(--text)">A Oportunidade: <span style="color:#c084fc">200.000+ gestores de tráfego</span></h3>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.12);border-radius:12px;font-size:.88rem">
+<i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i>
+<span>Cada gestor gerencia <strong style="color:var(--text)">5–20 clientes</strong>. Cada um precisa de um vendedor automático.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:12px;font-size:.88rem">
+<i class="fas fa-check-circle" style="color:var(--purple-l);margin-top:3px;flex-shrink:0"></i>
+<span>Setup em <strong style="color:var(--text)">2 minutos por cliente</strong> — cole o link e a IA aprende sozinha.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.12);border-radius:12px;font-size:.88rem">
+<i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i>
+<span>Widget com <strong style="color:var(--text)">a marca da sua agência</strong> — seu cliente nunca vê "LinkMágico".</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:12px;font-size:.88rem">
+<i class="fas fa-check-circle" style="color:var(--purple-l);margin-top:3px;flex-shrink:0"></i>
+<span><strong style="color:var(--text)">Aumenta a conversão dos anúncios</strong> — argumento perfeito para reter clientes.</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Coluna 2: Simulação de receita -->
+<div class="anim">
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),#34d399,#10b981)"></div>
+<div style="font-size:1.5rem;margin-bottom:8px">💰</div>
+<h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:20px;color:var(--text)">Revenue Share: <span class="text-grad-g">multiplique sua receita</span></h3>
+
+<!-- Tabela de simulação -->
+<div style="background:var(--surface2);border:1px solid var(--border);border-radius:14px;overflow:hidden">
+<table style="width:100%;border-collapse:collapse;font-size:.85rem">
+<thead>
+<tr style="border-bottom:1px solid var(--border)">
+<th style="text-align:left;padding:12px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">Cenário</th>
+<th style="text-align:center;padding:12px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">Clientes</th>
+<th style="text-align:right;padding:12px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">Receita/mês</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid rgba(255,255,255,.03)">
+<td style="padding:12px 16px;color:var(--muted)">Conservador</td>
+<td style="text-align:center;padding:12px 16px;font-weight:700">5 clientes</td>
+<td style="text-align:right;padding:12px 16px;color:var(--green-l);font-weight:700;font-family:'Space Grotesk',sans-serif">R$ 985 – R$ 2.485</td>
+</tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,.03)">
+<td style="padding:12px 16px;color:var(--muted)">Moderado</td>
+<td style="text-align:center;padding:12px 16px;font-weight:700">10 clientes</td>
+<td style="text-align:right;padding:12px 16px;color:var(--green-l);font-weight:700;font-family:'Space Grotesk',sans-serif">R$ 1.970 – R$ 4.970</td>
+</tr>
+<tr>
+<td style="padding:12px 16px;color:var(--muted)">Escala</td>
+<td style="text-align:center;padding:12px 16px;font-weight:700">20 clientes</td>
+<td style="text-align:right;padding:12px 16px;color:#fbbf24;font-weight:800;font-family:'Space Grotesk',sans-serif;font-size:.95rem">R$ 3.940 – R$ 9.940</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:.75rem;color:var(--muted);margin-top:12px;text-align:center;line-height:1.5">
+Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e revende a partir de <strong style="color:var(--text)">R$ 197–497</strong> por cliente. 100% da margem é sua.
+</p>
+</div>
+</div>
+
+</div>
+
+<!-- Features WhiteLabel -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px">
+<div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--purple)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
+<div style="font-size:1.4rem;margin-bottom:10px">🎨</div>
+<h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Cores & Logo Custom</h4>
+<p style="font-size:.78rem;color:var(--muted);line-height:1.5">Widget com as cores e logotipo da agência ou do cliente final</p>
+</div>
+<div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--green)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
+<div style="font-size:1.4rem;margin-bottom:10px">🚫</div>
+<h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Remove "Powered by"</h4>
+<p style="font-size:.78rem;color:var(--muted);line-height:1.5">Selo LinkMágico removido — 100% com a identidade da sua marca</p>
+</div>
+<div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--purple)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
+<div style="font-size:1.4rem;margin-bottom:10px">⚡</div>
+<h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Setup em 2 Min</h4>
+<p style="font-size:.78rem;color:var(--muted);line-height:1.5">Cole o link do cliente → IA aprende → vendedor pronto para usar</p>
+</div>
+<div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--green)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
+<div style="font-size:1.4rem;margin-bottom:10px">📊</div>
+<h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">CRM + Analytics</h4>
+<p style="font-size:.78rem;color:var(--muted);line-height:1.5">Dashboard completo com leads, pipeline, follow-up e métricas por cliente</p>
+</div>
+</div>
+
+<!-- CTA Central -->
+<div style="text-align:center" class="anim">
+<div style="max-width:580px;margin:0 auto;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(16,185,129,.06));border:1px solid rgba(124,58,237,.18);border-radius:20px;padding:36px 32px">
+<div style="font-size:2rem;margin-bottom:12px">🚀</div>
+<h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:8px">Comece a revender vendedores automáticos hoje</h3>
+<p style="color:var(--muted);font-size:.9rem;margin-bottom:24px;line-height:1.6">Plano <strong style="color:var(--text)">Business</strong> a partir de <strong style="color:var(--green-l)">R$ 97/mês</strong> — inclui WhiteLabel completo, multi-chatbot ilimitado e suporte prioritário.</p>
+<a href="https://linkmagico.app.br/pricing.html" class="btn btn--cta" style="font-size:1rem;padding:16px 36px"><i class="fas fa-bolt"></i> Ativar WhiteLabel Agora</a>
+<p style="margin-top:14px;font-size:.78rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+<span><i class="fas fa-shield-alt" style="color:var(--green);margin-right:4px"></i> Garantia 7 dias</span>
+<span><i class="fas fa-infinity" style="color:var(--purple-l);margin-right:4px"></i> Chatbots ilimitados</span>
+<span><i class="fas fa-headset" style="color:var(--green);margin-right:4px"></i> Suporte prioritário</span>
+</p>
+</div>
 </div>
 </div>
 </section>
@@ -995,8 +1491,8 @@ img{max-width:100%;height:auto;display:block}
 <p class="section-subtitle" style="margin:0 auto 12px;text-align:center">Toda página recebe visitantes. Poucas sabem vender.</p>
 <p class="section-subtitle" style="margin:0 auto 32px;text-align:center">O LinkMágico transforma qualquer link em um vendedor automático treinado no seu negócio.</p>
 <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px">
-<a href="https://pay.hotmart.com/G103177435I" class="btn btn--cta"><i class="fas fa-bolt"></i> Ativar meu vendedor automático — R$ 97</a>
-<a href="https://demo.linkmagico.app.br" class="btn btn--secondary" target="_blank"><i class="fas fa-play"></i> Testar meu vendedor</a>
+<a href="https://linkmagico.app.br/pricing.html" class="btn btn--cta"><i class="fas fa-bolt"></i> Escolher meu plano</a>
+<a href="#demos" class="btn btn--secondary"><i class="fas fa-play"></i> Testar meu vendedor</a>
 </div>
 <p style="color:var(--muted);font-size:.82rem"><i class="fas fa-shield-alt" style="color:var(--green)"></i> 7 dias de garantia incondicional — Risco zero</p>
 <p style="color:var(--muted);font-size:.78rem;margin-top:12px;font-style:italic">"Seu link agora sabe vender."</p>
@@ -1017,24 +1513,24 @@ img{max-width:100%;height:auto;display:block}
 <div class="footer__inner">
 <div class="footer__brand">⚡ Link<span class="logo-highlight">Mágico</span></div>
 <div class="footer__links">
-<a href="https://www.arsenalsecretodosceos.com.br/termosdeuso" target="_blank">Termos de Uso</a>
-<a href="https://www.arsenalsecretodosceos.com.br/politicasdeprivacidade" target="_blank">Privacidade</a>
+<a href="https://linkmagico.app.br/termos.html" target="_blank">Termos de Uso</a>
+<a href="https://linkmagico.app.br/privacidade.html" target="_blank">Privacidade</a>
 <a href="https://linkmagico.app.br/api-docs" target="_blank">API Docs</a>
 <a href="https://wa.me/5511925312151" target="_blank">WhatsApp</a>
 <a href="https://www.instagram.com/linkmagico.ia" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
 </div>
 </div>
 <div class="footer__copy">
-<p>© 2025 LinkMágico | Todos os direitos reservados</p>
+<p>© 2026 LinkMágico | Todos os direitos reservados</p>
 <p style="margin-top:6px">Este produto não garante a obtenção de resultados. Qualquer referência a desempenho é meramente ilustrativa.</p>
-<p style="margin-top:6px">Vendido via <strong>Hotmart</strong> • Pagamento 100% Seguro</p>
+<p style="margin-top:6px">Pagamento seguro via <strong>Stripe</strong> • Cancele quando quiser</p>
 </div>
 </div>
 </footer>
 
 <!-- FLOATING CTA -->
 <div class="floating-cta">
-<a href="https://pay.hotmart.com/G103177435I" target="_blank">⚡ Ativar vendedor automático</a>
+<a href="https://linkmagico.app.br/pricing.html">⚡ Ver Planos e Preços</a>
 </div>
 
 <script>
@@ -1067,6 +1563,38 @@ setTimeout(function(){m.style.transition='opacity .4s ease,transform .4s ease';m
 var counterObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var el=e.target;var target=parseInt(el.getAttribute('data-count'));if(!target)return;var duration=1500;var start=0;var startTime=null;function animate(ts){if(!startTime)startTime=ts;var progress=Math.min((ts-startTime)/duration,1);el.textContent=Math.floor(progress*target)+'+';if(progress<1)requestAnimationFrame(animate);else el.textContent=target+'+';}requestAnimationFrame(animate);counterObs.unobserve(el);}})},{threshold:0.3});
 document.querySelectorAll('.metric-card__number[data-count]').forEach(function(el){counterObs.observe(el)});
 
+// Contadores reais via API (com fallback para valores estáticos)
+(function(){
+  // Fallback values (usados se a API falhar)
+  var fallbackLeads=312, fallbackAssistants=47;
+  function applyStats(leads, assistants){
+    var leadsEl=document.querySelector('.metric-card__number[data-count="312"]');
+    if(leadsEl)leadsEl.setAttribute('data-count',leads);
+    var assistEl=document.getElementById('dynamicAssistants');
+    if(assistEl)assistEl.setAttribute('data-count',assistants);
+  }
+  try{
+    fetch('https://linkmagico.app.br/api/analytics/public-stats')
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.success){
+          applyStats(d.totalLeads||fallbackLeads, d.totalAssistants||fallbackAssistants);
+        }
+      })
+      .catch(function(){ /* fallback silencioso — valores estáticos do HTML */ });
+  }catch(e){/* fallback */}
+})();
+
+// Mobile carousel for modules and audience grids
+(function(){
+  if(window.innerWidth<=768){
+    var mg=document.getElementById('modulesGrid');
+    var ag=document.getElementById('audienceGrid');
+    if(mg)mg.classList.add('mobile-carousel');
+    if(ag)ag.classList.add('mobile-carousel');
+  }
+})();
+
 console.log('🚀 LinkMágico — Novo site carregado')});
 </script>
 
@@ -1075,9 +1603,9 @@ console.log('🚀 LinkMágico — Novo site carregado')});
 (function() {
     var config = {
         robotName: "LinkMágico-IA",
-        salesUrl: "https://site.linkmagico.app.br/",
+        salesUrl: "https://site-nkw8.onrender.com/",
         instructions: "Sempre responda de forma amigável, consultiva e entusiasmada, mas objetiva",
-        primaryColor: "#18e77c",
+        primaryColor: "#3b82f6",
         // SAFE PATCH - QA FIX: BUG-006 - Removido apikey duplicado
         apiKey: "LMV7-D5Z4-YIQG-A1Z7",
         greetingMessage: "Oi! Posso ajudar?",
@@ -1095,12 +1623,12 @@ console.log('🚀 LinkMágico — Novo site carregado')});
     }
     var isOpen = false, leadId = null, leadCaptured = false, conversationId = 'lm_' + Date.now(), calendarHash = null;
     var styles = document.createElement('style');
-    styles.textContent = '.lm-cal-container{width:100%;max-height:280px;overflow-y:auto;border-radius:12px;background:#f8fafc;border:1px solid #e2e8f0}.lm-cal-container::-webkit-scrollbar{width:4px}.lm-cal-container::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:2px}.lm-cal-loading{text-align:center;padding:20px;color:#64748b;font-size:13px}.lm-cal-spinner{display:inline-block;width:20px;height:20px;border:2px solid rgba(59,130,246,.25);border-top-color:'+config.primaryColor+';border-radius:50%;animation:lm-calSpin .8s linear infinite;margin-bottom:8px}@keyframes lm-calSpin{to{transform:rotate(360deg)}}.lm-cal-day{padding:10px 12px;border-bottom:1px solid #e2e8f0}.lm-cal-day:last-child{border-bottom:none}.lm-cal-day-header{font-weight:600;font-size:12px;color:'+config.primaryColor+';margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}.lm-cal-slots{display:flex;flex-wrap:wrap;gap:6px}.lm-cal-slot{padding:6px 12px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;color:#334155;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s ease;font-family:inherit;line-height:1}.lm-cal-slot:hover,.lm-cal-slot.lm-cal-selected{background:'+config.primaryColor+';color:#fff;border-color:'+config.primaryColor+';transform:scale(1.05)}.lm-cal-slot:active{transform:scale(.95)}.lm-cal-confirm{margin-top:12px;padding:10px 16px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:all .2s ease;font-family:inherit}.lm-cal-confirm:hover{transform:translateY(-1px)}.lm-cal-confirm:disabled{opacity:.5;cursor:not-allowed;transform:none}.lm-cal-error,.lm-cal-success{text-align:center;padding:16px;font-size:13px}.lm-widget-container *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Inter,-apple-system,BlinkMacSystemFont,sans-serif}.lm-widget-container{position:fixed;bottom:20px;right:20px;z-index:999999;display:flex;flex-direction:column;align-items:flex-end;gap:12px}.lm-greeting-tooltip{background:#1f2937;color:#fff;padding:10px 16px;border-radius:20px;font-size:14px;font-weight:500;box-shadow:0 4px 15px rgba(0,0,0,.15);display:flex;align-items:center;gap:8px;animation:lm-slideIn .3s ease;cursor:pointer;transition:all .2s ease}.lm-greeting-tooltip:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,.2)}.lm-greeting-tooltip .lm-online-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:lm-pulse 2s infinite}.lm-greeting-tooltip.lm-hidden{display:none}.lm-bubble{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,'+config.primaryColor+' 0%,#1e40af 100%);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(59,130,246,.4);transition:all .3s ease}.lm-bubble:hover{transform:scale(1.1);box-shadow:0 6px 25px rgba(59,130,246,.5)}.lm-bubble svg{width:28px;height:28px;fill:#fff}.lm-bubble.lm-hidden{display:none}.lm-chat-window{position:fixed;bottom:90px;right:20px;width:380px;height:520px;background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.15);display:none;flex-direction:column;overflow:hidden;animation:lm-scaleIn .3s ease;z-index:999998}.lm-chat-window.lm-open{display:flex}.lm-chat-header{background:#fff;border-bottom:1px solid #e5e7eb;padding:16px;display:flex;align-items:center;justify-content:space-between}.lm-chat-header-left{display:flex;align-items:center;gap:12px}.lm-chat-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,'+config.primaryColor+' 0%,#8b5cf6 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:18px}.lm-chat-header-info{display:flex;flex-direction:column}.lm-chat-header-subtitle{font-size:12px;color:#6b7280}.lm-chat-header-title{font-size:15px;font-weight:600;color:#1f2937}.lm-header-btn{width:36px;height:36px;border-radius:50%;border:none;background:#f3f4f6;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease;color:#6b7280}.lm-header-btn:hover{background:#e5e7eb;color:#1f2937}.lm-chat-messages{flex:1;padding:16px;overflow-y:auto;background:#f9fafb;display:flex;flex-direction:column;gap:12px}.lm-message{max-width:80%;padding:12px 16px;border-radius:18px;font-size:14px;line-height:1.5;animation:lm-fadeIn .3s ease}.lm-message.lm-bot{background:#fff;color:#1f2937;align-self:flex-start;border:1px solid #e5e7eb;border-bottom-left-radius:4px}.lm-message.lm-user{background:linear-gradient(135deg,'+config.primaryColor+' 0%,#1e40af 100%);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}.lm-typing{display:none;align-items:center;gap:4px;padding:12px 16px;background:#fff;border-radius:18px;border:1px solid #e5e7eb;align-self:flex-start;max-width:80px}.lm-typing.lm-active{display:flex}.lm-typing-dot{width:8px;height:8px;background:#9ca3af;border-radius:50%;animation:lm-typingBounce 1.4s infinite}.lm-typing-dot:nth-child(2){animation-delay:.2s}.lm-typing-dot:nth-child(3){animation-delay:.4s}.lm-chat-input-area{padding:16px;background:#fff;border-top:1px solid #e5e7eb;display:flex;align-items:center;gap:12px}.lm-chat-input{flex:1;border:1px solid #e5e7eb;border-radius:24px;padding:12px 20px;font-size:14px;outline:none;transition:all .2s ease;background:#f9fafb}.lm-chat-input:focus{border-color:'+config.primaryColor+';background:#fff;box-shadow:0 0 0 3px rgba(59,130,246,.1)}.lm-chat-input::placeholder{color:#9ca3af}.lm-send-btn{width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,'+config.primaryColor+' 0%,#1e40af 100%);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease}.lm-send-btn:hover{transform:scale(1.05);box-shadow:0 4px 15px rgba(59,130,246,.4)}.lm-send-btn:disabled{opacity:.5;cursor:not-allowed}.lm-send-btn svg{width:20px;height:20px}.lm-lead-prompt{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin:8px 0;align-self:flex-start;max-width:90%}.lm-lead-prompt input{width:100%;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:14px;margin-bottom:10px;outline:none;transition:all .2s ease}.lm-lead-prompt input:focus{border-color:'+config.primaryColor+'}.lm-lead-prompt button{width:100%;background:linear-gradient(135deg,'+config.primaryColor+' 0%,#1e40af 100%);color:#fff;border:none;border-radius:8px;padding:10px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s ease}.lm-lead-prompt button:hover{opacity:.9}@keyframes lm-slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes lm-scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}@keyframes lm-fadeIn{from{opacity:0}to{opacity:1}}@keyframes lm-pulse{0%,100%{opacity:1}50%{opacity:.5}}@keyframes lm-typingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}@media (max-width:480px){.lm-chat-window{width:calc(100% - 20px);height:calc(100% - 100px);right:10px;bottom:80px;border-radius:20px}.lm-widget-container{right:10px;bottom:10px}.lm-bubble{width:55px;height:55px}.lm-greeting-tooltip{display:none}}';
+    styles.textContent = '.lm-cal-container{width:100%;max-height:280px;overflow-y:auto;border-radius:12px;background:#f8fafc;border:1px solid #e2e8f0}.lm-cal-container::-webkit-scrollbar{width:4px}.lm-cal-container::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:2px}.lm-cal-loading{text-align:center;padding:20px;color:#64748b;font-size:13px}.lm-cal-spinner{display:inline-block;width:20px;height:20px;border:2px solid rgba(59,130,246,.25);border-top-color:'+config.primaryColor+';border-radius:50%;animation:lm-calSpin .8s linear infinite;margin-bottom:8px}@keyframes lm-calSpin{to{transform:rotate(360deg)}}.lm-cal-day{padding:10px 12px;border-bottom:1px solid #e2e8f0}.lm-cal-day:last-child{border-bottom:none}.lm-cal-day-header{font-weight:600;font-size:12px;color:'+config.primaryColor+';margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}.lm-cal-slots{display:flex;flex-wrap:wrap;gap:6px}.lm-cal-slot{padding:6px 12px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;color:#334155;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s ease;font-family:inherit;line-height:1}.lm-cal-slot:hover,.lm-cal-slot.lm-cal-selected{background:'+config.primaryColor+';color:#fff;border-color:'+config.primaryColor+';transform:scale(1.05)}.lm-cal-slot:active{transform:scale(.95)}.lm-cal-confirm{margin-top:12px;padding:10px 16px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;width:100%;transition:all .2s ease;font-family:inherit}.lm-cal-confirm:hover{transform:translateY(-1px)}.lm-cal-confirm:disabled{opacity:.5;cursor:not-allowed;transform:none}.lm-cal-error,.lm-cal-success{text-align:center;padding:16px;font-size:13px}.lm-widget-container *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Inter,-apple-system,BlinkMacSystemFont,sans-serif}.lm-widget-container{position:fixed;bottom:20px;right:20px;z-index:999999;display:flex;flex-direction:column;align-items:flex-end;gap:12px}.lm-greeting-tooltip{background:#1f2937;color:#fff;padding:10px 16px;border-radius:20px;font-size:14px;font-weight:500;box-shadow:0 4px 15px rgba(0,0,0,.15);display:flex;align-items:center;gap:8px;animation:lm-slideIn .3s ease;cursor:pointer;transition:all .2s ease}.lm-greeting-tooltip:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(0,0,0,.2)}.lm-greeting-tooltip .lm-online-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:lm-pulse 2s infinite}.lm-greeting-tooltip.lm-hidden{display:none}.lm-bubble{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,'+config.primaryColor+' 0%,#1e40af 100%);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(59,130,246,.4);transition:all .3s ease}.lm-bubble:hover{transform:scale(1.1);box-shadow:0 6px 25px rgba(59,130,246,.5)}.lm-bubble svg{width:28px;height:28px;fill:#fff}.lm-bubble.lm-hidden{display:none}.lm-chat-window{position:fixed;bottom:90px;right:20px;width:380px;height:520px;background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.15);display:none;flex-direction:column;overflow:hidden;animation:lm-scaleIn .3s ease;z-index:999998}.lm-chat-window.lm-open{display:flex}.lm-chat-header{background:#fff;border-bottom:1px solid #e5e7eb;padding:16px;display:flex;align-items:center;justify-content:space-between}.lm-chat-header-left{display:flex;align-items:center;gap:12px}.lm-chat-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,'+config.primaryColor+' 0%,#8b5cf6 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:18px}.lm-chat-header-info{display:flex;flex-direction:column}.lm-chat-header-subtitle{font-size:12px;color:#6b7280}.lm-chat-header-title{font-size:15px;font-weight:600;color:#1f2937}.lm-header-btn{width:36px;height:36px;border-radius:50%;border:none;background:#f3f4f6;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease;color:#6b7280}.lm-header-btn:hover{background:#e5e7eb;color:#1f2937}.lm-chat-messages{flex:1;padding:16px;overflow-y:auto;background:#f9fafb;display:flex;flex-direction:column;gap:12px}.lm-message{max-width:80%;padding:12px 16px;border-radius:18px;font-size:14px;line-height:1.5;animation:lm-fadeIn .3s ease}.lm-message.lm-bot{background:#fff;color:#1f2937;align-self:flex-start;border:1px solid #e5e7eb;border-bottom-left-radius:4px}.lm-message.lm-user{background:linear-gradient(135deg,'+config.primaryColor+' 0%,#1e40af 100%);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}.lm-typing{display:none;align-items:center;gap:4px;padding:12px 16px;background:#fff;border-radius:18px;border:1px solid #e5e7eb;align-self:flex-start;max-width:80px}.lm-typing.lm-active{display:flex}.lm-typing-dot{width:8px;height:8px;background:#9ca3af;border-radius:50%;animation:lm-typingBounce 1.4s infinite}.lm-typing-dot:nth-child(2){animation-delay:.2s}.lm-typing-dot:nth-child(3){animation-delay:.4s}.lm-chat-input-area{padding:16px;background:#fff;border-top:1px solid #e5e7eb;display:flex;align-items:center;gap:12px}.lm-chat-input{flex:1;border:1px solid #e5e7eb;border-radius:24px;padding:12px 20px;font-size:14px;outline:none;transition:all .2s ease;background:#f9fafb}.lm-chat-input:focus{border-color:'+config.primaryColor+';background:#fff;box-shadow:0 0 0 3px rgba(59,130,246,.1)}.lm-chat-input::placeholder{color:#9ca3af}.lm-send-btn{width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,'+config.primaryColor+' 0%,#1e40af 100%);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease}.lm-send-btn:hover{transform:scale(1.05);box-shadow:0 4px 15px rgba(59,130,246,.4)}.lm-send-btn:disabled{opacity:.5;cursor:not-allowed}.lm-send-btn svg{width:20px;height:20px}.lm-lead-prompt{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin:8px 0;align-self:flex-start;max-width:90%}.lm-lead-prompt input{width:100%;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:14px;margin-bottom:10px;outline:none;transition:all .2s ease}.lm-lead-prompt input:focus{border-color:'+config.primaryColor+'}.lm-lead-prompt button{width:100%;background:linear-gradient(135deg,'+config.primaryColor+' 0%,#1e40af 100%);color:#fff;border:none;border-radius:8px;padding:10px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s ease}.lm-lead-prompt button:hover{opacity:.9}@keyframes lm-slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes lm-scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}@keyframes lm-fadeIn{from{opacity:0}to{opacity:1}}@keyframes lm-pulse{0%,100%{opacity:1}50%{opacity:.5}}@keyframes lm-typingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}@media (max-width:480px){.lm-chat-window{width:calc(100% - 20px);height:calc(100% - 100px);right:10px;bottom:80px;border-radius:20px}.lm-widget-container{right:10px;bottom:10px}.lm-bubble{width:55px;height:55px}.lm-greeting-tooltip{display:none}}.lm-powered-badge{text-align:center;padding:6px 12px;background:rgba(0,0,0,.02);border-top:1px solid #e5e7eb}.lm-powered-badge a{color:#94a3b8;text-decoration:none;font-size:10px;font-weight:500;letter-spacing:.02em;transition:color .2s}.lm-powered-badge a:hover{color:#7c3aed}';
     document.head.appendChild(styles);
     var container = document.createElement('div');
     container.className = 'lm-widget-container';
     container.id = 'lmWidgetContainer';
-    container.innerHTML = '<div class="lm-greeting-tooltip" id="lmGreeting"><span class="lm-online-dot"></span><span>'+config.greetingMessage+'</span></div><div class="lm-bubble" id="lmBubble"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg></div><div class="lm-chat-window" id="lmChatWindow"><div class="lm-chat-header"><div class="lm-chat-header-left"><div class="lm-chat-avatar">'+config.robotName.charAt(0).toUpperCase()+'</div><div class="lm-chat-header-info"><span class="lm-chat-header-subtitle">Assistente Virtual</span><span class="lm-chat-header-title">'+config.robotName+'</span></div></div><button class="lm-header-btn" id="lmCloseBtn" title="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="lm-chat-messages" id="lmMessages"></div><div class="lm-typing" id="lmTyping"><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span></div><div class="lm-chat-input-area"><input type="text" class="lm-chat-input" id="lmInput" placeholder="Escreva sua mensagem..." autocomplete="off"><button class="lm-send-btn" id="lmSendBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div></div>';
+    container.innerHTML = '<div class="lm-greeting-tooltip" id="lmGreeting"><span class="lm-online-dot"></span><span>'+config.greetingMessage+'</span></div><div class="lm-bubble" id="lmBubble"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg></div><div class="lm-chat-window" id="lmChatWindow"><div class="lm-chat-header"><div class="lm-chat-header-left"><div class="lm-chat-avatar">'+config.robotName.charAt(0).toUpperCase()+'</div><div class="lm-chat-header-info"><span class="lm-chat-header-subtitle">Assistente Virtual</span><span class="lm-chat-header-title">'+config.robotName+'</span></div></div><button class="lm-header-btn" id="lmCloseBtn" title="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="lm-chat-messages" id="lmMessages"></div><div class="lm-typing" id="lmTyping"><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span></div><div class="lm-chat-input-area"><input type="text" class="lm-chat-input" id="lmInput" placeholder="Escreva sua mensagem..." autocomplete="off"><button class="lm-send-btn" id="lmSendBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div><div class="lm-powered-badge"><a href="https://linkmagico.app.br/signup.html?ref=widget" target="_blank" rel="noopener noreferrer">⚡ Powered by LinkMágico</a></div></div>';
     document.body.appendChild(container);
     var chatWindow = document.getElementById('lmChatWindow');
     var bubble = document.getElementById('lmBubble');
@@ -1137,6 +1665,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
         messages.appendChild(msgDiv);
         messages.scrollTop = messages.scrollHeight;
     }
+    // SAFE PATCH - CAL-V4-005: Funcoes de calendario (incremental, isolado, com fallback)
     function _renderCal() {
         try {
         var c = document.createElement('div'); c.className = 'lm-cal-container';
@@ -1225,6 +1754,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
         }).then(function (r) { return r.json(); }).then(function (data) {
             typing.classList.remove('lm-active');
             if (data.success && data.response) {
+                // SAFE PATCH - CAL-V4-005: Capturar calendarHash da resposta do servidor
                 if (data.calendarHash) { calendarHash = data.calendarHash; console.log('📅 [CAL-V4-005] Hash recebido:', calendarHash); }
                 addMessage(data.response, false);
             }
@@ -1251,5 +1781,106 @@ console.log('🚀 LinkMágico — Novo site carregado')});
 })();
 </script>
 
+<style>
+@keyframes typeDot{0%,60%,100%{opacity:.3}30%{opacity:1}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+#demoChatOverlay .demo-msg{max-width:82%;padding:11px 15px;border-radius:16px;font-size:.88rem;line-height:1.55;animation:fadeIn .3s ease}
+#demoChatOverlay .demo-msg-bot{background:var(--surface2);border:1px solid var(--border);color:var(--text);align-self:flex-start;border-bottom-left-radius:4px}
+#demoChatOverlay .demo-msg-user{background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#demoChatOverlay .demo-msg-bot a{color:var(--green-l);text-decoration:underline}
+@media(max-width:540px){#demoChatOverlay>div{height:95vh;max-height:none;margin:10px;border-radius:18px}}
+</style>
+<script>
+var demoConvId='demo_'+Date.now();
+var demoApiBase='https://linkmagico.app.br';
+var demoNichoData={
+  infoproduto:{avatar:'📚',welcome:'Olá! 👋 Sou a assistente da Academia Digital Pro. Quer saber mais sobre nosso curso?',suggestions:['O curso é para iniciantes?','Tem acesso vitalício?','Qual o preço?']},
+  negocio_local:{avatar:'🏥',welcome:'Olá! 👋 Sou a assistente da Clínica Bella Estética. Em que posso ajudar?',suggestions:['Vocês atendem aos sábados?','Qual o valor do botox?','Precisa agendar?']},
+  ecommerce:{avatar:'🛍️',welcome:'Olá! 👋 Sou a assistente da TechStore Brasil. Como posso ajudar?',suggestions:['Tem esse produto em estoque?','Qual o prazo de entrega?','Posso trocar se não servir?']}
+};
+var currentDemoNicho=null;
+function openDemoChat(nicho,nome){
+  currentDemoNicho=nicho;
+  demoConvId='demo_'+Date.now();
+  var d=demoNichoData[nicho]||demoNichoData.infoproduto;
+  document.getElementById('demoAvatar').textContent=d.avatar;
+  document.getElementById('demoTitle').textContent='Demo — '+nome;
+  var msgs=document.getElementById('demoChatMessages');
+  msgs.innerHTML='';
+  addDemoMsg(d.welcome,false);
+  setTimeout(function(){
+    var sugHTML='<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">';
+    d.suggestions.forEach(function(s){
+      sugHTML+='<button onclick="askDemoSuggestion(this.textContent)" style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:var(--purple-l);padding:7px 14px;border-radius:20px;font-size:.78rem;cursor:pointer;font-family:inherit;transition:all .2s" onmouseover="this.style.background=\'rgba(124,58,237,.2)\'" onmouseout="this.style.background=\'rgba(124,58,237,.1)\'">'+s+'</button>';
+    });
+    sugHTML+='</div>';
+    var sugDiv=document.createElement('div');
+    sugDiv.className='demo-msg demo-msg-bot';
+    sugDiv.innerHTML='<div style="font-size:.78rem;color:var(--muted);margin-bottom:6px">💡 Perguntas frequentes:</div>'+sugHTML;
+    msgs.appendChild(sugDiv);
+    msgs.scrollTop=msgs.scrollHeight;
+  },800);
+  var overlay=document.getElementById('demoChatOverlay');
+  overlay.style.display='flex';
+  document.body.style.overflow='hidden';
+  document.getElementById('demoChatInput').focus();
+}
+function closeDemoChat(){
+  document.getElementById('demoChatOverlay').style.display='none';
+  document.body.style.overflow='';
+}
+function addDemoMsg(text,isUser){
+  var msgs=document.getElementById('demoChatMessages');
+  var div=document.createElement('div');
+  div.className='demo-msg '+(isUser?'demo-msg-user':'demo-msg-bot');
+  if(isUser){div.textContent=text;}
+  else if(/https?:\/\//.test(text)){
+    var safe=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    div.innerHTML=safe.replace(/(https?:\/\/[^\s<>"']+)/gi,function(u){return '<a href="'+u+'" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,var(--green),#059669);color:white;padding:6px 14px;border-radius:16px;text-decoration:none;font-size:.82rem;font-weight:600;margin:4px 0">🔗 Acessar agora</a>';});
+  } else {div.textContent=text;}
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function askDemoSuggestion(text){
+  document.getElementById('demoChatInput').value=text;
+  sendDemoMessage();
+}
+function sendDemoMessage(){
+  var input=document.getElementById('demoChatInput');
+  var msg=input.value.trim();
+  if(!msg)return;
+  addDemoMsg(msg,true);
+  input.value='';
+  var typing=document.getElementById('demoChatTyping');
+  typing.style.display='block';
+  document.getElementById('demoSendBtn').disabled=true;
+  var nichoNames={infoproduto:'Academia Digital Pro',negocio_local:'Clínica Bella Estética',ecommerce:'TechStore Brasil'};
+  fetch(demoApiBase+'/api/process-chat-inteligente',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      message:msg,
+      pageData:{url:'https://site.linkmagico.app.br'},
+      robotName:'Assistente '+(nichoNames[currentDemoNicho]||'Demo'),
+      instructions:'Você é o assistente virtual da empresa '+(nichoNames[currentDemoNicho]||'Demo')+'. Responda perguntas sobre o negócio de forma profissional, quebre objeções e conduza o visitante para a compra. Seja conciso e natural.',
+      conversationId:demoConvId,
+      apiKey:'DEMO_PUBLIC'
+    })
+  }).then(function(r){return r.json();}).then(function(data){
+    typing.style.display='none';
+    document.getElementById('demoSendBtn').disabled=false;
+    if(data.success&&data.response){addDemoMsg(data.response,false);}
+    else{addDemoMsg('Desculpe, tive um problema. Pode repetir?',false);}
+  }).catch(function(e){
+    typing.style.display='none';
+    document.getElementById('demoSendBtn').disabled=false;
+    addDemoMsg('Ops! Erro de conexão. Tente novamente.',false);
+    console.error('Demo error:',e);
+  });
+  document.getElementById('demoChatInput').focus();
+}
+document.getElementById('demoChatInput').addEventListener('keypress',function(e){if(e.key==='Enter')sendDemoMessage();});
+document.getElementById('demoChatOverlay').addEventListener('click',function(e){if(e.target===this)closeDemoChat();});
+</script>
 </body>
 </html>
