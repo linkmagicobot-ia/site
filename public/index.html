@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LinkMágico | Transforme qualquer página em um vendedor automático</title>
+<title>LinkMágico — Vendedor Automático para Qualquer Página</title>
 <meta name="description" content="Cole seu link e ganhe um vendedor automático treinado no seu negócio. O LinkMágico responde dúvidas, quebra objeções e conduz visitantes até a compra — 24h por dia.">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/">
 <meta name="author" content="LinkMágico">
 <meta name="theme-color" content="#06060e">
 
@@ -27,7 +28,7 @@
 <meta name="twitter:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
 
 <!-- Favicon SVG -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -546,14 +547,242 @@ img{max-width:100%;height:auto;display:block}
 .dogfood__context-text em{font-style:normal;color:var(--green-l);font-weight:600}
 @media(max-width:768px){.dogfood__stats{grid-template-columns:repeat(2,1fr)}.dogfood__gallery{grid-template-columns:1fr}}
 @media(max-width:480px){.dogfood__stats{grid-template-columns:1fr}}
+
+/* ===== PREMIUM CSS LAYER ===== */
+
+/* Glassmorphism cards */
+.pricing__box,.case-card,.mech__feat{
+  background:rgba(14,14,26,.7);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.06);
+  transition:transform .35s cubic-bezier(.4,0,.2,1),border-color .35s,box-shadow .35s;
+}
+.pricing__box:hover,.case-card:hover,.mech__feat:hover{
+  transform:translateY(-6px);
+  border-color:rgba(124,58,237,.3);
+  box-shadow:0 16px 48px rgba(124,58,237,.12),0 0 0 1px rgba(124,58,237,.15);
+}
+
+/* Gradient border effect on featured pricing */
+.pricing__box[style*="border-color:rgba(124,58,237"]{
+  background:linear-gradient(180deg,rgba(124,58,237,.1),rgba(14,14,26,.85));
+  box-shadow:0 0 30px rgba(124,58,237,.08);
+}
+
+/* Section separators */
+.section--dark+.section--surface::before,
+.section--surface+.section--dark::before{
+  content:'';display:block;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(124,58,237,.2) 20%,rgba(16,185,129,.15) 80%,transparent);
+  margin:0 auto;max-width:900px;
+}
+
+/* Typography refinements */
+.section-title{letter-spacing:-.02em}
+.section-subtitle{color:#8e8ca8;font-size:1.08rem}
+.section-tag{letter-spacing:.08em;font-size:.72rem;padding:7px 18px}
+
+/* Enhanced card micro-animations */
+.mod-card,.aud-card,.affil__step{
+  transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s,border-color .3s;
+}
+.mod-card:hover,.aud-card:hover{
+  transform:translateY(-4px) scale(1.01);
+  box-shadow:0 12px 36px rgba(0,0,0,.25);
+}
+
+/* Icon containers in cards - subtle glow */
+.mod-card__icon,.aud-card__icon,.case-card__icon,.mech__feat-icon,.mech__pipe-icon{
+  transition:transform .3s,text-shadow .3s;
+}
+.mod-card:hover .mod-card__icon,
+.aud-card:hover .aud-card__icon,
+.case-card:hover .case-card__icon{
+  transform:scale(1.15);
+  text-shadow:0 0 20px rgba(124,58,237,.3);
+}
+
+/* Smooth button hover glow */
+.btn--cta:hover{box-shadow:0 12px 32px rgba(16,185,129,.35),0 0 60px rgba(16,185,129,.1)}
+.btn--primary:hover{box-shadow:0 10px 30px rgba(124,58,237,.35),0 0 50px rgba(124,58,237,.08)}
+
+/* Stars styling */
+.test-card__stars i{color:#fbbf24;font-size:.75rem;margin-right:1px}
+
+/* Premium scrollbar */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(124,58,237,.3);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(124,58,237,.5)}
+
+/* Floating CTA enhancement */
+.floating-cta a{
+  transition:transform .25s,box-shadow .25s;
+}
+.floating-cta a:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(16,185,129,.3);
+}
+
+/* Subtle text selection color */
+::selection{background:rgba(124,58,237,.3);color:#fff}
+::-moz-selection{background:rgba(124,58,237,.3);color:#fff}
 </style>
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O LinkMágico funciona para qualquer nicho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O LinkMágico aprende sobre qualquer produto ou serviço automaticamente — infoprodutos, SaaS, clínicas, restaurantes, e-commerce, consultoria. Basta colar o link e ele vira o vendedor automático da sua página."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso saber programar para usar o LinkMágico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Se você sabe copiar e colar um link, consegue ativar. O setup leva 2 minutos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O LinkMágico inicia conversa sozinho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O visitante inicia a conversa clicando no link, botão ou widget. Depois disso, o LinkMágico assume automaticamente — respondendo dúvidas, conduzindo para ação e capturando leads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso trocar de plano ou cancelar o LinkMágico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim! Você pode fazer upgrade, downgrade ou cancelar a qualquer momento sem burocracia, direto pelo seu painel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O pagamento do LinkMágico é seguro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, processamos os pagamentos de forma totalmente segura através da Stripe (a mesma plataforma usada por Amazon e Google)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O CRM está realmente incluso no LinkMágico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "100% incluso. Pipeline visual de oportunidades, classificação de leads, histórico de conversas, exportação. Você vê exatamente quem queria comprar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O LinkMágico funciona sem página de vendas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim! Funciona para qualquer negócio que recebe visitantes — o vendedor automático tira dúvidas, agenda e captura leads sem precisar de checkout."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LinkMágico",
+  "url": "https://site.linkmagico.app.br",
+  "logo": "https://site.linkmagico.app.br/og-linkmagico.png",
+  "description": "Plataforma de vendedor automático com IA que transforma qualquer página em um canal de vendas ativo 24h por dia.",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "name": "Edvaldo Luiz da Silva"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-11-92531-2151",
+    "contactType": "customer service",
+    "availableLanguage": "Portuguese"
+  },
+  "sameAs": [
+    "https://www.instagram.com/linkmagico.ia",
+    "https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182",
+    "https://wa.me/5511925312151"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Edvaldo Luiz da Silva",
+  "jobTitle": "Fundador do LinkMágico e Arquiteto de Software e IA",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "UNINOVE"
+  },
+  "knowsAbout": ["Inteligência Artificial", "Automação de Vendas", "Chatbots", "SaaS"],
+  "url": "https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182",
+  "sameAs": [
+    "https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "LinkMágico"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Como ativar seu vendedor automático com o LinkMágico",
+  "description": "Ative um vendedor automático treinado no seu negócio em apenas 4 passos simples.",
+  "totalTime": "PT2M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Cole seu link",
+      "text": "Cole o link do seu site, landing page, Instagram ou oferta no painel do LinkMágico."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "A IA aprende seu negócio",
+      "text": "O LinkMágico extrai automaticamente todo o conteúdo da sua página e aprende sobre seu produto ou serviço."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Ative o vendedor automático",
+      "text": "Copie o código do widget e cole no seu site, ou compartilhe o link de conversa diretamente."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Vendas automáticas 24h",
+      "text": "O vendedor automático responde dúvidas, quebra objeções, captura leads e conduz visitantes até a compra — 24 horas por dia."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="header" id="header">
 <div class="nav container">
-<a href="#" class="nav__logo"><span>⚡</span> <span>Link<span class="logo-highlight">Mágico</span></span></a>
+<a href="#" class="nav__logo"><span><i class="fas fa-bolt"></i></span> <span>Link<span class="logo-highlight">Mágico</span></span></a>
 <a href="#pricing" class="nav__cta">Ativar vendedor automático →</a>
 </div>
 </header>
@@ -569,15 +798,15 @@ img{max-width:100%;height:auto;display:block}
 <h1>Transforme qualquer página em um <span class="text-grad">vendedor automático.</span></h1>
 <p class="hero__sub">Cole o link do seu site, landing page, Instagram ou oferta. O LinkMágico aprende seu negócio e conduz visitantes até a compra através de conversas automáticas.</p>
 <div class="hero__recovery-flow" style="margin-bottom:18px">
-<div class="hero__recovery-step"><div class="icon">🔗</div><div class="label">Cole o link</div></div>
+<div class="hero__recovery-step"><div class="icon"><i class="fas fa-link"></i></div><div class="label">Cole o link</div></div>
 <div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
-<div class="hero__recovery-step"><div class="icon">🧠</div><div class="label">IA aprende</div></div>
+<div class="hero__recovery-step"><div class="icon"><i class="fas fa-brain"></i></div><div class="label">IA aprende</div></div>
 <div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
-<div class="hero__recovery-step"><div class="icon">🎯</div><div class="label">Detecta intenção</div></div>
+<div class="hero__recovery-step"><div class="icon"><i class="fas fa-crosshairs"></i></div><div class="label">Detecta intenção</div></div>
 <div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
-<div class="hero__recovery-step"><div class="icon">💬</div><div class="label">Conduz conversa</div></div>
+<div class="hero__recovery-step"><div class="icon"><i class="fas fa-comments"></i></div><div class="label">Conduz conversa</div></div>
 <div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
-<div class="hero__recovery-step"><div class="icon">✅</div><div class="label">Vende</div></div>
+<div class="hero__recovery-step"><div class="icon"><i class="fas fa-check-circle"></i></div><div class="label">Vende</div></div>
 </div>
 <div class="hero__ctas">
 <a href="https://linkmagico.app.br/pricing.html" class="btn btn--cta"><i class="fas fa-bolt"></i> Ver Planos e Preços</a>
@@ -590,9 +819,9 @@ img{max-width:100%;height:auto;display:block}
 </div>
 <div class="hero-social">
 <div class="hero-social__avatars">
-<img src="testimonial-camila.png" alt="Usuário">
-<img src="testimonial-marcos.png" alt="Usuário">
-<img src="testimonial-rafael.png" alt="Usuário">
+<img src="testimonial-camila.png" alt="Camila S. — cliente LinkMágico">
+<img src="testimonial-marcos.png" alt="Marcos R. — cliente LinkMágico">
+<img src="testimonial-rafael.png" alt="Rafael M. — cliente LinkMágico">
 </div>
 <div class="hero-social__text">Junte-se a <strong id="socialCount">170+</strong> empresas que já têm<br>um vendedor automático ativo</div>
 </div>
@@ -666,7 +895,7 @@ img{max-width:100%;height:auto;display:block}
 <section class="stats-dor section--surface">
 <div class="container">
 <div class="stats-dor__box anim">
-<div class="stats-dor__title">📊 Enquanto você dormia hoje…</div>
+<div class="stats-dor__title"><i class="fas fa-chart-bar" style="color:var(--purple-l);margin-right:6px"></i> Enquanto você dormia hoje…</div>
 <p class="stats-dor__sub">Visitantes entraram na sua página. Alguns tinham intenção de compra.<br>Mas foram embora sem resposta.</p>
 <div class="stats-dor__grid">
 <div class="stats-dor__item stats-dor__item--bad"><i class="fas fa-times-circle"></i> 37 visitantes entraram</div>
@@ -695,7 +924,7 @@ img{max-width:100%;height:auto;display:block}
 <!-- MICROCOPY 1 -->
 <section class="microcopy section--dark">
 <div class="container">
-<p class="microcopy__text"><i>💡</i> Seu visitante não quer ler. Quer conversar.</p>
+<p class="microcopy__text"><i class="fas fa-lightbulb"></i> Seu visitante não quer ler. Quer conversar.</p>
 </div>
 </section>
 
@@ -710,37 +939,37 @@ img{max-width:100%;height:auto;display:block}
 <div class="steps-grid">
 <div class="step-card anim">
 <div class="step-num">1</div>
-<div class="step-icon">🔗</div>
+<div class="step-icon"><i class="fas fa-link"></i></div>
 <h3>Cole sua página</h3>
 <p>Seu site, landing page, Instagram ou oferta. Qualquer URL funciona.</p>
 </div>
 <div class="step-card anim">
 <div class="step-num">2</div>
-<div class="step-icon">🧠</div>
+<div class="step-icon"><i class="fas fa-brain"></i></div>
 <h3>O LinkMágico aprende</h3>
 <p>Produto, preço, FAQ, garantias e objeções — tudo absorvido automaticamente.</p>
 </div>
 <div class="step-card anim">
 <div class="step-num">3</div>
-<div class="step-icon">💬</div>
+<div class="step-icon"><i class="fas fa-comments"></i></div>
 <h3>O visitante abre a conversa</h3>
 <p>Clica no link, botão ou widget e inicia o chat.</p>
 </div>
 <div class="step-card anim">
 <div class="step-num">4</div>
-<div class="step-icon">🤖</div>
+<div class="step-icon"><i class="fas fa-robot"></i></div>
 <h3>O vendedor automático conduz</h3>
 <p>Responde, quebra objeções, captura leads e conduz para ação — 24h por dia.</p>
 </div>
 </div>
 <div style="max-width:720px;margin:40px auto 0;text-align:center" class="anim">
-<p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic">🎬 Veja na prática como é simples:</p>
+<p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic"><i class="fas fa-film" style="color:var(--purple-l);margin-right:4px"></i> Veja na prática como é simples:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
 <video controls playsinline preload="metadata" poster="poster-setup.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
 <source src="demo-setup.mp4" type="video/mp4">
 </video>
 </div>
-<p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600">⚡ Setup real — menos de 2 minutos do zero à página vendendo</p>
+<p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-bolt" style="color:var(--green-l);margin-right:4px"></i> Setup real — menos de 2 minutos do zero à página vendendo</p>
 </div>
 </div>
 </section>
@@ -773,31 +1002,31 @@ img{max-width:100%;height:auto;display:block}
 
 <div class="mech__pipeline anim">
 <div class="mech__pipe-step">
-<div class="mech__pipe-icon">🔗</div>
+<div class="mech__pipe-icon"><i class="fas fa-link"></i></div>
 <div class="mech__pipe-name">Extração IA</div>
 <div class="mech__pipe-desc">Conteúdo extraído automaticamente</div>
 </div>
 <div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
 <div class="mech__pipe-step">
-<div class="mech__pipe-icon">🧠</div>
+<div class="mech__pipe-icon"><i class="fas fa-brain"></i></div>
 <div class="mech__pipe-name">Decision Engine™</div>
 <div class="mech__pipe-desc">Motor de decisão inteligente</div>
 </div>
 <div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
 <div class="mech__pipe-step">
-<div class="mech__pipe-icon">🎯</div>
+<div class="mech__pipe-icon"><i class="fas fa-crosshairs"></i></div>
 <div class="mech__pipe-name">Intent Engine™</div>
 <div class="mech__pipe-desc">Identifica o momento exato</div>
 </div>
 <div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
 <div class="mech__pipe-step">
-<div class="mech__pipe-icon">⚡</div>
+<div class="mech__pipe-icon"><i class="fas fa-chart-line"></i></div>
 <div class="mech__pipe-name">Sales Layer™</div>
 <div class="mech__pipe-desc">Pipeline de 13 fases</div>
 </div>
 <div class="mech__pipe-arrow"><i class="fas fa-chevron-right"></i></div>
 <div class="mech__pipe-step">
-<div class="mech__pipe-icon">✅</div>
+<div class="mech__pipe-icon"><i class="fas fa-check-circle"></i></div>
 <div class="mech__pipe-name">Conversão</div>
 <div class="mech__pipe-desc">Lead qualificado ou venda</div>
 </div>
@@ -805,32 +1034,32 @@ img{max-width:100%;height:auto;display:block}
 
 <div class="mech__features">
 <div class="mech__feat anim">
-<div class="mech__feat-icon">🤖</div>
+<div class="mech__feat-icon"><i class="fas fa-microchip"></i></div>
 <h4>Decision Engine™</h4>
 <p>Motor de decisão próprio que analisa cada mensagem e define a melhor estratégia de resposta em tempo real — não é um wrapper de ChatGPT.</p>
 </div>
 <div class="mech__feat anim">
-<div class="mech__feat-icon">📊</div>
+<div class="mech__feat-icon"><i class="fas fa-chart-line"></i></div>
 <h4>Sales Layer™ — 13 Fases</h4>
 <p>Pipeline de persuasão com 13 fases: do primeiro contato à conversão, cada mensagem move o visitante para a próxima etapa de venda.</p>
 </div>
 <div class="mech__feat anim">
-<div class="mech__feat-icon">🎯</div>
+<div class="mech__feat-icon"><i class="fas fa-crosshairs"></i></div>
 <h4>Intent Engine™</h4>
 <p>Identifica automaticamente se o visitante quer comprar, tem dúvida, está com objeção ou pronto para agir — e adapta a resposta.</p>
 </div>
 <div class="mech__feat anim">
-<div class="mech__feat-icon">🧩</div>
+<div class="mech__feat-icon"><i class="fas fa-puzzle-piece"></i></div>
 <h4>6 Perfis de Nicho</h4>
 <p>Presets inteligentes para infoprodutos, e-commerce, clínicas, SaaS, serviços e negócios locais — cada um com abordagem de venda otimizada.</p>
 </div>
 <div class="mech__feat anim">
-<div class="mech__feat-icon">🔄</div>
+<div class="mech__feat-icon"><i class="fas fa-sync-alt"></i></div>
 <h4>NaturalFlow™</h4>
 <p>Garante respostas variadas e naturais em toda a conversa, eliminando a sensação de "bot" mesmo em diálogos longos.</p>
 </div>
 <div class="mech__feat anim">
-<div class="mech__feat-icon">🏗️</div>
+<div class="mech__feat-icon"><i class="fas fa-server"></i></div>
 <h4>Multi-Tenant Nativo</h4>
 <p>Arquitetura SaaS com isolamento total por conta — dados, configurações e assistentes 100% independentes por cliente.</p>
 </div>
@@ -865,26 +1094,26 @@ img{max-width:100%;height:auto;display:block}
 <div class="container">
 <div class="demo__header">
 <span class="section-tag section-tag--green"><i class="fas fa-circle" style="font-size:.5rem;animation:ctaPulse 2s infinite"></i> CONVERSA DE VENDA AO VIVO</span>
-<h2 class="section-title">Veja como o LinkMágico <span class="text-grad">conduz a venda</span> após o clique</h2>
+<h2 class="section-title">Como o LinkMágico <span class="text-grad">conduz a venda</span> após o clique?</h2>
 <p class="section-subtitle">O visitante abre a conversa. O LinkMágico assume e conduz automaticamente até a ação.</p>
 </div>
 <div class="demo__grid">
 <div class="demo__chat anim">
 <div class="demo__chat-bar">
-<div class="demo__chat-avatar">💬</div>
+<div class="demo__chat-avatar"><i class="fas fa-comments"></i></div>
 <div class="demo__chat-info"><div class="name">Vendedor Automático — Curso de Marketing</div><div class="status">Pronto para converter</div></div>
 </div>
 <div class="demo__chat-msgs">
-<div class="demo__label">👤 Visitante clicou no chat:</div>
+<div class="demo__label"><i class="fas fa-user" style="margin-right:4px"></i> Visitante clicou no chat:</div>
 <div class="chat-msg chat-msg--user">Funciona pra quem tá começando do zero?</div>
-<div class="demo__label">❓ Visitante tem objeção:</div>
+<div class="demo__label"><i class="fas fa-question-circle" style="margin-right:4px"></i> Visitante tem objeção:</div>
 <div class="chat-msg chat-msg--user">Hmm, mas é caro demais…</div>
-<div class="demo__label">🛡️ IA quebra a objeção automaticamente:</div>
+<div class="demo__label"><i class="fas fa-shield-alt" style="margin-right:4px"></i> IA quebra a objeção automaticamente:</div>
 <div class="chat-msg chat-msg--ai">Entendo! O investimento é de R$ 297 com acesso vitalício. E tem garantia de 7 dias — se não gostar, devolvemos 100%. O risco é zero.</div>
-<div class="demo__label">✅ Condução para ação:</div>
+<div class="demo__label"><i class="fas fa-check-circle" style="margin-right:4px"></i> Condução para ação:</div>
 <div class="chat-msg chat-msg--user">Tá, quero sim!</div>
-<div class="demo__label">🎯 IA conduz para ação + captura lead:</div>
-<div class="chat-msg chat-msg--cta">🔥 Perfeito! Aqui está seu acesso: <a href="#">Garantir minha vaga →</a></div>
+<div class="demo__label"><i class="fas fa-crosshairs" style="margin-right:4px"></i> IA conduz para ação + captura lead:</div>
+<div class="chat-msg chat-msg--cta"><i class="fas fa-fire" style="color:#f97316;margin-right:4px"></i> Perfeito! Aqui está seu acesso: <a href="#">Garantir minha vaga →</a></div>
 </div>
 </div>
 <div class="demo__crm anim">
@@ -892,7 +1121,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="crm-card__head"><div class="crm-card__icon crm-card__icon--lead"><i class="fas fa-user-plus"></i></div><div><h4>Lead convertido</h4><p>O clique virou conversa, a conversa virou venda</p></div></div>
 <div style="background:var(--surface2);border-radius:10px;padding:12px;font-size:.82rem">
 <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Nome</span><span>João Silva</span></div>
-<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Situação</span><span style="color:var(--green-l)">🔥 Clicou → Comprou</span></div>
+<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Situação</span><span style="color:var(--green-l)"><i class="fas fa-fire"></i> Clicou → Comprou</span></div>
 <div style="display:flex;justify-content:space-between"><span style="color:var(--muted)">Objeção</span><span style="color:#fbbf24">Preço → Quebrada</span></div>
 </div>
 </div>
@@ -911,13 +1140,13 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div>
 <div style="max-width:720px;margin:36px auto 0;text-align:center" class="anim">
-<p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic">📊 Veja o CRM real capturando leads automaticamente:</p>
+<p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic"><i class="fas fa-chart-bar" style="color:var(--purple-l);margin-right:4px"></i> Veja o CRM real capturando leads automaticamente:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
 <video controls playsinline preload="metadata" poster="poster-crm.jpg" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
 <source src="demo-crm.mp4" type="video/mp4">
 </video>
 </div>
-<p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600">🎯 Cada conversa vira um lead rastreável no seu painel</p>
+<p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-crosshairs" style="color:var(--green-l);margin-right:4px"></i> Cada conversa vira um lead rastreável no seu painel</p>
 </div>
 <div style="text-align:center;margin-top:40px">
 <a href="https://linkmagico.app.br/l/Fbjq1y" class="btn btn--primary" target="_blank"><i class="fas fa-external-link-alt"></i> Ver o vendedor automático ao vivo</a>
@@ -1002,28 +1231,28 @@ Se funciona para nós, funciona para você.
 <div class="testimonials__grid">
 <div class="test-card anim">
 <span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
-<div class="test-card__stars">★★★★★</div>
+<div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
 <p class="test-card__text">"Ativei o LinkMágico na minha landing page e em 48h já tinha <strong>23 leads novos</strong> no CRM — leads que antes iam embora sem falar nada. Na primeira semana, <strong>3 viraram clientes</strong>. O ROI já se pagou no primeiro dia."</p>
 <div class="test-card__author">
-<img src="testimonial-marcos.png" alt="Marcos R." class="test-card__photo">
+<img src="testimonial-marcos.png" alt="Marcos R. — Gestor de Tráfego, cliente LinkMágico" class="test-card__photo">
 <div><div class="test-card__name">Marcos R.</div><div class="test-card__role">Gestor de Tráfego</div></div>
 </div>
 </div>
 <div class="test-card anim">
 <span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
-<div class="test-card__stars">★★★★★</div>
+<div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
 <p class="test-card__text">"Eu perdia vendas porque meus alunos tinham dúvidas às 23h. Com o LinkMágico, <strong>minha taxa de resposta foi de 0% fora do horário para 100%</strong>. No primeiro mês, <strong>fiz 8 vendas</strong> que vieram direto de conversas do chat."</p>
 <div class="test-card__author">
-<img src="testimonial-camila.png" alt="Camila S." class="test-card__photo">
+<img src="testimonial-camila.png" alt="Camila S. — Infoprodutora de Cursos Online, cliente LinkMágico" class="test-card__photo">
 <div><div class="test-card__name">Camila S.</div><div class="test-card__role">Infoprodutora — Cursos Online</div></div>
 </div>
 </div>
 <div class="test-card anim">
 <span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
-<div class="test-card__stars">★★★★★</div>
+<div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
 <p class="test-card__text">"Meus pacientes perguntam horários de madrugada. Antes eu perdia esses contatos. Agora o LinkMágico captura o telefone e <strong>já recuperei 14 agendamentos</strong> que teriam sido perdidos. Acordo com a agenda preenchida."</p>
 <div class="test-card__author">
-<img src="testimonial-rafael.png" alt="Rafael M." class="test-card__photo">
+<img src="testimonial-rafael.png" alt="Rafael M. — Dentista e proprietário de Clínica Odontológica, cliente LinkMágico" class="test-card__photo">
 <div><div class="test-card__name">Rafael M.</div><div class="test-card__role">Dentista — Clínica Odontológica</div></div>
 </div>
 </div>
@@ -1036,16 +1265,16 @@ Se funciona para nós, funciona para você.
 <div class="container">
 <div class="modules__header">
 <span class="section-tag">O QUE MUDA</span>
-<h2 class="section-title">O que muda quando sua página ganha <span class="text-grad">um vendedor</span></h2>
+<h2 class="section-title">O que muda quando sua página ganha <span class="text-grad">um vendedor automático?</span></h2>
 <p class="section-subtitle">Não é sobre tecnologia. É sobre transformar páginas estáticas em páginas que vendem.</p>
 </div>
 <div class="modules__grid" id="modulesGrid">
-<div class="mod-card anim"><div class="mod-card__icon">💬</div><h4>Responde dúvidas automaticamente</h4><p>Visitante perguntou? O vendedor responde instantaneamente.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">🛡️</div><h4>Quebra objeções durante a conversa</h4><p>Preço, garantia, confiança — tudo respondido automaticamente.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">🎯</div><h4>Conduz para compra</h4><p>A conversa leva o visitante até checkout, WhatsApp ou agendamento.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">📊</div><h4>Captura leads automaticamente</h4><p>Nome, email e telefone entram no CRM durante a conversa.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">⚡</div><h4>Funciona 24h por dia</h4><p>Enquanto você dorme, seu vendedor automático continua trabalhando.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon">🏷️</div><h4>White Label completo</h4><p>Sua marca, suas cores e sua identidade visual no chat.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-comments"></i></div><h4>Responde dúvidas automaticamente</h4><p>Visitante perguntou? O vendedor responde instantaneamente.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-shield-alt"></i></div><h4>Quebra objeções durante a conversa</h4><p>Preço, garantia, confiança — tudo respondido automaticamente.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-crosshairs"></i></div><h4>Conduz para compra</h4><p>A conversa leva o visitante até checkout, WhatsApp ou agendamento.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-chart-bar"></i></div><h4>Captura leads automaticamente</h4><p>Nome, email e telefone entram no CRM durante a conversa.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-bolt"></i></div><h4>Funciona 24h por dia</h4><p>Enquanto você dorme, seu vendedor automático continua trabalhando.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-tag"></i></div><h4>White Label completo</h4><p>Sua marca, suas cores e sua identidade visual no chat.</p></div>
 </div>
 </div>
 </section>
@@ -1053,7 +1282,7 @@ Se funciona para nós, funciona para você.
 <!-- MICROCOPY 2 -->
 <section class="microcopy section--dark">
 <div class="container">
-<p class="microcopy__text"><i>💡</i> Seu tráfego já existe. Falta um vendedor.</p>
+<p class="microcopy__text"><i class="fas fa-lightbulb"></i> Seu tráfego já existe. Falta um vendedor.</p>
 </div>
 </section>
 
@@ -1066,14 +1295,14 @@ Se funciona para nós, funciona para você.
 <p class="section-subtitle">Se você tem uma página e recebe visitantes — o LinkMágico transforma ela em um vendedor.</p>
 </div>
 <div class="audience__grid" id="audienceGrid">
-<div class="aud-card anim"><div class="aud-card__icon">📢</div><div><h4>Gestores de Tráfego</h4><p>Transforme cliques de anúncios em conversas que convertem.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">📚</div><div><h4>Infoprodutores</h4><p>Sua página ganha um vendedor que responde e converte automaticamente.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🏢</div><div><h4>Agências</h4><p>Entregue vendedores automáticos white label para clientes.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">💻</div><div><h4>SaaS</h4><p>Conduza visitantes até trial e demonstrações.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🛒</div><div><h4>E-commerce</h4><p>Ajude visitantes a escolher produtos e chegar até o carrinho.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🤝</div><div><h4>Afiliados</h4><p>Seu link responde dúvidas e conduz visitantes para compra.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🏥</div><div><h4>Negócios Locais</h4><p>Agendamentos, dúvidas e contatos acontecendo automaticamente.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon">🔧</div><div><h4>Prestadores de Serviço</h4><p>Transforme pedidos de orçamento em conversas de venda.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-bullhorn"></i></div><div><h4>Gestores de Tráfego</h4><p>Transforme cliques de anúncios em conversas que convertem.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-graduation-cap"></i></div><div><h4>Infoprodutores</h4><p>Sua página ganha um vendedor que responde e converte automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-building"></i></div><div><h4>Agências</h4><p>Entregue vendedores automáticos white label para clientes.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-laptop-code"></i></div><div><h4>SaaS</h4><p>Conduza visitantes até trial e demonstrações.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-shopping-cart"></i></div><div><h4>E-commerce</h4><p>Ajude visitantes a escolher produtos e chegar até o carrinho.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-handshake"></i></div><div><h4>Afiliados</h4><p>Seu link responde dúvidas e conduz visitantes para compra.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Negócios Locais</h4><p>Agendamentos, dúvidas e contatos acontecendo automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-wrench"></i></div><div><h4>Prestadores de Serviço</h4><p>Transforme pedidos de orçamento em conversas de venda.</p></div></div>
 </div>
 </div>
 </section>
@@ -1082,7 +1311,7 @@ Se funciona para nós, funciona para você.
 <section class="not-for section--dark">
 <div class="container">
 <div class="not-for__box anim">
-<div class="not-for__title">🚫 O LinkMágico <span style="color:#f87171">NÃO</span> é para todo mundo</div>
+<div class="not-for__title"><i class="fas fa-ban" style="color:#f87171"></i> O LinkMágico <span style="color:#f87171">NÃO</span> é para todo mundo</div>
 <p class="not-for__sub">Queremos que você entre sabendo exatamente o que esperar.</p>
 <div class="not-for__grid">
 <div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem quer resultados sem ter uma página ou oferta real</span></div>
@@ -1137,40 +1366,40 @@ Se funciona para nós, funciona para você.
 </div>
 <div class="cases__grid">
 <div class="case-card anim">
-<div class="case-card__icon">📚</div>
+<div class="case-card__icon"><i class="fas fa-graduation-cap"></i></div>
 <h4>Curso Online</h4>
 <p>Visitante clicou com dúvida. O vendedor automático respondeu e conduziu para a matrícula.</p>
-<div class="case-card__example">💬 "Sim! O curso começa do zero e tem 7 dias de garantia. Quer garantir sua vaga agora?"</div>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Sim! O curso começa do zero e tem 7 dias de garantia. Quer garantir sua vaga agora?"</div>
 </div>
 <div class="case-card anim">
-<div class="case-card__icon">🏥</div>
+<div class="case-card__icon"><i class="fas fa-hospital"></i></div>
 <h4>Clínica / Consultório</h4>
 <p>Paciente perguntou horários às 23h. O LinkMágico respondeu e capturou o contato.</p>
-<div class="case-card__example">💬 "Atendemos de segunda a sábado. Posso agendar um horário para você?"</div>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Atendemos de segunda a sábado. Posso agendar um horário para você?"</div>
 </div>
 <div class="case-card anim">
-<div class="case-card__icon">📢</div>
+<div class="case-card__icon"><i class="fas fa-bullhorn"></i></div>
 <h4>Gestor de Tráfego</h4>
 <p>Lead do anúncio clicou com dúvida fora do horário. O LinkMágico respondeu automaticamente e converteu.</p>
-<div class="case-card__example">💬 "Vi que você clicou no anúncio. O produto tem garantia e entrega imediata. Quer ativar?"</div>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Vi que você clicou no anúncio. O produto tem garantia e entrega imediata. Quer ativar?"</div>
 </div>
 <div class="case-card anim">
-<div class="case-card__icon">💪</div>
+<div class="case-card__icon"><i class="fas fa-gem"></i></div>
 <h4>Produto Digital</h4>
 <p>Visitante desconfiou "é golpe?". O vendedor automático quebrou a objeção com dados reais.</p>
-<div class="case-card__example">💬 "O pagamento é via Hotmart, plataforma segura. Tem 7 dias de garantia total."</div>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "O pagamento é via Hotmart, plataforma segura. Tem 7 dias de garantia total."</div>
 </div>
 <div class="case-card anim">
-<div class="case-card__icon">🏢</div>
+<div class="case-card__icon"><i class="fas fa-building"></i></div>
 <h4>Agência</h4>
 <p>Ofereça o LinkMágico como serviço para seus clientes — com sua marca. Receita recorrente.</p>
-<div class="case-card__example">💬 Configure vendedores automáticos com a marca dos seus clientes e cobre pelo serviço.</div>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> Configure vendedores automáticos com a marca dos seus clientes e cobre pelo serviço.</div>
 </div>
 <div class="case-card anim">
-<div class="case-card__icon">🏠</div>
+<div class="case-card__icon"><i class="fas fa-home"></i></div>
 <h4>Imobiliária</h4>
 <p>Visitante clicou para perguntar sobre imóvel. O LinkMágico respondeu e agendou a visita.</p>
-<div class="case-card__example">💬 "Esse apartamento tem 3 quartos, 2 vagas. Quer agendar uma visita esta semana?"</div>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Esse apartamento tem 3 quartos, 2 vagas. Quer agendar uma visita esta semana?"</div>
 </div>
 </div>
 </div>
@@ -1179,7 +1408,7 @@ Se funciona para nós, funciona para você.
 <!-- MICROCOPY 4 -->
 <section class="microcopy section--dark">
 <div class="container">
-<p class="microcopy__text"><i>⚡</i> Todo clique pode virar uma conversa. Toda conversa pode virar uma venda.</p>
+<p class="microcopy__text"><i class="fas fa-bolt"></i> Todo clique pode virar uma conversa. Toda conversa pode virar uma venda.</p>
 </div>
 </section>
 
@@ -1213,19 +1442,19 @@ Se funciona para nós, funciona para você.
 </div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;margin:0 auto">
 <div onclick="openDemoChat('infoproduto','Academia Digital Pro')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(124,58,237,.2)">
-<div class="case-card__icon">📚</div>
+<div class="case-card__icon"><i class="fas fa-graduation-cap"></i></div>
 <h4>Curso Digital</h4>
 <p style="font-size:.82rem;color:var(--muted)">Infoproduto com perguntas de alunos</p>
 <div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:var(--purple-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
 </div>
 <div onclick="openDemoChat('negocio_local','Clínica Bella Estética')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(16,185,129,.2)">
-<div class="case-card__icon">🏥</div>
+<div class="case-card__icon"><i class="fas fa-hospital"></i></div>
 <h4>Clínica Estética</h4>
 <p style="font-size:.82rem;color:var(--muted)">Negócio local com agendamento</p>
 <div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--green-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
 </div>
 <div onclick="openDemoChat('ecommerce','TechStore Brasil')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(245,158,11,.2)">
-<div class="case-card__icon">🛍️</div>
+<div class="case-card__icon"><i class="fas fa-shopping-bag"></i></div>
 <h4>Loja Virtual</h4>
 <p style="font-size:.82rem;color:var(--muted)">E-commerce com dúvidas de compra</p>
 <div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:#fbbf24;padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
@@ -1238,7 +1467,7 @@ Se funciona para nós, funciona para você.
 <div style="width:100%;max-width:440px;height:80vh;max-height:640px;background:var(--surface);border:1px solid var(--border);border-radius:24px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);margin:20px;position:relative">
 <div style="background:linear-gradient(135deg,var(--purple),#6d28d9);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
 <div style="display:flex;align-items:center;gap:12px">
-<div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem" id="demoAvatar">🤖</div>
+<div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem" id="demoAvatar"><i class="fas fa-robot"></i></div>
 <div><div style="font-weight:700;font-size:.9rem;color:#fff" id="demoTitle">Demo</div><div style="font-size:.72rem;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:#34d399;display:inline-block"></span> Online agora</div></div>
 </div>
 <button onclick="closeDemoChat()" style="background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,.25)'" onmouseout="this.style.background='rgba(255,255,255,.15)'">✕</button>
@@ -1276,7 +1505,7 @@ Se funciona para nós, funciona para você.
 <a href="https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182" target="_blank" class="btn btn--secondary" style="margin-top:20px;display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-color:rgba(10,102,194,0.3)">
 <i class="fab fa-linkedin" style="font-size:1.3rem;color:#0a66c2"></i> Conectar no LinkedIn
 </a>
-<p style="font-size:.95rem;color:var(--text);margin-bottom:14px;margin-top:36px;font-weight:700">📸 A estrutura real por trás da mágica:</p>
+<p style="font-size:.95rem;color:var(--text);margin-bottom:14px;margin-top:36px;font-weight:700"><i class="fas fa-camera" style="color:var(--purple-l);margin-right:4px"></i> A estrutura real por trás da mágica:</p>
 <style>
 .bastidores-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .bastidores-grid img{width:100%;height:120px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid rgba(100,150,255,.12);transition:transform .3s,box-shadow .3s;cursor:pointer}
@@ -1345,14 +1574,14 @@ Se funciona para nós, funciona para você.
 
 <!-- PRO -->
 <div class="pricing__box anim" style="padding:32px 24px;border-color:rgba(124,58,237,.5);background:linear-gradient(180deg,rgba(124,58,237,.08),transparent);position:relative;overflow:visible">
-<div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--purple-l));color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;z-index:2">⭐ Mais Popular</div>
+<div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--purple-l));color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;z-index:2"><i class="fas fa-crown" style="margin-right:4px"></i> Mais Popular</div>
 <h3 style="font-size:1.3rem;margin-bottom:8px">Pro</h3>
 <div style="margin-bottom:20px"><span style="font-size:1.1rem;color:var(--muted)">R$</span><span style="font-size:2.8rem;font-weight:800;color:#fff">69</span><span style="font-size:.9rem;color:var(--muted)">/mês</span></div>
 <ul class="pricing__features" style="font-size:.88rem">
 <li><i class="fas fa-check"></i> 10 chatbots</li>
 <li><i class="fas fa-check"></i> 5.000 mensagens/mês</li>
 <li><i class="fas fa-check"></i> 200 extrações</li>
-<li style="color:var(--purple-l);font-weight:600"><i class="fas fa-check"></i> WhatsApp ✅</li>
+<li style="color:var(--purple-l);font-weight:600"><i class="fas fa-check"></i> WhatsApp <i class="fas fa-check" style="color:var(--green)"></i></li>
 <li><i class="fas fa-check"></i> Remover "Powered by"</li>
 </ul>
 <a href="https://linkmagico.app.br/pricing.html" class="btn btn--cta" style="width:100%;margin-top:20px">Assinar Pro</a>
@@ -1366,7 +1595,7 @@ Se funciona para nós, funciona para você.
 <li><i class="fas fa-check"></i> Chatbots Ilimitados</li>
 <li><i class="fas fa-check"></i> Mensagens Ilimitadas</li>
 <li><i class="fas fa-check"></i> Extrações Ilimitadas</li>
-<li style="color:var(--purple-l);font-weight:600"><i class="fas fa-check"></i> WhatsApp ✅</li>
+<li style="color:var(--purple-l);font-weight:600"><i class="fas fa-check"></i> WhatsApp <i class="fas fa-check" style="color:var(--green)"></i></li>
 <li><i class="fas fa-check"></i> WhiteLabel completo</li>
 </ul>
 <a href="https://linkmagico.app.br/pricing.html" class="btn btn--secondary" style="width:100%;margin-top:20px">Assinar Business</a>
@@ -1385,7 +1614,7 @@ Se funciona para nós, funciona para você.
 <div class="container">
 <div class="faq__header">
 <span class="section-tag">DÚVIDAS FREQUENTES</span>
-<h2 class="section-title">Tudo que você precisa saber</h2>
+<h2 class="section-title">Perguntas frequentes sobre o LinkMágico</h2>
 </div>
 <div class="faq__list">
 <div class="faq-item"><button class="faq-item__q"><span>Funciona pra qualquer nicho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim. O LinkMágico aprende sobre qualquer produto ou serviço automaticamente — infoprodutos, SaaS, clínicas, restaurantes, e-commerce, consultoria. Basta colar o link e ele vira o vendedor automático da sua página.</p></div></div>
@@ -1431,7 +1660,7 @@ Se funciona para nós, funciona para você.
 </div>
 </div>
 <div class="affil__sim">
-<div class="affil__sim-title">💰 Simulação de Ganhos</div>
+<div class="affil__sim-title"><i class="fas fa-coins" style="color:#fbbf24;margin-right:6px"></i> Simulação de Ganhos</div>
 <table class="affil__table">
 <thead><tr><th>Se indicar</th><th>Plano</th><th>Valor</th><th>Sua comissão</th></tr></thead>
 <tbody>
@@ -1450,7 +1679,7 @@ Se funciona para nós, funciona para você.
 </div>
 </section>
 
-<!-- 🎨 WHITELABEL — BLOCO PARA AGÊNCIAS E GESTORES DE TRÁFEGO -->
+<!-- WHITELABEL — BLOCO PARA AGÊNCIAS E GESTORES DE TRÁFEGO -->
 <section class="section--dark" id="whitelabel" style="padding:80px 0;position:relative;overflow:hidden">
 <!-- Background decorativo -->
 <div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.08) 0%,transparent 70%);pointer-events:none"></div>
@@ -1471,7 +1700,7 @@ Se funciona para nós, funciona para você.
 <div class="anim">
 <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),#c084fc,var(--green))"></div>
-<div style="font-size:1.5rem;margin-bottom:8px">🏢</div>
+<div style="font-size:1.5rem;margin-bottom:8px"><i class="fas fa-building" style="color:#c084fc"></i></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:16px;color:var(--text)">A Oportunidade: <span style="color:#c084fc">200.000+ gestores de tráfego</span></h3>
 <div style="display:flex;flex-direction:column;gap:12px">
 <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.12);border-radius:12px;font-size:.88rem">
@@ -1498,7 +1727,7 @@ Se funciona para nós, funciona para você.
 <div class="anim">
 <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden">
 <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),#34d399,#10b981)"></div>
-<div style="font-size:1.5rem;margin-bottom:8px">💰</div>
+<div style="font-size:1.5rem;margin-bottom:8px"><i class="fas fa-coins" style="color:var(--green-l)"></i></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:20px;color:var(--text)">Revenue Share: <span class="text-grad-g">multiplique sua receita</span></h3>
 
 <!-- Tabela de simulação -->
@@ -1541,22 +1770,22 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 <!-- Features WhiteLabel -->
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px">
 <div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--purple)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
-<div style="font-size:1.4rem;margin-bottom:10px">🎨</div>
+<div style="font-size:1.4rem;margin-bottom:10px"><i class="fas fa-palette" style="color:#c084fc"></i></div>
 <h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Cores & Logo Custom</h4>
 <p style="font-size:.78rem;color:var(--muted);line-height:1.5">Widget com as cores e logotipo da agência ou do cliente final</p>
 </div>
 <div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--green)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
-<div style="font-size:1.4rem;margin-bottom:10px">🚫</div>
+<div style="font-size:1.4rem;margin-bottom:10px"><i class="fas fa-eye-slash" style="color:var(--green-l)"></i></div>
 <h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Remove "Powered by"</h4>
 <p style="font-size:.78rem;color:var(--muted);line-height:1.5">Selo LinkMágico removido — 100% com a identidade da sua marca</p>
 </div>
 <div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--purple)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
-<div style="font-size:1.4rem;margin-bottom:10px">⚡</div>
+<div style="font-size:1.4rem;margin-bottom:10px"><i class="fas fa-bolt" style="color:var(--purple-l)"></i></div>
 <h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Setup em 2 Min</h4>
 <p style="font-size:.78rem;color:var(--muted);line-height:1.5">Cole o link do cliente → IA aprende → vendedor pronto para usar</p>
 </div>
 <div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--green)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
-<div style="font-size:1.4rem;margin-bottom:10px">📊</div>
+<div style="font-size:1.4rem;margin-bottom:10px"><i class="fas fa-chart-bar" style="color:#fbbf24"></i></div>
 <h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">CRM + Analytics</h4>
 <p style="font-size:.78rem;color:var(--muted);line-height:1.5">Dashboard completo com leads, pipeline, follow-up e métricas por cliente</p>
 </div>
@@ -1565,7 +1794,7 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 <!-- CTA Central -->
 <div style="text-align:center" class="anim">
 <div style="max-width:580px;margin:0 auto;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(16,185,129,.06));border:1px solid rgba(124,58,237,.18);border-radius:20px;padding:36px 32px">
-<div style="font-size:2rem;margin-bottom:12px">🚀</div>
+<div style="font-size:2rem;margin-bottom:12px"><i class="fas fa-rocket" style="color:var(--green-l)"></i></div>
 <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:8px">Comece a revender vendedores automáticos hoje</h3>
 <p style="color:var(--muted);font-size:.9rem;margin-bottom:24px;line-height:1.6">Plano <strong style="color:var(--text)">Business</strong> a partir de <strong style="color:var(--green-l)">R$ 97/mês</strong> — inclui WhiteLabel completo, multi-chatbot ilimitado e suporte prioritário.</p>
 <a href="https://linkmagico.app.br/pricing.html" class="btn btn--cta" style="font-size:1rem;padding:16px 36px"><i class="fas fa-bolt"></i> Ativar WhiteLabel Agora</a>
@@ -1608,7 +1837,7 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 <!-- MICROCOPY FOOTER -->
 <section class="microcopy section--surface">
 <div class="container">
-<p class="microcopy__text"><i>🔴</i> Seu link agora sabe vender.</p>
+<p class="microcopy__text"><i class="fas fa-circle" style="color:var(--purple)"></i> Seu link agora sabe vender.</p>
 </div>
 </section>
 
@@ -1616,7 +1845,7 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 <footer class="footer">
 <div class="container">
 <div class="footer__inner">
-<div class="footer__brand">⚡ Link<span class="logo-highlight">Mágico</span></div>
+<div class="footer__brand"><i class="fas fa-bolt" style="color:var(--purple-l)"></i> Link<span class="logo-highlight">Mágico</span></div>
 <div class="footer__links">
 <a href="https://linkmagico.app.br/termos.html" target="_blank">Termos de Uso</a>
 <a href="https://linkmagico.app.br/privacidade.html" target="_blank">Privacidade</a>
@@ -1635,7 +1864,7 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 
 <!-- FLOATING CTA -->
 <div class="floating-cta">
-<a href="https://linkmagico.app.br/pricing.html">⚡ Ver Planos e Preços</a>
+<a href="https://linkmagico.app.br/pricing.html"><i class="fas fa-bolt"></i> Ver Planos e Preços</a>
 </div>
 
 <script>
@@ -1700,7 +1929,7 @@ document.querySelectorAll('.metric-card__number[data-count]').forEach(function(e
   }
 })();
 
-console.log('🚀 LinkMágico — Novo site carregado')});
+console.log('LinkMágico — Novo site carregado')});
 </script>
 
 <!-- LinkMágico Chatbot Widget v2.0 - Design Moderno -->
@@ -1714,7 +1943,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
         // SAFE PATCH - QA FIX: BUG-006 - Removido apikey duplicado
         apiKey: "lm_live_c39eecfd1c69907db99c8e7ab9b60c7c",
         greetingMessage: "Oi! Posso ajudar?",
-        welcomeMessage: "Olá 👋 Muito bom ter você aqui!",
+        welcomeMessage: "Olá! Muito bom ter você aqui!",
         secondMessage: "Como posso ajudar você hoje?",
         salesMode: "auto",
         salesPreset: ""
@@ -1722,8 +1951,8 @@ console.log('🚀 LinkMágico — Novo site carregado')});
 
     var apiBase = "https://linkmagico.app.br";
     if (!config.apiKey || config.apiKey === "SUA_API_KEY") { 
-        console.error("❌ LinkMágico Widget: API Key não configurada!"); 
-        alert("⚠️ LinkMágico Widget: API Key não configurada! Verifique o script."); 
+        console.error("LinkMágico Widget: API Key não configurada!"); 
+        alert("LinkMágico Widget: API Key não configurada! Verifique o script."); 
         return; 
     }
     var isOpen = false, leadId = null, leadCaptured = false, conversationId = 'lm_' + Date.now(), calendarHash = null;
@@ -1733,7 +1962,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
     var container = document.createElement('div');
     container.className = 'lm-widget-container';
     container.id = 'lmWidgetContainer';
-    container.innerHTML = '<div class="lm-greeting-tooltip" id="lmGreeting"><span class="lm-online-dot"></span><span>'+config.greetingMessage+'</span></div><div class="lm-bubble" id="lmBubble"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg></div><div class="lm-chat-window" id="lmChatWindow"><div class="lm-chat-header"><div class="lm-chat-header-left"><div class="lm-chat-avatar">'+config.robotName.charAt(0).toUpperCase()+'</div><div class="lm-chat-header-info"><span class="lm-chat-header-subtitle">Assistente Virtual</span><span class="lm-chat-header-title">'+config.robotName+'</span></div></div><button class="lm-header-btn" id="lmCloseBtn" title="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="lm-chat-messages" id="lmMessages"></div><div class="lm-typing" id="lmTyping"><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span></div><div class="lm-chat-input-area"><input type="text" class="lm-chat-input" id="lmInput" placeholder="Escreva sua mensagem..." autocomplete="off"><button class="lm-send-btn" id="lmSendBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div><div class="lm-powered-badge"><a href="https://linkmagico.app.br/signup.html?ref=widget" target="_blank" rel="noopener noreferrer">⚡ Powered by LinkMágico</a></div></div>';
+    container.innerHTML = '<div class="lm-greeting-tooltip" id="lmGreeting"><span class="lm-online-dot"></span><span>'+config.greetingMessage+'</span></div><div class="lm-bubble" id="lmBubble"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg></div><div class="lm-chat-window" id="lmChatWindow"><div class="lm-chat-header"><div class="lm-chat-header-left"><div class="lm-chat-avatar">'+config.robotName.charAt(0).toUpperCase()+'</div><div class="lm-chat-header-info"><span class="lm-chat-header-subtitle">Assistente Virtual</span><span class="lm-chat-header-title">'+config.robotName+'</span></div></div><button class="lm-header-btn" id="lmCloseBtn" title="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="lm-chat-messages" id="lmMessages"></div><div class="lm-typing" id="lmTyping"><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span></div><div class="lm-chat-input-area"><input type="text" class="lm-chat-input" id="lmInput" placeholder="Escreva sua mensagem..." autocomplete="off"><button class="lm-send-btn" id="lmSendBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div><div class="lm-powered-badge"><a href="https://linkmagico.app.br/signup.html?ref=widget" target="_blank" rel="noopener noreferrer"><i class="fas fa-bolt" style="margin-right:2px"></i> Powered by LinkMágico</a></div></div>';
     document.body.appendChild(container);
     var chatWindow = document.getElementById('lmChatWindow');
     var bubble = document.getElementById('lmBubble');
@@ -1749,7 +1978,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
         if (isUser) {
             msgDiv.textContent = text;
         } else if (!isUser && text && typeof text === 'string' && (text.indexOf('[CALENDAR_WIDGET]') !== -1 || text.indexOf('CALENDAR_WIDGET') !== -1)) {
-            console.log('📅 [CAL-V4-005] Calendario detectado no widget inline');
+            console.log('[CAL-V4-005] Calendario detectado no widget inline');
             try {
                 var calMarker = '[CALENDAR_WIDGET]';
                 var textBefore = text.split(calMarker)[0];
@@ -1758,7 +1987,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
                 if (textBefore) { var tEl = document.createElement('div'); tEl.style.cssText = 'margin-bottom:12px;font-weight:600;'; tEl.textContent = textBefore; msgDiv.appendChild(tEl); }
                 var calC = _renderCal(); if (calC) msgDiv.appendChild(calC);
                 msgDiv.style.cssText += 'padding:16px;max-width:95%;';
-            } catch (calErr) { console.error('⚠️ [CAL-V4-005] Erro:', calErr); msgDiv.textContent = '📅 Para agendar, entre em contato diretamente.'; }
+            } catch (calErr) { console.error('[CAL-V4-005] Erro:', calErr); msgDiv.textContent = '<i class="fas fa-calendar-alt"></i> Para agendar, entre em contato diretamente.'; }
         } else if (/https?:\/\//.test(text)) {
             var esc = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
             msgDiv.innerHTML = esc.replace(/(https?:\/\/[^\s<>"']+)/gi, function(u) {
@@ -1777,21 +2006,21 @@ console.log('🚀 LinkMágico — Novo site carregado')});
         c.innerHTML = '<div class="lm-cal-loading"><div class="lm-cal-spinner"></div><br>Carregando horarios...</div>';
         var h = calendarHash || null;
         if (!h && config.apiKey) {
-            try { crypto.subtle.digest("SHA-256", new TextEncoder().encode("calendar_" + config.apiKey)).then(function(buf) { var hex = Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join(""); calendarHash = hex.substring(0,16); _fetchSl(c, calendarHash); }).catch(function(e) { c.innerHTML = '<div class="lm-cal-error">📅 Para agendar, entre em contato.</div>'; }); return c; } catch(e) { c.innerHTML = '<div class="lm-cal-error">📅 Para agendar, entre em contato.</div>'; return c; }
+            try { crypto.subtle.digest("SHA-256", new TextEncoder().encode("calendar_" + config.apiKey)).then(function(buf) { var hex = Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join(""); calendarHash = hex.substring(0,16); _fetchSl(c, calendarHash); }).catch(function(e) { c.innerHTML = '<div class="lm-cal-error">Para agendar, entre em contato.</div>'; }); return c; } catch(e) { c.innerHTML = '<div class="lm-cal-error">Para agendar, entre em contato.</div>'; return c; }
         }
-        if (!h) { c.innerHTML = '<div class="lm-cal-error">📅 Para agendar, entre em contato.</div>'; return c; }
+        if (!h) { c.innerHTML = '<div class="lm-cal-error">Para agendar, entre em contato.</div>'; return c; }
         _fetchSl(c, h); return c;
         } catch(e) { console.error('[CAL-V4-005] renderCal erro:', e); return null; }
     }
     function _fetchSl(c, h) {
         fetch(apiBase + '/api/public/availability/' + encodeURIComponent(h)).then(function(r){return r.json()}).then(function(d) {
-            if (!d.success || !d.slots || d.slots.length === 0) { c.innerHTML = '<div class="lm-cal-error">😕 Nenhum horario disponivel.</div>'; return; }
+            if (!d.success || !d.slots || d.slots.length === 0) { c.innerHTML = '<div class="lm-cal-error">Nenhum horário disponível no momento.</div>'; return; }
             _buildCal(c, d.slots, h);
-        }).catch(function(e) { c.innerHTML = '<div class="lm-cal-error">⚠️ Erro ao carregar horarios.</div>'; });
+        }).catch(function(e) { c.innerHTML = '<div class="lm-cal-error">Erro ao carregar horários.</div>'; });
     }
     function _buildCal(c, slots, h) {
         var html = ''; slots.slice(0,5).forEach(function(day) {
-            html += '<div class="lm-cal-day"><div class="lm-cal-day-header">📅 ' + day.dayName + ' — ' + (day.date||"").split("-").reverse().slice(0,2).join("/") + '</div><div class="lm-cal-slots">';
+            html += '<div class="lm-cal-day"><div class="lm-cal-day-header">' + day.dayName + ' — ' + (day.date||"").split("-").reverse().slice(0,2).join("/") + '</div><div class="lm-cal-slots">';
             day.times.slice(0,6).forEach(function(t) { html += '<button class="lm-cal-slot" data-date="'+day.date+'" data-time="'+t+'" data-day="'+day.dayName+'">'+t+'</button>'; });
             if (day.times.length > 6) html += '<span style="font-size:11px;color:#94a3b8;padding:4px;">+'+(day.times.length-6)+' mais</span>';
             html += '</div></div>';
@@ -1803,7 +2032,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
             b.addEventListener('click', function() {
                 var p = c.querySelector('.lm-cal-selected'); if (p) p.classList.remove('lm-cal-selected');
                 b.classList.add('lm-cal-selected'); sD=b.getAttribute('data-date'); sT=b.getAttribute('data-time'); sN=b.getAttribute('data-day');
-                var cf = c.querySelector('#lmCalCf'); if (cf) { cf.disabled=false; cf.textContent='✅ Confirmar '+sN+' as '+sT; }
+                var cf = c.querySelector('#lmCalCf'); if (cf) { cf.disabled=false; cf.textContent='Confirmar '+sN+' as '+sT; }
             });
         });
         var cfB = c.querySelector('#lmCalCf'); if (cfB) { cfB.addEventListener('click', function() { if (sD && sT) _bookSl(h, sD, sT, sN, c); }); }
@@ -1815,9 +2044,9 @@ console.log('🚀 LinkMágico — Novo site carregado')});
         try { var n=document.getElementById('lmLeadName'); if(n&&n.value) pl.name=n.value.trim(); } catch(e){}
         fetch(apiBase + '/api/public/book/' + encodeURIComponent(h), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pl) })
         .then(function(r){return r.json()}).then(function(d) {
-            if (d.success) { c.innerHTML = '<div class="lm-cal-success" style="color:#10b981;font-weight:600;">✅ Agendamento confirmado!<br>📅 '+dn+' as '+time+'<br><br><span style="font-size:12px;color:#64748b;">Nossa equipe entrara em contato.</span></div>'; messages.scrollTop = messages.scrollHeight; }
+            if (d.success) { c.innerHTML = '<div class="lm-cal-success" style="color:#10b981;font-weight:600;">Agendamento confirmado!<br>'+dn+' as '+time+'<br><br><span style="font-size:12px;color:#64748b;">Nossa equipe entrara em contato.</span></div>'; messages.scrollTop = messages.scrollHeight; }
             else { throw new Error(d.error || 'Erro'); }
-        }).catch(function(e) { if (cf) { cf.disabled=false; cf.textContent='⚠️ Erro — Tente novamente'; cf.style.background='#ef4444'; } });
+        }).catch(function(e) { if (cf) { cf.disabled=false; cf.textContent='Erro — Tente novamente'; cf.style.background='#ef4444'; } });
     }
     function showLeadForm() {
         var formDiv = document.createElement('div');
@@ -1860,7 +2089,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
             typing.classList.remove('lm-active');
             if (data.success && data.response) {
                 // SAFE PATCH - CAL-V4-005: Capturar calendarHash da resposta do servidor
-                if (data.calendarHash) { calendarHash = data.calendarHash; console.log('📅 [CAL-V4-005] Hash recebido:', calendarHash); }
+                if (data.calendarHash) { calendarHash = data.calendarHash; console.log('[CAL-V4-005] Hash recebido:', calendarHash); }
                 addMessage(data.response, false);
             }
             else { addMessage('Desculpe, tive um problema. Pode repetir?', false); }
@@ -1882,7 +2111,7 @@ console.log('🚀 LinkMágico — Novo site carregado')});
     closeBtn.addEventListener('click', closeChat);
     sendBtn.addEventListener('click', sendMessage);
     input.addEventListener('keypress', function (e) { if (e.key === 'Enter') sendMessage(); });
-    console.log('✅ LinkMágico Widget v2.0 carregado!');
+    console.log('LinkMágico Widget v2.0 carregado!');
 })();
 </script>
 
@@ -1899,9 +2128,9 @@ console.log('🚀 LinkMágico — Novo site carregado')});
 var demoConvId='demo_'+Date.now();
 var demoApiBase='https://linkmagico.app.br';
 var demoNichoData={
-  infoproduto:{avatar:'📚',welcome:'Olá! 👋 Sou a assistente da Academia Digital Pro. Quer saber mais sobre nosso curso?',suggestions:['O curso é para iniciantes?','Tem acesso vitalício?','Qual o preço?']},
-  negocio_local:{avatar:'🏥',welcome:'Olá! 👋 Sou a assistente da Clínica Bella Estética. Em que posso ajudar?',suggestions:['Vocês atendem aos sábados?','Qual o valor do botox?','Precisa agendar?']},
-  ecommerce:{avatar:'🛍️',welcome:'Olá! 👋 Sou a assistente da TechStore Brasil. Como posso ajudar?',suggestions:['Tem esse produto em estoque?','Qual o prazo de entrega?','Posso trocar se não servir?']}
+  infoproduto:{avatar:'<i class="fas fa-graduation-cap"></i>',welcome:'Olá! Sou a assistente da Academia Digital Pro. Quer saber mais sobre nosso curso?',suggestions:['O curso é para iniciantes?','Tem acesso vitalício?','Qual o preço?']},
+  negocio_local:{avatar:'<i class="fas fa-hospital"></i>',welcome:'Olá! Sou a assistente da Clínica Bella Estética. Em que posso ajudar?',suggestions:['Vocês atendem aos sábados?','Qual o valor do botox?','Precisa agendar?']},
+  ecommerce:{avatar:'<i class="fas fa-shopping-bag"></i>',welcome:'Olá! Sou a assistente da TechStore Brasil. Como posso ajudar?',suggestions:['Tem esse produto em estoque?','Qual o prazo de entrega?','Posso trocar se não servir?']}
 };
 var currentDemoNicho=null;
 function openDemoChat(nicho,nome){
@@ -1921,7 +2150,7 @@ function openDemoChat(nicho,nome){
     sugHTML+='</div>';
     var sugDiv=document.createElement('div');
     sugDiv.className='demo-msg demo-msg-bot';
-    sugDiv.innerHTML='<div style="font-size:.78rem;color:var(--muted);margin-bottom:6px">💡 Perguntas frequentes:</div>'+sugHTML;
+    sugDiv.innerHTML='<div style="font-size:.78rem;color:var(--muted);margin-bottom:6px">Perguntas frequentes:</div>'+sugHTML;
     msgs.appendChild(sugDiv);
     msgs.scrollTop=msgs.scrollHeight;
   },800);
@@ -1941,7 +2170,7 @@ function addDemoMsg(text,isUser){
   if(isUser){div.textContent=text;}
   else if(/https?:\/\//.test(text)){
     var safe=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    div.innerHTML=safe.replace(/(https?:\/\/[^\s<>"']+)/gi,function(u){return '<a href="'+u+'" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,var(--green),#059669);color:white;padding:6px 14px;border-radius:16px;text-decoration:none;font-size:.82rem;font-weight:600;margin:4px 0">🔗 Acessar agora</a>';});
+    div.innerHTML=safe.replace(/(https?:\/\/[^\s<>"']+)/gi,function(u){return '<a href="'+u+'" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,var(--green),#059669);color:white;padding:6px 14px;border-radius:16px;text-decoration:none;font-size:.82rem;font-weight:600;margin:4px 0">Acessar agora</a>';});
   } else {div.textContent=text;}
   msgs.appendChild(div);
   msgs.scrollTop=msgs.scrollHeight;
