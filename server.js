@@ -55,6 +55,20 @@ app.get('/treinamento', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'treinamento.html'));
 });
 
+// ===== BLOG — Rotas limpas sem .html =====
+app.get('/blog', (req, res) => {
+    res.redirect(301, '/blog/');
+});
+app.get('/blog/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'blog', 'index.html'));
+});
+app.get('/blog/:slug', (req, res, next) => {
+    const file = path.join(__dirname, 'public', 'blog', req.params.slug + '.html');
+    res.sendFile(file, (err) => {
+        if (err) next();
+    });
+});
+
 // ===== FALLBACK 404 → HOME =====
 app.use((req, res) => {
     res.status(302).redirect('/');

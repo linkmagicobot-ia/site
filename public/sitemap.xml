@@ -22,18 +22,42 @@
     <loc>https://linkmagico.app.br/termos.html</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://linkmagico.app.br/privacidade.html</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://linkmagico.app.br/api-docs</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://site.linkmagico.app.br/blog/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://site.linkmagico.app.br/blog/o-que-e-vendedor-automatico-para-landing-page</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://site.linkmagico.app.br/blog/como-converter-mais-leads-com-chatbot-de-ia</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://site.linkmagico.app.br/blog/melhor-chatbot-para-infoprodutores-no-brasil</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
