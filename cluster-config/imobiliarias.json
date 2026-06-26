@@ -1,0 +1,248 @@
+{
+  "segmento": "Imobiliárias",
+  "slug": "imobiliarias",
+  "cor": "#f59e0b",
+  "corRgba": "rgba(245,158,11",
+  "icone": "fa-building",
+  "headline": "Qualifique leads e agende visitas automaticamente",
+  "subheadline": "Seu chatbot com IA atende interessados 24h, qualifica por perfil e agenda visitas — sem sobrecarregar corretores.",
+  "glossario": ["lead", "lead-scoring", "pipeline", "follow-up", "crm"],
+  "blogLinks": [
+    {"url": "/blog/como-reduzir-abandono-de-leads", "titulo": "Como reduzir abandono de leads"},
+    {"url": "/blog/como-automatizar-atendimento-whatsapp", "titulo": "Como automatizar atendimento pelo WhatsApp"}
+  ],
+  "integracoes": ["WhatsApp (Twilio/Evolution)", "Google Calendar", "Portais (ZAP/OLX)", "WordPress"],
+  "problemas": [
+    {"icone": "fa-hourglass", "titulo": "Leads esfriam em minutos", "desc": "Quem busca imóvel espera resposta imediata. Demora de horas significa perda para o concorrente. Estudos de mercado indicam que leads respondidos em até 5 minutos têm chances significativamente maiores de conversão."},
+    {"icone": "fa-users", "titulo": "Corretores gastam tempo com curiosos", "desc": "Sem qualificação prévia, a equipe comercial investe horas atendendo pessoas sem perfil ou orçamento compatível. Isso reduz a produtividade dos melhores vendedores."},
+    {"icone": "fa-moon", "titulo": "Busca acontece fora do horário", "desc": "A maioria das pesquisas por imóveis ocorre à noite e nos finais de semana — exatamente quando não há ninguém para atender."},
+    {"icone": "fa-shuffle", "titulo": "Leads se perdem entre corretores", "desc": "Sem sistema centralizado, leads ficam concentrados em poucos corretores ou simplesmente desaparecem sem follow-up."}
+  ],
+  "solucoes": [
+    {"icone": "fa-bolt", "titulo": "Resposta em segundos, 24h", "desc": "A IA responde instantaneamente com informações do imóvel, localização e diferenciais — mesmo às 23h de um domingo."},
+    {"icone": "fa-filter", "titulo": "Qualificação automática por perfil", "desc": "Chatbot identifica orçamento, região desejada, número de quartos, tipo de imóvel e urgência antes de envolver o corretor."},
+    {"icone": "fa-calendar", "titulo": "Agendamento de visitas", "desc": "Interessados qualificados agendam visitas diretamente pelo WhatsApp, com confirmação automática e lembrete."},
+    {"icone": "fa-sitemap", "titulo": "Distribuição inteligente de leads", "desc": "Leads qualificados são organizados no CRM com todo o contexto da conversa, prontos para o corretor atuar."}
+  ],
+  "fluxo": [
+    {"step": "1", "label": "Lead chega pelo portal", "detail": "OLX, ZAP, Instagram, Google Ads"},
+    {"step": "2", "label": "IA qualifica em tempo real", "detail": "Orçamento, região, tipo, urgência"},
+    {"step": "3", "label": "Agenda visita ou envia opções", "detail": "Fotos, valores, localização, diferenciais"},
+    {"step": "4", "label": "Corretor recebe lead quente", "detail": "Com contexto completo no CRM"}
+  ],
+  "features": ["Qualificação 24h", "Agendamento de visitas", "Envio de imóveis", "Distribuição de leads", "CRM integrado", "WhatsApp + Site"],
+  "exclusivos": [
+    {"icone": "fa-house", "titulo": "Envio de imóveis por perfil", "desc": "O chatbot filtra e envia opções de imóveis compatíveis com o perfil do lead (orçamento, bairro, tipo, metragem)."},
+    {"icone": "fa-users-gear", "titulo": "Distribuição para corretores", "desc": "Leads qualificados são organizados no CRM com todas as informações coletadas durante a conversa."},
+    {"icone": "fa-map-location-dot", "titulo": "Filtro por localização e bairro", "desc": "A IA identifica bairro, cidade ou região desejada e apresenta imóveis correspondentes automaticamente."},
+    {"icone": "fa-handshake", "titulo": "Follow-up pós-visita", "desc": "Mensagem automática após a visita perguntando interesse, coletando feedback e oferecendo alternativas."}
+  ],
+  "faq": [
+    {"q": "O chatbot consegue enviar fotos de imóveis?", "a": "Sim. O chatbot pode enviar imagens, links, vídeos e informações detalhadas dos imóveis durante a conversa pelo WhatsApp ou pelo site."},
+    {"q": "Como funciona a qualificação de leads?", "a": "O chatbot faz perguntas sobre orçamento, região, tipo de imóvel e urgência. Leads qualificados são registrados no CRM com score e contexto completo."},
+    {"q": "Funciona com portais como OLX e ZAP?", "a": "O LinkMágico pode ser integrado via WhatsApp — quando o lead entra em contato pelo número do anúncio, o chatbot atende automaticamente."},
+    {"q": "Preciso cadastrar cada imóvel no chatbot?", "a": "Não. O chatbot aprende pelo conteúdo do seu site. Basta manter o site atualizado e retreinar periodicamente."},
+    {"q": "Quanto custa?", "a": "Planos a partir de R$0/mês. O plano Pro (R$69/mês) é o mais indicado para imobiliárias com volume moderado de leads."}
+  ],
+  "templates": {
+    "recepcao": [
+      "Olá! 😊 Bem-vindo(a) à [Nome da Imobiliária]. Sou o assistente virtual e posso te ajudar a encontrar o imóvel ideal. Você está buscando para compra ou aluguel?",
+      "Boa tarde! Que tipo de imóvel você procura? Apartamento, casa, sala comercial ou terreno?",
+      "Para te ajudar melhor, me conta: qual região ou bairro você prefere?",
+      "Qual é a sua faixa de investimento? Isso me ajuda a filtrar as melhores opções para você."
+    ],
+    "qualificacao": [
+      "Perfeito! Deixa eu entender melhor o que você precisa:\n\n1️⃣ Tipo: [compra/aluguel]\n2️⃣ Imóvel: [apt/casa/comercial]\n3️⃣ Quartos: quantos?\n4️⃣ Região preferida?\n5️⃣ Orçamento aproximado?",
+      "Com base no que você me contou, tenho [X] opções que podem te interessar. Quer que eu envie os detalhes?",
+      "Esse imóvel tem garagem? Precisa de área de lazer? Alguma preferência especial?",
+      "Você já visitou imóveis na região? Tem prazo para se mudar?"
+    ],
+    "visita": [
+      "Ótimo! Posso agendar uma visita para você conhecer o imóvel pessoalmente. Quais dias e horários funcionam melhor?",
+      "✅ Visita agendada!\n\n🏠 [Endereço do imóvel]\n📅 [Data] às [Horário]\n👤 Corretor(a): [Nome]\n📱 Contato: [Telefone]\n\nVocê receberá um lembrete 24h antes.",
+      "Olá, [Nome]! 😊 Lembrando da sua visita amanhã:\n\n🏠 [Endereço]\n📅 [Data] às [Horário]\n\nVocê confirma?\n✅ Sim\n🔄 Reagendar",
+      "Não conseguiu comparecer? Sem problemas! Posso agendar para outro dia. Quando seria melhor?"
+    ],
+    "posVisita": [
+      "Olá, [Nome]! Como foi a visita ao imóvel na [endereço]? O que achou?",
+      "Gostou mas quer ver mais opções? Posso enviar imóveis semelhantes na mesma região e faixa de preço.",
+      "Se tiver interesse, posso colocar você em contato direto com o(a) corretor(a) [Nome] para discutir condições e valores.",
+      "Obrigado pelo feedback! Vou manter seu perfil no sistema e te avisar quando novos imóveis compatíveis estiverem disponíveis. 🏡"
+    ],
+    "informacoes": [
+      "📍 [Nome da Imobiliária]\n🕐 Seg a Sex: 08h às 18h | Sáb: 09h às 13h\n📱 WhatsApp: [número]\n📧 Email: [email]\n🌐 Site: [url]",
+      "Trabalhamos com financiamento bancário, FGTS e consórcio. Quer que eu explique as opções de pagamento?",
+      "Toda a documentação é verificada pela nossa equipe jurídica. Segurança é prioridade.",
+      "Aceitamos imóvel como parte do pagamento em alguns casos. Quer saber mais?"
+    ]
+  },
+  "promptsCategories": [
+    {"cat": "Recepção e Triagem", "icone": "fa-door-open", "items": [
+      "Receba o lead com cordialidade e pergunte se busca compra, aluguel ou investimento.",
+      "Identifique o tipo de imóvel desejado (apartamento, casa, sala comercial, terreno, lote).",
+      "Pergunte sobre a região ou bairro preferido.",
+      "Questione sobre o orçamento ou faixa de investimento.",
+      "Verifique número de quartos, vagas de garagem e metragem desejada."
+    ]},
+    {"cat": "Qualificação", "icone": "fa-filter", "items": [
+      "Pergunte se o lead já visitou imóveis na região.",
+      "Verifique se já tem pré-aprovação de financiamento.",
+      "Identifique o prazo para mudança ou compra.",
+      "Questione se precisa de área de lazer, varanda, suíte ou outros diferenciais.",
+      "Classifique o lead como frio (pesquisando), morno (comparando) ou quente (decidindo)."
+    ]},
+    {"cat": "Apresentação de Imóveis", "icone": "fa-house", "items": [
+      "Apresente no máximo 3 opções por vez para não sobrecarregar.",
+      "Destaque os diferenciais de cada imóvel (localização, acabamento, vista, valor por m²).",
+      "Informe valor, condomínio (se houver) e IPTU.",
+      "Envie fotos e link para a página do imóvel no site.",
+      "Mencione a disponibilidade de visita presencial."
+    ]},
+    {"cat": "Agendamento de Visitas", "icone": "fa-calendar", "items": [
+      "Ofereça horários flexíveis (manhã, tarde, final de semana).",
+      "Confirme endereço, data e horário da visita.",
+      "Informe o nome do corretor responsável.",
+      "Envie lembrete 24h e 2h antes da visita.",
+      "Em caso de cancelamento, ofereça reagendamento imediato."
+    ]},
+    {"cat": "Follow-up", "icone": "fa-rotate", "items": [
+      "Após a visita, pergunte impressões e interesse.",
+      "Se gostou, pergunte se quer avançar com proposta.",
+      "Se não gostou, pergunte o motivo e ofereça alternativas.",
+      "Se não responder, envie follow-up em 48h com nova opção.",
+      "Mantenha o lead informado sobre novos imóveis compatíveis."
+    ]},
+    {"cat": "Objeções", "icone": "fa-shield-halved", "items": [
+      "Se disser 'tá caro', pergunte o orçamento ideal e ofereça opções compatíveis.",
+      "Se disser 'preciso pensar', respeite e agende follow-up em 3 dias.",
+      "Se perguntar sobre financiamento, explique as opções disponíveis.",
+      "Se questionar a localização, destaque pontos de interesse próximos.",
+      "Se preferir falar com uma pessoa, transfira para o corretor com contexto completo."
+    ]}
+  ],
+  "exemplosConversas": [
+    {
+      "titulo": "Qualificação e Envio de Imóveis",
+      "icone": "fa-filter",
+      "mensagens": [
+        {"tipo": "user", "texto": "Oi, estou procurando um apartamento para comprar no centro"},
+        {"tipo": "bot", "texto": "Olá! 😊 Que bom que você está buscando com a gente! Para te ajudar melhor:\n\n1️⃣ Quantos quartos você precisa?\n2️⃣ Precisa de garagem?\n3️⃣ Qual sua faixa de investimento?"},
+        {"tipo": "user", "texto": "2 quartos, com garagem, até 350 mil"},
+        {"tipo": "bot", "texto": "Perfeito! Encontrei 3 opções no centro que combinam com seu perfil:\n\n🏠 **Residencial Solar** — 2 quartos, 1 vaga, 68m² — R$ 320.000\n📍 Rua XV de Novembro, 450\n\n🏠 **Edifício Aurora** — 2 quartos, 1 vaga, 72m² — R$ 345.000\n📍 Av. Brasil, 890\n\n🏠 **Cond. Parque Central** — 2 quartos, 1 vaga, 65m² — R$ 299.000\n📍 Rua das Flores, 123\n\nQuer mais detalhes de algum? Posso agendar uma visita!"},
+        {"tipo": "user", "texto": "O Edifício Aurora parece bom, quero visitar"},
+        {"tipo": "bot", "texto": "Ótima escolha! O Edifício Aurora tem acabamento de alto padrão e fica a 2 quadras do shopping. \n\nHorários disponíveis para visita:\n\n📅 Sábado 28/06 — 10h ou 14h\n📅 Segunda 30/06 — 09h ou 16h\n\nQual funciona melhor?"}
+      ]
+    },
+    {
+      "titulo": "Agendamento e Confirmação de Visita",
+      "icone": "fa-calendar",
+      "mensagens": [
+        {"tipo": "user", "texto": "Sábado às 10h"},
+        {"tipo": "bot", "texto": "✅ Visita agendada!\n\n🏠 Edifício Aurora — Apt 2 quartos\n📍 Av. Brasil, 890 — Centro\n📅 Sábado, 28/06 às 10h\n👤 Corretor: Carlos Mendes\n📱 (11) 99999-0000\n\nVocê receberá um lembrete 24h antes. Precisa de mais alguma coisa?"},
+        {"tipo": "user", "texto": "Não, obrigado!"},
+        {"tipo": "bot", "texto": "Por nada! Até sábado. Se surgir qualquer dúvida, é só me chamar. 😊🏡"},
+        {"tipo": "bot", "texto": "Olá, [Nome]! 😊 Lembrando da sua visita amanhã:\n\n🏠 Edifício Aurora\n📅 Sábado, 28/06 às 10h\n📍 Av. Brasil, 890\n\nVocê confirma?\n✅ Sim, estarei lá\n🔄 Preciso reagendar"}
+      ]
+    },
+    {
+      "titulo": "Follow-up Pós-visita",
+      "icone": "fa-handshake",
+      "mensagens": [
+        {"tipo": "bot", "texto": "Olá! 😊 Como foi a visita ao Edifício Aurora? O que achou do apartamento?"},
+        {"tipo": "user", "texto": "Gostei bastante, mas achei o condomínio um pouco alto"},
+        {"tipo": "bot", "texto": "Entendo! O condomínio do Aurora é R$ 650/mês e inclui academia, piscina e portaria 24h.\n\nSe preferir condomínio mais baixo, tenho uma opção no mesmo bairro:\n\n🏠 **Cond. Parque Central** — R$ 299.000\n📍 Condomínio: R$ 380/mês\n📐 65m², 2 quartos, 1 vaga\n\nQuer agendar uma visita para comparar?"},
+        {"tipo": "user", "texto": "Sim, quero comparar"},
+        {"tipo": "bot", "texto": "Perfeito! Vou verificar os horários disponíveis para o Parque Central e te envio as opções. 📅"}
+      ]
+    }
+  ],
+  "checklistEtapas": [
+    {"titulo": "Definir Objetivos", "itens": [
+      "Qualificação automática de leads (orçamento, região, tipo)",
+      "Agendamento de visitas pelo WhatsApp",
+      "Envio de imóveis por perfil",
+      "Distribuição de leads para corretores",
+      "Follow-up pós-visita automático",
+      "Atendimento fora do horário comercial"
+    ]},
+    {"titulo": "Configuração Inicial", "itens": [
+      "Criar conta no LinkMágico",
+      "Treinar a IA com URL do site da imobiliária",
+      "Configurar tipos de imóveis (venda, aluguel, comercial)",
+      "Definir regiões e bairros atendidos",
+      "Configurar faixas de preço",
+      "Adicionar informações de financiamento"
+    ]},
+    {"titulo": "Definir Fluxos", "itens": [
+      "Fluxo de qualificação (tipo → região → orçamento → quartos)",
+      "Fluxo de envio de imóveis (filtro → apresentação → interesse)",
+      "Fluxo de agendamento de visita (horário → confirmação → lembrete)",
+      "Fluxo de follow-up pós-visita (feedback → proposta ou alternativa)",
+      "Fluxo fora do horário (mensagem + qualificação + agendamento)",
+      "Fluxo de distribuição (lead qualificado → CRM → corretor)"
+    ]},
+    {"titulo": "Integrações", "itens": [
+      "Conectar WhatsApp (Twilio ou Evolution API)",
+      "Instalar widget no site da imobiliária",
+      "Configurar link nos anúncios dos portais (OLX, ZAP)",
+      "Conectar Google Calendar para visitas (se usar)"
+    ]},
+    {"titulo": "Testes", "itens": [
+      "Testar qualificação completa (início ao fim)",
+      "Testar envio de imóveis por perfil",
+      "Testar agendamento de visita",
+      "Testar follow-up pós-visita",
+      "Testar comportamento fora do horário",
+      "Testar no celular (WhatsApp + site)"
+    ]},
+    {"titulo": "Publicação", "itens": [
+      "Ativar chatbot no site",
+      "Ativar chatbot no WhatsApp",
+      "Adicionar link nos anúncios de portais",
+      "Informar equipe de corretores sobre o novo canal",
+      "Divulgar para clientes e leads existentes"
+    ]},
+    {"titulo": "Monitoramento", "itens": [
+      "Acompanhar taxa de qualificação",
+      "Medir conversão de lead → visita agendada",
+      "Verificar perguntas não respondidas",
+      "Avaliar feedback dos corretores",
+      "Ajustar respostas e fluxos conforme necessário"
+    ]}
+  ],
+  "fluxosDiagramas": [
+    {"titulo": "Qualificação de Lead", "icone": "fa-filter", "steps": [
+      {"box": "start", "texto": "📱 Lead envia mensagem"},
+      {"box": "action", "texto": "🤖 IA identifica intenção: BUSCAR IMÓVEL"},
+      {"box": "action", "texto": "❓ Tipo: compra ou aluguel?"},
+      {"box": "action", "texto": "🏠 Qual tipo de imóvel?"},
+      {"box": "action", "texto": "📍 Região ou bairro?"},
+      {"box": "action", "texto": "💰 Faixa de investimento?"},
+      {"box": "action", "texto": "🛏️ Quartos, vagas, metragem?"},
+      {"box": "decision", "texto": "Lead qualificado?"},
+      {"box": "end_yes", "texto": "✅ Envia imóveis compatíveis + Registra no CRM"},
+      {"box": "end_no", "texto": "📋 Salva perfil para notificação futura"}
+    ]},
+    {"titulo": "Agendamento de Visita", "icone": "fa-calendar", "steps": [
+      {"box": "start", "texto": "👤 Lead quer visitar imóvel"},
+      {"box": "action", "texto": "📅 Apresenta horários disponíveis"},
+      {"box": "decision", "texto": "Lead confirma?"},
+      {"box": "end_yes", "texto": "✅ Agenda + Lembrete + Notifica corretor"},
+      {"box": "action", "texto": "🔄 Oferece outros horários"}
+    ]},
+    {"titulo": "Follow-up Pós-visita", "icone": "fa-handshake", "steps": [
+      {"box": "start", "texto": "⏰ Gatilho: 2h após visita"},
+      {"box": "action", "texto": "📩 Pergunta impressões"},
+      {"box": "decision", "texto": "Gostou?"},
+      {"box": "end_yes", "texto": "✅ Conecta com corretor para proposta"},
+      {"box": "action", "texto": "🏠 Oferece alternativas similares"}
+    ]},
+    {"titulo": "Distribuição de Leads", "icone": "fa-sitemap", "steps": [
+      {"box": "start", "texto": "🤖 Lead qualificado pelo chatbot"},
+      {"box": "action", "texto": "📋 Dados registrados no CRM"},
+      {"box": "action", "texto": "🗺️ Identifica região do imóvel"},
+      {"box": "action", "texto": "👤 Seleciona corretor da região"},
+      {"box": "end_yes", "texto": "✅ Corretor recebe lead + contexto completo"}
+    ]}
+  ]
+}

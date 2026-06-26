@@ -1,0 +1,25 @@
+{
+  "segment": "imobiliarias",
+  "segmento": "Imobiliárias",
+  "version": "1.0",
+  "generatedAt": "2026-06-26T15:43:19.159Z",
+  "pages": [
+    "/imobiliarias",
+    "/templates/imobiliarias",
+    "/fluxos/imobiliarias",
+    "/checklists/imobiliarias",
+    "/prompts/imobiliarias",
+    "/exemplos/imobiliarias"
+  ],
+  "glossary": [
+    "lead",
+    "lead-scoring",
+    "pipeline",
+    "follow-up",
+    "crm"
+  ],
+  "definitionOfDone": {
+    "total": 29,
+    "passed": "pending-audit"
+  }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist de Implantação para Imobiliárias — LinkMágico</title>
+<meta name="description" content="Guia passo a passo para implantar chatbot com IA em imobiliárias: 7 etapas.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/checklists/imobiliarias">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Checklist de Implantação para Imobiliárias — LinkMágico">
+<meta property="og:description" content="Guia passo a passo para implantar chatbot com IA em imobiliárias: 7 etapas.">
+<meta property="og:url" content="https://site.linkmagico.app.br/checklists/imobiliarias">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Checklists"},{"@type":"ListItem","position":3,"name":"Imobiliárias"}]},{"@context":"https://schema.org","@type":"HowTo","name":"Como implantar chatbot em imobiliárias","step":[{"@type":"HowToStep","name":"Definir Objetivos","text":"Qualificação automática de leads (orçamento, região, tipo)"},{"@type":"HowToStep","name":"Configuração Inicial","text":"Criar conta no LinkMágico"},{"@type":"HowToStep","name":"Definir Fluxos","text":"Fluxo de qualificação (tipo → região → orçamento → quartos)"},{"@type":"HowToStep","name":"Integrações","text":"Conectar WhatsApp (Twilio ou Evolution API)"},{"@type":"HowToStep","name":"Testes","text":"Testar qualificação completa (início ao fim)"},{"@type":"HowToStep","name":"Publicação","text":"Ativar chatbot no site"},{"@type":"HowToStep","name":"Monitoramento","text":"Acompanhar taxa de qualificação"}]}]</script>
+<style>*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--accent:#f59e0b}body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:800px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif}.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav__links{display:flex;gap:20px;align-items:center}.nav__links a{color:var(--muted);font-size:.9rem}.nav__links a:hover{color:var(--text);text-decoration:none}.btn-cta{background:linear-gradient(135deg,var(--purple),#5b21b6);color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}
+.breadcrumb{padding:90px 0 0;font-size:.83rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
+.hero{padding:24px 0 32px;text-align:center}.hero .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:12px}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;margin-bottom:8px;line-height:1.3}h1 span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.95rem;max-width:560px;margin:0 auto}
+h2{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;margin:32px 0 16px;display:flex;align-items:center;gap:8px}h2 i{color:var(--accent);font-size:1rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:12px;transition:border-color .3s}.card:hover{border-color:var(--accent)}
+.card-title{font-weight:700;font-size:.9rem;margin-bottom:4px;display:flex;align-items:center;gap:8px}.card-title i{color:var(--accent)}
+.card p{font-size:.85rem;color:var(--muted)}
+.msg-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:14px 18px;margin:10px 0;font-size:.86rem;color:var(--muted);white-space:pre-line}
+.copy-btn{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);color:var(--purple-l);padding:4px 12px;border-radius:6px;font-size:.75rem;cursor:pointer;font-family:'Inter',sans-serif;margin-left:auto}.copy-btn:hover{background:rgba(124,58,237,.3)}
+.step{display:flex;gap:14px;margin-bottom:16px}.step-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0}.step-content{flex:1}.step-content strong{display:block;font-size:.9rem;margin-bottom:2px}.step-content p{font-size:.84rem;color:var(--muted)}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}.check-item:last-child{border-bottom:none}.check-item i{color:var(--green-l);margin-top:3px;flex-shrink:0}.check-item span{font-size:.88rem}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag-item{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);color:var(--accent);padding:5px 14px;border-radius:16px;font-size:.8rem;font-weight:600}
+.related{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-top:32px}.related h3{font-size:.9rem;margin-bottom:10px}.related a{display:block;font-size:.84rem;padding:5px 0;color:var(--purple-l);border-bottom:1px solid var(--border)}.related a:last-child{border-bottom:none}.related a:hover{color:var(--green-l);text-decoration:none}.related a i{margin-right:6px;font-size:.7rem}
+.cta-box{background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(245,158,11,.1));border:1px solid rgba(124,58,237,.2);border-radius:14px;padding:28px;text-align:center;margin-top:32px}.cta-box h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;margin-bottom:6px}.cta-box p{color:var(--muted);font-size:.88rem;margin-bottom:14px}.cta-box .btn-cta{display:inline-block;padding:10px 28px;font-size:.95rem;border-radius:10px;text-decoration:none}
+.flow-diagram{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin:16px 0}
+.flow-row{display:flex;align-items:center;gap:12px;margin:8px 0;flex-wrap:wrap;justify-content:center}
+.flow-box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-size:.84rem;text-align:center;min-width:140px}
+.flow-box.start{border-color:var(--accent);color:var(--accent);font-weight:700}
+.flow-box.action{border-color:var(--green);color:var(--green-l)}
+.flow-box.decision{border-color:var(--purple);color:var(--purple-l)}
+.flow-box.end_yes{border-color:var(--green);background:rgba(16,185,129,.1);color:var(--green-l);font-weight:700}
+.flow-box.end_no{border-color:var(--muted);color:var(--muted)}
+.flow-arrow-d{text-align:center;color:var(--muted);font-size:.75rem;padding:4px 0}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
+.flow-label{font-size:.72rem;color:var(--muted);text-align:center;padding:2px 8px;background:var(--surface2);border-radius:4px;display:inline-block}
+.chat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin:16px 0}
+.chat-msg{display:flex;gap:10px;margin-bottom:12px}.chat-msg:last-child{margin-bottom:0}
+.chat-avatar{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+.chat-avatar.user{background:rgba(245,158,11,.2);color:var(--accent)}
+.chat-avatar.bot{background:rgba(124,58,237,.2);color:var(--purple-l)}
+.chat-bubble{background:var(--bg);border-radius:0 12px 12px 12px;padding:10px 14px;font-size:.85rem;color:var(--muted);max-width:80%;line-height:1.6;white-space:pre-line}
+.chat-msg.bot .chat-bubble{border-radius:12px 0 12px 12px}
+.chat-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.chat-label.user{color:var(--accent)}.chat-label.bot{color:var(--purple-l)}
+.example-note{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 14px;font-size:.8rem;color:#f59e0b;margin:16px 0;display:flex;align-items:center;gap:8px}
+footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:480px){.container{padding:0 16px}.nav__links a:not(.btn-cta){display:none}}</style></head><body><header><nav class="nav"><a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a><div class="nav__links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/glossario">Glossário</a><a href="https://linkmagico.app.br/pricing.html" class="btn-cta">Ver Planos</a></div></nav></header><main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <a href="/">Checklists</a> › <strong>Imobiliárias</strong></nav>
+<section class="hero"><span class="tag"><i class="fas fa-list-check"></i> Checklist</span>
+<h1>Checklist de Implantação para <span>Imobiliárias</span></h1>
+<p class="subtitle">7 etapas para implantar chatbot com IA em imobiliárias.</p></section>
+<div class="step"><div class="step-num">1</div><div class="step-content"><strong>Definir Objetivos</strong></div></div>
+<div class="card"><div class="check-item"><i class="fas fa-square"></i><span>Qualificação automática de leads (orçamento, região, tipo)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Agendamento de visitas pelo WhatsApp</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Envio de imóveis por perfil</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Distribuição de leads para corretores</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Follow-up pós-visita automático</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Atendimento fora do horário comercial</span></div></div>
+<div class="step"><div class="step-num">2</div><div class="step-content"><strong>Configuração Inicial</strong></div></div>
+<div class="card"><div class="check-item"><i class="fas fa-square"></i><span>Criar conta no LinkMágico</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Treinar a IA com URL do site da imobiliária</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Configurar tipos de imóveis (venda, aluguel, comercial)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Definir regiões e bairros atendidos</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Configurar faixas de preço</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Adicionar informações de financiamento</span></div></div>
+<div class="step"><div class="step-num">3</div><div class="step-content"><strong>Definir Fluxos</strong></div></div>
+<div class="card"><div class="check-item"><i class="fas fa-square"></i><span>Fluxo de qualificação (tipo → região → orçamento → quartos)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Fluxo de envio de imóveis (filtro → apresentação → interesse)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Fluxo de agendamento de visita (horário → confirmação → lembrete)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Fluxo de follow-up pós-visita (feedback → proposta ou alternativa)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Fluxo fora do horário (mensagem + qualificação + agendamento)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Fluxo de distribuição (lead qualificado → CRM → corretor)</span></div></div>
+<div class="step"><div class="step-num">4</div><div class="step-content"><strong>Integrações</strong></div></div>
+<div class="card"><div class="check-item"><i class="fas fa-square"></i><span>Conectar WhatsApp (Twilio ou Evolution API)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Instalar widget no site da imobiliária</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Configurar link nos anúncios dos portais (OLX, ZAP)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Conectar Google Calendar para visitas (se usar)</span></div></div>
+<div class="step"><div class="step-num">5</div><div class="step-content"><strong>Testes</strong></div></div>
+<div class="card"><div class="check-item"><i class="fas fa-square"></i><span>Testar qualificação completa (início ao fim)</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Testar envio de imóveis por perfil</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Testar agendamento de visita</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Testar follow-up pós-visita</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Testar comportamento fora do horário</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Testar no celular (WhatsApp + site)</span></div></div>
+<div class="step"><div class="step-num">6</div><div class="step-content"><strong>Publicação</strong></div></div>
+<div class="card"><div class="check-item"><i class="fas fa-square"></i><span>Ativar chatbot no site</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Ativar chatbot no WhatsApp</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Adicionar link nos anúncios de portais</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Informar equipe de corretores sobre o novo canal</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Divulgar para clientes e leads existentes</span></div></div>
+<div class="step"><div class="step-num">7</div><div class="step-content"><strong>Monitoramento</strong></div></div>
+<div class="card"><div class="check-item"><i class="fas fa-square"></i><span>Acompanhar taxa de qualificação</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Medir conversão de lead → visita agendada</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Verificar perguntas não respondidas</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Avaliar feedback dos corretores</span></div>
+<div class="check-item"><i class="fas fa-square"></i><span>Ajustar respostas e fluxos conforme necessário</span></div></div>
+
+<div class="related" style="background:linear-gradient(135deg,rgba(245,158,11,.05),rgba(124,58,237,.05));border-color:rgba(245,158,11,.2)">
+<h3>📋 Cluster Imobiliárias — Navegação</h3>
+<a href="/imobiliarias" style="color:#f59e0b"><i class="fas fa-building"></i> Landing Page — Chatbot para Imobiliárias</a>
+<a href="/templates/imobiliarias"><i class="fas fa-message"></i> Templates de Mensagens</a>
+<a href="/fluxos/imobiliarias"><i class="fas fa-diagram-project"></i> Fluxos de Atendimento</a>
+<a href="/checklists/imobiliarias"><i class="fas fa-list-check"></i> Checklist de Implantação</a>
+<a href="/prompts/imobiliarias"><i class="fas fa-brain"></i> Biblioteca de Prompts</a>
+<a href="/exemplos/imobiliarias"><i class="fas fa-comments"></i> Exemplos de Conversa</a>
+<a href="/ferramentas/calculadora-roi"><i class="fas fa-calculator"></i> Calculadora de ROI</a>
+<a href="/glossario/lead"><i class="fas fa-book-open"></i> Lead</a>
+<a href="/glossario/lead-scoring"><i class="fas fa-book-open"></i> Lead Scoring</a>
+<a href="/glossario/pipeline"><i class="fas fa-book-open"></i> Pipeline</a>
+<a href="/glossario/follow-up"><i class="fas fa-book-open"></i> Follow Up</a>
+<a href="/glossario/crm"><i class="fas fa-book-open"></i> Crm</a>
+</div>
+<div class="cta-box"><h3>Teste o LinkMágico para imobiliárias</h3><p>Crie seu assistente virtual em menos de 2 minutos. Plano gratuito disponível.</p><a href="https://linkmagico.app.br/signup.html" class="btn-cta">Criar Conta Grátis →</a></div>
+</div></main><footer><div class="container"><p>© 2025 LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/imobiliarias">Imobiliárias</a> · <a href="/glossario">Glossário</a> · <a href="/docs">Docs</a> · <a href="/politica-de-privacidade">Privacidade</a></p></div></footer></body></html>
