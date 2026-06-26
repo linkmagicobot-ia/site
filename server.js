@@ -131,6 +131,18 @@ segmentos.forEach(seg => {
     });
 });
 
+// ===== CLUSTER ASSETS (templates, fluxos, checklists, prompts, exemplos) =====
+const clusterTypes = ['templates', 'fluxos', 'checklists', 'prompts', 'exemplos', 'integracoes'];
+clusterTypes.forEach(type => {
+    app.get('/' + type + '/:segmento', (req, res) => {
+        const seg = req.params.segmento.replace(/[^a-z0-9-]/gi, '');
+        const filePath = path.join(__dirname, 'public', type, seg + '.html');
+        res.sendFile(filePath, (err) => {
+            if (err) res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+        });
+    });
+});
+
 // ===== BLOG — Rotas limpas sem .html =====
 app.get('/blog', (req, res) => {
     res.redirect(301, '/blog/');

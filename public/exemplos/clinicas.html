@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplos de Conversa — Chatbot para Clínicas — LinkMágico</title>
+<meta name="description" content="Exemplos simulados de conversas entre paciente e chatbot de IA: agendamento, confirmação, triagem e pós-consulta.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/exemplos/clinicas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exemplos de Conversa — Chatbot para Clínicas — LinkMágico">
+<meta property="og:description" content="Exemplos simulados de conversas entre paciente e chatbot de IA: agendamento, confirmação, triagem e pós-consulta.">
+<meta property="og:url" content="https://site.linkmagico.app.br/exemplos/clinicas">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Exemplos","item":"https://site.linkmagico.app.br/exemplos/clinicas"},{"@type":"ListItem","position":3,"name":"Clínicas"}]}]</script>
+<style>*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--accent:#06b6d4}body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:800px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif}.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav__links{display:flex;gap:20px;align-items:center}.nav__links a{color:var(--muted);font-size:.9rem}.nav__links a:hover{color:var(--text);text-decoration:none}.btn-cta{background:linear-gradient(135deg,var(--purple),#5b21b6);color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}
+.breadcrumb{padding:90px 0 0;font-size:.83rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
+.hero{padding:24px 0 32px;text-align:center}.hero .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(6,182,212,.15);border:1px solid rgba(6,182,212,.3);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:12px}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;margin-bottom:8px;line-height:1.3}h1 span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.95rem;max-width:560px;margin:0 auto}
+h2{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;margin:32px 0 16px;display:flex;align-items:center;gap:8px}h2 i{color:var(--accent);font-size:1rem}
+h3{font-size:.95rem;font-weight:700;margin:20px 0 8px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:12px;transition:border-color .3s}.card:hover{border-color:var(--accent)}
+.card-title{font-weight:700;font-size:.9rem;margin-bottom:4px;display:flex;align-items:center;gap:8px}.card-title i{color:var(--accent)}
+.card p,.card-body{font-size:.85rem;color:var(--muted)}
+.msg-box{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:14px 18px;margin:10px 0;font-size:.86rem;color:var(--muted);font-style:italic}
+.copy-btn{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);color:var(--purple-l);padding:4px 12px;border-radius:6px;font-size:.75rem;cursor:pointer;font-family:'Inter',sans-serif;margin-left:8px}.copy-btn:hover{background:rgba(124,58,237,.3)}
+.step{display:flex;gap:14px;margin-bottom:16px}.step-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0}.step-content{flex:1}.step-content strong{display:block;font-size:.9rem;margin-bottom:2px}.step-content p{font-size:.84rem;color:var(--muted)}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}.check-item:last-child{border-bottom:none}.check-item i{color:var(--green-l);margin-top:3px;flex-shrink:0}.check-item span{font-size:.88rem}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag-item{background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);color:var(--accent);padding:5px 14px;border-radius:16px;font-size:.8rem;font-weight:600}
+.related{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-top:32px}.related h3{font-size:.9rem;margin-bottom:10px}.related a{display:block;font-size:.84rem;padding:5px 0;color:var(--purple-l);border-bottom:1px solid var(--border)}.related a:last-child{border-bottom:none}.related a:hover{color:var(--green-l);text-decoration:none}.related a i{margin-right:6px;font-size:.7rem}
+.cta-box{background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(6,182,212,.1));border:1px solid rgba(124,58,237,.2);border-radius:14px;padding:28px;text-align:center;margin-top:32px}.cta-box h3{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;margin-bottom:6px}.cta-box p{color:var(--muted);font-size:.88rem;margin-bottom:14px}.cta-box .btn-cta{display:inline-block;padding:10px 28px;font-size:.95rem;border-radius:10px;text-decoration:none}
+footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:480px){.container{padding:0 16px}.nav__links a:not(.btn-cta){display:none}}
+.chat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin:16px 0}
+.chat-msg{display:flex;gap:10px;margin-bottom:12px}.chat-msg:last-child{margin-bottom:0}
+.chat-avatar{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+.chat-avatar.user{background:rgba(6,182,212,.2);color:var(--accent)}
+.chat-avatar.bot{background:rgba(124,58,237,.2);color:var(--purple-l)}
+.chat-bubble{background:var(--bg);border-radius:0 12px 12px 12px;padding:10px 14px;font-size:.85rem;color:var(--muted);max-width:80%;line-height:1.6}
+.chat-msg.bot .chat-bubble{border-radius:12px 0 12px 12px}
+.chat-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.chat-label.user{color:var(--accent)}.chat-label.bot{color:var(--purple-l)}
+.example-note{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 14px;font-size:.8rem;color:#f59e0b;margin:16px 0;display:flex;align-items:center;gap:8px}
+</style></head><body><header><nav class="nav"><a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a><div class="nav__links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/glossario">Glossário</a><a href="https://linkmagico.app.br/pricing.html" class="btn-cta">Ver Planos</a></div></nav></header><main><div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <a href="/exemplos/clinicas">Exemplos</a> › <strong>Clínicas</strong></nav>
+<section class="hero"><span class="tag"><i class="fas fa-comments"></i> Exemplos</span>
+<h1>Exemplos de Conversa para <span>Clínicas</span></h1>
+<p class="subtitle">Veja como um chatbot de IA interage com pacientes em cenários reais de atendimento clínico.</p></section>
+
+<div class="example-note"><i class="fas fa-info-circle"></i> Os exemplos abaixo são simulações para demonstração. Nomes e dados são fictícios.</div>
+
+<h2><i class="fas fa-calendar-plus"></i> Exemplo 1 — Agendamento de Consulta</h2>
+<div class="chat">
+<div class="chat-msg"><div class="chat-avatar user">👤</div><div><div class="chat-label user">Paciente</div><div class="chat-bubble">Boa tarde! Quero marcar uma consulta com dermatologista</div></div></div>
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">Boa tarde! 😊 Claro, posso te ajudar a agendar com nosso dermatologista, Dr. Marcos. Os próximos horários disponíveis são:<br><br>📅 Segunda 28/07 — 09h ou 14h<br>📅 Quarta 30/07 — 10h ou 15h<br>📅 Sexta 01/08 — 11h<br><br>Qual funciona melhor para você?</div></div></div>
+<div class="chat-msg"><div class="chat-avatar user">👤</div><div><div class="chat-label user">Paciente</div><div class="chat-bubble">Quarta às 10h por favor</div></div></div>
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">Perfeito! Para confirmar o agendamento, preciso de algumas informações:<br><br>1️⃣ Seu nome completo<br>2️⃣ Atendimento por convênio ou particular?</div></div></div>
+<div class="chat-msg"><div class="chat-avatar user">👤</div><div><div class="chat-label user">Paciente</div><div class="chat-bubble">Ana Silva, convênio Unimed</div></div></div>
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">✅ Agendado com sucesso, Ana!<br><br>🏥 Clínica Saúde Total<br>👨‍⚕️ Dr. Marcos — Dermatologia<br>📅 Quarta, 30/07 às 10h<br>📍 Rua das Flores, 123<br>🏥 Convênio: Unimed<br><br>Você receberá um lembrete 24h antes. Precisa de mais alguma coisa? 😊</div></div></div>
+</div>
+
+<h2><i class="fas fa-bell"></i> Exemplo 2 — Confirmação e Reagendamento</h2>
+<div class="chat">
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">Olá, Ana! 😊 Lembrando da sua consulta amanhã:<br><br>👨‍⚕️ Dr. Marcos — Dermatologia<br>📅 Quarta, 30/07 às 10h<br><br>Você confirma?<br>✅ Sim, estarei lá<br>🔄 Preciso reagendar</div></div></div>
+<div class="chat-msg"><div class="chat-avatar user">👤</div><div><div class="chat-label user">Paciente</div><div class="chat-bubble">Preciso reagendar, surgiu um compromisso</div></div></div>
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">Sem problemas, Ana! Liberei sua vaga. Os próximos horários disponíveis com Dr. Marcos são:<br><br>📅 Sexta 01/08 — 11h<br>📅 Segunda 04/08 — 09h ou 14h<br><br>Qual prefere?</div></div></div>
+<div class="chat-msg"><div class="chat-avatar user">👤</div><div><div class="chat-label user">Paciente</div><div class="chat-bubble">Segunda às 9h</div></div></div>
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">✅ Reagendado! Sua nova consulta:<br><br>👨‍⚕️ Dr. Marcos<br>📅 Segunda, 04/08 às 09h<br><br>Enviarei novo lembrete 24h antes. 😊</div></div></div>
+</div>
+
+<h2><i class="fas fa-heart-pulse"></i> Exemplo 3 — Pós-consulta e Retorno</h2>
+<div class="chat">
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">Olá, Ana! 😊 Esperamos que sua consulta com Dr. Marcos tenha sido boa. Como você avalia o atendimento?<br><br>⭐⭐⭐⭐⭐ Excelente<br>⭐⭐⭐⭐ Bom<br>⭐⭐⭐ Regular</div></div></div>
+<div class="chat-msg"><div class="chat-avatar user">👤</div><div><div class="chat-label user">Paciente</div><div class="chat-bubble">Excelente! Dr. Marcos foi muito atencioso</div></div></div>
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">Que bom saber, Ana! 🎉 O Dr. Marcos indicou retorno em 30 dias. Gostaria de já agendar?</div></div></div>
+<div class="chat-msg"><div class="chat-avatar user">👤</div><div><div class="chat-label user">Paciente</div><div class="chat-bubble">Sim, pode agendar</div></div></div>
+<div class="chat-msg bot"><div class="chat-avatar bot">🤖</div><div><div class="chat-label bot">Assistente</div><div class="chat-bubble">Horários disponíveis para início de setembro:<br><br>📅 Segunda 01/09 — 09h ou 14h<br>📅 Quarta 03/09 — 10h<br><br>Qual prefere?</div></div></div>
+</div>
+
+<div class="related"><h3>📋 Cluster Clínicas — Navegação</h3>
+<a href="/clinicas"><i class="fas fa-hospital"></i> Landing Page — Chatbot para Clínicas</a>
+<a href="/blog/chatbot-para-clinicas-e-consultorios"><i class="fas fa-newspaper"></i> Artigo — Chatbot para Clínicas e Consultórios</a>
+<a href="/templates/clinicas"><i class="fas fa-message"></i> Templates de Mensagens</a>
+<a href="/fluxos/clinicas"><i class="fas fa-diagram-project"></i> Fluxos de Atendimento</a>
+<a href="/checklists/clinicas"><i class="fas fa-list-check"></i> Checklist de Implantação</a>
+<a href="/prompts/clinicas"><i class="fas fa-brain"></i> Biblioteca de Prompts</a>
+<a href="/exemplos/clinicas"><i class="fas fa-comments"></i> Exemplos de Conversa</a>
+<a href="/ferramentas/calculadora-roi"><i class="fas fa-calculator"></i> Calculadora de ROI</a>
+<a href="/glossario/chatbot"><i class="fas fa-book-open"></i> Glossário — Chatbot</a>
+</div>
+<div class="cta-box"><h3>Teste o LinkMágico para sua clínica</h3><p>Crie seu assistente virtual em menos de 2 minutos. Plano gratuito disponível.</p><a href="https://linkmagico.app.br/signup.html" class="btn-cta">Criar Conta Grátis →</a></div>
+</div></main><footer><div class="container"><p>© 2025 LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/clinicas">Clínicas</a> · <a href="/glossario">Glossário</a> · <a href="/docs">Docs</a> · <a href="/politica-de-privacidade">Privacidade</a></p></div></footer></body></html>
