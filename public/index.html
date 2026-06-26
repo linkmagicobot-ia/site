@@ -1149,7 +1149,7 @@ img{max-width:100%;height:auto;display:block}
 <p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-crosshairs" style="color:var(--green-l);margin-right:4px"></i> Cada conversa vira um lead rastreável no seu painel</p>
 </div>
 <div style="text-align:center;margin-top:40px">
-<a href="https://linkmagico.app.br/l/Fbjq1y" class="btn btn--primary" target="_blank"><i class="fas fa-external-link-alt"></i> Ver o vendedor automático ao vivo</a>
+<a href="https://linkmagico.app.br/l/hqajtX" class="btn btn--primary" target="_blank"><i class="fas fa-external-link-alt"></i> Ver o vendedor automático ao vivo</a>
 </div>
 </div>
 </section>
@@ -1940,11 +1940,11 @@ console.log('LinkMágico — Novo site carregado')});
         robotName: "Edvaldo",
         salesUrl: "https://site.linkmagico.app.br/",
         instructions: "Sempre responda de forma amigável, consultiva e entusiasmada, mas objetiva",
-        primaryColor: "#000000",
+        primaryColor: "#f73b3b",
         // SAFE PATCH - QA FIX: BUG-006 - Removido apikey duplicado
-        apiKey: "lm_live_c39eecfd1c69907db99c8e7ab9b60c7c",
+        apiKey: "LMV7-45QA-QJAP-DW1U",
         greetingMessage: "Oi! Posso ajudar?",
-        welcomeMessage: "Olá! Muito bom ter você aqui!",
+        welcomeMessage: "Olá 👋 Muito bom ter você aqui!",
         secondMessage: "Como posso ajudar você hoje?",
         salesMode: "auto",
         salesPreset: ""
@@ -1952,8 +1952,8 @@ console.log('LinkMágico — Novo site carregado')});
 
     var apiBase = "https://linkmagico.app.br";
     if (!config.apiKey || config.apiKey === "SUA_API_KEY") { 
-        console.error("LinkMágico Widget: API Key não configurada!"); 
-        alert("LinkMágico Widget: API Key não configurada! Verifique o script."); 
+        console.error("❌ LinkMágico Widget: API Key não configurada!"); 
+        alert("⚠️ LinkMágico Widget: API Key não configurada! Verifique o script."); 
         return; 
     }
     var isOpen = false, leadId = null, leadCaptured = false, conversationId = 'lm_' + Date.now(), calendarHash = null;
@@ -1963,7 +1963,7 @@ console.log('LinkMágico — Novo site carregado')});
     var container = document.createElement('div');
     container.className = 'lm-widget-container';
     container.id = 'lmWidgetContainer';
-    container.innerHTML = '<div class="lm-greeting-tooltip" id="lmGreeting"><span class="lm-online-dot"></span><span>'+config.greetingMessage+'</span></div><div class="lm-bubble" id="lmBubble"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg></div><div class="lm-chat-window" id="lmChatWindow"><div class="lm-chat-header"><div class="lm-chat-header-left"><div class="lm-chat-avatar">'+config.robotName.charAt(0).toUpperCase()+'</div><div class="lm-chat-header-info"><span class="lm-chat-header-subtitle">Assistente Virtual</span><span class="lm-chat-header-title">'+config.robotName+'</span></div></div><button class="lm-header-btn" id="lmCloseBtn" title="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="lm-chat-messages" id="lmMessages"></div><div class="lm-typing" id="lmTyping"><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span></div><div class="lm-chat-input-area"><input type="text" class="lm-chat-input" id="lmInput" placeholder="Escreva sua mensagem..." autocomplete="off"><button class="lm-send-btn" id="lmSendBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div><div class="lm-powered-badge"><a href="https://linkmagico.app.br/signup.html?ref=widget" target="_blank" rel="noopener noreferrer"><i class="fas fa-bolt" style="margin-right:2px"></i> Powered by LinkMágico</a></div></div>';
+    container.innerHTML = '<div class="lm-greeting-tooltip" id="lmGreeting"><span class="lm-online-dot"></span><span>'+config.greetingMessage+'</span></div><div class="lm-bubble" id="lmBubble"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg></div><div class="lm-chat-window" id="lmChatWindow"><div class="lm-chat-header"><div class="lm-chat-header-left"><div class="lm-chat-avatar">'+config.robotName.charAt(0).toUpperCase()+'</div><div class="lm-chat-header-info"><span class="lm-chat-header-subtitle">Assistente Virtual</span><span class="lm-chat-header-title">'+config.robotName+'</span></div></div><button class="lm-header-btn" id="lmCloseBtn" title="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div><div class="lm-chat-messages" id="lmMessages"></div><div class="lm-typing" id="lmTyping"><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span><span class="lm-typing-dot"></span></div><div class="lm-chat-input-area"><input type="text" class="lm-chat-input" id="lmInput" placeholder="Escreva sua mensagem..." autocomplete="off"><button class="lm-send-btn" id="lmSendBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div><div class="lm-powered-badge"><a href="https://linkmagico.app.br/signup.html?ref=widget" target="_blank" rel="noopener noreferrer">⚡ Powered by LinkMágico</a></div></div>';
     document.body.appendChild(container);
     var chatWindow = document.getElementById('lmChatWindow');
     var bubble = document.getElementById('lmBubble');
@@ -1979,7 +1979,7 @@ console.log('LinkMágico — Novo site carregado')});
         if (isUser) {
             msgDiv.textContent = text;
         } else if (!isUser && text && typeof text === 'string' && (text.indexOf('[CALENDAR_WIDGET]') !== -1 || text.indexOf('CALENDAR_WIDGET') !== -1)) {
-            console.log('[CAL-V4-005] Calendario detectado no widget inline');
+            console.log('📅 [CAL-V4-005] Calendario detectado no widget inline');
             try {
                 var calMarker = '[CALENDAR_WIDGET]';
                 var textBefore = text.split(calMarker)[0];
@@ -1988,7 +1988,7 @@ console.log('LinkMágico — Novo site carregado')});
                 if (textBefore) { var tEl = document.createElement('div'); tEl.style.cssText = 'margin-bottom:12px;font-weight:600;'; tEl.textContent = textBefore; msgDiv.appendChild(tEl); }
                 var calC = _renderCal(); if (calC) msgDiv.appendChild(calC);
                 msgDiv.style.cssText += 'padding:16px;max-width:95%;';
-            } catch (calErr) { console.error('[CAL-V4-005] Erro:', calErr); msgDiv.textContent = '<i class="fas fa-calendar-alt"></i> Para agendar, entre em contato diretamente.'; }
+            } catch (calErr) { console.error('⚠️ [CAL-V4-005] Erro:', calErr); msgDiv.textContent = '📅 Para agendar, entre em contato diretamente.'; }
         } else if (/https?:\/\//.test(text)) {
             var esc = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
             msgDiv.innerHTML = esc.replace(/(https?:\/\/[^\s<>"']+)/gi, function(u) {
@@ -2007,21 +2007,21 @@ console.log('LinkMágico — Novo site carregado')});
         c.innerHTML = '<div class="lm-cal-loading"><div class="lm-cal-spinner"></div><br>Carregando horarios...</div>';
         var h = calendarHash || null;
         if (!h && config.apiKey) {
-            try { crypto.subtle.digest("SHA-256", new TextEncoder().encode("calendar_" + config.apiKey)).then(function(buf) { var hex = Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join(""); calendarHash = hex.substring(0,16); _fetchSl(c, calendarHash); }).catch(function(e) { c.innerHTML = '<div class="lm-cal-error">Para agendar, entre em contato.</div>'; }); return c; } catch(e) { c.innerHTML = '<div class="lm-cal-error">Para agendar, entre em contato.</div>'; return c; }
+            try { crypto.subtle.digest("SHA-256", new TextEncoder().encode("calendar_" + config.apiKey)).then(function(buf) { var hex = Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join(""); calendarHash = hex.substring(0,16); _fetchSl(c, calendarHash); }).catch(function(e) { c.innerHTML = '<div class="lm-cal-error">📅 Para agendar, entre em contato.</div>'; }); return c; } catch(e) { c.innerHTML = '<div class="lm-cal-error">📅 Para agendar, entre em contato.</div>'; return c; }
         }
-        if (!h) { c.innerHTML = '<div class="lm-cal-error">Para agendar, entre em contato.</div>'; return c; }
+        if (!h) { c.innerHTML = '<div class="lm-cal-error">📅 Para agendar, entre em contato.</div>'; return c; }
         _fetchSl(c, h); return c;
         } catch(e) { console.error('[CAL-V4-005] renderCal erro:', e); return null; }
     }
     function _fetchSl(c, h) {
         fetch(apiBase + '/api/public/availability/' + encodeURIComponent(h)).then(function(r){return r.json()}).then(function(d) {
-            if (!d.success || !d.slots || d.slots.length === 0) { c.innerHTML = '<div class="lm-cal-error">Nenhum horário disponível no momento.</div>'; return; }
+            if (!d.success || !d.slots || d.slots.length === 0) { c.innerHTML = '<div class="lm-cal-error">😕 Nenhum horario disponivel.</div>'; return; }
             _buildCal(c, d.slots, h);
-        }).catch(function(e) { c.innerHTML = '<div class="lm-cal-error">Erro ao carregar horários.</div>'; });
+        }).catch(function(e) { c.innerHTML = '<div class="lm-cal-error">⚠️ Erro ao carregar horarios.</div>'; });
     }
     function _buildCal(c, slots, h) {
         var html = ''; slots.slice(0,5).forEach(function(day) {
-            html += '<div class="lm-cal-day"><div class="lm-cal-day-header">' + day.dayName + ' — ' + (day.date||"").split("-").reverse().slice(0,2).join("/") + '</div><div class="lm-cal-slots">';
+            html += '<div class="lm-cal-day"><div class="lm-cal-day-header">📅 ' + day.dayName + ' — ' + (day.date||"").split("-").reverse().slice(0,2).join("/") + '</div><div class="lm-cal-slots">';
             day.times.slice(0,6).forEach(function(t) { html += '<button class="lm-cal-slot" data-date="'+day.date+'" data-time="'+t+'" data-day="'+day.dayName+'">'+t+'</button>'; });
             if (day.times.length > 6) html += '<span style="font-size:11px;color:#94a3b8;padding:4px;">+'+(day.times.length-6)+' mais</span>';
             html += '</div></div>';
@@ -2033,7 +2033,7 @@ console.log('LinkMágico — Novo site carregado')});
             b.addEventListener('click', function() {
                 var p = c.querySelector('.lm-cal-selected'); if (p) p.classList.remove('lm-cal-selected');
                 b.classList.add('lm-cal-selected'); sD=b.getAttribute('data-date'); sT=b.getAttribute('data-time'); sN=b.getAttribute('data-day');
-                var cf = c.querySelector('#lmCalCf'); if (cf) { cf.disabled=false; cf.textContent='Confirmar '+sN+' as '+sT; }
+                var cf = c.querySelector('#lmCalCf'); if (cf) { cf.disabled=false; cf.textContent='✅ Confirmar '+sN+' as '+sT; }
             });
         });
         var cfB = c.querySelector('#lmCalCf'); if (cfB) { cfB.addEventListener('click', function() { if (sD && sT) _bookSl(h, sD, sT, sN, c); }); }
@@ -2045,9 +2045,9 @@ console.log('LinkMágico — Novo site carregado')});
         try { var n=document.getElementById('lmLeadName'); if(n&&n.value) pl.name=n.value.trim(); } catch(e){}
         fetch(apiBase + '/api/public/book/' + encodeURIComponent(h), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pl) })
         .then(function(r){return r.json()}).then(function(d) {
-            if (d.success) { c.innerHTML = '<div class="lm-cal-success" style="color:#10b981;font-weight:600;">Agendamento confirmado!<br>'+dn+' as '+time+'<br><br><span style="font-size:12px;color:#64748b;">Nossa equipe entrara em contato.</span></div>'; messages.scrollTop = messages.scrollHeight; }
+            if (d.success) { c.innerHTML = '<div class="lm-cal-success" style="color:#10b981;font-weight:600;">✅ Agendamento confirmado!<br>📅 '+dn+' as '+time+'<br><br><span style="font-size:12px;color:#64748b;">Nossa equipe entrara em contato.</span></div>'; messages.scrollTop = messages.scrollHeight; }
             else { throw new Error(d.error || 'Erro'); }
-        }).catch(function(e) { if (cf) { cf.disabled=false; cf.textContent='Erro — Tente novamente'; cf.style.background='#ef4444'; } });
+        }).catch(function(e) { if (cf) { cf.disabled=false; cf.textContent='⚠️ Erro — Tente novamente'; cf.style.background='#ef4444'; } });
     }
     function showLeadForm() {
         var formDiv = document.createElement('div');
@@ -2090,7 +2090,7 @@ console.log('LinkMágico — Novo site carregado')});
             typing.classList.remove('lm-active');
             if (data.success && data.response) {
                 // SAFE PATCH - CAL-V4-005: Capturar calendarHash da resposta do servidor
-                if (data.calendarHash) { calendarHash = data.calendarHash; console.log('[CAL-V4-005] Hash recebido:', calendarHash); }
+                if (data.calendarHash) { calendarHash = data.calendarHash; console.log('📅 [CAL-V4-005] Hash recebido:', calendarHash); }
                 addMessage(data.response, false);
             }
             else { addMessage('Desculpe, tive um problema. Pode repetir?', false); }
@@ -2112,8 +2112,8 @@ console.log('LinkMágico — Novo site carregado')});
     closeBtn.addEventListener('click', closeChat);
     sendBtn.addEventListener('click', sendMessage);
     input.addEventListener('keypress', function (e) { if (e.key === 'Enter') sendMessage(); });
-    console.log('LinkMágico Widget v2.0 carregado!');
-})();
+    console.log('✅ LinkMágico Widget v2.0 carregado!');
+}) ();
 </script>
 
 <style>
