@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot com IA para Clínicas e Consultórios — LinkMágico</title>
+<meta name="description" content="Agende consultas, confirme horários e reduza faltas — tudo pelo WhatsApp, 24 horas por dia.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/clinicas">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chatbot com IA para Clínicas e Consultórios — LinkMágico">
+<meta property="og:description" content="Agende consultas, confirme horários e reduza faltas — tudo pelo WhatsApp, 24 horas por dia.">
+<meta property="og:url" content="https://site.linkmagico.app.br/clinicas">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LinkMágico">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Clínicas e Consultórios"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O chatbot consegue agendar consultas sozinho?","acceptedAnswer":{"@type":"Answer","text":"Sim. O chatbot do LinkMágico pode verificar disponibilidade e agendar consultas automaticamente pelo WhatsApp ou pelo widget no site."}},{"@type":"Question","name":"Funciona com convênios?","acceptedAnswer":{"@type":"Answer","text":"Sim. O chatbot pode ser treinado para informar quais convênios são aceitos e direcionar pacientes particulares e de convênio para agendas diferentes."}},{"@type":"Question","name":"Como funciona a confirmação de consultas?","acceptedAnswer":{"@type":"Answer","text":"O LinkMágico envia mensagens automáticas pelo WhatsApp antes da consulta, com opção de confirmar ou reagendar com um clique."}},{"@type":"Question","name":"Preciso de equipe técnica para instalar?","acceptedAnswer":{"@type":"Answer","text":"Não. A instalação é feita colando um código no seu site. Para WhatsApp, basta conectar via QR Code ou API."}},{"@type":"Question","name":"Quanto custa?","acceptedAnswer":{"@type":"Answer","text":"O LinkMágico tem planos a partir de R$0/mês (Free) até R$97/mês (Business). Não há taxas por mensagem no plano."}}]}]
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--accent:#06b6d4}body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:900px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif;color:var(--text)}.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav__links{display:flex;gap:20px;align-items:center}.nav__links a{color:var(--muted);font-size:.9rem}.nav__links a:hover{color:var(--text);text-decoration:none}.btn-cta{background:linear-gradient(135deg,var(--purple),#5b21b6);color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}
+.breadcrumb{padding:90px 0 0;font-size:.83rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
+
+/* Hero */
+.hero{padding:32px 0 40px;text-align:center}.hero-icon{font-size:2.5rem;color:var(--accent);margin-bottom:16px}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,4vw,2.4rem);font-weight:800;line-height:1.2;margin-bottom:12px}.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:600px;margin:0 auto 20px}
+.hero-cta{display:inline-block;background:linear-gradient(135deg,var(--purple),var(--accent));color:#fff;padding:14px 32px;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;transition:transform .2s,box-shadow .3s}.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,.3);text-decoration:none;color:#fff}
+
+/* Section */
+.section{padding:48px 0}.section-title{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:28px}.section-title span{color:var(--accent)}
+
+/* Problem/Solution Grid */
+.grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}@media(max-width:600px){.grid-4{grid-template-columns:1fr}}
+.problem-card,.solution-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;transition:border-color .3s}.problem-card:hover,.solution-card:hover{border-color:var(--accent)}
+.problem-icon{color:#ef4444;font-size:1.3rem;margin-bottom:10px}.solution-icon{color:var(--accent);font-size:1.3rem;margin-bottom:10px}
+.problem-card h3,.solution-card h3{font-size:.95rem;font-weight:700;margin-bottom:6px}.problem-card p,.solution-card p{font-size:.85rem;color:var(--muted)}
+
+/* Flow */
+.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:20px 0}
+.flow-step{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px}
+.flow-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0}
+.flow-step strong{font-size:.85rem;display:block}.flow-step span{font-size:.75rem;color:var(--muted)}
+.flow-arrow{color:var(--muted);font-size:.8rem}@media(max-width:700px){.flow{flex-direction:column}.flow-arrow{transform:rotate(90deg)}}
+
+/* Features */
+.feat-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0}
+.feat-tag{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:var(--purple-l);padding:8px 16px;border-radius:20px;font-size:.83rem;font-weight:600}.feat-tag i{color:var(--green-l);margin-right:4px}
+
+/* Exclusive */
+.exc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}@media(max-width:600px){.exc-grid{grid-template-columns:1fr}}
+.exc-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;transition:border-color .3s}.exc-card:hover{border-color:var(--accent)}
+.exc-icon{font-size:1.5rem;margin-bottom:10px}.exc-card h3{font-size:.92rem;font-weight:700;margin-bottom:6px}.exc-card p{font-size:.84rem;color:var(--muted)}
+
+/* Integrations */
+.int-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.int-tag{background:var(--surface);border:1px solid var(--border);padding:10px 18px;border-radius:10px;font-size:.85rem;font-weight:600}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{width:100%;padding:16px 20px;background:none;border:none;color:var(--text);font-size:.9rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Inter',sans-serif;text-align:left}.faq-q i{color:var(--muted);transition:transform .3s;font-size:.75rem}
+.faq-a{display:none;padding:0 20px 16px;border-top:1px solid var(--border)}.faq-a p{color:var(--muted);font-size:.87rem;margin-top:10px}
+.faq-item.open .faq-q i{transform:rotate(180deg)}.faq-item.open .faq-a{display:block}
+
+/* Related */
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}@media(max-width:600px){.related-grid{grid-template-columns:1fr}}
+.related-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
+.related-box h4{font-size:.85rem;font-weight:700;margin-bottom:10px}
+.related-box a{display:block;font-size:.82rem;padding:5px 0;color:var(--purple-l);border-bottom:1px solid var(--border)}.related-box a:last-child{border-bottom:none}
+.related-box a:hover{color:var(--green-l);text-decoration:none}.related-box a i{margin-right:6px;font-size:.7rem}
+
+/* CTA final */
+.cta-final{background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(16,185,129,.1));border:1px solid rgba(124,58,237,.2);border-radius:16px;padding:36px;text-align:center;margin-top:48px}
+.cta-final h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;margin-bottom:8px}.cta-final p{color:var(--muted);font-size:.92rem;margin-bottom:18px;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-final .hero-cta{font-size:.95rem;padding:12px 28px}
+
+footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:480px){.container{padding:0 16px}.nav__links a:not(.btn-cta){display:none}}
+</style>
+</head>
+<body>
+<header><nav class="nav" aria-label="Navegação principal"><a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a><div class="nav__links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/glossario">Glossário</a><a href="https://linkmagico.app.br/pricing.html" class="btn-cta">Ver Planos</a></div></nav></header>
+<main>
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <strong>Chatbot para Clínicas e Consultórios</strong></nav>
+
+<section class="hero">
+<div class="hero-icon"><i class="fas fa-hospital"></i></div>
+<h1>Chatbot com IA para <span>Clínicas e Consultórios</span></h1>
+<p>Agende consultas, confirme horários e reduza faltas — tudo pelo WhatsApp, 24 horas por dia.</p>
+<a href="https://linkmagico.app.br/signup.html" class="hero-cta">Testar Grátis →</a>
+</section>
+
+<section class="section">
+<h2 class="section-title">Problemas que <span>clínicas e consultórios</span> enfrentam</h2>
+<div class="grid-4"><div class="problem-card"><div class="problem-icon"><i class="fas fa-phone-slash"></i></div><h3>Ligações perdidas</h3><p>Pacientes ligam fora do horário e não conseguem agendar. Resultado: perda de receita.</p></div>
+<div class="problem-card"><div class="problem-icon"><i class="fas fa-calendar-xmark"></i></div><h3>Faltas e no-shows</h3><p>Pacientes esquecem consultas. Sem confirmação automática, a taxa de faltas chega a 30%.</p></div>
+<div class="problem-card"><div class="problem-icon"><i class="fas fa-clock"></i></div><h3>Recepção sobrecarregada</h3><p>A equipe gasta horas respondendo perguntas repetitivas: horários, valores, convênios.</p></div>
+<div class="problem-card"><div class="problem-icon"><i class="fas fa-user-slash"></i></div><h3>Leads não respondidos</h3><p>Pacientes que chegam pelo Instagram ou Google Ads ficam sem resposta nos finais de semana.</p></div></div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Como o <span>LinkMágico</span> resolve</h2>
+<div class="grid-4"><div class="solution-card"><div class="solution-icon"><i class="fas fa-robot"></i></div><h3>Agendamento automático</h3><p>O chatbot agenda consultas pelo WhatsApp 24h, verificando disponibilidade em tempo real.</p></div>
+<div class="solution-card"><div class="solution-icon"><i class="fas fa-bell"></i></div><h3>Confirmação e lembretes</h3><p>Mensagens automáticas 24h e 2h antes da consulta. Redução significativa de faltas.</p></div>
+<div class="solution-card"><div class="solution-icon"><i class="fas fa-comments"></i></div><h3>Respostas instantâneas</h3><p>IA responde sobre horários, valores, convênios aceitos e preparos para exames automaticamente.</p></div>
+<div class="solution-card"><div class="solution-icon"><i class="fas fa-user-check"></i></div><h3>Qualificação de pacientes</h3><p>Identifica o tipo de consulta, urgência e convênio antes mesmo do primeiro contato humano.</p></div></div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Como <span>funciona</span></h2>
+<div class="flow"><div class="flow-step"><div class="flow-num">1</div><div><strong>Paciente envia mensagem</strong><span>WhatsApp, site ou Instagram</span></div></div><div class="flow-arrow"><i class="fas fa-arrow-right"></i></div><div class="flow-step"><div class="flow-num">2</div><div><strong>IA identifica intenção</strong><span>Agendar, remarcar, tirar dúvida</span></div></div><div class="flow-arrow"><i class="fas fa-arrow-right"></i></div><div class="flow-step"><div class="flow-num">3</div><div><strong>Chatbot resolve</strong><span>Agenda, confirma ou responde</span></div></div><div class="flow-arrow"><i class="fas fa-arrow-right"></i></div><div class="flow-step"><div class="flow-num">4</div><div><strong>CRM registra</strong><span>Dados do paciente no pipeline</span></div></div></div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Recursos <span>inclusos</span></h2>
+<div class="feat-grid"><span class="feat-tag"><i class="fas fa-check"></i> Agendamento 24h</span>
+<span class="feat-tag"><i class="fas fa-check"></i> Confirmação automática</span>
+<span class="feat-tag"><i class="fas fa-check"></i> FAQ inteligente</span>
+<span class="feat-tag"><i class="fas fa-check"></i> CRM integrado</span>
+<span class="feat-tag"><i class="fas fa-check"></i> WhatsApp + Site</span>
+<span class="feat-tag"><i class="fas fa-check"></i> Relatórios</span></div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Funcionalidades exclusivas para clínicas</h2>
+<div class="exc-grid"><div class="exc-card"><div class="exc-icon" style="color:#06b6d4"><i class="fas fa-calendar-check"></i></div><h3>Confirmação de consultas</h3><p>Envio automático de lembrete com botão de confirmação ou reagendamento pelo WhatsApp.</p></div>
+<div class="exc-card"><div class="exc-icon" style="color:#06b6d4"><i class="fas fa-clipboard-list"></i></div><h3>Pré-triagem inteligente</h3><p>O chatbot coleta sintomas e informações antes da consulta, economizando tempo do médico.</p></div>
+<div class="exc-card"><div class="exc-icon" style="color:#06b6d4"><i class="fas fa-rotate"></i></div><h3>Reagendamento automático</h3><p>Paciente cancela? A IA oferece novos horários imediatamente e libera a vaga.</p></div>
+<div class="exc-card"><div class="exc-icon" style="color:#06b6d4"><i class="fas fa-chart-line"></i></div><h3>Redução de no-shows</h3><p>Lembretes automáticos podem reduzir faltas — consulte nossos cases para dados reais.</p></div></div>
+</section>
+
+<section class="section">
+<h2 class="section-title"><span>Integrações</span> compatíveis</h2>
+<div class="int-grid"><span class="int-tag">WhatsApp (Twilio/Evolution)</span>
+<span class="int-tag">Google Calendar</span>
+<span class="int-tag">WordPress</span>
+<span class="int-tag">Google Ads</span></div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Perguntas <span>frequentes</span></h2>
+<div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>O chatbot consegue agendar consultas sozinho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Sim. O chatbot do LinkMágico pode verificar disponibilidade e agendar consultas automaticamente pelo WhatsApp ou pelo widget no site.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Funciona com convênios?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Sim. O chatbot pode ser treinado para informar quais convênios são aceitos e direcionar pacientes particulares e de convênio para agendas diferentes.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Como funciona a confirmação de consultas?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>O LinkMágico envia mensagens automáticas pelo WhatsApp antes da consulta, com opção de confirmar ou reagendar com um clique.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Preciso de equipe técnica para instalar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Não. A instalação é feita colando um código no seu site. Para WhatsApp, basta conectar via QR Code ou API.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Quanto custa?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>O LinkMágico tem planos a partir de R$0/mês (Free) até R$97/mês (Business). Não há taxas por mensagem no plano.</p></div></div></div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Conteúdos <span>relacionados</span></h2>
+<div class="related-grid">
+<div class="related-box"><h4>📚 Glossário</h4><a href="/glossario/chatbot"><i class="fas fa-book-open"></i> Chatbot</a>
+<a href="/glossario/lead"><i class="fas fa-book-open"></i> Lead</a>
+<a href="/glossario/crm"><i class="fas fa-book-open"></i> Crm</a>
+<a href="/glossario/whatsapp-business-api"><i class="fas fa-book-open"></i> Whatsapp Business Api</a>
+<a href="/glossario/follow-up"><i class="fas fa-book-open"></i> Follow Up</a></div>
+<div class="related-box"><h4>📖 Blog</h4><a href="/blog/chatbot-para-clinicas-e-consultorios"><i class="fas fa-newspaper"></i> Chatbot para clínicas e consultórios</a>
+<a href="/blog/como-automatizar-atendimento-whatsapp"><i class="fas fa-newspaper"></i> Como automatizar atendimento pelo WhatsApp</a></div>
+<div class="related-box"><h4>🔧 Ferramentas</h4><a href="/ferramentas/calculadora-roi"><i class="fas fa-calculator"></i> Calculadora de ROI</a><a href="/docs"><i class="fas fa-book"></i> Documentação</a><a href="https://linkmagico.app.br/pricing.html"><i class="fas fa-tag"></i> Ver Planos</a></div>
+</div>
+</section>
+
+<div class="cta-final">
+<h2>Pronto para automatizar?</h2>
+<p>Crie seu vendedor automático com IA para clínicas e consultórios em menos de 2 minutos. Sem cartão de crédito.</p>
+<a href="https://linkmagico.app.br/signup.html" class="hero-cta">Criar Conta Grátis →</a>
+</div>
+</div>
+</main>
+<footer><div class="container"><p>© 2025 LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/blog/">Blog</a> · <a href="/glossario">Glossário</a> · <a href="/docs">Docs</a> · <a href="/politica-de-privacidade">Privacidade</a></p></div></footer>
+</body>
+</html>

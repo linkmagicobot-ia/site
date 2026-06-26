@@ -123,6 +123,14 @@ app.get('/ferramentas/calculadora-roi', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'ferramentas', 'calculadora-roi.html'));
 });
 
+// ===== LANDING PAGES POR SEGMENTO =====
+const segmentos = ['clinicas', 'imobiliarias', 'ecommerce', 'restaurantes', 'infoprodutores'];
+segmentos.forEach(seg => {
+    app.get('/' + seg, (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', seg + '.html'));
+    });
+});
+
 // ===== BLOG — Rotas limpas sem .html =====
 app.get('/blog', (req, res) => {
     res.redirect(301, '/blog/');
