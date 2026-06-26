@@ -24,7 +24,12 @@ app.use(helmet({
     crossOriginEmbedderPolicy: false,
     crossOriginOpenerPolicy: false,
     crossOriginResourcePolicy: false,
-    referrerPolicy: { policy: "strict-origin-when-cross-origin" }
+    referrerPolicy: { policy: "strict-origin-when-cross-origin" },
+    hsts: {
+        maxAge: 31536000,
+        includeSubDomains: true,
+        preload: true
+    }
 }));
 
 // ===== PERFORMANCE =====
@@ -55,6 +60,26 @@ app.get('/treinamento', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'treinamento.html'));
 });
 
+// ===== PÁGINAS SEO — Rotas limpas =====
+app.get('/faq', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'faq.html'));
+});
+app.get('/como-funciona', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'como-funciona.html'));
+});
+app.get('/recursos', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'recursos.html'));
+});
+app.get('/integracoes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'integracoes.html'));
+});
+app.get('/seguranca', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'seguranca.html'));
+});
+app.get('/changelog', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'changelog.html'));
+});
+
 // ===== BLOG — Rotas limpas sem .html =====
 app.get('/blog', (req, res) => {
     res.redirect(301, '/blog/');
@@ -69,9 +94,13 @@ app.get('/blog/:slug', (req, res, next) => {
     });
 });
 
-// ===== FALLBACK 404 → HOME =====
+// ===== FALLBACK 404 =====
 app.use((req, res) => {
-    res.status(302).redirect('/');
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'), (err) => {
+        if (err) {
+            res.status(404).json({ error: 'Página não encontrada', status: 404 });
+        }
+    });
 });
 
 // ===== START =====
@@ -80,7 +109,7 @@ app.listen(PORT, () => {
 ╔══════════════════════════════════════════╗
 ║  ⚡ LinkMágico Site — Online            ║
 ║  📍 http://localhost:${PORT}               ║
-║  🔒 Helmet + Compression ativados       ║
+║  🔒 Helmet + HSTS + Compression         ║
 ╚══════════════════════════════════════════╝
     `);
 });

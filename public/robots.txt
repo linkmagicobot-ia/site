@@ -3,12 +3,15 @@ Allow: /
 Disallow: /api/
 Disallow: /node_modules/
 
-# Googlebot
+# Google
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
-# AI Search Engines — Permitir indexação para GEO
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# AI Search Engines — Permitir indexação para GEO/LLMO
 User-agent: GPTBot
 Allow: /
 
@@ -21,10 +24,22 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Bingbot
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 # Sitemap

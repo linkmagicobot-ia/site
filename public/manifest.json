@@ -1,0 +1,18 @@
+{
+  "name": "LinkMágico",
+  "short_name": "LinkMágico",
+  "description": "Vendedor automático com IA para qualquer página. Cole seu link e ganhe um vendedor treinado no seu negócio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06060e",
+  "theme_color": "#7c3aed",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/og-linkmagico.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

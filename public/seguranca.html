@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segurança e LGPD — LinkMágico</title>
+<meta name="description" content="Conheça as práticas de segurança do LinkMágico: HTTPS, criptografia, multi-tenancy isolado, LGPD compliance, backups automáticos e proteção de dados.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/seguranca">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Segurança e LGPD — LinkMágico">
+<meta property="og:description" content="Seus dados protegidos com criptografia, multi-tenancy e LGPD compliance.">
+<meta property="og:url" content="https://site.linkmagico.app.br/seguranca">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LinkMágico">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Segurança e LGPD — LinkMágico">
+<meta name="twitter:description" content="Seus dados protegidos com criptografia, multi-tenancy e LGPD compliance.">
+<meta name="twitter:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Segurança","item":"https://site.linkmagico.app.br/seguranca"}]}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}
+.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif;color:var(--text)}
+.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav__back{color:var(--muted);font-size:.9rem}
+.breadcrumb{padding:100px 0 0;font-size:.85rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin:24px 0 16px;line-height:1.2}
+h2{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;margin:40px 0 16px;color:var(--green-l)}
+.subtitle{color:var(--muted);font-size:1.05rem;margin-bottom:40px}
+.sec-block{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 32px;margin-bottom:16px}
+.sec-block h3{font-size:1rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.sec-block p,.sec-block li{color:var(--muted);font-size:.95rem;line-height:1.7}
+.sec-block ul{margin:12px 0 0 20px}
+.sec-block li{margin-bottom:6px}
+.check{color:var(--green-l)}
+footer{margin-top:80px;padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<header><nav class="nav" aria-label="Navegação"><a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a><a href="/" class="nav__back">← Voltar ao site</a></nav></header>
+<main>
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <strong>Segurança</strong></nav>
+<h1>Segurança e Privacidade</h1>
+<p class="subtitle">A proteção dos seus dados e dos dados dos seus clientes é prioridade máxima no LinkMágico.</p>
+
+<h2>🔒 Infraestrutura</h2>
+<div class="sec-block"><h3><span class="check">✓</span> HTTPS Obrigatório</h3><p>Todas as conexões são criptografadas com TLS 1.2+. Nenhum dado trafega em texto plano. O certificado SSL é renovado automaticamente.</p></div>
+<div class="sec-block"><h3><span class="check">✓</span> HSTS (HTTP Strict Transport Security)</h3><p>O header HSTS garante que navegadores só acessem o site via HTTPS, prevenindo ataques de downgrade de protocolo.</p></div>
+<div class="sec-block"><h3><span class="check">✓</span> Headers de Segurança</h3><p>Helmet.js aplicado com Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy e Permissions-Policy.</p></div>
+<div class="sec-block"><h3><span class="check">✓</span> Compressão e Performance</h3><p>Gzip/Brotli em todas as respostas. Cache de 7 dias para assets estáticos com ETag e Last-Modified.</p></div>
+
+<h2>🏗️ Arquitetura</h2>
+<div class="sec-block"><h3><span class="check">✓</span> Multi-Tenancy Isolado</h3><p>Cada cliente (tenant) tem seu ambiente completamente isolado. Dados, configurações, chatbots e leads são separados por tenant. Um cliente nunca acessa dados de outro.</p></div>
+<div class="sec-block"><h3><span class="check">✓</span> API Keys Únicas</h3><p>Cada tenant possui sua API Key exclusiva. Toda requisição é autenticada e autorizada no nível do tenant.</p></div>
+<div class="sec-block"><h3><span class="check">✓</span> Backups Automáticos</h3><p>Backups automáticos de leads, conversas e configurações. Restauração disponível a qualquer momento pelo painel administrativo.</p></div>
+
+<h2>📋 LGPD (Lei Geral de Proteção de Dados)</h2>
+<div class="sec-block">
+<h3><span class="check">✓</span> Conformidade LGPD</h3>
+<p>O LinkMágico está em conformidade com a Lei nº 13.709/2018 (LGPD). As práticas incluem:</p>
+<ul>
+<li><strong>Base legal:</strong> Consentimento do titular e legítimo interesse para processamento de dados.</li>
+<li><strong>Minimização:</strong> Coletamos apenas os dados necessários (nome, email, telefone) para a prestação do serviço.</li>
+<li><strong>Transparência:</strong> Política de Privacidade e Termos de Uso acessíveis publicamente.</li>
+<li><strong>Direitos do titular:</strong> Acesso, correção, exclusão e portabilidade dos dados mediante solicitação.</li>
+<li><strong>Segurança:</strong> Criptografia em trânsito e em repouso, controle de acesso baseado em roles.</li>
+<li><strong>Retenção:</strong> Dados são mantidos apenas pelo tempo necessário. Exclusão disponível pelo painel.</li>
+</ul>
+</div>
+
+<h2>🔐 Dados dos Leads</h2>
+<div class="sec-block"><h3><span class="check">✓</span> Propriedade dos Dados</h3><p>Os leads capturados pelo vendedor automático pertencem ao cliente (tenant). O LinkMágico não utiliza, vende ou compartilha dados de leads com terceiros.</p></div>
+<div class="sec-block"><h3><span class="check">✓</span> Exclusão de Dados</h3><p>O cliente pode excluir leads individualmente ou realizar limpeza em lote a qualquer momento pelo painel administrativo.</p></div>
+</div>
+</main>
+<footer><div class="container"><p>© <time datetime="2025">2025</time> LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/faq">FAQ</a> · <a href="/como-funciona">Como funciona</a> · <a href="/recursos">Recursos</a> · <a href="/integracoes">Integrações</a> · <a href="/changelog">Changelog</a></p></div></footer>
+</body>
+</html>

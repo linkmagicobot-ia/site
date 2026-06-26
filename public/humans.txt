@@ -1,0 +1,18 @@
+/* TEAM */
+Founder & Developer: Edvaldo Luiz da Silva
+Site: https://site.linkmagico.app.br
+Contact: contato@linkmagico.app.br
+From: São Paulo, Brasil
+Education: UNINOVE — Arquitetura de Software e IA
+
+/* THANKS */
+Stack: Node.js, Express, PostgreSQL, OpenAI, Groq, Evolution API
+Hosting: Render
+CDN: Cloudflare
+Fonts: Google Fonts (Inter, Space Grotesk)
+
+/* SITE */
+Last update: 2026-06-26
+Language: Português (Brasil)
+Standards: HTML5, CSS3, ES6+
+Software: LinkMágico v8.0

@@ -1,0 +1,78 @@
+# LinkMágico
+
+> Vendedor automático com IA para qualquer página.
+
+## O que é o LinkMágico?
+
+O LinkMágico é uma plataforma SaaS brasileira que transforma qualquer link, landing page ou site em um vendedor automático com inteligência artificial. O sistema aprende sobre o negócio do cliente automaticamente, responde dúvidas de visitantes, quebra objeções de compra e conduz até a conversão — 24 horas por dia, sem intervenção humana.
+
+## Como funciona?
+
+1. O usuário cola o link da sua página no painel do LinkMágico.
+2. A IA extrai e aprende todo o conteúdo automaticamente.
+3. Um widget de chat (balão flutuante) é gerado para instalar no site.
+4. O vendedor automático responde visitantes, captura leads e conduz vendas.
+
+## Principais recursos
+
+- Chatbot de vendas com IA conversacional
+- CRM integrado com pipeline de vendas
+- Captura automática de leads (nome, email, telefone)
+- Agendamento automático integrado
+- Analytics e métricas de conversão em tempo real
+- Widget white-label personalizável
+- Integração WhatsApp (Twilio e Evolution API)
+- Follow-up automático
+- Multi-tenant (cada cliente tem seu ambiente isolado)
+- Inteligência de intenção de compra (Decision Engine)
+- 13 fases de condução de venda (Sales Layer)
+- 6 perfis de nicho pré-configurados
+- Sistema de billing com planos Free, Starter, Pro e Business
+
+## Integrações
+
+- WhatsApp (Twilio e Evolution Go)
+- Hotmart (webhooks)
+- WordPress (widget embed)
+- Qualquer site HTML (script embed)
+- API REST completa
+
+## Para quem serve?
+
+- Infoprodutores
+- Gestores de tráfego
+- Agências digitais
+- E-commerce
+- SaaS
+- Negócios locais (clínicas, restaurantes, consultórios)
+- Afiliados
+- Prestadores de serviço
+
+## Planos e preços
+
+- **Free**: Gratuito, 1 chatbot, 50 conversas/mês
+- **Starter**: R$47/mês, 3 chatbots, 500 conversas/mês
+- **Pro**: R$97/mês, 10 chatbots, 2.000 conversas/mês, CRM completo
+- **Business**: R$197/mês, chatbots ilimitados, conversas ilimitadas, white-label
+
+## Links principais
+
+- Site: https://site.linkmagico.app.br/
+- Plataforma: https://linkmagico.app.br/
+- Blog: https://site.linkmagico.app.br/blog/
+- FAQ: https://site.linkmagico.app.br/faq
+- Como funciona: https://site.linkmagico.app.br/como-funciona
+- Recursos: https://site.linkmagico.app.br/recursos
+- Integrações: https://site.linkmagico.app.br/integracoes
+- Segurança: https://site.linkmagico.app.br/seguranca
+- Changelog: https://site.linkmagico.app.br/changelog
+
+## Fundador
+
+Edvaldo Luiz da Silva — Arquiteto de Software e IA, formado pela UNINOVE.
+
+## Contato
+
+- WhatsApp: +55 11 92531-2151
+- Instagram: @linkmagico.ia
+- LinkedIn: linkedin.com/in/edvaldo-luiz-da-silva-a01300182
