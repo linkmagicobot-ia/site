@@ -106,6 +106,16 @@ app.get('/cookies', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'cookies.html'));
 });
 
+// ===== KNOWLEDGE HUB =====
+app.get('/glossario', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'glossario.html'));
+});
+
+// ===== FERRAMENTAS =====
+app.get('/ferramentas/calculadora-roi', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'ferramentas', 'calculadora-roi.html'));
+});
+
 // ===== BLOG — Rotas limpas sem .html =====
 app.get('/blog', (req, res) => {
     res.redirect(301, '/blog/');

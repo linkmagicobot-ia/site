@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de ROI de Chatbot com IA — LinkMágico</title>
+<meta name="description" content="Calcule gratuitamente quanto você pode economizar e ganhar implementando um chatbot com IA. Simule ROI, redução de custos e aumento de conversão.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/ferramentas/calculadora-roi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de ROI de Chatbot com IA — LinkMágico">
+<meta property="og:description" content="Simule gratuitamente o retorno do investimento em automação de atendimento com IA.">
+<meta property="og:url" content="https://site.linkmagico.app.br/ferramentas/calculadora-roi">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LinkMágico">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Ferramentas","item":"https://site.linkmagico.app.br/ferramentas/calculadora-roi"},{"@type":"ListItem","position":3,"name":"Calculadora de ROI"}]},{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calculadora de ROI de Chatbot","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"description":"Calcule gratuitamente o retorno do investimento em automação de atendimento com chatbot de IA.","publisher":{"@type":"Organization","name":"LinkMágico","url":"https://site.linkmagico.app.br"}}]
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--purple-d:#5b21b6;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--red:#ef4444;--amber:#f59e0b;--blue:#3b82f6}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}
+.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif;color:var(--text)}
+.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav__links{display:flex;gap:20px;align-items:center}
+.nav__links a{color:var(--muted);font-size:.9rem;transition:color .3s}
+.nav__links a:hover{color:var(--text);text-decoration:none}
+.btn-cta{background:linear-gradient(135deg,var(--purple),var(--purple-d));color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}
+
+/* Hero */
+.hero{padding:120px 0 40px;text-align:center}
+.hero .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);color:var(--purple-l);padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:12px}
+.hero h1 span{background:linear-gradient(135deg,var(--green),var(--green-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:600px;margin:0 auto}
+
+/* Calculator */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+@media(max-width:768px){.calc-grid{grid-template-columns:1fr}}
+.calc-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px}
+.calc-card h2{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.calc-card h2 i{color:var(--purple-l);font-size:1rem}
+
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:6px;font-weight:500}
+.field input[type="number"],.field select{width:100%;padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.95rem;font-family:'Inter',sans-serif;transition:border-color .3s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--purple)}
+.field .hint{font-size:.75rem;color:var(--muted);margin-top:4px}
+.field .range-val{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;margin-bottom:4px}
+.field .range-val span{color:var(--green-l);font-weight:700}
+input[type="range"]{width:100%;accent-color:var(--purple);cursor:pointer}
+
+.btn-calc{width:100%;padding:14px;background:linear-gradient(135deg,var(--purple),var(--green));color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Space Grotesk',sans-serif;transition:transform .2s,box-shadow .3s;margin-top:8px}
+.btn-calc:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,.3)}
+
+/* Results */
+.results{display:none;margin-top:40px}
+.results.show{display:block;animation:fadeUp .5s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px}
+.result-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;transition:border-color .3s}
+.result-box:hover{border-color:var(--purple)}
+.result-box .icon{font-size:1.5rem;margin-bottom:8px}
+.result-box .label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.result-box .value{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:800}
+.result-box.positive .value{color:var(--green-l)}
+.result-box.negative .value{color:var(--red)}
+.result-box.neutral .value{color:var(--amber)}
+.result-box.highlight{border-color:var(--green);background:rgba(16,185,129,.05)}
+.result-box.highlight .value{color:var(--green-l);font-size:2rem}
+
+.result-detail{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin-top:16px}
+.result-detail h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.result-detail h3 i{color:var(--green-l)}
+.breakdown{display:flex;flex-direction:column;gap:10px}
+.breakdown-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.breakdown-row:last-child{border-bottom:none}
+.breakdown-row .bl{font-size:.88rem;color:var(--muted)}
+.breakdown-row .bv{font-size:.95rem;font-weight:700}
+.breakdown-row .bv.savings{color:var(--green-l)}
+.breakdown-row .bv.cost{color:var(--red)}
+
+.cta-box{background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(16,185,129,.1));border:1px solid rgba(124,58,237,.2);border-radius:16px;padding:32px;text-align:center;margin-top:28px}
+.cta-box h3{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;margin-bottom:8px}
+.cta-box p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.cta-box .btn-cta{display:inline-block;padding:12px 32px;font-size:1rem;border-radius:10px;text-decoration:none}
+
+/* Breadcrumb */
+.breadcrumb{padding:90px 0 0;font-size:.83rem;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+
+/* Footer */
+footer{margin-top:80px;padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+
+@media(max-width:480px){
+.container{padding:0 16px}
+.result-grid{grid-template-columns:1fr 1fr}
+.nav__links a:not(.btn-cta){display:none}
+}
+</style>
+</head>
+<body>
+<header>
+<nav class="nav" aria-label="Navegação principal">
+<a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a>
+<div class="nav__links">
+<a href="/">Home</a>
+<a href="/blog/">Blog</a>
+<a href="/docs">Docs</a>
+<a href="https://linkmagico.app.br/pricing.html" class="btn-cta">Ver Planos</a>
+</div>
+</nav>
+</header>
+
+<main>
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <a href="/ferramentas/calculadora-roi">Ferramentas</a> › <strong>Calculadora de ROI</strong></nav>
+
+<section class="hero">
+<span class="tag"><i class="fas fa-calculator"></i> Ferramenta Gratuita</span>
+<h1>Calculadora de <span>ROI de Chatbot</span></h1>
+<p>Descubra quanto você pode economizar e ganhar implementando um vendedor automático com IA no seu negócio.</p>
+</section>
+
+<div class="calc-grid">
+<div class="calc-card">
+<h2><i class="fas fa-building"></i> Seu Negócio Hoje</h2>
+
+<div class="field">
+<label for="leads">Leads recebidos por mês</label>
+<input type="number" id="leads" value="500" min="1" max="100000" placeholder="Ex: 500">
+<div class="hint">Visitantes que interagem ou deixam contato</div>
+</div>
+
+<div class="field">
+<label for="conversion">Taxa de conversão atual (%)</label>
+<div class="range-val"><span id="convVal">3%</span></div>
+<input type="range" id="conversion" min="0.5" max="20" step="0.5" value="3">
+</div>
+
+<div class="field">
+<label for="ticket">Ticket médio (R$)</label>
+<input type="number" id="ticket" value="150" min="1" max="100000" placeholder="Ex: 150">
+</div>
+
+<div class="field">
+<label for="atendentes">Atendentes humanos</label>
+<input type="number" id="atendentes" value="2" min="0" max="100" placeholder="Ex: 2">
+</div>
+
+<div class="field">
+<label for="salario">Salário médio por atendente (R$)</label>
+<input type="number" id="salario" value="2500" min="0" max="50000" placeholder="Ex: 2500">
+</div>
+</div>
+
+<div class="calc-card">
+<h2><i class="fas fa-robot"></i> Com LinkMágico</h2>
+
+<div class="field">
+<label for="plano">Plano LinkMágico</label>
+<select id="plano">
+<option value="0">Free — R$0/mês</option>
+<option value="29">Starter — R$29/mês</option>
+<option value="69" selected>Pro — R$69/mês</option>
+<option value="97">Business — R$97/mês</option>
+</select>
+</div>
+
+<div class="field">
+<label for="autoRate">Automação de atendimento (%)</label>
+<div class="range-val"><span id="autoVal">70%</span></div>
+<input type="range" id="autoRate" min="30" max="95" step="5" value="70">
+<div class="hint">Porcentagem de atendimentos que a IA resolve sozinha</div>
+</div>
+
+<div class="field">
+<label for="convBoost">Aumento estimado na conversão (%)</label>
+<div class="range-val"><span id="boostVal">30%</span></div>
+<input type="range" id="convBoost" min="10" max="80" step="5" value="30">
+<div class="hint">Melhoria pela IA em tempo real, follow-up automático e disponibilidade 24h</div>
+</div>
+
+<div class="field">
+<label for="reductionStaff">Redução de equipe necessária (%)</label>
+<div class="range-val"><span id="staffVal">50%</span></div>
+<input type="range" id="reductionStaff" min="0" max="80" step="10" value="50">
+<div class="hint">Equipe pode ser reduzida ou realocada para vendas complexas</div>
+</div>
+
+<button class="btn-calc" id="calcBtn" type="button"><i class="fas fa-chart-line"></i> Calcular ROI</button>
+</div>
+</div>
+
+<section class="results" id="results">
+<div class="result-grid">
+<div class="result-box highlight">
+<div class="icon">💰</div>
+<div class="label">ROI em 12 meses</div>
+<div class="value" id="roi">0%</div>
+</div>
+<div class="result-box positive">
+<div class="icon">📈</div>
+<div class="label">Receita adicional/mês</div>
+<div class="value" id="newRevenue">R$0</div>
+</div>
+<div class="result-box positive">
+<div class="icon">💵</div>
+<div class="label">Economia mensal</div>
+<div class="value" id="savings">R$0</div>
+</div>
+<div class="result-box neutral">
+<div class="icon">⏱️</div>
+<div class="label">Payback</div>
+<div class="value" id="payback">0 dias</div>
+</div>
+</div>
+
+<div class="result-detail">
+<h3><i class="fas fa-chart-bar"></i> Detalhamento</h3>
+<div class="breakdown" id="breakdown"></div>
+</div>
+
+<div class="cta-box">
+<h3>Comece gratuitamente</h3>
+<p>Teste o LinkMágico agora com o plano Free — sem cartão de crédito.</p>
+<a href="https://linkmagico.app.br/signup.html" class="btn-cta">Criar Conta Gratuita →</a>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+<p>© 2025 LinkMágico — Todos os direitos reservados.</p>
+<p style="margin-top:8px"><a href="/">Início</a> · <a href="/blog/">Blog</a> · <a href="/docs">Documentação</a> · <a href="/politica-de-privacidade">Privacidade</a></p>
+</div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const fmt = n => n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:0,maximumFractionDigits:0});
+
+// Range sliders
+$('conversion').oninput = e => $('convVal').textContent = e.target.value+'%';
+$('autoRate').oninput = e => $('autoVal').textContent = e.target.value+'%';
+$('convBoost').oninput = e => $('boostVal').textContent = e.target.value+'%';
+$('reductionStaff').oninput = e => $('staffVal').textContent = e.target.value+'%';
+
+$('calcBtn').onclick = () => {
+  const leads = +$('leads').value || 0;
+  const conv = +$('conversion').value / 100;
+  const ticket = +$('ticket').value || 0;
+  const staff = +$('atendentes').value || 0;
+  const salary = +$('salario').value || 0;
+  const plan = +$('plano').value;
+  const autoRate = +$('autoRate').value / 100;
+  const boost = +$('convBoost').value / 100;
+  const staffReduction = +$('reductionStaff').value / 100;
+
+  // Current
+  const currentRevenue = leads * conv * ticket;
+  const currentCost = staff * salary;
+
+  // With AI
+  const newConv = conv * (1 + boost);
+  const newRevenueTotal = leads * newConv * ticket;
+  const revenueGain = newRevenueTotal - currentRevenue;
+  const staffSaved = Math.floor(staff * staffReduction);
+  const costSavings = staffSaved * salary;
+  const totalGainMonthly = revenueGain + costSavings;
+  const totalCostMonthly = plan;
+  const netGainMonthly = totalGainMonthly - totalCostMonthly;
+  const annualInvestment = totalCostMonthly * 12;
+  const annualGain = netGainMonthly * 12;
+  const roiPct = annualInvestment > 0 ? ((annualGain / annualInvestment) * 100) : 0;
+  const paybackDays = netGainMonthly > 0 ? Math.ceil((totalCostMonthly / netGainMonthly) * 30) : 999;
+
+  $('roi').textContent = roiPct > 0 ? Math.round(roiPct)+'%' : '∞';
+  $('newRevenue').textContent = fmt(revenueGain);
+  $('savings').textContent = fmt(costSavings);
+  $('payback').textContent = paybackDays < 999 ? paybackDays+' dias' : 'Imediato';
+
+  $('breakdown').innerHTML = `
+    <div class="breakdown-row"><span class="bl">Receita atual/mês</span><span class="bv">${fmt(currentRevenue)}</span></div>
+    <div class="breakdown-row"><span class="bl">Receita com IA/mês</span><span class="bv savings">${fmt(newRevenueTotal)}</span></div>
+    <div class="breakdown-row"><span class="bl">Ganho de receita/mês</span><span class="bv savings">+${fmt(revenueGain)}</span></div>
+    <div class="breakdown-row"><span class="bl">Custo atual de equipe/mês</span><span class="bv cost">${fmt(currentCost)}</span></div>
+    <div class="breakdown-row"><span class="bl">Atendentes economizados</span><span class="bv savings">${staffSaved} de ${staff}</span></div>
+    <div class="breakdown-row"><span class="bl">Economia de equipe/mês</span><span class="bv savings">+${fmt(costSavings)}</span></div>
+    <div class="breakdown-row"><span class="bl">Custo LinkMágico/mês</span><span class="bv cost">-${fmt(plan)}</span></div>
+    <div class="breakdown-row" style="border-top:2px solid var(--green);padding-top:12px"><span class="bl" style="font-weight:700;color:var(--text)">Ganho líquido mensal</span><span class="bv savings" style="font-size:1.1rem">+${fmt(netGainMonthly)}</span></div>
+    <div class="breakdown-row"><span class="bl" style="font-weight:700;color:var(--text)">Ganho líquido anual</span><span class="bv savings" style="font-size:1.1rem">+${fmt(annualGain)}</span></div>
+  `;
+
+  $('results').classList.add('show');
+  $('results').scrollIntoView({behavior:'smooth',block:'start'});
+};
+</script>
+</body>
+</html>
