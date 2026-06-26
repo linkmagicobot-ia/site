@@ -92,6 +92,20 @@ app.get('/docs', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'docs.html'));
 });
 
+// ===== PÁGINAS INSTITUCIONAIS =====
+app.get('/politica-de-privacidade', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'politica-de-privacidade.html'));
+});
+app.get('/termos-de-uso', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'termos-de-uso.html'));
+});
+app.get('/lgpd', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'lgpd.html'));
+});
+app.get('/cookies', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'cookies.html'));
+});
+
 // ===== BLOG — Rotas limpas sem .html =====
 app.get('/blog', (req, res) => {
     res.redirect(301, '/blog/');
