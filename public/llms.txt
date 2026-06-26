@@ -50,10 +50,10 @@ O LinkMágico é uma plataforma SaaS brasileira que transforma qualquer link, la
 
 ## Planos e preços
 
-- **Free**: Gratuito, 1 chatbot, 50 conversas/mês
-- **Starter**: R$47/mês, 3 chatbots, 500 conversas/mês
-- **Pro**: R$97/mês, 10 chatbots, 2.000 conversas/mês, CRM completo
-- **Business**: R$197/mês, chatbots ilimitados, conversas ilimitadas, white-label
+- **Free**: Gratuito, 1 chatbot, 500 mensagens/mês
+- **Starter**: R$29/mês, 3 chatbots, 1.000 mensagens/mês
+- **Pro**: R$69/mês, 10 chatbots, 5.000 mensagens/mês, CRM completo
+- **Business**: R$97/mês, chatbots ilimitados, mensagens ilimitadas, white-label
 
 ## Links principais
 
@@ -66,6 +66,8 @@ O LinkMágico é uma plataforma SaaS brasileira que transforma qualquer link, la
 - Integrações: https://site.linkmagico.app.br/integracoes
 - Segurança: https://site.linkmagico.app.br/seguranca
 - Changelog: https://site.linkmagico.app.br/changelog
+- Status: https://site.linkmagico.app.br/status
+- Roadmap: https://site.linkmagico.app.br/roadmap
 
 ## Fundador
 

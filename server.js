@@ -79,6 +79,12 @@ app.get('/seguranca', (req, res) => {
 app.get('/changelog', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'changelog.html'));
 });
+app.get('/status', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'status.html'));
+});
+app.get('/roadmap', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'roadmap.html'));
+});
 
 // ===== BLOG — Rotas limpas sem .html =====
 app.get('/blog', (req, res) => {

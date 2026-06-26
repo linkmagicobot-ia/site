@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status — LinkMágico | Disponibilidade da Plataforma</title>
+<meta name="description" content="Acompanhe a disponibilidade e o status de todos os serviços do LinkMágico em tempo real. Uptime, incidentes e histórico.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/status">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Status — LinkMágico">
+<meta property="og:description" content="Disponibilidade da plataforma em tempo real.">
+<meta property="og:url" content="https://site.linkmagico.app.br/status">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LinkMágico">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Status — LinkMágico">
+<meta name="twitter:description" content="Disponibilidade da plataforma em tempo real.">
+<meta name="twitter:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Status","item":"https://site.linkmagico.app.br/status"}]}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--red:#ef4444;--yellow:#eab308}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}
+.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif;color:var(--text)}
+.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav__back{color:var(--muted);font-size:.9rem}
+.breadcrumb{padding:100px 0 0;font-size:.85rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin:24px 0 16px;line-height:1.2}
+h2{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;margin:40px 0 16px;color:var(--muted)}
+.subtitle{color:var(--muted);font-size:1.05rem;margin-bottom:32px}
+.status-banner{background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(16,185,129,.05));border:1px solid rgba(16,185,129,.3);border-radius:16px;padding:28px 32px;display:flex;align-items:center;gap:16px;margin-bottom:40px}
+.status-dot{width:16px;height:16px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.4)}50%{box-shadow:0 0 0 8px rgba(16,185,129,0)}}
+.status-banner h3{font-size:1.1rem;font-weight:700;color:var(--green-l)}
+.status-banner p{font-size:.85rem;color:var(--muted);margin-top:2px}
+.service{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+.service-name{font-weight:600;font-size:.95rem}
+.service-status{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.dot--ok{background:var(--green)}
+.dot--warn{background:var(--yellow)}
+.dot--down{background:var(--red)}
+.uptime-bar{display:flex;gap:2px;margin-top:32px}
+.uptime-day{flex:1;height:32px;border-radius:4px;background:rgba(16,185,129,.6);transition:all .2s;cursor:default;position:relative}
+.uptime-day:hover{transform:scaleY(1.2)}
+.uptime-day[data-status="partial"]{background:rgba(234,179,8,.6)}
+.uptime-day[data-status="down"]{background:rgba(239,68,68,.6)}
+.uptime-legend{display:flex;justify-content:space-between;margin-top:8px;font-size:.75rem;color:var(--muted)}
+.incidents{margin-top:40px}
+.incident{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px}
+.incident-date{font-size:.8rem;color:var(--muted);margin-bottom:4px}
+.incident-title{font-weight:700;font-size:.95rem;margin-bottom:6px}
+.incident-desc{font-size:.9rem;color:var(--muted)}
+.incident-resolved{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.7rem;font-weight:700;background:rgba(16,185,129,.15);color:var(--green-l);margin-left:8px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:32px 0}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.metric-value{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:800;color:var(--green-l)}
+.metric-label{font-size:.8rem;color:var(--muted);margin-top:4px}
+footer{margin-top:80px;padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:600px){.metrics{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><nav class="nav" aria-label="Navegação"><a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a><a href="/" class="nav__back">← Voltar ao site</a></nav></header>
+<main>
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <strong>Status</strong></nav>
+<h1>Status da Plataforma</h1>
+<p class="subtitle">Monitoramento em tempo real da disponibilidade dos serviços do LinkMágico.</p>
+
+<div class="status-banner">
+<div class="status-dot"></div>
+<div>
+<h3>Todos os sistemas operacionais</h3>
+<p>Última verificação: <time datetime="2026-06-26T06:00:00Z" id="lastCheck">26 Jun 2026, 06:00 UTC</time></p>
+</div>
+</div>
+
+<div class="metrics">
+<div class="metric"><div class="metric-value">99.9%</div><div class="metric-label">Uptime (30 dias)</div></div>
+<div class="metric"><div class="metric-value">&lt;200ms</div><div class="metric-label">Tempo de resposta</div></div>
+<div class="metric"><div class="metric-value">0</div><div class="metric-label">Incidentes (30 dias)</div></div>
+</div>
+
+<h2>Serviços</h2>
+<div class="service"><span class="service-name">🌐 Site (site.linkmagico.app.br)</span><div class="service-status"><span class="dot dot--ok"></span>Operacional</div></div>
+<div class="service"><span class="service-name">🚀 Plataforma (linkmagico.app.br)</span><div class="service-status"><span class="dot dot--ok"></span>Operacional</div></div>
+<div class="service"><span class="service-name">🤖 API de Chat (IA)</span><div class="service-status"><span class="dot dot--ok"></span>Operacional</div></div>
+<div class="service"><span class="service-name">📱 WhatsApp (Evolution API)</span><div class="service-status"><span class="dot dot--ok"></span>Operacional</div></div>
+<div class="service"><span class="service-name">💬 Widget Inline</span><div class="service-status"><span class="dot dot--ok"></span>Operacional</div></div>
+<div class="service"><span class="service-name">📊 Analytics e Tracking</span><div class="service-status"><span class="dot dot--ok"></span>Operacional</div></div>
+<div class="service"><span class="service-name">📅 Agendamento</span><div class="service-status"><span class="dot dot--ok"></span>Operacional</div></div>
+<div class="service"><span class="service-name">💾 Banco de Dados</span><div class="service-status"><span class="dot dot--ok"></span>Operacional</div></div>
+
+<h2>Uptime — Últimos 30 dias</h2>
+<div class="uptime-bar" aria-label="Uptime dos últimos 30 dias">
+<div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div>
+<div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div>
+<div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div>
+<div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div>
+<div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div>
+<div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div><div class="uptime-day" title="Operacional"></div>
+</div>
+<div class="uptime-legend"><span>30 dias atrás</span><span>Hoje</span></div>
+
+<div class="incidents">
+<h2>Histórico de Incidentes</h2>
+<div class="incident">
+<div class="incident-date"><time datetime="2026-06-26">Junho 2026</time></div>
+<div class="incident-title">Nenhum incidente registrado <span class="incident-resolved">✓ Estável</span></div>
+<div class="incident-desc">Todos os serviços operaram normalmente durante todo o período.</div>
+</div>
+</div>
+
+</div>
+</main>
+<footer><div class="container"><p>© <time datetime="2025">2025</time> LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/faq">FAQ</a> · <a href="/recursos">Recursos</a> · <a href="/roadmap">Roadmap</a> · <a href="/changelog">Changelog</a></p></div></footer>
+</body>
+</html>

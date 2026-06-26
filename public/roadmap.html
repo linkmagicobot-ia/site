@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap — LinkMágico | O Que Vem Por Aí</title>
+<meta name="description" content="Veja o roadmap do LinkMágico: funcionalidades concluídas, em desenvolvimento e planejadas. Transparência total sobre a evolução da plataforma.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/roadmap">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Roadmap — LinkMágico">
+<meta property="og:description" content="Funcionalidades concluídas, em desenvolvimento e planejadas.">
+<meta property="og:url" content="https://site.linkmagico.app.br/roadmap">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LinkMágico">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roadmap — LinkMágico">
+<meta name="twitter:description" content="Funcionalidades concluídas, em desenvolvimento e planejadas.">
+<meta name="twitter:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Roadmap","item":"https://site.linkmagico.app.br/roadmap"}]}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--yellow:#eab308;--blue:#3b82f6}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}
+.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif;color:var(--text)}
+.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav__back{color:var(--muted);font-size:.9rem}
+.breadcrumb{padding:100px 0 0;font-size:.85rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin:24px 0 16px;line-height:1.2}
+.subtitle{color:var(--muted);font-size:1.05rem;margin-bottom:48px}
+.phase{margin-bottom:48px}
+.phase-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.phase-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;flex-shrink:0}
+.phase-icon--done{background:rgba(16,185,129,.15);color:var(--green-l)}
+.phase-icon--wip{background:rgba(234,179,8,.15);color:var(--yellow)}
+.phase-icon--planned{background:rgba(124,58,237,.15);color:var(--purple-l)}
+.phase-title{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700}
+.phase-tag{padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.tag-done{background:rgba(16,185,129,.15);color:var(--green-l)}
+.tag-wip{background:rgba(234,179,8,.15);color:var(--yellow)}
+.tag-planned{background:rgba(124,58,237,.15);color:var(--purple-l)}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.feat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:12px}
+.feat-check{font-size:1rem;flex-shrink:0;margin-top:2px}
+.feat h4{font-size:.9rem;font-weight:600;margin-bottom:4px}
+.feat p{font-size:.8rem;color:var(--muted);line-height:1.5}
+footer{margin-top:80px;padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<header><nav class="nav" aria-label="Navegação"><a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a><a href="/" class="nav__back">← Voltar ao site</a></nav></header>
+<main>
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <strong>Roadmap</strong></nav>
+<h1>Roadmap</h1>
+<p class="subtitle">Transparência total. Veja o que já foi entregue, o que estamos construindo e o que vem a seguir.</p>
+
+<section class="phase">
+<div class="phase-header">
+<div class="phase-icon phase-icon--done">✓</div>
+<span class="phase-title">Concluído</span>
+<span class="phase-tag tag-done">Entregue</span>
+</div>
+<div class="features">
+<div class="feat"><span class="feat-check">✅</span><div><h4>Chatbot de Vendas com IA</h4><p>Conversas naturais com inteligência artificial para conduzir visitantes até a compra.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Decision Engine™</h4><p>Análise de intenção do visitante em tempo real com estratégia adaptativa.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Sales Layer™ — 13 Fases</h4><p>Condução de venda por 13 fases usando neurovendas e copywriting.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>CRM Integrado</h4><p>Pipeline de vendas com stages, histórico de conversas e gestão de leads.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Captura Automática de Leads</h4><p>Nome, email e telefone capturados durante a conversa sem formulários.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Agendamento Integrado</h4><p>Calendário dentro do chat para agendar consultas e reuniões.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Widget White-Label</h4><p>Balão flutuante personalizável com cores, logo e remoção do badge.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>WhatsApp (Twilio + Evolution)</h4><p>Integração bidirecional com WhatsApp Business API.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Analytics em Tempo Real</h4><p>Dashboard com conversas, leads, taxa de conversão e revenue.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Billing com 4 Planos</h4><p>Free, Starter, Pro e Business com cobrança automática.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Multi-Tenant Nativo</h4><p>Isolamento completo de dados entre clientes.</p></div></div>
+<div class="feat"><span class="feat-check">✅</span><div><h4>Blog e Conteúdo SEO</h4><p>Artigos otimizados para busca orgânica e autoridade temática.</p></div></div>
+</div>
+</section>
+
+<section class="phase">
+<div class="phase-header">
+<div class="phase-icon phase-icon--wip">⚙</div>
+<span class="phase-title">Em Desenvolvimento</span>
+<span class="phase-tag tag-wip">Em progresso</span>
+</div>
+<div class="features">
+<div class="feat"><span class="feat-check">🔨</span><div><h4>Centro de Documentação</h4><p>Base de conhecimento completa com API docs, tutoriais e guias de integração.</p></div></div>
+<div class="feat"><span class="feat-check">🔨</span><div><h4>Topical Authority</h4><p>Páginas de conteúdo sobre automação de WhatsApp, captura de leads e casos de uso por segmento.</p></div></div>
+<div class="feat"><span class="feat-check">🔨</span><div><h4>IndexNow Automático</h4><p>Ping automático para Bing quando novas páginas ou blog posts são publicados.</p></div></div>
+<div class="feat"><span class="feat-check">🔨</span><div><h4>SDK JavaScript</h4><p>SDK para integração avançada do widget com controle programático.</p></div></div>
+</div>
+</section>
+
+<section class="phase">
+<div class="phase-header">
+<div class="phase-icon phase-icon--planned">◇</div>
+<span class="phase-title">Planejado</span>
+<span class="phase-tag tag-planned">Futuro</span>
+</div>
+<div class="features">
+<div class="feat"><span class="feat-check">📋</span><div><h4>Automação de Follow-up Avançada</h4><p>Sequências inteligentes multi-canal: email, WhatsApp e widget.</p></div></div>
+<div class="feat"><span class="feat-check">📋</span><div><h4>A/B Testing de Conversas</h4><p>Testar diferentes abordagens de venda e medir resultados.</p></div></div>
+<div class="feat"><span class="feat-check">📋</span><div><h4>Integração com CRMs Externos</h4><p>Zapier, HubSpot, Pipedrive, RD Station.</p></div></div>
+<div class="feat"><span class="feat-check">📋</span><div><h4>App Mobile</h4><p>Aplicativo iOS e Android para gestão de leads e conversas.</p></div></div>
+<div class="feat"><span class="feat-check">📋</span><div><h4>Voice AI</h4><p>Vendedor automático por voz para atendimento telefônico.</p></div></div>
+<div class="feat"><span class="feat-check">📋</span><div><h4>Marketplace de Templates</h4><p>Templates de conversas prontos por nicho e segmento.</p></div></div>
+</div>
+</section>
+
+</div>
+</main>
+<footer><div class="container"><p>© <time datetime="2025">2025</time> LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/faq">FAQ</a> · <a href="/recursos">Recursos</a> · <a href="/status">Status</a> · <a href="/changelog">Changelog</a></p></div></footer>
+</body>
+</html>
