@@ -110,6 +110,13 @@ app.get('/cookies', (req, res) => {
 app.get('/glossario', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'glossario.html'));
 });
+app.get('/glossario/:termo', (req, res) => {
+    const termo = req.params.termo.replace(/[^a-z0-9-]/gi, '');
+    const filePath = path.join(__dirname, 'public', 'glossario', termo + '.html');
+    res.sendFile(filePath, (err) => {
+        if (err) res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+    });
+});
 
 // ===== FERRAMENTAS =====
 app.get('/ferramentas/calculadora-roi', (req, res) => {
