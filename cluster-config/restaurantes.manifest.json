@@ -1,0 +1,25 @@
+{
+  "segment": "restaurantes",
+  "segmento": "Restaurantes",
+  "version": "1.0",
+  "generatedAt": "2026-06-26T16:19:46.048Z",
+  "pages": [
+    "/restaurantes",
+    "/templates/restaurantes",
+    "/fluxos/restaurantes",
+    "/checklists/restaurantes",
+    "/prompts/restaurantes",
+    "/exemplos/restaurantes"
+  ],
+  "glossary": [
+    "chatbot",
+    "automacao-de-marketing",
+    "webhook",
+    "follow-up",
+    "conversao"
+  ],
+  "definitionOfDone": {
+    "total": 29,
+    "passed": "pending-audit"
+  }
+}

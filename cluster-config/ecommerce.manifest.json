@@ -1,0 +1,25 @@
+{
+  "segment": "ecommerce",
+  "segmento": "E-commerce",
+  "version": "1.0",
+  "generatedAt": "2026-06-26T16:19:45.887Z",
+  "pages": [
+    "/ecommerce",
+    "/templates/ecommerce",
+    "/fluxos/ecommerce",
+    "/checklists/ecommerce",
+    "/prompts/ecommerce",
+    "/exemplos/ecommerce"
+  ],
+  "glossary": [
+    "chatbot",
+    "conversao",
+    "lead",
+    "automacao-de-marketing",
+    "roi"
+  ],
+  "definitionOfDone": {
+    "total": 29,
+    "passed": "pending-audit"
+  }
+}

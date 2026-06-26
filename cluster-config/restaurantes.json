@@ -1,0 +1,242 @@
+{
+  "segmento": "Restaurantes",
+  "slug": "restaurantes",
+  "cor": "#ef4444",
+  "corRgba": "rgba(239,68,68",
+  "icone": "fa-utensils",
+  "headline": "Automatize reservas, delivery e atendimento do seu restaurante",
+  "subheadline": "Seu chatbot recebe pedidos, gerencia reservas, envia o cardápio e atende clientes 24h — sem sobrecarregar a equipe.",
+  "glossario": ["chatbot", "automacao-de-marketing", "webhook", "follow-up", "conversao"],
+  "blogLinks": [
+    {"url": "/blog/como-automatizar-atendimento-whatsapp", "titulo": "Como automatizar atendimento pelo WhatsApp"},
+    {"url": "/blog/como-converter-mais-leads-com-chatbot-de-ia", "titulo": "Como converter mais com chatbot de IA"}
+  ],
+  "integracoes": ["WhatsApp (Twilio/Evolution)", "iFood (link externo)", "Google Maps", "Instagram"],
+  "problemas": [
+    {"icone": "fa-phone-volume", "titulo": "Telefone toca sem parar nos horários de pico", "desc": "Durante almoço e jantar, a equipe não consegue atender o telefone e servir as mesas ao mesmo tempo. Ligações perdidas significam reservas perdidas."},
+    {"icone": "fa-calendar-xmark", "titulo": "No-show em reservas", "desc": "Clientes reservam e não comparecem. Sem confirmação automática, mesas ficam vazias nos horários mais disputados, gerando perda de faturamento."},
+    {"icone": "fa-clock", "titulo": "Pedidos de delivery geram confusão", "desc": "Pedidos chegam por WhatsApp, Instagram, telefone e aplicativos ao mesmo tempo. Sem centralização, erros são frequentes e atrasos inevitáveis."},
+    {"icone": "fa-list", "titulo": "Cardápio desatualizado gera reclamações", "desc": "Cliente pergunta sobre um prato e descobre que não está mais disponível. Atualizar o cardápio em todos os canais é trabalhoso e frequentemente esquecido."}
+  ],
+  "solucoes": [
+    {"icone": "fa-calendar-check", "titulo": "Reservas automáticas pelo WhatsApp", "desc": "O chatbot verifica disponibilidade, confirma reservas e envia lembrete no dia — tudo automaticamente, sem ocupar a equipe."},
+    {"icone": "fa-bell-concierge", "titulo": "Cardápio digital interativo", "desc": "Cliente recebe o cardápio atualizado pelo WhatsApp, pode tirar dúvidas sobre ingredientes e alergênicos e fazer pedidos diretamente."},
+    {"icone": "fa-motorcycle", "titulo": "Pedidos de delivery organizados", "desc": "O chatbot recebe pedidos pelo WhatsApp com endereço e forma de pagamento, organizando tudo antes de enviar para a cozinha."},
+    {"icone": "fa-bell", "titulo": "Confirmação de reservas e redução de no-show", "desc": "Mensagem automática 4h antes da reserva com opção de confirmar ou cancelar. Mesas liberadas são disponibilizadas imediatamente."}
+  ],
+  "fluxo": [
+    {"step": "1", "label": "Cliente envia mensagem", "detail": "WhatsApp, Instagram, Site"},
+    {"step": "2", "label": "IA identifica intenção", "detail": "Reserva, pedido, cardápio, dúvida"},
+    {"step": "3", "label": "Resolve automaticamente", "detail": "Reserva mesa, envia cardápio, recebe pedido"},
+    {"step": "4", "label": "Confirma e acompanha", "detail": "Lembrete, status do pedido, pós-visita"}
+  ],
+  "features": ["Reservas 24h", "Cardápio digital", "Delivery organizado", "Confirmação automática", "Pós-visita", "WhatsApp + Site"],
+  "exclusivos": [
+    {"icone": "fa-chair", "titulo": "Gestão de reservas com confirmação", "desc": "O chatbot agenda reservas verificando disponibilidade por horário e número de pessoas. Envia confirmação e lembrete automático 4h antes."},
+    {"icone": "fa-bowl-food", "titulo": "Cardápio interativo com alergênicos", "desc": "O cliente navega pelo cardápio pelo chat, pode filtrar por categoria e recebe informações sobre ingredientes e restrições alimentares."},
+    {"icone": "fa-receipt", "titulo": "Pedidos de delivery estruturados", "desc": "O chatbot coleta itens, endereço, forma de pagamento e observações, enviando o pedido completo e organizado para a cozinha."},
+    {"icone": "fa-star", "titulo": "Avaliação pós-visita", "desc": "Mensagem automática após a refeição pedindo avaliação e sugerindo que o cliente deixe uma review no Google Maps."}
+  ],
+  "faq": [
+    {"q": "O chatbot consegue gerenciar reservas?", "a": "Sim. O chatbot verifica disponibilidade por horário e número de pessoas, confirma a reserva e envia lembrete automático antes do horário."},
+    {"q": "Funciona para delivery?", "a": "Sim. O chatbot recebe pedidos pelo WhatsApp, coleta endereço e forma de pagamento, e organiza tudo para envio à cozinha."},
+    {"q": "O cardápio fica atualizado automaticamente?", "a": "O chatbot é treinado com o conteúdo do seu site. Basta manter o cardápio atualizado no site e retreinar periodicamente."},
+    {"q": "Consigo saber quantas reservas foram feitas pelo chatbot?", "a": "Sim. Todas as interações ficam registradas no painel do LinkMágico, com dados de reservas, pedidos e mensagens."},
+    {"q": "Quanto custa?", "a": "Planos a partir de R$0/mês. O plano Pro (R$69/mês) é indicado para restaurantes com volume moderado de reservas e pedidos."}
+  ],
+  "templates": {
+    "recepcao": [
+      "Olá! 😊 Bem-vindo(a) ao [Nome do Restaurante]! Posso te ajudar com:\n\n🍽️ Fazer uma reserva\n📋 Ver o cardápio\n🛵 Fazer um pedido delivery\n❓ Tirar uma dúvida\n\nO que prefere?",
+      "Boa noite! Gostaria de reservar uma mesa ou fazer um pedido para entrega? 🍕",
+      "Olá! Nosso cardápio completo está disponível. Quer que eu envie? Também posso informar sobre pratos do dia e promoções!",
+      "Oi! Funcionamos de terça a domingo, das 11h30 às 23h. Como posso te ajudar hoje? 😊"
+    ],
+    "reservas": [
+      "Perfeito! Para reservar sua mesa, preciso de:\n\n1️⃣ Data e horário\n2️⃣ Número de pessoas\n3️⃣ Alguma preferência? (interno, externo, próximo à janela)\n4️⃣ Seu nome para a reserva",
+      "✅ Reserva confirmada!\n\n🍽️ [Nome do Restaurante]\n📅 [Data] às [Horário]\n👥 [X] pessoas\n📍 [Endereço]\n\nVocê receberá um lembrete 4h antes. Até lá! 😊",
+      "Olá, [Nome]! 😊 Lembrando da sua reserva hoje:\n\n🍽️ [Horário] — [X] pessoas\n📍 [Endereço]\n\nVocê confirma?\n✅ Sim, estarei lá\n🔄 Preciso cancelar",
+      "Sem problemas! Sua reserva foi cancelada. A mesa foi liberada para outros clientes. Se quiser reagendar, é só me avisar! 😊"
+    ],
+    "cardapio": [
+      "Aqui está nosso cardápio! 📋\n\n🥗 **Entradas**\nBruschetta — R$ 28\nCarpaccio — R$ 42\n\n🍝 **Principais**\nRisoto de Funghi — R$ 58\nFilé ao Molho — R$ 68\n\n🍰 **Sobremesas**\nPetit Gateau — R$ 32\nTiramisù — R$ 28\n\nQuer saber sobre ingredientes ou alergênicos?",
+      "O prato do dia é [nome] por R$ [valor]! 🎉 Servido das 11h30 às 15h. Quer reservar ou pedir delivery?",
+      "Sobre alergênicos:\n\n🥜 Sem glúten: Risoto, Filé, Carpaccio\n🥛 Sem lactose: Bruschetta, Filé\n🌱 Vegano: Salada Mediterrânea, Risoto de Cogumelos\n\nPrecisa de mais informações?",
+      "Tem alguma restrição alimentar? Posso filtrar o cardápio para mostrar apenas as opções compatíveis. 😊"
+    ],
+    "delivery": [
+      "Ótimo! Para o pedido delivery, preciso de:\n\n1️⃣ Itens do pedido\n2️⃣ Endereço de entrega\n3️⃣ Forma de pagamento (PIX, cartão, dinheiro)\n4️⃣ Alguma observação? (sem cebola, ponto da carne, etc.)",
+      "📋 Resumo do seu pedido:\n\n🍝 [Item 1] — R$ [valor]\n🥗 [Item 2] — R$ [valor]\n🚚 Taxa de entrega: R$ [valor]\n💰 Total: R$ [total]\n\nTudo certo? Confirma?",
+      "✅ Pedido confirmado!\n\n⏱️ Previsão de entrega: [X] minutos\n📍 Endereço: [endereço]\n\nVou te avisar quando o entregador sair! 🛵",
+      "Seu pedido saiu para entrega! 🛵 O entregador [Nome] está a caminho. Previsão: [X] minutos."
+    ]
+  },
+  "promptsCategories": [
+    {"cat": "Recepção", "icone": "fa-door-open", "items": [
+      "Receba o cliente com cordialidade e identifique se quer reservar, pedir delivery ou tirar dúvida.",
+      "Informe horário de funcionamento e endereço completo com referência.",
+      "Pergunte se há restrição alimentar antes de enviar o cardápio.",
+      "Em dias de lotação, informe que há lista de espera e pergunte se quer entrar.",
+      "Ofereça o prato do dia ou promoções ativas logo no início da conversa."
+    ]},
+    {"cat": "Reservas", "icone": "fa-calendar-check", "items": [
+      "Pergunte data, horário, número de pessoas e preferência de mesa.",
+      "Se não houver disponibilidade, ofereça horários alternativos próximos.",
+      "Confirme todos os dados antes de registrar a reserva.",
+      "Envie lembrete 4h antes com opção de confirmar ou cancelar.",
+      "Ao cancelar, libere a mesa e ofereça reagendamento."
+    ]},
+    {"cat": "Cardápio", "icone": "fa-utensils", "items": [
+      "Envie o cardápio organizado por categorias (entradas, principais, sobremesas, bebidas).",
+      "Informe sobre alergênicos quando o cliente perguntar.",
+      "Destaque o prato do dia e promoções ativas.",
+      "Se o prato estiver indisponível, sugira alternativas similares.",
+      "Responda sobre ingredientes, preparo e tempo de espera."
+    ]},
+    {"cat": "Delivery", "icone": "fa-motorcycle", "items": [
+      "Colete os itens do pedido de forma organizada.",
+      "Confirme endereço completo com referência.",
+      "Pergunte forma de pagamento e se precisa de troco.",
+      "Envie resumo completo com valores antes de confirmar.",
+      "Informe previsão de entrega e avise quando o entregador sair."
+    ]},
+    {"cat": "Pós-visita", "icone": "fa-star", "items": [
+      "Agradeça a visita e pergunte como foi a experiência.",
+      "Solicite avaliação no Google Maps com link direto.",
+      "Em caso de reclamação, registre e escale para o gerente.",
+      "Convide para eventos especiais ou menus sazonais.",
+      "Ofereça desconto ou benefício para retorno em dias de menor movimento."
+    ]},
+    {"cat": "Objeções", "icone": "fa-shield-halved", "items": [
+      "Se perguntar sobre higiene, informe certificações e práticas de segurança alimentar.",
+      "Se achar caro, destaque custo-benefício e porções generosas.",
+      "Se preferir ligar, ofereça o telefone mas destaque a praticidade do WhatsApp.",
+      "Se reclamar de demora no delivery, informe status em tempo real e peça desculpas.",
+      "Se questionar a qualidade, destaque ingredientes frescos e avaliações positivas."
+    ]}
+  ],
+  "exemplosConversas": [
+    {
+      "titulo": "Reserva de Mesa",
+      "icone": "fa-calendar-check",
+      "mensagens": [
+        {"tipo": "user", "texto": "Oi, quero reservar uma mesa pra sábado"},
+        {"tipo": "bot", "texto": "Olá! 😊 Claro! Para reservar, preciso de algumas informações:\n\n1️⃣ Quantas pessoas?\n2️⃣ Qual horário prefere?\n3️⃣ Alguma preferência de mesa? (interna, externa, janela)"},
+        {"tipo": "user", "texto": "4 pessoas, às 20h, de preferência perto da janela"},
+        {"tipo": "bot", "texto": "Temos disponibilidade! ✅\n\n🍽️ Restaurante [Nome]\n📅 Sábado, 28/06 às 20h\n👥 4 pessoas\n🪟 Mesa próxima à janela\n📍 Rua das Oliveiras, 456\n\nPosso confirmar em nome de quem?"},
+        {"tipo": "user", "texto": "Rafael Mendes"},
+        {"tipo": "bot", "texto": "Reserva confirmada, Rafael! ✅\n\nVocê receberá um lembrete no sábado às 16h. Até lá! 🍷😊"}
+      ]
+    },
+    {
+      "titulo": "Pedido de Delivery",
+      "icone": "fa-motorcycle",
+      "mensagens": [
+        {"tipo": "user", "texto": "Quero fazer um pedido pra entrega"},
+        {"tipo": "bot", "texto": "Ótimo! 🛵 Aqui está nosso cardápio resumido:\n\n🍕 Pizzas (a partir de R$ 39,90)\n🍝 Massas (a partir de R$ 32,00)\n🥗 Saladas (a partir de R$ 24,00)\n🍰 Sobremesas (a partir de R$ 18,00)\n\nQuer ver o cardápio completo de alguma categoria?"},
+        {"tipo": "user", "texto": "Uma pizza margherita grande e um tiramisù"},
+        {"tipo": "bot", "texto": "Anotado! 📋 Seu pedido:\n\n🍕 Pizza Margherita Grande — R$ 49,90\n🍰 Tiramisù — R$ 28,00\n\nPreciso do endereço de entrega e forma de pagamento (PIX, cartão ou dinheiro)."},
+        {"tipo": "user", "texto": "Rua dos Pinheiros 789, apto 12. PIX"},
+        {"tipo": "bot", "texto": "✅ Pedido confirmado!\n\n🍕 Pizza Margherita + 🍰 Tiramisù\n📍 Rua dos Pinheiros, 789 — Apto 12\n💳 PIX\n🚚 Taxa de entrega: R$ 8,00\n💰 Total: R$ 85,90\n⏱️ Previsão: 45 minutos\n\nChave PIX: [chave]. Envie o comprovante aqui! 😊"}
+      ]
+    },
+    {
+      "titulo": "Confirmação de Reserva e Pós-visita",
+      "icone": "fa-star",
+      "mensagens": [
+        {"tipo": "bot", "texto": "Olá, Rafael! 😊 Lembrando da sua reserva hoje:\n\n🍽️ 20h — 4 pessoas — Mesa janela\n📍 Rua das Oliveiras, 456\n\nVocê confirma?\n✅ Sim\n❌ Cancelar"},
+        {"tipo": "user", "texto": "Confirmado!"},
+        {"tipo": "bot", "texto": "Perfeito! Te esperamos às 20h. Boa noite! 🍷"},
+        {"tipo": "bot", "texto": "Olá, Rafael! 😊 Esperamos que o jantar tenha sido especial! Como foi sua experiência?\n\n⭐⭐⭐⭐⭐ Excelente\n⭐⭐⭐⭐ Boa\n⭐⭐⭐ Regular"},
+        {"tipo": "user", "texto": "Excelente! Comida incrível"},
+        {"tipo": "bot", "texto": "Ficamos muito felizes! 🎉 Se puder, deixe uma avaliação no Google Maps — isso nos ajuda muito:\n\n📝 [link da avaliação]\n\nObrigado e volte sempre! 😊🍽️"}
+      ]
+    }
+  ],
+  "checklistEtapas": [
+    {"titulo": "Definir Objetivos", "itens": [
+      "Gestão automática de reservas",
+      "Envio de cardápio digital pelo WhatsApp",
+      "Recebimento de pedidos de delivery",
+      "Confirmação e redução de no-show",
+      "Pós-visita e solicitação de avaliações",
+      "Atendimento fora do horário de funcionamento"
+    ]},
+    {"titulo": "Configuração Inicial", "itens": [
+      "Criar conta no LinkMágico",
+      "Treinar a IA com URL do site do restaurante",
+      "Cadastrar cardápio completo com preços",
+      "Configurar horários de funcionamento",
+      "Definir capacidade de mesas e horários de reserva",
+      "Adicionar informações de alergênicos"
+    ]},
+    {"titulo": "Definir Fluxos", "itens": [
+      "Fluxo de reserva (data → horário → pessoas → preferência → confirmação)",
+      "Fluxo de delivery (itens → endereço → pagamento → confirmação → entrega)",
+      "Fluxo de cardápio (categoria → itens → detalhes → pedido)",
+      "Fluxo de confirmação (lembrete 4h → confirma/cancela → libera mesa)",
+      "Fluxo de pós-visita (avaliação → Google Maps → convite retorno)",
+      "Fluxo fora do horário (cardápio + reserva para próximo dia)"
+    ]},
+    {"titulo": "Integrações", "itens": [
+      "Conectar WhatsApp (Twilio ou Evolution API)",
+      "Instalar widget no site do restaurante",
+      "Configurar link do Google Maps para avaliações",
+      "Conectar Instagram (se aplicável)"
+    ]},
+    {"titulo": "Testes", "itens": [
+      "Testar reserva completa (agendamento + confirmação + lembrete)",
+      "Testar pedido delivery (itens + endereço + pagamento)",
+      "Testar envio de cardápio e filtro por alergênicos",
+      "Testar cancelamento e reagendamento de reserva",
+      "Testar comportamento fora do horário",
+      "Testar no celular (WhatsApp + site)"
+    ]},
+    {"titulo": "Publicação", "itens": [
+      "Ativar chatbot no site",
+      "Ativar chatbot no WhatsApp",
+      "Adicionar QR Code nas mesas (se aplicável)",
+      "Informar equipe sobre o novo canal",
+      "Divulgar nas redes sociais"
+    ]},
+    {"titulo": "Monitoramento", "itens": [
+      "Acompanhar taxa de reservas pelo chatbot",
+      "Medir redução de no-show",
+      "Verificar volume de pedidos delivery",
+      "Monitorar avaliações recebidas via chatbot",
+      "Ajustar cardápio e fluxos conforme feedback"
+    ]}
+  ],
+  "fluxosDiagramas": [
+    {"titulo": "Reserva de Mesa", "icone": "fa-calendar-check", "steps": [
+      {"box": "start", "texto": "📱 Cliente quer reservar"},
+      {"box": "action", "texto": "📅 Pergunta data e horário"},
+      {"box": "action", "texto": "👥 Número de pessoas"},
+      {"box": "action", "texto": "🔍 Verifica disponibilidade"},
+      {"box": "decision", "texto": "Mesa disponível?"},
+      {"box": "end_yes", "texto": "✅ Confirma reserva + Lembrete 4h antes"},
+      {"box": "action", "texto": "🔄 Oferece horários alternativos"}
+    ]},
+    {"titulo": "Pedido de Delivery", "icone": "fa-motorcycle", "steps": [
+      {"box": "start", "texto": "📱 Cliente quer delivery"},
+      {"box": "action", "texto": "📋 Envia cardápio"},
+      {"box": "action", "texto": "🍽️ Coleta itens do pedido"},
+      {"box": "action", "texto": "📍 Solicita endereço"},
+      {"box": "action", "texto": "💳 Forma de pagamento"},
+      {"box": "end_yes", "texto": "✅ Confirma pedido + Previsão de entrega"}
+    ]},
+    {"titulo": "Confirmação de Reserva", "icone": "fa-bell", "steps": [
+      {"box": "start", "texto": "⏰ Gatilho: 4h antes da reserva"},
+      {"box": "action", "texto": "📩 Envia lembrete pelo WhatsApp"},
+      {"box": "decision", "texto": "Cliente confirma?"},
+      {"box": "end_yes", "texto": "✅ Marca como confirmado"},
+      {"box": "action", "texto": "🔓 Libera mesa + Disponibiliza horário"}
+    ]},
+    {"titulo": "Pós-visita", "icone": "fa-star", "steps": [
+      {"box": "start", "texto": "⏰ Gatilho: 2h após visita"},
+      {"box": "action", "texto": "📩 Pergunta satisfação"},
+      {"box": "action", "texto": "⭐ Solicita avaliação no Google Maps"},
+      {"box": "action", "texto": "🎁 Oferece benefício para retorno"},
+      {"box": "end_yes", "texto": "✅ Registra feedback"}
+    ]}
+  ]
+}

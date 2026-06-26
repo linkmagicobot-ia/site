@@ -1,0 +1,241 @@
+{
+  "segmento": "Infoprodutores",
+  "slug": "infoprodutores",
+  "cor": "#8b5cf6",
+  "corRgba": "rgba(139,92,246",
+  "icone": "fa-graduation-cap",
+  "headline": "Automatize lançamentos, recupere boletos e engaje sua audiência",
+  "subheadline": "Seu chatbot com IA cuida do pré-lançamento, recupera boletos, faz onboarding de alunos e mantém sua comunidade ativa — 24h por dia.",
+  "glossario": ["chatbot", "conversao", "lead", "funil-de-vendas", "onboarding"],
+  "blogLinks": [
+    {"url": "/blog/como-converter-mais-leads-com-chatbot-de-ia", "titulo": "Como converter mais leads com chatbot de IA"},
+    {"url": "/blog/como-reduzir-abandono-de-leads", "titulo": "Como reduzir abandono de leads"}
+  ],
+  "integracoes": ["WhatsApp (Twilio/Evolution)", "Hotmart", "Kiwify", "Eduzz", "Monetizze"],
+  "problemas": [
+    {"icone": "fa-receipt", "titulo": "Boletos não pagos drenam o faturamento", "desc": "Até 60% dos boletos gerados em lançamentos não são pagos. Sem follow-up automático, esse dinheiro simplesmente desaparece."},
+    {"icone": "fa-users-slash", "titulo": "Alunos somem após a compra", "desc": "O aluno compra, não acessa a plataforma e pede reembolso no prazo de garantia. Faltam boas-vindas, onboarding e acompanhamento nos primeiros dias."},
+    {"icone": "fa-rocket", "titulo": "Lançamento gera volume insustentável", "desc": "Na semana de lançamento, centenas de perguntas sobre valor, garantia, bônus e acesso chegam ao mesmo tempo. É impossível responder tudo manualmente."},
+    {"icone": "fa-door-open", "titulo": "Reembolsos por falta de engajamento", "desc": "Alunos que não consomem o conteúdo nos primeiros 7 dias têm probabilidade muito maior de pedir reembolso. Sem acompanhamento proativo, a taxa de churn sobe."}
+  ],
+  "solucoes": [
+    {"icone": "fa-money-bill-trend-up", "titulo": "Recuperação automática de boleto", "desc": "O chatbot envia lembretes no dia do vencimento, no dia seguinte e 48h depois, com link para pagamento e opção de trocar para cartão."},
+    {"icone": "fa-user-graduate", "titulo": "Onboarding automático de alunos", "desc": "Sequência de boas-vindas pelo WhatsApp: acesso à plataforma, primeiro módulo, grupo de alunos e dicas para aproveitar melhor o curso."},
+    {"icone": "fa-bullhorn", "titulo": "Atendimento 24h no lançamento", "desc": "O chatbot responde dúvidas sobre o produto, garantia, bônus, formas de pagamento e acesso — mesmo durante a madrugada da abertura de carrinho."},
+    {"icone": "fa-hand-holding-heart", "titulo": "Redução de churn proativo", "desc": "Mensagens automáticas nos dias 1, 3, 7 e 14 após a compra incentivando o consumo do conteúdo e perguntando se o aluno precisa de ajuda."}
+  ],
+  "fluxo": [
+    {"step": "1", "label": "Lead chega pelo lançamento", "detail": "Live, anúncio, página de vendas"},
+    {"step": "2", "label": "IA responde dúvidas 24h", "detail": "Valor, garantia, bônus, acesso"},
+    {"step": "3", "label": "Comprou? Onboarding automático", "detail": "Boas-vindas, acesso, primeiro módulo"},
+    {"step": "4", "label": "Acompanhamento contínuo", "detail": "Engajamento, progresso, renovação"}
+  ],
+  "features": ["Recuperação de boleto", "Onboarding", "FAQ de lançamento", "Engajamento", "Redução de churn", "WhatsApp + Site"],
+  "exclusivos": [
+    {"icone": "fa-file-invoice-dollar", "titulo": "Recuperação de boleto em 3 etapas", "desc": "Lembrete no vencimento, follow-up 24h e última chance 48h depois. Inclui link direto e opção de trocar para cartão de crédito."},
+    {"icone": "fa-person-chalkboard", "titulo": "Onboarding em 7 dias", "desc": "Sequência automática de mensagens nos dias 0, 1, 3 e 7 após a compra. Cada mensagem guia o aluno para o próximo passo do curso."},
+    {"icone": "fa-chart-line", "titulo": "Acompanhamento de progresso", "desc": "O chatbot pergunta como está o progresso, oferece ajuda e envia dicas personalizadas para manter o aluno engajado."},
+    {"icone": "fa-rotate", "titulo": "Recuperação de desistência", "desc": "Quando o aluno para de acessar, o chatbot envia mensagem incentivando o retorno com destaque para os próximos módulos."}
+  ],
+  "faq": [
+    {"q": "O chatbot consegue recuperar boletos não pagos?", "a": "Sim. O LinkMágico envia lembretes automáticos pelo WhatsApp com link para pagamento e opção de trocar a forma de pagamento."},
+    {"q": "Funciona com Hotmart e Kiwify?", "a": "O chatbot pode ser integrado via webhooks das plataformas para receber notificações de venda, boleto gerado e abandono de checkout."},
+    {"q": "Como funciona o onboarding de alunos?", "a": "O chatbot envia uma sequência automática de boas-vindas nos primeiros 7 dias: acesso, primeiro módulo, grupo de alunos e dicas de aproveitamento."},
+    {"q": "Consigo usar durante lançamentos?", "a": "Sim. O chatbot atende 24h, respondendo dúvidas sobre o produto, garantia e pagamento durante todo o período de abertura de carrinho."},
+    {"q": "Quanto custa?", "a": "Planos a partir de R$0/mês. O plano Business (R$97/mês) é o mais indicado para infoprodutores com lançamentos recorrentes."}
+  ],
+  "templates": {
+    "lancamento": [
+      "🚀 Falta pouco! O [Nome do Curso] abre as inscrições em [data]. Quer ser avisado(a) em primeira mão?\n\nResponda SIM para entrar na lista VIP!",
+      "🔥 O carrinho abriu! O [Nome do Curso] está disponível por tempo limitado.\n\n✅ [X] módulos\n✅ [X] bônus exclusivos\n✅ Garantia de [X] dias\n✅ Acesso vitalício\n\n👉 Inscreva-se agora: [link]",
+      "Oi, [Nome]! Faltam apenas [X] horas para o carrinho fechar. Ainda dá tempo de garantir sua vaga no [Nome do Curso].\n\n👉 [link]\n\nAlguma dúvida? Estou aqui para ajudar! 😊",
+      "Última chamada! 🔔 O [Nome do Curso] fecha as inscrições em [X] horas. Depois disso, só na próxima turma.\n\n👉 [link]"
+    ],
+    "recuperacaoBoleto": [
+      "Oi, [Nome]! 😊 Seu boleto do [Nome do Curso] vence hoje. Não esqueça de pagar para garantir seu acesso!\n\n📄 Boleto: [link]\n💳 Prefere pagar no cartão? [link alternativo]",
+      "Olá, [Nome]! Seu boleto do [Nome do Curso] venceu ontem, mas ainda dá tempo. Gerei uma segunda via para você:\n\n📄 [link da segunda via]\n\nSe preferir, pode pagar no cartão em até [X]x: [link]",
+      "Última chance, [Nome]! ⏰ Seu boleto do [Nome do Curso] vence definitivamente amanhã. Depois disso, sua vaga será liberada.\n\n📄 Pagar boleto: [link]\n💳 Trocar para cartão: [link]\n\nPrecisa de ajuda? Estou aqui!",
+      "[Nome], notei que você ainda não finalizou o pagamento. Tem alguma dúvida sobre o curso? Posso te ajudar a decidir. 😊"
+    ],
+    "onboarding": [
+      "Seja muito bem-vindo(a) ao [Nome do Curso]! 🎉\n\nAqui estão seus primeiros passos:\n\n1️⃣ Acesse a plataforma: [link]\n2️⃣ Assista à aula de boas-vindas\n3️⃣ Entre no grupo de alunos: [link]\n4️⃣ Baixe o material de apoio\n\nQualquer dúvida, me chama! 😊",
+      "Oi, [Nome]! Dia 1 do seu curso. 📚 Já assistiu à primeira aula? O módulo 1 é a base de tudo — recomendo começar por ele.\n\n▶️ Assistir agora: [link]\n\nComo posso te ajudar?",
+      "Oi, [Nome]! Já se passaram 3 dias desde sua compra. Como está sendo a experiência?\n\n📊 Já completou:\n   ✅ Aula de boas-vindas\n   🔲 Módulo 1\n   🔲 Módulo 2\n\nPrecisa de ajuda com algo?",
+      "Primeira semana concluída, [Nome]! 🎉 Como está o progresso?\n\nDica: os alunos que completam os 3 primeiros módulos na primeira semana tendem a ter resultados muito melhores.\n\nPosso te ajudar com algo?"
+    ],
+    "engajamento": [
+      "Oi, [Nome]! Notei que faz alguns dias que você não acessa o curso. Tudo bem? 😊\n\nO módulo [X] é um dos mais práticos — acho que você vai gostar!\n\n▶️ Continuar de onde parou: [link]",
+      "Ei, [Nome]! Os alunos que completaram o módulo [X] estão comentando muito sobre [tema]. Não fica de fora!\n\n▶️ Assistir: [link]",
+      "Parabéns, [Nome]! 🎉 Você completou [X]% do curso. Continue assim!\n\nPróximo passo: Módulo [X] — [título]\n\n▶️ [link]",
+      "[Nome], temos uma aula ao vivo na [data] sobre [tema]. Exclusiva para alunos!\n\n📅 [Data] às [horário]\n🔗 Link de acesso: [link]\n\nVai participar?"
+    ]
+  },
+  "promptsCategories": [
+    {"cat": "Pré-lançamento", "icone": "fa-rocket", "items": [
+      "Capture o interesse do lead e pergunte se quer entrar na lista de espera.",
+      "Responda sobre o formato do curso (online, ao vivo, gravado, híbrido).",
+      "Informe sobre bônus e diferenciais sem exagerar nas promessas.",
+      "Esclareça a garantia e política de reembolso com transparência.",
+      "Envie depoimentos de alunos anteriores (quando houver turmas anteriores)."
+    ]},
+    {"cat": "Vendas e Objeções", "icone": "fa-money-bill-trend-up", "items": [
+      "Se disser 'tá caro', destaque o valor entregue e opção de parcelamento.",
+      "Se disser 'preciso pensar', respeite e agende follow-up em 24h.",
+      "Se perguntar 'funciona mesmo?', apresente o conteúdo programático detalhado.",
+      "Se questionar 'tem suporte?', explique os canais de atendimento ao aluno.",
+      "Se disser 'não tenho tempo', destaque a flexibilidade e acesso vitalício."
+    ]},
+    {"cat": "Recuperação de Boleto", "icone": "fa-file-invoice-dollar", "items": [
+      "No dia do vencimento, envie lembrete com link de pagamento.",
+      "Após vencimento, envie segunda via e ofereça troca para cartão.",
+      "Na última tentativa, comunique que a vaga será liberada.",
+      "Se não pagar, pergunte o motivo com empatia para entender objeções.",
+      "Registre o motivo da desistência para melhorar abordagens futuras."
+    ]},
+    {"cat": "Onboarding", "icone": "fa-user-graduate", "items": [
+      "No dia 0, envie boas-vindas com acesso, grupo e primeiros passos.",
+      "No dia 1, incentive a primeira aula e pergunte como está.",
+      "No dia 3, verifique progresso e ofereça ajuda.",
+      "No dia 7, parabenize pela primeira semana e destaque próximos módulos.",
+      "No dia 14, envie pesquisa de satisfação e colete feedback."
+    ]},
+    {"cat": "Engajamento e Retenção", "icone": "fa-hand-holding-heart", "items": [
+      "Se o aluno parar de acessar, envie mensagem incentivando o retorno.",
+      "Destaque módulos populares e comentados por outros alunos.",
+      "Parabenize marcos de progresso (25%, 50%, 75%, 100%).",
+      "Convide para aulas ao vivo e eventos exclusivos.",
+      "Antes do fim da garantia, verifique satisfação e resolva problemas."
+    ]},
+    {"cat": "Comunidade", "icone": "fa-users", "items": [
+      "Incentive participação no grupo de alunos.",
+      "Compartilhe conquistas de alunos (com autorização).",
+      "Promova desafios semanais relacionados ao conteúdo.",
+      "Responda dúvidas frequentes com links para aulas específicas.",
+      "Colete sugestões de conteúdo para futuras atualizações."
+    ]}
+  ],
+  "exemplosConversas": [
+    {
+      "titulo": "Dúvidas no Lançamento",
+      "icone": "fa-rocket",
+      "mensagens": [
+        {"tipo": "user", "texto": "Oi, vi o anúncio do curso e quero saber mais"},
+        {"tipo": "bot", "texto": "Olá! 😊 Que bom que se interessou pelo [Nome do Curso]!\n\nO curso tem:\n\n📚 12 módulos práticos\n🎥 +80 aulas em vídeo\n📋 Material de apoio em cada módulo\n👥 Grupo exclusivo de alunos\n🔒 Garantia de 7 dias\n💳 Até 12x no cartão\n\nTem alguma dúvida específica?"},
+        {"tipo": "user", "texto": "Se eu não gostar, posso devolver?"},
+        {"tipo": "bot", "texto": "Com certeza! Você tem 7 dias de garantia incondicional. Se não gostar por qualquer motivo, basta solicitar o reembolso e devolvemos 100% do valor.\n\nAssim você testa sem risco. 😊\n\nQuer garantir sua vaga?\n👉 [link de inscrição]"},
+        {"tipo": "user", "texto": "Tem boleto?"},
+        {"tipo": "bot", "texto": "Sim! As formas de pagamento são:\n\n💳 Cartão: até 12x de R$ [valor]\n📄 Boleto: à vista com 5% de desconto\n🔵 PIX: à vista com 5% de desconto\n\nQual prefere? Posso gerar o link agora! 😊"}
+      ]
+    },
+    {
+      "titulo": "Recuperação de Boleto",
+      "icone": "fa-file-invoice-dollar",
+      "mensagens": [
+        {"tipo": "bot", "texto": "Oi, Camila! 😊 Seu boleto do [Nome do Curso] vence hoje. Não esqueça de pagar para garantir seu acesso!\n\n📄 Boleto: [link]\n💳 Prefere cartão? Troque aqui: [link]"},
+        {"tipo": "user", "texto": "Oi, tive um imprevisto, posso pagar amanhã?"},
+        {"tipo": "bot", "texto": "Sem problemas, Camila! O boleto tem tolerância de até 2 dias úteis. Amanhã ainda dá tempo. 😊\n\nSe quiser, posso gerar uma segunda via atualizada ou trocar para cartão (parcela em até 12x). O que prefere?"},
+        {"tipo": "user", "texto": "Gera a segunda via pra amanhã"},
+        {"tipo": "bot", "texto": "Pronto! Aqui está a segunda via com vencimento para amanhã:\n\n📄 [link do boleto]\n\nSe tiver qualquer dúvida, estou aqui! 😊"}
+      ]
+    },
+    {
+      "titulo": "Onboarding de Aluno",
+      "icone": "fa-user-graduate",
+      "mensagens": [
+        {"tipo": "bot", "texto": "Seja muito bem-vinda ao [Nome do Curso], Camila! 🎉\n\nSeus primeiros passos:\n\n1️⃣ Acesse a plataforma: [link]\n2️⃣ Assista à aula de boas-vindas (10 min)\n3️⃣ Entre no grupo de alunos: [link]\n\nDica: comece pelo Módulo 1, ele é a base de tudo!\n\nQualquer dúvida, estou aqui. 😊"},
+        {"tipo": "user", "texto": "Obrigada! Já acessei, muito bom!"},
+        {"tipo": "bot", "texto": "Que ótimo saber! 🎉 Você já está no caminho certo.\n\nAmanhã vou te enviar uma dica especial para aproveitar melhor o Módulo 1. Bons estudos! 📚"},
+        {"tipo": "bot", "texto": "Oi, Camila! Dia 3 do curso. 😊 Como está o progresso?\n\nJá completou o Módulo 1? Se tiver dúvidas, pode perguntar aqui — respondo rapidinho!"},
+        {"tipo": "user", "texto": "Estou no meio do módulo 1, muito prático!"},
+        {"tipo": "bot", "texto": "Perfeito! Você está acima da média — continue assim! 💪\n\nQuando terminar o Módulo 1, o Módulo 2 é onde a mágica acontece. Te aviso quando estiver disponível!"}
+      ]
+    }
+  ],
+  "checklistEtapas": [
+    {"titulo": "Definir Objetivos", "itens": [
+      "Atendimento 24h durante lançamentos",
+      "Recuperação de boletos não pagos",
+      "Onboarding automático de novos alunos",
+      "Engajamento nos primeiros 14 dias",
+      "Redução da taxa de reembolso",
+      "FAQ automatizado (garantia, acesso, pagamento)"
+    ]},
+    {"titulo": "Configuração Inicial", "itens": [
+      "Criar conta no LinkMágico",
+      "Treinar IA com página de vendas do produto",
+      "Configurar informações de garantia e reembolso",
+      "Adicionar FAQ do produto (acesso, pagamento, suporte)",
+      "Definir sequência de onboarding (dias 0, 1, 3, 7, 14)",
+      "Configurar mensagens de recuperação de boleto"
+    ]},
+    {"titulo": "Definir Fluxos", "itens": [
+      "Fluxo de lançamento (dúvida → resposta → link de compra)",
+      "Fluxo de recuperação de boleto (vencimento → 24h → 48h → última chance)",
+      "Fluxo de onboarding (boas-vindas → primeiro módulo → grupo → progresso)",
+      "Fluxo de engajamento (inatividade → incentivo → ajuda → destaque)",
+      "Fluxo de objeções (preço → garantia → formato → suporte)",
+      "Fluxo fora do horário (FAQ + captura de interesse)"
+    ]},
+    {"titulo": "Integrações", "itens": [
+      "Conectar WhatsApp (Twilio ou Evolution API)",
+      "Configurar webhook da plataforma (Hotmart/Kiwify/Eduzz)",
+      "Instalar widget na página de vendas",
+      "Conectar com área de membros (se aplicável)"
+    ]},
+    {"titulo": "Testes", "itens": [
+      "Testar FAQ de lançamento completo",
+      "Testar recuperação de boleto (3 etapas)",
+      "Testar onboarding completo (7 dias)",
+      "Testar respostas a objeções",
+      "Testar comportamento fora do horário",
+      "Testar no celular (WhatsApp + página de vendas)"
+    ]},
+    {"titulo": "Publicação", "itens": [
+      "Ativar chatbot na página de vendas",
+      "Ativar chatbot no WhatsApp",
+      "Configurar automações de onboarding",
+      "Ativar recuperação de boleto",
+      "Comunicar equipe de suporte"
+    ]},
+    {"titulo": "Monitoramento", "itens": [
+      "Acompanhar taxa de recuperação de boleto",
+      "Medir engajamento dos alunos nos primeiros 14 dias",
+      "Monitorar taxa de reembolso (antes vs depois)",
+      "Verificar dúvidas não respondidas durante lançamento",
+      "Ajustar fluxos conforme feedback de alunos"
+    ]}
+  ],
+  "fluxosDiagramas": [
+    {"titulo": "Atendimento no Lançamento", "icone": "fa-rocket", "steps": [
+      {"box": "start", "texto": "📱 Lead chega pelo lançamento"},
+      {"box": "action", "texto": "🤖 IA identifica dúvida"},
+      {"box": "action", "texto": "📋 Responde: valor, garantia, bônus, acesso"},
+      {"box": "decision", "texto": "Lead convencido?"},
+      {"box": "end_yes", "texto": "✅ Envia link de compra + Registra no CRM"},
+      {"box": "action", "texto": "🔄 Follow-up em 24h com destaque"}
+    ]},
+    {"titulo": "Recuperação de Boleto", "icone": "fa-file-invoice-dollar", "steps": [
+      {"box": "start", "texto": "📄 Boleto gerado"},
+      {"box": "action", "texto": "📩 Lembrete no dia do vencimento"},
+      {"box": "action", "texto": "📩 Follow-up 24h após vencimento"},
+      {"box": "decision", "texto": "Pagou?"},
+      {"box": "end_yes", "texto": "✅ Ativa acesso + Inicia onboarding"},
+      {"box": "action", "texto": "📩 Última chance 48h + Opção cartão"}
+    ]},
+    {"titulo": "Onboarding de Aluno", "icone": "fa-user-graduate", "steps": [
+      {"box": "start", "texto": "💳 Pagamento confirmado"},
+      {"box": "action", "texto": "📩 Dia 0: Boas-vindas + Acesso"},
+      {"box": "action", "texto": "📩 Dia 1: Primeira aula"},
+      {"box": "action", "texto": "📩 Dia 3: Progresso + Ajuda"},
+      {"box": "action", "texto": "📩 Dia 7: Parabéns + Próximos módulos"},
+      {"box": "end_yes", "texto": "📩 Dia 14: Pesquisa de satisfação"}
+    ]},
+    {"titulo": "Retenção e Anti-churn", "icone": "fa-hand-holding-heart", "steps": [
+      {"box": "start", "texto": "⚠️ Aluno inativo há 5+ dias"},
+      {"box": "action", "texto": "📩 Mensagem de incentivo"},
+      {"box": "decision", "texto": "Aluno retorna?"},
+      {"box": "end_yes", "texto": "✅ Continua acompanhamento normal"},
+      {"box": "action", "texto": "📞 Escala para suporte humano"}
+    ]}
+  ]
+}

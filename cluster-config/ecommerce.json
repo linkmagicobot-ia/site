@@ -1,0 +1,248 @@
+{
+  "segmento": "E-commerce",
+  "slug": "ecommerce",
+  "cor": "#10b981",
+  "corRgba": "rgba(16,185,129",
+  "icone": "fa-cart-shopping",
+  "headline": "Recupere carrinhos abandonados e aumente vendas com IA",
+  "subheadline": "Seu chatbot atende compradores 24h, recupera carrinhos, rastreia pedidos e resolve trocas — sem sobrecarregar o suporte.",
+  "glossario": ["chatbot", "conversao", "lead", "automacao-de-marketing", "roi"],
+  "blogLinks": [
+    {"url": "/blog/como-converter-mais-leads-com-chatbot-de-ia", "titulo": "Como converter mais leads com chatbot de IA"},
+    {"url": "/blog/como-automatizar-atendimento-whatsapp", "titulo": "Automação de atendimento pelo WhatsApp"}
+  ],
+  "integracoes": ["WhatsApp (Twilio/Evolution)", "Shopify", "WooCommerce", "Nuvemshop", "Mercado Livre"],
+  "problemas": [
+    {"icone": "fa-cart-arrow-down", "titulo": "Abandono de carrinho crônico", "desc": "Em média, 70% dos carrinhos de compra são abandonados. O cliente chega até o checkout mas não finaliza — e ninguém faz contato para recuperá-lo."},
+    {"icone": "fa-headset", "titulo": "Suporte sobrecarregado com perguntas repetitivas", "desc": "\"Qual o prazo de entrega?\", \"Posso trocar?\", \"Tem desconto?\". Sua equipe responde as mesmas perguntas centenas de vezes por semana."},
+    {"icone": "fa-truck", "titulo": "Rastreamento gera volume desnecessário", "desc": "Clientes enviam mensagem só para saber onde está o pedido. Isso ocupa tempo do suporte com uma informação que poderia ser automatizada."},
+    {"icone": "fa-clock", "titulo": "Fora do horário = venda perdida", "desc": "Compradores pesquisam e compram à noite e nos finais de semana. Se não houver resposta imediata para dúvidas, a venda vai para o concorrente."}
+  ],
+  "solucoes": [
+    {"icone": "fa-rotate-left", "titulo": "Recuperação automática de carrinho", "desc": "O chatbot identifica carrinhos abandonados e envia mensagem personalizada pelo WhatsApp com link direto para retomar a compra."},
+    {"icone": "fa-robot", "titulo": "FAQ inteligente 24h", "desc": "IA treinada com o conteúdo da sua loja responde dúvidas sobre frete, troca, garantia, formas de pagamento e prazo — sem intervenção humana."},
+    {"icone": "fa-location-dot", "titulo": "Rastreamento automático", "desc": "Cliente envia número do pedido e recebe status em tempo real: preparando, enviado, em trânsito, entregue."},
+    {"icone": "fa-tags", "titulo": "Upsell e cross-sell inteligente", "desc": "Após a compra, o chatbot sugere produtos complementares baseados no histórico, aumentando o ticket médio."}
+  ],
+  "fluxo": [
+    {"step": "1", "label": "Visitante navega na loja", "detail": "Produto, categoria, busca"},
+    {"step": "2", "label": "Adiciona ao carrinho", "detail": "Produto, quantidade, variação"},
+    {"step": "3", "label": "Abandona? IA recupera", "detail": "WhatsApp com link + incentivo"},
+    {"step": "4", "label": "Comprou? IA acompanha", "detail": "Confirmação, rastreio, pós-venda"}
+  ],
+  "features": ["Recuperação de carrinho", "FAQ automático", "Rastreamento", "Pós-venda", "Upsell", "WhatsApp + Widget"],
+  "exclusivos": [
+    {"icone": "fa-cart-arrow-down", "titulo": "Recuperação de carrinho abandonado", "desc": "Mensagem automática pelo WhatsApp quando o cliente abandona o checkout, com link direto para retomar a compra com um clique."},
+    {"icone": "fa-truck-fast", "titulo": "Rastreamento por número do pedido", "desc": "O cliente envia o número do pedido e recebe o status atualizado automaticamente: preparando, enviado, em trânsito, entregue."},
+    {"icone": "fa-arrow-up-right-dots", "titulo": "Recomendação de produtos", "desc": "Após a compra, o chatbot sugere itens complementares ou da mesma categoria, aumentando o ticket médio de forma natural."},
+    {"icone": "fa-arrows-rotate", "titulo": "Trocas e devoluções guiadas", "desc": "O chatbot conduz o processo de troca passo a passo: motivo, fotos, instruções de envio e geração de protocolo."}
+  ],
+  "faq": [
+    {"q": "O chatbot consegue recuperar carrinhos abandonados?", "a": "Sim. O LinkMágico pode ser configurado para enviar mensagens automáticas pelo WhatsApp quando um cliente abandona o carrinho no checkout."},
+    {"q": "Funciona com Shopify e WooCommerce?", "a": "Sim. O chatbot pode ser integrado via widget no site da loja, independente da plataforma. Para funcionalidades avançadas, são necessárias integrações via webhook."},
+    {"q": "O cliente consegue rastrear pedidos pelo chatbot?", "a": "Sim, quando integrado ao sistema de gestão de pedidos. O cliente envia o número do pedido e recebe o status atualizado."},
+    {"q": "Preciso de desenvolvedor para instalar?", "a": "Não. A instalação básica é feita colando um snippet de código no site. Para integrações avançadas (carrinho, pedidos), pode ser necessário configurar webhooks."},
+    {"q": "Quanto custa?", "a": "Planos a partir de R$0/mês. O plano Business (R$97/mês) é o mais indicado para e-commerce com volume de vendas."}
+  ],
+  "templates": {
+    "recepcao": [
+      "Olá! 😊 Bem-vindo(a) à [Nome da Loja]! Sou o assistente virtual e posso te ajudar com informações sobre produtos, pedidos e muito mais. Como posso te ajudar?",
+      "Boa tarde! Está procurando algo específico? Posso te ajudar a encontrar o produto ideal. 🛍️",
+      "Oi! Tem alguma dúvida sobre nossos produtos, frete ou formas de pagamento? É só perguntar!",
+      "Olá! Se você já fez um pedido e quer rastrear, me envie o número do pedido. Se quer comprar, me conta o que procura! 😊"
+    ],
+    "recuperacaoCarrinho": [
+      "Oi, [Nome]! 😊 Vi que você deixou alguns itens no carrinho:\n\n🛒 [Produto] — R$ [Valor]\n\nOs itens ainda estão reservados para você! Quer finalizar a compra?\n\n👉 [Link do carrinho]",
+      "Olá, [Nome]! Notei que sua compra ficou pendente. Posso te ajudar com alguma dúvida sobre o produto, frete ou pagamento? 😊",
+      "Ei, [Nome]! Seus itens ainda estão no carrinho. Aproveite — o frete para [cidade] sai por apenas R$ [valor]. Finalize agora: [link]",
+      "[Nome], última chance! 🔥 Os itens do seu carrinho podem esgotar a qualquer momento. Finalize sua compra: [link]"
+    ],
+    "rastreamento": [
+      "Claro! Me envia o número do seu pedido que eu verifico o status para você. 📦",
+      "Seu pedido #[número] está com o status:\n\n📦 **[Status]**\n🚚 Previsão de entrega: [data]\n📍 Última atualização: [localização]\n\nQuer receber notificações de atualização?",
+      "Boa notícia! Seu pedido #[número] foi entregue hoje! 🎉 Tudo certo com a entrega? Se precisar de algo, estou aqui.",
+      "Seu pedido #[número] está em trânsito e deve chegar até [data]. Posso te ajudar com mais alguma coisa?"
+    ],
+    "trocasDevolucoes": [
+      "Sem problemas! Para iniciar a troca/devolução, preciso de algumas informações:\n\n1️⃣ Número do pedido\n2️⃣ Produto que deseja trocar\n3️⃣ Motivo da troca\n\nVocê tem até 7 dias após o recebimento.",
+      "Entendi! Para o produto [nome], as opções são:\n\n🔄 Trocar por outro tamanho/cor\n💰 Reembolso\n\nQual você prefere?",
+      "Sua solicitação de [troca/devolução] foi registrada!\n\n📋 Protocolo: #[número]\n📦 Instruções de envio: [link]\n📍 Pode enviar pelos Correios ou agendar coleta\n\nVocê receberá atualizações por aqui.",
+      "Recebemos seu produto! A [troca/reembolso] será processada em até [X] dias úteis. Te aviso quando estiver pronto! 😊"
+    ],
+    "posVenda": [
+      "Olá, [Nome]! Seu pedido foi entregue há alguns dias. Como foi sua experiência com o produto? ⭐",
+      "Que bom que gostou! 😊 Se quiser, pode deixar uma avaliação na página do produto. Isso ajuda outros clientes: [link]",
+      "Baseado na sua última compra, você pode gostar de:\n\n🛍️ [Produto 1] — R$ [valor]\n🛍️ [Produto 2] — R$ [valor]\n\nQuer saber mais sobre algum deles?",
+      "Obrigado por comprar com a gente! 💜 Você já conhece nosso programa de fidelidade? A cada compra você acumula pontos para descontos futuros."
+    ]
+  },
+  "promptsCategories": [
+    {"cat": "Atendimento Inicial", "icone": "fa-door-open", "items": [
+      "Receba o visitante e pergunte se busca um produto, tem dúvida ou quer rastrear pedido.",
+      "Identifique a categoria de interesse do cliente (roupas, eletrônicos, casa, etc.).",
+      "Informe promoções ativas quando o cliente demonstrar interesse em comprar.",
+      "Pergunte se é primeira compra ou se já é cliente — ofereça cupom de boas-vindas se aplicável.",
+      "Responda sobre formas de pagamento: PIX, cartão, boleto, parcelamento."
+    ]},
+    {"cat": "Produtos e Dúvidas", "icone": "fa-box-open", "items": [
+      "Responda sobre disponibilidade de tamanhos, cores e variações do produto.",
+      "Informe prazo e valor de frete com base no CEP do cliente.",
+      "Explique a política de garantia de forma clara e objetiva.",
+      "Se o produto estiver esgotado, ofereça alternativas similares ou avise quando voltar.",
+      "Responda sobre composição, material e cuidados com o produto."
+    ]},
+    {"cat": "Carrinho e Checkout", "icone": "fa-cart-shopping", "items": [
+      "Se o cliente abandonar o carrinho, envie mensagem amigável em até 1 hora.",
+      "Ofereça ajuda com dúvidas que possam estar impedindo a compra (frete, prazo, tamanho).",
+      "Se o cliente hesitar, destaque diferenciais: frete grátis, troca fácil, garantia.",
+      "Envie segundo lembrete em 24h se não houve resposta ao primeiro.",
+      "No terceiro contato (48h), ofereça cupom de desconto limitado se a política permitir."
+    ]},
+    {"cat": "Rastreamento e Entrega", "icone": "fa-truck", "items": [
+      "Solicite número do pedido para verificar status de entrega.",
+      "Informe status atual: preparando, enviado, em trânsito, saiu para entrega, entregue.",
+      "Se houver atraso, informe proativamente com previsão atualizada.",
+      "Após entrega confirmada, envie mensagem de pós-venda em 48h.",
+      "Se o cliente reportar problema na entrega, registre ocorrência e escale para equipe."
+    ]},
+    {"cat": "Trocas e Devoluções", "icone": "fa-arrows-rotate", "items": [
+      "Pergunte o motivo da troca/devolução de forma empática e sem julgamento.",
+      "Informe prazo legal de arrependimento (7 dias) e política da loja.",
+      "Solicite fotos do produto se houver defeito para análise.",
+      "Gere protocolo de troca e envie instruções de postagem.",
+      "Mantenha o cliente atualizado sobre cada etapa: recebimento, análise, envio/reembolso."
+    ]},
+    {"cat": "Pós-venda e Fidelização", "icone": "fa-heart", "items": [
+      "Após entrega, pergunte sobre satisfação com o produto e a entrega.",
+      "Solicite avaliação na página do produto com link direto.",
+      "Sugira produtos complementares baseados na compra realizada.",
+      "Informe sobre programa de fidelidade ou cupons de recompra.",
+      "Em datas especiais (aniversário, Black Friday), envie ofertas personalizadas."
+    ]}
+  ],
+  "exemplosConversas": [
+    {
+      "titulo": "Recuperação de Carrinho Abandonado",
+      "icone": "fa-cart-arrow-down",
+      "mensagens": [
+        {"tipo": "bot", "texto": "Oi, Mariana! 😊 Vi que você deixou um item no carrinho:\n\n🛒 Tênis Runner Pro — R$ 299,90\n\nAlguma dúvida sobre o produto? Posso te ajudar!"},
+        {"tipo": "user", "texto": "Oi! É que o frete ficou caro"},
+        {"tipo": "bot", "texto": "Entendo! Para o seu CEP, temos estas opções:\n\n🚚 Expresso (3 dias): R$ 28,90\n📦 Econômico (8 dias): R$ 14,90\n🆓 Retire na loja: Grátis\n\nE temos uma promoção: compras acima de R$ 350 têm frete grátis. Quer ver algo para complementar? 😊"},
+        {"tipo": "user", "texto": "Hmm, tem alguma meia esportiva?"},
+        {"tipo": "bot", "texto": "Temos sim! E combina perfeitamente:\n\n🧦 Kit 3 Meias Esportivas — R$ 59,90\n\nCom o kit, seu pedido fica R$ 359,80 e o frete sai grátis! 🎉\n\nQuer adicionar ao carrinho?"},
+        {"tipo": "user", "texto": "Sim, pode colocar!"},
+        {"tipo": "bot", "texto": "Perfeito! Seu carrinho atualizado:\n\n🛒 Tênis Runner Pro — R$ 299,90\n🧦 Kit 3 Meias — R$ 59,90\n🚚 Frete: GRÁTIS\n💰 Total: R$ 359,80\n\nFinalize aqui: [link do checkout] 🛍️"}
+      ]
+    },
+    {
+      "titulo": "Rastreamento de Pedido",
+      "icone": "fa-truck",
+      "mensagens": [
+        {"tipo": "user", "texto": "Oi, quero rastrear meu pedido"},
+        {"tipo": "bot", "texto": "Claro! Me envia o número do seu pedido que eu verifico para você. 📦"},
+        {"tipo": "user", "texto": "#45892"},
+        {"tipo": "bot", "texto": "Encontrei! Aqui está o status do pedido #45892:\n\n✅ Pedido confirmado — 20/06\n✅ Separado e embalado — 21/06\n✅ Enviado — 22/06\n🚚 Em trânsito — Última atualização: São Paulo/SP\n📅 Previsão de entrega: 27/06\n\nQuer receber notificação quando sair para entrega?"},
+        {"tipo": "user", "texto": "Sim por favor!"},
+        {"tipo": "bot", "texto": "Combinado! Vou te avisar assim que sair para entrega. 😊📦"}
+      ]
+    },
+    {
+      "titulo": "Troca de Produto com Defeito",
+      "icone": "fa-arrows-rotate",
+      "mensagens": [
+        {"tipo": "user", "texto": "Preciso trocar um produto, veio com defeito"},
+        {"tipo": "bot", "texto": "Sinto muito por isso! 😔 Vamos resolver. Preciso de algumas informações:\n\n1️⃣ Número do pedido\n2️⃣ Qual produto tem defeito?\n3️⃣ Pode enviar uma foto do defeito?"},
+        {"tipo": "user", "texto": "Pedido #45231, a camiseta veio com a costura solta"},
+        {"tipo": "bot", "texto": "Entendi! Registrei a ocorrência para a Camiseta Básica do pedido #45231. Para agilizar, pode enviar uma foto do defeito?"},
+        {"tipo": "user", "texto": "[Foto enviada]"},
+        {"tipo": "bot", "texto": "Foto recebida! Sua troca foi aprovada. ✅\n\n📋 Protocolo: #TR-8821\n📦 Opções de envio:\n   1️⃣ Correios (postagem gratuita com código)\n   2️⃣ Coleta em domicílio (agendar)\n\nQual prefere?"}
+      ]
+    }
+  ],
+  "checklistEtapas": [
+    {"titulo": "Definir Objetivos", "itens": [
+      "Recuperação de carrinhos abandonados",
+      "FAQ automatizado (frete, troca, pagamento, prazo)",
+      "Rastreamento de pedidos pelo WhatsApp",
+      "Processo guiado de trocas e devoluções",
+      "Pós-venda e solicitação de avaliações",
+      "Recomendação de produtos (upsell/cross-sell)"
+    ]},
+    {"titulo": "Configuração Inicial", "itens": [
+      "Criar conta no LinkMágico",
+      "Treinar a IA com URL da loja virtual",
+      "Configurar informações de frete e prazo",
+      "Adicionar política de trocas e devoluções",
+      "Configurar formas de pagamento aceitas",
+      "Definir tom de voz da marca"
+    ]},
+    {"titulo": "Definir Fluxos", "itens": [
+      "Fluxo de recuperação de carrinho (abandono → mensagem → incentivo → checkout)",
+      "Fluxo de FAQ (dúvida → resposta automática → escalar se necessário)",
+      "Fluxo de rastreamento (número do pedido → status → notificação)",
+      "Fluxo de troca/devolução (motivo → foto → protocolo → envio → resolução)",
+      "Fluxo de pós-venda (entrega → avaliação → recomendação)",
+      "Fluxo fora do horário (atendimento + FAQ + registro)"
+    ]},
+    {"titulo": "Integrações", "itens": [
+      "Conectar WhatsApp (Twilio ou Evolution API)",
+      "Instalar widget no site da loja",
+      "Configurar webhook de carrinho abandonado (se disponível na plataforma)",
+      "Conectar sistema de rastreamento de pedidos (se aplicável)"
+    ]},
+    {"titulo": "Testes", "itens": [
+      "Testar recuperação de carrinho (simulação de abandono)",
+      "Testar FAQ completo (frete, troca, pagamento, prazo)",
+      "Testar rastreamento de pedido",
+      "Testar fluxo de troca/devolução",
+      "Testar recomendação de produtos",
+      "Testar no celular (WhatsApp + site)"
+    ]},
+    {"titulo": "Publicação", "itens": [
+      "Ativar chatbot no site da loja",
+      "Ativar chatbot no WhatsApp da loja",
+      "Informar equipe de suporte sobre o novo canal",
+      "Configurar mensagens de recuperação de carrinho",
+      "Divulgar para base de clientes"
+    ]},
+    {"titulo": "Monitoramento", "itens": [
+      "Acompanhar taxa de recuperação de carrinho",
+      "Medir redução de tickets de suporte",
+      "Verificar perguntas não respondidas pela IA",
+      "Monitorar satisfação pós-atendimento",
+      "Ajustar respostas e fluxos conforme feedback"
+    ]}
+  ],
+  "fluxosDiagramas": [
+    {"titulo": "Recuperação de Carrinho Abandonado", "icone": "fa-cart-arrow-down", "steps": [
+      {"box": "start", "texto": "🛒 Cliente abandona carrinho"},
+      {"box": "action", "texto": "⏱️ Aguarda 1 hora"},
+      {"box": "action", "texto": "📩 Envia mensagem pelo WhatsApp"},
+      {"box": "decision", "texto": "Cliente responde?"},
+      {"box": "end_yes", "texto": "✅ Resolve dúvida + Link para checkout"},
+      {"box": "action", "texto": "⏱️ Lembrete 24h com incentivo"}
+    ]},
+    {"titulo": "Rastreamento de Pedido", "icone": "fa-truck", "steps": [
+      {"box": "start", "texto": "📱 Cliente pede rastreamento"},
+      {"box": "action", "texto": "🔢 Solicita número do pedido"},
+      {"box": "action", "texto": "🔍 Consulta status no sistema"},
+      {"box": "action", "texto": "📦 Retorna status detalhado"},
+      {"box": "end_yes", "texto": "✅ Oferece notificações de atualização"}
+    ]},
+    {"titulo": "Troca ou Devolução", "icone": "fa-arrows-rotate", "steps": [
+      {"box": "start", "texto": "📱 Cliente solicita troca"},
+      {"box": "action", "texto": "📋 Coleta: pedido, produto, motivo"},
+      {"box": "action", "texto": "📷 Solicita foto (se defeito)"},
+      {"box": "decision", "texto": "Aprovado?"},
+      {"box": "end_yes", "texto": "✅ Gera protocolo + Instruções de envio"},
+      {"box": "end_no", "texto": "📞 Escala para atendimento humano"}
+    ]},
+    {"titulo": "Pós-venda e Upsell", "icone": "fa-heart", "steps": [
+      {"box": "start", "texto": "⏰ 48h após entrega confirmada"},
+      {"box": "action", "texto": "📩 Pergunta satisfação"},
+      {"box": "action", "texto": "⭐ Solicita avaliação do produto"},
+      {"box": "action", "texto": "🛍️ Sugere produtos complementares"},
+      {"box": "end_yes", "texto": "✅ Registra feedback no CRM"}
+    ]}
+  ]
+}

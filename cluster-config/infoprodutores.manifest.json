@@ -1,0 +1,25 @@
+{
+  "segment": "infoprodutores",
+  "segmento": "Infoprodutores",
+  "version": "1.0",
+  "generatedAt": "2026-06-26T16:19:46.230Z",
+  "pages": [
+    "/infoprodutores",
+    "/templates/infoprodutores",
+    "/fluxos/infoprodutores",
+    "/checklists/infoprodutores",
+    "/prompts/infoprodutores",
+    "/exemplos/infoprodutores"
+  ],
+  "glossary": [
+    "chatbot",
+    "conversao",
+    "lead",
+    "funil-de-vendas",
+    "onboarding"
+  ],
+  "definitionOfDone": {
+    "total": 29,
+    "passed": "pending-audit"
+  }
+}
