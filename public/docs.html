@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentação — LinkMágico | API, Webhooks, Tutoriais e SDK</title>
+<meta name="description" content="Documentação completa do LinkMágico: API REST, webhooks, tutoriais de integração, SDK JavaScript, guias de configuração e referência técnica.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://site.linkmagico.app.br/docs">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Documentação — LinkMágico">
+<meta property="og:description" content="API REST, webhooks, tutoriais e referência técnica.">
+<meta property="og:url" content="https://site.linkmagico.app.br/docs">
+<meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LinkMágico">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Documentação — LinkMágico">
+<meta name="twitter:description" content="API REST, webhooks, tutoriais e referência técnica.">
+<meta name="twitter:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Documentação","item":"https://site.linkmagico.app.br/docs"}]}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--blue:#3b82f6}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}
+.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif;color:var(--text)}
+.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav__back{color:var(--muted);font-size:.9rem}
+.breadcrumb{padding:100px 0 0;font-size:.85rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin:24px 0 16px;line-height:1.2}
+h2{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;margin:40px 0 16px;color:var(--muted)}
+.subtitle{color:var(--muted);font-size:1.05rem;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .2s;display:block}
+.doc-card:hover{border-color:var(--purple);transform:translateY(-2px);text-decoration:none}
+.doc-card .icon{font-size:2rem;margin-bottom:12px}
+.doc-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--text)}
+.doc-card p{font-size:.85rem;color:var(--muted);line-height:1.6}
+.doc-card .badge{display:inline-block;margin-top:12px;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.badge--ready{background:rgba(16,185,129,.15);color:var(--green-l)}
+.badge--soon{background:rgba(234,179,8,.15);color:#eab308}
+.quick-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;margin:40px 0}
+.quick-section h3{font-size:1.1rem;font-weight:700;margin-bottom:16px}
+.endpoint{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px;font-family:'Courier New',monospace;font-size:.85rem;display:flex;align-items:center;gap:12px}
+.method{padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:800;letter-spacing:.05em}
+.method--get{background:rgba(59,130,246,.2);color:#60a5fa}
+.method--post{background:rgba(16,185,129,.2);color:var(--green-l)}
+.method--put{background:rgba(234,179,8,.2);color:#eab308}
+.method--delete{background:rgba(239,68,68,.2);color:#f87171}
+.endpoint .path{color:var(--text)}
+.endpoint .desc{color:var(--muted);font-family:'Inter',sans-serif;font-size:.8rem;margin-left:auto}
+footer{margin-top:80px;padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:600px){.endpoint{flex-direction:column;align-items:flex-start;gap:4px}.endpoint .desc{margin-left:0}}
+</style>
+</head>
+<body>
+<header><nav class="nav" aria-label="Navegação"><a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a><a href="/" class="nav__back">← Voltar ao site</a></nav></header>
+<main>
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <strong>Documentação</strong></nav>
+<h1>Documentação</h1>
+<p class="subtitle">Tudo que você precisa para integrar, configurar e aproveitar ao máximo o LinkMágico.</p>
+
+<h2>📚 Guias</h2>
+<div class="grid">
+<a href="/como-funciona" class="doc-card"><div class="icon">🚀</div><h3>Primeiros Passos</h3><p>Como criar sua conta, colar seu primeiro link e ativar o vendedor automático em 2 minutos.</p><span class="badge badge--ready">Disponível</span></a>
+<a href="/recursos" class="doc-card"><div class="icon">🛠️</div><h3>Recursos da Plataforma</h3><p>Visão geral de todos os recursos: IA, CRM, captura de leads, agendamento, analytics e widget.</p><span class="badge badge--ready">Disponível</span></a>
+<a href="/integracoes" class="doc-card"><div class="icon">🔌</div><h3>Integrações</h3><p>WhatsApp, Hotmart, WordPress, Shopify, Wix e qualquer site com código embed.</p><span class="badge badge--ready">Disponível</span></a>
+<a href="/seguranca" class="doc-card"><div class="icon">🔒</div><h3>Segurança e LGPD</h3><p>HTTPS, HSTS, multi-tenancy, criptografia, conformidade LGPD e proteção de dados.</p><span class="badge badge--ready">Disponível</span></a>
+<a href="/faq" class="doc-card"><div class="icon">❓</div><h3>FAQ</h3><p>Perguntas frequentes sobre planos, funcionalidades, integrações e segurança.</p><span class="badge badge--ready">Disponível</span></a>
+<div class="doc-card" style="opacity:.7"><div class="icon">📘</div><h3>SDK JavaScript</h3><p>Controle programático do widget: abrir/fechar chat, enviar mensagens, capturar eventos.</p><span class="badge badge--soon">Em breve</span></div>
+</div>
+
+<div class="quick-section">
+<h3>⚡ API REST — Referência Rápida</h3>
+<p style="color:var(--muted);font-size:.9rem;margin-bottom:16px">Autenticação via API Key no header ou body. Base URL: <code style="background:var(--surface2);padding:2px 8px;border-radius:4px">https://linkmagico.app.br</code></p>
+
+<h4 style="font-size:.85rem;color:var(--purple-l);margin:20px 0 8px">Leads</h4>
+<div class="endpoint"><span class="method method--post">POST</span><span class="path">/api/capture-lead</span><span class="desc">Capturar novo lead</span></div>
+<div class="endpoint"><span class="method method--get">GET</span><span class="path">/admin/leads</span><span class="desc">Listar leads</span></div>
+<div class="endpoint"><span class="method method--get">GET</span><span class="path">/admin/leads/:id</span><span class="desc">Detalhes do lead</span></div>
+<div class="endpoint"><span class="method method--delete">DELETE</span><span class="path">/admin/leads/:id</span><span class="desc">Excluir lead</span></div>
+
+<h4 style="font-size:.85rem;color:var(--purple-l);margin:20px 0 8px">Chat</h4>
+<div class="endpoint"><span class="method method--post">POST</span><span class="path">/api/process-chat-inteligente</span><span class="desc">Processar mensagem com IA</span></div>
+
+<h4 style="font-size:.85rem;color:var(--purple-l);margin:20px 0 8px">Agendamento</h4>
+<div class="endpoint"><span class="method method--post">POST</span><span class="path">/api/appointments</span><span class="desc">Criar agendamento</span></div>
+<div class="endpoint"><span class="method method--get">GET</span><span class="path">/admin/appointments</span><span class="desc">Listar agendamentos</span></div>
+
+<h4 style="font-size:.85rem;color:var(--purple-l);margin:20px 0 8px">Analytics</h4>
+<div class="endpoint"><span class="method method--post">POST</span><span class="path">/api/track-conversion</span><span class="desc">Registrar conversão</span></div>
+<div class="endpoint"><span class="method method--get">GET</span><span class="path">/api/conversion-stats</span><span class="desc">Estatísticas de conversão</span></div>
+
+<h4 style="font-size:.85rem;color:var(--purple-l);margin:20px 0 8px">Sistema</h4>
+<div class="endpoint"><span class="method method--get">GET</span><span class="path">/health</span><span class="desc">Health check</span></div>
+<div class="endpoint"><span class="method method--get">GET</span><span class="path">/api/system/status</span><span class="desc">Status do sistema</span></div>
+<div class="endpoint"><span class="method method--post">POST</span><span class="path">/validate-api-key</span><span class="desc">Validar API Key</span></div>
+
+<h4 style="font-size:.85rem;color:var(--purple-l);margin:20px 0 8px">Backup</h4>
+<div class="endpoint"><span class="method method--post">POST</span><span class="path">/admin/leads/backup/create</span><span class="desc">Criar backup</span></div>
+<div class="endpoint"><span class="method method--get">GET</span><span class="path">/admin/leads/backup/list</span><span class="desc">Listar backups</span></div>
+<div class="endpoint"><span class="method method--post">POST</span><span class="path">/admin/leads/backup/restore</span><span class="desc">Restaurar backup</span></div>
+</div>
+
+<h2>🔗 Widget — Instalação</h2>
+<div class="quick-section">
+<h3>Código de Embed</h3>
+<p style="color:var(--muted);font-size:.9rem;margin-bottom:12px">Cole este código antes do <code style="background:var(--surface2);padding:2px 6px;border-radius:4px">&lt;/body&gt;</code> do seu site:</p>
+<div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:16px;font-family:'Courier New',monospace;font-size:.8rem;color:var(--green-l);overflow-x:auto;white-space:pre;line-height:1.6">&lt;script&gt;
+  // Gere seu código em linkmagico.app.br/admin
+  // Cada widget tem sua própria API Key
+&lt;/script&gt;</div>
+<p style="color:var(--muted);font-size:.85rem;margin-top:12px">O código completo é gerado automaticamente no painel administrativo após criar seu chatbot. Funciona em qualquer site: WordPress, Wix, Shopify, HTML puro, React, Vue, Angular.</p>
+</div>
+
+</div>
+</main>
+<footer><div class="container"><p>© <time datetime="2025">2025</time> LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/sobre">Sobre</a> · <a href="/faq">FAQ</a> · <a href="/recursos">Recursos</a> · <a href="/status">Status</a> · <a href="/roadmap">Roadmap</a></p></div></footer>
+</body>
+</html>

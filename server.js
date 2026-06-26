@@ -85,6 +85,12 @@ app.get('/status', (req, res) => {
 app.get('/roadmap', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'roadmap.html'));
 });
+app.get('/sobre', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'sobre.html'));
+});
+app.get('/docs', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'docs.html'));
+});
 
 // ===== BLOG — Rotas limpas sem .html =====
 app.get('/blog', (req, res) => {
