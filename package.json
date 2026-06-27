@@ -4,7 +4,15 @@
   "description": "LinkMágico — Site Institucional",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seo:audit": "node seo/audit.js",
+    "seo:index-report": "node seo/index-report.js",
+    "seo:indexnow": "node seo/indexnow.js all",
+    "seo:daily": "node seo/scheduler.js daily",
+    "seo:weekly": "node seo/scheduler.js weekly",
+    "seo:monthly": "node seo/scheduler.js monthly",
+    "seo:alerts": "node seo/alerts.js check",
+    "seo:validate": "node seo/validate-production.js"
   },
   "dependencies": {
     "express": "^4.21.2",

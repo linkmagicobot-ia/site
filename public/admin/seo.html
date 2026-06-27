@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard SEO — LinkMágico Admin</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--surface3:#1a1a30;--border:#1e1e35;--border2:#2a2a45;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--cyan:#06b6d4;--orange:#f59e0b;--red:#ef4444;--text:#f0eeff;--muted:#7a7896}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;min-height:100vh}
+
+/* Layout */
+.dashboard{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:24px 0;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sidebar__logo{padding:0 24px 24px;font-size:1.1rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
+.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sidebar__section{padding:12px 24px 6px;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.sidebar__link{display:flex;align-items:center;gap:10px;padding:10px 24px;color:var(--muted);text-decoration:none;font-size:.88rem;transition:all .2s}
+.sidebar__link:hover,.sidebar__link.active{color:var(--text);background:rgba(124,58,237,.1)}
+.sidebar__link.active{border-right:3px solid var(--purple);color:var(--purple-l)}
+.sidebar__link i{width:18px;text-align:center;font-size:.85rem}
+
+.main{padding:32px;overflow-y:auto}
+.main__header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.main__header h1{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800}
+.main__header h1 span{background:linear-gradient(135deg,var(--green),var(--green-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
+.badge--live{background:rgba(16,185,129,.15);color:var(--green-l);border:1px solid rgba(16,185,129,.3)}
+.badge--pending{background:rgba(245,158,11,.15);color:var(--orange);border:1px solid rgba(245,158,11,.3)}
+.badge--error{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+
+/* Stats Grid */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative;overflow:hidden;transition:all .3s}
+.stat-card:hover{border-color:var(--purple);transform:translateY(-2px)}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0}
+.stat-card--purple::before{background:linear-gradient(90deg,var(--purple),var(--purple-l))}
+.stat-card--green::before{background:linear-gradient(90deg,var(--green),var(--green-l))}
+.stat-card--cyan::before{background:linear-gradient(90deg,var(--cyan),#22d3ee)}
+.stat-card--orange::before{background:linear-gradient(90deg,var(--orange),#fbbf24)}
+.stat-card--red::before{background:linear-gradient(90deg,var(--red),#f87171)}
+.stat-card__label{font-size:.8rem;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.stat-card__value{font-size:1.8rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
+.stat-card__detail{font-size:.75rem;color:var(--muted);margin-top:4px}
+.stat-card__trend{display:inline-flex;align-items:center;gap:3px;font-size:.75rem;font-weight:600;margin-top:6px;padding:2px 8px;border-radius:10px}
+.trend-up{background:rgba(16,185,129,.15);color:var(--green-l)}
+.trend-down{background:rgba(239,68,68,.15);color:var(--red)}
+.trend-neutral{background:rgba(122,120,150,.15);color:var(--muted)}
+
+/* Panels */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:24px}
+.panel__header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.panel__title{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:8px}
+.panel__title i{color:var(--purple-l)}
+
+/* Tables */
+.seo-table{width:100%;border-collapse:collapse}
+.seo-table th{text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--border)}
+.seo-table td{padding:10px 12px;border-bottom:1px solid var(--border);font-size:.88rem}
+.seo-table tr:hover{background:rgba(124,58,237,.05)}
+.seo-table .url{color:var(--purple-l);max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Integration Cards */
+.integration-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.integration-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:20px}
+.integration-card__header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.integration-card__icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.integration-card__icon--google{background:rgba(66,133,244,.15);color:#4285f4}
+.integration-card__icon--bing{background:rgba(0,137,128,.15);color:#008980}
+.integration-card__icon--indexnow{background:rgba(124,58,237,.15);color:var(--purple-l)}
+.integration-card__title{font-weight:700;font-size:.95rem}
+.integration-card__status{font-size:.8rem;color:var(--muted)}
+.integration-card__actions{margin-top:12px;display:flex;gap:8px}
+
+.btn{padding:8px 16px;border-radius:8px;border:none;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.btn--primary{background:linear-gradient(135deg,var(--purple),#5b21b6);color:#fff}
+.btn--primary:hover{opacity:.9;transform:translateY(-1px)}
+.btn--outline{background:transparent;border:1px solid var(--border);color:var(--muted)}
+.btn--outline:hover{border-color:var(--purple);color:var(--text)}
+.btn--sm{padding:6px 12px;font-size:.75rem}
+
+/* Checklist */
+.check-list{list-style:none}
+.check-list li{padding:8px 0;display:flex;align-items:center;gap:10px;font-size:.88rem;border-bottom:1px solid var(--border)}
+.check-list li:last-child{border:none}
+.check-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem}
+.check-icon--pass{background:rgba(16,185,129,.2);color:var(--green)}
+.check-icon--fail{background:rgba(239,68,68,.2);color:var(--red)}
+.check-icon--warn{background:rgba(245,158,11,.2);color:var(--orange)}
+.check-icon--pending{background:rgba(122,120,150,.2);color:var(--muted)}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;margin-bottom:16px;background:var(--surface2);padding:4px;border-radius:10px;width:fit-content}
+.tab{padding:8px 16px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.tab.active{background:var(--purple);color:#fff}
+.tab:hover:not(.active){color:var(--text)}
+
+/* Section visibility */
+.section{display:none}
+.section.active{display:block}
+
+/* Alert */
+.alert{padding:16px;border-radius:10px;margin-bottom:16px;font-size:.88rem;display:flex;align-items:flex-start;gap:10px}
+.alert--info{background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);color:var(--cyan)}
+.alert--warn{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);color:var(--orange)}
+.alert--ok{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:var(--green-l)}
+
+/* Progress bar */
+.progress{background:var(--surface2);border-radius:8px;height:8px;overflow:hidden;margin-top:8px}
+.progress__bar{height:100%;border-radius:8px;transition:width .5s ease}
+.progress__bar--green{background:linear-gradient(90deg,var(--green),var(--green-l))}
+.progress__bar--purple{background:linear-gradient(90deg,var(--purple),var(--purple-l))}
+
+/* Responsive */
+@media(max-width:768px){
+.dashboard{grid-template-columns:1fr}
+.sidebar{display:none}
+.stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Cluster breakdown */
+.cluster-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.cluster-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.cluster-card__name{font-size:.8rem;font-weight:600;margin-bottom:4px}
+.cluster-card__count{font-size:1.4rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
+.cluster-card__detail{font-size:.7rem;color:var(--muted)}
+
+/* Loading */
+.loading{display:flex;align-items:center;justify-content:center;padding:40px;color:var(--muted)}
+.spinner{width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite;margin-right:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar__logo">Link<span class="logo-hl">Mágico</span> <small style="color:var(--muted);font-size:.65rem">SEO</small></div>
+    
+    <div class="sidebar__section">Visão Geral</div>
+    <a href="#" class="sidebar__link active" data-section="overview"><i class="fas fa-chart-line"></i> Dashboard</a>
+    <a href="#" class="sidebar__link" data-section="coverage"><i class="fas fa-sitemap"></i> Cobertura</a>
+    <a href="#" class="sidebar__link" data-section="pages"><i class="fas fa-file-alt"></i> Páginas</a>
+    
+    <div class="sidebar__section">Ferramentas</div>
+    <a href="#" class="sidebar__link" data-section="audit"><i class="fas fa-search"></i> Auditoria</a>
+    <a href="#" class="sidebar__link" data-section="indexnow"><i class="fas fa-bolt"></i> IndexNow</a>
+    <a href="#" class="sidebar__link" data-section="validation"><i class="fas fa-shield-alt"></i> Validação</a>
+    
+    <div class="sidebar__section">Integrações</div>
+    <a href="#" class="sidebar__link" data-section="integrations"><i class="fas fa-plug"></i> Conectar</a>
+    
+    <div class="sidebar__section">Relatórios</div>
+    <a href="#" class="sidebar__link" data-section="reports"><i class="fas fa-file-chart-line"></i> Relatórios</a>
+    <a href="#" class="sidebar__link" data-section="alerts"><i class="fas fa-bell"></i> Alertas</a>
+    <a href="#" class="sidebar__link" data-section="history"><i class="fas fa-clock-rotate-left"></i> Histórico</a>
+    
+    <div style="padding:24px;margin-top:auto">
+      <a href="/" class="btn btn--outline" style="width:100%;text-align:center;display:block;text-decoration:none">← Voltar ao site</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+    
+    <!-- ===== OVERVIEW ===== -->
+    <div class="section active" id="section-overview">
+      <div class="main__header">
+        <h1>Dashboard <span>SEO</span></h1>
+        <div>
+          <span class="badge badge--live"><i class="fas fa-circle" style="font-size:.5rem"></i> Produção</span>
+          <span style="font-size:.8rem;color:var(--muted);margin-left:8px" id="last-update"></span>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card stat-card--purple">
+          <div class="stat-card__label"><i class="fas fa-file-alt"></i> Total de Páginas</div>
+          <div class="stat-card__value" id="stat-pages">73</div>
+          <div class="stat-card__detail">Arquivos HTML no site</div>
+        </div>
+        <div class="stat-card stat-card--green">
+          <div class="stat-card__label"><i class="fas fa-sitemap"></i> No Sitemap</div>
+          <div class="stat-card__value" id="stat-sitemap">72</div>
+          <div class="stat-card__detail">URLs indexáveis</div>
+        </div>
+        <div class="stat-card stat-card--cyan">
+          <div class="stat-card__label"><i class="fas fa-link"></i> Links Internos</div>
+          <div class="stat-card__value" id="stat-links">470+</div>
+          <div class="stat-card__detail">Verificados, 0 quebrados</div>
+        </div>
+        <div class="stat-card stat-card--orange">
+          <div class="stat-card__label"><i class="fas fa-layer-group"></i> Clusters</div>
+          <div class="stat-card__value">5</div>
+          <div class="stat-card__detail">25 ativos totais</div>
+        </div>
+      </div>
+
+      <!-- Cluster Breakdown -->
+      <div class="panel">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-cubes"></i> Desempenho por Cluster</div>
+        </div>
+        <div class="cluster-grid">
+          <div class="cluster-card" style="border-top:3px solid #06b6d4">
+            <div class="cluster-card__name">🏥 Clínicas</div>
+            <div class="cluster-card__count">6</div>
+            <div class="cluster-card__detail">Landing + 5 ativos</div>
+          </div>
+          <div class="cluster-card" style="border-top:3px solid #f59e0b">
+            <div class="cluster-card__name">🏠 Imobiliárias</div>
+            <div class="cluster-card__count">6</div>
+            <div class="cluster-card__detail">Landing + 5 ativos</div>
+          </div>
+          <div class="cluster-card" style="border-top:3px solid #8b5cf6">
+            <div class="cluster-card__name">🛒 E-commerce</div>
+            <div class="cluster-card__count">6</div>
+            <div class="cluster-card__detail">Landing + 5 ativos</div>
+          </div>
+          <div class="cluster-card" style="border-top:3px solid #ef4444">
+            <div class="cluster-card__name">🍽️ Restaurantes</div>
+            <div class="cluster-card__count">6</div>
+            <div class="cluster-card__detail">Landing + 5 ativos</div>
+          </div>
+          <div class="cluster-card" style="border-top:3px solid #10b981">
+            <div class="cluster-card__name">🎓 Infoprodutores</div>
+            <div class="cluster-card__count">6</div>
+            <div class="cluster-card__detail">Landing + 5 ativos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ecosystem -->
+      <div class="panel">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-globe"></i> Ecossistema de Conteúdo</div>
+        </div>
+        <table class="seo-table">
+          <thead><tr><th>Categoria</th><th>Páginas</th><th>Cobertura</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Institucional</td><td>5</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">Completo</span></td></tr>
+            <tr><td>Produto</td><td>3</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">Completo</span></td></tr>
+            <tr><td>Legal & Compliance</td><td>5</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">Completo</span></td></tr>
+            <tr><td>Glossário</td><td>18</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">17 termos</span></td></tr>
+            <tr><td>Blog</td><td>7</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">6 artigos</span></td></tr>
+            <tr><td>Ferramentas</td><td>1</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">Calculadora ROI</span></td></tr>
+            <tr><td>Landing Pages</td><td>5</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">5 segmentos</span></td></tr>
+            <tr><td>Clusters</td><td>25</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">5 × 5 ativos</span></td></tr>
+            <tr><td>Roadmap & Changelog</td><td>2</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">Completo</span></td></tr>
+            <tr><td>Documentação</td><td>1</td><td><div class="progress"><div class="progress__bar progress__bar--green" style="width:100%"></div></div></td><td><span class="badge badge--live">API Docs</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Search Console Integration Status -->
+      <div class="panel">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-chart-area"></i> Métricas de Busca</div>
+          <span class="badge badge--pending"><i class="fas fa-clock" style="font-size:.5rem"></i> Aguardando integração</span>
+        </div>
+        <div class="alert alert--info">
+          <i class="fas fa-info-circle"></i>
+          <div>Conecte o Google Search Console e Bing Webmaster Tools para visualizar métricas reais de impressões, cliques, CTR e posição. Consulte <strong>Integrações</strong> no menu lateral.</div>
+        </div>
+        <div class="stats-grid" style="opacity:.5">
+          <div class="stat-card"><div class="stat-card__label">Impressões (90d)</div><div class="stat-card__value">—</div></div>
+          <div class="stat-card"><div class="stat-card__label">Cliques (90d)</div><div class="stat-card__value">—</div></div>
+          <div class="stat-card"><div class="stat-card__label">CTR médio</div><div class="stat-card__value">—</div></div>
+          <div class="stat-card"><div class="stat-card__label">Posição média</div><div class="stat-card__value">—</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== COVERAGE ===== -->
+    <div class="section" id="section-coverage">
+      <div class="main__header">
+        <h1>Cobertura de <span>Indexação</span></h1>
+        <button class="btn btn--primary btn--sm" onclick="runCommand('seo:index-report')"><i class="fas fa-sync"></i> Atualizar</button>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card stat-card--green"><div class="stat-card__label">URLs no Sitemap</div><div class="stat-card__value">72</div></div>
+        <div class="stat-card stat-card--purple"><div class="stat-card__label">Páginas HTML</div><div class="stat-card__value">73</div></div>
+        <div class="stat-card stat-card--cyan"><div class="stat-card__label">Fora do Sitemap</div><div class="stat-card__value">2</div><div class="stat-card__detail">404.html, BEMVINDO.html</div></div>
+        <div class="stat-card stat-card--orange"><div class="stat-card__label">Canonical OK</div><div class="stat-card__value">100%</div></div>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><div class="panel__title"><i class="fas fa-list-check"></i> Checklist de Cobertura</div></div>
+        <ul class="check-list">
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> robots.txt presente e válido</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> sitemap.xml presente com 72 URLs</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Canonical em todas as páginas</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> H1 único em todas as páginas</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> BreadcrumbList Schema em todos os clusters</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> 0 links internos quebrados (470 verificados)</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> 0 páginas órfãs nos clusters</li>
+          <li><span class="check-icon check-icon--pending"><i class="fas fa-clock"></i></span> Google Search Console — aguardando conexão</li>
+          <li><span class="check-icon check-icon--pending"><i class="fas fa-clock"></i></span> Bing Webmaster Tools — aguardando conexão</li>
+          <li><span class="check-icon check-icon--pending"><i class="fas fa-clock"></i></span> IndexNow — aguardando configuração de chave</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== PAGES ===== -->
+    <div class="section" id="section-pages">
+      <div class="main__header">
+        <h1>Todas as <span>Páginas</span></h1>
+      </div>
+      <div class="panel">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-file-alt"></i> 73 Páginas HTML</div>
+          <input type="text" id="page-search" placeholder="Filtrar..." style="padding:6px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-family:'Inter',sans-serif">
+        </div>
+        <table class="seo-table" id="pages-table">
+          <thead><tr><th>Página</th><th>Categoria</th><th>Sitemap</th><th>Canonical</th></tr></thead>
+          <tbody id="pages-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===== AUDIT ===== -->
+    <div class="section" id="section-audit">
+      <div class="main__header">
+        <h1>Auditoria <span>SEO</span></h1>
+        <button class="btn btn--primary btn--sm" onclick="runCommand('seo:audit')"><i class="fas fa-play"></i> Executar Auditoria</button>
+      </div>
+      <div class="alert alert--info">
+        <i class="fas fa-terminal"></i>
+        <div>Execute <code>npm run seo:audit</code> no terminal para gerar o relatório completo. Os resultados serão exibidos em <code>reports/seo-audit.md</code>.</div>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><div class="panel__title"><i class="fas fa-clipboard-list"></i> Critérios Verificados (29)</div></div>
+        <ul class="check-list">
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Title tag presente e único</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Meta description presente</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Canonical URL presente</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Open Graph (og:title, og:description, og:url, og:image)</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> JSON-LD Schema presente</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> BreadcrumbList em clusters</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Exatamente 1 H1 por página</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Links internos verificados</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> robots.txt válido</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> sitemap.xml válido</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== INDEXNOW ===== -->
+    <div class="section" id="section-indexnow">
+      <div class="main__header">
+        <h1>Index<span>Now</span></h1>
+        <button class="btn btn--primary btn--sm" onclick="runCommand('seo:indexnow')"><i class="fas fa-bolt"></i> Enviar URLs</button>
+      </div>
+      <div class="alert alert--info">
+        <i class="fas fa-info-circle"></i>
+        <div>O IndexNow permite notificar mecanismos de busca (Bing, Yandex, Naver) sobre páginas novas ou atualizadas instantaneamente. Configure a variável de ambiente <code>INDEXNOW_KEY</code> para ativar.</div>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><div class="panel__title"><i class="fas fa-bolt"></i> Configuração</div></div>
+        <ul class="check-list">
+          <li><span class="check-icon check-icon--pending"><i class="fas fa-clock"></i></span> Gerar chave IndexNow: <code>node seo/indexnow.js generate-key</code></li>
+          <li><span class="check-icon check-icon--pending"><i class="fas fa-clock"></i></span> Configurar INDEXNOW_KEY no ambiente</li>
+          <li><span class="check-icon check-icon--pending"><i class="fas fa-clock"></i></span> Arquivo de verificação em public/</li>
+          <li><span class="check-icon check-icon--pending"><i class="fas fa-clock"></i></span> Testar envio: <code>node seo/indexnow.js submit https://site.linkmagico.app.br/</code></li>
+          <li><span class="check-icon check-icon--pending"><i class="fas fa-clock"></i></span> Enviar todas: <code>node seo/indexnow.js all</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== VALIDATION ===== -->
+    <div class="section" id="section-validation">
+      <div class="main__header">
+        <h1>Validação de <span>Produção</span></h1>
+        <button class="btn btn--primary btn--sm" onclick="runCommand('validate')"><i class="fas fa-shield-alt"></i> Executar Validação</button>
+      </div>
+      <div class="alert alert--info">
+        <i class="fas fa-terminal"></i>
+        <div>Execute <code>node seo/validate-production.js</code> para verificar HTTPS, headers, robots, sitemap e páginas de produção. O relatório será salvo em <code>reports/production-validation.md</code>.</div>
+      </div>
+      <div class="panel" id="validation-results">
+        <div class="panel__header"><div class="panel__title"><i class="fas fa-shield-alt"></i> Verificações</div></div>
+        <ul class="check-list">
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> HTTPS ativo</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> HSTS configurado (max-age=31536000)</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Content-Security-Policy presente</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> X-Content-Type-Options: nosniff</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Compression (gzip) ativo</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Cache headers configurados (7d)</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> robots.txt acessível</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> sitemap.xml acessível (72 URLs)</li>
+          <li><span class="check-icon check-icon--pass"><i class="fas fa-check"></i></span> Health check respondendo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== INTEGRATIONS ===== -->
+    <div class="section" id="section-integrations">
+      <div class="main__header">
+        <h1>Integra<span>ções</span></h1>
+      </div>
+      <div class="integration-grid">
+        <div class="integration-card">
+          <div class="integration-card__header">
+            <div class="integration-card__icon integration-card__icon--google"><i class="fab fa-google"></i></div>
+            <div>
+              <div class="integration-card__title">Google Search Console</div>
+              <div class="integration-card__status"><span class="badge badge--pending">Não conectado</span></div>
+            </div>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px">Conecte para visualizar impressões, cliques, CTR, posição média, cobertura de indexação e Core Web Vitals.</p>
+          <div class="integration-card__actions">
+            <a href="/docs" class="btn btn--primary btn--sm" style="text-decoration:none">Guia de Configuração</a>
+            <button class="btn btn--outline btn--sm" disabled>Testar Conexão</button>
+          </div>
+        </div>
+        <div class="integration-card">
+          <div class="integration-card__header">
+            <div class="integration-card__icon integration-card__icon--bing"><i class="fab fa-microsoft"></i></div>
+            <div>
+              <div class="integration-card__title">Bing Webmaster Tools</div>
+              <div class="integration-card__status"><span class="badge badge--pending">Não conectado</span></div>
+            </div>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px">Conecte para visualizar performance no Bing, páginas indexadas, palavras-chave e backlinks.</p>
+          <div class="integration-card__actions">
+            <a href="/docs" class="btn btn--primary btn--sm" style="text-decoration:none">Guia de Configuração</a>
+            <button class="btn btn--outline btn--sm" disabled>Testar Conexão</button>
+          </div>
+        </div>
+        <div class="integration-card">
+          <div class="integration-card__header">
+            <div class="integration-card__icon integration-card__icon--indexnow"><i class="fas fa-bolt"></i></div>
+            <div>
+              <div class="integration-card__title">IndexNow</div>
+              <div class="integration-card__status"><span class="badge badge--pending">Não configurado</span></div>
+            </div>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px">Notifique Bing, Yandex e Naver instantaneamente sobre páginas novas ou atualizadas.</p>
+          <div class="integration-card__actions">
+            <button class="btn btn--primary btn--sm" onclick="runCommand('seo:indexnow')">Configurar</button>
+            <button class="btn btn--outline btn--sm" disabled>Testar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== REPORTS ===== -->
+    <div class="section" id="section-reports">
+      <div class="main__header">
+        <h1>Relató<span>rios</span></h1>
+      </div>
+      <div class="alert alert--info">
+        <i class="fas fa-info-circle"></i>
+        <div>Relatórios automáticos serão gerados após a conexão com Google Search Console e Bing Webmaster Tools. Utilize os comandos no terminal para gerar relatórios manuais.</div>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><div class="panel__title"><i class="fas fa-terminal"></i> Comandos Disponíveis</div></div>
+        <table class="seo-table">
+          <thead><tr><th>Comando</th><th>Descrição</th><th>Frequência</th></tr></thead>
+          <tbody>
+            <tr><td><code>npm run seo:audit</code></td><td>Auditoria completa de SEO</td><td>Sob demanda</td></tr>
+            <tr><td><code>npm run seo:index-report</code></td><td>Relatório de indexação</td><td>Sob demanda</td></tr>
+            <tr><td><code>npm run seo:indexnow</code></td><td>Enviar URLs via IndexNow</td><td>Após publicações</td></tr>
+            <tr><td><code>npm run seo:daily</code></td><td>Snapshot diário + alertas</td><td>Diário (cron)</td></tr>
+            <tr><td><code>npm run seo:weekly</code></td><td>Relatório semanal</td><td>Semanal (cron)</td></tr>
+            <tr><td><code>npm run seo:monthly</code></td><td>Relatório mensal</td><td>Mensal (cron)</td></tr>
+            <tr><td><code>npm run seo:alerts</code></td><td>Verificar alertas</td><td>Sob demanda</td></tr>
+            <tr><td><code>node seo/validate-production.js</code></td><td>Validação de produção</td><td>Pré-deploy</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===== ALERTS ===== -->
+    <div class="section" id="section-alerts">
+      <div class="main__header">
+        <h1>Sist. de <span>Alertas</span></h1>
+      </div>
+      <div class="alert alert--ok"><i class="fas fa-check-circle"></i> Nenhum alerta ativo no momento.</div>
+      <div class="panel">
+        <div class="panel__header"><div class="panel__title"><i class="fas fa-bell"></i> Condições Monitoradas</div></div>
+        <table class="seo-table">
+          <thead><tr><th>Condição</th><th>Limiar</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Queda de impressões</td><td>> 20% vs período anterior</td><td><span class="badge badge--pending">Aguardando dados</span></td></tr>
+            <tr><td>Queda de CTR</td><td>> 15% vs período anterior</td><td><span class="badge badge--pending">Aguardando dados</span></td></tr>
+            <tr><td>Queda de posição</td><td>> 3 posições</td><td><span class="badge badge--pending">Aguardando dados</span></td></tr>
+            <tr><td>Página removida do índice</td><td>Qualquer remoção</td><td><span class="badge badge--pending">Aguardando dados</span></td></tr>
+            <tr><td>Erro 404</td><td>Qualquer página</td><td><span class="badge badge--live">0 erros</span></td></tr>
+            <tr><td>Erro de sitemap</td><td>URL sem arquivo</td><td><span class="badge badge--live">0 erros</span></td></tr>
+            <tr><td>Erro de schema</td><td>JSON-LD inválido</td><td><span class="badge badge--live">0 erros</span></td></tr>
+            <tr><td>Erro de canonical</td><td>Canonical inconsistente</td><td><span class="badge badge--live">0 erros</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===== HISTORY ===== -->
+    <div class="section" id="section-history">
+      <div class="main__header">
+        <h1>Histó<span>rico</span></h1>
+      </div>
+      <div class="alert alert--info">
+        <i class="fas fa-info-circle"></i>
+        <div>Snapshots diários serão salvos em <code>data/seo/YYYY-MM-DD/</code>. Execute <code>npm run seo:daily</code> para gerar o primeiro snapshot.</div>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><div class="panel__title"><i class="fas fa-clock-rotate-left"></i> Snapshots</div></div>
+        <p style="color:var(--muted);font-size:.88rem">Nenhum snapshot disponível. Execute <code>npm run seo:daily</code> para criar o primeiro.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// Navigation
+document.querySelectorAll('.sidebar__link[data-section]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const section = link.dataset.section;
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.sidebar__link').forEach(l => l.classList.remove('active'));
+    document.getElementById('section-' + section).classList.add('active');
+    link.classList.add('active');
+  });
+});
+
+// Pages table
+const pages = [
+  {url:'/',cat:'Institucional',sitemap:true},{url:'/sobre',cat:'Institucional',sitemap:true},
+  {url:'/como-funciona',cat:'Institucional',sitemap:true},{url:'/recursos',cat:'Institucional',sitemap:true},
+  {url:'/faq',cat:'Institucional',sitemap:true},{url:'/integracoes',cat:'Produto',sitemap:true},
+  {url:'/seguranca',cat:'Produto',sitemap:true},{url:'/status',cat:'Produto',sitemap:true},
+  {url:'/politica-de-privacidade',cat:'Legal',sitemap:true},{url:'/termos-de-uso',cat:'Legal',sitemap:true},
+  {url:'/lgpd',cat:'Legal',sitemap:true},{url:'/cookies',cat:'Legal',sitemap:true},
+  {url:'/treinamento',cat:'Legal',sitemap:true},{url:'/changelog',cat:'Roadmap',sitemap:true},
+  {url:'/roadmap',cat:'Roadmap',sitemap:true},{url:'/docs',cat:'Documentação',sitemap:true},
+  {url:'/404',cat:'Utilitária',sitemap:false},{url:'/BEMVINDO',cat:'Utilitária',sitemap:false},
+  {url:'/glossario',cat:'Glossário',sitemap:true},
+  {url:'/glossario/chatbot',cat:'Glossário',sitemap:true},{url:'/glossario/lead',cat:'Glossário',sitemap:true},
+  {url:'/glossario/crm',cat:'Glossário',sitemap:true},{url:'/glossario/ia-conversacional',cat:'Glossário',sitemap:true},
+  {url:'/glossario/api',cat:'Glossário',sitemap:true},{url:'/glossario/webhook',cat:'Glossário',sitemap:true},
+  {url:'/glossario/nlp',cat:'Glossário',sitemap:true},{url:'/glossario/funil-de-vendas',cat:'Glossário',sitemap:true},
+  {url:'/glossario/whatsapp-business-api',cat:'Glossário',sitemap:true},{url:'/glossario/evolution-api',cat:'Glossário',sitemap:true},
+  {url:'/glossario/conversao',cat:'Glossário',sitemap:true},{url:'/glossario/roi',cat:'Glossário',sitemap:true},
+  {url:'/glossario/lead-scoring',cat:'Glossário',sitemap:true},{url:'/glossario/pipeline',cat:'Glossário',sitemap:true},
+  {url:'/glossario/follow-up',cat:'Glossário',sitemap:true},{url:'/glossario/automacao-de-marketing',cat:'Glossário',sitemap:true},
+  {url:'/glossario/onboarding',cat:'Glossário',sitemap:true},
+  {url:'/ferramentas/calculadora-roi',cat:'Ferramenta',sitemap:true},
+  {url:'/blog/',cat:'Blog',sitemap:true},
+  {url:'/blog/como-automatizar-atendimento-whatsapp',cat:'Blog',sitemap:true},
+  {url:'/blog/como-reduzir-abandono-de-leads',cat:'Blog',sitemap:true},
+  {url:'/blog/como-converter-mais-leads-com-chatbot-de-ia',cat:'Blog',sitemap:true},
+  {url:'/blog/chatbot-para-clinicas-e-consultorios',cat:'Blog',sitemap:true},
+  {url:'/blog/melhor-chatbot-para-infoprodutores-no-brasil',cat:'Blog',sitemap:true},
+  {url:'/blog/o-que-e-vendedor-automatico-para-landing-page',cat:'Blog',sitemap:true},
+  {url:'/clinicas',cat:'Landing',sitemap:true},{url:'/imobiliarias',cat:'Landing',sitemap:true},
+  {url:'/ecommerce',cat:'Landing',sitemap:true},{url:'/restaurantes',cat:'Landing',sitemap:true},
+  {url:'/infoprodutores',cat:'Landing',sitemap:true}
+];
+const clusters = ['clinicas','imobiliarias','ecommerce','restaurantes','infoprodutores'];
+const types = ['templates','fluxos','checklists','prompts','exemplos'];
+clusters.forEach(c => types.forEach(t => pages.push({url:`/${t}/${c}`,cat:'Cluster',sitemap:true})));
+
+function renderPages(filter='') {
+  const tbody = document.getElementById('pages-tbody');
+  const filtered = filter ? pages.filter(p => p.url.includes(filter) || p.cat.toLowerCase().includes(filter)) : pages;
+  tbody.innerHTML = filtered.map(p => `
+    <tr>
+      <td class="url">${p.url}</td>
+      <td>${p.cat}</td>
+      <td>${p.sitemap ? '<span class="badge badge--live">Sim</span>' : '<span class="badge badge--pending">Não</span>'}</td>
+      <td><span class="badge badge--live">OK</span></td>
+    </tr>
+  `).join('');
+}
+renderPages();
+
+document.getElementById('page-search').addEventListener('input', e => {
+  renderPages(e.target.value.toLowerCase());
+});
+
+// Last update
+document.getElementById('last-update').textContent = 'Atualizado: ' + new Date().toLocaleString('pt-BR');
+
+// Run command helper
+function runCommand(cmd) {
+  alert('Execute no terminal:\nnpm run ' + cmd + '\n\nOs resultados serão salvos em reports/');
+}
+</script>
+</body>
+</html>

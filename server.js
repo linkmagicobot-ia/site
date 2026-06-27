@@ -157,6 +157,13 @@ app.get('/blog/:slug', (req, res, next) => {
     });
 });
 
+// ===== SEO ADMIN (novas rotas — não impactam nenhuma rota existente) =====
+app.get('/admin/seo', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'admin', 'seo.html'));
+});
+
+// IndexNow key verification (servido automaticamente pelo static se existir em public/)
+
 // ===== FALLBACK 404 =====
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'public', '404.html'), (err) => {
