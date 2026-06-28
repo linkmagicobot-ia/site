@@ -2259,7 +2259,7 @@ function openDemoChat(nicho,nome){
   currentDemoNicho=nicho;
   demoConvId='demo_'+Date.now();
   var d=demoNichoData[nicho]||demoNichoData.infoproduto;
-  document.getElementById('demoAvatar').textContent=d.avatar;
+  document.getElementById('demoAvatar').innerHTML=d.avatar;
   document.getElementById('demoTitle').textContent='Demo — '+nome;
   var msgs=document.getElementById('demoChatMessages');
   msgs.innerHTML='';
