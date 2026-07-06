@@ -260,22 +260,63 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
         </table>
       </div>
 
-      <!-- Search Console Integration Status -->
-      <div class="panel">
+      <!-- Search Console — Métricas Dinâmicas (SEOProvider v1) -->
+      <div class="panel" id="panel-metrics">
         <div class="panel__header">
           <div class="panel__title"><i class="fas fa-chart-area"></i> Métricas de Busca</div>
-          <span class="badge badge--pending"><i class="fas fa-clock" style="font-size:.5rem"></i> Aguardando integração</span>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div class="tabs" id="period-tabs">
+              <button class="tab" data-period="7d">7d</button>
+              <button class="tab active" data-period="30d">30d</button>
+              <button class="tab" data-period="90d">90d</button>
+            </div>
+            <span class="badge" id="metrics-badge"><i class="fas fa-circle" style="font-size:.5rem"></i> <span id="metrics-badge-text">Carregando...</span></span>
+          </div>
         </div>
-        <div class="alert alert--info">
-          <i class="fas fa-info-circle"></i>
-          <div>Conecte o Google Search Console e Bing Webmaster Tools para visualizar métricas reais de impressões, cliques, CTR e posição. Consulte <strong>Integrações</strong> no menu lateral.</div>
+
+        <!-- Summary Cards -->
+        <div class="stats-grid" id="summary-grid">
+          <div class="stat-card stat-card--purple">
+            <div class="stat-card__label"><i class="fas fa-eye"></i> Impressões</div>
+            <div class="stat-card__value" id="metric-impressions"><div class="spinner" style="width:18px;height:18px"></div></div>
+          </div>
+          <div class="stat-card stat-card--green">
+            <div class="stat-card__label"><i class="fas fa-mouse-pointer"></i> Cliques</div>
+            <div class="stat-card__value" id="metric-clicks"><div class="spinner" style="width:18px;height:18px"></div></div>
+          </div>
+          <div class="stat-card stat-card--cyan">
+            <div class="stat-card__label"><i class="fas fa-percentage"></i> CTR</div>
+            <div class="stat-card__value" id="metric-ctr"><div class="spinner" style="width:18px;height:18px"></div></div>
+          </div>
+          <div class="stat-card stat-card--orange">
+            <div class="stat-card__label"><i class="fas fa-sort-amount-up"></i> Posição média</div>
+            <div class="stat-card__value" id="metric-position"><div class="spinner" style="width:18px;height:18px"></div></div>
+          </div>
         </div>
-        <div class="stats-grid" style="opacity:.5">
-          <div class="stat-card"><div class="stat-card__label">Impressões (90d)</div><div class="stat-card__value">—</div></div>
-          <div class="stat-card"><div class="stat-card__label">Cliques (90d)</div><div class="stat-card__value">—</div></div>
-          <div class="stat-card"><div class="stat-card__label">CTR médio</div><div class="stat-card__value">—</div></div>
-          <div class="stat-card"><div class="stat-card__label">Posição média</div><div class="stat-card__value">—</div></div>
+      </div>
+
+      <!-- Top Queries -->
+      <div class="panel" id="panel-queries">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-search"></i> Top Consultas</div>
         </div>
+        <div id="queries-content"><div class="loading"><div class="spinner"></div> Carregando consultas...</div></div>
+      </div>
+
+      <!-- Top Pages -->
+      <div class="panel" id="panel-pages-top">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-file-alt"></i> Top Páginas</div>
+        </div>
+        <div id="pages-top-content"><div class="loading"><div class="spinner"></div> Carregando páginas...</div></div>
+      </div>
+
+      <!-- Backlinks (Bing) -->
+      <div class="panel" id="panel-backlinks">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-link"></i> Backlinks (Bing)</div>
+        </div>
+        <div id="backlinks-content"><div class="loading"><div class="spinner"></div> Carregando backlinks...</div></div>
       </div>
     </div>
 
@@ -595,6 +636,185 @@ document.getElementById('last-update').textContent = 'Atualizado: ' + new Date()
 function runCommand(cmd) {
   alert('Execute no terminal:\nnpm run ' + cmd + '\n\nOs resultados serão salvos em reports/');
 }
+
+// ============================================================
+// SEOProvider v1 — Dashboard Dinâmico
+// ============================================================
+
+const SEO_TIMEOUT = 15000;
+const SEO_RETRIES = 3;
+const SEO_RETRY_DELAY = 1000;
+let currentPeriod = '30d';
+
+/**
+ * Fetch com AbortController, timeout e retry exponencial
+ */
+async function seoFetch(endpoint, retryCount = 0) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), SEO_TIMEOUT);
+
+  try {
+    const res = await fetch(endpoint, { signal: controller.signal });
+    clearTimeout(timeoutId);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (e) {
+    clearTimeout(timeoutId);
+    if (retryCount < SEO_RETRIES - 1) {
+      const delay = SEO_RETRY_DELAY * Math.pow(2, retryCount);
+      await new Promise(r => setTimeout(r, delay));
+      return seoFetch(endpoint, retryCount + 1);
+    }
+    return { error: true, message: e.name === 'AbortError' ? 'Timeout' : e.message };
+  }
+}
+
+function formatNumber(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n/1000).toFixed(1) + 'k';
+  return String(n);
+}
+
+function setBadge(status, text) {
+  const badge = document.getElementById('metrics-badge');
+  const badgeText = document.getElementById('metrics-badge-text');
+  badge.className = 'badge badge--' + status;
+  badgeText.textContent = text;
+}
+
+function setMetric(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
+}
+
+function renderTable(rows, columns) {
+  if (!rows || rows.length === 0) {
+    return '<div class="alert alert--info"><i class="fas fa-info-circle"></i> <div>Sem dados disponíveis ainda — o Google pode levar 2-3 dias para acumular métricas.</div></div>';
+  }
+  let html = '<table class="seo-table"><thead><tr>';
+  columns.forEach(c => html += `<th>${c.label}</th>`);
+  html += '</tr></thead><tbody>';
+  rows.slice(0, 10).forEach(row => {
+    html += '<tr>';
+    columns.forEach(c => {
+      const val = row[c.key];
+      if (c.key === 'page' || c.key === 'query') {
+        const display = c.key === 'page' ? val.replace('https://site.linkmagico.app.br', '') : val;
+        html += `<td class="url" title="${val}">${display}</td>`;
+      } else if (c.key === 'ctr') {
+        html += `<td>${val}%</td>`;
+      } else if (c.key === 'position') {
+        html += `<td>${val}</td>`;
+      } else {
+        html += `<td>${formatNumber(val)}</td>`;
+      }
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  return html;
+}
+
+function renderError(message) {
+  return `<div class="alert alert--warn"><i class="fas fa-exclamation-triangle"></i> <div>${message} <button class="btn btn--sm btn--outline" onclick="loadAllMetrics()" style="margin-left:8px"><i class="fas fa-redo"></i> Tentar novamente</button></div></div>`;
+}
+
+async function loadSummary() {
+  const data = await seoFetch(`/api/seo/summary?p=${currentPeriod}`);
+  if (data.error && data.impressions === undefined) {
+    setMetric('metric-impressions', '—');
+    setMetric('metric-clicks', '—');
+    setMetric('metric-ctr', '—');
+    setMetric('metric-position', '—');
+    setBadge('error', data.message || 'Erro');
+    return;
+  }
+  setMetric('metric-impressions', formatNumber(data.impressions || 0));
+  setMetric('metric-clicks', formatNumber(data.clicks || 0));
+  setMetric('metric-ctr', (data.ctr || 0) + '%');
+  setMetric('metric-position', data.position || '—');
+  if (data.error) {
+    setBadge('pending', data.message || 'Sem dados');
+  } else if (data.impressions === 0 && data.clicks === 0) {
+    setBadge('pending', 'Acumulando dados...');
+  } else {
+    setBadge('live', 'Conectado');
+  }
+}
+
+async function loadQueries() {
+  const el = document.getElementById('queries-content');
+  const data = await seoFetch(`/api/seo/queries?p=${currentPeriod}`);
+  if (data.error && !data.rows) {
+    el.innerHTML = renderError(data.message || 'Erro ao carregar consultas');
+    return;
+  }
+  el.innerHTML = renderTable(data.rows, [
+    {key:'query',label:'Consulta'},{key:'clicks',label:'Cliques'},
+    {key:'impressions',label:'Impressões'},{key:'ctr',label:'CTR'},
+    {key:'position',label:'Posição'}
+  ]);
+}
+
+async function loadTopPages() {
+  const el = document.getElementById('pages-top-content');
+  const data = await seoFetch(`/api/seo/pages?p=${currentPeriod}`);
+  if (data.error && !data.rows) {
+    el.innerHTML = renderError(data.message || 'Erro ao carregar páginas');
+    return;
+  }
+  el.innerHTML = renderTable(data.rows, [
+    {key:'page',label:'Página'},{key:'clicks',label:'Cliques'},
+    {key:'impressions',label:'Impressões'},{key:'ctr',label:'CTR'},
+    {key:'position',label:'Posição'}
+  ]);
+}
+
+async function loadBacklinks() {
+  const el = document.getElementById('backlinks-content');
+  const data = await seoFetch('/api/seo/backlinks');
+  if (data.error && data.total === undefined) {
+    el.innerHTML = renderError(data.message || 'Erro ao carregar backlinks');
+    return;
+  }
+  if (data.total === 0 && data.domains.length === 0) {
+    el.innerHTML = '<div class="alert alert--info"><i class="fas fa-info-circle"></i> <div>Sem dados de backlinks disponíveis ainda.</div></div>';
+    return;
+  }
+  let html = `<div style="margin-bottom:12px"><span style="font-size:1.4rem;font-weight:800;font-family:'Space Grotesk',sans-serif">${formatNumber(data.total)}</span> <span style="color:var(--muted);font-size:.88rem">backlinks totais</span></div>`;
+  if (data.domains.length > 0) {
+    html += renderTable(data.domains, [
+      {key:'url',label:'Domínio'},{key:'count',label:'Links'}
+    ]);
+  }
+  el.innerHTML = html;
+}
+
+async function loadAllMetrics() {
+  setBadge('pending', 'Carregando...');
+  setMetric('metric-impressions', '...');
+  setMetric('metric-clicks', '...');
+  setMetric('metric-ctr', '...');
+  setMetric('metric-position', '...');
+  document.getElementById('queries-content').innerHTML = '<div class="loading"><div class="spinner"></div> Carregando...</div>';
+  document.getElementById('pages-top-content').innerHTML = '<div class="loading"><div class="spinner"></div> Carregando...</div>';
+  document.getElementById('backlinks-content').innerHTML = '<div class="loading"><div class="spinner"></div> Carregando...</div>';
+
+  await Promise.all([loadSummary(), loadQueries(), loadTopPages(), loadBacklinks()]);
+}
+
+// Period tabs
+document.querySelectorAll('#period-tabs .tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('#period-tabs .tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentPeriod = tab.dataset.period;
+    loadAllMetrics();
+  });
+});
+
+// Load on page open
+loadAllMetrics();
 </script>
 </body>
 </html>

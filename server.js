@@ -165,6 +165,9 @@ app.get('/admin/seo', (req, res) => {
 
 // IndexNow key verification (servido automaticamente pelo static se existir em public/)
 
+// ===== SEO API ROUTES (SEOProvider v1) =====
+app.use('/api/seo', require('./routes/seo'));
+
 // ===== FALLBACK 404 =====
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'public', '404.html'), (err) => {
