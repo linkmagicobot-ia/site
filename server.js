@@ -39,7 +39,8 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, 'public'), {
     maxAge: '7d',
     etag: true,
-    lastModified: true
+    lastModified: true,
+    redirect: false
 }));
 
 // ===== ROTAS =====
@@ -145,7 +146,7 @@ clusterTypes.forEach(type => {
 
 // ===== BLOG — Rotas limpas sem .html =====
 app.get('/blog', (req, res) => {
-    res.redirect(301, '/blog/');
+    res.sendFile(path.join(__dirname, 'public', 'blog', 'index.html'));
 });
 app.get('/blog/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'blog', 'index.html'));
