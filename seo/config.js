@@ -17,6 +17,9 @@ module.exports = {
   PROVIDER_VERSION: 'v1',
 
   // Site
+  GOOGLE_SITE_URL: process.env.GOOGLE_SITE_URL || 'sc-domain:linkmagico.app.br',
+  BING_SITE_URL: process.env.BING_SITE_URL || 'https://linkmagico.app.br',
+  // Manter SITE_URL para compatibilidade se algo usar
   SITE_URL: 'https://site.linkmagico.app.br',
 
   // Timeouts (configuráveis via env)

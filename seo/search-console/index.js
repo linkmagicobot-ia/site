@@ -190,7 +190,7 @@ function sleep(ms) {
  */
 async function fetchPerformance(startDate, endDate, dimensions = ['query']) {
   const token = await authenticate();
-  const encodedSite = encodeURIComponent(config.SITE_URL);
+  const encodedSite = encodeURIComponent(config.GOOGLE_SITE_URL);
   const body = JSON.stringify({
     startDate,
     endDate,

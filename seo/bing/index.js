@@ -37,7 +37,7 @@ function apiRequest(endpoint, retryCount = 0) {
       return;
     }
 
-    const encodedSite = encodeURIComponent(config.SITE_URL);
+    const encodedSite = encodeURIComponent(config.BING_SITE_URL);
     const fullPath = `${config.BING_API_BASE_PATH}/${endpoint}?siteUrl=${encodedSite}&apikey=${apiKey}`;
 
     const options = {
