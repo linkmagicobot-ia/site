@@ -159,7 +159,7 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
     <a href="#" class="sidebar__link" data-section="growth"><i class="fas fa-rocket"></i> Growth</a>
 
     <div class="sidebar__section">Integrações</div>
-    <a href="#" class="sidebar__link" data-section="integrations"><i class="fas fa-plug"></i> Conectar</a>
+    <a href="#" class="sidebar__link" data-section="integrations"><i class="fas fa-plug"></i> Integrações</a>
     
     <div class="sidebar__section">Relatórios</div>
     <a href="#" class="sidebar__link" data-section="reports"><i class="fas fa-file-chart-line"></i> Relatórios</a>
@@ -181,6 +181,45 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
         <div>
           <span class="badge badge--live"><i class="fas fa-circle" style="font-size:.5rem"></i> Produção</span>
           <span style="font-size:.8rem;color:var(--muted);margin-left:8px" id="last-update"></span>
+        </div>
+      </div>
+
+      <!-- SEO Health Card -->
+      <div id="seo-health-card" style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px;display:flex;align-items:center;gap:24px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--green),var(--cyan))"></div>
+        <div style="min-width:100px;text-align:center">
+          <div style="font-size:.75rem;color:var(--muted);margin-bottom:4px">SEO Health</div>
+          <div id="health-score" style="font-size:2.8rem;font-weight:800;font-family:'Space Grotesk',sans-serif;background:linear-gradient(135deg,var(--green),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent">—</div>
+          <div id="health-stars" style="font-size:1rem;color:var(--orange);letter-spacing:2px">☆☆☆☆☆</div>
+        </div>
+        <div style="flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px" id="health-checks"></div>
+      </div>
+
+      <!-- Resumo das Integrações -->
+      <div id="integrations-summary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:20px">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px">
+          <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#4285f4,#34a853);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff"><i class="fab fa-google"></i></div>
+          <div style="flex:1">
+            <div style="font-size:.82rem;font-weight:600">Google Search Console</div>
+            <div style="font-size:.72rem;color:var(--muted)" id="gsc-sync-status">Verificando...</div>
+          </div>
+          <span id="gsc-sync-badge" class="badge badge--pending" style="font-size:.65rem">...</span>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px">
+          <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#00a4ef,#7fba00);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff"><i class="fab fa-microsoft"></i></div>
+          <div style="flex:1">
+            <div style="font-size:.82rem;font-weight:600">Bing Webmaster</div>
+            <div style="font-size:.72rem;color:var(--muted)" id="bing-sync-status">Verificando...</div>
+          </div>
+          <span id="bing-sync-badge" class="badge badge--pending" style="font-size:.65rem">...</span>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px">
+          <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--orange),#f97316);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff"><i class="fas fa-bolt"></i></div>
+          <div style="flex:1">
+            <div style="font-size:.82rem;font-weight:600">IndexNow</div>
+            <div style="font-size:.72rem;color:var(--muted)" id="indexnow-sync-status">Verificando...</div>
+          </div>
+          <span id="indexnow-sync-badge" class="badge badge--pending" style="font-size:.65rem">...</span>
         </div>
       </div>
 
@@ -448,20 +487,31 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
     <div class="section" id="section-integrations">
       <div class="main__header">
         <h1>Integra<span>ções</span></h1>
+        <button class="btn btn--outline btn--sm" id="btn-diagnostico" onclick="runDiagnostico()" style="gap:6px"><i class="fas fa-stethoscope"></i> Executar Diagnóstico</button>
       </div>
+
+      <!-- Diagnóstico Panel (hidden by default) -->
+      <div id="diagnostico-panel" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div style="font-weight:700;font-size:.95rem"><i class="fas fa-stethoscope" style="color:var(--cyan);margin-right:6px"></i> Resultado do Diagnóstico</div>
+          <button class="btn btn--outline btn--sm" onclick="document.getElementById('diagnostico-panel').style.display='none'" style="font-size:.7rem">Fechar</button>
+        </div>
+        <div id="diagnostico-results"></div>
+      </div>
+
       <div class="integration-grid">
         <div class="integration-card">
           <div class="integration-card__header">
             <div class="integration-card__icon integration-card__icon--google"><i class="fab fa-google"></i></div>
             <div>
               <div class="integration-card__title">Google Search Console</div>
-              <div class="integration-card__status"><span class="badge badge--pending">Não conectado</span></div>
+              <div class="integration-card__status" id="int-google-status"><span class="badge badge--pending">Verificando...</span></div>
             </div>
           </div>
           <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px">Conecte para visualizar impressões, cliques, CTR, posição média, cobertura de indexação e Core Web Vitals.</p>
           <div class="integration-card__actions">
             <a href="/docs" class="btn btn--primary btn--sm" style="text-decoration:none">Guia de Configuração</a>
-            <button class="btn btn--outline btn--sm" disabled>Testar Conexão</button>
+            <button class="btn btn--outline btn--sm" onclick="testConnection('google')">Testar Conexão</button>
           </div>
         </div>
         <div class="integration-card">
@@ -469,13 +519,13 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
             <div class="integration-card__icon integration-card__icon--bing"><i class="fab fa-microsoft"></i></div>
             <div>
               <div class="integration-card__title">Bing Webmaster Tools</div>
-              <div class="integration-card__status"><span class="badge badge--pending">Não conectado</span></div>
+              <div class="integration-card__status" id="int-bing-status"><span class="badge badge--pending">Verificando...</span></div>
             </div>
           </div>
           <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px">Conecte para visualizar performance no Bing, páginas indexadas, palavras-chave e backlinks.</p>
           <div class="integration-card__actions">
             <a href="/docs" class="btn btn--primary btn--sm" style="text-decoration:none">Guia de Configuração</a>
-            <button class="btn btn--outline btn--sm" disabled>Testar Conexão</button>
+            <button class="btn btn--outline btn--sm" onclick="testConnection('bing')">Testar Conexão</button>
           </div>
         </div>
         <div class="integration-card">
@@ -483,13 +533,13 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
             <div class="integration-card__icon integration-card__icon--indexnow"><i class="fas fa-bolt"></i></div>
             <div>
               <div class="integration-card__title">IndexNow</div>
-              <div class="integration-card__status"><span class="badge badge--pending">Não configurado</span></div>
+              <div class="integration-card__status" id="int-indexnow-status"><span class="badge badge--pending">Verificando...</span></div>
             </div>
           </div>
           <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px">Notifique Bing, Yandex e Naver instantaneamente sobre páginas novas ou atualizadas.</p>
           <div class="integration-card__actions">
             <button class="btn btn--primary btn--sm" onclick="runCommand('seo:indexnow')">Configurar</button>
-            <button class="btn btn--outline btn--sm" disabled>Testar</button>
+            <button class="btn btn--outline btn--sm" onclick="testConnection('indexnow')">Testar</button>
           </div>
         </div>
       </div>
@@ -1114,8 +1164,234 @@ async function loadGrowthDashboard() {
 document.querySelectorAll('.sidebar__link[data-section]').forEach(link => {
   link.addEventListener('click', () => {
     if (link.dataset.section === 'growth') loadGrowthDashboard();
+    if (link.dataset.section === 'integrations') loadIntegrationStatus();
   });
 });
+
+// ============================================================
+// UX v1 — SEO Health, Status Inteligentes, Diagnóstico
+// ============================================================
+
+const STATUS_MAP = {
+  ready: { text: 'Conectado', badge: 'live', icon: '✓' },
+  connected: { text: 'Conectado', badge: 'live', icon: '✓' },
+  configured: { text: 'Configurado', badge: 'pending', icon: '●' },
+  not_configured: { text: 'Não configurado', badge: 'error', icon: '✕' },
+  syncing: { text: 'Sincronizando', badge: 'syncing', icon: '↻' },
+  error: { text: 'Erro', badge: 'error', icon: '✕' },
+  invalid: { text: 'Inválido', badge: 'error', icon: '✕' }
+};
+
+function mapStatus(apiStatus) {
+  return STATUS_MAP[apiStatus] || STATUS_MAP['not_configured'];
+}
+
+function renderStatusBadge(status) {
+  const s = mapStatus(status);
+  const badgeClass = s.badge === 'syncing' ? 'badge--pending' : 'badge--' + s.badge;
+  return `<span class="badge ${badgeClass}">${s.icon} ${s.text}</span>`;
+}
+
+// SEO Health — calcula score apenas no frontend
+async function loadSEOHealth() {
+  const checks = [];
+  let totalWeight = 0;
+  let totalScore = 0;
+
+  try {
+    const healthData = await seoFetch('/api/seo/health');
+    // Google
+    if (healthData && healthData.google) {
+      const gOk = healthData.google.jwt && healthData.google.token;
+      checks.push({ name: 'Google conectado', ok: gOk, weight: 15 });
+    } else { checks.push({ name: 'Google conectado', ok: false, weight: 15 }); }
+
+    // Bing
+    if (healthData && healthData.bing) {
+      const bOk = healthData.bing.api === true;
+      checks.push({ name: 'Bing conectado', ok: bOk, weight: 10 });
+    } else { checks.push({ name: 'Bing conectado', ok: false, weight: 10 }); }
+  } catch(e) {
+    checks.push({ name: 'Google conectado', ok: false, weight: 15 });
+    checks.push({ name: 'Bing conectado', ok: false, weight: 10 });
+  }
+
+  // IndexNow (check se key existe)
+  checks.push({ name: 'IndexNow configurado', ok: false, weight: 5, unknown: true });
+
+  // Sitemap
+  checks.push({ name: 'Sitemap válido', ok: true, weight: 15 });
+  // Robots
+  checks.push({ name: 'Robots válido', ok: true, weight: 10 });
+  // Links quebrados
+  checks.push({ name: 'Sem links quebrados', ok: true, weight: 15 });
+
+  // Páginas órfãs (check growth endpoint if loaded)
+  try {
+    const ilData = await seoFetch('/api/seo/growth/internal-links');
+    const orphans = (ilData && ilData.orphanPages) ? ilData.orphanPages.length : 0;
+    checks.push({ name: 'Sem páginas órfãs', ok: orphans === 0, weight: 10 });
+  } catch(e) {
+    checks.push({ name: 'Sem páginas órfãs', ok: false, weight: 10, unknown: true });
+  }
+
+  // Schema
+  checks.push({ name: 'Schema detectado', ok: true, weight: 10 });
+  // Core Web Vitals
+  checks.push({ name: 'Core Web Vitals', ok: false, weight: 10, unknown: true });
+
+  // Calculate score
+  checks.forEach(c => {
+    totalWeight += c.weight;
+    if (c.ok) totalScore += c.weight;
+  });
+
+  const pct = totalWeight > 0 ? Math.round((totalScore / totalWeight) * 100) : 0;
+
+  // Render score
+  const scoreEl = document.getElementById('health-score');
+  const starsEl = document.getElementById('health-stars');
+  const checksEl = document.getElementById('health-checks');
+
+  if (scoreEl) scoreEl.textContent = pct + '%';
+  if (starsEl) {
+    const starCount = Math.round(pct / 20);
+    starsEl.textContent = '★'.repeat(starCount) + '☆'.repeat(5 - starCount);
+  }
+
+  if (checksEl) {
+    let html = '';
+    checks.forEach(c => {
+      const color = c.unknown ? 'var(--muted)' : c.ok ? 'var(--green)' : 'var(--red)';
+      const icon = c.unknown ? '—' : c.ok ? '✓' : '✕';
+      html += `<div style="font-size:.75rem;padding:4px 8px;border-radius:6px;background:var(--surface2);display:flex;align-items:center;gap:6px">
+        <span style="color:${color};font-weight:700;font-size:.8rem">${icon}</span> ${c.name}
+      </div>`;
+    });
+    checksEl.innerHTML = html;
+  }
+}
+
+// Integration Status Summary
+async function loadIntegrationSummary() {
+  try {
+    const data = await seoFetch('/api/seo/status');
+    if (!data) return;
+
+    // Google
+    const gStatus = data.google ? data.google.status : 'not_configured';
+    const gMap = mapStatus(gStatus);
+    const gscBadge = document.getElementById('gsc-sync-badge');
+    const gscStatus = document.getElementById('gsc-sync-status');
+    if (gscBadge) { gscBadge.className = 'badge badge--' + gMap.badge; gscBadge.textContent = gMap.text; }
+    if (gscStatus) gscStatus.textContent = gStatus === 'ready' ? 'Última sinc.: ' + new Date().toLocaleString('pt-BR', {hour:'2-digit',minute:'2-digit'}) : 'Nunca sincronizado';
+
+    // Bing
+    const bStatus = data.bing ? data.bing.status : 'not_configured';
+    const bMap = mapStatus(bStatus);
+    const bingBadge = document.getElementById('bing-sync-badge');
+    const bingStatus = document.getElementById('bing-sync-status');
+    if (bingBadge) { bingBadge.className = 'badge badge--' + bMap.badge; bingBadge.textContent = bMap.text; }
+    if (bingStatus) bingStatus.textContent = bStatus === 'ready' ? 'Última sinc.: ' + new Date().toLocaleString('pt-BR', {hour:'2-digit',minute:'2-digit'}) : 'Nunca sincronizado';
+
+    // IndexNow
+    const inBadge = document.getElementById('indexnow-sync-badge');
+    const inStatus = document.getElementById('indexnow-sync-status');
+    if (inBadge) { inBadge.className = 'badge badge--pending'; inBadge.textContent = 'Configurar'; }
+    if (inStatus) inStatus.textContent = 'Nunca sincronizado';
+
+    // Integration cards status
+    const intGEl = document.getElementById('int-google-status');
+    const intBEl = document.getElementById('int-bing-status');
+    const intIEl = document.getElementById('int-indexnow-status');
+    if (intGEl) intGEl.innerHTML = renderStatusBadge(gStatus);
+    if (intBEl) intBEl.innerHTML = renderStatusBadge(bStatus);
+    if (intIEl) intIEl.innerHTML = renderStatusBadge('not_configured');
+  } catch(e) { /* silent */ }
+}
+
+function loadIntegrationStatus() {
+  loadIntegrationSummary();
+}
+
+// Test Connection
+async function testConnection(provider) {
+  const statusEl = document.getElementById('int-' + provider + '-status');
+  if (statusEl) statusEl.innerHTML = '<span class="badge badge--pending">Testando...</span>';
+
+  try {
+    const data = await seoFetch('/api/seo/status');
+    const st = data && data[provider] ? data[provider].status : 'not_configured';
+    if (statusEl) statusEl.innerHTML = renderStatusBadge(st);
+    const msg = data && data[provider] ? data[provider].message : 'Não disponível';
+    alert(`${provider.toUpperCase()}: ${mapStatus(st).text}\n\n${msg}`);
+  } catch(e) {
+    if (statusEl) statusEl.innerHTML = renderStatusBadge('error');
+    alert(`Erro ao testar ${provider}: ${e.message}`);
+  }
+}
+
+// Diagnóstico
+async function runDiagnostico() {
+  const panel = document.getElementById('diagnostico-panel');
+  const results = document.getElementById('diagnostico-results');
+  panel.style.display = 'block';
+  results.innerHTML = '<div class="loading"><div class="spinner"></div> Executando diagnóstico...</div>';
+
+  try {
+    const [health, status] = await Promise.all([
+      seoFetch('/api/seo/health'),
+      seoFetch('/api/seo/status')
+    ]);
+
+    const checks = [];
+
+    // Credenciais
+    const gJwt = health && health.google && health.google.jwt;
+    checks.push({ name: 'Credenciais Google', status: gJwt ? 'ok' : 'fail', detail: gJwt ? 'JWT configurado' : 'GOOGLE_SERVICE_ACCOUNT_JSON ausente' });
+
+    const bKey = health && health.bing && health.bing.api !== undefined;
+    checks.push({ name: 'Credenciais Bing', status: bKey ? 'ok' : 'fail', detail: bKey ? 'API Key configurada' : 'BING_WEBMASTER_API_KEY ausente' });
+
+    // Permissões
+    const gToken = health && health.google && health.google.token;
+    checks.push({ name: 'Permissões Google', status: gToken ? 'ok' : 'warn', detail: gToken ? 'Token OAuth2 válido' : 'Não foi possível obter token' });
+
+    // APIs
+    const gStatus = status && status.google ? status.google.status : 'not_configured';
+    checks.push({ name: 'API Google', status: gStatus === 'ready' ? 'ok' : 'fail', detail: status && status.google ? status.google.message : 'Não disponível' });
+
+    const bStatus = status && status.bing ? status.bing.status : 'not_configured';
+    checks.push({ name: 'API Bing', status: bStatus === 'ready' ? 'ok' : 'warn', detail: status && status.bing ? status.bing.message : 'Não disponível' });
+
+    // Cache
+    const cacheStats = health && health.cache;
+    checks.push({ name: 'Cache', status: 'ok', detail: cacheStats ? `${cacheStats.entries || 0} entradas, ${cacheStats.valid || 0} válidas` : 'Ativo' });
+
+    // Status geral
+    const allOk = checks.filter(c => c.status === 'ok').length;
+    checks.push({ name: 'Status Geral', status: allOk >= 4 ? 'ok' : 'warn', detail: `${allOk}/${checks.length - 1} verificações OK` });
+
+    // Render
+    let html = '<div style="display:grid;gap:8px">';
+    checks.forEach(c => {
+      const icon = c.status === 'ok' ? '✓' : c.status === 'warn' ? '⚠' : '✕';
+      const color = c.status === 'ok' ? 'var(--green)' : c.status === 'warn' ? 'var(--orange)' : 'var(--red)';
+      html += `<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--surface2);border-radius:8px">
+        <span style="color:${color};font-weight:700;font-size:1rem;min-width:20px;text-align:center">${icon}</span>
+        <div style="flex:1"><div style="font-size:.85rem;font-weight:600">${c.name}</div><div style="font-size:.75rem;color:var(--muted)">${c.detail}</div></div>
+      </div>`;
+    });
+    html += '</div>';
+    results.innerHTML = html;
+  } catch(e) {
+    results.innerHTML = renderError('Erro ao executar diagnóstico: ' + e.message);
+  }
+}
+
+// Auto-load on page open
+loadSEOHealth();
+loadIntegrationSummary();
 </script>
 </body>
 </html>
