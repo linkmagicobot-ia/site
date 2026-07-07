@@ -3,371 +3,352 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Growth Intelligence — LinkMágico</title>
+<title>GOS — Growth Operating System</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--surface3:#1a1a30;--border:#1e1e35;--border2:#2a2a45;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--cyan:#06b6d4;--orange:#f59e0b;--red:#ef4444;--text:#f0eeff;--muted:#7a7896}
-body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;min-height:100vh;padding:24px 32px}
+:root{--bg:#06060e;--s:#0e0e1a;--s2:#151525;--s3:#1a1a30;--b:#1e1e35;--b2:#2a2a45;--p:#7c3aed;--pl:#a78bfa;--g:#10b981;--gl:#34d399;--c:#06b6d4;--o:#f59e0b;--r:#ef4444;--t:#f0eeff;--m:#7a7896}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--t);background:var(--bg);line-height:1.6;min-height:100vh}
+.wrap{display:flex;min-height:100vh}
 
-.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-.header h1{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:800}
-.header h1 span{background:linear-gradient(135deg,var(--green),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.header__actions{display:flex;gap:10px;align-items:center}
+/* Sidebar */
+.sb{width:220px;background:var(--s);border-right:1px solid var(--b);padding:20px 0;display:flex;flex-direction:column;position:fixed;height:100vh;overflow-y:auto}
+.sb__logo{padding:0 20px 20px;font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;border-bottom:1px solid var(--b)}
+.sb__logo span{background:linear-gradient(135deg,var(--g),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sb__sec{padding:18px 20px 6px;font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--m);font-weight:700}
+.sb__link{display:flex;align-items:center;gap:10px;padding:9px 20px;font-size:.82rem;color:var(--m);text-decoration:none;transition:all .2s;cursor:pointer;border:none;background:none;width:100%;text-align:left}
+.sb__link:hover{color:var(--t);background:rgba(124,58,237,.08)}
+.sb__link.active{color:var(--t);background:rgba(124,58,237,.15);border-right:3px solid var(--p)}
+.sb__link i{width:18px;text-align:center;font-size:.85rem}
 
-.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
-.badge--live{background:rgba(16,185,129,.15);color:var(--green-l);border:1px solid rgba(16,185,129,.3)}
-.badge--pending{background:rgba(245,158,11,.15);color:var(--orange);border:1px solid rgba(245,158,11,.3)}
-.badge--error{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+/* Main */
+.main{margin-left:220px;flex:1;padding:24px 32px}
+.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.hdr h1{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800}
+.hdr h1 em{font-style:normal;background:linear-gradient(135deg,var(--g),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-size:.82rem;font-weight:600;border:none;cursor:pointer;transition:all .2s;text-decoration:none}
-.btn--primary{background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff}
-.btn--primary:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(124,58,237,.4)}
-.btn--outline{background:transparent;border:1px solid var(--border2);color:var(--text)}
-.btn--outline:hover{border-color:var(--purple);color:var(--purple-l)}
-.btn--sm{padding:6px 12px;font-size:.78rem}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:600}
+.badge--g{background:rgba(16,185,129,.15);color:var(--gl);border:1px solid rgba(16,185,129,.3)}
+.badge--o{background:rgba(245,158,11,.15);color:var(--o);border:1px solid rgba(245,158,11,.3)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:10px;font-size:.8rem;font-weight:600;border:none;cursor:pointer;transition:all .2s;text-decoration:none;color:var(--t);background:transparent;border:1px solid var(--b2)}
+.btn:hover{border-color:var(--p);color:var(--pl)}
 
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px}
-.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;position:relative;overflow:hidden;transition:all .3s}
-.stat-card:hover{border-color:var(--purple);transform:translateY(-2px)}
-.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0}
-.stat-card--purple::before{background:linear-gradient(90deg,var(--purple),var(--purple-l))}
-.stat-card--green::before{background:linear-gradient(90deg,var(--green),var(--green-l))}
-.stat-card--cyan::before{background:linear-gradient(90deg,var(--cyan),#22d3ee)}
-.stat-card--orange::before{background:linear-gradient(90deg,var(--orange),#fbbf24)}
-.stat-card--red::before{background:linear-gradient(90deg,var(--red),#f87171)}
-.stat-card__label{font-size:.75rem;color:var(--muted);margin-bottom:4px;display:flex;align-items:center;gap:6px}
-.stat-card__value{font-size:1.6rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
-.stat-card__sub{font-size:.7rem;color:var(--muted);margin-top:2px}
+.section{display:none}.section.active{display:block}
+.loading{display:flex;align-items:center;gap:10px;color:var(--m);font-size:.85rem;padding:20px 0}
+.spinner{width:16px;height:16px;border:2px solid var(--b2);border-top-color:var(--p);border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
 
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:20px}
-.panel__header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.panel__title{font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px}
-.panel__title i{color:var(--purple-l)}
+/* Cards */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px;margin-bottom:20px}
+.sc{background:var(--s);border:1px solid var(--b);border-radius:14px;padding:16px;position:relative;overflow:hidden;transition:all .3s}
+.sc:hover{border-color:var(--p);transform:translateY(-2px)}
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0}
+.sc--p::before{background:linear-gradient(90deg,var(--p),var(--pl))}
+.sc--g::before{background:linear-gradient(90deg,var(--g),var(--gl))}
+.sc--c::before{background:linear-gradient(90deg,var(--c),#22d3ee)}
+.sc--o::before{background:linear-gradient(90deg,var(--o),#fbbf24)}
+.sc--r::before{background:linear-gradient(90deg,var(--r),#f87171)}
+.sc__l{font-size:.72rem;color:var(--m);margin-bottom:3px;display:flex;align-items:center;gap:5px}
+.sc__v{font-size:1.5rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
+.sc__s{font-size:.68rem;color:var(--m);margin-top:2px}
 
-.loading{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.88rem;padding:16px 0}
-.spinner{width:18px;height:18px;border:2px solid var(--border2);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
+.pnl{background:var(--s);border:1px solid var(--b);border-radius:16px;padding:20px;margin-bottom:18px}
+.pnl__t{font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.pnl__t i{color:var(--pl)}
 
-.action-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:12px;display:flex;align-items:flex-start;gap:16px;transition:all .3s}
-.action-card:hover{border-color:var(--purple);transform:translateX(4px)}
-.action-rank{min-width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Space Grotesk',sans-serif;font-size:1rem}
-.action-rank--high{background:linear-gradient(135deg,var(--green),var(--cyan));color:#000}
-.action-rank--medium{background:linear-gradient(135deg,var(--orange),#fbbf24);color:#000}
-.action-rank--low{background:var(--surface3);color:var(--muted)}
-.action-body{flex:1}
-.action-title{font-weight:700;font-size:.95rem;margin-bottom:2px}
-.action-target{font-size:.82rem;color:var(--cyan)}
-.action-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;font-size:.75rem;color:var(--muted)}
-.action-meta span{display:flex;align-items:center;gap:4px}
-.impact-tag{padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;text-transform:uppercase}
-.impact--muito-alto{background:rgba(16,185,129,.2);color:var(--green-l)}
-.impact--alto{background:rgba(6,182,212,.2);color:var(--cyan)}
-.impact--medio{background:rgba(245,158,11,.2);color:var(--orange)}
-.impact--baixo{background:rgba(122,120,150,.2);color:var(--muted)}
+/* Action cards */
+.ac{background:var(--s2);border:1px solid var(--b);border-radius:12px;padding:16px;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;transition:all .3s}
+.ac:hover{border-color:var(--p);transform:translateX(3px)}
+.ac__r{min-width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Space Grotesk',sans-serif;font-size:.95rem}
+.ac__r--h{background:linear-gradient(135deg,var(--g),var(--c));color:#000}
+.ac__r--m{background:linear-gradient(135deg,var(--o),#fbbf24);color:#000}
+.ac__r--l{background:var(--s3);color:var(--m)}
+.ac__b{flex:1}
+.ac__title{font-weight:700;font-size:.9rem}
+.ac__tgt{font-size:.8rem;color:var(--c)}
+.ac__meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;font-size:.72rem;color:var(--m)}
+.ac__meta span{display:flex;align-items:center;gap:3px}
+.stars{color:var(--o);letter-spacing:1px}
+.tag{padding:2px 8px;border-radius:16px;font-size:.68rem;font-weight:700}
+.tag--h{background:rgba(16,185,129,.2);color:var(--gl)}
+.tag--m{background:rgba(245,158,11,.2);color:var(--o)}
+.tag--l{background:rgba(122,120,150,.2);color:var(--m)}
 
-.mission-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:10px;display:flex;align-items:center;gap:14px}
-.mission-status{min-width:10px;height:10px;border-radius:50%}
-.mission-status--pending{background:var(--orange)}
-.mission-status--completed{background:var(--green)}
-.mission-status--skipped{background:var(--muted)}
+/* Goals */
+.goal{background:var(--s2);border-radius:10px;padding:14px;margin-bottom:8px}
+.goal__bar{height:6px;background:var(--s3);border-radius:3px;margin-top:8px;overflow:hidden}
+.goal__fill{height:100%;border-radius:3px;transition:width .5s}
 
-.tab-bar{display:flex;gap:4px;margin-bottom:20px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px}
-.tab{padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:none}
-.tab:hover{color:var(--text)}
-.tab.active{background:var(--purple);color:#fff}
+/* Achievements */
+.ach{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--s2);border-radius:10px;margin-bottom:6px}
+.ach__icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.ach--done .ach__icon{background:linear-gradient(135deg,var(--g),var(--c));color:#000}
+.ach--wip .ach__icon{background:var(--s3);color:var(--m)}
 
-.section{display:none}
-.section.active{display:block}
+/* Planner */
+.plan-item{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--s2);border-radius:10px;margin-bottom:6px}
+.plan-stars{min-width:70px;color:var(--o);font-size:.82rem}
 
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+.week-cat{margin-bottom:16px}
+.week-cat__t{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;padding-left:4px}
+.week-cat__t--u{color:var(--r)}
+.week-cat__t--i{color:var(--o)}
+.week-cat__t--o{color:var(--m)}
 
-.benchmark-row{display:grid;grid-template-columns:150px repeat(4,1fr);gap:8px;padding:8px 12px;font-size:.82rem;border-bottom:1px solid var(--border)}
-.benchmark-row--header{font-weight:700;color:var(--muted);font-size:.72rem;text-transform:uppercase}
-.benchmark-row:last-child{border-bottom:none}
-.no-data{color:var(--muted);font-style:italic}
+@media(max-width:800px){.sb{width:180px}.main{margin-left:180px;padding:16px}}
+@media(max-width:600px){.sb{display:none}.main{margin-left:0}}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<div class="header">
-  <h1><i class="fas fa-rocket" style="color:var(--purple-l)"></i> Growth <span>Intelligence</span></h1>
-  <div class="header__actions">
-    <span id="gi-badge" class="badge badge--pending">Carregando...</span>
-    <a href="/admin/seo" class="btn btn--outline btn--sm"><i class="fas fa-arrow-left"></i> Dashboard SEO</a>
+<!-- Sidebar -->
+<nav class="sb">
+  <div class="sb__logo">GOS <span>v1</span></div>
+  <div class="sb__sec">Estratégia</div>
+  <button class="sb__link active" data-tab="executive"><i class="fas fa-bolt"></i> Hoje</button>
+  <button class="sb__link" data-tab="strategy"><i class="fas fa-brain"></i> Consultor</button>
+  <button class="sb__link" data-tab="intelligence"><i class="fas fa-gem"></i> Intelligence</button>
+  <div class="sb__sec">Planejamento</div>
+  <button class="sb__link" data-tab="daily"><i class="fas fa-calendar-day"></i> Plano Diário</button>
+  <button class="sb__link" data-tab="weekly"><i class="fas fa-calendar-week"></i> Plano Semanal</button>
+  <button class="sb__link" data-tab="goals"><i class="fas fa-bullseye"></i> Metas</button>
+  <div class="sb__sec">Execução</div>
+  <button class="sb__link" data-tab="missions"><i class="fas fa-flag"></i> Missões</button>
+  <button class="sb__link" data-tab="opportunities"><i class="fas fa-search-dollar"></i> Oportunidades</button>
+  <div class="sb__sec">Evolução</div>
+  <button class="sb__link" data-tab="timeline"><i class="fas fa-chart-area"></i> Timeline</button>
+  <button class="sb__link" data-tab="achievements"><i class="fas fa-trophy"></i> Conquistas</button>
+  <div style="margin-top:auto;padding:16px">
+    <a href="/admin/seo.html" class="btn" style="width:100%;justify-content:center"><i class="fas fa-arrow-left"></i> Dashboard SEO</a>
+  </div>
+</nav>
+
+<!-- Main -->
+<main class="main">
+<div class="hdr">
+  <h1><i class="fas fa-rocket" style="color:var(--pl)"></i> Growth <em>Operating System</em></h1>
+  <div style="display:flex;gap:8px;align-items:center">
+    <span id="gos-badge" class="badge badge--o">Carregando...</span>
   </div>
 </div>
 
-<!-- Tabs -->
-<div class="tab-bar" id="gi-tabs">
-  <button class="tab active" data-tab="executive">Hoje você deve fazer</button>
-  <button class="tab" data-tab="intelligence">Intelligence</button>
-  <button class="tab" data-tab="missions">Missões</button>
-  <button class="tab" data-tab="timeline">Timeline</button>
-  <button class="tab" data-tab="benchmark">Benchmark</button>
+<!-- Strategy Advisor Card (always visible) -->
+<div id="strategy-card" class="pnl" style="border-left:3px solid var(--p);margin-bottom:20px">
+  <div style="font-size:.72rem;color:var(--m);margin-bottom:4px"><i class="fas fa-brain" style="color:var(--pl)"></i> CONSULTOR ESTRATÉGICO</div>
+  <div id="strategy-text" style="font-size:.95rem;font-weight:600">Analisando dados...</div>
+  <div id="strategy-detail" style="font-size:.8rem;color:var(--m);margin-top:6px"></div>
 </div>
 
-<!-- ===== TAB 1: PAINEL EXECUTIVO ===== -->
+<!-- Tab: Executive -->
 <div class="section active" id="tab-executive">
-  <div id="exec-actions" class="loading"><div class="spinner"></div> Calculando prioridades...</div>
+  <div class="pnl__t"><i class="fas fa-bolt"></i> Hoje você deve fazer</div>
+  <div id="exec-list"><div class="loading"><div class="spinner"></div> Calculando prioridades...</div></div>
 </div>
 
-<!-- ===== TAB 2: INTELLIGENCE ===== -->
+<!-- Tab: Strategy -->
+<div class="section" id="tab-strategy">
+  <div id="strat-full"><div class="loading"><div class="spinner"></div> Gerando conselho...</div></div>
+</div>
+
+<!-- Tab: Intelligence -->
 <div class="section" id="tab-intelligence">
-  <div id="intel-content" class="loading"><div class="spinner"></div> Gerando inteligência...</div>
+  <div id="intel-data"><div class="loading"><div class="spinner"></div> Gerando inteligência...</div></div>
 </div>
 
-<!-- ===== TAB 3: MISSÕES ===== -->
+<!-- Tab: Daily -->
+<div class="section" id="tab-daily">
+  <div id="daily-plan"><div class="loading"><div class="spinner"></div> Gerando plano diário...</div></div>
+</div>
+
+<!-- Tab: Weekly -->
+<div class="section" id="tab-weekly">
+  <div id="weekly-plan"><div class="loading"><div class="spinner"></div> Gerando plano semanal...</div></div>
+</div>
+
+<!-- Tab: Goals -->
+<div class="section" id="tab-goals">
+  <div id="goals-data"><div class="loading"><div class="spinner"></div> Carregando metas...</div></div>
+</div>
+
+<!-- Tab: Missions -->
 <div class="section" id="tab-missions">
-  <div id="missions-content" class="loading"><div class="spinner"></div> Carregando missões...</div>
+  <div id="missions-data"><div class="loading"><div class="spinner"></div> Carregando missões...</div></div>
 </div>
 
-<!-- ===== TAB 4: TIMELINE ===== -->
+<!-- Tab: Opportunities -->
+<div class="section" id="tab-opportunities">
+  <div id="opps-data"><div class="loading"><div class="spinner"></div> Analisando oportunidades...</div></div>
+</div>
+
+<!-- Tab: Timeline -->
 <div class="section" id="tab-timeline">
-  <div id="timeline-content" class="loading"><div class="spinner"></div> Carregando timeline...</div>
+  <div id="tl-data"><div class="loading"><div class="spinner"></div> Carregando timeline...</div></div>
 </div>
 
-<!-- ===== TAB 5: BENCHMARK ===== -->
-<div class="section" id="tab-benchmark">
-  <div id="benchmark-content" class="loading"><div class="spinner"></div> Gerando benchmark...</div>
+<!-- Tab: Achievements -->
+<div class="section" id="tab-achievements">
+  <div id="ach-data"><div class="loading"><div class="spinner"></div> Carregando conquistas...</div></div>
+</div>
+
+</main>
 </div>
 
 <script>
-const API = '';
+const G = '/api/seo/gos';
+async function gf(p){try{const r=await fetch(G+p);return await r.json();}catch(e){return{error:true,message:e.message};}}
 
-async function gFetch(path) {
-  try {
-    const r = await fetch(API + path);
-    return await r.json();
-  } catch(e) { return { error: true, message: e.message }; }
+// Tabs
+document.querySelectorAll('.sb__link[data-tab]').forEach(l=>{l.addEventListener('click',()=>{
+  document.querySelectorAll('.sb__link').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+  l.classList.add('active');
+  document.getElementById('tab-'+l.dataset.tab).classList.add('active');
+  lt(l.dataset.tab);
+});});
+
+const ld={};
+function lt(n){if(ld[n])return;ld[n]=true;
+  ({executive:loadExec,strategy:loadStrategy,intelligence:loadIntel,daily:loadDaily,weekly:loadWeekly,goals:loadGoals,missions:loadMissions,opportunities:loadOpps,timeline:loadTimeline,achievements:loadAch})[n]();
 }
 
-// ===== TABS =====
-document.querySelectorAll('#gi-tabs .tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('#gi-tabs .tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-    loadTab(tab.dataset.tab);
-  });
-});
+function stars(n){return '★'.repeat(Math.min(5,n||0))+'☆'.repeat(Math.max(0,5-(n||0)));}
+function rc(i){return i<=2?'ac__r--h':i<=5?'ac__r--m':'ac__r--l';}
+function tc(l){const x=(l||'').toLowerCase();return x.includes('muito alto')||x.includes('alto')?'tag--h':x.includes('méd')||x.includes('med')?'tag--m':'tag--l';}
 
-const loaded = {};
-function loadTab(name) {
-  if (loaded[name]) return;
-  loaded[name] = true;
-  switch(name) {
-    case 'executive': loadExecutive(); break;
-    case 'intelligence': loadIntelligence(); break;
-    case 'missions': loadMissions(); break;
-    case 'timeline': loadTimeline(); break;
-    case 'benchmark': loadBenchmark(); break;
-  }
+// Strategy Advisor (auto-load)
+async function loadStrategyCard(){
+  const d=await gf('/strategy');
+  const el=document.getElementById('strategy-text');
+  const dl=document.getElementById('strategy-detail');
+  if(!d.advice){el.textContent='Nenhuma oportunidade identificada.';return;}
+  const a=d.advice;
+  el.innerHTML=`Hoje sua melhor oportunidade é: <span style="color:var(--c)">${a.opportunity}</span>`;
+  dl.innerHTML=`<strong>Por quê?</strong> ${a.why} · <strong>Tempo:</strong> ${a.estimatedTime} · <strong>Ganho:</strong> ${a.estimatedGain} · <strong>Impacto:</strong> ${a.impact} · <span class="stars">${stars(a.stars)}</span>`;
 }
 
-function impactClass(label) {
-  const l = (label || '').toLowerCase().replace(/\s/g, '-');
-  if (l === 'muito-alto') return 'impact--muito-alto';
-  if (l === 'alto') return 'impact--alto';
-  if (l === 'médio' || l === 'medio') return 'impact--medio';
-  return 'impact--baixo';
+// Executive
+async function loadExec(){
+  const d=await gf('/dashboard');
+  const el=document.getElementById('exec-list');
+  if(!d.actions||d.actions.length===0){el.innerHTML='<div style="text-align:center;padding:30px;color:var(--m)"><i class="fas fa-check-circle" style="color:var(--g);font-size:2rem;display:block;margin-bottom:8px"></i>Nenhuma ação prioritária.</div>';return;}
+  el.innerHTML=d.actions.map((a,i)=>`<div class="ac"><div class="ac__r ${rc(i+1)}">${i+1}</div><div class="ac__b"><div class="ac__title">${a.title}</div><div class="ac__tgt">${a.target}</div><div class="ac__meta"><span class="tag ${tc(a.impactLabel)}">${a.impactLabel}</span><span><i class="fas fa-clock"></i> ${a.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${a.estimatedGain}</span><span class="stars">${stars(a.stars)}</span></div>${a.details?`<div style="font-size:.72rem;color:var(--m);margin-top:4px">${a.details}</div>`:''}</div></div>`).join('');
+  document.getElementById('gos-badge').className='badge badge--g';
+  document.getElementById('gos-badge').textContent=d.actions.length+' ações';
 }
 
-function rankClass(idx) {
-  if (idx <= 2) return 'action-rank--high';
-  if (idx <= 5) return 'action-rank--medium';
-  return 'action-rank--low';
+// Strategy full
+async function loadStrategy(){
+  const d=await gf('/strategy');
+  const el=document.getElementById('strat-full');
+  if(!d.advice){el.innerHTML='<div style="color:var(--m)">Nenhuma oportunidade identificada.</div>';return;}
+  const a=d.advice;
+  el.innerHTML=`<div class="pnl"><div class="pnl__t"><i class="fas fa-brain"></i> Consultor Estratégico</div>
+    <div style="font-size:1.1rem;font-weight:700;margin-bottom:12px">Hoje sua melhor oportunidade é:</div>
+    <div style="font-size:1.2rem;color:var(--c);font-weight:800;margin-bottom:16px">${a.opportunity}</div>
+    <div class="sg"><div class="sc sc--p"><div class="sc__l">Por quê?</div><div style="font-size:.85rem">${a.why}</div></div>
+    <div class="sc sc--g"><div class="sc__l">Tempo</div><div class="sc__v">${a.estimatedTime}</div></div>
+    <div class="sc sc--c"><div class="sc__l">Ganho estimado</div><div class="sc__v" style="font-size:1.1rem">${a.estimatedGain}</div></div>
+    <div class="sc sc--o"><div class="sc__l">Impacto</div><div class="sc__v">${a.impact}</div><div class="sc__s"><span class="stars">${stars(a.stars)}</span></div></div></div></div>`;
 }
 
-// ===== PAINEL EXECUTIVO =====
-async function loadExecutive() {
-  const el = document.getElementById('exec-actions');
-  const data = await gFetch('/api/seo/growth/engine/dashboard');
-
-  if (data.error && !data.actions) { el.innerHTML = '<div style="color:var(--muted)"><i class="fas fa-exclamation-triangle" style="color:var(--orange)"></i> Dados temporariamente indisponíveis.</div>'; return; }
-
-  const actions = data.actions || [];
-  if (actions.length === 0) {
-    el.innerHTML = '<div style="color:var(--muted);padding:20px;text-align:center"><i class="fas fa-check-circle" style="color:var(--green);font-size:2rem;display:block;margin-bottom:8px"></i>Nenhuma ação prioritária no momento.</div>';
-    return;
-  }
-
-  let html = '';
-  actions.forEach((a, i) => {
-    html += `<div class="action-card">
-      <div class="action-rank ${rankClass(i + 1)}">${i + 1}</div>
-      <div class="action-body">
-        <div class="action-title">${a.title}</div>
-        <div class="action-target">${a.target}</div>
-        <div class="action-meta">
-          <span class="impact-tag ${impactClass(a.impactLabel)}">Impacto: ${a.impactLabel || '—'}</span>
-          <span><i class="fas fa-clock"></i> ${a.estimatedTime || '—'}</span>
-          <span><i class="fas fa-chart-line"></i> ${a.estimatedGain || '—'}</span>
-        </div>
-        ${a.details ? `<div style="font-size:.75rem;color:var(--muted);margin-top:6px">${a.details}</div>` : ''}
-      </div>
-    </div>`;
-  });
-
-  el.innerHTML = html;
-  document.getElementById('gi-badge').className = 'badge badge--live';
-  document.getElementById('gi-badge').textContent = `${actions.length} ações`;
+// Intelligence
+async function loadIntel(){
+  const d=await gf('/intelligence');
+  const el=document.getElementById('intel-data');
+  if(d.error){el.innerHTML='<div style="color:var(--m)">Dados temporariamente indisponíveis.</div>';return;}
+  const cards=[{l:'Oportunidades',v:d.totalOpportunities||0,c:'p',i:'gem'},{l:'Próximas Página 1',v:d.nearPage1||0,c:'g',i:'trophy'},{l:'Backlinks sugeridos',v:d.backlinksRecommended||0,c:'c',i:'link'},{l:'Clusters incompletos',v:d.incompleteClusters||0,c:'o',i:'project-diagram'},{l:'Conteúdos a expandir',v:d.contentSuggestions||0,c:'r',i:'pen'},{l:'Score médio',v:(d.averageScore||0)+'/100',c:'p',i:'star'}];
+  let h='<div class="sg">'+cards.map(c=>`<div class="sc sc--${c.c}"><div class="sc__l"><i class="fas fa-${c.i}"></i> ${c.l}</div><div class="sc__v">${c.v}</div></div>`).join('')+'</div>';
+  h+=`<div class="pnl"><div class="pnl__t"><i class="fas fa-arrow-down"></i> Perdeu posições?</div><div style="font-size:.88rem">${d.pagesDeclined||'Não detectado'}</div></div>`;
+  const ins=d.insights||[];
+  if(ins.length){h+='<div class="pnl"><div class="pnl__t"><i class="fas fa-lightbulb"></i> Insights</div>';ins.forEach(i=>{const cl=i.type==='positive'?'var(--g)':i.type==='warning'?'var(--o)':'var(--c)';h+=`<div style="padding:8px 12px;margin-bottom:4px;border-left:3px solid ${cl};background:var(--s2);border-radius:0 8px 8px 0;font-size:.82rem">${i.message}</div>`;});h+='</div>';}
+  el.innerHTML=h;
 }
 
-// ===== INTELLIGENCE =====
-async function loadIntelligence() {
-  const el = document.getElementById('intel-content');
-  const data = await gFetch('/api/seo/growth/engine/intelligence');
-
-  if (data.error && !data.totalOpportunities) { el.innerHTML = '<div style="color:var(--muted)">Dados temporariamente indisponíveis.</div>'; return; }
-
-  let html = '<div class="stats-grid">';
-  const cards = [
-    { label: 'Oportunidades', value: data.totalOpportunities || 0, color: 'purple', icon: 'gem' },
-    { label: 'Próximas da Página 1', value: data.nearPage1 || 0, color: 'green', icon: 'trophy' },
-    { label: 'Backlinks sugeridos', value: data.backlinksRecommended || 0, color: 'cyan', icon: 'link' },
-    { label: 'Clusters incompletos', value: data.incompleteClusters || 0, color: 'orange', icon: 'project-diagram' },
-    { label: 'Conteúdos a expandir', value: data.contentSuggestions || 0, color: 'red', icon: 'pen' },
-    { label: 'Score médio', value: (data.averageScore || 0) + '/100', color: 'purple', icon: 'star' }
-  ];
-  cards.forEach(c => {
-    html += `<div class="stat-card stat-card--${c.color}"><div class="stat-card__label"><i class="fas fa-${c.icon}"></i> ${c.label}</div><div class="stat-card__value">${c.value}</div></div>`;
-  });
-  html += '</div>';
-
-  // Insights
-  const insights = data.insights || [];
-  if (insights.length > 0) {
-    html += '<div class="panel"><div class="panel__title" style="margin-bottom:12px"><i class="fas fa-brain"></i> Insights</div>';
-    insights.forEach(i => {
-      const color = i.type === 'positive' ? 'var(--green)' : i.type === 'warning' ? 'var(--orange)' : 'var(--cyan)';
-      const icon = i.type === 'positive' ? 'check-circle' : i.type === 'warning' ? 'exclamation-triangle' : 'info-circle';
-      html += `<div style="padding:8px 12px;margin-bottom:6px;border-left:3px solid ${color};background:var(--surface2);border-radius:0 8px 8px 0;font-size:.85rem"><i class="fas fa-${icon}" style="color:${color};margin-right:8px"></i>${i.message}</div>`;
-    });
-    html += '</div>';
-  }
-
-  // Posições perdidas
-  html += `<div class="panel"><div class="panel__title" style="margin-bottom:8px"><i class="fas fa-arrow-down"></i> Perdeu posições?</div><div style="font-size:.88rem">${data.lostPositions || 'Não detectado'}</div></div>`;
-
-  el.innerHTML = html;
+// Daily Planner
+async function loadDaily(){
+  const d=await gf('/planner/daily');
+  const el=document.getElementById('daily-plan');
+  if(!d.plan||d.plan.length===0){el.innerHTML='<div style="color:var(--m)">Nenhum plano disponível.</div>';return;}
+  let h=`<div class="pnl"><div class="pnl__t"><i class="fas fa-calendar-day"></i> Plano de Hoje <span style="font-size:.72rem;color:var(--m);font-weight:400;margin-left:8px">${d.date} · Total: ${d.totalEstimatedTime}</span></div>`;
+  d.plan.forEach(p=>{h+=`<div class="plan-item"><div class="plan-stars">${stars(p.stars)}</div><div style="flex:1"><div style="font-weight:700;font-size:.88rem">${p.title}</div><div style="font-size:.78rem;color:var(--c)">${p.target}</div></div><span style="font-size:.72rem;color:var(--m)">${p.estimatedTime}</span></div>`;});
+  h+='</div>';el.innerHTML=h;
 }
 
-// ===== MISSÕES =====
-async function loadMissions() {
-  const el = document.getElementById('missions-content');
-  const data = await gFetch('/api/seo/growth/missions');
-
-  if (data.error && !data.missions) { el.innerHTML = '<div style="color:var(--muted)">Dados temporariamente indisponíveis.</div>'; return; }
-
-  const missions = data.missions || [];
-  if (missions.length === 0) {
-    el.innerHTML = '<div style="color:var(--muted);text-align:center;padding:20px">Nenhuma missão disponível.</div>';
-    return;
-  }
-
-  let html = '';
-  missions.forEach(m => {
-    const statusColor = m.status === 'Concluída' ? 'var(--green)' : m.status === 'Pendente' ? 'var(--orange)' : 'var(--muted)';
-    const statusClass = m.status === 'Concluída' ? 'completed' : m.status === 'Pendente' ? 'pending' : 'skipped';
-    html += `<div class="mission-card">
-      <div class="mission-status mission-status--${statusClass}"></div>
-      <div style="flex:1">
-        <div style="font-weight:700;font-size:.9rem">${m.title} — <span style="color:var(--cyan)">${m.target}</span></div>
-        <div style="display:flex;gap:14px;margin-top:4px;font-size:.75rem;color:var(--muted)">
-          <span><i class="fas fa-bolt"></i> ${m.impactLabel}</span>
-          <span><i class="fas fa-clock"></i> ${m.estimatedTime}</span>
-          <span><i class="fas fa-chart-line"></i> ${m.estimatedGain}</span>
-          <span>Dificuldade: ${m.complexity}</span>
-        </div>
-      </div>
-      <span style="font-size:.75rem;font-weight:600;color:${statusColor}">${m.status}</span>
-    </div>`;
-  });
-
-  el.innerHTML = html;
+// Weekly Planner
+async function loadWeekly(){
+  const d=await gf('/planner/weekly');
+  const el=document.getElementById('weekly-plan');
+  let h=`<div class="pnl"><div class="pnl__t"><i class="fas fa-calendar-week"></i> Plano Semanal <span style="font-size:.72rem;color:var(--m);font-weight:400;margin-left:8px">${d.week||''}</span></div>`;
+  function renderCat(items,label,cls){if(!items||!items.length)return'';let s=`<div class="week-cat"><div class="week-cat__t week-cat__t--${cls}">${label}</div>`;items.forEach(i=>{s+=`<div class="plan-item"><div style="flex:1"><div style="font-weight:600;font-size:.85rem">${i.title} — <span style="color:var(--c)">${i.target}</span></div></div><span class="tag ${tc(i.impactLabel)}" style="font-size:.65rem">${i.impactLabel}</span><span style="font-size:.72rem;color:var(--m);margin-left:8px">${i.estimatedTime}</span></div>`;});return s+'</div>';}
+  h+=renderCat(d.urgent,'🔴 Urgente','u')+renderCat(d.important,'🟡 Importante','i')+renderCat(d.optional,'⚪ Opcional','o');
+  h+='</div>';el.innerHTML=h;
 }
 
-// ===== TIMELINE =====
-async function loadTimeline() {
-  const el = document.getElementById('timeline-content');
-  const data = await gFetch('/api/seo/growth/timeline');
-
-  if (data.error) { el.innerHTML = '<div style="color:var(--muted)">Dados temporariamente indisponíveis.</div>'; return; }
-
-  if (!data.sufficient) {
-    el.innerHTML = `<div class="panel" style="text-align:center;padding:40px">
-      <i class="fas fa-chart-area" style="font-size:3rem;color:var(--muted);margin-bottom:12px;display:block"></i>
-      <div style="font-weight:700;font-size:1.1rem;margin-bottom:6px">Dados insuficientes</div>
-      <div style="color:var(--muted);font-size:.88rem">${data.message || 'Snapshots são capturados automaticamente a cada visita.'}</div>
-      <div style="margin-top:12px;font-size:.8rem;color:var(--muted)">Snapshots: ${data.total || 0} (mínimo: 2)</div>
-    </div>`;
-    return;
-  }
-
-  // Render table com snapshots
-  const snaps = data.snapshots || [];
-  let html = '<div class="panel"><div class="panel__title" style="margin-bottom:12px"><i class="fas fa-chart-area"></i> Evolução (7d rolling)</div>';
-  html += '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.82rem">';
-  html += '<thead><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:8px;color:var(--muted)">Data</th><th style="padding:8px;color:var(--muted)">Impressões</th><th style="padding:8px;color:var(--muted)">Cliques</th><th style="padding:8px;color:var(--muted)">CTR</th><th style="padding:8px;color:var(--muted)">Posição</th></tr></thead><tbody>';
-  snaps.forEach(s => {
-    const d = new Date(s.timestamp).toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
-    html += `<tr style="border-bottom:1px solid var(--border)"><td style="padding:8px">${d}</td><td style="padding:8px;text-align:center">${s['7d'].impressions}</td><td style="padding:8px;text-align:center">${s['7d'].clicks}</td><td style="padding:8px;text-align:center">${s['7d'].ctr}%</td><td style="padding:8px;text-align:center">${s['7d'].position}</td></tr>`;
-  });
-  html += '</tbody></table></div></div>';
-  el.innerHTML = html;
+// Monthly Goals
+async function loadGoals(){
+  const d=await gf('/planner/goals');
+  const el=document.getElementById('goals-data');
+  if(!d.goals){el.innerHTML='<div style="color:var(--m)">Sem metas.</div>';return;}
+  let h=`<div class="pnl"><div class="pnl__t"><i class="fas fa-bullseye"></i> Metas de ${d.month||'—'}</div>`;
+  d.goals.forEach(g=>{const cl=g.pct>=100?'var(--g)':g.pct>=50?'var(--o)':'var(--r)';
+    h+=`<div class="goal"><div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:700;font-size:.88rem">${g.name}</div><div style="font-size:.82rem;color:${cl};font-weight:700">${Math.min(100,g.pct)}%</div></div><div style="font-size:.75rem;color:var(--m);margin-top:2px">${g.current} / ${g.target} ${g.unit}</div><div class="goal__bar"><div class="goal__fill" style="width:${Math.min(100,g.pct)}%;background:${cl}"></div></div></div>`;});
+  h+='</div>';el.innerHTML=h;
 }
 
-// ===== BENCHMARK =====
-async function loadBenchmark() {
-  const el = document.getElementById('benchmark-content');
-  const data = await gFetch('/api/seo/growth/benchmark');
-
-  if (data.error) { el.innerHTML = '<div style="color:var(--muted)">Dados temporariamente indisponíveis.</div>'; return; }
-
-  let html = '<div class="panel"><div class="panel__title" style="margin-bottom:16px"><i class="fas fa-trophy"></i> Comparativo</div>';
-
-  // Header
-  html += '<div class="benchmark-row benchmark-row--header"><div>Métrica</div><div>' + (data.own ? data.own.name : 'Seu domínio') + '</div>';
-  (data.competitors || []).forEach(c => html += `<div>${c.name}</div>`);
-  html += '</div>';
-
-  // Rows
-  const metrics = [
-    { key: 'pages', label: 'Páginas' },
-    { key: 'internalLinks', label: 'Links internos' },
-    { key: 'avgLinksPerPage', label: 'Média links/pág' },
-    { key: 'orphanPages', label: 'Pág. órfãs' },
-    { key: 'seoScore', label: 'Score SEO' }
-  ];
-
-  metrics.forEach(m => {
-    html += `<div class="benchmark-row"><div style="font-weight:600">${m.label}</div>`;
-    html += `<div style="color:var(--green-l);font-weight:700">${data.own && data.own[m.key] !== null ? data.own[m.key] : '—'}</div>`;
-    (data.competitors || []).forEach(c => {
-      html += `<div class="no-data">${c[m.key] !== null ? c[m.key] : 'Sem dados'}</div>`;
-    });
-    html += '</div>';
-  });
-
-  html += '</div>';
-
-  if (data.note) {
-    html += `<div style="margin-top:12px;padding:12px;background:var(--surface2);border-radius:10px;font-size:.8rem;color:var(--muted)"><i class="fas fa-info-circle" style="color:var(--cyan);margin-right:6px"></i>${data.note}</div>`;
-  }
-
-  el.innerHTML = html;
+// Missions
+async function loadMissions(){
+  const d=await gf('/missions');
+  const el=document.getElementById('missions-data');
+  const ms=d.missions||[];
+  if(!ms.length){el.innerHTML='<div style="color:var(--m);text-align:center;padding:20px">Nenhuma missão.</div>';return;}
+  let h=`<div class="pnl"><div class="pnl__t"><i class="fas fa-flag"></i> Centro de Missões <span style="font-size:.72rem;color:var(--m);font-weight:400;margin-left:8px">${d.stats?d.stats.completed+' concluídas':''}</span></div>`;
+  ms.forEach((m,i)=>{const sc=m.status==='Concluída'?'var(--g)':m.status==='Pendente'?'var(--o)':'var(--m)';
+    h+=`<div class="ac"><div class="ac__r ${rc(i+1)}" style="font-size:.75rem">${m.rank}</div><div class="ac__b"><div class="ac__title">${m.title} — <span style="color:var(--c)">${m.target}</span></div><div class="ac__meta"><span class="tag ${tc(m.impactLabel)}">${m.impactLabel}</span><span><i class="fas fa-clock"></i> ${m.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${m.estimatedGain}</span><span class="stars">${stars(m.stars)}</span><span>Dificuldade: ${m.complexity}</span></div></div><span style="font-size:.75rem;font-weight:700;color:${sc}">${m.status}</span></div>`;});
+  h+='</div>';el.innerHTML=h;
 }
 
-// Auto-load first tab
-loadTab('executive');
+// Opportunities
+async function loadOpps(){
+  const d=await gf('/opportunities');
+  const el=document.getElementById('opps-data');
+  const pages=d.pages||[];
+  if(!pages.length){el.innerHTML='<div style="color:var(--m)">Nenhuma oportunidade.</div>';return;}
+  let h='<div class="pnl"><div class="pnl__t"><i class="fas fa-search-dollar"></i> Oportunidades ('+pages.length+' páginas)</div><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8rem">';
+  h+='<thead><tr style="border-bottom:1px solid var(--b)"><th style="text-align:left;padding:8px;color:var(--m)">Página</th><th style="padding:8px;color:var(--m)">Score Opp.</th><th style="padding:8px;color:var(--m)">Nível</th><th style="padding:8px;color:var(--m)">Posição</th><th style="padding:8px;color:var(--m)">Impressões</th><th style="padding:8px;color:var(--m)">CTR</th></tr></thead><tbody>';
+  pages.slice(0,30).forEach(p=>{h+=`<tr style="border-bottom:1px solid var(--b)"><td style="padding:8px;color:var(--c)">${p.page}</td><td style="padding:8px;text-align:center;font-weight:700">${p.opportunityScore}</td><td style="padding:8px;text-align:center"><span class="tag ${tc(p.opportunityLevel)}">${p.opportunityLevel}</span></td><td style="padding:8px;text-align:center">${p.position||'—'}</td><td style="padding:8px;text-align:center">${p.impressions}</td><td style="padding:8px;text-align:center">${p.ctr||0}%</td></tr>`;});
+  h+='</tbody></table></div></div>';el.innerHTML=h;
+}
+
+// Timeline
+async function loadTimeline(){
+  const d=await gf('/timeline');
+  const el=document.getElementById('tl-data');
+  if(!d.sufficient){el.innerHTML=`<div class="pnl" style="text-align:center;padding:40px"><i class="fas fa-chart-area" style="font-size:2.5rem;color:var(--m);display:block;margin-bottom:10px"></i><div style="font-weight:700;font-size:1rem;margin-bottom:4px">Dados insuficientes</div><div style="color:var(--m);font-size:.85rem">${d.message||'Snapshots capturados automaticamente.'}</div></div>`;return;}
+  const s=d.snapshots||[];
+  let h='<div class="pnl"><div class="pnl__t"><i class="fas fa-chart-area"></i> Evolução</div><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8rem"><thead><tr style="border-bottom:1px solid var(--b)"><th style="text-align:left;padding:8px;color:var(--m)">Data</th><th style="padding:8px;color:var(--m)">Impressões</th><th style="padding:8px;color:var(--m)">Cliques</th><th style="padding:8px;color:var(--m)">CTR</th><th style="padding:8px;color:var(--m)">Posição</th></tr></thead><tbody>';
+  s.forEach(x=>{const dt=new Date(x.ts).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});h+=`<tr style="border-bottom:1px solid var(--b)"><td style="padding:8px">${dt}</td><td style="padding:8px;text-align:center">${x.impressions}</td><td style="padding:8px;text-align:center">${x.clicks}</td><td style="padding:8px;text-align:center">${x.ctr}%</td><td style="padding:8px;text-align:center">${x.position}</td></tr>`;});
+  h+='</tbody></table></div></div>';el.innerHTML=h;
+}
+
+// Achievements
+async function loadAch(){
+  const d=await gf('/achievements');
+  const el=document.getElementById('ach-data');
+  const achs=d.achievements||[];
+  let h='<div class="pnl"><div class="pnl__t"><i class="fas fa-trophy"></i> Conquistas</div>';
+  achs.forEach(a=>{const done=a.status==='Conquistado';
+    h+=`<div class="ach ${done?'ach--done':'ach--wip'}"><div class="ach__icon">${done?'<i class="fas fa-check"></i>':'<i class="fas fa-hourglass-half"></i>'}</div><div style="flex:1"><div style="font-weight:700;font-size:.88rem">${a.name}</div><div style="font-size:.75rem;color:var(--m)">${a.desc}</div></div><span style="font-size:.75rem;font-weight:600;color:${done?'var(--g)':'var(--m)'}}">${a.status}</span></div>`;});
+  h+='</div>';el.innerHTML=h;
+}
+
+// Auto-load
+loadStrategyCard();
+lt('executive');
 </script>
 </body>
 </html>
