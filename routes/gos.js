@@ -118,8 +118,64 @@ router.get('/telemetry', safe(() => telemetry.getStats()));
 
 // Health
 router.get('/health', safe(() => ({
-  status: 'ok', modules: ['engine', 'missions', 'planner', 'snapshots', 'opportunities', 'telemetry'],
+  status: 'ok', modules: ['engine', 'missions', 'planner', 'snapshots', 'opportunities', 'telemetry', 'scoring', 'advisor', 'financial', 'simulator'],
   telemetry: telemetry.getStats(), timestamp: new Date().toISOString()
 })));
+
+// ============================================================
+// V2.2 — Centro de Comando Inteligente
+// ============================================================
+const scoring = require('../seo/gos/scoring');
+const advisor = require('../seo/gos/advisor');
+const financial = require('../seo/gos/financial');
+const simulator = require('../seo/gos/simulator');
+
+// Growth Score
+router.get('/growth-score', safe(async () => {
+  const intel = await engine.getIntelligence();
+  const stats = missions.getStats();
+  const scoreData = scoring.calculate({ ...intel, missionsCompleted: stats.completed, missionsTotal: stats.total });
+  const projection = scoring.project(scoreData.score, 3);
+  return { ...scoreData, projection, generatedAt: new Date().toISOString() };
+}));
+
+// General Advisor
+router.get('/advisor', safe(async () => advisor.getGeneralAdvice()));
+
+// Page-specific Advisor
+router.get('/advisor/page', safe(async (req) => {
+  const page = req.query.page || '/';
+  return advisor.adviseForPage(page);
+}));
+
+// Financial Estimation for a mission
+router.get('/financial', safe(async (req) => {
+  const impressions = parseInt(req.query.impressions) || 25;
+  const ctr = parseFloat(req.query.ctr) || 3;
+  return financial.estimateFinancial({ impressions, ctr });
+}));
+
+// Simulator
+router.get('/simulate', safe(async (req) => {
+  const intel = await engine.getIntelligence();
+  const stats = missions.getStats();
+  const gs = scoring.calculate({ ...intel, missionsCompleted: stats.completed, missionsTotal: stats.total });
+  return simulator.simulate({
+    currentScore: gs.score,
+    currentSEOHealth: 75,
+    currentCTR: intel.ctr || 2,
+    currentPosition: intel.avgPosition || 40,
+    missionsToComplete: parseInt(req.query.missions) || 3
+  });
+}));
+
+// Learning Metrics
+router.get('/learning', safe(async () => {
+  const dash = await engine.getExecutiveDashboard();
+  const mList = missions.generateMissions(dash.actions);
+  const stats = missions.getStats();
+  const metrics = scoring.getLearningMetrics(mList);
+  return { ...metrics, stats, generatedAt: new Date().toISOString() };
+}));
 
 module.exports = router;

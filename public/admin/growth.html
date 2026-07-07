@@ -108,11 +108,12 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--t);background:var(--bg
 
 <!-- Sidebar -->
 <nav class="sb">
-  <div class="sb__logo">GOS <span>v1</span></div>
+  <div class="sb__logo">GOS <span>v2</span></div>
   <div class="sb__sec">Estratégia</div>
-  <button class="sb__link active" data-tab="executive"><i class="fas fa-bolt"></i> Hoje</button>
-  <button class="sb__link" data-tab="strategy"><i class="fas fa-brain"></i> Consultor</button>
+  <button class="sb__link active" data-tab="executive"><i class="fas fa-bolt"></i> Centro de Comando</button>
+  <button class="sb__link" data-tab="strategy"><i class="fas fa-brain"></i> Consultor IA</button>
   <button class="sb__link" data-tab="intelligence"><i class="fas fa-gem"></i> Intelligence</button>
+  <button class="sb__link" data-tab="simulator"><i class="fas fa-flask"></i> Simulador</button>
   <div class="sb__sec">Planejamento</div>
   <button class="sb__link" data-tab="daily"><i class="fas fa-calendar-day"></i> Plano Diário</button>
   <button class="sb__link" data-tab="weekly"><i class="fas fa-calendar-week"></i> Plano Semanal</button>
@@ -123,6 +124,7 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--t);background:var(--bg
   <div class="sb__sec">Evolução</div>
   <button class="sb__link" data-tab="timeline"><i class="fas fa-chart-area"></i> Timeline</button>
   <button class="sb__link" data-tab="achievements"><i class="fas fa-trophy"></i> Conquistas</button>
+  <button class="sb__link" data-tab="learning"><i class="fas fa-graduation-cap"></i> Aprendizado</button>
   <div style="margin-top:auto;padding:16px">
     <a href="/admin/seo.html" class="btn" style="width:100%;justify-content:center"><i class="fas fa-arrow-left"></i> Dashboard SEO</a>
   </div>
@@ -134,6 +136,19 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--t);background:var(--bg
   <h1><i class="fas fa-rocket" style="color:var(--pl)"></i> Growth <em>Operating System</em></h1>
   <div style="display:flex;gap:8px;align-items:center">
     <span id="gos-badge" class="badge badge--o">Carregando...</span>
+  </div>
+</div>
+
+<!-- Score Cards -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+  <div class="pnl" style="text-align:center;padding:20px;border-top:3px solid var(--g)">
+    <div style="font-size:.72rem;color:var(--m)">SEO Health</div>
+    <div id="seo-health-val" style="font-size:2.2rem;font-weight:800;font-family:'Space Grotesk',sans-serif;background:linear-gradient(135deg,var(--g),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent">—</div>
+  </div>
+  <div class="pnl" style="text-align:center;padding:20px;border-top:3px solid var(--p)">
+    <div style="font-size:.72rem;color:var(--m)">Growth Score</div>
+    <div id="growth-score-val" style="font-size:2.2rem;font-weight:800;font-family:'Space Grotesk',sans-serif;background:linear-gradient(135deg,var(--p),var(--pl));-webkit-background-clip:text;-webkit-text-fill-color:transparent">—</div>
+    <div id="growth-score-proj" style="font-size:.7rem;color:var(--m);margin-top:2px"></div>
   </div>
 </div>
 
@@ -195,6 +210,16 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--t);background:var(--bg
   <div id="ach-data"><div class="loading"><div class="spinner"></div> Carregando conquistas...</div></div>
 </div>
 
+<!-- Tab: Simulator (V2.2) -->
+<div class="section" id="tab-simulator">
+  <div id="sim-data"><div class="loading"><div class="spinner"></div> Preparando simulador...</div></div>
+</div>
+
+<!-- Tab: Learning (V2.2) -->
+<div class="section" id="tab-learning">
+  <div id="learn-data"><div class="loading"><div class="spinner"></div> Calculando métricas...</div></div>
+</div>
+
 </main>
 </div>
 
@@ -213,7 +238,7 @@ document.querySelectorAll('.sb__link[data-tab]').forEach(l=>{l.addEventListener(
 
 const ld={};
 function lt(n){if(ld[n])return;ld[n]=true;
-  ({executive:loadExec,strategy:loadStrategy,intelligence:loadIntel,daily:loadDaily,weekly:loadWeekly,goals:loadGoals,missions:loadMissions,opportunities:loadOpps,timeline:loadTimeline,achievements:loadAch})[n]();
+  ({executive:loadExec,strategy:loadStrategy,intelligence:loadIntel,daily:loadDaily,weekly:loadWeekly,goals:loadGoals,missions:loadMissions,opportunities:loadOpps,timeline:loadTimeline,achievements:loadAch,simulator:loadSimulator,learning:loadLearning})[n]();
 }
 
 function stars(n){return '★'.repeat(Math.min(5,n||0))+'☆'.repeat(Math.max(0,5-(n||0)));}
@@ -348,7 +373,101 @@ async function loadAch(){
 
 // Auto-load
 loadStrategyCard();
+loadScores();
 lt('executive');
+
+// ============================================================
+// V2.2 — Centro de Comando Inteligente
+// ============================================================
+
+// Growth Score + SEO Health (header cards)
+async function loadScores() {
+  try {
+    const gs = await gf('/growth-score');
+    const el = document.getElementById('growth-score-val');
+    if (el && gs.score !== undefined) el.textContent = gs.score + '%';
+    const proj = document.getElementById('growth-score-proj');
+    if (proj && gs.projection) proj.textContent = '→ ' + gs.projection.projected + '% após ' + gs.projection.missionsNeeded + ' missões';
+
+    // SEO Health estimate (sum from intelligence)
+    const intel = await gf('/intelligence');
+    const hEl = document.getElementById('seo-health-val');
+    if (hEl) hEl.textContent = (intel.averageScore || 0) + '%';
+  } catch(e) {}
+}
+
+// Simulator
+async function loadSimulator() {
+  const el = document.getElementById('sim-data');
+  let h = '<div class="pnl"><div class="pnl__t"><i class="fas fa-flask"></i> Simular Crescimento</div>';
+  h += '<div style="display:flex;gap:12px;align-items:center;margin-bottom:16px">';
+  h += '<label style="font-size:.82rem;color:var(--m)">Missões a concluir:</label>';
+  h += '<select id="sim-missions" style="background:var(--s2);border:1px solid var(--b);color:var(--t);padding:6px 12px;border-radius:8px;font-size:.85rem">';
+  [1,2,3,5,7,10].forEach(n => h += `<option value="${n}" ${n===3?'selected':''}>${n}</option>`);
+  h += '</select>';
+  h += '<button class="btn" onclick="runSim()" style="background:linear-gradient(135deg,var(--p),#6d28d9);color:#fff;border:none"><i class="fas fa-play"></i> Simular</button>';
+  h += '</div><div id="sim-results"></div>';
+  h += '<div style="font-size:.7rem;color:var(--m);margin-top:12px;font-style:italic"><i class="fas fa-info-circle"></i> Simulação baseada em médias. Resultados reais podem variar.</div>';
+  h += '</div>';
+  el.innerHTML = h;
+  runSim();
+}
+
+async function runSim() {
+  const n = document.getElementById('sim-missions')?.value || 3;
+  const d = await gf('/simulate?missions=' + n);
+  const el = document.getElementById('sim-results');
+  if (!el || d.error) return;
+  let h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">';
+  const metrics = [
+    { label: 'Growth Score', before: d.before.growthScore + '%', after: d.after.growthScore + '%', delta: d.deltas.growthScore, color: '--p' },
+    { label: 'SEO Health', before: d.before.seoHealth + '%', after: d.after.seoHealth + '%', delta: d.deltas.seoHealth, color: '--g' },
+    { label: 'CTR', before: d.before.ctr, after: d.after.ctr, delta: d.deltas.ctr, color: '--c' },
+    { label: 'Posição Média', before: d.before.positionAvg, after: d.after.positionAvg, delta: d.deltas.positionAvg, color: '--o' }
+  ];
+  metrics.forEach(m => {
+    h += `<div class="sc" style="text-align:center"><div class="sc__l">${m.label}</div>
+      <div style="font-size:.8rem;color:var(--m)">${m.before}</div>
+      <div style="color:var(${m.color});font-size:.8rem">↓</div>
+      <div class="sc__v" style="font-size:1.3rem">${m.after}</div>
+      <div style="font-size:.72rem;color:var(--g);margin-top:2px">${m.delta}</div>
+    </div>`;
+  });
+  h += '</div>';
+  el.innerHTML = h;
+}
+
+// Learning Metrics
+async function loadLearning() {
+  const el = document.getElementById('learn-data');
+  const d = await gf('/learning');
+  if (d.error) { el.innerHTML = '<div style="color:var(--m)">Dados indisponíveis.</div>'; return; }
+  let h = '<div class="pnl"><div class="pnl__t"><i class="fas fa-graduation-cap"></i> Métricas de Aprendizado</div>';
+  const items = [
+    { label: 'Missões criadas', value: d.created || 0, icon: 'flag' },
+    { label: 'Missões concluídas', value: d.completed || 0, icon: 'check-circle' },
+    { label: 'Taxa de execução', value: d.executionRate || '0%', icon: 'percentage' },
+    { label: 'Tempo médio', value: d.avgTime || '—', icon: 'clock' },
+    { label: 'ROI médio', value: d.avgROI || '—', icon: 'chart-line' }
+  ];
+  h += '<div class="sg">';
+  items.forEach(i => {
+    h += `<div class="sc sc--p"><div class="sc__l"><i class="fas fa-${i.icon}"></i> ${i.label}</div><div class="sc__v" style="font-size:1.3rem">${i.value}</div></div>`;
+  });
+  h += '</div>';
+
+  // Mission stats
+  if (d.stats) {
+    const total = d.stats.total || 0;
+    const done = d.stats.completed || 0;
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+    h += `<div style="margin-top:16px"><div style="font-size:.82rem;font-weight:600;margin-bottom:6px">Progresso Geral: ${pct}%</div>`;
+    h += `<div class="goal__bar"><div class="goal__fill" style="width:${pct}%;background:var(--g)"></div></div>`;
+    h += `<div style="font-size:.72rem;color:var(--m);margin-top:4px">${done} de ${total} missões concluídas</div></div>`;
+  }
+  h += '</div>';
+  el.innerHTML = h;
+}
 </script>
 </body>
 </html>
