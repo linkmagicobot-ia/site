@@ -155,6 +155,9 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
     <a href="#" class="sidebar__link" data-section="indexnow"><i class="fas fa-bolt"></i> IndexNow</a>
     <a href="#" class="sidebar__link" data-section="validation"><i class="fas fa-shield-alt"></i> Validação</a>
     
+    <div class="sidebar__section">Growth Intelligence</div>
+    <a href="#" class="sidebar__link" data-section="growth"><i class="fas fa-rocket"></i> Growth</a>
+
     <div class="sidebar__section">Integrações</div>
     <a href="#" class="sidebar__link" data-section="integrations"><i class="fas fa-plug"></i> Conectar</a>
     
@@ -558,6 +561,56 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
       </div>
     </div>
 
+    <!-- ===== GROWTH INTELLIGENCE (V2.1) ===== -->
+    <div id="section-growth" class="section">
+
+      <!-- Tendências -->
+      <div class="panel" style="margin-bottom:20px">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-chart-line"></i> Evolução</div>
+          <span id="growth-badge" class="badge badge--pending"><span class="dot"></span> <span id="growth-badge-text">Carregando...</span></span>
+        </div>
+        <div id="trends-content" class="loading"><div class="spinner"></div> Carregando tendências...</div>
+      </div>
+
+      <!-- Quick Wins -->
+      <div class="panel" style="margin-bottom:20px">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-bullseye"></i> Quick Wins</div>
+          <small style="color:var(--muted)">Oportunidades de crescimento rápido</small>
+        </div>
+        <div id="quickwins-content" class="loading"><div class="spinner"></div> Analisando oportunidades...</div>
+      </div>
+
+      <!-- Recomendações -->
+      <div class="panel" style="margin-bottom:20px">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-lightbulb"></i> Recomendações SEO</div>
+          <small style="color:var(--muted)">Score por página</small>
+        </div>
+        <div id="recommendations-content" class="loading"><div class="spinner"></div> Analisando páginas...</div>
+      </div>
+
+      <!-- Linkagem Interna -->
+      <div class="panel" style="margin-bottom:20px">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-project-diagram"></i> Linkagem Interna</div>
+          <small style="color:var(--muted)">Mapa de links</small>
+        </div>
+        <div id="internallinks-content" class="loading"><div class="spinner"></div> Mapeando links...</div>
+      </div>
+
+      <!-- Backlinks Intelligence -->
+      <div class="panel" style="margin-bottom:20px">
+        <div class="panel__header">
+          <div class="panel__title"><i class="fas fa-link"></i> Backlinks Intelligence</div>
+          <small style="color:var(--muted)">Análise e oportunidades</small>
+        </div>
+        <div id="backlinks-intel-content" class="loading"><div class="spinner"></div> Analisando backlinks...</div>
+      </div>
+
+    </div>
+
   </main>
 </div>
 
@@ -815,6 +868,254 @@ document.querySelectorAll('#period-tabs .tab').forEach(tab => {
 
 // Load on page open
 loadAllMetrics();
+
+// ============================================================
+// Growth Intelligence (V2.1) — Dashboard Dinâmico
+// ============================================================
+
+let growthLoaded = false;
+
+function setGrowthBadge(status, text) {
+  const badge = document.getElementById('growth-badge');
+  const badgeText = document.getElementById('growth-badge-text');
+  if (badge) badge.className = 'badge badge--' + status;
+  if (badgeText) badgeText.textContent = text;
+}
+
+function renderTrends(data) {
+  const el = document.getElementById('trends-content');
+  if (data.error) { el.innerHTML = renderError(data.message || 'Erro ao carregar tendências'); return; }
+
+  const p = data.periods || {};
+  const t = data.trends || {};
+  const ins = data.insights || [];
+
+  const trendIcon = (d) => {
+    if (!d) return '▬';
+    const colors = { '▲': 'var(--green)', '▼': 'var(--red)', '▬': 'var(--muted)' };
+    return `<span style="color:${colors[d.direction] || 'var(--muted)'};font-weight:700">${d.direction} ${d.change}</span>`;
+  };
+
+  let html = '<div class="stats-grid" style="margin-bottom:16px">';
+  const metrics = [
+    { key: 'impressions', label: 'Impressões', icon: 'eye', color: 'purple' },
+    { key: 'clicks', label: 'Cliques', icon: 'mouse-pointer', color: 'green' },
+    { key: 'ctr', label: 'CTR', icon: 'percentage', color: 'cyan' },
+    { key: 'position', label: 'Posição', icon: 'sort-numeric-down', color: 'orange' }
+  ];
+
+  metrics.forEach(m => {
+    const v7 = p['7d'] ? p['7d'][m.key] : 0;
+    const v30 = p['30d'] ? p['30d'][m.key] : 0;
+    const v90 = p['90d'] ? p['90d'][m.key] : 0;
+    const trend = t[m.key];
+    const suffix = m.key === 'ctr' ? '%' : '';
+
+    html += `<div class="stat-card stat-card--${m.color}">
+      <div class="stat-card__label"><i class="fas fa-${m.icon}"></i> ${m.label}</div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end">
+        <div>
+          <div style="font-size:.7rem;color:var(--muted)">7d: <strong style="color:var(--text)">${v7}${suffix}</strong></div>
+          <div style="font-size:.7rem;color:var(--muted)">30d: <strong style="color:var(--text)">${v30}${suffix}</strong></div>
+          <div style="font-size:.7rem;color:var(--muted)">90d: <strong style="color:var(--text)">${v90}${suffix}</strong></div>
+        </div>
+        <div style="text-align:right">${trendIcon(trend)}</div>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+
+  if (ins.length > 0) {
+    ins.forEach(i => {
+      const color = i.type === 'positive' ? 'var(--green)' : i.type === 'warning' ? 'var(--orange)' : 'var(--cyan)';
+      const icon = i.type === 'positive' ? 'check-circle' : i.type === 'warning' ? 'exclamation-triangle' : 'info-circle';
+      html += `<div style="padding:8px 12px;margin-bottom:6px;border-left:3px solid ${color};background:var(--surface2);border-radius:0 8px 8px 0;font-size:.85rem"><i class="fas fa-${icon}" style="color:${color};margin-right:8px"></i>${i.message}</div>`;
+    });
+  }
+
+  el.innerHTML = html;
+}
+
+function renderQuickWins(data) {
+  const el = document.getElementById('quickwins-content');
+  if (data.error && !data.opportunities) { el.innerHTML = renderError(data.message || 'Erro'); return; }
+
+  const opps = data.opportunities || [];
+  if (opps.length === 0) {
+    el.innerHTML = '<div class="alert alert--info"><i class="fas fa-info-circle"></i> <div>Nenhuma oportunidade encontrada ainda — o Google precisa acumular mais dados de busca.</div></div>';
+    return;
+  }
+
+  let html = '<table class="seo-table"><thead><tr><th>Query</th><th>Página</th><th>Posição</th><th>Impressões</th><th>CTR</th><th>Score</th><th>Prioridade</th></tr></thead><tbody>';
+  opps.forEach(o => {
+    const prioColor = o.priority === 'high' ? 'var(--green)' : o.priority === 'medium' ? 'var(--orange)' : 'var(--muted)';
+    const page = (o.page || '').replace('https://site.linkmagico.app.br', '');
+    html += `<tr>
+      <td class="url" title="${o.justification}">${o.query}</td>
+      <td class="url">${page}</td>
+      <td><strong>${o.position}</strong></td>
+      <td>${o.impressions}</td>
+      <td>${o.ctr}%</td>
+      <td><strong>${o.score}</strong>/100</td>
+      <td><span style="color:${prioColor};font-weight:700;text-transform:uppercase;font-size:.75rem">${o.priority}</span></td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  html += `<div style="margin-top:8px;font-size:.75rem;color:var(--muted)">${data.totalAnalyzed || 0} queries analisadas → ${opps.length} oportunidades encontradas</div>`;
+  el.innerHTML = html;
+}
+
+function renderRecommendations(data) {
+  const el = document.getElementById('recommendations-content');
+  if (data.error && !data.pages) { el.innerHTML = renderError(data.message || 'Erro'); return; }
+
+  const pages = (data.pages || []).slice(0, 15);
+  if (pages.length === 0) {
+    el.innerHTML = '<div class="alert alert--info"><i class="fas fa-info-circle"></i> <div>Nenhuma página analisada.</div></div>';
+    return;
+  }
+
+  const scoreColor = (s) => s >= 80 ? 'var(--green)' : s >= 60 ? 'var(--orange)' : 'var(--red)';
+
+  let html = `<div style="margin-bottom:12px;font-size:.85rem;color:var(--muted)">Score médio: <strong style="color:var(--text)">${data.averageScore}/100</strong> — ${data.total} páginas analisadas</div>`;
+  html += '<table class="seo-table"><thead><tr><th>Página</th><th>Score</th><th>Title</th><th>Meta</th><th>H1</th><th>Conteúdo</th><th>Links</th><th>Schema</th><th>Recs</th></tr></thead><tbody>';
+  pages.forEach(p => {
+    const s = p.scores || {};
+    const page = (p.page || '').replace('https://site.linkmagico.app.br', '');
+    html += `<tr>
+      <td class="url">${page}</td>
+      <td><strong style="color:${scoreColor(s.overall)}">${s.overall}</strong></td>
+      <td style="color:${scoreColor(s.title)}">${s.title}</td>
+      <td style="color:${scoreColor(s.metaDescription)}">${s.metaDescription}</td>
+      <td style="color:${scoreColor(s.headings)}">${s.headings}</td>
+      <td style="color:${scoreColor(s.content)}">${s.content}</td>
+      <td style="color:${scoreColor(s.internalLinks)}">${s.internalLinks}</td>
+      <td style="color:${scoreColor(s.schema)}">${s.schema}</td>
+      <td>${p.totalRecommendations}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderInternalLinks(data) {
+  const el = document.getElementById('internallinks-content');
+  if (data.error) { el.innerHTML = renderError(data.message || 'Erro'); return; }
+
+  const st = data.stats || {};
+  let html = '<div class="stats-grid" style="margin-bottom:16px">';
+  html += `<div class="stat-card stat-card--purple"><div class="stat-card__label"><i class="fas fa-file"></i> Páginas</div><div class="stat-card__value">${st.totalPages || 0}</div></div>`;
+  html += `<div class="stat-card stat-card--green"><div class="stat-card__label"><i class="fas fa-link"></i> Links</div><div class="stat-card__value">${st.totalLinks || 0}</div></div>`;
+  html += `<div class="stat-card stat-card--cyan"><div class="stat-card__label"><i class="fas fa-divide"></i> Média/página</div><div class="stat-card__value">${st.avgLinksPerPage || 0}</div></div>`;
+  html += `<div class="stat-card stat-card--orange"><div class="stat-card__label"><i class="fas fa-ghost"></i> Páginas órfãs</div><div class="stat-card__value">${st.orphanCount || 0}</div></div>`;
+  html += '</div>';
+
+  // Sugestões
+  const sugs = data.suggestions || [];
+  if (sugs.length > 0) {
+    html += '<h4 style="margin:16px 0 8px;font-size:.9rem;color:var(--purple-l)"><i class="fas fa-magic"></i> Sugestões de Links</h4>';
+    html += '<table class="seo-table"><thead><tr><th>Página destino</th><th>Pode receber links de</th><th>Links atuais</th><th>Prioridade</th></tr></thead><tbody>';
+    sugs.slice(0, 10).forEach(s => {
+      const prioColor = s.priority === 'high' ? 'var(--green)' : s.priority === 'medium' ? 'var(--orange)' : 'var(--muted)';
+      html += `<tr>
+        <td class="url"><strong>${s.target}</strong></td>
+        <td style="font-size:.8rem">${s.sources.join(', ')}</td>
+        <td>${s.currentIncoming}</td>
+        <td><span style="color:${prioColor};font-weight:700;text-transform:uppercase;font-size:.75rem">${s.priority}</span></td>
+      </tr>`;
+    });
+    html += '</tbody></table>';
+  }
+
+  // Páginas órfãs
+  if (data.orphanPages && data.orphanPages.length > 0) {
+    html += '<h4 style="margin:16px 0 8px;font-size:.9rem;color:var(--orange)"><i class="fas fa-exclamation-triangle"></i> Páginas Órfãs (sem links apontando)</h4>';
+    html += '<div style="display:flex;flex-wrap:wrap;gap:6px">';
+    data.orphanPages.forEach(p => html += `<span style="padding:4px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;font-size:.8rem">${p}</span>`);
+    html += '</div>';
+  }
+
+  // Clusters desconectados
+  if (data.disconnectedClusters && data.disconnectedClusters.length > 0) {
+    html += '<h4 style="margin:16px 0 8px;font-size:.9rem;color:var(--red)"><i class="fas fa-unlink"></i> Clusters Desconectados</h4>';
+    data.disconnectedClusters.forEach(c => html += `<span style="padding:4px 10px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:6px;font-size:.8rem;margin-right:6px">${c}</span>`);
+  }
+
+  el.innerHTML = html;
+}
+
+function renderBacklinksIntel(data) {
+  const el = document.getElementById('backlinks-intel-content');
+  if (data.error && !data.current) { el.innerHTML = renderError(data.message || 'Erro'); return; }
+
+  const cur = data.current || {};
+  let html = '<div class="stats-grid" style="margin-bottom:16px">';
+  html += `<div class="stat-card stat-card--green"><div class="stat-card__label"><i class="fas fa-link"></i> Backlinks totais</div><div class="stat-card__value">${cur.total || 0}</div></div>`;
+  html += `<div class="stat-card stat-card--purple"><div class="stat-card__label"><i class="fas fa-globe"></i> Domínios</div><div class="stat-card__value">${(cur.domains || []).length}</div></div>`;
+  html += `<div class="stat-card stat-card--cyan"><div class="stat-card__label"><i class="fas fa-lightbulb"></i> Oportunidades</div><div class="stat-card__value">${(data.opportunities || []).length}</div></div>`;
+  html += '</div>';
+
+  // Ações prioritárias
+  const actions = data.actions || [];
+  if (actions.length > 0) {
+    html += '<h4 style="margin:16px 0 8px;font-size:.9rem;color:var(--green-l)"><i class="fas fa-bolt"></i> Ações Prioritárias</h4>';
+    actions.forEach(a => {
+      const prioColor = a.priority === 'high' ? 'var(--green)' : a.priority === 'medium' ? 'var(--orange)' : 'var(--muted)';
+      html += `<div style="padding:10px 14px;margin-bottom:8px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;border-left:3px solid ${prioColor}">
+        <div style="font-size:.88rem;font-weight:600">${a.action}</div>
+        <div style="font-size:.75rem;color:var(--muted);margin-top:2px">${a.estimatedImpact}</div>
+      </div>`;
+    });
+  }
+
+  // Oportunidades
+  const opps = data.opportunities || [];
+  if (opps.length > 0) {
+    html += '<h4 style="margin:16px 0 8px;font-size:.9rem;color:var(--purple-l)"><i class="fas fa-star"></i> Categorias de Oportunidades</h4>';
+    html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px">';
+    opps.forEach(o => {
+      const impColor = o.impact === 'high' ? 'var(--green)' : o.impact === 'medium' ? 'var(--orange)' : 'var(--muted)';
+      html += `<div style="padding:14px;background:var(--surface2);border:1px solid var(--border);border-radius:12px">
+        <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">${o.name}</div>
+        <div style="font-size:.78rem;color:var(--muted);margin-bottom:6px">${o.description}</div>
+        <div style="font-size:.72rem"><span style="color:${impColor}">Impacto: ${o.impact}</span> · Esforço: ${o.effort}</div>
+        <div style="font-size:.72rem;color:var(--muted);margin-top:4px">${o.examples.join(', ')}</div>
+      </div>`;
+    });
+    html += '</div>';
+  }
+
+  el.innerHTML = html;
+}
+
+async function loadGrowthDashboard() {
+  if (growthLoaded) return;
+  setGrowthBadge('pending', 'Carregando...');
+
+  const [trendsData, qwData, recData, ilData, blData] = await Promise.all([
+    seoFetch('/api/seo/growth/trends'),
+    seoFetch('/api/seo/growth/quick-wins'),
+    seoFetch('/api/seo/growth/recommendations/all'),
+    seoFetch('/api/seo/growth/internal-links'),
+    seoFetch('/api/seo/growth/backlinks/report')
+  ]);
+
+  renderTrends(trendsData);
+  renderQuickWins(qwData);
+  renderRecommendations(recData);
+  renderInternalLinks(ilData);
+  renderBacklinksIntel(blData);
+
+  setGrowthBadge('live', 'Ativo');
+  growthLoaded = true;
+}
+
+// Lazy load: só carrega Growth quando o usuário clicar na seção
+document.querySelectorAll('.sidebar__link[data-section]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (link.dataset.section === 'growth') loadGrowthDashboard();
+  });
+});
 </script>
 </body>
 </html>

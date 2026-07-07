@@ -167,6 +167,7 @@ app.get('/admin/seo', (req, res) => {
 
 // ===== SEO API ROUTES (SEOProvider v1) =====
 app.use('/api/seo', require('./routes/seo'));
+app.use('/api/seo/growth', require('./routes/seo-growth'));
 
 // ===== FALLBACK 404 =====
 app.use((req, res) => {
