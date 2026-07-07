@@ -138,4 +138,100 @@ router.get('/health', async (req, res) => {
   }
 });
 
+// ============================================================
+// V5 — Growth Intelligence Endpoints
+// ============================================================
+const engine = require('../seo/growth/engine');
+const missions = require('../seo/growth/missions');
+const timeline = require('../seo/growth/timeline');
+const competitors = require('../seo/growth/competitors');
+const roi = require('../seo/growth/roi');
+
+// GET /api/seo/growth/engine/dashboard — Painel Executivo
+router.get('/engine/dashboard', async (req, res) => {
+  try {
+    const data = await engine.generateDashboard();
+    res.json(data);
+  } catch (e) {
+    console.error('[SEO-GROWTH-V5] Route /engine/dashboard error:', e.message);
+    res.json({ actions: [], total: 0, error: true, message: 'Dados temporariamente indisponíveis' });
+  }
+});
+
+// GET /api/seo/growth/engine/intelligence — Resumo Inteligência
+router.get('/engine/intelligence', async (req, res) => {
+  try {
+    const data = await engine.generateIntelligence();
+    res.json(data);
+  } catch (e) {
+    console.error('[SEO-GROWTH-V5] Route /engine/intelligence error:', e.message);
+    res.json({ totalOpportunities: 0, error: true, message: 'Dados temporariamente indisponíveis' });
+  }
+});
+
+// GET /api/seo/growth/engine/opportunity-score?position=9&impressions=15&ctr=2
+router.get('/engine/opportunity-score', async (req, res) => {
+  try {
+    const params = {
+      position: parseFloat(req.query.position) || 50,
+      ctr: parseFloat(req.query.ctr) || 0,
+      impressions: parseInt(req.query.impressions) || 0,
+      clicks: parseInt(req.query.clicks) || 0,
+      internalLinks: parseInt(req.query.links) || 0,
+      backlinks: parseInt(req.query.backlinks) || 0
+    };
+    const data = roi.opportunityScore(params);
+    res.json(data);
+  } catch (e) {
+    res.json({ score: 0, level: 'Não disponível', error: true });
+  }
+});
+
+// GET /api/seo/growth/missions — Lista missões
+router.get('/missions', async (req, res) => {
+  try {
+    const dashData = await engine.generateDashboard();
+    const missionList = missions.generateMissions(dashData.actions || []);
+    const stats = missions.getStats();
+    res.json({ missions: missionList, stats, generatedAt: new Date().toISOString() });
+  } catch (e) {
+    console.error('[SEO-GROWTH-V5] Route /missions error:', e.message);
+    res.json({ missions: [], stats: {}, error: true, message: 'Dados temporariamente indisponíveis' });
+  }
+});
+
+// POST /api/seo/growth/missions/:id/status — Atualiza status
+router.post('/missions/:id/status', (req, res) => {
+  try {
+    const { status } = req.body || {};
+    if (!status) return res.json({ error: true, message: 'Campo status é obrigatório' });
+    const result = missions.updateMission(req.params.id, status);
+    res.json(result);
+  } catch (e) {
+    res.json({ error: true, message: e.message });
+  }
+});
+
+// GET /api/seo/growth/timeline
+router.get('/timeline', async (req, res) => {
+  try {
+    const data = await timeline.getTimeline();
+    res.json(data);
+  } catch (e) {
+    console.error('[SEO-GROWTH-V5] Route /timeline error:', e.message);
+    res.json({ snapshots: [], total: 0, sufficient: false, error: true, message: 'Dados temporariamente indisponíveis' });
+  }
+});
+
+// GET /api/seo/growth/benchmark
+router.get('/benchmark', async (req, res) => {
+  try {
+    const data = await competitors.getBenchmark();
+    res.json(data);
+  } catch (e) {
+    console.error('[SEO-GROWTH-V5] Route /benchmark error:', e.message);
+    res.json({ own: {}, competitors: [], error: true, message: 'Dados temporariamente indisponíveis' });
+  }
+});
+
 module.exports = router;

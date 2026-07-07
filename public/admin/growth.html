@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Intelligence — LinkMágico</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--surface3:#1a1a30;--border:#1e1e35;--border2:#2a2a45;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--cyan:#06b6d4;--orange:#f59e0b;--red:#ef4444;--text:#f0eeff;--muted:#7a7896}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;min-height:100vh;padding:24px 32px}
+
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.header h1{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:800}
+.header h1 span{background:linear-gradient(135deg,var(--green),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header__actions{display:flex;gap:10px;align-items:center}
+
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
+.badge--live{background:rgba(16,185,129,.15);color:var(--green-l);border:1px solid rgba(16,185,129,.3)}
+.badge--pending{background:rgba(245,158,11,.15);color:var(--orange);border:1px solid rgba(245,158,11,.3)}
+.badge--error{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-size:.82rem;font-weight:600;border:none;cursor:pointer;transition:all .2s;text-decoration:none}
+.btn--primary{background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff}
+.btn--primary:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(124,58,237,.4)}
+.btn--outline{background:transparent;border:1px solid var(--border2);color:var(--text)}
+.btn--outline:hover{border-color:var(--purple);color:var(--purple-l)}
+.btn--sm{padding:6px 12px;font-size:.78rem}
+
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;position:relative;overflow:hidden;transition:all .3s}
+.stat-card:hover{border-color:var(--purple);transform:translateY(-2px)}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0}
+.stat-card--purple::before{background:linear-gradient(90deg,var(--purple),var(--purple-l))}
+.stat-card--green::before{background:linear-gradient(90deg,var(--green),var(--green-l))}
+.stat-card--cyan::before{background:linear-gradient(90deg,var(--cyan),#22d3ee)}
+.stat-card--orange::before{background:linear-gradient(90deg,var(--orange),#fbbf24)}
+.stat-card--red::before{background:linear-gradient(90deg,var(--red),#f87171)}
+.stat-card__label{font-size:.75rem;color:var(--muted);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.stat-card__value{font-size:1.6rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
+.stat-card__sub{font-size:.7rem;color:var(--muted);margin-top:2px}
+
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:20px}
+.panel__header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.panel__title{font-weight:700;font-size:1rem;display:flex;align-items:center;gap:8px}
+.panel__title i{color:var(--purple-l)}
+
+.loading{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.88rem;padding:16px 0}
+.spinner{width:18px;height:18px;border:2px solid var(--border2);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.action-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:12px;display:flex;align-items:flex-start;gap:16px;transition:all .3s}
+.action-card:hover{border-color:var(--purple);transform:translateX(4px)}
+.action-rank{min-width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Space Grotesk',sans-serif;font-size:1rem}
+.action-rank--high{background:linear-gradient(135deg,var(--green),var(--cyan));color:#000}
+.action-rank--medium{background:linear-gradient(135deg,var(--orange),#fbbf24);color:#000}
+.action-rank--low{background:var(--surface3);color:var(--muted)}
+.action-body{flex:1}
+.action-title{font-weight:700;font-size:.95rem;margin-bottom:2px}
+.action-target{font-size:.82rem;color:var(--cyan)}
+.action-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;font-size:.75rem;color:var(--muted)}
+.action-meta span{display:flex;align-items:center;gap:4px}
+.impact-tag{padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.impact--muito-alto{background:rgba(16,185,129,.2);color:var(--green-l)}
+.impact--alto{background:rgba(6,182,212,.2);color:var(--cyan)}
+.impact--medio{background:rgba(245,158,11,.2);color:var(--orange)}
+.impact--baixo{background:rgba(122,120,150,.2);color:var(--muted)}
+
+.mission-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:10px;display:flex;align-items:center;gap:14px}
+.mission-status{min-width:10px;height:10px;border-radius:50%}
+.mission-status--pending{background:var(--orange)}
+.mission-status--completed{background:var(--green)}
+.mission-status--skipped{background:var(--muted)}
+
+.tab-bar{display:flex;gap:4px;margin-bottom:20px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px}
+.tab{padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:none}
+.tab:hover{color:var(--text)}
+.tab.active{background:var(--purple);color:#fff}
+
+.section{display:none}
+.section.active{display:block}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+
+.benchmark-row{display:grid;grid-template-columns:150px repeat(4,1fr);gap:8px;padding:8px 12px;font-size:.82rem;border-bottom:1px solid var(--border)}
+.benchmark-row--header{font-weight:700;color:var(--muted);font-size:.72rem;text-transform:uppercase}
+.benchmark-row:last-child{border-bottom:none}
+.no-data{color:var(--muted);font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><i class="fas fa-rocket" style="color:var(--purple-l)"></i> Growth <span>Intelligence</span></h1>
+  <div class="header__actions">
+    <span id="gi-badge" class="badge badge--pending">Carregando...</span>
+    <a href="/admin/seo" class="btn btn--outline btn--sm"><i class="fas fa-arrow-left"></i> Dashboard SEO</a>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="tab-bar" id="gi-tabs">
+  <button class="tab active" data-tab="executive">Hoje você deve fazer</button>
+  <button class="tab" data-tab="intelligence">Intelligence</button>
+  <button class="tab" data-tab="missions">Missões</button>
+  <button class="tab" data-tab="timeline">Timeline</button>
+  <button class="tab" data-tab="benchmark">Benchmark</button>
+</div>
+
+<!-- ===== TAB 1: PAINEL EXECUTIVO ===== -->
+<div class="section active" id="tab-executive">
+  <div id="exec-actions" class="loading"><div class="spinner"></div> Calculando prioridades...</div>
+</div>
+
+<!-- ===== TAB 2: INTELLIGENCE ===== -->
+<div class="section" id="tab-intelligence">
+  <div id="intel-content" class="loading"><div class="spinner"></div> Gerando inteligência...</div>
+</div>
+
+<!-- ===== TAB 3: MISSÕES ===== -->
+<div class="section" id="tab-missions">
+  <div id="missions-content" class="loading"><div class="spinner"></div> Carregando missões...</div>
+</div>
+
+<!-- ===== TAB 4: TIMELINE ===== -->
+<div class="section" id="tab-timeline">
+  <div id="timeline-content" class="loading"><div class="spinner"></div> Carregando timeline...</div>
+</div>
+
+<!-- ===== TAB 5: BENCHMARK ===== -->
+<div class="section" id="tab-benchmark">
+  <div id="benchmark-content" class="loading"><div class="spinner"></div> Gerando benchmark...</div>
+</div>
+
+<script>
+const API = '';
+
+async function gFetch(path) {
+  try {
+    const r = await fetch(API + path);
+    return await r.json();
+  } catch(e) { return { error: true, message: e.message }; }
+}
+
+// ===== TABS =====
+document.querySelectorAll('#gi-tabs .tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('#gi-tabs .tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    loadTab(tab.dataset.tab);
+  });
+});
+
+const loaded = {};
+function loadTab(name) {
+  if (loaded[name]) return;
+  loaded[name] = true;
+  switch(name) {
+    case 'executive': loadExecutive(); break;
+    case 'intelligence': loadIntelligence(); break;
+    case 'missions': loadMissions(); break;
+    case 'timeline': loadTimeline(); break;
+    case 'benchmark': loadBenchmark(); break;
+  }
+}
+
+function impactClass(label) {
+  const l = (label || '').toLowerCase().replace(/\s/g, '-');
+  if (l === 'muito-alto') return 'impact--muito-alto';
+  if (l === 'alto') return 'impact--alto';
+  if (l === 'médio' || l === 'medio') return 'impact--medio';
+  return 'impact--baixo';
+}
+
+function rankClass(idx) {
+  if (idx <= 2) return 'action-rank--high';
+  if (idx <= 5) return 'action-rank--medium';
+  return 'action-rank--low';
+}
+
+// ===== PAINEL EXECUTIVO =====
+async function loadExecutive() {
+  const el = document.getElementById('exec-actions');
+  const data = await gFetch('/api/seo/growth/engine/dashboard');
+
+  if (data.error && !data.actions) { el.innerHTML = '<div style="color:var(--muted)"><i class="fas fa-exclamation-triangle" style="color:var(--orange)"></i> Dados temporariamente indisponíveis.</div>'; return; }
+
+  const actions = data.actions || [];
+  if (actions.length === 0) {
+    el.innerHTML = '<div style="color:var(--muted);padding:20px;text-align:center"><i class="fas fa-check-circle" style="color:var(--green);font-size:2rem;display:block;margin-bottom:8px"></i>Nenhuma ação prioritária no momento.</div>';
+    return;
+  }
+
+  let html = '';
+  actions.forEach((a, i) => {
+    html += `<div class="action-card">
+      <div class="action-rank ${rankClass(i + 1)}">${i + 1}</div>
+      <div class="action-body">
+        <div class="action-title">${a.title}</div>
+        <div class="action-target">${a.target}</div>
+        <div class="action-meta">
+          <span class="impact-tag ${impactClass(a.impactLabel)}">Impacto: ${a.impactLabel || '—'}</span>
+          <span><i class="fas fa-clock"></i> ${a.estimatedTime || '—'}</span>
+          <span><i class="fas fa-chart-line"></i> ${a.estimatedGain || '—'}</span>
+        </div>
+        ${a.details ? `<div style="font-size:.75rem;color:var(--muted);margin-top:6px">${a.details}</div>` : ''}
+      </div>
+    </div>`;
+  });
+
+  el.innerHTML = html;
+  document.getElementById('gi-badge').className = 'badge badge--live';
+  document.getElementById('gi-badge').textContent = `${actions.length} ações`;
+}
+
+// ===== INTELLIGENCE =====
+async function loadIntelligence() {
+  const el = document.getElementById('intel-content');
+  const data = await gFetch('/api/seo/growth/engine/intelligence');
+
+  if (data.error && !data.totalOpportunities) { el.innerHTML = '<div style="color:var(--muted)">Dados temporariamente indisponíveis.</div>'; return; }
+
+  let html = '<div class="stats-grid">';
+  const cards = [
+    { label: 'Oportunidades', value: data.totalOpportunities || 0, color: 'purple', icon: 'gem' },
+    { label: 'Próximas da Página 1', value: data.nearPage1 || 0, color: 'green', icon: 'trophy' },
+    { label: 'Backlinks sugeridos', value: data.backlinksRecommended || 0, color: 'cyan', icon: 'link' },
+    { label: 'Clusters incompletos', value: data.incompleteClusters || 0, color: 'orange', icon: 'project-diagram' },
+    { label: 'Conteúdos a expandir', value: data.contentSuggestions || 0, color: 'red', icon: 'pen' },
+    { label: 'Score médio', value: (data.averageScore || 0) + '/100', color: 'purple', icon: 'star' }
+  ];
+  cards.forEach(c => {
+    html += `<div class="stat-card stat-card--${c.color}"><div class="stat-card__label"><i class="fas fa-${c.icon}"></i> ${c.label}</div><div class="stat-card__value">${c.value}</div></div>`;
+  });
+  html += '</div>';
+
+  // Insights
+  const insights = data.insights || [];
+  if (insights.length > 0) {
+    html += '<div class="panel"><div class="panel__title" style="margin-bottom:12px"><i class="fas fa-brain"></i> Insights</div>';
+    insights.forEach(i => {
+      const color = i.type === 'positive' ? 'var(--green)' : i.type === 'warning' ? 'var(--orange)' : 'var(--cyan)';
+      const icon = i.type === 'positive' ? 'check-circle' : i.type === 'warning' ? 'exclamation-triangle' : 'info-circle';
+      html += `<div style="padding:8px 12px;margin-bottom:6px;border-left:3px solid ${color};background:var(--surface2);border-radius:0 8px 8px 0;font-size:.85rem"><i class="fas fa-${icon}" style="color:${color};margin-right:8px"></i>${i.message}</div>`;
+    });
+    html += '</div>';
+  }
+
+  // Posições perdidas
+  html += `<div class="panel"><div class="panel__title" style="margin-bottom:8px"><i class="fas fa-arrow-down"></i> Perdeu posições?</div><div style="font-size:.88rem">${data.lostPositions || 'Não detectado'}</div></div>`;
+
+  el.innerHTML = html;
+}
+
+// ===== MISSÕES =====
+async function loadMissions() {
+  const el = document.getElementById('missions-content');
+  const data = await gFetch('/api/seo/growth/missions');
+
+  if (data.error && !data.missions) { el.innerHTML = '<div style="color:var(--muted)">Dados temporariamente indisponíveis.</div>'; return; }
+
+  const missions = data.missions || [];
+  if (missions.length === 0) {
+    el.innerHTML = '<div style="color:var(--muted);text-align:center;padding:20px">Nenhuma missão disponível.</div>';
+    return;
+  }
+
+  let html = '';
+  missions.forEach(m => {
+    const statusColor = m.status === 'Concluída' ? 'var(--green)' : m.status === 'Pendente' ? 'var(--orange)' : 'var(--muted)';
+    const statusClass = m.status === 'Concluída' ? 'completed' : m.status === 'Pendente' ? 'pending' : 'skipped';
+    html += `<div class="mission-card">
+      <div class="mission-status mission-status--${statusClass}"></div>
+      <div style="flex:1">
+        <div style="font-weight:700;font-size:.9rem">${m.title} — <span style="color:var(--cyan)">${m.target}</span></div>
+        <div style="display:flex;gap:14px;margin-top:4px;font-size:.75rem;color:var(--muted)">
+          <span><i class="fas fa-bolt"></i> ${m.impactLabel}</span>
+          <span><i class="fas fa-clock"></i> ${m.estimatedTime}</span>
+          <span><i class="fas fa-chart-line"></i> ${m.estimatedGain}</span>
+          <span>Dificuldade: ${m.complexity}</span>
+        </div>
+      </div>
+      <span style="font-size:.75rem;font-weight:600;color:${statusColor}">${m.status}</span>
+    </div>`;
+  });
+
+  el.innerHTML = html;
+}
+
+// ===== TIMELINE =====
+async function loadTimeline() {
+  const el = document.getElementById('timeline-content');
+  const data = await gFetch('/api/seo/growth/timeline');
+
+  if (data.error) { el.innerHTML = '<div style="color:var(--muted)">Dados temporariamente indisponíveis.</div>'; return; }
+
+  if (!data.sufficient) {
+    el.innerHTML = `<div class="panel" style="text-align:center;padding:40px">
+      <i class="fas fa-chart-area" style="font-size:3rem;color:var(--muted);margin-bottom:12px;display:block"></i>
+      <div style="font-weight:700;font-size:1.1rem;margin-bottom:6px">Dados insuficientes</div>
+      <div style="color:var(--muted);font-size:.88rem">${data.message || 'Snapshots são capturados automaticamente a cada visita.'}</div>
+      <div style="margin-top:12px;font-size:.8rem;color:var(--muted)">Snapshots: ${data.total || 0} (mínimo: 2)</div>
+    </div>`;
+    return;
+  }
+
+  // Render table com snapshots
+  const snaps = data.snapshots || [];
+  let html = '<div class="panel"><div class="panel__title" style="margin-bottom:12px"><i class="fas fa-chart-area"></i> Evolução (7d rolling)</div>';
+  html += '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.82rem">';
+  html += '<thead><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:8px;color:var(--muted)">Data</th><th style="padding:8px;color:var(--muted)">Impressões</th><th style="padding:8px;color:var(--muted)">Cliques</th><th style="padding:8px;color:var(--muted)">CTR</th><th style="padding:8px;color:var(--muted)">Posição</th></tr></thead><tbody>';
+  snaps.forEach(s => {
+    const d = new Date(s.timestamp).toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
+    html += `<tr style="border-bottom:1px solid var(--border)"><td style="padding:8px">${d}</td><td style="padding:8px;text-align:center">${s['7d'].impressions}</td><td style="padding:8px;text-align:center">${s['7d'].clicks}</td><td style="padding:8px;text-align:center">${s['7d'].ctr}%</td><td style="padding:8px;text-align:center">${s['7d'].position}</td></tr>`;
+  });
+  html += '</tbody></table></div></div>';
+  el.innerHTML = html;
+}
+
+// ===== BENCHMARK =====
+async function loadBenchmark() {
+  const el = document.getElementById('benchmark-content');
+  const data = await gFetch('/api/seo/growth/benchmark');
+
+  if (data.error) { el.innerHTML = '<div style="color:var(--muted)">Dados temporariamente indisponíveis.</div>'; return; }
+
+  let html = '<div class="panel"><div class="panel__title" style="margin-bottom:16px"><i class="fas fa-trophy"></i> Comparativo</div>';
+
+  // Header
+  html += '<div class="benchmark-row benchmark-row--header"><div>Métrica</div><div>' + (data.own ? data.own.name : 'Seu domínio') + '</div>';
+  (data.competitors || []).forEach(c => html += `<div>${c.name}</div>`);
+  html += '</div>';
+
+  // Rows
+  const metrics = [
+    { key: 'pages', label: 'Páginas' },
+    { key: 'internalLinks', label: 'Links internos' },
+    { key: 'avgLinksPerPage', label: 'Média links/pág' },
+    { key: 'orphanPages', label: 'Pág. órfãs' },
+    { key: 'seoScore', label: 'Score SEO' }
+  ];
+
+  metrics.forEach(m => {
+    html += `<div class="benchmark-row"><div style="font-weight:600">${m.label}</div>`;
+    html += `<div style="color:var(--green-l);font-weight:700">${data.own && data.own[m.key] !== null ? data.own[m.key] : '—'}</div>`;
+    (data.competitors || []).forEach(c => {
+      html += `<div class="no-data">${c[m.key] !== null ? c[m.key] : 'Sem dados'}</div>`;
+    });
+    html += '</div>';
+  });
+
+  html += '</div>';
+
+  if (data.note) {
+    html += `<div style="margin-top:12px;padding:12px;background:var(--surface2);border-radius:10px;font-size:.8rem;color:var(--muted)"><i class="fas fa-info-circle" style="color:var(--cyan);margin-right:6px"></i>${data.note}</div>`;
+  }
+
+  el.innerHTML = html;
+}
+
+// Auto-load first tab
+loadTab('executive');
+</script>
+</body>
+</html>
