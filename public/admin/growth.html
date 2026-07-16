@@ -77,6 +77,14 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--t);background:var(--bg
 .tag--h{background:rgba(16,185,129,.2);color:var(--gl)}
 .tag--m{background:rgba(245,158,11,.2);color:var(--o)}
 .tag--l{background:rgba(122,120,150,.2);color:var(--m)}
+/* V2.3 — Mission completion buttons */
+.btn-complete{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:8px;font-size:.72rem;font-weight:700;border:1px solid rgba(16,185,129,.4);background:rgba(16,185,129,.1);color:var(--gl);cursor:pointer;transition:all .25s;white-space:nowrap}
+.btn-complete:hover{background:rgba(16,185,129,.25);border-color:var(--g);transform:scale(1.05)}
+.btn-complete:active{transform:scale(.95)}
+.btn-complete:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-complete--done{background:rgba(16,185,129,.2);border-color:var(--g);color:var(--g);cursor:default}
+.ac--completed{opacity:.6;border-color:var(--g)!important}
+.ac--completed .ac__r{background:var(--g)!important;color:#fff!important}
 
 /* Goals */
 .goal{background:var(--s2);border-radius:10px;padding:14px;margin-bottom:8px}
@@ -261,7 +269,10 @@ async function loadExec(){
   const d=await gf('/dashboard');
   const el=document.getElementById('exec-list');
   if(!d.actions||d.actions.length===0){el.innerHTML='<div style="text-align:center;padding:30px;color:var(--m)"><i class="fas fa-check-circle" style="color:var(--g);font-size:2rem;display:block;margin-bottom:8px"></i>Nenhuma ação prioritária.</div>';return;}
-  el.innerHTML=d.actions.map((a,i)=>`<div class="ac"><div class="ac__r ${rc(i+1)}">${i+1}</div><div class="ac__b"><div class="ac__title">${a.title}</div><div class="ac__tgt">${a.target}</div><div class="ac__meta"><span class="tag ${tc(a.impactLabel)}">${a.impactLabel}</span><span><i class="fas fa-clock"></i> ${a.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${a.estimatedGain}</span><span class="stars">${stars(a.stars)}</span></div>${a.details?`<div style="font-size:.72rem;color:var(--m);margin-top:4px">${a.details}</div>`:''}</div></div>`).join('');
+  el.innerHTML=d.actions.map((a,i)=>{
+    const mid=`gos_m_${a.type}_${i}`;
+    return `<div class="ac" id="exec-${mid}"><div class="ac__r ${rc(i+1)}">${i+1}</div><div class="ac__b"><div class="ac__title">${a.title}</div><div class="ac__tgt">${a.target}</div><div class="ac__meta"><span class="tag ${tc(a.impactLabel)}">${a.impactLabel}</span><span><i class="fas fa-clock"></i> ${a.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${a.estimatedGain}</span><span class="stars">${stars(a.stars)}</span></div>${a.details?`<div style="font-size:.72rem;color:var(--m);margin-top:4px">${a.details}</div>`:''}</div><button class="btn-complete" onclick="completeMission('${mid}',this)" title="Marcar como concluída"><i class="fas fa-check"></i> Concluir</button></div>`;
+  }).join('');
   document.getElementById('gos-badge').className='badge badge--g';
   document.getElementById('gos-badge').textContent=d.actions.length+' ações';
 }
@@ -332,8 +343,14 @@ async function loadMissions(){
   const ms=d.missions||[];
   if(!ms.length){el.innerHTML='<div style="color:var(--m);text-align:center;padding:20px">Nenhuma missão.</div>';return;}
   let h=`<div class="pnl"><div class="pnl__t"><i class="fas fa-flag"></i> Centro de Missões <span style="font-size:.72rem;color:var(--m);font-weight:400;margin-left:8px">${d.stats?d.stats.completed+' concluídas':''}</span></div>`;
-  ms.forEach((m,i)=>{const sc=m.status==='Concluída'?'var(--g)':m.status==='Pendente'?'var(--o)':'var(--m)';
-    h+=`<div class="ac"><div class="ac__r ${rc(i+1)}" style="font-size:.75rem">${m.rank}</div><div class="ac__b"><div class="ac__title">${m.title} — <span style="color:var(--c)">${m.target}</span></div><div class="ac__meta"><span class="tag ${tc(m.impactLabel)}">${m.impactLabel}</span><span><i class="fas fa-clock"></i> ${m.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${m.estimatedGain}</span><span class="stars">${stars(m.stars)}</span><span>Dificuldade: ${m.complexity}</span></div></div><span style="font-size:.75rem;font-weight:700;color:${sc}">${m.status}</span></div>`;});
+  ms.forEach((m,i)=>{
+    const isDone=m.status==='Concluída';
+    const sc=isDone?'var(--g)':m.status==='Pendente'?'var(--o)':'var(--m)';
+    const btnHtml=isDone
+      ?`<span class="btn-complete btn-complete--done"><i class="fas fa-check-double"></i> Feito</span>`
+      :`<button class="btn-complete" onclick="completeMission('${m.id}',this)" title="Marcar como concluída"><i class="fas fa-check"></i> Concluir</button>`;
+    h+=`<div class="ac${isDone?' ac--completed':''}" id="mission-${m.id}"><div class="ac__r ${rc(i+1)}" style="font-size:.75rem">${m.rank}</div><div class="ac__b"><div class="ac__title">${m.title} — <span style="color:var(--c)">${m.target}</span></div><div class="ac__meta"><span class="tag ${tc(m.impactLabel)}">${m.impactLabel}</span><span><i class="fas fa-clock"></i> ${m.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${m.estimatedGain}</span><span class="stars">${stars(m.stars)}</span><span>Dificuldade: ${m.complexity}</span></div></div>${btnHtml}</div>`;
+  });
   h+='</div>';el.innerHTML=h;
 }
 
@@ -369,6 +386,44 @@ async function loadAch(){
   achs.forEach(a=>{const done=a.status==='Conquistado';
     h+=`<div class="ach ${done?'ach--done':'ach--wip'}"><div class="ach__icon">${done?'<i class="fas fa-check"></i>':'<i class="fas fa-hourglass-half"></i>'}</div><div style="flex:1"><div style="font-weight:700;font-size:.88rem">${a.name}</div><div style="font-size:.75rem;color:var(--m)">${a.desc}</div></div><span style="font-size:.75rem;font-weight:600;color:${done?'var(--g)':'var(--m)'}}">${a.status}</span></div>`;});
   h+='</div>';el.innerHTML=h;
+}
+
+// ============================================================
+// V2.3 — Complete Mission (safe, incremental, with fallback)
+// ============================================================
+async function completeMission(missionId, btnEl) {
+  try {
+    if (!confirm('Marcar esta missão como Concluída?')) return;
+    if (btnEl) { btnEl.disabled = true; btnEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Salvando...'; }
+    const resp = await fetch(G + '/missions/' + encodeURIComponent(missionId) + '/status', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: 'Concluída' })
+    });
+    const data = await resp.json();
+    if (data.error) {
+      console.error('[GOS] completeMission error:', data.message);
+      alert('Erro ao concluir missão: ' + (data.message || 'Tente novamente'));
+      if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = '<i class="fas fa-check"></i> Concluir'; }
+      return;
+    }
+    // Success — update UI
+    console.log('[GOS] Mission completed:', missionId);
+    if (btnEl) {
+      btnEl.className = 'btn-complete btn-complete--done';
+      btnEl.innerHTML = '<i class="fas fa-check-double"></i> Feito';
+      btnEl.disabled = true;
+      btnEl.onclick = null;
+      const card = btnEl.closest('.ac');
+      if (card) card.classList.add('ac--completed');
+    }
+    // Refresh scores silently (non-blocking)
+    loadScores().catch(() => {});
+  } catch (e) {
+    console.error('[GOS] completeMission exception:', e);
+    alert('Erro de conexão. Verifique sua internet e tente novamente.');
+    if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = '<i class="fas fa-check"></i> Concluir'; }
+  }
 }
 
 // Auto-load
