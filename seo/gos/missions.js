@@ -1,11 +1,69 @@
 /**
  * seo/gos/missions.js — Mission Center + Achievement System
+ * 
+ * V2.4 — Persistência em arquivo JSON para sobreviver restarts.
+ * Fallback: se file I/O falhar, funciona 100% em memória (comportamento anterior).
  */
 'use strict';
+
+const fs = require('fs');
+const path = require('path');
+
+// Arquivo de persistência — na raiz do projeto
+const STORE_FILE = path.join(__dirname, '..', '..', 'data', 'missions-status.json');
 
 const store = new Map();
 const achievements = new Map();
 const STATUS = { PENDING: 'Pendente', IN_PROGRESS: 'Em andamento', COMPLETED: 'Concluída', SKIPPED: 'Ignorada' };
+
+// ===== PERSISTÊNCIA (safe, com fallback) =====
+
+/**
+ * Carrega status salvos do disco para o Map em memória.
+ * Se o arquivo não existir ou estiver corrompido, ignora silenciosamente.
+ */
+function loadFromDisk() {
+  try {
+    if (!fs.existsSync(STORE_FILE)) {
+      console.log('[GOS] Missions → nenhum arquivo de persistência encontrado, iniciando vazio.');
+      return;
+    }
+    const raw = fs.readFileSync(STORE_FILE, 'utf-8');
+    const data = JSON.parse(raw);
+    if (data && typeof data === 'object') {
+      Object.entries(data).forEach(([id, mission]) => {
+        store.set(id, mission);
+      });
+      console.log(`[GOS] Missions → ${store.size} status carregados do disco.`);
+    }
+  } catch (e) {
+    console.error(`[GOS] Missions → erro ao carregar persistência (fallback memória): ${e.message}`);
+  }
+}
+
+/**
+ * Salva o Map em memória para disco.
+ * Se falhar, loga o erro mas não impacta o funcionamento.
+ */
+function saveToDisk() {
+  try {
+    const dir = path.dirname(STORE_FILE);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    const data = {};
+    store.forEach((v, k) => { data[k] = v; });
+    fs.writeFileSync(STORE_FILE, JSON.stringify(data, null, 2), 'utf-8');
+    console.log(`[GOS] Missions → ${store.size} status salvos em disco.`);
+  } catch (e) {
+    console.error(`[GOS] Missions → erro ao salvar persistência (dados em memória intactos): ${e.message}`);
+  }
+}
+
+// Carregar dados salvos na inicialização
+loadFromDisk();
+
+// ===== MISSÕES =====
 
 function generateMissions(actions) {
   return (actions || []).map((a, i) => {
@@ -29,6 +87,7 @@ function updateMission(id, newStatus) {
   m.status = newStatus;
   if (newStatus === STATUS.COMPLETED) { m.completedAt = new Date().toISOString(); checkAchievements(); }
   store.set(id, m);
+  saveToDisk(); // Persiste imediatamente
   console.log(`[GOS] Mission ${id} → ${newStatus}`);
   return { success: true, id, status: newStatus };
 }

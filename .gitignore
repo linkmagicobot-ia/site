@@ -2,3 +2,6 @@ node_modules/
 .env
 *.log
 .DS_Store
+
+# GOS mission persistence (local data)
+data/missions-status.json
