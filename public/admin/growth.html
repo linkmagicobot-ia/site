@@ -33,6 +33,7 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--t);background:var(--bg
 
 .badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:600}
 .badge--g{background:rgba(16,185,129,.15);color:var(--gl);border:1px solid rgba(16,185,129,.3)}
+.badge--done{background:rgba(16,185,129,.25);color:var(--gl);border:1px solid rgba(16,185,129,.5);font-weight:700}
 .badge--o{background:rgba(245,158,11,.15);color:var(--o);border:1px solid rgba(245,158,11,.3)}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:10px;font-size:.8rem;font-weight:600;border:none;cursor:pointer;transition:all .2s;text-decoration:none;color:var(--t);background:transparent;border:1px solid var(--b2)}
 .btn:hover{border-color:var(--p);color:var(--pl)}
@@ -275,8 +276,9 @@ async function loadExec(){
     const btn=done?`<span class="btn-complete btn-complete--done"><i class="fas fa-check-double"></i> Feito</span>`:`<button class="btn-complete" onclick="completeMission('${mid}',this)" title="Marcar como concluída"><i class="fas fa-check"></i> Concluir</button>`;
     return `<div class="ac${done?' ac--completed':''}" id="exec-${mid}"><div class="ac__r ${rc(i+1)}">${i+1}</div><div class="ac__b"><div class="ac__title">${a.title}</div><div class="ac__tgt">${a.target}</div><div class="ac__meta"><span class="tag ${tc(a.impactLabel)}">${a.impactLabel}</span><span><i class="fas fa-clock"></i> ${a.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${a.estimatedGain}</span><span class="stars">${stars(a.stars)}</span></div>${a.details?`<div style="font-size:.72rem;color:var(--m);margin-top:4px">${a.details}</div>`:''}</div>${btn}</div>`;
   }).join('');
-  document.getElementById('gos-badge').className='badge badge--g';
-  document.getElementById('gos-badge').textContent=d.actions.length+' ações';
+  const pending=d.actions.filter((_,i)=>!isMissionDone(`gos_m_${_.type}_${i}`)).length;
+  document.getElementById('gos-badge').className=pending?'badge badge--g':'badge badge--done';
+  document.getElementById('gos-badge').textContent=pending?pending+' ações':'✅ Tudo feito';
 }
 
 // Strategy full
