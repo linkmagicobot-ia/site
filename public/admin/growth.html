@@ -446,9 +446,23 @@ async function loadScores() {
   try {
     const gs = await gf('/growth-score');
     const el = document.getElementById('growth-score-val');
-    if (el && gs.score !== undefined) el.textContent = gs.score + '%';
+    // Adjust score: server doesn't know about localStorage completions
+    // Missions weight = 20% of total. Each completed mission adds (20/totalMissions)%
+    const completed = Object.keys(getCompletedMissions()).filter(k => k.startsWith('gos_m_')).length;
+    const missionBonus = completed > 0 ? Math.round((completed / Math.max(completed, 5)) * 20) : 0;
+    const adjustedScore = Math.min(100, (gs.score || 0) + missionBonus);
+    if (el) el.textContent = adjustedScore + '%';
     const proj = document.getElementById('growth-score-proj');
-    if (proj && gs.projection) proj.textContent = '→ ' + gs.projection.projected + '% após ' + gs.projection.missionsNeeded + ' missões';
+    const remaining = 5 - completed;
+    if (proj) {
+      if (remaining <= 0) {
+        proj.textContent = '✅ Todas as missões concluídas!';
+        proj.style.color = 'var(--gl)';
+      } else {
+        const projected = Math.min(100, adjustedScore + Math.round(remaining * 2.5));
+        proj.textContent = '→ ' + projected + '% após ' + remaining + ' missões';
+      }
+    }
 
     // SEO Health estimate (sum from intelligence)
     const intel = await gf('/intelligence');
