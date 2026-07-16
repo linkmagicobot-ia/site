@@ -271,7 +271,9 @@ async function loadExec(){
   if(!d.actions||d.actions.length===0){el.innerHTML='<div style="text-align:center;padding:30px;color:var(--m)"><i class="fas fa-check-circle" style="color:var(--g);font-size:2rem;display:block;margin-bottom:8px"></i>Nenhuma ação prioritária.</div>';return;}
   el.innerHTML=d.actions.map((a,i)=>{
     const mid=`gos_m_${a.type}_${i}`;
-    return `<div class="ac" id="exec-${mid}"><div class="ac__r ${rc(i+1)}">${i+1}</div><div class="ac__b"><div class="ac__title">${a.title}</div><div class="ac__tgt">${a.target}</div><div class="ac__meta"><span class="tag ${tc(a.impactLabel)}">${a.impactLabel}</span><span><i class="fas fa-clock"></i> ${a.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${a.estimatedGain}</span><span class="stars">${stars(a.stars)}</span></div>${a.details?`<div style="font-size:.72rem;color:var(--m);margin-top:4px">${a.details}</div>`:''}</div><button class="btn-complete" onclick="completeMission('${mid}',this)" title="Marcar como concluída"><i class="fas fa-check"></i> Concluir</button></div>`;
+    const done=isMissionDone(mid);
+    const btn=done?`<span class="btn-complete btn-complete--done"><i class="fas fa-check-double"></i> Feito</span>`:`<button class="btn-complete" onclick="completeMission('${mid}',this)" title="Marcar como concluída"><i class="fas fa-check"></i> Concluir</button>`;
+    return `<div class="ac${done?' ac--completed':''}" id="exec-${mid}"><div class="ac__r ${rc(i+1)}">${i+1}</div><div class="ac__b"><div class="ac__title">${a.title}</div><div class="ac__tgt">${a.target}</div><div class="ac__meta"><span class="tag ${tc(a.impactLabel)}">${a.impactLabel}</span><span><i class="fas fa-clock"></i> ${a.estimatedTime}</span><span><i class="fas fa-chart-line"></i> ${a.estimatedGain}</span><span class="stars">${stars(a.stars)}</span></div>${a.details?`<div style="font-size:.72rem;color:var(--m);margin-top:4px">${a.details}</div>`:''}</div>${btn}</div>`;
   }).join('');
   document.getElementById('gos-badge').className='badge badge--g';
   document.getElementById('gos-badge').textContent=d.actions.length+' ações';
@@ -344,8 +346,7 @@ async function loadMissions(){
   if(!ms.length){el.innerHTML='<div style="color:var(--m);text-align:center;padding:20px">Nenhuma missão.</div>';return;}
   let h=`<div class="pnl"><div class="pnl__t"><i class="fas fa-flag"></i> Centro de Missões <span style="font-size:.72rem;color:var(--m);font-weight:400;margin-left:8px">${d.stats?d.stats.completed+' concluídas':''}</span></div>`;
   ms.forEach((m,i)=>{
-    const isDone=m.status==='Concluída';
-    const sc=isDone?'var(--g)':m.status==='Pendente'?'var(--o)':'var(--m)';
+    const isDone=m.status==='Concluída'||isMissionDone(m.id);
     const btnHtml=isDone
       ?`<span class="btn-complete btn-complete--done"><i class="fas fa-check-double"></i> Feito</span>`
       :`<button class="btn-complete" onclick="completeMission('${m.id}',this)" title="Marcar como concluída"><i class="fas fa-check"></i> Concluir</button>`;
@@ -389,24 +390,27 @@ async function loadAch(){
 }
 
 // ============================================================
-// V2.3 — Complete Mission (safe, incremental, with fallback)
+// V2.5 — localStorage persistence + Complete Mission
 // ============================================================
+const LS_KEY='gos_completed_missions';
+function getCompletedMissions(){try{return JSON.parse(localStorage.getItem(LS_KEY)||'{}');}catch(e){return {};}}
+function isMissionDone(id){return !!getCompletedMissions()[id];}
+function saveMissionDone(id){try{const c=getCompletedMissions();c[id]={completedAt:new Date().toISOString()};localStorage.setItem(LS_KEY,JSON.stringify(c));console.log('[GOS] Mission saved to localStorage:',id);}catch(e){console.error('[GOS] localStorage save error:',e);}}
+
 async function completeMission(missionId, btnEl) {
   try {
     if (!confirm('Marcar esta missão como Concluída?')) return;
     if (btnEl) { btnEl.disabled = true; btnEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Salvando...'; }
-    const resp = await fetch(G + '/missions/' + encodeURIComponent(missionId) + '/status', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status: 'Concluída' })
-    });
-    const data = await resp.json();
-    if (data.error) {
-      console.error('[GOS] completeMission error:', data.message);
-      alert('Erro ao concluir missão: ' + (data.message || 'Tente novamente'));
-      if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = '<i class="fas fa-check"></i> Concluir'; }
-      return;
-    }
+    // Save to localStorage FIRST (source of truth)
+    saveMissionDone(missionId);
+    // POST to server (best-effort, for stats)
+    try {
+      await fetch(G + '/missions/' + encodeURIComponent(missionId) + '/status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'Concluída' })
+      });
+    } catch(e) { console.warn('[GOS] Server POST failed (localStorage saved):', e.message); }
     // Success — update UI
     console.log('[GOS] Mission completed:', missionId);
     if (btnEl) {
