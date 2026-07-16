@@ -35,6 +35,9 @@ app.use(helmet({
 // ===== PERFORMANCE =====
 app.use(compression());
 
+// ===== BODY PARSER (V2.3 — necessário para POST /api/seo/gos/missions/:id/status) =====
+app.use(express.json({ limit: '1kb' }));
+
 // ===== CACHE ESTÁTICO =====
 app.use(express.static(path.join(__dirname, 'public'), {
     maxAge: '7d',
