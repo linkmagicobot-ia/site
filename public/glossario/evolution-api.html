@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O que é Evolution API — Glossário LinkMágico</title>
-<meta name="description" content="API open-source para conectar WhatsApp a sistemas externos — alternativa à API oficial do WhatsApp Business.">
+<meta name="description" content="Guia completo sobre Evolution API: o que é, como instalar, vantagens vs API oficial do WhatsApp, e como integrar com chatbots de IA. Tutorial passo a passo.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://site.linkmagico.app.br/glossario/evolution-api">
 <meta property="og:type" content="article">
@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
-[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Glossário","item":"https://site.linkmagico.app.br/glossario"},{"@type":"ListItem","position":3,"name":"Evolution API"}]},{"@context":"https://schema.org","@type":"DefinedTerm","name":"Evolution API","description":"API open-source para conectar WhatsApp a sistemas externos — alternativa à API oficial do WhatsApp Business.","url":"https://site.linkmagico.app.br/glossario/evolution-api","inDefinedTermSet":{"@type":"DefinedTermSet","name":"Glossário de Automação e IA","url":"https://site.linkmagico.app.br/glossario"}}]
+[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Glossário","item":"https://site.linkmagico.app.br/glossario"},{"@type":"ListItem","position":3,"name":"Evolution API"}]},{"@context":"https://schema.org","@type":"DefinedTerm","name":"Evolution API","description":"API open-source para conectar WhatsApp a sistemas externos — alternativa à API oficial do WhatsApp Business.","url":"https://site.linkmagico.app.br/glossario/evolution-api","inDefinedTermSet":{"@type":"DefinedTermSet","name":"Glossário de Automação e IA","url":"https://site.linkmagico.app.br/glossario"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A Evolution API é gratuita?","acceptedAnswer":{"@type":"Answer","text":"Sim, a Evolution API é um projeto de código aberto e gratuito. Os únicos custos envolvidos são com a infraestrutura de hospedagem (como VPS ou nuvem) necessária para rodar a aplicação."}},{"@type":"Question","name":"Evolution API é segura para usar em produção?","acceptedAnswer":{"@type":"Answer","text":"Sim, muitos negócios utilizam em produção com sucesso. No entanto, por não ser a API oficial da Meta, ela depende da leitura do QR Code e requer boas práticas de gestão de infraestrutura."}},{"@type":"Question","name":"Qual a diferença entre Evolution API e WhatsApp Business API?","acceptedAnswer":{"@type":"Answer","text":"A WhatsApp Business API é a solução oficial, cobrada por conversa e sujeita a aprovação de templates pela Meta. A Evolution API é gratuita, não tem cobrança por mensagem e permite envio de qualquer conteúdo via pareamento QR Code."}},{"@type":"Question","name":"O LinkMágico usa Evolution API?","acceptedAnswer":{"@type":"Answer","text":"Sim, o LinkMágico possui integração nativa com a Evolution API, permitindo que você conecte seus chatbots de inteligência artificial ao WhatsApp de forma eficiente e econômica, sem pagar taxas por mensagem."}}]}]
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896}body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.8}a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:760px;margin:0 auto;padding:0 24px}header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif;color:var(--text)}.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav__links{display:flex;gap:20px;align-items:center}.nav__links a{color:var(--muted);font-size:.9rem}.nav__links a:hover{color:var(--text);text-decoration:none}.btn-cta{background:linear-gradient(135deg,var(--purple),#5b21b6);color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}.breadcrumb{padding:90px 0 0;font-size:.83rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
@@ -61,7 +61,65 @@ footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-al
 <span class="tag-badge">Técnico</span>
 <p class="definition">API open-source para conectar WhatsApp a sistemas externos — alternativa à API oficial do WhatsApp Business.</p>
 <div class="content">
-<p>A <strong>Evolution API</strong> é uma solução open-source que permite conectar WhatsApp a aplicações externas sem depender da API oficial (e seus custos). Características:</p><ul><li><strong>Self-hosted:</strong> Você hospeda no seu próprio servidor</li><li><strong>Múltiplas instâncias:</strong> Gerenciar vários números WhatsApp</li><li><strong>QR Code:</strong> Conexão via pareamento de QR Code</li><li><strong>Webhooks:</strong> Notificações em tempo real de mensagens</li><li><strong>REST API:</strong> Endpoints para envio e recebimento</li><li><strong>Gratuito:</strong> Código aberto, sem custo por mensagem</li></ul><h3>Evolution API vs WhatsApp Business API</h3><p>A Evolution API é ideal para pequenas e médias empresas que querem automação sem os custos da API oficial. Porém, não possui templates aprovados pela Meta e pode ter limitações de escala.</p><div class="example"><strong>No LinkMágico:</strong> Integração nativa com Evolution API (além de Twilio), permitindo que clientes escolham a opção que melhor se adequa ao seu orçamento e volume.</div>
+<p>A <strong>Evolution API</strong> é uma solução open-source poderosa que permite conectar o WhatsApp a aplicações externas sem depender da API oficial da Meta e seus respectivos custos por conversa. Ela atua simulando o WhatsApp Web através de um servidor.</p>
+<p>Com essa ferramenta, empresas podem criar integrações avançadas, conectar sistemas de atendimento, enviar notificações automatizadas e plugar inteligência artificial de maneira flexível.</p>
+
+<h3>Principais Características</h3>
+<ul>
+<li><strong>Self-hosted:</strong> Você mesmo hospeda a solução no seu próprio servidor (VPS ou nuvem), mantendo o controle dos dados.</li>
+<li><strong>Múltiplas instâncias:</strong> É possível conectar e gerenciar vários números de WhatsApp simultaneamente na mesma estrutura.</li>
+<li><strong>Conexão via QR Code:</strong> A autenticação é feita via pareamento de QR Code, sem burocracias de aprovação de conta empresarial.</li>
+<li><strong>Webhooks:</strong> Receba notificações em tempo real sempre que uma mensagem chegar, for lida ou o status do dispositivo mudar.</li>
+<li><strong>REST API Completa:</strong> Endpoints bem documentados para o envio de mensagens de texto, imagens, vídeos, áudios e contatos.</li>
+<li><strong>Gratuito:</strong> O código é aberto, logo, não há cobrança por mensagem enviada, diferentemente da API oficial.</li>
+</ul>
+
+<h3>Como instalar a Evolution API</h3>
+<p>O método mais seguro e utilizado pela comunidade para instalação da Evolution API é através de <strong>Docker</strong>. Em um servidor Linux, o processo resumido é:</p>
+<ol>
+<li>Instale o Docker e o Docker Compose em sua VPS.</li>
+<li>Crie um arquivo <code>docker-compose.yml</code> utilizando a imagem oficial da Evolution API, configurando variáveis de ambiente como chaves de API globais e banco de dados (ex: PostgreSQL e Redis).</li>
+<li>Execute o comando <code>docker-compose up -d</code> no terminal para subir os contêineres.</li>
+<li>Acesse os endpoints via Postman ou Insomnia para criar sua primeira instância e capturar o QR Code para pareamento.</li>
+</ol>
+
+<h3>Vantagens e desvantagens</h3>
+<p>A Evolution API é uma alternativa fantástica, mas possui cenários ideais de uso:</p>
+<p><strong>Vantagens:</strong></p>
+<ul>
+<li>Isenção total de taxas de disparo da Meta.</li>
+<li>Não há necessidade de aprovar modelos de mensagem (templates).</li>
+<li>Extrema flexibilidade para integrar com qualquer software de terceiros e CRMs.</li>
+</ul>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+<li>Requer conhecimento técnico (ou contratação de especialistas) para instalação e manutenção de infraestrutura.</li>
+<li>O número conectado está sujeito aos algoritmos anti-spam do WhatsApp e pode sofrer banimentos caso haja disparos não solicitados.</li>
+<li>Depende de um celular conectado à internet, pelo menos para pareamento e manutenção de sessão.</li>
+</ul>
+
+<h3>Casos de uso mais comuns</h3>
+<p>Diversos negócios modernos se apoiam nesta API para operações críticas:</p>
+<ul>
+<li><strong>Chatbots com Inteligência Artificial:</strong> Conectar agentes autônomos treinados para responder clientes 24h por dia.</li>
+<li><strong>Notificações Automáticas:</strong> Envio de boletos, código de rastreamento e confirmações de agendamento via sistema ERP.</li>
+<li><strong>Atendimento Centralizado:</strong> Uso de plataformas multicanal para que vários atendentes usem o mesmo número de WhatsApp.</li>
+</ul>
+
+<div class="example"><strong>No LinkMágico:</strong> Integração nativa com Evolution API (além de Twilio e Cloud API Oficial), permitindo que clientes conectem seus vendedores com IA ao WhatsApp de forma fácil e escolham a opção que melhor se adequa ao seu orçamento e modelo de negócio.</div>
+
+<h3>Perguntas frequentes</h3>
+<h4>A Evolution API é gratuita?</h4>
+<p style="margin-bottom: 20px;">Sim, a Evolution API é um projeto de código aberto e 100% gratuito. Os únicos custos envolvidos são com a infraestrutura de hospedagem (servidor) necessária para manter a aplicação rodando ininterruptamente.</p>
+
+<h4>Evolution API é segura para usar em produção?</h4>
+<p style="margin-bottom: 20px;">Sim, milhares de empresas utilizam a ferramenta em produção com alta disponibilidade. Contudo, por exigir infraestrutura própria, é essencial aplicar boas práticas de segurança, como uso de HTTPS, senhas fortes e gestão eficiente de recursos do servidor.</p>
+
+<h4>Qual a diferença entre Evolution API e WhatsApp Business API?</h4>
+<p style="margin-bottom: 20px;">A WhatsApp Business API é a solução oficial da Meta, possui cobrança por conversa e exige aprovação de templates para iniciar chats. A Evolution API é gratuita, livre de taxas por mensagem e permite o envio de mensagens de forma flexível via pareamento QR Code.</p>
+
+<h4>O LinkMágico usa Evolution API?</h4>
+<p>Sim, o LinkMágico oferece integração nativa e simplificada com a Evolution API. Dessa forma, você pode conectar facilmente seus chatbots de inteligência artificial ao WhatsApp e desfrutar de autonomia total nos disparos.</p>
 </div>
 <div class="sidebar">
 <div class="sidebar-box">
@@ -83,6 +141,6 @@ footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-al
 <a href="/glossario" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Glossário</a>
 </div>
 </main>
-<footer><div class="container"><p>© 2025 LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/blog/">Blog</a> · <a href="/docs">Docs</a> · <a href="/politica-de-privacidade">Privacidade</a></p></div></footer>
+<footer><div class="container"><p>© 2026 LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/blog/">Blog</a> · <a href="/docs">Docs</a> · <a href="/politica-de-privacidade">Privacidade</a></p></div></footer>
 </body>
 </html>
