@@ -964,10 +964,10 @@ img{max-width:100%;height:auto;display:block}
 <div class="container">
 <div style="display:flex;justify-content:center;margin-bottom:12px"><span style="display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:.72rem;color:#34d399;font-weight:600;letter-spacing:.3px"><span style="width:7px;height:7px;background:#10b981;border-radius:50%;display:inline-block;animation:ctaPulse 2s infinite"></span> DADOS EM TEMPO REAL</span></div>
 <div class="metrics__grid">
-<div class="metric-card anim"><div class="metric-card__number text-grad-g" id="dynamicLeads" data-count="312">0</div><div class="metric-card__label">Leads capturados automaticamente</div></div>
-<div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicConversations" data-count="150">0</div><div class="metric-card__label">Conversas processadas pela IA</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad-g" id="dynamicLeads" data-count="340">0</div><div class="metric-card__label">Leads capturados automaticamente</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicConversations" data-count="151">0</div><div class="metric-card__label">Conversas processadas pela IA</div></div>
 <div class="metric-card anim"><div class="metric-card__number text-grad-g">24h</div><div class="metric-card__label">Online, vendendo sem parar</div></div>
-<div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicAssistants" data-count="47">0</div><div class="metric-card__label">Assistentes ativos na plataforma</div></div>
+<div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicAssistants" data-count="80">0</div><div class="metric-card__label">Assistentes ativos na plataforma</div></div>
 </div>
 </div>
 </section>
@@ -2021,24 +2021,42 @@ document.querySelectorAll('.metric-card__number[data-count]').forEach(function(e
 
 // Contadores reais via API (histórico + novos dados acumulados pelo servidor)
 (function(){
-  function applyStats(leads,assistants,conversations){
-    var el1=document.getElementById('dynamicLeads');
-    if(el1)el1.setAttribute('data-count',leads);
-    var el2=document.getElementById('dynamicAssistants');
-    if(el2)el2.setAttribute('data-count',assistants);
-    var el3=document.getElementById('dynamicConversations');
-    if(el3)el3.setAttribute('data-count',conversations);
+  function animateCounter(el, target) {
+    try {
+      if (!el || !target) return;
+      var duration = 1200;
+      var startVal = parseInt(el.textContent) || 0;
+      var startTime = null;
+      function animate(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        el.textContent = Math.floor(startVal + (target - startVal) * progress) + '+';
+        if (progress < 1) requestAnimationFrame(animate);
+        else el.textContent = target + '+';
+      }
+      requestAnimationFrame(animate);
+    } catch(e) { /* fallback silencioso */ }
   }
-  try{
+  function applyStats(leads, assistants, conversations) {
+    try {
+      var el1 = document.getElementById('dynamicLeads');
+      if (el1) { el1.setAttribute('data-count', leads); animateCounter(el1, leads); }
+      var el2 = document.getElementById('dynamicAssistants');
+      if (el2) { el2.setAttribute('data-count', assistants); animateCounter(el2, assistants); }
+      var el3 = document.getElementById('dynamicConversations');
+      if (el3) { el3.setAttribute('data-count', conversations); animateCounter(el3, conversations); }
+    } catch(e) { /* fallback silencioso */ }
+  }
+  try {
     fetch('https://linkmagico.app.br/api/analytics/public-stats')
-      .then(function(r){return r.json()})
-      .then(function(d){
-        if(d.success){
-          applyStats(d.totalLeads||312,d.totalAssistants||47,d.totalConversations||150);
+      .then(function(r) { return r.json() })
+      .then(function(d) {
+        if (d.success) {
+          applyStats(d.totalLeads || 340, d.totalAssistants || 80, d.totalConversations || 151);
         }
       })
-      .catch(function(){/* fallback silencioso — valores estáticos do HTML */});
-  }catch(e){/* fallback */}
+      .catch(function() { /* fallback silencioso — valores estáticos do HTML */ });
+  } catch(e) { /* fallback */ }
 })();
 
 // Mobile carousel for modules and audience grids
