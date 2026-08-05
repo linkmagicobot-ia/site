@@ -3,7 +3,7 @@ services:
     name: linkmagico-site
     runtime: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm install && node scripts/update-stats.js
     startCommand: node server.js
     envVars:
       - key: NODE_ENV

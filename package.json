@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "prebuild": "node scripts/update-stats.js",
+    "update-stats": "node scripts/update-stats.js",
     "seo:audit": "node seo/audit.js",
     "seo:index-report": "node seo/index-report.js",
     "seo:indexnow": "node seo/indexnow.js all",
