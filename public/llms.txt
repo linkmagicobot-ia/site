@@ -1,4 +1,4 @@
-# LinkMágico
+﻿# LinkMágico
 
 > Vendedor automático com IA para qualquer página.
 
@@ -57,17 +57,17 @@ O LinkMágico é uma plataforma SaaS brasileira que transforma qualquer link, la
 
 ## Links principais
 
-- Site: https://site.linkmagico.app.br/
-- Plataforma: https://linkmagico.app.br/
-- Blog: https://site.linkmagico.app.br/blog/
-- FAQ: https://site.linkmagico.app.br/faq
-- Como funciona: https://site.linkmagico.app.br/como-funciona
-- Recursos: https://site.linkmagico.app.br/recursos
-- Integrações: https://site.linkmagico.app.br/integracoes
-- Segurança: https://site.linkmagico.app.br/seguranca
-- Changelog: https://site.linkmagico.app.br/changelog
-- Status: https://site.linkmagico.app.br/status
-- Roadmap: https://site.linkmagico.app.br/roadmap
+- [Site](https://site.linkmagico.app.br/)
+- [Plataforma](https://linkmagico.app.br/)
+- [Blog](https://site.linkmagico.app.br/blog/)
+- [FAQ](https://site.linkmagico.app.br/faq)
+- [Como funciona](https://site.linkmagico.app.br/como-funciona)
+- [Recursos](https://site.linkmagico.app.br/recursos)
+- [Integrações](https://site.linkmagico.app.br/integracoes)
+- [Segurança](https://site.linkmagico.app.br/seguranca)
+- [Changelog](https://site.linkmagico.app.br/changelog)
+- [Status](https://site.linkmagico.app.br/status)
+- [Roadmap](https://site.linkmagico.app.br/roadmap)
 
 ## Fundador
 
@@ -78,3 +78,4 @@ Edvaldo Luiz da Silva — Arquiteto de Software e IA, formado pela UNINOVE.
 - WhatsApp: +55 11 92531-2151
 - Instagram: @linkmagico.ia
 - LinkedIn: linkedin.com/in/edvaldo-luiz-da-silva-a01300182
+

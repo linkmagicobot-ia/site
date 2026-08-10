@@ -39,7 +39,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--radius:14px}
@@ -458,7 +458,7 @@ img{max-width:100%;height:auto;display:block}
 /* INTEGRATIONS */
 .integrations{padding:50px 0}
 .integrations__logos{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:24px}
-.integrations__item{display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.8;transition:opacity .3s}
+.integrations__item{display:flex;flex-direction:column;align-items:center;gap:8px;opacity:1;transition:opacity .3s}
 .integrations__item:hover{opacity:1}
 .integrations__item img{height:40px;width:40px;border-radius:8px;object-fit:cover;transition:transform .3s;box-shadow:0 4px 12px rgba(0,0,0,.2);background:#fff}
 .integrations__item:hover img{transform:scale(1.1);box-shadow:0 6px 16px rgba(0,0,0,.3)}
@@ -938,9 +938,9 @@ img{max-width:100%;height:auto;display:block}
 </div>
 <div class="hero-social">
 <div class="hero-social__avatars">
-<img loading="lazy" src="testimonial-camila.png" alt="Camila S. — cliente LinkMágico">
-<img loading="lazy" src="testimonial-marcos.png" alt="Marcos R. — cliente LinkMágico">
-<img loading="lazy" src="testimonial-rafael.png" alt="Rafael M. — cliente LinkMágico">
+<img loading="lazy" src="testimonial-camila.webp" alt="Camila S. — cliente LinkMágico">
+<img loading="lazy" src="testimonial-marcos.webp" alt="Marcos R. — cliente LinkMágico">
+<img loading="lazy" src="testimonial-rafael.webp" alt="Rafael M. — cliente LinkMágico">
 </div>
 <div class="hero-social__text">Junte-se a <strong id="socialCount">170+</strong> empresas que já têm<br>um vendedor automático ativo</div>
 </div>
@@ -988,7 +988,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="pain__item"><i class="fas fa-door-open"></i> Objeções não respondidas</div>
 <div class="pain__item"><i class="fas fa-user-slash"></i> Abandono silencioso</div>
 <div class="pain__item"><i class="fas fa-fire"></i> Dinheiro do tráfego queimado</div>
-<img loading="lazy" src="img-parada.png" alt="Visitante frustrado abandonando a página" class="pain__img">
+<img loading="lazy" src="img-parada.webp" alt="Visitante frustrado abandonando a página" class="pain__img">
 </div>
 <div class="pain__col pain__col--with anim">
 <div class="pain__col-title"><i class="fas fa-check-circle"></i> Página que vende</div>
@@ -997,7 +997,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="pain__item"><i class="fas fa-shield-alt"></i> Objeções respondidas na hora</div>
 <div class="pain__item"><i class="fas fa-user-check"></i> CTA sendo enviado</div>
 <div class="pain__item"><i class="fas fa-bullseye"></i> Lead entrando no CRM</div>
-<img loading="lazy" src="img-vende.png" alt="Visitante engajada conversando com IA e comprando" class="pain__img">
+<img loading="lazy" src="img-vende.webp" alt="Visitante engajada conversando com IA e comprando" class="pain__img">
 </div>
 </div>
 </div>
@@ -1023,11 +1023,11 @@ img{max-width:100%;height:auto;display:block}
 <div class="stats-dor__item stats-dor__item--bad"><i class="fas fa-skull-crossbones"></i> Você perdeu todos</div>
 <div style="grid-column:1/-1;display:flex;gap:20px;margin-top:14px;flex-wrap:wrap">
 <div style="flex:1;min-width:240px;text-align:center">
-<img loading="lazy" src="img-dormia-perdendo.png" alt="Empreendedor dormindo enquanto perde vendas" class="pain__img" style="max-height:220px;width:100%">
+<img loading="lazy" src="img-dormia-perdendo.webp" alt="Empreendedor dormindo enquanto perde vendas" class="pain__img" style="max-height:220px;width:100%">
 <p style="font-size:.72rem;color:var(--muted);margin-top:8px;font-style:italic">Enquanto você dorme, visitantes vão embora…</p>
 </div>
 <div style="flex:1;min-width:240px;text-align:center">
-<img loading="lazy" src="img-dormia-vendendo.png" alt="Empreendedor acordando com notificações de vendas" class="pain__img" style="max-height:220px;width:100%">
+<img loading="lazy" src="img-dormia-vendendo.webp" alt="Empreendedor acordando com notificações de vendas" class="pain__img" style="max-height:220px;width:100%">
 <p style="font-size:.72rem;color:var(--green-l);margin-top:8px;font-style:italic">…ou acordam com vendas feitas automaticamente.</p>
 </div>
 </div>
@@ -1154,32 +1154,32 @@ img{max-width:100%;height:auto;display:block}
 <div class="mech__features">
 <div class="mech__feat anim">
 <div class="mech__feat-icon"><i class="fas fa-microchip"></i></div>
-<h4>Decision Engine™</h4>
+<h3>Decision Engine™</h3>
 <p>Motor de decisão próprio que analisa cada mensagem e define a melhor estratégia de resposta em tempo real — não é um wrapper de ChatGPT.</p>
 </div>
 <div class="mech__feat anim">
 <div class="mech__feat-icon"><i class="fas fa-chart-line"></i></div>
-<h4>Sales Layer™ — 13 Fases</h4>
+<h3>Sales Layer™ — 13 Fases</h3>
 <p>Pipeline de persuasão com 13 fases: do primeiro contato à conversão, cada mensagem move o visitante para a próxima etapa de venda.</p>
 </div>
 <div class="mech__feat anim">
 <div class="mech__feat-icon"><i class="fas fa-crosshairs"></i></div>
-<h4>Intent Engine™</h4>
+<h3>Intent Engine™</h3>
 <p>Identifica automaticamente se o visitante quer comprar, tem dúvida, está com objeção ou pronto para agir — e adapta a resposta.</p>
 </div>
 <div class="mech__feat anim">
 <div class="mech__feat-icon"><i class="fas fa-puzzle-piece"></i></div>
-<h4>6 Perfis de Nicho</h4>
+<h3>6 Perfis de Nicho</h3>
 <p>Presets inteligentes para infoprodutos, e-commerce, clínicas, SaaS, serviços e negócios locais — cada um com abordagem de venda otimizada.</p>
 </div>
 <div class="mech__feat anim">
 <div class="mech__feat-icon"><i class="fas fa-sync-alt"></i></div>
-<h4>NaturalFlow™</h4>
+<h3>NaturalFlow™</h3>
 <p>Garante respostas variadas e naturais em toda a conversa, eliminando a sensação de "bot" mesmo em diálogos longos.</p>
 </div>
 <div class="mech__feat anim">
 <div class="mech__feat-icon"><i class="fas fa-server"></i></div>
-<h4>Multi-Tenant Nativo</h4>
+<h3>Multi-Tenant Nativo</h3>
 <p>Arquitetura SaaS com isolamento total por conta — dados, configurações e assistentes 100% independentes por cliente.</p>
 </div>
 </div>
@@ -1237,7 +1237,7 @@ img{max-width:100%;height:auto;display:block}
 </div>
 <div class="demo__crm anim">
 <div class="crm-card">
-<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--lead"><i class="fas fa-user-plus"></i></div><div><h4>Lead convertido</h4><p>O clique virou conversa, a conversa virou venda</p></div></div>
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--lead"><i class="fas fa-user-plus"></i></div><div><h3>Lead convertido</h3><p>O clique virou conversa, a conversa virou venda</p></div></div>
 <div style="background:var(--surface2);border-radius:10px;padding:12px;font-size:.82rem">
 <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Nome</span><span>João Silva</span></div>
 <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Situação</span><span style="color:var(--green-l)"><i class="fas fa-fire"></i> Clicou → Comprou</span></div>
@@ -1245,7 +1245,7 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div>
 <div class="crm-card">
-<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--pipe"><i class="fas fa-columns"></i></div><div><h4>Veja quais conversas estão virando vendas</h4><p>Pipeline de conversas e oportunidades</p></div></div>
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--pipe"><i class="fas fa-columns"></i></div><div><h3>Veja quais conversas estão virando vendas</h3><p>Pipeline de conversas e oportunidades</p></div></div>
 <div class="crm-pipe">
 <div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:var(--green);height:32px"></div><div class="crm-pipe__label">Recuperado (12)</div></div>
 <div class="crm-pipe__col"><div class="crm-pipe__bar" style="background:#fbbf24;height:24px"></div><div class="crm-pipe__label">Engajado (8)</div></div>
@@ -1254,7 +1254,7 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div>
 <div class="crm-card">
-<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--chart"><i class="fas fa-chart-bar"></i></div><div><h4>Inteligência comercial em tempo real</h4><p>Conversas ativas, objeções respondidas, leads capturados</p></div></div>
+<div class="crm-card__head"><div class="crm-card__icon crm-card__icon--chart"><i class="fas fa-chart-bar"></i></div><div><h3>Inteligência comercial em tempo real</h3><p>Conversas ativas, objeções respondidas, leads capturados</p></div></div>
 </div>
 </div>
 </div>
@@ -1353,7 +1353,7 @@ Se funciona para nós, funciona para você.
 <div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
 <p class="test-card__text">"Ativei o LinkMágico na minha landing page e em 48h já tinha <strong>23 leads novos</strong> no CRM — leads que antes iam embora sem falar nada. Na primeira semana, <strong>3 viraram clientes</strong>. O ROI já se pagou no primeiro dia."</p>
 <div class="test-card__author">
-<img loading="lazy" src="testimonial-marcos.png" alt="Marcos R. — Gestor de Tráfego, cliente LinkMágico" class="test-card__photo">
+<img loading="lazy" src="testimonial-marcos.webp" alt="Marcos R. — Gestor de Tráfego, cliente LinkMágico" class="test-card__photo">
 <div><div class="test-card__name">Marcos R.</div><div class="test-card__role">Gestor de Tráfego</div></div>
 </div>
 </div>
@@ -1362,7 +1362,7 @@ Se funciona para nós, funciona para você.
 <div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
 <p class="test-card__text">"Eu perdia vendas porque meus alunos tinham dúvidas às 23h. Com o LinkMágico, <strong>minha taxa de resposta foi de 0% fora do horário para 100%</strong>. No primeiro mês, <strong>fiz 8 vendas</strong> que vieram direto de conversas do chat."</p>
 <div class="test-card__author">
-<img loading="lazy" src="testimonial-camila.png" alt="Camila S. — Infoprodutora de Cursos Online, cliente LinkMágico" class="test-card__photo">
+<img loading="lazy" src="testimonial-camila.webp" alt="Camila S. — Infoprodutora de Cursos Online, cliente LinkMágico" class="test-card__photo">
 <div><div class="test-card__name">Camila S.</div><div class="test-card__role">Infoprodutora — Cursos Online</div></div>
 </div>
 </div>
@@ -1371,7 +1371,7 @@ Se funciona para nós, funciona para você.
 <div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
 <p class="test-card__text">"Meus pacientes perguntam horários de madrugada. Antes eu perdia esses contatos. Agora o LinkMágico captura o telefone e <strong>já recuperei 14 agendamentos</strong> que teriam sido perdidos. Acordo com a agenda preenchida."</p>
 <div class="test-card__author">
-<img loading="lazy" src="testimonial-rafael.png" alt="Rafael M. — Dentista e proprietário de Clínica Odontológica, cliente LinkMágico" class="test-card__photo">
+<img loading="lazy" src="testimonial-rafael.webp" alt="Rafael M. — Dentista e proprietário de Clínica Odontológica, cliente LinkMágico" class="test-card__photo">
 <div><div class="test-card__name">Rafael M.</div><div class="test-card__role">Dentista — Clínica Odontológica</div></div>
 </div>
 </div>
@@ -1388,12 +1388,12 @@ Se funciona para nós, funciona para você.
 <p class="section-subtitle">Não é sobre tecnologia. É sobre transformar páginas estáticas em páginas que vendem.</p>
 </div>
 <div class="modules__grid" id="modulesGrid">
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-comments"></i></div><h4>Responde dúvidas automaticamente</h4><p>Visitante perguntou? O vendedor responde instantaneamente.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-shield-alt"></i></div><h4>Quebra objeções durante a conversa</h4><p>Preço, garantia, confiança — tudo respondido automaticamente.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-crosshairs"></i></div><h4>Conduz para compra</h4><p>A conversa leva o visitante até checkout, WhatsApp ou agendamento.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-chart-bar"></i></div><h4>Captura leads automaticamente</h4><p>Nome, email e telefone entram no CRM durante a conversa.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-bolt"></i></div><h4>Funciona 24h por dia</h4><p>Enquanto você dorme, seu vendedor automático continua trabalhando.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-tag"></i></div><h4>White Label completo</h4><p>Sua marca, suas cores e sua identidade visual no chat.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-comments"></i></div><h3>Responde dúvidas automaticamente</h3><p>Visitante perguntou? O vendedor responde instantaneamente.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-shield-alt"></i></div><h3>Quebra objeções durante a conversa</h3><p>Preço, garantia, confiança — tudo respondido automaticamente.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-crosshairs"></i></div><h3>Conduz para compra</h3><p>A conversa leva o visitante até checkout, WhatsApp ou agendamento.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-chart-bar"></i></div><h3>Captura leads automaticamente</h3><p>Nome, email e telefone entram no CRM durante a conversa.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-bolt"></i></div><h3>Funciona 24h por dia</h3><p>Enquanto você dorme, seu vendedor automático continua trabalhando.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-tag"></i></div><h3>White Label completo</h3><p>Sua marca, suas cores e sua identidade visual no chat.</p></div>
 </div>
 </div>
 </section>
@@ -1414,14 +1414,14 @@ Se funciona para nós, funciona para você.
 <p class="section-subtitle">Se você tem uma página e recebe visitantes — o LinkMágico transforma ela em um vendedor.</p>
 </div>
 <div class="audience__grid" id="audienceGrid">
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-bullhorn"></i></div><div><h4>Gestores de Tráfego</h4><p>Transforme cliques de anúncios em conversas que convertem.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-graduation-cap"></i></div><div><h4>Infoprodutores</h4><p>Sua página ganha um vendedor que responde e converte automaticamente.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-building"></i></div><div><h4>Agências</h4><p>Entregue vendedores automáticos white label para clientes.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-laptop-code"></i></div><div><h4>SaaS</h4><p>Conduza visitantes até trial e demonstrações.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-shopping-cart"></i></div><div><h4>E-commerce</h4><p>Ajude visitantes a escolher produtos e chegar até o carrinho.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-handshake"></i></div><div><h4>Afiliados</h4><p>Seu link responde dúvidas e conduz visitantes para compra.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Negócios Locais</h4><p>Agendamentos, dúvidas e contatos acontecendo automaticamente.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-wrench"></i></div><div><h4>Prestadores de Serviço</h4><p>Transforme pedidos de orçamento em conversas de venda.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-bullhorn"></i></div><div><h3>Gestores de Tráfego</h3><p>Transforme cliques de anúncios em conversas que convertem.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-graduation-cap"></i></div><div><h3>Infoprodutores</h3><p>Sua página ganha um vendedor que responde e converte automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-building"></i></div><div><h3>Agências</h3><p>Entregue vendedores automáticos white label para clientes.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-laptop-code"></i></div><div><h3>SaaS</h3><p>Conduza visitantes até trial e demonstrações.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-shopping-cart"></i></div><div><h3>E-commerce</h3><p>Ajude visitantes a escolher produtos e chegar até o carrinho.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-handshake"></i></div><div><h3>Afiliados</h3><p>Seu link responde dúvidas e conduz visitantes para compra.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-map-marker-alt"></i></div><div><h3>Negócios Locais</h3><p>Agendamentos, dúvidas e contatos acontecendo automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-wrench"></i></div><div><h3>Prestadores de Serviço</h3><p>Transforme pedidos de orçamento em conversas de venda.</p></div></div>
 </div>
 </div>
 </section>
@@ -1486,37 +1486,37 @@ Se funciona para nós, funciona para você.
 <div class="cases__grid">
 <div class="case-card anim">
 <div class="case-card__icon"><i class="fas fa-graduation-cap"></i></div>
-<h4>Curso Online</h4>
+<h3>Curso Online</h3>
 <p>Visitante clicou com dúvida. O vendedor automático respondeu e conduziu para a matrícula.</p>
 <div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Sim! O curso começa do zero e tem 7 dias de garantia. Quer garantir sua vaga agora?"</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon"><i class="fas fa-hospital"></i></div>
-<h4>Clínica / Consultório</h4>
+<h3>Clínica / Consultório</h3>
 <p>Paciente perguntou horários às 23h. O LinkMágico respondeu e capturou o contato.</p>
 <div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Atendemos de segunda a sábado. Posso agendar um horário para você?"</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon"><i class="fas fa-bullhorn"></i></div>
-<h4>Gestor de Tráfego</h4>
+<h3>Gestor de Tráfego</h3>
 <p>Lead do anúncio clicou com dúvida fora do horário. O LinkMágico respondeu automaticamente e converteu.</p>
 <div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Vi que você clicou no anúncio. O produto tem garantia e entrega imediata. Quer ativar?"</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon"><i class="fas fa-gem"></i></div>
-<h4>Produto Digital</h4>
+<h3>Produto Digital</h3>
 <p>Visitante desconfiou "é golpe?". O vendedor automático quebrou a objeção com dados reais.</p>
 <div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "O pagamento é via Hotmart, plataforma segura. Tem 7 dias de garantia total."</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon"><i class="fas fa-building"></i></div>
-<h4>Agência</h4>
+<h3>Agência</h3>
 <p>Ofereça o LinkMágico como serviço para seus clientes — com sua marca. Receita recorrente.</p>
 <div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> Configure vendedores automáticos com a marca dos seus clientes e cobre pelo serviço.</div>
 </div>
 <div class="case-card anim">
 <div class="case-card__icon"><i class="fas fa-home"></i></div>
-<h4>Imobiliária</h4>
+<h3>Imobiliária</h3>
 <p>Visitante clicou para perguntar sobre imóvel. O LinkMágico respondeu e agendou a visita.</p>
 <div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Esse apartamento tem 3 quartos, 2 vagas. Quer agendar uma visita esta semana?"</div>
 </div>
@@ -1562,19 +1562,19 @@ Se funciona para nós, funciona para você.
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;margin:0 auto">
 <div onclick="openDemoChat('infoproduto','Academia Digital Pro')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(124,58,237,.2)">
 <div class="case-card__icon"><i class="fas fa-graduation-cap"></i></div>
-<h4>Curso Digital</h4>
+<h3>Curso Digital</h3>
 <p style="font-size:.82rem;color:var(--muted)">Infoproduto com perguntas de alunos</p>
 <div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:var(--purple-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
 </div>
 <div onclick="openDemoChat('negocio_local','Clínica Bella Estética')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(16,185,129,.2)">
 <div class="case-card__icon"><i class="fas fa-hospital"></i></div>
-<h4>Clínica Estética</h4>
+<h3>Clínica Estética</h3>
 <p style="font-size:.82rem;color:var(--muted)">Negócio local com agendamento</p>
 <div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--green-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
 </div>
 <div onclick="openDemoChat('ecommerce','TechStore Brasil')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(245,158,11,.2)">
 <div class="case-card__icon"><i class="fas fa-shopping-bag"></i></div>
-<h4>Loja Virtual</h4>
+<h3>Loja Virtual</h3>
 <p style="font-size:.82rem;color:var(--muted)">E-commerce com dúvidas de compra</p>
 <div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:#fbbf24;padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
 </div>
@@ -1764,17 +1764,17 @@ Se funciona para nós, funciona para você.
 <div class="affil__steps">
 <div class="affil__step">
 <div class="affil__step-num">1</div>
-<h4>Compartilhe</h4>
+<h3>Compartilhe</h3>
 <p>Envie seu link exclusivo para amigos, colegas e redes sociais.</p>
 </div>
 <div class="affil__step">
 <div class="affil__step-num">2</div>
-<h4>Eles se cadastram</h4>
+<h3>Eles se cadastram</h3>
 <p>O indicado cria uma conta grátis usando seu link de referência.</p>
 </div>
 <div class="affil__step">
 <div class="affil__step-num">3</div>
-<h4>Você ganha</h4>
+<h3>Você ganha</h3>
 <p>Quando o indicado assinar um plano pago, você recebe 20% de comissão — todo mês.</p>
 </div>
 </div>
@@ -1890,22 +1890,22 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px">
 <div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--purple)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
 <div style="font-size:1.4rem;margin-bottom:10px"><i class="fas fa-palette" style="color:#c084fc"></i></div>
-<h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Cores & Logo Custom</h4>
+<h3 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Cores & Logo Custom</h3>
 <p style="font-size:.78rem;color:var(--muted);line-height:1.5">Widget com as cores e logotipo da agência ou do cliente final</p>
 </div>
 <div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--green)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
 <div style="font-size:1.4rem;margin-bottom:10px"><i class="fas fa-eye-slash" style="color:var(--green-l)"></i></div>
-<h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Remove "Powered by"</h4>
+<h3 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Remove "Powered by"</h3>
 <p style="font-size:.78rem;color:var(--muted);line-height:1.5">Selo LinkMágico removido — 100% com a identidade da sua marca</p>
 </div>
 <div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--purple)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
 <div style="font-size:1.4rem;margin-bottom:10px"><i class="fas fa-bolt" style="color:var(--purple-l)"></i></div>
-<h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Setup em 2 Min</h4>
+<h3 style="font-size:.88rem;font-weight:700;margin-bottom:6px">Setup em 2 Min</h3>
 <p style="font-size:.78rem;color:var(--muted);line-height:1.5">Cole o link do cliente → IA aprende → vendedor pronto para usar</p>
 </div>
 <div class="anim" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .3s,border-color .3s;cursor:default" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='var(--green)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)'">
 <div style="font-size:1.4rem;margin-bottom:10px"><i class="fas fa-chart-bar" style="color:#fbbf24"></i></div>
-<h4 style="font-size:.88rem;font-weight:700;margin-bottom:6px">CRM + Analytics</h4>
+<h3 style="font-size:.88rem;font-weight:700;margin-bottom:6px">CRM + Analytics</h3>
 <p style="font-size:.78rem;color:var(--muted);line-height:1.5">Dashboard completo com leads, pipeline, follow-up e métricas por cliente</p>
 </div>
 </div>
@@ -2360,4 +2360,6 @@ document.getElementById('demoChatOverlay').addEventListener('click',function(e){
 </script>
 </body>
 </html>
+
+
 
