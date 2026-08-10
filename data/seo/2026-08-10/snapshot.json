@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total": 568,
+    "total": 570,
     "passed": 544,
     "warnings": 23,
-    "errors": 1
+    "errors": 3
   },
   "pages": [
     "404.html",
@@ -124,6 +124,6 @@
       "detail": "Nenhuma (exceto utilitárias)"
     }
   ],
-  "savedAt": "2026-08-10T12:12:03.566Z",
+  "savedAt": "2026-08-10T13:33:15.652Z",
   "date": "2026-08-10"
 }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-10T12:12:03.149Z",
+  "timestamp": "2026-08-10T13:33:15.279Z",
   "pages": [
     {
       "page": "404.html",
@@ -845,13 +845,13 @@
       "page": "clinicas.html",
       "check": "Title",
       "status": "PASS",
-      "detail": "Chatbot com IA para Clínicas e Consultórios — LinkMágico"
+      "detail": "Chatbot para Clínicas e Consultórios | Agendamento e Atendimento com IA — LinkMá"
     },
     {
       "page": "clinicas.html",
       "check": "Meta Description",
       "status": "PASS",
-      "detail": "91 chars"
+      "detail": "127 chars"
     },
     {
       "page": "clinicas.html",
@@ -1724,12 +1724,6 @@
       "detail": "Sem imagens"
     },
     {
-      "page": "glossario/conversao.html",
-      "check": "Link quebrado",
-      "status": "ERROR",
-      "detail": "/glossario/landing-page"
-    },
-    {
       "page": "glossario/crm.html",
       "check": "Title",
       "status": "PASS",
@@ -1901,13 +1895,13 @@
       "page": "glossario/ia-conversacional.html",
       "check": "Title",
       "status": "PASS",
-      "detail": "O que é IA Conversacional — Glossário LinkMágico"
+      "detail": "O que é IA Conversacional? Como Funciona e Exemplos Reais — LinkMágico"
     },
     {
       "page": "glossario/ia-conversacional.html",
       "check": "Meta Description",
       "status": "PASS",
-      "detail": "124 chars"
+      "detail": "142 chars"
     },
     {
       "page": "glossario/ia-conversacional.html",
@@ -1940,16 +1934,22 @@
       "detail": "Sem imagens"
     },
     {
+      "page": "glossario/ia-conversacional.html",
+      "check": "Link quebrado",
+      "status": "ERROR",
+      "detail": "/pricing.html"
+    },
+    {
       "page": "glossario/lead-scoring.html",
       "check": "Title",
       "status": "PASS",
-      "detail": "O que é Lead Scoring — Glossário LinkMágico"
+      "detail": "O que é Lead Scoring? Guia Completo com Exemplos Práticos — LinkMágico"
     },
     {
       "page": "glossario/lead-scoring.html",
       "check": "Meta Description",
       "status": "PASS",
-      "detail": "106 chars"
+      "detail": "147 chars"
     },
     {
       "page": "glossario/lead-scoring.html",
@@ -1980,6 +1980,12 @@
       "check": "Imagens",
       "status": "PASS",
       "detail": "Sem imagens"
+    },
+    {
+      "page": "glossario/lead-scoring.html",
+      "check": "Link quebrado",
+      "status": "ERROR",
+      "detail": "/pricing.html"
     },
     {
       "page": "glossario/lead.html",
@@ -2153,13 +2159,13 @@
       "page": "glossario/pipeline.html",
       "check": "Title",
       "status": "PASS",
-      "detail": "O que é Pipeline de Vendas — Glossário LinkMágico"
+      "detail": "O que é Pipeline de Vendas? Guia Completo para Montar o Seu — LinkMágico"
     },
     {
       "page": "glossario/pipeline.html",
       "check": "Meta Description",
       "status": "PASS",
-      "detail": "99 chars"
+      "detail": "130 chars"
     },
     {
       "page": "glossario/pipeline.html",
@@ -2190,6 +2196,12 @@
       "check": "Imagens",
       "status": "PASS",
       "detail": "Sem imagens"
+    },
+    {
+      "page": "glossario/pipeline.html",
+      "check": "Link quebrado",
+      "status": "ERROR",
+      "detail": "/pricing.html"
     },
     {
       "page": "glossario/roi.html",
@@ -2405,13 +2417,13 @@
       "page": "index.html",
       "check": "Title",
       "status": "PASS",
-      "detail": "LinkMágico — Vendedor Automático para Qualquer Página"
+      "detail": "LinkMágico — Seu Vendedor Automático com Inteligência Artificial"
     },
     {
       "page": "index.html",
       "check": "Meta Description",
       "status": "PASS",
-      "detail": "99 chars"
+      "detail": "154 chars"
     },
     {
       "page": "index.html",
@@ -3406,9 +3418,9 @@
     }
   ],
   "summary": {
-    "total": 568,
+    "total": 570,
     "passed": 544,
     "warnings": 23,
-    "errors": 1
+    "errors": 3
   }
 }

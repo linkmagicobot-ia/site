@@ -1,6 +1,6 @@
 # Auditoria SEO — LinkMágico
 
-**Data:** 2026-08-10T12:12:03.149Z
+**Data:** 2026-08-10T13:33:15.279Z
 
 ## Resumo
 
@@ -8,8 +8,8 @@
 |---|---|
 | ✅ Aprovado | 544 |
 | ⚠️ Aviso | 23 |
-| ❌ Erro | 1 |
-| **Total** | **568** |
+| ❌ Erro | 3 |
+| **Total** | **570** |
 
 ## Verificações Globais
 
@@ -25,7 +25,7 @@
 
 ## Verificações por Página
 
-⚠️ 13 página(s) com avisos ou erros:
+⚠️ 16 página(s) com avisos ou erros:
 
 ### 404.html
 
@@ -170,7 +170,45 @@
 | JSON-LD Schema | ✅ | 1 bloco(s) |
 | H1 | ✅ | 1 H1 (correto) |
 | Imagens | ✅ | Sem imagens |
-| Link quebrado | ❌ | /glossario/landing-page |
+
+### glossario/ia-conversacional.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | O que é IA Conversacional? Como Funciona e Exemplos Reais — LinkMágico |
+| Meta Description | ✅ | 142 chars |
+| Canonical | ✅ | https://site.linkmagico.app.br/glossario/ia-conversacional |
+| Open Graph | ✅ | 4/4 tags |
+| JSON-LD Schema | ✅ | 1 bloco(s) |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | Sem imagens |
+| Link quebrado | ❌ | /pricing.html |
+
+### glossario/lead-scoring.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | O que é Lead Scoring? Guia Completo com Exemplos Práticos — LinkMágico |
+| Meta Description | ✅ | 147 chars |
+| Canonical | ✅ | https://site.linkmagico.app.br/glossario/lead-scoring |
+| Open Graph | ✅ | 4/4 tags |
+| JSON-LD Schema | ✅ | 1 bloco(s) |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | Sem imagens |
+| Link quebrado | ❌ | /pricing.html |
+
+### glossario/pipeline.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | O que é Pipeline de Vendas? Guia Completo para Montar o Seu — LinkMágico |
+| Meta Description | ✅ | 130 chars |
+| Canonical | ✅ | https://site.linkmagico.app.br/glossario/pipeline |
+| Open Graph | ✅ | 4/4 tags |
+| JSON-LD Schema | ✅ | 1 bloco(s) |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | Sem imagens |
+| Link quebrado | ❌ | /pricing.html |
 
 ### treinamento.html
 
