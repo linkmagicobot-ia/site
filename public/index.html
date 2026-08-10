@@ -38,7 +38,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" as="style">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">`n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -947,8 +947,8 @@ img{max-width:100%;height:auto;display:block}
 <p style="color:var(--muted);font-size:.78rem;text-align:center;margin-bottom:10px;font-style:italic">Veja o vendedor automático em ação:</p>
 <div style="display:flex;justify-content:center;width:100%">
 <div class="hero__video-wrap" style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.15)">
-<video autoplay loop muted playsinline style="width:100%;aspect-ratio:9/16;display:block;object-fit:cover">
-<source src="demo-vendedor.mp4" type="video/mp4">
+<video class="lazy-video" autoplay loop muted playsinline style="width:100%;aspect-ratio:9/16;display:block;object-fit:cover">
+<source data-src="demo-vendedor.mp4" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1082,8 +1082,8 @@ img{max-width:100%;height:auto;display:block}
 <div style="max-width:720px;margin:40px auto 0;text-align:center" class="anim">
 <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic"><i class="fas fa-film" style="color:var(--purple-l);margin-right:4px"></i> Veja na prática como é simples:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
-<video controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
-<source src="demo-setup.mp4" type="video/mp4">
+<video class="lazy-video" controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<source data-src="demo-setup.mp4" type="video/mp4">
 </video>
 </div>
 <p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-bolt" style="color:var(--green-l);margin-right:4px"></i> Setup real — menos de 2 minutos do zero à página vendendo</p>
@@ -1099,8 +1099,8 @@ img{max-width:100%;height:auto;display:block}
 <h2 class="section-title">A plataforma completa <span class="text-grad">por dentro</span></h2>
 <p class="section-subtitle">Assista o walkthrough real do LinkMágico v7.0 — do painel às conversas automáticas funcionando.</p>
 <div class="walkthrough__video">
-<video controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
-<source src="walkthrough-v7.mp4" type="video/mp4">
+<video class="lazy-video" controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<source data-src="walkthrough-v7.mp4" type="video/mp4">
 </video>
 </div>
 <p style="color:var(--green-l);font-size:.82rem;margin-top:14px;font-weight:600"><i class="fas fa-check-circle"></i> Gravação real da plataforma — sem edição, sem enrolação</p>
@@ -1259,8 +1259,8 @@ img{max-width:100%;height:auto;display:block}
 <div style="max-width:720px;margin:36px auto 0;text-align:center" class="anim">
 <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic"><i class="fas fa-chart-bar" style="color:var(--purple-l);margin-right:4px"></i> Veja o CRM real capturando leads automaticamente:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
-<video controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
-<source src="demo-crm.mp4" type="video/mp4">
+<video class="lazy-video" controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
+<source data-src="demo-crm.mp4" type="video/mp4">
 </video>
 </div>
 <p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-crosshairs" style="color:var(--green-l);margin-right:4px"></i> Cada conversa vira um lead rastreável no seu painel</p>
@@ -2355,8 +2355,35 @@ function sendDemoMessage(){
 document.getElementById('demoChatInput').addEventListener('keypress',function(e){if(e.key==='Enter')sendDemoMessage();});
 document.getElementById('demoChatOverlay').addEventListener('click',function(e){if(e.target===this)closeDemoChat();});
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let lazyVideos = [].slice.call(document.querySelectorAll("video.lazy-video"));
+    if ("IntersectionObserver" in window) {
+        let lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(video) {
+                if (video.isIntersecting) {
+                    for (let source in video.target.children) {
+                        let videoSource = video.target.children[source];
+                        if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                            videoSource.src = videoSource.dataset.src;
+                        }
+                    }
+                    video.target.load();
+                    video.target.classList.remove("lazy-video");
+                    lazyVideoObserver.unobserve(video.target);
+                }
+            });
+        });
+        lazyVideos.forEach(function(lazyVideo) {
+            lazyVideoObserver.observe(lazyVideo);
+        });
+    }
+});
+</script>
 </body>
 </html>
+
+
 
 
 
