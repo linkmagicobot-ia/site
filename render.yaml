@@ -8,4 +8,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: INDEXNOW_KEY
+        value: 71a2d891a2bb4eddbb00ce799934a8b1
+      - key: BING_WEBMASTER_API_KEY
+        value: replace_with_bing_key
     healthCheckPath: /health

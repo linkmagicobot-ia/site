@@ -1,0 +1,565 @@
+{
+  "timestamp": "2026-08-10T12:12:03.451Z",
+  "urls": [
+    {
+      "url": "https://site.linkmagico.app.br/",
+      "file": "index.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/faq",
+      "file": "faq.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/faq",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/como-funciona",
+      "file": "como-funciona.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/como-funciona",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/recursos",
+      "file": "recursos.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/recursos",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/integracoes",
+      "file": "integracoes.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/integracoes",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/seguranca",
+      "file": "seguranca.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/seguranca",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/changelog",
+      "file": "changelog.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/changelog",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/treinamento",
+      "file": "treinamento.html",
+      "exists": true,
+      "canonical": null,
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/",
+      "file": "blog/index.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/o-que-e-vendedor-automatico-para-landing-page",
+      "file": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/o-que-e-vendedor-automatico-para-landing-page",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/como-converter-mais-leads-com-chatbot-de-ia",
+      "file": "blog/como-converter-mais-leads-com-chatbot-de-ia.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/como-converter-mais-leads-com-chatbot-de-ia",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/melhor-chatbot-para-infoprodutores-no-brasil",
+      "file": "blog/melhor-chatbot-para-infoprodutores-no-brasil.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/melhor-chatbot-para-infoprodutores-no-brasil",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/status",
+      "file": "status.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/status",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/roadmap",
+      "file": "roadmap.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/roadmap",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/sobre",
+      "file": "sobre.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/sobre",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/docs",
+      "file": "docs.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/docs",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/como-automatizar-atendimento-whatsapp",
+      "file": "blog/como-automatizar-atendimento-whatsapp.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/como-automatizar-atendimento-whatsapp",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/como-reduzir-abandono-de-leads",
+      "file": "blog/como-reduzir-abandono-de-leads.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/como-reduzir-abandono-de-leads",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/chatbot-para-clinicas-e-consultorios",
+      "file": "blog/chatbot-para-clinicas-e-consultorios.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/chatbot-para-clinicas-e-consultorios",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/politica-de-privacidade",
+      "file": "politica-de-privacidade.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/politica-de-privacidade",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/termos-de-uso",
+      "file": "termos-de-uso.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/termos-de-uso",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/lgpd",
+      "file": "lgpd.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/lgpd",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/cookies",
+      "file": "cookies.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/cookies",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario",
+      "file": "glossario.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/ferramentas/calculadora-roi",
+      "file": "ferramentas/calculadora-roi.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/ferramentas/calculadora-roi",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/chatbot",
+      "file": "glossario/chatbot.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/chatbot",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/lead",
+      "file": "glossario/lead.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/lead",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/crm",
+      "file": "glossario/crm.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/crm",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/ia-conversacional",
+      "file": "glossario/ia-conversacional.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/ia-conversacional",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/api",
+      "file": "glossario/api.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/api",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/webhook",
+      "file": "glossario/webhook.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/webhook",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/nlp",
+      "file": "glossario/nlp.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/nlp",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/funil-de-vendas",
+      "file": "glossario/funil-de-vendas.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/funil-de-vendas",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/whatsapp-business-api",
+      "file": "glossario/whatsapp-business-api.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/whatsapp-business-api",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/evolution-api",
+      "file": "glossario/evolution-api.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/evolution-api",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/conversao",
+      "file": "glossario/conversao.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/conversao",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/roi",
+      "file": "glossario/roi.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/roi",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/lead-scoring",
+      "file": "glossario/lead-scoring.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/lead-scoring",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/pipeline",
+      "file": "glossario/pipeline.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/pipeline",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/follow-up",
+      "file": "glossario/follow-up.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/follow-up",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/clinicas",
+      "file": "clinicas.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/clinicas",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/imobiliarias",
+      "file": "imobiliarias.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/imobiliarias",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/ecommerce",
+      "file": "ecommerce.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/ecommerce",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/restaurantes",
+      "file": "restaurantes.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/restaurantes",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/infoprodutores",
+      "file": "infoprodutores.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/infoprodutores",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/templates/clinicas",
+      "file": "templates/clinicas.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/templates/clinicas",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/fluxos/clinicas",
+      "file": "fluxos/clinicas.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/fluxos/clinicas",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/checklists/clinicas",
+      "file": "checklists/clinicas.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/checklists/clinicas",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/prompts/clinicas",
+      "file": "prompts/clinicas.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/prompts/clinicas",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/exemplos/clinicas",
+      "file": "exemplos/clinicas.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/exemplos/clinicas",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/templates/imobiliarias",
+      "file": "templates/imobiliarias.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/templates/imobiliarias",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/fluxos/imobiliarias",
+      "file": "fluxos/imobiliarias.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/fluxos/imobiliarias",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/checklists/imobiliarias",
+      "file": "checklists/imobiliarias.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/checklists/imobiliarias",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/prompts/imobiliarias",
+      "file": "prompts/imobiliarias.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/prompts/imobiliarias",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/exemplos/imobiliarias",
+      "file": "exemplos/imobiliarias.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/exemplos/imobiliarias",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/templates/ecommerce",
+      "file": "templates/ecommerce.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/templates/ecommerce",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/fluxos/ecommerce",
+      "file": "fluxos/ecommerce.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/fluxos/ecommerce",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/checklists/ecommerce",
+      "file": "checklists/ecommerce.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/checklists/ecommerce",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/prompts/ecommerce",
+      "file": "prompts/ecommerce.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/prompts/ecommerce",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/exemplos/ecommerce",
+      "file": "exemplos/ecommerce.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/exemplos/ecommerce",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/templates/restaurantes",
+      "file": "templates/restaurantes.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/templates/restaurantes",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/fluxos/restaurantes",
+      "file": "fluxos/restaurantes.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/fluxos/restaurantes",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/checklists/restaurantes",
+      "file": "checklists/restaurantes.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/checklists/restaurantes",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/prompts/restaurantes",
+      "file": "prompts/restaurantes.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/prompts/restaurantes",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/exemplos/restaurantes",
+      "file": "exemplos/restaurantes.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/exemplos/restaurantes",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/templates/infoprodutores",
+      "file": "templates/infoprodutores.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/templates/infoprodutores",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/fluxos/infoprodutores",
+      "file": "fluxos/infoprodutores.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/fluxos/infoprodutores",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/checklists/infoprodutores",
+      "file": "checklists/infoprodutores.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/checklists/infoprodutores",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/prompts/infoprodutores",
+      "file": "prompts/infoprodutores.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/prompts/infoprodutores",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/exemplos/infoprodutores",
+      "file": "exemplos/infoprodutores.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/exemplos/infoprodutores",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/automacao-de-marketing",
+      "file": "glossario/automacao-de-marketing.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/automacao-de-marketing",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/onboarding",
+      "file": "glossario/onboarding.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/onboarding",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/glossario/llm",
+      "file": "glossario/llm.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/glossario/llm",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/melhor-chatbot-whatsapp-2026",
+      "file": "blog/melhor-chatbot-whatsapp-2026.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/melhor-chatbot-whatsapp-2026",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/alternativa-botconversa",
+      "file": "blog/alternativa-botconversa.html",
+      "exists": true,
+      "canonical": "https://linkmagico.app.br/blog/alternativa-botconversa",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/alternativa-manychat",
+      "file": "blog/alternativa-manychat.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/alternativa-manychat",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/quanto-custa-chatbot-2026",
+      "file": "blog/quanto-custa-chatbot-2026.html",
+      "exists": true,
+      "canonical": "https://linkmagico.app.br/blog/quanto-custa-chatbot-2026",
+      "blocked": false
+    },
+    {
+      "url": "https://site.linkmagico.app.br/blog/chatbot-ia-vs-fluxo",
+      "file": "blog/chatbot-ia-vs-fluxo.html",
+      "exists": true,
+      "canonical": "https://site.linkmagico.app.br/blog/chatbot-ia-vs-fluxo",
+      "blocked": false
+    }
+  ],
+  "orphans": [],
+  "blocked": [],
+  "noCanonical": [
+    "https://site.linkmagico.app.br/treinamento"
+  ],
+  "summary": {
+    "totalUrls": 78,
+    "totalHtmlFiles": 80,
+    "urlsWithFile": 78,
+    "urlsWithoutFile": 0,
+    "urlsWithCanonical": 77,
+    "urlsBlocked": 0,
+    "orphanPages": 0
+  }
+}

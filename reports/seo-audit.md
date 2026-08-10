@@ -1,15 +1,15 @@
 # Auditoria SEO — LinkMágico
 
-**Data:** 2026-06-27T04:12:42.154Z
+**Data:** 2026-08-10T12:12:03.149Z
 
 ## Resumo
 
 | Métrica | Total |
 |---|---|
-| ✅ Aprovado | 516 |
-| ⚠️ Aviso | 16 |
-| ❌ Erro | 0 |
-| **Total** | **532** |
+| ✅ Aprovado | 544 |
+| ⚠️ Aviso | 23 |
+| ❌ Erro | 1 |
+| **Total** | **568** |
 
 ## Verificações Globais
 
@@ -18,14 +18,14 @@
 | robots.txt existe | ✅ | 591 bytes |
 | robots.txt referencia sitemap | ✅ | Sim |
 | robots.txt bloqueio total | ⚠️ | Contém "Disallow: /" — verificar se intencional |
-| sitemap.xml existe | ✅ | 73 URLs |
+| sitemap.xml existe | ✅ | 78 URLs |
 | sitemap.xml formato | ✅ | XML válido |
 | Sitemap integridade | ✅ | Todas as URLs têm arquivo correspondente |
 | Páginas órfãs | ✅ | Nenhuma (exceto utilitárias) |
 
 ## Verificações por Página
 
-⚠️ 7 página(s) com avisos ou erros:
+⚠️ 13 página(s) com avisos ou erros:
 
 ### 404.html
 
@@ -48,6 +48,42 @@
 | Canonical | ⚠️ | Ausente |
 | Open Graph | ⚠️ | Nenhuma OG tag |
 | JSON-LD Schema | ⚠️ | Ausente |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | Sem imagens |
+
+### blog/alternativa-botconversa.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | Alternativa ao BotConversa: 5 Opções para Automatizar Vendas em 2026 |
+| Meta Description | ⚠️ | Muito longa (165 chars) |
+| Canonical | ✅ | https://linkmagico.app.br/blog/alternativa-botconversa |
+| Open Graph | ⚠️ | 3/4 tags |
+| JSON-LD Schema | ✅ | 2 bloco(s) |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | Sem imagens |
+
+### blog/alternativa-manychat.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | Alternativa ao ManyChat: 5 Ferramentas de Chatbot para o Mercado Brasileiro | Bl |
+| Meta Description | ⚠️ | Muito longa (164 chars) |
+| Canonical | ✅ | https://site.linkmagico.app.br/blog/alternativa-manychat |
+| Open Graph | ✅ | 4/4 tags |
+| JSON-LD Schema | ✅ | 2 bloco(s) |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | 1 imagens, todas com alt |
+
+### blog/chatbot-ia-vs-fluxo.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | Chatbot com IA vs Chatbot com Fluxo: Qual Escolher em 2026? — LinkMágico |
+| Meta Description | ⚠️ | Muito longa (163 chars) |
+| Canonical | ✅ | https://site.linkmagico.app.br/blog/chatbot-ia-vs-fluxo |
+| Open Graph | ✅ | 4/4 tags |
+| JSON-LD Schema | ✅ | 2 bloco(s) |
 | H1 | ✅ | 1 H1 (correto) |
 | Imagens | ✅ | Sem imagens |
 
@@ -87,17 +123,54 @@
 | H1 | ✅ | 1 H1 (correto) |
 | Imagens | ✅ | 1 imagens, todas com alt |
 
-### index.html
+### blog/quanto-custa-chatbot-2026.html
 
 | Verificação | Status | Detalhe |
 |---|---|---|
-| Title | ✅ | LinkMágico — Vendedor Automático para Qualquer Página |
-| Meta Description | ⚠️ | Muito longa (164 chars) |
-| Canonical | ✅ | https://site.linkmagico.app.br/ |
-| Open Graph | ✅ | 4/4 tags |
-| JSON-LD Schema | ✅ | 7 bloco(s) |
+| Title | ✅ | Quanto Custa um Chatbot em 2026? Guia Completo de Preços | LinkMágico |
+| Meta Description | ✅ | 152 chars |
+| Canonical | ✅ | https://linkmagico.app.br/blog/quanto-custa-chatbot-2026 |
+| Open Graph | ⚠️ | 3/4 tags |
+| JSON-LD Schema | ✅ | 2 bloco(s) |
 | H1 | ✅ | 1 H1 (correto) |
-| Imagens | ✅ | 33 imagens, todas com alt |
+| Imagens | ✅ | Sem imagens |
+
+### fluxos/imobiliarias.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | Fluxos de Atendimento para Imobiliárias — LinkMágico |
+| Meta Description | ⚠️ | Muito longa (203 chars) |
+| Canonical | ✅ | https://site.linkmagico.app.br/fluxos/imobiliarias |
+| Open Graph | ✅ | 4/4 tags |
+| JSON-LD Schema | ✅ | 1 bloco(s) |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | Sem imagens |
+
+### fluxos/infoprodutores.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | Fluxos de Atendimento para Infoprodutores — LinkMágico |
+| Meta Description | ⚠️ | Muito longa (174 chars) |
+| Canonical | ✅ | https://site.linkmagico.app.br/fluxos/infoprodutores |
+| Open Graph | ✅ | 4/4 tags |
+| JSON-LD Schema | ✅ | 1 bloco(s) |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | Sem imagens |
+
+### glossario/conversao.html
+
+| Verificação | Status | Detalhe |
+|---|---|---|
+| Title | ✅ | O que é Conversão — Glossário LinkMágico |
+| Meta Description | ⚠️ | Muito longa (184 chars) |
+| Canonical | ✅ | https://site.linkmagico.app.br/glossario/conversao |
+| Open Graph | ✅ | 4/4 tags |
+| JSON-LD Schema | ✅ | 1 bloco(s) |
+| H1 | ✅ | 1 H1 (correto) |
+| Imagens | ✅ | Sem imagens |
+| Link quebrado | ❌ | /glossario/landing-page |
 
 ### treinamento.html
 

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T04:12:42.154Z",
+  "timestamp": "2026-08-10T12:12:03.149Z",
   "pages": [
     {
       "page": "404.html",
@@ -81,6 +81,132 @@
     },
     {
       "page": "BEMVINDO.html",
+      "check": "Imagens",
+      "status": "PASS",
+      "detail": "Sem imagens"
+    },
+    {
+      "page": "blog/alternativa-botconversa.html",
+      "check": "Title",
+      "status": "PASS",
+      "detail": "Alternativa ao BotConversa: 5 Opções para Automatizar Vendas em 2026"
+    },
+    {
+      "page": "blog/alternativa-botconversa.html",
+      "check": "Meta Description",
+      "status": "WARN",
+      "detail": "Muito longa (165 chars)"
+    },
+    {
+      "page": "blog/alternativa-botconversa.html",
+      "check": "Canonical",
+      "status": "PASS",
+      "detail": "https://linkmagico.app.br/blog/alternativa-botconversa"
+    },
+    {
+      "page": "blog/alternativa-botconversa.html",
+      "check": "Open Graph",
+      "status": "WARN",
+      "detail": "3/4 tags"
+    },
+    {
+      "page": "blog/alternativa-botconversa.html",
+      "check": "JSON-LD Schema",
+      "status": "PASS",
+      "detail": "2 bloco(s)"
+    },
+    {
+      "page": "blog/alternativa-botconversa.html",
+      "check": "H1",
+      "status": "PASS",
+      "detail": "1 H1 (correto)"
+    },
+    {
+      "page": "blog/alternativa-botconversa.html",
+      "check": "Imagens",
+      "status": "PASS",
+      "detail": "Sem imagens"
+    },
+    {
+      "page": "blog/alternativa-manychat.html",
+      "check": "Title",
+      "status": "PASS",
+      "detail": "Alternativa ao ManyChat: 5 Ferramentas de Chatbot para o Mercado Brasileiro | Bl"
+    },
+    {
+      "page": "blog/alternativa-manychat.html",
+      "check": "Meta Description",
+      "status": "WARN",
+      "detail": "Muito longa (164 chars)"
+    },
+    {
+      "page": "blog/alternativa-manychat.html",
+      "check": "Canonical",
+      "status": "PASS",
+      "detail": "https://site.linkmagico.app.br/blog/alternativa-manychat"
+    },
+    {
+      "page": "blog/alternativa-manychat.html",
+      "check": "Open Graph",
+      "status": "PASS",
+      "detail": "4/4 tags"
+    },
+    {
+      "page": "blog/alternativa-manychat.html",
+      "check": "JSON-LD Schema",
+      "status": "PASS",
+      "detail": "2 bloco(s)"
+    },
+    {
+      "page": "blog/alternativa-manychat.html",
+      "check": "H1",
+      "status": "PASS",
+      "detail": "1 H1 (correto)"
+    },
+    {
+      "page": "blog/alternativa-manychat.html",
+      "check": "Imagens",
+      "status": "PASS",
+      "detail": "1 imagens, todas com alt"
+    },
+    {
+      "page": "blog/chatbot-ia-vs-fluxo.html",
+      "check": "Title",
+      "status": "PASS",
+      "detail": "Chatbot com IA vs Chatbot com Fluxo: Qual Escolher em 2026? — LinkMágico"
+    },
+    {
+      "page": "blog/chatbot-ia-vs-fluxo.html",
+      "check": "Meta Description",
+      "status": "WARN",
+      "detail": "Muito longa (163 chars)"
+    },
+    {
+      "page": "blog/chatbot-ia-vs-fluxo.html",
+      "check": "Canonical",
+      "status": "PASS",
+      "detail": "https://site.linkmagico.app.br/blog/chatbot-ia-vs-fluxo"
+    },
+    {
+      "page": "blog/chatbot-ia-vs-fluxo.html",
+      "check": "Open Graph",
+      "status": "PASS",
+      "detail": "4/4 tags"
+    },
+    {
+      "page": "blog/chatbot-ia-vs-fluxo.html",
+      "check": "JSON-LD Schema",
+      "status": "PASS",
+      "detail": "2 bloco(s)"
+    },
+    {
+      "page": "blog/chatbot-ia-vs-fluxo.html",
+      "check": "H1",
+      "status": "PASS",
+      "detail": "1 H1 (correto)"
+    },
+    {
+      "page": "blog/chatbot-ia-vs-fluxo.html",
       "check": "Imagens",
       "status": "PASS",
       "detail": "Sem imagens"
@@ -338,6 +464,48 @@
       "detail": "1 imagens, todas com alt"
     },
     {
+      "page": "blog/melhor-chatbot-whatsapp-2026.html",
+      "check": "Title",
+      "status": "PASS",
+      "detail": "Melhor Chatbot para WhatsApp em 2026: Comparativo Completo — LinkMágico"
+    },
+    {
+      "page": "blog/melhor-chatbot-whatsapp-2026.html",
+      "check": "Meta Description",
+      "status": "PASS",
+      "detail": "158 chars"
+    },
+    {
+      "page": "blog/melhor-chatbot-whatsapp-2026.html",
+      "check": "Canonical",
+      "status": "PASS",
+      "detail": "https://site.linkmagico.app.br/blog/melhor-chatbot-whatsapp-2026"
+    },
+    {
+      "page": "blog/melhor-chatbot-whatsapp-2026.html",
+      "check": "Open Graph",
+      "status": "PASS",
+      "detail": "4/4 tags"
+    },
+    {
+      "page": "blog/melhor-chatbot-whatsapp-2026.html",
+      "check": "JSON-LD Schema",
+      "status": "PASS",
+      "detail": "2 bloco(s)"
+    },
+    {
+      "page": "blog/melhor-chatbot-whatsapp-2026.html",
+      "check": "H1",
+      "status": "PASS",
+      "detail": "1 H1 (correto)"
+    },
+    {
+      "page": "blog/melhor-chatbot-whatsapp-2026.html",
+      "check": "Imagens",
+      "status": "PASS",
+      "detail": "Sem imagens"
+    },
+    {
       "page": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
       "check": "Title",
       "status": "PASS",
@@ -378,6 +546,48 @@
       "check": "Imagens",
       "status": "PASS",
       "detail": "1 imagens, todas com alt"
+    },
+    {
+      "page": "blog/quanto-custa-chatbot-2026.html",
+      "check": "Title",
+      "status": "PASS",
+      "detail": "Quanto Custa um Chatbot em 2026? Guia Completo de Preços | LinkMágico"
+    },
+    {
+      "page": "blog/quanto-custa-chatbot-2026.html",
+      "check": "Meta Description",
+      "status": "PASS",
+      "detail": "152 chars"
+    },
+    {
+      "page": "blog/quanto-custa-chatbot-2026.html",
+      "check": "Canonical",
+      "status": "PASS",
+      "detail": "https://linkmagico.app.br/blog/quanto-custa-chatbot-2026"
+    },
+    {
+      "page": "blog/quanto-custa-chatbot-2026.html",
+      "check": "Open Graph",
+      "status": "WARN",
+      "detail": "3/4 tags"
+    },
+    {
+      "page": "blog/quanto-custa-chatbot-2026.html",
+      "check": "JSON-LD Schema",
+      "status": "PASS",
+      "detail": "2 bloco(s)"
+    },
+    {
+      "page": "blog/quanto-custa-chatbot-2026.html",
+      "check": "H1",
+      "status": "PASS",
+      "detail": "1 H1 (correto)"
+    },
+    {
+      "page": "blog/quanto-custa-chatbot-2026.html",
+      "check": "Imagens",
+      "status": "PASS",
+      "detail": "Sem imagens"
     },
     {
       "page": "changelog.html",
@@ -1228,8 +1438,8 @@
     {
       "page": "fluxos/imobiliarias.html",
       "check": "Meta Description",
-      "status": "PASS",
-      "detail": "69 chars"
+      "status": "WARN",
+      "detail": "Muito longa (203 chars)"
     },
     {
       "page": "fluxos/imobiliarias.html",
@@ -1270,8 +1480,8 @@
     {
       "page": "fluxos/infoprodutores.html",
       "check": "Meta Description",
-      "status": "PASS",
-      "detail": "71 chars"
+      "status": "WARN",
+      "detail": "Muito longa (174 chars)"
     },
     {
       "page": "fluxos/infoprodutores.html",
@@ -1480,8 +1690,8 @@
     {
       "page": "glossario/conversao.html",
       "check": "Meta Description",
-      "status": "PASS",
-      "detail": "98 chars"
+      "status": "WARN",
+      "detail": "Muito longa (184 chars)"
     },
     {
       "page": "glossario/conversao.html",
@@ -1512,6 +1722,12 @@
       "check": "Imagens",
       "status": "PASS",
       "detail": "Sem imagens"
+    },
+    {
+      "page": "glossario/conversao.html",
+      "check": "Link quebrado",
+      "status": "ERROR",
+      "detail": "/glossario/landing-page"
     },
     {
       "page": "glossario/crm.html",
@@ -1565,7 +1781,7 @@
       "page": "glossario/evolution-api.html",
       "check": "Meta Description",
       "status": "PASS",
-      "detail": "108 chars"
+      "detail": "156 chars"
     },
     {
       "page": "glossario/evolution-api.html",
@@ -1649,7 +1865,7 @@
       "page": "glossario/funil-de-vendas.html",
       "check": "Meta Description",
       "status": "PASS",
-      "detail": "90 chars"
+      "detail": "140 chars"
     },
     {
       "page": "glossario/funil-de-vendas.html",
@@ -2194,8 +2410,8 @@
     {
       "page": "index.html",
       "check": "Meta Description",
-      "status": "WARN",
-      "detail": "Muito longa (164 chars)"
+      "status": "PASS",
+      "detail": "99 chars"
     },
     {
       "page": "index.html",
@@ -3171,7 +3387,7 @@
     {
       "check": "sitemap.xml existe",
       "status": "PASS",
-      "detail": "73 URLs"
+      "detail": "78 URLs"
     },
     {
       "check": "sitemap.xml formato",
@@ -3190,9 +3406,9 @@
     }
   ],
   "summary": {
-    "total": 532,
-    "passed": 516,
-    "warnings": 16,
-    "errors": 0
+    "total": 568,
+    "passed": 544,
+    "warnings": 23,
+    "errors": 1
   }
 }

@@ -1,0 +1,3419 @@
+{
+  "date": "2026-08-10",
+  "type": "daily",
+  "data": {
+    "timestamp": "2026-08-10T12:12:03.149Z",
+    "pages": [
+      {
+        "page": "404.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Página não encontrada — LinkMágico"
+      },
+      {
+        "page": "404.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "404.html",
+        "check": "Canonical",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "404.html",
+        "check": "Open Graph",
+        "status": "WARN",
+        "detail": "Nenhuma OG tag"
+      },
+      {
+        "page": "404.html",
+        "check": "JSON-LD Schema",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "404.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "404.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "BEMVINDO.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Bem-vindo ao Link Mágico"
+      },
+      {
+        "page": "BEMVINDO.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "BEMVINDO.html",
+        "check": "Canonical",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "BEMVINDO.html",
+        "check": "Open Graph",
+        "status": "WARN",
+        "detail": "Nenhuma OG tag"
+      },
+      {
+        "page": "BEMVINDO.html",
+        "check": "JSON-LD Schema",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "BEMVINDO.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "BEMVINDO.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "blog/alternativa-botconversa.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Alternativa ao BotConversa: 5 Opções para Automatizar Vendas em 2026"
+      },
+      {
+        "page": "blog/alternativa-botconversa.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Muito longa (165 chars)"
+      },
+      {
+        "page": "blog/alternativa-botconversa.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://linkmagico.app.br/blog/alternativa-botconversa"
+      },
+      {
+        "page": "blog/alternativa-botconversa.html",
+        "check": "Open Graph",
+        "status": "WARN",
+        "detail": "3/4 tags"
+      },
+      {
+        "page": "blog/alternativa-botconversa.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "blog/alternativa-botconversa.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/alternativa-botconversa.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "blog/alternativa-manychat.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Alternativa ao ManyChat: 5 Ferramentas de Chatbot para o Mercado Brasileiro | Bl"
+      },
+      {
+        "page": "blog/alternativa-manychat.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Muito longa (164 chars)"
+      },
+      {
+        "page": "blog/alternativa-manychat.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/alternativa-manychat"
+      },
+      {
+        "page": "blog/alternativa-manychat.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/alternativa-manychat.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "blog/alternativa-manychat.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/alternativa-manychat.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "1 imagens, todas com alt"
+      },
+      {
+        "page": "blog/chatbot-ia-vs-fluxo.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Chatbot com IA vs Chatbot com Fluxo: Qual Escolher em 2026? — LinkMágico"
+      },
+      {
+        "page": "blog/chatbot-ia-vs-fluxo.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Muito longa (163 chars)"
+      },
+      {
+        "page": "blog/chatbot-ia-vs-fluxo.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/chatbot-ia-vs-fluxo"
+      },
+      {
+        "page": "blog/chatbot-ia-vs-fluxo.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/chatbot-ia-vs-fluxo.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "blog/chatbot-ia-vs-fluxo.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/chatbot-ia-vs-fluxo.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "blog/chatbot-para-clinicas-e-consultorios.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Chatbot para Clínicas e Consultórios: Guia Completo 2026 — LinkMágico"
+      },
+      {
+        "page": "blog/chatbot-para-clinicas-e-consultorios.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "149 chars"
+      },
+      {
+        "page": "blog/chatbot-para-clinicas-e-consultorios.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/chatbot-para-clinicas-e-consultorios"
+      },
+      {
+        "page": "blog/chatbot-para-clinicas-e-consultorios.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/chatbot-para-clinicas-e-consultorios.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "blog/chatbot-para-clinicas-e-consultorios.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/chatbot-para-clinicas-e-consultorios.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "blog/como-automatizar-atendimento-whatsapp.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Como Automatizar Atendimento pelo WhatsApp em 2026 — LinkMágico"
+      },
+      {
+        "page": "blog/como-automatizar-atendimento-whatsapp.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "159 chars"
+      },
+      {
+        "page": "blog/como-automatizar-atendimento-whatsapp.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/como-automatizar-atendimento-whatsapp"
+      },
+      {
+        "page": "blog/como-automatizar-atendimento-whatsapp.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/como-automatizar-atendimento-whatsapp.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "blog/como-automatizar-atendimento-whatsapp.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/como-automatizar-atendimento-whatsapp.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "blog/como-converter-mais-leads-com-chatbot-de-ia.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Como converter mais leads com chatbot de IA | Blog LinkMágico"
+      },
+      {
+        "page": "blog/como-converter-mais-leads-com-chatbot-de-ia.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "157 chars"
+      },
+      {
+        "page": "blog/como-converter-mais-leads-com-chatbot-de-ia.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/como-converter-mais-leads-com-chatbot-de-ia"
+      },
+      {
+        "page": "blog/como-converter-mais-leads-com-chatbot-de-ia.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/como-converter-mais-leads-com-chatbot-de-ia.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "blog/como-converter-mais-leads-com-chatbot-de-ia.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/como-converter-mais-leads-com-chatbot-de-ia.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "1 imagens, todas com alt"
+      },
+      {
+        "page": "blog/como-reduzir-abandono-de-leads.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Como Reduzir Abandono de Leads com Follow-up Automático — LinkMágico"
+      },
+      {
+        "page": "blog/como-reduzir-abandono-de-leads.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "147 chars"
+      },
+      {
+        "page": "blog/como-reduzir-abandono-de-leads.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/como-reduzir-abandono-de-leads"
+      },
+      {
+        "page": "blog/como-reduzir-abandono-de-leads.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/como-reduzir-abandono-de-leads.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "blog/como-reduzir-abandono-de-leads.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/como-reduzir-abandono-de-leads.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "blog/index.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Blog LinkMágico | Blog LinkMágico"
+      },
+      {
+        "page": "blog/index.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "114 chars"
+      },
+      {
+        "page": "blog/index.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/"
+      },
+      {
+        "page": "blog/index.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/index.html",
+        "check": "JSON-LD Schema",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "blog/index.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/index.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "blog/melhor-chatbot-para-infoprodutores-no-brasil.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Melhor chatbot para infoprodutores no Brasil | Blog LinkMágico"
+      },
+      {
+        "page": "blog/melhor-chatbot-para-infoprodutores-no-brasil.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Muito longa (167 chars)"
+      },
+      {
+        "page": "blog/melhor-chatbot-para-infoprodutores-no-brasil.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/melhor-chatbot-para-infoprodutores-no-brasil"
+      },
+      {
+        "page": "blog/melhor-chatbot-para-infoprodutores-no-brasil.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/melhor-chatbot-para-infoprodutores-no-brasil.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "blog/melhor-chatbot-para-infoprodutores-no-brasil.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/melhor-chatbot-para-infoprodutores-no-brasil.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "1 imagens, todas com alt"
+      },
+      {
+        "page": "blog/melhor-chatbot-whatsapp-2026.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Melhor Chatbot para WhatsApp em 2026: Comparativo Completo — LinkMágico"
+      },
+      {
+        "page": "blog/melhor-chatbot-whatsapp-2026.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "158 chars"
+      },
+      {
+        "page": "blog/melhor-chatbot-whatsapp-2026.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/melhor-chatbot-whatsapp-2026"
+      },
+      {
+        "page": "blog/melhor-chatbot-whatsapp-2026.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/melhor-chatbot-whatsapp-2026.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "blog/melhor-chatbot-whatsapp-2026.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/melhor-chatbot-whatsapp-2026.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é um vendedor automático para landing page? | Blog LinkMágico"
+      },
+      {
+        "page": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Muito longa (162 chars)"
+      },
+      {
+        "page": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/blog/o-que-e-vendedor-automatico-para-landing-page"
+      },
+      {
+        "page": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/o-que-e-vendedor-automatico-para-landing-page.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "1 imagens, todas com alt"
+      },
+      {
+        "page": "blog/quanto-custa-chatbot-2026.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Quanto Custa um Chatbot em 2026? Guia Completo de Preços | LinkMágico"
+      },
+      {
+        "page": "blog/quanto-custa-chatbot-2026.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "152 chars"
+      },
+      {
+        "page": "blog/quanto-custa-chatbot-2026.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://linkmagico.app.br/blog/quanto-custa-chatbot-2026"
+      },
+      {
+        "page": "blog/quanto-custa-chatbot-2026.html",
+        "check": "Open Graph",
+        "status": "WARN",
+        "detail": "3/4 tags"
+      },
+      {
+        "page": "blog/quanto-custa-chatbot-2026.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "blog/quanto-custa-chatbot-2026.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "blog/quanto-custa-chatbot-2026.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "changelog.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Changelog — LinkMágico | Atualizações da Plataforma"
+      },
+      {
+        "page": "changelog.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "108 chars"
+      },
+      {
+        "page": "changelog.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/changelog"
+      },
+      {
+        "page": "changelog.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "changelog.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "changelog.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "changelog.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "checklists/clinicas.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Checklist de Implantação de Chatbot para Clínicas — LinkMágico"
+      },
+      {
+        "page": "checklists/clinicas.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "110 chars"
+      },
+      {
+        "page": "checklists/clinicas.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/checklists/clinicas"
+      },
+      {
+        "page": "checklists/clinicas.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "checklists/clinicas.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "checklists/clinicas.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "checklists/clinicas.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "checklists/ecommerce.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Checklist de Implantação para E-commerce — LinkMágico"
+      },
+      {
+        "page": "checklists/ecommerce.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "73 chars"
+      },
+      {
+        "page": "checklists/ecommerce.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/checklists/ecommerce"
+      },
+      {
+        "page": "checklists/ecommerce.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "checklists/ecommerce.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "checklists/ecommerce.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "checklists/ecommerce.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "checklists/imobiliarias.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Checklist de Implantação para Imobiliárias — LinkMágico"
+      },
+      {
+        "page": "checklists/imobiliarias.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "75 chars"
+      },
+      {
+        "page": "checklists/imobiliarias.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/checklists/imobiliarias"
+      },
+      {
+        "page": "checklists/imobiliarias.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "checklists/imobiliarias.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "checklists/imobiliarias.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "checklists/imobiliarias.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "checklists/infoprodutores.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Checklist de Implantação para Infoprodutores — LinkMágico"
+      },
+      {
+        "page": "checklists/infoprodutores.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "77 chars"
+      },
+      {
+        "page": "checklists/infoprodutores.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/checklists/infoprodutores"
+      },
+      {
+        "page": "checklists/infoprodutores.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "checklists/infoprodutores.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "checklists/infoprodutores.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "checklists/infoprodutores.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "checklists/restaurantes.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Checklist de Implantação para Restaurantes — LinkMágico"
+      },
+      {
+        "page": "checklists/restaurantes.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "75 chars"
+      },
+      {
+        "page": "checklists/restaurantes.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/checklists/restaurantes"
+      },
+      {
+        "page": "checklists/restaurantes.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "checklists/restaurantes.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "checklists/restaurantes.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "checklists/restaurantes.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "clinicas.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Chatbot com IA para Clínicas e Consultórios — LinkMágico"
+      },
+      {
+        "page": "clinicas.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "91 chars"
+      },
+      {
+        "page": "clinicas.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/clinicas"
+      },
+      {
+        "page": "clinicas.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "clinicas.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "clinicas.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "clinicas.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "como-funciona.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Como Funciona o LinkMágico — Vendedor Automático com IA"
+      },
+      {
+        "page": "como-funciona.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "149 chars"
+      },
+      {
+        "page": "como-funciona.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/como-funciona"
+      },
+      {
+        "page": "como-funciona.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "como-funciona.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "como-funciona.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "como-funciona.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "cookies.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Política de Cookies — LinkMágico"
+      },
+      {
+        "page": "cookies.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "104 chars"
+      },
+      {
+        "page": "cookies.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/cookies"
+      },
+      {
+        "page": "cookies.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "cookies.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "cookies.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "cookies.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "docs.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Documentação — LinkMágico | API, Webhooks, Tutoriais e SDK"
+      },
+      {
+        "page": "docs.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "141 chars"
+      },
+      {
+        "page": "docs.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/docs"
+      },
+      {
+        "page": "docs.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "docs.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "docs.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "docs.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "ecommerce.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Chatbot com IA para E-commerce — LinkMágico"
+      },
+      {
+        "page": "ecommerce.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "110 chars"
+      },
+      {
+        "page": "ecommerce.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/ecommerce"
+      },
+      {
+        "page": "ecommerce.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "ecommerce.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "ecommerce.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "ecommerce.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "exemplos/clinicas.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Exemplos de Conversa — Chatbot para Clínicas — LinkMágico"
+      },
+      {
+        "page": "exemplos/clinicas.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "113 chars"
+      },
+      {
+        "page": "exemplos/clinicas.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/exemplos/clinicas"
+      },
+      {
+        "page": "exemplos/clinicas.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "exemplos/clinicas.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "exemplos/clinicas.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "exemplos/clinicas.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "exemplos/ecommerce.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Exemplos de Conversa — Chatbot para E-commerce — LinkMágico"
+      },
+      {
+        "page": "exemplos/ecommerce.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "78 chars"
+      },
+      {
+        "page": "exemplos/ecommerce.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/exemplos/ecommerce"
+      },
+      {
+        "page": "exemplos/ecommerce.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "exemplos/ecommerce.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "exemplos/ecommerce.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "exemplos/ecommerce.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "exemplos/imobiliarias.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Exemplos de Conversa — Chatbot para Imobiliárias — LinkMágico"
+      },
+      {
+        "page": "exemplos/imobiliarias.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "80 chars"
+      },
+      {
+        "page": "exemplos/imobiliarias.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/exemplos/imobiliarias"
+      },
+      {
+        "page": "exemplos/imobiliarias.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "exemplos/imobiliarias.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "exemplos/imobiliarias.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "exemplos/imobiliarias.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "exemplos/infoprodutores.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Exemplos de Conversa — Chatbot para Infoprodutores — LinkMágico"
+      },
+      {
+        "page": "exemplos/infoprodutores.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "82 chars"
+      },
+      {
+        "page": "exemplos/infoprodutores.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/exemplos/infoprodutores"
+      },
+      {
+        "page": "exemplos/infoprodutores.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "exemplos/infoprodutores.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "exemplos/infoprodutores.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "exemplos/infoprodutores.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "exemplos/restaurantes.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Exemplos de Conversa — Chatbot para Restaurantes — LinkMágico"
+      },
+      {
+        "page": "exemplos/restaurantes.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "80 chars"
+      },
+      {
+        "page": "exemplos/restaurantes.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/exemplos/restaurantes"
+      },
+      {
+        "page": "exemplos/restaurantes.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "exemplos/restaurantes.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "exemplos/restaurantes.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "exemplos/restaurantes.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "faq.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Perguntas Frequentes — LinkMágico"
+      },
+      {
+        "page": "faq.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "126 chars"
+      },
+      {
+        "page": "faq.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/faq"
+      },
+      {
+        "page": "faq.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "faq.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "faq.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "faq.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "ferramentas/calculadora-roi.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Calculadora de ROI de Chatbot com IA — LinkMágico"
+      },
+      {
+        "page": "ferramentas/calculadora-roi.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "145 chars"
+      },
+      {
+        "page": "ferramentas/calculadora-roi.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/ferramentas/calculadora-roi"
+      },
+      {
+        "page": "ferramentas/calculadora-roi.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "ferramentas/calculadora-roi.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "ferramentas/calculadora-roi.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "ferramentas/calculadora-roi.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "fluxos/clinicas.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Fluxos de Atendimento para Clínicas — LinkMágico"
+      },
+      {
+        "page": "fluxos/clinicas.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "115 chars"
+      },
+      {
+        "page": "fluxos/clinicas.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/fluxos/clinicas"
+      },
+      {
+        "page": "fluxos/clinicas.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "fluxos/clinicas.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "fluxos/clinicas.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "fluxos/clinicas.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "fluxos/ecommerce.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Fluxos de Atendimento para E-commerce — LinkMágico"
+      },
+      {
+        "page": "fluxos/ecommerce.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "67 chars"
+      },
+      {
+        "page": "fluxos/ecommerce.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/fluxos/ecommerce"
+      },
+      {
+        "page": "fluxos/ecommerce.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "fluxos/ecommerce.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "fluxos/ecommerce.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "fluxos/ecommerce.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "fluxos/imobiliarias.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Fluxos de Atendimento para Imobiliárias — LinkMágico"
+      },
+      {
+        "page": "fluxos/imobiliarias.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Muito longa (203 chars)"
+      },
+      {
+        "page": "fluxos/imobiliarias.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/fluxos/imobiliarias"
+      },
+      {
+        "page": "fluxos/imobiliarias.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "fluxos/imobiliarias.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "fluxos/imobiliarias.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "fluxos/imobiliarias.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "fluxos/infoprodutores.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Fluxos de Atendimento para Infoprodutores — LinkMágico"
+      },
+      {
+        "page": "fluxos/infoprodutores.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Muito longa (174 chars)"
+      },
+      {
+        "page": "fluxos/infoprodutores.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/fluxos/infoprodutores"
+      },
+      {
+        "page": "fluxos/infoprodutores.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "fluxos/infoprodutores.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "fluxos/infoprodutores.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "fluxos/infoprodutores.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "fluxos/restaurantes.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Fluxos de Atendimento para Restaurantes — LinkMágico"
+      },
+      {
+        "page": "fluxos/restaurantes.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "69 chars"
+      },
+      {
+        "page": "fluxos/restaurantes.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/fluxos/restaurantes"
+      },
+      {
+        "page": "fluxos/restaurantes.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "fluxos/restaurantes.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "fluxos/restaurantes.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "fluxos/restaurantes.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/api.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é API — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/api.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "115 chars"
+      },
+      {
+        "page": "glossario/api.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/api"
+      },
+      {
+        "page": "glossario/api.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/api.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/api.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/api.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/automacao-de-marketing.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Automação de Marketing — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/automacao-de-marketing.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "118 chars"
+      },
+      {
+        "page": "glossario/automacao-de-marketing.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/automacao-de-marketing"
+      },
+      {
+        "page": "glossario/automacao-de-marketing.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/automacao-de-marketing.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/automacao-de-marketing.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/automacao-de-marketing.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/chatbot.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Chatbot — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/chatbot.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "147 chars"
+      },
+      {
+        "page": "glossario/chatbot.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/chatbot"
+      },
+      {
+        "page": "glossario/chatbot.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/chatbot.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/chatbot.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/chatbot.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/conversao.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Conversão — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/conversao.html",
+        "check": "Meta Description",
+        "status": "WARN",
+        "detail": "Muito longa (184 chars)"
+      },
+      {
+        "page": "glossario/conversao.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/conversao"
+      },
+      {
+        "page": "glossario/conversao.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/conversao.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/conversao.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/conversao.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/conversao.html",
+        "check": "Link quebrado",
+        "status": "ERROR",
+        "detail": "/glossario/landing-page"
+      },
+      {
+        "page": "glossario/crm.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é CRM — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/crm.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "139 chars"
+      },
+      {
+        "page": "glossario/crm.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/crm"
+      },
+      {
+        "page": "glossario/crm.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/crm.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/crm.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/crm.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/evolution-api.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Evolution API — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/evolution-api.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "156 chars"
+      },
+      {
+        "page": "glossario/evolution-api.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/evolution-api"
+      },
+      {
+        "page": "glossario/evolution-api.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/evolution-api.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/evolution-api.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/evolution-api.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/follow-up.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Follow-up — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/follow-up.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "114 chars"
+      },
+      {
+        "page": "glossario/follow-up.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/follow-up"
+      },
+      {
+        "page": "glossario/follow-up.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/follow-up.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/follow-up.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/follow-up.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/funil-de-vendas.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Funil de Vendas — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/funil-de-vendas.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "140 chars"
+      },
+      {
+        "page": "glossario/funil-de-vendas.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/funil-de-vendas"
+      },
+      {
+        "page": "glossario/funil-de-vendas.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/funil-de-vendas.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/funil-de-vendas.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/funil-de-vendas.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/ia-conversacional.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é IA Conversacional — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/ia-conversacional.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "124 chars"
+      },
+      {
+        "page": "glossario/ia-conversacional.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/ia-conversacional"
+      },
+      {
+        "page": "glossario/ia-conversacional.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/ia-conversacional.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/ia-conversacional.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/ia-conversacional.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/lead-scoring.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Lead Scoring — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/lead-scoring.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "106 chars"
+      },
+      {
+        "page": "glossario/lead-scoring.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/lead-scoring"
+      },
+      {
+        "page": "glossario/lead-scoring.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/lead-scoring.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/lead-scoring.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/lead-scoring.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/lead.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Lead — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/lead.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "116 chars"
+      },
+      {
+        "page": "glossario/lead.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/lead"
+      },
+      {
+        "page": "glossario/lead.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/lead.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/lead.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/lead.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/llm.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é LLM — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/llm.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "139 chars"
+      },
+      {
+        "page": "glossario/llm.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/llm"
+      },
+      {
+        "page": "glossario/llm.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/llm.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/llm.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/llm.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/nlp.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é NLP — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/nlp.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "115 chars"
+      },
+      {
+        "page": "glossario/nlp.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/nlp"
+      },
+      {
+        "page": "glossario/nlp.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/nlp.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/nlp.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/nlp.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/onboarding.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Onboarding — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/onboarding.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "113 chars"
+      },
+      {
+        "page": "glossario/onboarding.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/onboarding"
+      },
+      {
+        "page": "glossario/onboarding.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/onboarding.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/onboarding.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/onboarding.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/pipeline.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Pipeline de Vendas — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/pipeline.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "99 chars"
+      },
+      {
+        "page": "glossario/pipeline.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/pipeline"
+      },
+      {
+        "page": "glossario/pipeline.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/pipeline.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/pipeline.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/pipeline.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/roi.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é ROI — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/roi.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "97 chars"
+      },
+      {
+        "page": "glossario/roi.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/roi"
+      },
+      {
+        "page": "glossario/roi.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/roi.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/roi.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/roi.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/webhook.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é Webhook — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/webhook.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "102 chars"
+      },
+      {
+        "page": "glossario/webhook.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/webhook"
+      },
+      {
+        "page": "glossario/webhook.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/webhook.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/webhook.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/webhook.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario/whatsapp-business-api.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "O que é WhatsApp Business API — Glossário LinkMágico"
+      },
+      {
+        "page": "glossario/whatsapp-business-api.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "108 chars"
+      },
+      {
+        "page": "glossario/whatsapp-business-api.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario/whatsapp-business-api"
+      },
+      {
+        "page": "glossario/whatsapp-business-api.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario/whatsapp-business-api.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario/whatsapp-business-api.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario/whatsapp-business-api.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "glossario.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Glossário de Automação, IA e Chatbots — LinkMágico"
+      },
+      {
+        "page": "glossario.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "151 chars"
+      },
+      {
+        "page": "glossario.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/glossario"
+      },
+      {
+        "page": "glossario.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "glossario.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "glossario.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "glossario.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "imobiliarias.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Chatbot com IA para Imobiliárias — LinkMágico"
+      },
+      {
+        "page": "imobiliarias.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "113 chars"
+      },
+      {
+        "page": "imobiliarias.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/imobiliarias"
+      },
+      {
+        "page": "imobiliarias.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "imobiliarias.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "imobiliarias.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "imobiliarias.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "index.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "LinkMágico — Vendedor Automático para Qualquer Página"
+      },
+      {
+        "page": "index.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "99 chars"
+      },
+      {
+        "page": "index.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/"
+      },
+      {
+        "page": "index.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "index.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "7 bloco(s)"
+      },
+      {
+        "page": "index.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "index.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "33 imagens, todas com alt"
+      },
+      {
+        "page": "infoprodutores.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Chatbot com IA para Infoprodutores — LinkMágico"
+      },
+      {
+        "page": "infoprodutores.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "106 chars"
+      },
+      {
+        "page": "infoprodutores.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/infoprodutores"
+      },
+      {
+        "page": "infoprodutores.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "infoprodutores.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "infoprodutores.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "infoprodutores.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "integracoes.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Integrações — LinkMágico | WhatsApp, Hotmart, WordPress e Mais"
+      },
+      {
+        "page": "integracoes.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "130 chars"
+      },
+      {
+        "page": "integracoes.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/integracoes"
+      },
+      {
+        "page": "integracoes.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "integracoes.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "integracoes.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "integracoes.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "lgpd.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "LGPD — LinkMágico | Conformidade com a Lei Geral de Proteção de Dados"
+      },
+      {
+        "page": "lgpd.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "139 chars"
+      },
+      {
+        "page": "lgpd.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/lgpd"
+      },
+      {
+        "page": "lgpd.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "lgpd.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "lgpd.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "lgpd.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "politica-de-privacidade.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Política de Privacidade — LinkMágico"
+      },
+      {
+        "page": "politica-de-privacidade.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "132 chars"
+      },
+      {
+        "page": "politica-de-privacidade.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/politica-de-privacidade"
+      },
+      {
+        "page": "politica-de-privacidade.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "politica-de-privacidade.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "politica-de-privacidade.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "politica-de-privacidade.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "prompts/clinicas.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Biblioteca de Prompts para Clínicas — LinkMágico"
+      },
+      {
+        "page": "prompts/clinicas.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "120 chars"
+      },
+      {
+        "page": "prompts/clinicas.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/prompts/clinicas"
+      },
+      {
+        "page": "prompts/clinicas.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "prompts/clinicas.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "prompts/clinicas.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "prompts/clinicas.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "prompts/ecommerce.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Biblioteca de Prompts para E-commerce — LinkMágico"
+      },
+      {
+        "page": "prompts/ecommerce.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "64 chars"
+      },
+      {
+        "page": "prompts/ecommerce.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/prompts/ecommerce"
+      },
+      {
+        "page": "prompts/ecommerce.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "prompts/ecommerce.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "prompts/ecommerce.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "prompts/ecommerce.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "prompts/imobiliarias.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Biblioteca de Prompts para Imobiliárias — LinkMágico"
+      },
+      {
+        "page": "prompts/imobiliarias.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "66 chars"
+      },
+      {
+        "page": "prompts/imobiliarias.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/prompts/imobiliarias"
+      },
+      {
+        "page": "prompts/imobiliarias.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "prompts/imobiliarias.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "prompts/imobiliarias.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "prompts/imobiliarias.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "prompts/infoprodutores.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Biblioteca de Prompts para Infoprodutores — LinkMágico"
+      },
+      {
+        "page": "prompts/infoprodutores.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "68 chars"
+      },
+      {
+        "page": "prompts/infoprodutores.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/prompts/infoprodutores"
+      },
+      {
+        "page": "prompts/infoprodutores.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "prompts/infoprodutores.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "prompts/infoprodutores.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "prompts/infoprodutores.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "prompts/restaurantes.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Biblioteca de Prompts para Restaurantes — LinkMágico"
+      },
+      {
+        "page": "prompts/restaurantes.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "66 chars"
+      },
+      {
+        "page": "prompts/restaurantes.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/prompts/restaurantes"
+      },
+      {
+        "page": "prompts/restaurantes.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "prompts/restaurantes.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "prompts/restaurantes.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "prompts/restaurantes.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "recursos.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Recursos — LinkMágico | Chatbot de Vendas, CRM, Analytics e Mais"
+      },
+      {
+        "page": "recursos.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "150 chars"
+      },
+      {
+        "page": "recursos.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/recursos"
+      },
+      {
+        "page": "recursos.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "recursos.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "recursos.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "recursos.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "restaurantes.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Chatbot com IA para Restaurantes — LinkMágico"
+      },
+      {
+        "page": "restaurantes.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "110 chars"
+      },
+      {
+        "page": "restaurantes.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/restaurantes"
+      },
+      {
+        "page": "restaurantes.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "restaurantes.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "restaurantes.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "restaurantes.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "roadmap.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Roadmap — LinkMágico | O Que Vem Por Aí"
+      },
+      {
+        "page": "roadmap.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "142 chars"
+      },
+      {
+        "page": "roadmap.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/roadmap"
+      },
+      {
+        "page": "roadmap.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "roadmap.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "roadmap.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "roadmap.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "seguranca.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Segurança e LGPD — LinkMágico"
+      },
+      {
+        "page": "seguranca.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "149 chars"
+      },
+      {
+        "page": "seguranca.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/seguranca"
+      },
+      {
+        "page": "seguranca.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "seguranca.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "seguranca.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "seguranca.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "sobre.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Sobre o LinkMágico — Quem Somos, Missão e Equipe"
+      },
+      {
+        "page": "sobre.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "131 chars"
+      },
+      {
+        "page": "sobre.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/sobre"
+      },
+      {
+        "page": "sobre.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "sobre.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "2 bloco(s)"
+      },
+      {
+        "page": "sobre.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "sobre.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "status.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Status — LinkMágico | Disponibilidade da Plataforma"
+      },
+      {
+        "page": "status.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "120 chars"
+      },
+      {
+        "page": "status.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/status"
+      },
+      {
+        "page": "status.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "status.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "status.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "status.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "templates/clinicas.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Templates de Mensagens para Clínicas — LinkMágico"
+      },
+      {
+        "page": "templates/clinicas.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "116 chars"
+      },
+      {
+        "page": "templates/clinicas.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/templates/clinicas"
+      },
+      {
+        "page": "templates/clinicas.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "templates/clinicas.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "templates/clinicas.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "templates/clinicas.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "templates/ecommerce.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Templates de Mensagens para E-commerce — LinkMágico"
+      },
+      {
+        "page": "templates/ecommerce.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "106 chars"
+      },
+      {
+        "page": "templates/ecommerce.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/templates/ecommerce"
+      },
+      {
+        "page": "templates/ecommerce.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "templates/ecommerce.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "templates/ecommerce.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "templates/ecommerce.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "templates/imobiliarias.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Templates de Mensagens para Imobiliárias — LinkMágico"
+      },
+      {
+        "page": "templates/imobiliarias.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "108 chars"
+      },
+      {
+        "page": "templates/imobiliarias.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/templates/imobiliarias"
+      },
+      {
+        "page": "templates/imobiliarias.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "templates/imobiliarias.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "templates/imobiliarias.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "templates/imobiliarias.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "templates/infoprodutores.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Templates de Mensagens para Infoprodutores — LinkMágico"
+      },
+      {
+        "page": "templates/infoprodutores.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "110 chars"
+      },
+      {
+        "page": "templates/infoprodutores.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/templates/infoprodutores"
+      },
+      {
+        "page": "templates/infoprodutores.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "templates/infoprodutores.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "templates/infoprodutores.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "templates/infoprodutores.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "templates/restaurantes.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Templates de Mensagens para Restaurantes — LinkMágico"
+      },
+      {
+        "page": "templates/restaurantes.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "108 chars"
+      },
+      {
+        "page": "templates/restaurantes.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/templates/restaurantes"
+      },
+      {
+        "page": "templates/restaurantes.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "templates/restaurantes.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "templates/restaurantes.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "templates/restaurantes.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "termos-de-uso.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Termos de Uso — LinkMágico"
+      },
+      {
+        "page": "termos-de-uso.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "127 chars"
+      },
+      {
+        "page": "termos-de-uso.html",
+        "check": "Canonical",
+        "status": "PASS",
+        "detail": "https://site.linkmagico.app.br/termos-de-uso"
+      },
+      {
+        "page": "termos-de-uso.html",
+        "check": "Open Graph",
+        "status": "PASS",
+        "detail": "4/4 tags"
+      },
+      {
+        "page": "termos-de-uso.html",
+        "check": "JSON-LD Schema",
+        "status": "PASS",
+        "detail": "1 bloco(s)"
+      },
+      {
+        "page": "termos-de-uso.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "termos-de-uso.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      },
+      {
+        "page": "treinamento.html",
+        "check": "Title",
+        "status": "PASS",
+        "detail": "Link Mágico - Central de Treinamento"
+      },
+      {
+        "page": "treinamento.html",
+        "check": "Meta Description",
+        "status": "PASS",
+        "detail": "77 chars"
+      },
+      {
+        "page": "treinamento.html",
+        "check": "Canonical",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "treinamento.html",
+        "check": "Open Graph",
+        "status": "WARN",
+        "detail": "Nenhuma OG tag"
+      },
+      {
+        "page": "treinamento.html",
+        "check": "JSON-LD Schema",
+        "status": "WARN",
+        "detail": "Ausente"
+      },
+      {
+        "page": "treinamento.html",
+        "check": "H1",
+        "status": "PASS",
+        "detail": "1 H1 (correto)"
+      },
+      {
+        "page": "treinamento.html",
+        "check": "Imagens",
+        "status": "PASS",
+        "detail": "Sem imagens"
+      }
+    ],
+    "global": [
+      {
+        "check": "robots.txt existe",
+        "status": "PASS",
+        "detail": "591 bytes"
+      },
+      {
+        "check": "robots.txt referencia sitemap",
+        "status": "PASS",
+        "detail": "Sim"
+      },
+      {
+        "check": "robots.txt bloqueio total",
+        "status": "WARN",
+        "detail": "Contém \"Disallow: /\" — verificar se intencional"
+      },
+      {
+        "check": "sitemap.xml existe",
+        "status": "PASS",
+        "detail": "78 URLs"
+      },
+      {
+        "check": "sitemap.xml formato",
+        "status": "PASS",
+        "detail": "XML válido"
+      },
+      {
+        "check": "Sitemap integridade",
+        "status": "PASS",
+        "detail": "Todas as URLs têm arquivo correspondente"
+      },
+      {
+        "check": "Páginas órfãs",
+        "status": "PASS",
+        "detail": "Nenhuma (exceto utilitárias)"
+      }
+    ],
+    "summary": {
+      "total": 568,
+      "passed": 544,
+      "warnings": 23,
+      "errors": 1
+    }
+  },
+  "generatedAt": "2026-08-10T12:12:03.569Z"
+}

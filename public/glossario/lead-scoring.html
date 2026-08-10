@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O que é Lead Scoring — Glossário LinkMágico</title>
-<meta name="description" content="Sistema de pontuação que classifica leads por probabilidade de compra, com base em comportamento e perfil.">
+<title>O que é Lead Scoring? Guia Completo com Exemplos Práticos — LinkMágico</title>
+<meta name="description" content="Lead scoring é a técnica de pontuar leads por interesse e perfil. Aprenda como implementar, quais critérios usar e como a IA automatiza o processo.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://site.linkmagico.app.br/glossario/lead-scoring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="O que é Lead Scoring — Glossário LinkMágico">
-<meta property="og:description" content="Sistema de pontuação que classifica leads por probabilidade de compra, com base em comportamento e perfil.">
+<meta property="og:title" content="O que é Lead Scoring? Guia Completo com Exemplos Práticos — LinkMágico">
+<meta property="og:description" content="Lead scoring é a técnica de pontuar leads por interesse e perfil. Aprenda como implementar, quais critérios usar e como a IA automatiza o processo.">
 <meta property="og:url" content="https://site.linkmagico.app.br/glossario/lead-scoring">
 <meta property="og:image" content="https://site.linkmagico.app.br/og-linkmagico.png">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="LinkMágico">
+<meta property="og:site_name" content="LinkMÃ¡gico">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237c3aed'><path d='M13 2L3 14h7l-2 8 10-12h-7l2-8z'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
-[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Glossário","item":"https://site.linkmagico.app.br/glossario"},{"@type":"ListItem","position":3,"name":"Lead Scoring"}]},{"@context":"https://schema.org","@type":"DefinedTerm","name":"Lead Scoring","description":"Sistema de pontuação que classifica leads por probabilidade de compra, com base em comportamento e perfil.","url":"https://site.linkmagico.app.br/glossario/lead-scoring","inDefinedTermSet":{"@type":"DefinedTermSet","name":"Glossário de Automação e IA","url":"https://site.linkmagico.app.br/glossario"}}]
+[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"InÃ­cio","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"GlossÃ¡rio","item":"https://site.linkmagico.app.br/glossario"},{"@type":"ListItem","position":3,"name":"Lead Scoring"}]},{"@context":"https://schema.org","@type":"DefinedTerm","name":"Lead Scoring","description":"Sistema de pontuaÃ§Ã£o que classifica leads por probabilidade de compra, com base em comportamento e perfil.","url":"https://site.linkmagico.app.br/glossario/lead-scoring","inDefinedTermSet":{"@type":"DefinedTermSet","name":"GlossÃ¡rio de AutomaÃ§Ã£o e IA","url":"https://site.linkmagico.app.br/glossario"}}]
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896}body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.8}a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:760px;margin:0 auto;padding:0 24px}header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px}.nav__logo{font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif;color:var(--text)}.logo-hl{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav__links{display:flex;gap:20px;align-items:center}.nav__links a{color:var(--muted);font-size:.9rem}.nav__links a:hover{color:var(--text);text-decoration:none}.btn-cta{background:linear-gradient(135deg,var(--purple),#5b21b6);color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}.breadcrumb{padding:90px 0 0;font-size:.83rem;color:var(--muted)}.breadcrumb a{color:var(--muted)}
@@ -53,37 +53,103 @@ footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-al
 </style>
 </head>
 <body>
-<header><nav class="nav" aria-label="Navegação principal"><a href="/" class="nav__logo">⚡ <span class="logo-hl">LinkMágico</span></a><div class="nav__links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/docs">Docs</a><a href="https://linkmagico.app.br/pricing.html" class="btn-cta">Ver Planos</a></div></nav></header>
+<header><nav class="nav" aria-label="NavegaÃ§Ã£o principal"><a href="/" class="nav__logo">â¡ <span class="logo-hl">LinkMÃ¡gico</span></a><div class="nav__links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/docs">Docs</a><a href="https://linkmagico.app.br/pricing.html" class="btn-cta">Ver Planos</a></div></nav></header>
 <main>
 <div class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a> › <a href="/glossario">Glossário</a> › <strong>Lead Scoring</strong></nav>
-<h1>O que é <span>Lead Scoring</span></h1>
-<span class="tag-badge">Vendas</span>
-<p class="definition">Sistema de pontuação que classifica leads por probabilidade de compra, com base em comportamento e perfil.</p>
-<div class="content">
-<p><strong>Lead Scoring</strong> é um sistema que atribui pontos a cada lead com base em critérios que indicam probabilidade de compra.</p><h3>Critérios de pontuação</h3><ul><li><strong>Comportamentais:</strong> Páginas visitadas, mensagens enviadas, tempo no site, interação com chatbot</li><li><strong>Demográficos:</strong> Cargo, segmento, tamanho da empresa, localização</li><li><strong>Engajamento:</strong> Abriu emails, clicou em links, respondeu follow-up</li></ul><h3>Scoring com IA</h3><p>Chatbots de IA podem fazer lead scoring conversacional — durante a conversa, identificam sinais de compra (perguntou preço, pediu demo, mencionou prazo) e classificam automaticamente.</p><div class="example"><strong>No LinkMágico:</strong> O chatbot identifica leads quentes (perguntou sobre preço + visitou checkout) e os destaca no CRM para priorização pelo time de vendas.</div>
-</div>
-<div class="sidebar">
-<div class="sidebar-box">
-<h4>📚 Termos relacionados</h4>
-<a href="/glossario/lead" class="rel-link"><i class="fas fa-arrow-right"></i> Lead</a>
-<a href="/glossario/crm" class="rel-link"><i class="fas fa-arrow-right"></i> CRM</a>
-<a href="/glossario/pipeline" class="rel-link"><i class="fas fa-arrow-right"></i> Pipeline</a>
-<a href="/glossario/funil-de-vendas" class="rel-link"><i class="fas fa-arrow-right"></i> Funil de Vendas</a>
-</div>
-<div class="sidebar-box">
-<h4>📖 Leia também</h4>
-<span style="font-size:.84rem;color:var(--muted)">Em breve</span>
-</div>
-</div>
-<div class="cta-box">
-<h3>Teste o LinkMágico gratuitamente</h3>
-<p>Crie seu vendedor automático com IA em menos de 2 minutos.</p>
-<a href="https://linkmagico.app.br/signup.html" class="btn-cta">Criar Conta Grátis →</a>
-</div>
-<a href="/glossario" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Glossário</a>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">InÃ­cio</a> âº <a href="/glossario">GlossÃ¡rio</a> âº <strong>Lead Scoring</strong></nav>
+
+<h1>O que é Lead Scoring? Guia Completo para 2026</h1>
+<p class="meta">Atualizado em 10 de Agosto de 2026 • 8 min de leitura</p>
+
+<p><strong>Lead scoring</strong> é a metodologia de marketing e vendas usada para classificar e pontuar leads (potenciais clientes) com base no seu nível de interesse, engajamento e adequação ao perfil de cliente ideal (ICP) da sua empresa.</p>
+
+<p>Em um cenário onde as empresas geram centenas ou milhares de contatos diariamente, é humanamente impossível que a equipe de vendas trate todos com a mesma prioridade. O lead scoring resolve esse problema atribuindo uma nota (score) a cada <a href="/glossario/lead">lead</a>, indicando exatamente quais estão prontos para comprar (hot leads) e quais ainda precisam ser nutridos (cold leads).</p>
+
+<h2>Como Funciona o Lead Scoring na Prática?</h2>
+
+<p>A mecânica do lead scoring tradicional envolve a atribuição de pontos positivos ou negativos baseados em duas categorias principais de dados: explícitos e implícitos.</p>
+
+<h3>1. Dados Explícitos (Perfil Demográfico e B2B)</h3>
+<p>São as informações que o lead fornece voluntariamente ou que podem ser descobertas sobre ele. Eles determinam se o lead tem o <strong>fit</strong> (perfil adequado) para comprar seu produto.</p>
+<ul>
+    <li><strong>Cargo:</strong> Diretor ou CEO (+20 pontos) vs. Estagiário (-10 pontos)</li>
+    <li><strong>Tamanho da Empresa:</strong> Mais de 100 funcionários (+15 pontos)</li>
+    <li><strong>Orçamento:</strong> Informado acima de R$ 10.000 (+25 pontos)</li>
+    <li><strong>Segmento:</strong> Pertence a um segmento alvo como <a href="/clinicas">clínicas</a> ou <a href="/ecommerce">e-commerce</a> (+15 pontos)</li>
+</ul>
+
+<h3>2. Dados Implícitos (Comportamento e Engajamento)</h3>
+<p>São as ações que o lead realiza (ou deixa de realizar) em relação à sua empresa. Eles determinam o <strong>interesse</strong> e o momento de compra.</p>
+<ul>
+    <li><strong>Visitas ao site:</strong> Visitou a página de preços (+15 pontos)</li>
+    <li><strong>Downloads:</strong> Baixou um e-book ou whitepaper (+10 pontos)</li>
+    <li><strong>E-mail:</strong> Clicou no link do e-mail promocional (+5 pontos) vs. Cancelou a inscrição (-30 pontos)</li>
+    <li><strong>Inatividade:</strong> Não interage há mais de 30 dias (-15 pontos)</li>
+</ul>
+
+<h2>A Matriz de Lead Scoring: Perfil vs Interesse</h2>
+
+<p>Ao cruzar o perfil (quem o lead é) com o interesse (o que ele faz), você obtém uma matriz que direciona a ação da sua equipe:</p>
+
+<ul>
+    <li><strong>Alto Perfil + Alto Interesse (MQL/SQL):</strong> O lead perfeito. Deve ser enviado imediatamente para a equipe de vendas.</li>
+    <li><strong>Alto Perfil + Baixo Interesse:</strong> O lead tem potencial, mas ainda não está pronto. Deve entrar em um fluxo de nutrição de marketing.</li>
+    <li><strong>Baixo Perfil + Alto Interesse:</strong> Pode ser um estudante ou curioso consumindo seu conteúdo. Não priorizar para vendas diretas.</li>
+    <li><strong>Baixo Perfil + Baixo Interesse:</strong> Lead frio. Manter na base apenas para comunicações gerais.</li>
+</ul>
+
+<h2>Como Definir o Modelo de Pontuação da sua Empresa</h2>
+
+<p>Criar um modelo de lead scoring do zero exige alinhamento entre as equipes de Marketing e Vendas (Smarketing). Siga este passo a passo:</p>
+
+<h3>Passo 1: Entreviste sua Equipe de Vendas</h3>
+<p>Pergunte aos vendedores: "Quais são as características dos clientes que fecham negócio mais rápido?" e "Quais ações indicam que um lead está apenas 'dando uma olhadinha'?".</p>
+
+<h3>Passo 2: Analise seus Dados Históricos</h3>
+<p>Olhe para os clientes que você já conquistou. Quais páginas eles visitaram antes de comprar? Quais materiais eles baixaram? Atribua os pontos mais altos para as ações que têm maior correlação com a <a href="/glossario/conversao">conversão</a> em vendas.</p>
+
+<h3>Passo 3: Estabeleça o Limiar de Qualificação (Threshold)</h3>
+<p>Defina a pontuação exata em que um lead passa de Marketing Qualified Lead (MQL) para Sales Qualified Lead (SQL). Por exemplo: todo lead que atingir 100 pontos deve ser abordado por vendas em até 10 minutos.</p>
+
+<h2>A Revolução: Lead Scoring com Inteligência Artificial</h2>
+
+<p>O lead scoring tradicional tem um problema: é baseado em regras estáticas criadas por humanos ("se clicar no e-mail, ganha 5 pontos"). Com o avanço do <a href="/glossario/crm">CRM</a> moderno e da Inteligência Artificial, o lead scoring evoluiu para o modelo <strong>Preditivo</strong>.</p>
+
+<p>Em vez de regras manuais, a IA analisa milhares de pontos de dados simultaneamente para prever a probabilidade exata de conversão de cada lead, ajustando as pontuações em tempo real com base em padrões que humanos não conseguiriam detectar.</p>
+
+<h3>Como o LinkMágico Utiliza IA no Lead Scoring</h3>
+
+<p>O LinkMágico eleva o lead scoring a um novo patamar através da sua IA Conversacional. Em vez de depender apenas de formulários estáticos ou cliques em e-mails, o sistema qualifica os leads <strong>durante a conversa</strong>.</p>
+
+<ol>
+    <li><strong>Qualificação em Tempo Real:</strong> Enquanto o chatbot inteligente conversa com o visitante (24h por dia), ele faz perguntas estratégicas de forma natural.</li>
+    <li><strong>Análise de Intenção:</strong> A IA analisa não apenas o que o lead diz, mas como diz, captando a urgência e a intenção de compra.</li>
+    <li><strong>Distribuição no Pipeline:</strong> Com base nas respostas, o LinkMágico atribui uma pontuação (Lead Score) e posiciona o contato automaticamente na etapa correta do seu <a href="/glossario/pipeline">pipeline de vendas</a> (Quente, Morno ou Frio).</li>
+</ol>
+
+<p>Dessa forma, quando a sua equipe comercial inicia o dia, ela já sabe exatamente com quem deve fazer o <a href="/glossario/follow-up">follow-up</a> primeiro, focando 100% da energia em leads que já foram aquecidos e qualificados pela IA.</p>
+
+<h2>Benefícios Comprovados do Lead Scoring</h2>
+
+<p>Empresas que implementam um sistema robusto de pontuação de leads observam impactos diretos na receita:</p>
+
+<ul>
+    <li><strong>Aumento da Taxa de Conversão:</strong> Vendedores param de perder tempo com curiosos e focam em quem quer comprar.</li>
+    <li><strong>Redução do Ciclo de Vendas:</strong> Leads chegam mais educados e preparados para o fechamento.</li>
+    <li><strong>Alinhamento Marketing-Vendas:</strong> Fim das discussões sobre a qualidade dos leads entregues pelo marketing.</li>
+    <li><strong>Aumento do ROI:</strong> Maior eficiência em todo o <a href="/glossario/funil-de-vendas">funil de vendas</a>.</li>
+</ul>
+
+<h2>Pronto para Automatizar sua Qualificação?</h2>
+
+<p>Se a sua equipe comercial está sobrecarregada atendendo contatos desqualificados, está na hora de automatizar o processo. Com o LinkMágico, você transforma qualquer página do seu site em um vendedor automático que atrai, conversa e pontua os leads para você, 24 horas por dia.</p>
+
+<div style="margin-top:40px;padding:24px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;text-align:center">
+    <h3 style="margin-bottom:12px;color:var(--purple-l)">Pare de perder tempo com leads frios.</h3>
+    <p style="margin-bottom:20px;font-size:0.95rem">Deixe a IA qualificar e pontuar seus contatos automaticamente antes mesmo deles chegarem ao seu WhatsApp.</p>
+    <a href="/pricing.html" class="btn btn--primary" style="padding:12px 24px;border-radius:8px;display:inline-block;font-weight:700">Ver Planos e Começar Agora</a>
 </div>
 </main>
-<footer><div class="container"><p>© 2025 LinkMágico — Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">Início</a> · <a href="/blog/">Blog</a> · <a href="/docs">Docs</a> · <a href="/politica-de-privacidade">Privacidade</a> � <a href="https://www.youtube.com/@LinkMagicoOficial" target="_blank">YouTube</a> � <a href="https://www.facebook.com/profile.php?id=61586931294348" target="_blank">Facebook</a></p></div></footer>
+<footer><div class="container"><p>Â© 2025 LinkMÃ¡gico â Todos os direitos reservados.</p><p style="margin-top:8px"><a href="/">InÃ­cio</a> Â· <a href="/blog/">Blog</a> Â· <a href="/docs">Docs</a> Â· <a href="/politica-de-privacidade">Privacidade</a> · <a href="https://www.youtube.com/@LinkMagicoOficial" target="_blank">YouTube</a> · <a href="https://www.facebook.com/profile.php?id=61586931294348" target="_blank">Facebook</a></p></div></footer>
 </body>
 </html>
