@@ -1600,6 +1600,47 @@ Se funciona para nós, funciona para você.
 </div>
 </section>
 
+<!-- CLIENTE FANTASMA — BLOCO ISOLADO (zero impacto em SEO/CSS/JS existente) -->
+<section class="ghost-cta-section section--surface" id="cliente-fantasma" style="padding:80px 0;position:relative;overflow:hidden">
+<style>
+.ghost-cta-section{text-align:center}
+.ghost-cta-box{max-width:720px;margin:0 auto;padding:48px 32px;background:linear-gradient(145deg,rgba(26,16,53,.6),rgba(13,26,47,.4));border:1px solid rgba(139,92,246,.2);border-radius:24px;position:relative}
+.ghost-cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),#ec4899,var(--green));border-radius:24px 24px 0 0}
+.ghost-cta-emoji{font-size:3rem;margin-bottom:16px;display:block}
+.ghost-cta-tag{display:inline-block;padding:6px 16px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(236,72,153,.1);color:#f472b6;border:1px solid rgba(236,72,153,.2);margin-bottom:20px}
+.ghost-cta-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;line-height:1.25;margin-bottom:12px;color:var(--text)}
+.ghost-cta-title em{font-style:normal;background:linear-gradient(135deg,#ec4899,var(--purple-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ghost-cta-sub{color:var(--muted);font-size:1rem;line-height:1.65;max-width:560px;margin:0 auto 28px}
+.ghost-cta-input-wrap{display:flex;gap:12px;max-width:520px;margin:0 auto 20px}
+.ghost-cta-input{flex:1;padding:14px 18px;border-radius:12px;border:2px solid var(--border);background:var(--surface);color:var(--text);font-size:.95rem;font-family:inherit;outline:none;transition:border-color .3s}
+.ghost-cta-input:focus{border-color:var(--purple)}
+.ghost-cta-input::placeholder{color:var(--muted)}
+.ghost-cta-btn{padding:14px 24px;border-radius:12px;border:none;background:linear-gradient(135deg,#ec4899,var(--purple));color:#fff;font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.ghost-cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(236,72,153,.3)}
+.ghost-cta-trust{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.ghost-cta-trust span{font-size:.8rem;color:var(--muted)}
+.ghost-cta-trust i{color:var(--green);margin-right:4px;font-size:.7rem}
+@media(max-width:540px){.ghost-cta-input-wrap{flex-direction:column}.ghost-cta-btn{width:100%}}
+</style>
+<div class="container">
+<div class="ghost-cta-box anim">
+<span class="ghost-cta-emoji">👻</span>
+<span class="ghost-cta-tag"><i class="fas fa-eye" style="margin-right:6px"></i>DIAGNÓSTICO GRATUITO</span>
+<h2 class="ghost-cta-title">Descubra como seu site é visto<br><em>pelos olhos do cliente</em></h2>
+<p class="ghost-cta-sub">Um cliente fantasma vai visitar seu site, navegar por ele e mostrar exatamente o que pensa — em tempo real. Você assiste tudo.</p>
+<div class="ghost-cta-input-wrap">
+<input type="url" class="ghost-cta-input" placeholder="Cole a URL do seu site…" id="ghostCtaInput">
+<button class="ghost-cta-btn" id="ghostCtaBtn" onclick="try{var v=document.getElementById('ghostCtaInput').value.trim();if(!v){document.getElementById('ghostCtaInput').style.borderColor='#ec4899';document.getElementById('ghostCtaInput').setAttribute('placeholder','⚠️ Cole a URL do seu site');return;}window.open('https://demo.linkmagico.app.br/fantasma?url='+encodeURIComponent(v),'_blank');}catch(e){}">👻 Enviar Cliente Fantasma</button>
+</div>
+<div class="ghost-cta-trust">
+<span><i class="fas fa-check"></i>100% gratuito</span>
+<span><i class="fas fa-check"></i>Análise em tempo real</span>
+<span><i class="fas fa-check"></i>Sem cadastro necessário</span>
+</div>
+</div>
+</div>
+</section>
+
 <!-- AUTORIDADE -->
 <section class="authority section--dark" id="quem-criou">
 <div class="container">
