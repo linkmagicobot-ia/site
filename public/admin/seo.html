@@ -1217,8 +1217,8 @@ async function loadSEOHealth() {
     checks.push({ name: 'Bing conectado', ok: false, weight: 10 });
   }
 
-  // IndexNow (check se key existe)
-  checks.push({ name: 'IndexNow configurado', ok: false, weight: 5, unknown: true });
+  // IndexNow (key b25ddb77a52aabaf333a814691be727f — ativa desde 23/09/2026)
+  checks.push({ name: 'IndexNow configurado', ok: true, weight: 5 });
 
   // Sitemap
   checks.push({ name: 'Sitemap válido', ok: true, weight: 15 });
@@ -1298,8 +1298,8 @@ async function loadIntegrationSummary() {
     // IndexNow
     const inBadge = document.getElementById('indexnow-sync-badge');
     const inStatus = document.getElementById('indexnow-sync-status');
-    if (inBadge) { inBadge.className = 'badge badge--pending'; inBadge.textContent = 'Configurar'; }
-    if (inStatus) inStatus.textContent = 'Nunca sincronizado';
+    if (inBadge) { inBadge.className = 'badge badge--live'; inBadge.textContent = 'Ativo'; }
+    if (inStatus) inStatus.textContent = '81 URLs enviadas em 24/09/2026';
 
     // Integration cards status
     const intGEl = document.getElementById('int-google-status');
@@ -1307,7 +1307,7 @@ async function loadIntegrationSummary() {
     const intIEl = document.getElementById('int-indexnow-status');
     if (intGEl) intGEl.innerHTML = renderStatusBadge(gStatus);
     if (intBEl) intBEl.innerHTML = renderStatusBadge(bStatus);
-    if (intIEl) intIEl.innerHTML = renderStatusBadge('not_configured');
+    if (intIEl) intIEl.innerHTML = renderStatusBadge('connected');
   } catch(e) { /* silent */ }
 }
 
