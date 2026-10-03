@@ -2,6 +2,10 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /node_modules/
+Disallow: /admin/
+Disallow: /*?ref=*
+Disallow: /*?q=*
+Disallow: /*?utm_*
 
 # Google
 User-agent: Googlebot
