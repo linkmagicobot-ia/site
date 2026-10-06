@@ -1866,7 +1866,7 @@ function handleEbookDownload(e){
   fetch('https://script.google.com/macros/s/AKfycby6hHy1-t83IpA0ASH0YfkBd3LbfeBLobjrdDMtthIxuI-ks3KYAglcWgukier7tqaP/exec', {
     method: 'POST',
     mode: 'no-cors',
-    headers: {'Content-Type':'application/json'},
+    headers: {'Content-Type': 'text/plain'},
     body: JSON.stringify({nome:nome, email:email, whatsapp:whatsapp})
   }).then(function(){
     iniciarDownload();
