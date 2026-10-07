@@ -1861,42 +1861,22 @@ function handleEbookDownload(e){
   leads.push({nome:nome, email:email, whatsapp:whatsapp, data:new Date().toISOString()});
   localStorage.setItem('ebook_leads', JSON.stringify(leads));
   
-  // Envia para Google Sheets via iframe oculto (sem CORS)
-  var iframe = document.createElement('iframe');
-  iframe.name = 'ebook-iframe-' + Date.now();
-  iframe.style.display = 'none';
-  document.body.appendChild(iframe);
+  // Envia para Google Sheets via Image GET (sem CORS, funciona em todos os navegadores)
+  var sheetUrl = 'https://script.google.com/macros/s/AKfycby6hHy1-t83IpA0ASH0YfkBd3LbfeBLobjrdDMtthIxuI-ks3KYAglcWgukier7tqaP/exec';
+  var params = '?nome=' + encodeURIComponent(nome) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(whatsapp);
+  var img = new Image();
+  img.src = sheetUrl + params;
   
-  var hiddenForm = document.createElement('form');
-  hiddenForm.method = 'POST';
-  hiddenForm.action = 'https://script.google.com/macros/s/AKfycby6hHy1-t83IpA0ASH0YfkBd3LbfeBLobjrdDMtthIxuI-ks3KYAglcWgukier7tqaP/exec';
-  hiddenForm.target = iframe.name;
-  
-  var fields = {nome: nome, email: email, whatsapp: whatsapp};
-  for (var key in fields) {
-    var input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = key;
-    input.value = fields[key];
-    hiddenForm.appendChild(input);
-  }
-  
-  document.body.appendChild(hiddenForm);
-  hiddenForm.submit();
-  
-  // Limpa iframe depois de 3 segundos
-  setTimeout(function(){ 
-    try { document.body.removeChild(iframe); document.body.removeChild(hiddenForm); } catch(ex){} 
-  }, 3000);
-  
-  // Inicia download imediatamente
-  var downloadUrl = 'https://drive.google.com/uc?export=download&id=18LYz9GeNcy77evwS5464m1x7Jwe6E01Y';
-  var a = document.createElement('a');
-  a.href = downloadUrl;
-  a.target = '_blank';
-  a.click();
-  form.style.display = 'none';
-  document.getElementById('ebook-success').style.display = 'block';
+  // Inicia download do PDF
+  setTimeout(function(){
+    var downloadUrl = 'https://drive.google.com/uc?export=download&id=18LYz9GeNcy77evwS5464m1x7Jwe6E01Y';
+    var a = document.createElement('a');
+    a.href = downloadUrl;
+    a.target = '_blank';
+    a.click();
+    form.style.display = 'none';
+    document.getElementById('ebook-success').style.display = 'block';
+  }, 500);
   
   return false;
 }
