@@ -110,6 +110,11 @@ app.get('/cookies', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'cookies.html'));
 });
 
+// ===== E-BOOK =====
+app.get('/ebook', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'ebook.html'));
+});
+
 // ===== KNOWLEDGE HUB =====
 app.get('/glossario', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'glossario.html'));
