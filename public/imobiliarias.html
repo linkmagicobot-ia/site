@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
-[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Imobiliárias"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O chatbot consegue enviar fotos de imóveis?","acceptedAnswer":{"@type":"Answer","text":"Sim. O chatbot pode enviar imagens, links e informações detalhadas dos imóveis durante a conversa pelo WhatsApp ou pelo site."}},{"@type":"Question","name":"Como funciona a distribuição de leads?","acceptedAnswer":{"@type":"Answer","text":"Leads qualificados são registrados no CRM com todas as informações coletadas. A distribuição pode ser feita manualmente ou por regras automáticas."}},{"@type":"Question","name":"Funciona com portais como OLX e ZAP?","acceptedAnswer":{"@type":"Answer","text":"O LinkMágico pode ser integrado via WhatsApp — quando o lead entra em contato pelo número do anúncio, o chatbot atende automaticamente."}},{"@type":"Question","name":"Preciso treinar o chatbot com cada imóvel?","acceptedAnswer":{"@type":"Answer","text":"O treinamento é feito pela URL do seu site ou landing page. O chatbot aprende sobre todos os imóveis listados automaticamente."}},{"@type":"Question","name":"Quanto custa?","acceptedAnswer":{"@type":"Answer","text":"Planos a partir de R$0/mês. O plano Pro (R$69/mês) é o mais indicado para imobiliárias com volume moderado de leads."}}]}]
+[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://site.linkmagico.app.br/"},{"@type":"ListItem","position":2,"name":"Imobiliárias"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O chatbot consegue enviar fotos de imóveis?","acceptedAnswer":{"@type":"Answer","text":"Sim. O chatbot pode enviar imagens, links e informações detalhadas dos imóveis durante a conversa pelo chat no site."}},{"@type":"Question","name":"Como funciona a distribuição de leads?","acceptedAnswer":{"@type":"Answer","text":"Leads qualificados são registrados no CRM com todas as informações coletadas. A distribuição pode ser feita manualmente ou por regras automáticas."}},{"@type":"Question","name":"Funciona com portais como OLX e ZAP?","acceptedAnswer":{"@type":"Answer","text":"O LinkMágico pode ser integrado ao site — quando o lead acessa a página do anúncio, o chatbot atende automaticamente."}},{"@type":"Question","name":"Preciso treinar o chatbot com cada imóvel?","acceptedAnswer":{"@type":"Answer","text":"O treinamento é feito pela URL do seu site ou landing page. O chatbot aprende sobre todos os imóveis listados automaticamente."}},{"@type":"Question","name":"Quanto custa?","acceptedAnswer":{"@type":"Answer","text":"Planos a partir de R$0/mês. O plano Pro (R$69/mês) é o mais indicado para imobiliárias com volume moderado de leads."}}]}]
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}:root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--accent:#f59e0b}body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.7}a{color:var(--purple-l);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:900px;margin:0 auto;padding:0 24px}
@@ -110,7 +110,7 @@ footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-al
 <h2 class="section-title">Como o <span>LinkMágico</span> resolve</h2>
 <div class="grid-4"><div class="solution-card"><div class="solution-icon"><i class="fas fa-bolt"></i></div><h3>Resposta em segundos</h3><p>IA responde instantaneamente com informações do imóvel, fotos e localização.</p></div>
 <div class="solution-card"><div class="solution-icon"><i class="fas fa-filter"></i></div><h3>Qualificação automática</h3><p>Chatbot identifica orçamento, região desejada, tipo de imóvel e urgência antes de passar ao corretor.</p></div>
-<div class="solution-card"><div class="solution-icon"><i class="fas fa-calendar"></i></div><h3>Agendamento de visitas</h3><p>Interessados agendam visitas diretamente pelo WhatsApp, com confirmação automática.</p></div>
+<div class="solution-card"><div class="solution-icon"><i class="fas fa-calendar"></i></div><h3>Agendamento de visitas</h3><p>Interessados agendam visitas diretamente pelo chat no site, com confirmação automática.</p></div>
 <div class="solution-card"><div class="solution-icon"><i class="fas fa-sitemap"></i></div><h3>Distribuição inteligente</h3><p>Leads qualificados são distribuídos automaticamente entre corretores por região ou especialidade.</p></div></div>
 </section>
 
@@ -126,7 +126,7 @@ footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-al
 <span class="feat-tag"><i class="fas fa-check"></i> Envio de imóveis</span>
 <span class="feat-tag"><i class="fas fa-check"></i> Distribuição de leads</span>
 <span class="feat-tag"><i class="fas fa-check"></i> CRM</span>
-<span class="feat-tag"><i class="fas fa-check"></i> WhatsApp</span></div>
+<span class="feat-tag"><i class="fas fa-check"></i> Chat IA no Site</span></div>
 </section>
 
 <section class="section">
@@ -139,7 +139,7 @@ footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-al
 
 <section class="section">
 <h2 class="section-title"><span>Integrações</span> compatíveis</h2>
-<div class="int-grid"><span class="int-tag">WhatsApp (Twilio/Evolution)</span>
+<div class="int-grid"><!-- [SANEAMENTO] WhatsApp (Twilio/Evolution) removido - canal indisponível -->
 <span class="int-tag">Google Calendar</span>
 <span class="int-tag">Portais (ZAP/OLX)</span>
 <span class="int-tag">WordPress</span></div>
@@ -147,9 +147,9 @@ footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--border);text-al
 
 <section class="section">
 <h2 class="section-title">Perguntas <span>frequentes</span></h2>
-<div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>O chatbot consegue enviar fotos de imóveis?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Sim. O chatbot pode enviar imagens, links e informações detalhadas dos imóveis durante a conversa pelo WhatsApp ou pelo site.</p></div></div>
+<div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>O chatbot consegue enviar fotos de imóveis?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Sim. O chatbot pode enviar imagens, links e informações detalhadas dos imóveis durante a conversa pelo chat no site.</p></div></div>
 <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Como funciona a distribuição de leads?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Leads qualificados são registrados no CRM com todas as informações coletadas. A distribuição pode ser feita manualmente ou por regras automáticas.</p></div></div>
-<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Funciona com portais como OLX e ZAP?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>O LinkMágico pode ser integrado via WhatsApp — quando o lead entra em contato pelo número do anúncio, o chatbot atende automaticamente.</p></div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Funciona com portais como OLX e ZAP?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>O LinkMágico pode ser integrado ao site — quando o lead entra em contato pelo número do anúncio, o chatbot atende automaticamente.</p></div></div>
 <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Preciso treinar o chatbot com cada imóvel?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>O treinamento é feito pela URL do seu site ou landing page. O chatbot aprende sobre todos os imóveis listados automaticamente.</p></div></div>
 <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Quanto custa?</span><i class="fas fa-chevron-down"></i></button><div class="faq-a"><p>Planos a partir de R$0/mês. O plano Pro (R$69/mês) é o mais indicado para imobiliárias com volume moderado de leads.</p></div></div></div>
 </section>

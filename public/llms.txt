@@ -21,7 +21,6 @@ O LinkMágico é uma plataforma SaaS brasileira que transforma qualquer link, la
 - Agendamento automático integrado
 - Analytics e métricas de conversão em tempo real
 - Widget white-label personalizável
-- Integração WhatsApp (Twilio e Evolution API)
 - Follow-up automático
 - Multi-tenant (cada cliente tem seu ambiente isolado)
 - Inteligência de intenção de compra (Decision Engine)
@@ -31,7 +30,6 @@ O LinkMágico é uma plataforma SaaS brasileira que transforma qualquer link, la
 
 ## Integrações
 
-- WhatsApp (Twilio e Evolution Go)
 - Hotmart (webhooks)
 - WordPress (widget embed)
 - Qualquer site HTML (script embed)
