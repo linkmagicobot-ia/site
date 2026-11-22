@@ -38,12 +38,13 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" as="style">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">`n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&display=swap"></noscript>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#06060e;--surface:#0e0e1a;--surface2:#151525;--border:#1e1e35;--purple:#7c3aed;--purple-l:#a78bfa;--green:#10b981;--green-l:#34d399;--text:#f0eeff;--muted:#7a7896;--radius:14px}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
 a{text-decoration:none;color:inherit}
@@ -52,11 +53,17 @@ img{max-width:100%;height:auto;display:block}
 /* HEADER */
 .header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(6,6,14,.6);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:.3s}
 .header.scrolled{border-bottom-color:var(--border);background:rgba(6,6,14,.92)}
-.nav{display:flex;align-items:center;justify-content:space-between}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .nav__logo{display:flex;align-items:center;gap:8px;font-size:1.25rem;font-weight:800;font-family:'Space Grotesk',sans-serif}
 .logo-highlight{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav__menu{display:flex;align-items:center;gap:16px;flex-wrap:nowrap}
+.nav__link{font-size:.82rem;color:var(--muted);font-weight:500;transition:color .2s;white-space:nowrap}
+.nav__link:hover{color:var(--text)}
+.nav__actions{display:flex;align-items:center;gap:14px}
 .nav__cta{background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff;padding:10px 20px;border-radius:10px;font-size:.85rem;font-weight:700;transition:transform .2s,box-shadow .2s}
 .nav__cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,58,237,.35)}
+@media(max-width:1080px){.nav__menu{gap:10px}.nav__link{font-size:.76rem!important}}
+@media(max-width:860px){.nav__menu{display:none}}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:12px;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:inherit;border:none;text-decoration:none}
@@ -92,6 +99,14 @@ img{max-width:100%;height:auto;display:block}
 .hero__trust span{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)}
 .hero__trust i{color:var(--green)}
 .hero__visual{position:relative;z-index:2}
+.hero__phone-frame{position:relative;width:100%;max-width:300px;margin:0 auto;transform:perspective(1200px) rotateY(-8deg) rotateX(2deg);transition:transform .4s ease}
+.hero__phone-frame:hover{transform:perspective(1200px) rotateY(-3deg) rotateX(1deg)}
+.hero__phone-bezel{background:#1a1a2e;border-radius:36px;padding:12px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08),inset 0 0 0 1px rgba(255,255,255,.04)}
+.hero__phone-notch{width:100px;height:24px;background:#1a1a2e;border-radius:0 0 16px 16px;margin:0 auto -12px;position:relative;z-index:3}
+.hero__phone-screen{border-radius:24px;overflow:hidden;position:relative;aspect-ratio:9/16;background:#000}
+.hero__phone-screen video{width:100%;height:100%;object-fit:cover;display:block}
+.hero__phone-label{text-align:center;margin-top:16px;font-size:.78rem;color:var(--muted);font-style:italic}
+.hero__phone-label i{color:var(--green);margin-right:4px}
 .hero__video-wrap{width:100%;max-width:340px;aspect-ratio:9/16;border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08);margin:0 auto}
 .hero__video-wrap iframe{width:100%;height:100%;border:none}
 
@@ -260,6 +275,8 @@ img{max-width:100%;height:auto;display:block}
 .hero__grid,.demo__grid,.benefit__grid{grid-template-columns:1fr}
 .hero__content{order:1}.hero__visual{order:2}
 .hero__video-wrap{max-width:300px;max-height:70vh}
+.hero__phone-frame{max-width:260px;transform:perspective(1200px) rotateY(-4deg) rotateX(1deg)}
+.hero__phone-bezel{border-radius:30px;padding:10px}
 .modules__grid{grid-template-columns:repeat(2,1fr)}
 .cases__grid{grid-template-columns:repeat(2,1fr)}
 .audience__grid{grid-template-columns:repeat(2,1fr)}
@@ -275,6 +292,8 @@ img{max-width:100%;height:auto;display:block}
 .hero__ctas .btn{width:100%;justify-content:center}
 .nav__cta{font-size:.75rem;padding:8px 14px}
 .hero__video-wrap{max-width:280px;max-height:65vh}
+.hero__phone-frame{max-width:240px}
+.hero__phone-bezel{border-radius:26px;padding:8px}
 #whitelabel [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr!important}
 }
 
@@ -634,6 +653,1187 @@ img{max-width:100%;height:auto;display:block}
 /* Subtle text selection color */
 ::selection{background:rgba(124,58,237,.3);color:#fff}
 ::-moz-selection{background:rgba(124,58,237,.3);color:#fff}
+
+/* ===== FASE 4.3 — REDESIGN EDITORIAL DO HERO ===== */
+
+/* --- 4.3 Paleta editorial lavanda --- */
+.hero.section--dark{
+  background:linear-gradient(165deg,#f5f0ff 0%,#ede5fb 30%,#e8ddf8 55%,#f8f5ff 80%,#ffffff 100%)!important;
+  overflow:visible;
+}
+.hero .hero__orb--1{background:#c4b5fd;opacity:.18;filter:blur(140px)}
+.hero .hero__orb--2{background:#e9d5ff;opacity:.2;filter:blur(120px)}
+
+/* --- 4.3 Header editorial --- */
+.header{
+  background:rgba(248,245,255,.72)!important;
+  backdrop-filter:blur(20px)!important;
+  border-bottom:1px solid rgba(124,58,237,.08)!important;
+}
+.header.scrolled{
+  background:rgba(245,240,255,.95)!important;
+  border-bottom-color:rgba(124,58,237,.12)!important;
+  box-shadow:0 2px 20px rgba(124,58,237,.06)!important;
+}
+.header .nav__link{color:#6b6180!important}
+.header .nav__link:hover{color:#4c1d95!important}
+.header .nav__logo span{color:#1e1b30!important}
+.header .logo-highlight{background:linear-gradient(135deg,#7c3aed,#a855f7)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important}
+.header .nav__logo i{color:#7c3aed!important;-webkit-text-fill-color:#7c3aed!important}
+.header .nav__cta{
+  background:linear-gradient(135deg,#7c3aed,#6d28d9)!important;
+  color:#fff!important;
+  border-radius:50px!important;
+  padding:10px 24px!important;
+  font-size:.84rem!important;
+  box-shadow:0 4px 16px rgba(124,58,237,.2)!important;
+}
+.header .nav__cta:hover{box-shadow:0 6px 24px rgba(124,58,237,.3)!important;transform:translateY(-1px)}
+.header .nav__actions .nav__link{color:#4c1d95!important;font-weight:600!important}
+
+/* --- 4.3 Hamburger mobile --- */
+.nav__hamburger{
+  display:none;
+  background:none;border:none;cursor:pointer;
+  width:36px;height:36px;position:relative;
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  z-index:200;padding:0;
+}
+.nav__hamburger span{
+  display:block;width:22px;height:2px;
+  background:#4c1d95;border-radius:2px;
+  transition:transform .3s,opacity .3s;
+}
+.nav__hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__hamburger.active span:nth-child(2){opacity:0}
+.nav__hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__hamburger.active span{background:#4c1d95}
+@media(max-width:860px){
+  .nav__hamburger{display:flex}
+  .nav__menu{
+    display:none!important;
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    width:100vw!important;height:100vh!important;
+    background:rgba(248,245,255,.98);
+    backdrop-filter:blur(20px);
+    flex-direction:column;align-items:center;justify-content:center;
+    gap:22px;z-index:150;
+    overflow-y:auto;padding:80px 20px;
+  }
+  .nav__menu.open{display:flex!important}
+  .nav__menu .nav__link{font-size:1.1rem!important;color:#1e1b30!important;font-weight:600!important}
+  .nav__menu .nav__link:hover{color:#7c3aed!important}
+  /* Remover backdrop-filter do header quando menu aberto para fix de position:fixed */
+  .header:has(.nav__menu.open){
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    background:transparent!important;
+    border-bottom-color:transparent!important;
+    box-shadow:none!important;
+  }
+}
+
+/* --- 4.3 Hero tipografia editorial --- */
+.hero h1{
+  font-family:'Playfair Display','Georgia',serif!important;
+  color:#1e1b30!important;
+  font-weight:800!important;
+  font-size:clamp(2.2rem,4.2vw,3.6rem)!important;
+  line-height:1.12!important;
+  letter-spacing:-.02em!important;
+  margin-bottom:22px!important;
+}
+.hero h1 .text-grad{
+  background:linear-gradient(135deg,#7c3aed,#c026d3)!important;
+  -webkit-background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+}
+.hero .section-tag{
+  background:rgba(124,58,237,.08)!important;
+  color:#7c3aed!important;
+  border:1px solid rgba(124,58,237,.15)!important;
+  font-family:'Inter',sans-serif!important;
+  font-size:.72rem!important;
+  font-weight:700!important;
+  letter-spacing:.08em!important;
+}
+.hero .section-tag i{color:#7c3aed!important}
+.hero__sub{
+  color:#5b5272!important;
+  font-size:1.08rem!important;
+  line-height:1.72!important;
+  max-width:500px!important;
+  font-weight:400!important;
+}
+
+/* --- 4.3 Hero CTAs editorial --- */
+.hero .btn--cta{
+  background:linear-gradient(135deg,#7c3aed,#6d28d9)!important;
+  color:#fff!important;
+  border-radius:50px!important;
+  padding:15px 32px!important;
+  font-size:.95rem!important;
+  box-shadow:0 6px 24px rgba(124,58,237,.2)!important;
+  animation:none!important;
+  font-weight:700!important;
+}
+.hero .btn--cta:hover{
+  box-shadow:0 10px 36px rgba(124,58,237,.3)!important;
+  transform:translateY(-2px)!important;
+}
+.hero .btn--secondary{
+  background:#fff!important;
+  color:#4c1d95!important;
+  border:1.5px solid rgba(124,58,237,.2)!important;
+  border-radius:50px!important;
+  padding:15px 32px!important;
+  font-size:.95rem!important;
+  font-weight:600!important;
+  box-shadow:0 2px 12px rgba(124,58,237,.06)!important;
+}
+.hero .btn--secondary:hover{
+  border-color:rgba(124,58,237,.4)!important;
+  background:rgba(124,58,237,.04)!important;
+  transform:translateY(-2px)!important;
+}
+
+/* --- 4.3 Trust badges editorial --- */
+.hero__trust span{color:#6b6180!important;font-size:.8rem!important}
+.hero__trust i{color:#7c3aed!important}
+
+/* --- 4.3 Recovery flow editorial --- */
+.hero .hero__recovery-flow{
+  background:rgba(255,255,255,.65)!important;
+  border:1px solid rgba(124,58,237,.1)!important;
+  border-radius:16px!important;
+  backdrop-filter:blur(8px)!important;
+  padding:12px 16px!important;
+  box-shadow:0 2px 12px rgba(124,58,237,.04)!important;
+}
+.hero .hero__recovery-step .icon{color:#7c3aed!important;font-size:1.2rem!important}
+.hero .hero__recovery-step .label{color:#5b5272!important;font-size:.66rem!important;font-weight:600!important}
+.hero .hero__recovery-arrow{color:#a78bfa!important}
+
+/* --- 4.3 Phone frame editorial --- */
+.hero__phone-frame{
+  max-width:320px!important;
+  filter:drop-shadow(0 30px 60px rgba(100,60,180,.18)) drop-shadow(0 10px 20px rgba(100,60,180,.1))!important;
+}
+.hero__phone-bezel{
+  background:#1a1a2e!important;
+  border-radius:40px!important;
+  padding:12px!important;
+  box-shadow:0 25px 70px rgba(100,60,180,.2),0 0 0 1px rgba(255,255,255,.1),inset 0 0 0 1px rgba(255,255,255,.05)!important;
+}
+.hero__phone-notch{background:#1a1a2e!important}
+.hero__phone-screen{border-radius:28px!important}
+.hero__phone-label{
+  color:#7c6b9e!important;
+  font-size:.76rem!important;
+  font-style:italic!important;
+  margin-top:18px!important;
+}
+.hero__phone-label i{color:#7c3aed!important}
+
+/* --- 4.3 Elemento decorativo editorial (orbe 3D) --- */
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:60px;right:8%;
+  width:80px;height:80px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#ddd6fe,#c4b5fd);
+  box-shadow:
+    inset -6px -6px 16px rgba(109,40,217,.15),
+    inset 6px 6px 16px rgba(255,255,255,.8),
+    0 12px 30px rgba(124,58,237,.1);
+  opacity:.6;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* --- 4.3 Mobile responsivo editorial --- */
+
+/* hero__extras no desktop: dentro do grid, ocupa toda a largura */
+.hero__extras{
+  display:flex;flex-direction:column;gap:0;
+}
+.hero__grid{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  grid-template-rows:auto auto!important;
+  gap:48px 60px!important;
+  align-items:center!important;
+}
+.hero__content{grid-column:1;grid-row:1}
+.hero__visual{grid-column:2;grid-row:1/3}
+.hero__extras{grid-column:1;grid-row:2}
+
+@media(max-width:968px){
+  .hero__phone-frame{max-width:280px!important}
+  .hero__grid{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:24px!important;
+  }
+  .hero__content{order:1!important}
+  .hero__visual{order:2!important}
+  .hero__extras{order:3!important}
+  .hero__phone-frame{margin:0 auto!important}
+  .hero h1{text-align:center!important}
+  .hero__sub{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+  .hero .section-tag{display:block!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;width:fit-content!important}
+  .hero__ctas{justify-content:center!important}
+  .hero__trust{justify-content:center!important}
+  .hero__phone-label{text-align:center!important}
+  .hero::after{display:none}
+}
+
+@media(max-width:540px){
+  .hero{padding:110px 0 50px!important}
+  .hero h1{font-size:clamp(1.7rem,7vw,2.2rem)!important}
+  .hero__sub{font-size:.95rem!important}
+  .hero__phone-frame{max-width:220px!important}
+  .hero__phone-bezel{border-radius:30px!important;padding:8px!important}
+  .hero__phone-screen{border-radius:22px!important}
+
+  /* Recovery flow mais compacto em mobile */
+  .hero .hero__recovery-flow{
+    padding:10px 12px!important;
+    margin-top:0!important;
+    margin-bottom:8px!important;
+  }
+}
+
+/* --- 4.3 Fix: floating CTA não sobrepõe Hero --- */
+.floating-cta{
+  transition:opacity .3s,transform .3s;
+}
+/* Esconder floating CTA quando no topo (Hero visível) */
+body:not(.scrolled-past-hero) .floating-cta{
+  opacity:0!important;pointer-events:none!important;transform:translateY(20px)!important;
+}
+@media(max-width:860px){
+  .floating-cta{bottom:16px!important;left:16px!important;z-index:97!important}
+  .floating-cta a{padding:10px 16px!important;font-size:.78rem!important}
+  /* Navbar mobile: esconder CTA grande, manter hamburger */
+  .header .nav__cta{display:none!important}
+}
+
+/* --- 4.3 Transição suave Hero → seção seguinte --- */
+.hero + .section--surface,
+.hero + .pain{
+  position:relative;
+}
+.hero + .section--surface::before,
+.hero + .pain::before{
+  content:'';display:block;height:80px;margin-top:-80px;
+  background:linear-gradient(to bottom,#ffffff,var(--surface));
+  pointer-events:none;
+}
+/* ===== FIM FASE 4.3 ===== */
+
+/* ===== FASE 5 — DESIGN SYSTEM CROMÁTICO ===== */
+
+/* --- 5.0 Paleta cromática editorial --- */
+:root{
+  --f5-lavanda:#DCD1FF;--f5-lilas:#BFA5F5;--f5-coral:#FFCDBB;
+  --f5-azul:#B9D9FF;--f5-menta:#BCEBD8;--f5-violeta:#28213F;
+  --f5-creme:#FFF9F2;--f5-magenta:#ec4899;--f5-rose:#fda4af;
+  --f5-peach:#ffe4d6;--f5-deep:#1a1035;--f5-warm:#2a1f42;
+  --f5-cream-dark:#f5efe6;--f5-midnight:#0f0a1e;
+}
+
+/* --- 5.1 Seção base cromática --- */
+.f5-section{padding:100px 0;position:relative;overflow:hidden}
+.f5-section .container{position:relative;z-index:2}
+
+/* --- 5.2 Wrapper backgrounds — ALL LIGHT editorial approach --- */
+/* Coral: warm peach-pink for problem/pain */
+.f5-section--coral{background:linear-gradient(170deg,#fff8f5 0%,#ffefea 35%,#ffe4dc 60%,#fff5f0 85%,#fefcfb 100%)!important}
+
+/* Blue: soft sky-lavender for how-it-works */
+.f5-section--blue{background:linear-gradient(170deg,#f5f0ff 0%,#eee8fa 35%,#e8e0f8 60%,#f2eeff 85%,#f8f5ff 100%)!important}
+
+/* Cream: warm off-white for demo/proofs */
+.f5-section--cream{background:linear-gradient(170deg,#fefcf8 0%,#fdf8f0 35%,#fcf4ea 60%,#fefbf5 85%,#ffffff 100%)!important}
+
+/* Violet: NOW LIGHT — soft lavender-purple for test/interaction */
+.f5-section--violet{background:linear-gradient(170deg,#f3eeff 0%,#ece4fb 35%,#e5dcf8 60%,#f0eaff 85%,#f8f5ff 100%)!important}
+
+/* Mint: soft green for ecosystem */
+.f5-section--mint{background:linear-gradient(170deg,#f3fbf7 0%,#e8f5ef 35%,#dff0e8 60%,#f0f9f4 85%,#f8fcfa 100%)!important}
+
+/* Clean: very soft lavender for pricing */
+.f5-section--clean{background:linear-gradient(170deg,#f8f5ff 0%,#f2eefa 35%,#eee8f6 60%,#f5f2fc 85%,#faf8ff 100%)!important}
+
+/* Magenta: NOW LIGHT — soft warm rose for bonus/authority/affiliates */
+.f5-section--magenta{background:linear-gradient(170deg,#fef5f8 0%,#fceef3 35%,#fbe6ee 60%,#fdf2f6 85%,#fffafb 100%)!important}
+
+/* Warm: soft warm cream for FAQ */
+.f5-section--warm{background:linear-gradient(170deg,#fdf8f2 0%,#faf0e4 35%,#f7eadc 60%,#fbf4ec 85%,#fefcf8 100%)!important}
+
+/* --- 5.3 Text colors — all dark on light backgrounds --- */
+.f5-section .section-title,.f5-section h2,.f5-section h3,.f5-section h4{color:#1e1b30!important}
+.f5-section .section-subtitle,.f5-section p{color:#4a4560!important}
+.f5-section .section-tag{font-family:'Inter',sans-serif!important;letter-spacing:.08em!important;font-size:.72rem!important}
+
+/* Per-wrapper tag accent colors */
+.f5-section--coral .section-tag{background:rgba(239,68,68,.07)!important;color:#d94a4a!important;border-color:rgba(239,68,68,.15)!important}
+.f5-section--blue .section-tag{background:rgba(124,58,237,.06)!important;color:#7c3aed!important;border-color:rgba(124,58,237,.14)!important}
+.f5-section--cream .section-tag{background:rgba(124,58,237,.06)!important;color:#7c3aed!important;border-color:rgba(124,58,237,.14)!important}
+.f5-section--violet .section-tag{background:rgba(124,58,237,.08)!important;color:#7c3aed!important;border-color:rgba(124,58,237,.16)!important}
+.f5-section--mint .section-tag{background:rgba(16,185,129,.07)!important;color:#059669!important;border-color:rgba(16,185,129,.15)!important}
+.f5-section--clean .section-tag{background:rgba(124,58,237,.06)!important;color:#7c3aed!important;border-color:rgba(124,58,237,.14)!important}
+.f5-section--magenta .section-tag{background:rgba(236,72,153,.07)!important;color:#db2777!important;border-color:rgba(236,72,153,.14)!important}
+.f5-section--warm .section-tag{background:rgba(124,58,237,.06)!important;color:#7c3aed!important;border-color:rgba(124,58,237,.14)!important}
+
+/* --- 5.4 CSS variable overrides for ALL wrappers (all light now) --- */
+.f5-section{
+  --text:#1e1b30;--muted:#6b6180;--surface:rgba(255,255,255,.8);--surface2:rgba(0,0,0,.025);
+  --border:rgba(124,58,237,.1);--bg:#ffffff;--text-secondary:#4a4560;
+  --green:#10b981;--green-l:#059669;--purple:#7c3aed;--purple-l:#7c3aed
+}
+
+/* --- 5.5 Tipografia editorial Fase 5 --- */
+.f5-section .section-title{font-family:'Playfair Display','Georgia',serif!important;font-weight:800!important;letter-spacing:-.02em!important;line-height:1.15!important}
+.f5-section .section-subtitle{font-size:1.08rem!important;line-height:1.72!important;max-width:640px!important}
+
+/* --- 5.6 Cards editorial --- */
+.f5-card{background:rgba(255,255,255,.7);border:1px solid rgba(0,0,0,.06);border-radius:20px;padding:28px 24px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s,border-color .35s}
+.f5-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.06);border-color:rgba(124,58,237,.18)}
+
+/* --- 5.7 Gradientes decorativos (orbes) --- */
+.f5-orb{position:absolute;border-radius:50%;filter:blur(140px);opacity:.08;pointer-events:none}
+.f5-orb--coral{background:#FFCDBB;width:500px;height:500px;top:-120px;right:-120px}
+.f5-orb--blue{background:#B9D9FF;width:450px;height:450px;bottom:-100px;left:-100px}
+.f5-orb--mint{background:#BCEBD8;width:400px;height:400px;top:-80px;left:-80px}
+.f5-orb--lilas{background:#BFA5F5;width:400px;height:400px;bottom:-80px;right:-80px}
+.f5-orb--magenta{background:#ec4899;width:500px;height:500px;top:-100px;left:30%;opacity:.05}
+
+/* --- 5.8 Separadores editoriais --- */
+.f5-divider{max-width:900px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.08) 20%,rgba(16,185,129,.06) 50%,rgba(124,58,237,.08) 80%,transparent)}
+
+/* --- 5.9 Botões cromáticos --- */
+.f5-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:50px;cursor:pointer;transition:transform .25s,box-shadow .25s;font-family:inherit;border:none;text-decoration:none;font-size:.95rem;padding:15px 32px}
+.f5-btn--purple{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;box-shadow:0 6px 24px rgba(124,58,237,.18)}
+.f5-btn--purple:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(124,58,237,.25)}
+.f5-btn--green{background:linear-gradient(135deg,#10b981,#059669);color:#fff;box-shadow:0 6px 24px rgba(16,185,129,.18)}
+.f5-btn--green:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(16,185,129,.25)}
+.f5-btn--magenta{background:linear-gradient(135deg,#ec4899,#db2777);color:#fff;box-shadow:0 6px 24px rgba(236,72,153,.18)}
+.f5-btn--magenta:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(236,72,153,.25)}
+
+/* --- 5.10 Animações --- */
+.f5-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.f5-reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  .f5-reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .f5-card{transition:none!important}
+  .anim{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* --- 5.11 Pain cards (coral) --- */
+.f5-section--coral .pain__col--without{background:rgba(239,68,68,.05)!important;border:1px solid rgba(220,80,80,.14)!important;border-radius:20px!important}
+.f5-section--coral .pain__col--with{background:rgba(16,185,129,.05)!important;border:1px solid rgba(16,185,129,.14)!important;border-radius:20px!important}
+.f5-section--coral .pain__col-title{font-family:'Space Grotesk',sans-serif!important}
+.f5-section--coral .pain__col--without .pain__col-title{color:#d94a4a!important}
+.f5-section--coral .pain__col--with .pain__col-title{color:#059669!important}
+.f5-section--coral .pain__item{color:#5b4a42!important;border-bottom-color:rgba(0,0,0,.04)!important}
+.f5-section--coral .pain__col--without .pain__item i{color:#d94a4a!important}
+.f5-section--coral .pain__col--with .pain__item i{color:#059669!important}
+.f5-section--coral .stats-dor__box{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important;backdrop-filter:blur(10px)!important;border-radius:20px!important}
+.f5-section--coral .stats-dor__title{color:#1e1b30!important}
+.f5-section--coral .stats-dor__item--bad{background:rgba(239,68,68,.05)!important;border-color:rgba(239,68,68,.12)!important;color:#be3c3c!important}
+.f5-section--coral .stats-dor__item--good{background:rgba(16,185,129,.05)!important;border-color:rgba(16,185,129,.12)!important;color:#059669!important}
+.f5-section--coral .pain__img{border-radius:16px!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section--coral .dominance__text{color:#5b4a42!important}
+.f5-section--coral .dominance__text em{background:linear-gradient(135deg,#7c3aed,#ec4899)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important}
+.f5-section--coral .dominance__icon{color:#7c3aed!important}
+.f5-section--coral .microcopy__text{color:#8a7a70!important}
+
+/* --- 5.12 How/Mech cards (blue/lavender) --- */
+.f5-section--blue .step-card{background:rgba(255,255,255,.75)!important;border:1px solid rgba(124,58,237,.08)!important;border-radius:20px!important}
+.f5-section--blue .step-card:hover{border-color:rgba(124,58,237,.2)!important;box-shadow:0 12px 36px rgba(124,58,237,.06)!important}
+.f5-section--blue .step-num{background:linear-gradient(135deg,#7c3aed,#6d28d9)!important;color:#fff!important}
+.f5-section--blue .step-card h3{color:#1e1b30!important}
+.f5-section--blue .step-card p{color:#4a4560!important}
+.f5-section--blue .mech__feat{background:rgba(255,255,255,.7)!important;border:1px solid rgba(124,58,237,.08)!important;border-radius:20px!important}
+.f5-section--blue .mech__feat:hover{border-color:rgba(124,58,237,.2)!important;box-shadow:0 12px 36px rgba(124,58,237,.06)!important}
+.f5-section--blue .mech__feat::before{background:linear-gradient(90deg,#7c3aed,#a78bfa)!important}
+.f5-section--blue .mech__feat h4,.f5-section--blue .mech__feat h3{color:#1e1b30!important}
+.f5-section--blue .mech__feat p{color:#4a4560!important}
+.f5-section--blue .mech__pipe-icon{background:rgba(255,255,255,.85)!important;border:1px solid rgba(124,58,237,.1)!important}
+.f5-section--blue .mech__pipe-name{color:#1e1b30!important}
+.f5-section--blue .mech__pipe-desc{color:#4a4560!important}
+.f5-section--blue .mech__vs-col--old{background:rgba(239,68,68,.04)!important;border:1px solid rgba(239,68,68,.1)!important}
+.f5-section--blue .mech__vs-col--new{background:rgba(16,185,129,.04)!important;border:1px solid rgba(16,185,129,.1)!important}
+.f5-section--blue .mech__vs-col--old .mech__vs-head{color:#d94a4a!important}
+.f5-section--blue .mech__vs-col--new .mech__vs-head{color:#059669!important}
+.f5-section--blue .mech__vs-item{color:#4a4560!important}
+
+/* --- 5.13 Violet (now light) — test/demos/ghost --- */
+.f5-section--violet .test-link__box{background:rgba(255,255,255,.7)!important;border:1px solid rgba(124,58,237,.12)!important;border-radius:24px!important}
+.f5-section--violet .test-link__box::before{background:radial-gradient(circle,rgba(124,58,237,.06) 0%,transparent 60%)!important}
+.f5-section--violet .test-link__input{background:rgba(255,255,255,.9)!important;border-color:rgba(124,58,237,.18)!important;color:#1e1b30!important}
+.f5-section--violet .test-link__input::placeholder{color:rgba(107,97,128,.5)!important}
+.f5-section--violet .test-link__input:focus{border-color:#7c3aed!important}
+.f5-section--violet .test-link__trust span{color:#6b6180!important}
+.f5-section--violet .test-link__trust i{color:#7c3aed!important}
+.f5-section--violet .case-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(124,58,237,.08)!important;border-radius:18px!important}
+.f5-section--violet .case-card:hover{border-color:rgba(124,58,237,.22)!important;box-shadow:0 12px 36px rgba(124,58,237,.06)!important}
+.f5-section--violet .case-card h4,.f5-section--violet .case-card h3{color:#1e1b30!important}
+.f5-section--violet .case-card p{color:#4a4560!important}
+
+/* --- 5.14 Ghost CTA (violet context, now light) --- */
+.f5-section--violet .ghost-cta-box{background:linear-gradient(145deg,rgba(124,58,237,.06),rgba(236,72,153,.04))!important;border:1px solid rgba(124,58,237,.14)!important;border-radius:24px!important}
+.f5-section--violet .ghost-cta-title{color:#1e1b30!important}
+.f5-section--violet .ghost-cta-title em{color:#7c3aed!important;-webkit-text-fill-color:#7c3aed!important;background:none!important}
+.f5-section--violet .ghost-cta-sub{color:#4a4560!important}
+.f5-section--violet .ghost-cta-input{background:rgba(255,255,255,.9)!important;border-color:rgba(124,58,237,.18)!important;color:#1e1b30!important}
+.f5-section--violet .ghost-cta-input::placeholder{color:rgba(107,97,128,.5)!important}
+.f5-section--violet .ghost-cta-trust span{color:#6b6180!important}
+.f5-section--violet .ghost-cta-trust i{color:#059669!important}
+.f5-section--violet .ghost-cta-tag{background:rgba(236,72,153,.08)!important;color:#db2777!important;border-color:rgba(236,72,153,.15)!important}
+.f5-section--violet .ghost-cta-section [style*="background:var(--surface)"]{background:transparent!important}
+
+/* --- 5.15 Ecosystem/Mint cards --- */
+.f5-section--mint .mod-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(16,185,129,.08)!important;border-radius:18px!important}
+.f5-section--mint .mod-card:hover{border-color:rgba(16,185,129,.22)!important;box-shadow:0 12px 36px rgba(16,185,129,.06)!important}
+.f5-section--mint .mod-card h4,.f5-section--mint .mod-card h3{color:#1e1b30!important}
+.f5-section--mint .mod-card p{color:#3d5a50!important}
+.f5-section--mint .aud-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(16,185,129,.08)!important;border-radius:18px!important}
+.f5-section--mint .aud-card:hover{border-color:rgba(16,185,129,.2)!important}
+.f5-section--mint .aud-card h4,.f5-section--mint .aud-card h3{color:#1e1b30!important}
+.f5-section--mint .aud-card p{color:#3d5a50!important}
+.f5-section--mint .case-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(16,185,129,.08)!important;border-radius:18px!important}
+.f5-section--mint .case-card:hover{border-color:rgba(16,185,129,.2)!important}
+.f5-section--mint .case-card h4,.f5-section--mint .case-card h3{color:#1e1b30!important}
+.f5-section--mint .case-card p,.f5-section--mint .case-card__example{color:#3d5a50!important}
+.f5-section--mint .not-for__box{background:rgba(255,255,255,.65)!important;border-color:rgba(0,0,0,.05)!important;border-radius:20px!important}
+.f5-section--mint .not-for__title{color:#1e1b30!important}
+.f5-section--mint .not-for__sub{color:#3d5a50!important}
+.f5-section--mint .not-for__item--no{background:rgba(239,68,68,.04)!important;border-color:rgba(239,68,68,.1)!important}
+.f5-section--mint .not-for__item--yes{background:rgba(16,185,129,.04)!important;border-color:rgba(16,185,129,.1)!important}
+.f5-section--mint .not-for__item--no i{color:#d94a4a!important}
+.f5-section--mint .not-for__item--yes i{color:#059669!important}
+.f5-section--mint .not-for__item span{color:#3d5a50!important}
+.f5-section--mint .integrations__item{background:rgba(255,255,255,.7)!important;border:1px solid rgba(16,185,129,.08)!important;border-radius:14px!important;padding:16px!important}
+.f5-section--mint .integrations__item:hover{border-color:rgba(16,185,129,.22)!important;box-shadow:0 8px 24px rgba(16,185,129,.05)!important}
+.f5-section--mint .integrations__item span{color:#3d5a50!important}
+.f5-section--mint .integrations__item i{color:#059669!important}
+.f5-section--mint .manifesto__box{background:rgba(255,255,255,.55)!important;border:1px solid rgba(16,185,129,.08)!important;border-radius:20px!important}
+.f5-section--mint .manifesto__big{color:#1e1b30!important}
+.f5-section--mint .manifesto__sub{color:#3d5a50!important}
+
+/* --- 5.16 Cream — demo/authority --- */
+.f5-section--cream .demo__chat{background:rgba(255,255,255,.85)!important;border:1px solid rgba(0,0,0,.06)!important;border-radius:20px!important}
+.f5-section--cream .demo__chat-bar{background:linear-gradient(135deg,rgba(124,58,237,.06),rgba(16,185,129,.03))!important;border-bottom:1px solid rgba(0,0,0,.04)!important}
+.f5-section--cream .demo__chat-info .name{color:#1e1b30!important}
+.f5-section--cream .demo__chat-info .status{color:#059669!important}
+.f5-section--cream .demo__chat-msgs{color:#1e1b30!important}
+.f5-section--cream .chat-msg--ai{background:rgba(0,0,0,.03)!important;border:1px solid rgba(0,0,0,.05)!important;color:#1e1b30!important}
+.f5-section--cream .chat-msg--user{background:rgba(124,58,237,.08)!important;border:1px solid rgba(124,58,237,.12)!important;color:#1e1b30!important}
+.f5-section--cream .chat-msg--cta{background:rgba(16,185,129,.06)!important;border:1px solid rgba(16,185,129,.1)!important;color:#1e1b30!important}
+.f5-section--cream .demo__label{color:#7c3aed!important}
+
+/* --- 5.17 Pricing (clean) --- */
+.f5-section--clean .pricing__box{background:rgba(255,255,255,.8)!important;border:1px solid rgba(124,58,237,.08)!important;border-radius:24px!important}
+.f5-section--clean .pricing__box:hover{border-color:rgba(124,58,237,.2)!important;box-shadow:0 16px 48px rgba(124,58,237,.06)!important}
+.f5-section--clean .pricing__box h3{color:#1e1b30!important}
+.f5-section--clean .pricing__box span[style*="color:#fff"]{color:#1e1b30!important}
+.f5-section--clean .pricing__box span[style*="color:var(--muted)"]{color:#6b6180!important}
+.f5-section--clean .pricing__box span[style*="color:var(--green)"]{color:#059669!important}
+.f5-section--clean .pricing__features li{color:#4a4560!important}
+.f5-section--clean .pricing__features i,.f5-section--clean .pricing__features i[style*="color:var(--green)"]{color:#059669!important}
+.f5-section--clean .pricing__box[style*="border-color:rgba(124,58,237"]{background:linear-gradient(180deg,rgba(124,58,237,.06),rgba(255,255,255,.9))!important;border-color:rgba(124,58,237,.25)!important}
+.f5-section--clean .pricing__box .btn{border-radius:50px!important}
+.f5-section--clean .pricing__box .btn--cta{background:linear-gradient(135deg,#7c3aed,#6d28d9)!important;color:#fff!important;border:none!important}
+.f5-section--clean .pricing__box .btn--secondary{color:#7c3aed!important;border-color:rgba(124,58,237,.2)!important;background:rgba(255,255,255,.85)!important}
+.f5-section--clean .pricing__box .btn--secondary:hover{background:rgba(124,58,237,.04)!important;border-color:rgba(124,58,237,.35)!important}
+.f5-section--clean .pricing__box .btn--secondary[style*="color:var(--green)"]{color:#059669!important;border-color:rgba(16,185,129,.2)!important}
+.f5-section--clean span[style*="color:var(--muted)"]{color:#6b6180!important}
+.f5-section--clean i[style*="color:var(--green)"]{color:#059669!important}
+
+/* --- 5.18 WhiteLabel (clean) --- */
+.f5-section--clean #whitelabel{background:transparent!important}
+.f5-section--clean #whitelabel [style*="background:var(--surface)"]{background:rgba(255,255,255,.7)!important;border:1px solid rgba(124,58,237,.08)!important;border-radius:20px!important}
+.f5-section--clean #whitelabel h3{color:#1e1b30!important}
+.f5-section--clean #whitelabel p,.f5-section--clean #whitelabel span{color:#4a4560!important}
+.f5-section--clean #whitelabel strong{color:#1e1b30!important}
+.f5-section--clean #whitelabel th{color:#6b6180!important}
+.f5-section--clean #whitelabel td{color:#4a4560!important;border-bottom-color:rgba(0,0,0,.04)!important}
+.f5-section--clean #whitelabel tr{border-bottom-color:rgba(0,0,0,.04)!important}
+.f5-section--clean #whitelabel [style*="background:var(--surface2)"]{background:rgba(0,0,0,.02)!important;border-color:rgba(0,0,0,.04)!important}
+.f5-section--clean .wl-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(124,58,237,.08)!important;border-radius:20px!important}
+.f5-section--clean .wl-card:hover{border-color:rgba(124,58,237,.2)!important;box-shadow:0 12px 36px rgba(124,58,237,.06)!important}
+.f5-section--clean .wl-card h4,.f5-section--clean .wl-card h3{color:#1e1b30!important}
+.f5-section--clean .wl-card p{color:#4a4560!important}
+
+/* --- 5.19 FAQ (warm) --- */
+.f5-section--warm .faq-item{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important;border-radius:14px!important}
+.f5-section--warm .faq-item__q{color:#2a1f10!important}
+.f5-section--warm .faq-item__q i{color:#7c3aed!important}
+.f5-section--warm .faq-item__a p{color:#5c4a35!important}
+.f5-section--warm .dominance__text{color:#5c4a35!important}
+.f5-section--warm .dominance__text em{color:#7c3aed!important;background:linear-gradient(135deg,#7c3aed,#ec4899)!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important}
+
+/* --- 5.20 Magenta section (now light rose) — bonus/authority/affiliates --- */
+.f5-section--magenta #bonus-ebook .section-title,.f5-section--magenta #bonus-ebook h2{color:#1e1b30!important}
+.f5-section--magenta #bonus-ebook .section-subtitle{color:#4a4560!important}
+.f5-section--magenta #bonus-ebook [style*="background:var(--surface)"]{background:rgba(255,255,255,.7)!important;border:1px solid rgba(236,72,153,.08)!important;border-radius:20px!important}
+.f5-section--magenta #bonus-ebook input{background:rgba(255,255,255,.9)!important;border-color:rgba(124,58,237,.15)!important;color:#1e1b30!important}
+.f5-section--magenta #bonus-ebook label{color:#4a4560!important}
+.f5-section--magenta .ebook-benefits li{color:#4a4560!important}
+.f5-section--magenta .ebook-benefits i{color:#7c3aed!important}
+.f5-section--magenta .authority__photo{border-color:rgba(124,58,237,.15)!important}
+.f5-section--magenta .authority__tag{background:rgba(124,58,237,.06)!important;color:#7c3aed!important;border-color:rgba(124,58,237,.12)!important}
+.f5-section--magenta .authority__name{color:#1e1b30!important}
+.f5-section--magenta .authority__role{color:#4a4560!important}
+.f5-section--magenta .authority__text{color:#4a4560!important}
+.f5-section--magenta .authority__text strong{color:#1e1b30!important}
+.f5-section--magenta .authority__cred{background:rgba(255,255,255,.7)!important;border-color:rgba(0,0,0,.05)!important;color:#4a4560!important}
+.f5-section--magenta .authority__cred i{color:#059669!important}
+.f5-section--magenta .affil__box{background:rgba(255,255,255,.7)!important;border:1px solid rgba(236,72,153,.1)!important;border-radius:24px!important}
+.f5-section--magenta .affil__box::before{background:linear-gradient(90deg,#f59e0b,#ec4899,#7c3aed)!important;height:3px!important;opacity:.5!important}
+.f5-section--magenta .affil__head{border-bottom-color:rgba(0,0,0,.05)!important}
+.f5-section--magenta .affil__steps{border-bottom-color:rgba(0,0,0,.05)!important}
+.f5-section--magenta .affil__step h4,.f5-section--magenta .affil__step h3{color:#1e1b30!important}
+.f5-section--magenta .affil__step p{color:#4a4560!important}
+
+/* --- 5.21 CTA Final (violet context, now light) --- */
+.f5-section--violet .final-cta__box{
+  background:linear-gradient(145deg,rgba(124,58,237,.06),rgba(236,72,153,.04))!important;
+  border:1px solid rgba(124,58,237,.12)!important;border-radius:28px!important;
+  padding:60px 40px!important;text-align:center
+}
+.f5-section--violet .final-cta h2{color:#1e1b30!important}
+.f5-section--violet .final-cta p{color:#4a4560!important}
+.f5-section--violet .final-cta .btn-primary,.f5-section--violet .final-cta [class*="btn"]{border-radius:50px!important}
+.f5-section--violet .microcopy__text{color:#8a7ea0!important}
+
+/* --- 5.22 text-grad fix for light backgrounds --- */
+.f5-section .text-grad{
+  background:linear-gradient(135deg,#7c3aed 0%,#6d28d9 40%,#4f46e5 70%,#7c3aed 100%)!important;
+  -webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;
+  background-clip:text!important
+}
+
+/* --- 5.23 Smooth transitions between ALL blocks (all light now) --- */
+.f5-section + .f5-section{margin-top:-8px}
+
+/* Hero → Coral: gentle fade from hero dark to coral warm */
+.hero.section--dark + .f5-section--coral{position:relative}
+.hero.section--dark + .f5-section--coral::before{
+  content:'';display:block;height:100px;margin-top:-2px;
+  background:linear-gradient(to bottom,#0a0a18 0%,#1a1035 8%,#2d1f4a 18%,#4a3568 28%,#7c5a90 38%,#b088a8 48%,#d8b8c8 58%,#f0d8d0 68%,#fff0ea 80%,#fff5f0 90%,#fff8f5 100%);
+  pointer-events:none;position:relative;z-index:1
+}
+
+/* Light→light transitions: very subtle, no dark bands */
+.f5-section--coral + .f5-section--blue::before{
+  content:'';display:block;height:40px;
+  background:linear-gradient(to bottom,#fff5f0 0%,#f8f2f8 50%,#f5f0ff 100%);
+  pointer-events:none
+}
+.f5-section--blue + .f5-section--cream::before{
+  content:'';display:block;height:40px;
+  background:linear-gradient(to bottom,#f5f0ff 0%,#f8f4fa 50%,#fefcf8 100%);
+  pointer-events:none
+}
+.f5-section--cream + .f5-section--violet::before{
+  content:'';display:block;height:40px;
+  background:linear-gradient(to bottom,#fefcf8 0%,#f8f4fc 50%,#f3eeff 100%);
+  pointer-events:none
+}
+.f5-section--violet + .f5-section--mint::before{
+  content:'';display:block;height:40px;
+  background:linear-gradient(to bottom,#f3eeff 0%,#f0f4f8 50%,#f3fbf7 100%);
+  pointer-events:none
+}
+.f5-section--mint + .f5-section--clean::before{
+  content:'';display:block;height:40px;
+  background:linear-gradient(to bottom,#f3fbf7 0%,#f4f4fa 50%,#f8f5ff 100%);
+  pointer-events:none
+}
+.f5-section--clean + .f5-section--magenta::before{
+  content:'';display:block;height:40px;
+  background:linear-gradient(to bottom,#f8f5ff 0%,#faf5f8 50%,#fef5f8 100%);
+  pointer-events:none
+}
+.f5-section--magenta + .f5-section--warm::before{
+  content:'';display:block;height:40px;
+  background:linear-gradient(to bottom,#fef5f8 0%,#fcf5f0 50%,#fdf8f2 100%);
+  pointer-events:none
+}
+.f5-section--warm + .f5-section--violet::before{
+  content:'';display:block;height:40px;
+  background:linear-gradient(to bottom,#fdf8f2 0%,#f8f4f8 50%,#f3eeff 100%);
+  pointer-events:none
+}
+
+/* --- 5.24 Video fix: exibição fiel do vídeo 9:16 dentro do phone --- */
+.hero__phone-screen video{
+  object-fit:fill!important;
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  border-radius:inherit!important;
+  background:#000!important;
+  image-rendering:auto!important;
+  -webkit-transform:translateZ(0)!important;
+  transform:translateZ(0)!important;
+}
+/* Phone frame: remover perspectiva 3D que distorce e embaca o vídeo */
+.hero .hero__phone-frame{
+  transform:none!important;
+  filter:drop-shadow(0 20px 50px rgba(100,60,180,.15))!important;
+}
+.hero .hero__phone-frame:hover{
+  transform:translateY(-4px)!important;
+}
+/* Phone screen com aspect-ratio exato do vídeo */
+.hero .hero__phone-screen{
+  aspect-ratio:9/16!important;
+  border-radius:24px!important;
+  overflow:hidden!important;
+  background:#000!important;
+}
+
+/* --- 5.25 Scroll offset for fixed header --- */
+.f5-section section[id]{scroll-margin-top:80px}
+
+/* --- 5.27a text-grad-g override for light bg --- */
+.f5-section .text-grad-g{
+  background:linear-gradient(135deg,#059669 0%,#10b981 50%,#059669 100%)!important;
+  -webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;
+  background-clip:text!important
+}
+
+/* Section tags with inline light colors — darken for readability */
+.f5-section .section-tag[style*="color:#c084fc"]{color:#9333ea!important}
+.f5-section .section-tag[style*="color:#fbbf24"]{color:#d97706!important}
+.f5-section [style*="color:#c084fc"]{color:#9333ea!important}
+.f5-section [style*="color:#34d399"]{color:#059669!important}
+.f5-section [style*="color:#f472b6"]{color:#db2777!important}
+
+/* Demo chat overlay — explicit dark theme for modal */
+#demoChatOverlay > div{background:#0e0e1a!important;border-color:#1e1e35!important}
+#demoChatOverlay [style*="background:var(--surface)"]{background:#0e0e1a!important}
+#demoChatOverlay [style*="background:var(--surface2)"]{background:#151525!important}
+#demoChatOverlay [style*="background:var(--bg)"]{background:#06060e!important}
+#demoChatOverlay [style*="color:var(--text)"]{color:#f0eeff!important}
+#demoChatOverlay [style*="color:var(--muted)"]{color:#7a7896!important}
+#demoChatOverlay [style*="border-color:var(--border)"]{border-color:#1e1e35!important}
+#demoChatOverlay input{background:#151525!important;border-color:#1e1e35!important;color:#f0eeff!important}
+
+/* --- 5.27 OVERRIDE COMPLETO: componentes base Fase 4.3 → tema claro --- */
+/* Premium CSS Layer override — fundos hardcoded escuros */
+.f5-section .pricing__box,
+.f5-section .case-card,
+.f5-section .mech__feat{
+  background:rgba(255,255,255,.75)!important;
+  backdrop-filter:blur(12px)!important;
+  border:1px solid rgba(0,0,0,.06)!important
+}
+.f5-section .pricing__box:hover,
+.f5-section .case-card:hover,
+.f5-section .mech__feat:hover{
+  border-color:rgba(124,58,237,.22)!important;
+  box-shadow:0 16px 48px rgba(124,58,237,.08)!important
+}
+.f5-section .pricing__box[style*="border-color:rgba(124,58,237"]{
+  background:linear-gradient(180deg,rgba(124,58,237,.06),rgba(255,255,255,.92))!important;
+  box-shadow:0 0 30px rgba(124,58,237,.06)!important
+}
+
+/* Componentes base com var(--surface) → claro */
+.f5-section .step-card{background:rgba(255,255,255,.75)!important;border:1px solid rgba(0,0,0,.06)!important}
+.f5-section .demo__chat{background:rgba(255,255,255,.85)!important;border:1px solid rgba(0,0,0,.06)!important}
+.f5-section .crm-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .mod-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .aud-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .benefit__item{background:rgba(255,255,255,.65)!important;border:1px solid rgba(0,0,0,.04)!important}
+.f5-section .faq-item{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .final-cta__box{background:linear-gradient(145deg,rgba(124,58,237,.06),rgba(236,72,153,.04))!important;border:1px solid rgba(124,58,237,.12)!important}
+.f5-section .stats-dor__box{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .test-link__box{background:rgba(255,255,255,.7)!important;border:1px solid rgba(124,58,237,.12)!important}
+.f5-section .test-link__input{background:rgba(255,255,255,.9)!important;border-color:rgba(124,58,237,.18)!important;color:#1e1b30!important}
+.f5-section .metric-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .test-card{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .affil__box{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .not-for__box{background:rgba(255,255,255,.65)!important;border:1px solid rgba(0,0,0,.04)!important}
+.f5-section .mech__pipe-icon{background:rgba(255,255,255,.85)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .anchoring__item{background:rgba(255,255,255,.5)!important;border:1px solid rgba(0,0,0,.04)!important}
+.f5-section .authority__cred{background:rgba(255,255,255,.5)!important;border:1px solid rgba(0,0,0,.04)!important}
+.f5-section .dogfood__stat{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .dogfood__proof{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .chat-preview{background:rgba(255,255,255,.85)!important;border:1px solid rgba(0,0,0,.06)!important}
+.f5-section .chat-preview__bar{background:rgba(0,0,0,.03)!important;border-bottom:1px solid rgba(0,0,0,.04)!important}
+.f5-section .chat-msg--ai{background:rgba(0,0,0,.03)!important;border:1px solid rgba(0,0,0,.05)!important;color:#1e1b30!important}
+.f5-section .chat-msg--user{background:rgba(124,58,237,.08)!important;border:1px solid rgba(124,58,237,.12)!important;color:#1e1b30!important}
+.f5-section .case-card__example{background:rgba(0,0,0,.03)!important;color:#4a4560!important}
+
+/* Textos base com var(--text), var(--muted) → cores escuras */
+.f5-section .section-subtitle{color:#4a4560!important}
+.f5-section .faq-item__q{color:#1e1b30!important}
+.f5-section .faq-item__a p{color:#4a4560!important}
+.f5-section .step-card h3,.f5-section .step-card h4{color:#1e1b30!important}
+.f5-section .step-card p{color:#4a4560!important}
+.f5-section .mod-card h3,.f5-section .mod-card h4{color:#1e1b30!important}
+.f5-section .mod-card p{color:#4a4560!important}
+.f5-section .aud-card h3,.f5-section .aud-card h4{color:#1e1b30!important}
+.f5-section .aud-card p{color:#4a4560!important}
+.f5-section .case-card h3,.f5-section .case-card h4{color:#1e1b30!important}
+.f5-section .case-card p{color:#4a4560!important}
+.f5-section .metric-card h4{color:#1e1b30!important}
+.f5-section .metric-card p,.f5-section .metric-card span{color:#4a4560!important}
+.f5-section .test-card h3,.f5-section .test-card h4{color:#1e1b30!important}
+.f5-section .test-card p{color:#4a4560!important}
+.f5-section .benefit__item span{color:#4a4560!important}
+.f5-section .benefit__item i{color:#059669!important}
+.f5-section .affil__head h3{color:#1e1b30!important}
+.f5-section .affil__head p{color:#6b6180!important}
+.f5-section .affil__step h3,.f5-section .affil__step h4{color:#1e1b30!important}
+.f5-section .affil__step p{color:#4a4560!important}
+.f5-section .not-for__title{color:#1e1b30!important}
+.f5-section .not-for__sub{color:#4a4560!important}
+.f5-section .not-for__item span{color:#4a4560!important}
+.f5-section .authority__name{color:#1e1b30!important}
+.f5-section .authority__role{color:#4a4560!important}
+.f5-section .authority__text{color:#4a4560!important}
+.f5-section .authority__text strong{color:#1e1b30!important}
+.f5-section .dogfood__stat-num{color:#1e1b30!important}
+.f5-section .dogfood__stat-label{color:#6b6180!important}
+.f5-section .dogfood__proof-caption{color:#6b6180!important;border-top:1px solid rgba(0,0,0,.05)!important}
+.f5-section .mech__pipe-name{color:#1e1b30!important}
+.f5-section .mech__pipe-desc{color:#4a4560!important}
+.f5-section .mech__feat h3,.f5-section .mech__feat h4{color:#1e1b30!important}
+.f5-section .mech__feat p{color:#4a4560!important}
+.f5-section .chat-preview__bar .name{color:#1e1b30!important}
+.f5-section .chat-preview__bar .status{color:#059669!important}
+
+/* Botões em contexto claro */
+.f5-section .btn--secondary{background:rgba(255,255,255,.7)!important;border:2px solid rgba(124,58,237,.15)!important;color:#7c3aed!important}
+.f5-section .btn--secondary:hover{background:rgba(124,58,237,.04)!important;border-color:rgba(124,58,237,.35)!important}
+.f5-section .btn--secondary[style*="color:var(--green)"]{color:#059669!important;border-color:rgba(16,185,129,.2)!important}
+.f5-section .btn--secondary[style*="border-color:var(--green)"]{border-color:rgba(16,185,129,.2)!important}
+
+/* Input fields em contexto claro */
+.f5-section input:not([type="hidden"]):not([type="submit"]):not([type="button"]){
+  background:rgba(255,255,255,.9)!important;
+  border-color:rgba(124,58,237,.15)!important;
+  color:#1e1b30!important
+}
+.f5-section input::placeholder{color:rgba(107,97,128,.5)!important}
+.f5-section select{background:rgba(255,255,255,.9)!important;color:#1e1b30!important;border-color:rgba(124,58,237,.15)!important}
+
+/* Links e spans com var(--muted) inline */
+.f5-section [style*="color:var(--muted)"]{color:#6b6180!important}
+.f5-section [style*="color:var(--text)"]{color:#1e1b30!important}
+.f5-section [style*="color:var(--green)"]{color:#059669!important}
+.f5-section [style*="color:var(--green-l)"]{color:#059669!important}
+.f5-section [style*="color:var(--purple-l)"]{color:#7c3aed!important}
+.f5-section [style*="color:#fff"]{color:#1e1b30!important}
+.f5-section .btn[style*="color:#fff"]{color:#fff!important}
+.f5-section .btn--cta[style*="color:#fff"]{color:#fff!important}
+.f5-section a.btn--cta{color:#fff!important}
+.f5-section a.btn--primary{color:#fff!important}
+.f5-section .btn--cta{color:#fff!important}
+.f5-section .btn--primary{color:#fff!important}
+
+/* Background inline var overrides */
+.f5-section [style*="background:var(--surface)"]{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.04)!important;border-radius:16px!important}
+.f5-section [style*="background:var(--surface2)"]{background:rgba(0,0,0,.025)!important}
+.f5-section [style*="background:var(--bg)"]{background:transparent!important}
+
+/* Ghost CTA box embedded style override */
+.f5-section .ghost-cta-box{
+  background:linear-gradient(145deg,rgba(124,58,237,.06),rgba(236,72,153,.04))!important;
+  border:1px solid rgba(124,58,237,.14)!important
+}
+.f5-section .ghost-cta-title{color:#1e1b30!important}
+.f5-section .ghost-cta-title em{color:#7c3aed!important;-webkit-text-fill-color:#7c3aed!important;background:none!important}
+.f5-section .ghost-cta-sub{color:#4a4560!important}
+.f5-section .ghost-cta-input{background:rgba(255,255,255,.9)!important;border-color:rgba(124,58,237,.18)!important;color:#1e1b30!important}
+.f5-section .ghost-cta-tag{background:rgba(236,72,153,.08)!important;color:#db2777!important;border-color:rgba(236,72,153,.15)!important}
+.f5-section .ghost-cta-trust span{color:#6b6180!important}
+.f5-section .ghost-cta-trust i{color:#059669!important}
+
+/* Section-tag em contexto claro (base tem cores claras para dark bg) */
+.f5-section .section-tag{background:rgba(124,58,237,.06)!important;color:#7c3aed!important;border-color:rgba(124,58,237,.14)!important}
+.f5-section .section-tag--green{background:rgba(16,185,129,.06)!important;color:#059669!important;border-color:rgba(16,185,129,.14)!important}
+
+/* Microcopy em contexto claro */
+.f5-section .microcopy__text{color:#8a7ea0!important}
+
+/* Hover shadows — sombras mais suaves para tema claro */
+.f5-section .mod-card:hover,.f5-section .aud-card:hover{
+  box-shadow:0 12px 36px rgba(0,0,0,.06)!important
+}
+.f5-section .dogfood__proof:hover{box-shadow:0 12px 40px rgba(0,0,0,.08)!important}
+
+/* Star ratings */
+.f5-section .test-card__stars i{color:#fbbf24!important}
+
+/* WhiteLabel specifics */
+.f5-section #whitelabel th{color:#6b6180!important}
+.f5-section #whitelabel td{color:#4a4560!important;border-bottom-color:rgba(0,0,0,.04)!important}
+.f5-section #whitelabel tr{border-bottom-color:rgba(0,0,0,.04)!important}
+.f5-section #whitelabel strong{color:#1e1b30!important}
+
+/* Pricing specifics — preços e labels */
+.f5-section .pricing__box h3{color:#1e1b30!important}
+.f5-section .pricing__features li{color:#4a4560!important}
+.f5-section .pricing__features i{color:#059669!important}
+
+/* E-book form labels */
+.f5-section #bonus-ebook label{color:#4a4560!important}
+.f5-section #bonus-ebook .ebook-benefits li{color:#4a4560!important}
+.f5-section #bonus-ebook .ebook-benefits i{color:#7c3aed!important}
+
+/* Authority photo border */
+.f5-section .authority__photo{border-color:rgba(124,58,237,.15)!important}
+.f5-section .authority__tag{background:rgba(124,58,237,.06)!important;color:#7c3aed!important;border-color:rgba(124,58,237,.12)!important}
+.f5-section .authority__cred i{color:#059669!important}
+
+/* Affil step numbers */
+.f5-section .affil__step-num{background:linear-gradient(135deg,#7c3aed,#6d28d9)!important;color:#fff!important}
+
+/* Integrations items */
+.f5-section .integrations__item{background:rgba(255,255,255,.7)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .integrations__item span{color:#4a4560!important}
+
+/* Manifesto */
+.f5-section .manifesto__box{background:rgba(255,255,255,.55)!important;border:1px solid rgba(0,0,0,.05)!important}
+.f5-section .manifesto__big{color:#1e1b30!important}
+.f5-section .manifesto__sub{color:#4a4560!important}
+
+/* Dominance text */
+.f5-section .dominance__text{color:#4a4560!important}
+.f5-section .dominance__icon{color:#7c3aed!important}
+
+/* Not-for items */
+.f5-section .not-for__item--no{background:rgba(239,68,68,.04)!important;border-color:rgba(239,68,68,.1)!important}
+.f5-section .not-for__item--yes{background:rgba(16,185,129,.04)!important;border-color:rgba(16,185,129,.1)!important}
+.f5-section .not-for__item--no i{color:#d94a4a!important}
+.f5-section .not-for__item--yes i{color:#059669!important}
+
+/* FAQ chevron icon */
+.f5-section .faq-item__q i{color:#7c3aed!important}
+
+/* Step numbers */
+.f5-section .step-num{background:linear-gradient(135deg,#7c3aed,#6d28d9)!important;color:#fff!important}
+
+/* Mech feat bar */
+.f5-section .mech__feat::before{background:linear-gradient(90deg,#7c3aed,#a78bfa)!important}
+.f5-section .mech__vs-col--old{background:rgba(239,68,68,.04)!important;border:1px solid rgba(239,68,68,.1)!important}
+.f5-section .mech__vs-col--new{background:rgba(16,185,129,.04)!important;border:1px solid rgba(16,185,129,.1)!important}
+.f5-section .mech__vs-col--old .mech__vs-head{color:#d94a4a!important}
+.f5-section .mech__vs-col--new .mech__vs-head{color:#059669!important}
+.f5-section .mech__vs-item{color:#4a4560!important}
+
+/* Demo labels */
+.f5-section .demo__label{color:#7c3aed!important}
+
+/* Pain section specifics */
+.f5-section .pain__col--without{background:rgba(239,68,68,.05)!important;border:1px solid rgba(220,80,80,.14)!important}
+.f5-section .pain__col--with{background:rgba(16,185,129,.05)!important;border:1px solid rgba(16,185,129,.14)!important}
+.f5-section .pain__col--without .pain__col-title{color:#d94a4a!important}
+.f5-section .pain__col--with .pain__col-title{color:#059669!important}
+.f5-section .pain__item{color:#5b4a42!important}
+.f5-section .pain__col--without .pain__item i{color:#d94a4a!important}
+.f5-section .pain__col--with .pain__item i{color:#059669!important}
+
+/* Walkthrough video */
+.f5-section .walkthrough__video{box-shadow:0 12px 48px rgba(0,0,0,.1)!important;border:1px solid rgba(0,0,0,.06)!important}
+
+/* --- 5.28 PROTECAO EXTRA: fallbacks, gaps e reforcos --- */
+
+/* Fallback solido para cada wrapper (caso gradiente falhe) */
+.f5-section--coral{background-color:#fff8f5!important}
+.f5-section--blue{background-color:#f5f0ff!important}
+.f5-section--cream{background-color:#fefcf8!important}
+.f5-section--violet{background-color:#f3eeff!important}
+.f5-section--mint{background-color:#f3fbf7!important}
+.f5-section--clean{background-color:#f8f5ff!important}
+.f5-section--magenta{background-color:#fef5f8!important}
+.f5-section--warm{background-color:#fdf8f2!important}
+
+/* Pricing: numeros brancos -> escuros em fundo claro */
+.f5-section .pricing__box span[style*="color:#fff"]{color:#1e1b30!important}
+.f5-section .pricing__box div[style] span[style*="color:#fff"]{color:#1e1b30!important}
+.f5-section .pricing__box div span[style*="font-weight:800"]{color:#1e1b30!important}
+
+/* Proteger botoes CTA e primary (manter texto branco) */
+.f5-section .btn--cta{color:#fff!important}
+.f5-section .btn--primary{color:#fff!important}
+.f5-section a.btn--cta{color:#fff!important}
+.f5-section a.btn--primary{color:#fff!important}
+.f5-section [class*="btn--cta"]{color:#fff!important}
+.f5-section .pricing__box .btn{color:#fff!important}
+.f5-section .pricing__box .btn--secondary{color:#7c3aed!important}
+.f5-section .pricing__box .btn--secondary[style*="color:var(--green)"]{color:#059669!important}
+
+/* WhiteLabel: containers e tabelas */
+.f5-section #whitelabel [style*="background:var(--surface)"]{background:rgba(255,255,255,.75)!important;border-color:rgba(0,0,0,.06)!important}
+.f5-section #whitelabel [style*="background:var(--surface2)"]{background:rgba(0,0,0,.02)!important;border-color:rgba(0,0,0,.04)!important}
+.f5-section #whitelabel [style*="color:var(--text)"]{color:#1e1b30!important}
+.f5-section #whitelabel [style*="color:var(--muted)"]{color:#6b6180!important}
+.f5-section #whitelabel [style*="border-color:var(--border)"]{border-color:rgba(0,0,0,.06)!important}
+.f5-section #whitelabel table{border-color:rgba(0,0,0,.06)!important}
+.f5-section #whitelabel th{color:#6b6180!important;border-color:rgba(0,0,0,.04)!important}
+.f5-section #whitelabel td{color:#4a4560!important;border-color:rgba(0,0,0,.04)!important}
+
+/* E-book: form containers e inputs */
+.f5-section #bonus-ebook [style*="background:var(--surface)"]{background:rgba(255,255,255,.75)!important;border-color:rgba(0,0,0,.06)!important}
+.f5-section #bonus-ebook [style*="background:var(--bg)"]{background:rgba(255,255,255,.95)!important}
+.f5-section #bonus-ebook input[style*="background:var(--bg)"]{background:rgba(255,255,255,.95)!important;color:#1e1b30!important;border-color:rgba(124,58,237,.15)!important}
+.f5-section #bonus-ebook [style*="color:var(--text)"]{color:#1e1b30!important}
+.f5-section #bonus-ebook [style*="color:var(--muted)"]{color:#6b6180!important}
+.f5-section #bonus-ebook [style*="border-color:var(--border)"]{border-color:rgba(0,0,0,.06)!important}
+.f5-section #bonus-ebook [style*="color:var(--green-l)"]{color:#059669!important}
+
+/* Authority: texto e inline vars */
+.f5-section .authority [style*="color:var(--text)"]{color:#1e1b30!important}
+.f5-section .authority [style*="color:var(--muted)"]{color:#6b6180!important}
+.f5-section .authority [style*="color:var(--green-l)"]{color:#059669!important}
+.f5-section .authority [style*="color:var(--purple-l)"]{color:#7c3aed!important}
+
+/* CTA Final: reforco do box e textos */
+.f5-section--violet .final-cta__box{background:linear-gradient(145deg,rgba(124,58,237,.06),rgba(236,72,153,.04))!important;border:1px solid rgba(124,58,237,.12)!important;border-radius:28px!important;padding:60px 40px!important}
+.f5-section .final-cta p[style*="color:var(--muted)"]{color:#6b6180!important}
+.f5-section .final-cta [style*="color:var(--green)"]{color:#059669!important}
+.f5-section .final-cta .btn--secondary{background:rgba(255,255,255,.8)!important;color:#7c3aed!important;border:2px solid rgba(124,58,237,.2)!important}
+
+/* Ghost CTA: reforco com alta especificidade */
+.f5-section--violet .ghost-cta-box{background:linear-gradient(145deg,rgba(124,58,237,.06),rgba(236,72,153,.04))!important;border:1px solid rgba(124,58,237,.14)!important;border-radius:24px!important}
+.f5-section--violet .ghost-cta-title{color:#1e1b30!important}
+.f5-section--violet .ghost-cta-sub{color:#4a4560!important}
+.f5-section--violet .ghost-cta-tag{background:rgba(236,72,153,.08)!important;color:#db2777!important;border-color:rgba(236,72,153,.15)!important}
+.f5-section--violet .ghost-cta-input{background:rgba(255,255,255,.9)!important;border-color:rgba(124,58,237,.18)!important;color:#1e1b30!important}
+.f5-section--violet .ghost-cta-trust span{color:#6b6180!important}
+.f5-section--violet .ghost-cta-trust i{color:#059669!important}
+
+/* Case cards demos: fundo claro */
+.f5-section--violet .case-card{background:rgba(255,255,255,.75)!important;border:1px solid rgba(124,58,237,.08)!important}
+.f5-section--violet .case-card [style*="color:#fbbf24"]{color:#d97706!important}
+.f5-section--violet .case-card [style*="color:var(--muted)"]{color:#6b6180!important}
+.f5-section--violet .case-card p[style*="color:var(--muted)"]{color:#6b6180!important}
+
+/* Anchoring items e inline containers */
+.f5-section .anchoring__item{background:rgba(255,255,255,.5)!important;border-color:rgba(0,0,0,.04)!important}
+.f5-section div[style*="background:var(--surface2)"]{background:rgba(0,0,0,.025)!important}
+.f5-section [style*="border-color:var(--border)"]{border-color:rgba(124,58,237,.1)!important}
+
+/* Microcopy no CTA final */
+.f5-section .microcopy__text [style*="color:var(--purple)"]{color:#7c3aed!important}
+
+/* Bastidores grid: bordas mais suaves */
+.f5-section .bastidores-grid img{border-color:rgba(124,58,237,.1)!important}
+
+/* Demo chat overlay: MANTER dark (modal popup) */
+#demoChatOverlay,#demoChatOverlay *{/* nao alterar — modal escuro por design */}
+
+/* --- 5.26 Responsivo global Fase 5 --- */
+@media(max-width:1280px){
+  .f5-section .section-title{font-size:clamp(1.6rem,3.5vw,2.6rem)!important}
+}
+@media(max-width:860px){
+  .f5-section{padding:70px 0}
+  .hero.section--dark + .f5-section--coral::before{height:50px}
+}
+@media(max-width:540px){
+  .f5-section{padding:50px 0}
+  .hero.section--dark + .f5-section--coral::before{height:40px}
+}
+@media(max-width:390px){
+  .f5-section{padding:40px 0}
+  .f5-section .section-title{font-size:clamp(1.3rem,5vw,1.8rem)!important}
+  .f5-section .section-subtitle{font-size:.95rem!important}
+}
+
+
+/* --- 5.29 CORREÇÃO ÍCONES TRANSPARENTES + REFORÇOS VISUAIS --- */
+
+/* 5.29.1 — Ícones em TODOS os cards: cor visível sobre fundo claro */
+.f5-section .mech__feat-icon,
+.f5-section .mech__feat-icon i,
+.f5-section .mech__pipe-icon i,
+.f5-section .mech__pipe-arrow,
+.f5-section .mech__pipe-arrow i,
+.f5-section .mod-card__icon,
+.f5-section .mod-card__icon i,
+.f5-section .aud-card__icon,
+.f5-section .aud-card__icon i,
+.f5-section .case-card__icon,
+.f5-section .case-card__icon i,
+.f5-section .step-card .step-icon,
+.f5-section .step-card .step-icon i,
+.f5-section .benefit__item-icon,
+.f5-section .benefit__item-icon i,
+.f5-section .crm-card__icon i,
+.f5-section .affil__badge i,
+.f5-section .affil__sim-title i,
+.f5-section .dogfood__badge i,
+.f5-section .dogfood__proof-caption i{
+  color:#7c3aed!important
+}
+
+/* Ícones pipeline coloridos por posição */
+.f5-section .mech__pipe-step:nth-child(1) .mech__pipe-icon i{color:#7c3aed!important}
+.f5-section .mech__pipe-step:nth-child(3) .mech__pipe-icon i{color:#3b82f6!important}
+.f5-section .mech__pipe-step:nth-child(5) .mech__pipe-icon i{color:#f59e0b!important}
+.f5-section .mech__pipe-step:nth-child(7) .mech__pipe-icon i{color:#ef4444!important}
+.f5-section .mech__pipe-step:nth-child(9) .mech__pipe-icon i{color:#10b981!important}
+
+/* Ícones verdes (benefit, CRM pipe, check icons) */
+.f5-section .benefit__item-icon i,
+.f5-section .crm-card__icon--pipe i{color:#059669!important}
+.f5-section .crm-card__icon--lead i{color:#7c3aed!important}
+.f5-section .crm-card__icon--chart i{color:#f59e0b!important}
+
+/* Ícones mint section — verde */
+.f5-section--mint .mod-card__icon i,
+.f5-section--mint .aud-card__icon i,
+.f5-section--mint .case-card__icon i{color:#059669!important}
+
+/* Ícones coral section */
+.f5-section--coral .pain__col--without .pain__col-title i{color:#d94a4a!important}
+.f5-section--coral .pain__col--with .pain__col-title i{color:#059669!important}
+
+/* Setas do pipeline visíveis */
+.f5-section .mech__pipe-arrow{color:#6b6180!important;opacity:1!important}
+
+/* 5.29.2 — Affil badges com cor visível */
+.f5-section .affil__badge{color:#d97706!important;background:rgba(245,158,11,.08)!important;border-color:rgba(245,158,11,.18)!important}
+.f5-section .affil__badge i{color:#f59e0b!important}
+.f5-section .affil__comm{color:#d97706!important}
+.f5-section .affil__sim-title{color:#1e1b30!important}
+.f5-section .affil__sim-title i{color:#f59e0b!important}
+.f5-section .affil__table td{border-bottom-color:rgba(0,0,0,.04)!important}
+
+/* 5.29.3 — Dogfood badges e stats */
+.f5-section .dogfood__badge{color:#059669!important;background:rgba(16,185,129,.08)!important;border-color:rgba(16,185,129,.18)!important}
+.f5-section .dogfood__stat-num{color:#1e1b30!important}
+.f5-section .dogfood__stat-sub{color:#059669!important}
+.f5-section .dogfood__context-text{color:#4a4560!important}
+
+/* 5.29.4 — WhiteLabel section reforço escuro sobre claro */
+.f5-section--clean #whitelabel{background:transparent!important}
+.f5-section--clean #whitelabel *{color:#4a4560}
+.f5-section--clean #whitelabel h2,
+.f5-section--clean #whitelabel h3,
+.f5-section--clean #whitelabel strong{color:#1e1b30!important}
+.f5-section--clean .wl-card{background:rgba(255,255,255,.75)!important;border:1px solid rgba(124,58,237,.08)!important}
+.f5-section--clean .wl-card h3,.f5-section--clean .wl-card h4{color:#1e1b30!important}
+.f5-section--clean .wl-card p{color:#4a4560!important}
+.f5-section--clean .wl-card i{color:#7c3aed!important}
+
+/* 5.29.5 — E-book/Magenta section reforço */
+.f5-section--magenta #bonus-ebook{background:transparent!important}
+.f5-section--magenta #bonus-ebook h2,
+.f5-section--magenta #bonus-ebook h3{color:#1e1b30!important}
+.f5-section--magenta #bonus-ebook p{color:#4a4560!important}
+.f5-section--magenta .ebook-mockup{border-radius:16px!important;border:1px solid rgba(0,0,0,.06)!important}
+
+/* 5.29.6 — Authority section reforço */
+.f5-section--magenta .authority{background:transparent!important}
+.f5-section--magenta .authority h2,
+.f5-section--magenta .authority h3{color:#1e1b30!important}
+.f5-section--magenta .authority p{color:#4a4560!important}
+
+/* 5.29.7 — Affiliates section reforço */
+.f5-section--magenta .affil__box{background:rgba(255,255,255,.75)!important;border:1px solid rgba(236,72,153,.08)!important}
+.f5-section--magenta .affil__head{border-bottom-color:rgba(0,0,0,.06)!important}
+.f5-section--magenta .affil__steps{border-bottom-color:rgba(0,0,0,.06)!important}
+
+/* 5.29.8 — CTA Final reforço */
+.f5-section--violet .final-cta{background:transparent!important}
+.f5-section--violet .final-cta__box{
+  background:linear-gradient(145deg,rgba(124,58,237,.07),rgba(236,72,153,.05))!important;
+  border:1px solid rgba(124,58,237,.14)!important;
+  border-radius:28px!important
+}
+.f5-section--violet .final-cta h2{color:#1e1b30!important}
+.f5-section--violet .final-cta h2 .text-grad{
+  background:linear-gradient(135deg,#7c3aed,#ec4899)!important;
+  -webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;
+  background-clip:text!important
+}
+.f5-section--violet .final-cta p{color:#4a4560!important}
+.f5-section--violet .final-cta .microcopy__text{color:#8a7ea0!important}
+
+/* 5.29.9 — FAQ Warm section reforço */
+.f5-section--warm .faq-item{background:rgba(255,255,255,.75)!important;border:1px solid rgba(0,0,0,.06)!important}
+.f5-section--warm .faq-item__q{color:#1e1b30!important}
+.f5-section--warm .faq-item__q i{color:#7c3aed!important}
+.f5-section--warm .faq-item__a{color:#4a4560!important}
+.f5-section--warm .faq-item__a p{color:#4a4560!important}
+
+/* 5.29.10 — Inline style overrides globais para [style*="color:#fff"] nos ícones */
+.f5-section i[style*="color:#fff"]{color:#7c3aed!important}
+.f5-section i[style*="color:#f0eeff"]{color:#7c3aed!important}
+.f5-section i[style*="color:var(--text)"]{color:#7c3aed!important}
+.f5-section .btn i[style*="color:#fff"]{color:#fff!important}
+.f5-section .btn--cta i{color:#fff!important}
+.f5-section .btn--primary i{color:#fff!important}
+
+/* 5.29.11 — Step card icons com cor */
+.f5-section .step-card{position:relative}
+.f5-section .step-card .step-icon{color:#7c3aed!important}
+.f5-section .step-card .step-icon i{color:#7c3aed!important;font-size:1.8rem!important}
+
+/* 5.29.12 — Garantir que ALL text dentro de f5-section é escuro */
+.f5-section, .f5-section *:not(.btn):not(.btn *):not(.step-num):not(.step-num *):not(.affil__step-num):not(.affil__step-num *):not(#demoChatOverlay):not(#demoChatOverlay *){
+  color:#1e1b30
+}
+/* Re-aplicar cores específicas após o reset acima */
+.f5-section .section-subtitle,
+.f5-section p:not(.btn *){color:#4a4560!important}
+.f5-section .section-title,
+.f5-section h2,
+.f5-section h3,
+.f5-section h4{color:#1e1b30!important}
+
+/* Manter botões com texto branco */
+.f5-section .btn--cta,
+.f5-section .btn--primary,
+.f5-section .btn--cta *,
+.f5-section .btn--primary *,
+.f5-section a.btn--cta,
+.f5-section a.btn--primary,
+.f5-section .step-num,
+.f5-section .affil__step-num{color:#fff!important}
+.f5-section .btn--secondary{color:#7c3aed!important}
+
+/* Text-grad preservar */
+.f5-section .text-grad{
+  -webkit-text-fill-color:transparent!important;
+  color:transparent!important
+}
+.f5-section .text-grad-g{
+  -webkit-text-fill-color:transparent!important;
+  color:transparent!important
+}
+
+/* Muted text */
+.f5-section .microcopy__text{color:#8a7ea0!important}
+.f5-section .mech__pipe-desc{color:#6b6180!important}
+.f5-section .mech__pipe-arrow{color:#6b6180!important}
+
+/* 5.29.13 — Embedded style blocks no body — ghost-cta override */
+.ghost-cta-section .ghost-cta-box,
+section .ghost-cta-box,
+div .ghost-cta-box{
+  background:linear-gradient(145deg,rgba(124,58,237,.06),rgba(236,72,153,.04))!important;
+  border:1px solid rgba(124,58,237,.14)!important
+}
+
+/* 5.29.14 — Footer permanece escuro (design original) */
+.footer,.footer *{/* não alterar */}
+
+
+/* ===== FIM FASE 5 — DESIGN SYSTEM ===== */
 </style>
 <!-- Schema.org JSON-LD -->
 <script type="application/ld+json">
@@ -720,7 +1920,7 @@ img{max-width:100%;height:auto;display:block}
     "availableLanguage": "Portuguese"
   },
   "sameAs": [
-    "https://www.instagram.com/linkmagico.ia",
+    "https://www.instagram.com/linkmagicoai",
     "https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182",
     "https://wa.me/5511925312151"
   ]
@@ -809,7 +2009,7 @@ img{max-width:100%;height:auto;display:block}
     "address": {"@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR"},
     "contactPoint": {"@type": "ContactPoint", "telephone": "+55-11-92531-2151", "contactType": "customer service", "availableLanguage": "Portuguese"},
     "sameAs": [
-      "https://www.instagram.com/linkmagico.ia",
+      "https://www.instagram.com/linkmagicoai",
       "https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182",
       "https://wa.me/5511925312151",
       "https://linkmagico.app.br"
@@ -900,19 +2100,53 @@ img{max-width:100%;height:auto;display:block}
 <header class="header" id="header">
 <div class="nav container">
 <a href="#" class="nav__logo"><span><i class="fas fa-bolt"></i></span> <span>Link<span class="logo-highlight">Mágico</span></span></a>
-<a href="#pricing" class="nav__cta">Ativar vendedor automático →</a>
-</div>
+<nav class="nav__menu">
+<a href="#how" class="nav__link">Como Funciona</a>
+<a href="#demo" class="nav__link">Demonstração</a>
+<a href="#testar" class="nav__link">Testar Link</a>
+<a href="#cliente-fantasma" class="nav__link">Cliente Fantasma</a>
+<a href="#bonus-ebook" class="nav__link">Bônus Grátis</a>
+<a href="#afiliados" class="nav__link">Afiliados</a>
+<a href="#pricing" class="nav__link">Planos</a>
+<a href="#faq" class="nav__link">Dúvidas</a>
 </nav>
-</header>`n<main>`n<!-- HERO -->
+<div class="nav__actions">
+<a href="https://linkmagico.app.br/login.html" class="nav__link" target="_blank" style="font-weight:600">Entrar</a>
+<a href="#pricing" class="nav__cta">Ativar Vendedor →</a>
+<button class="nav__hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
 <section class="hero section--dark" id="hero">
 <div class="hero__orb hero__orb--1"></div>
 <div class="hero__orb hero__orb--2"></div>
 <div class="container">
 <div class="hero__grid">
 <div class="hero__content">
-<span class="section-tag"><i class="fas fa-bolt"></i> Vendedor automático para qualquer página</span>
-<h1>Transforme qualquer página em um <span class="text-grad">vendedor automático.</span></h1>
-<p class="hero__sub">Cole o link do seu site, landing page, Instagram ou oferta. O LinkMágico aprende seu negócio e conduz visitantes até a compra através de conversas automáticas.</p>
+<span class="section-tag"><i class="fas fa-bolt"></i> Vendedor IA para qualquer link</span>
+<h1>Transforme qualquer link em um <span class="text-grad">vendedor automático com IA.</span></h1>
+<p class="hero__sub">Cole o link do seu site, landing page, Instagram ou oferta. O LinkMágico aprende seu negócio e conduz visitantes até a compra através de conversas automáticas com IA nativa.</p>
+</div>
+<div class="hero__visual">
+<div class="hero__phone-frame">
+<div class="hero__phone-bezel">
+<div class="hero__phone-notch"></div>
+<div class="hero__phone-screen">
+<video autoplay muted controls playsinline loop preload="metadata" poster="videos/hero-poster.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+<source src="videos/hero-linkmagico.mp4" type="video/mp4">
+Seu navegador não suporta o elemento de vídeo.
+</video>
+</div>
+</div>
+</div>
+<p class="hero__phone-label"><i class="fas fa-play-circle"></i> Demonstração real — Chat-Vendedor IA em ação</p>
+<!-- [FASE4.2] Vídeo anterior demo-vendedor.mp4 preservado no disco, não excluído -->
+</div>
+<div class="hero__extras">
 <div class="hero__recovery-flow" style="margin-bottom:18px">
 <div class="hero__recovery-step"><div class="icon"><i class="fas fa-link"></i></div><div class="label">Cole o link</div></div>
 <div class="hero__recovery-arrow"><i class="fas fa-chevron-right"></i></div>
@@ -925,52 +2159,29 @@ img{max-width:100%;height:auto;display:block}
 <div class="hero__recovery-step"><div class="icon"><i class="fas fa-check-circle"></i></div><div class="label">Vende</div></div>
 </div>
 <div class="hero__ctas">
-<a href="#pricing" class="btn btn--cta"><i class="fas fa-bolt"></i> Ver Planos e Preços</a>
-<a href="#demos" class="btn btn--secondary"><i class="fas fa-play"></i> Testar meu vendedor</a>
+<a href="#testar" class="btn btn--cta"><i class="fas fa-magic"></i> Testar meu vendedor</a>
+<a href="#pricing" class="btn btn--secondary"><i class="fas fa-bolt"></i> Ver Planos e Preços</a>
 </div>
 <div class="hero__trust">
 <span><i class="fas fa-shield-alt"></i> Garantia 7 dias</span>
 <span><i class="fas fa-clock"></i> Setup em 2 min</span>
-<span><i class="fas fa-lock"></i> Pagamento seguro</span>
+<span><i class="fas fa-lock"></i> Pagamento seguro via Stripe</span>
 </div>
-<div class="hero-social">
-<div class="hero-social__avatars">
-<img loading="lazy" src="testimonial-camila.webp" alt="Camila S. — cliente LinkMágico">
-<img loading="lazy" src="testimonial-marcos.webp" alt="Marcos R. — cliente LinkMágico">
-<img loading="lazy" src="testimonial-rafael.webp" alt="Rafael M. — cliente LinkMágico">
-</div>
-<div class="hero-social__text">Junte-se a <strong id="socialCount">170+</strong> empresas que já têm<br>um vendedor automático ativo</div>
-</div>
-</div>
-<div class="hero__visual">
-<p style="color:var(--muted);font-size:.78rem;text-align:center;margin-bottom:10px;font-style:italic">Veja o vendedor automático em ação:</p>
-<div style="display:flex;justify-content:center;width:100%">
-<div class="hero__video-wrap" style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.15)">
-<video class="lazy-video" autoplay loop muted playsinline controls style="width:100%;aspect-ratio:9/16;display:block;object-fit:cover">
-<source data-src="demo-vendedor.mp4" type="video/mp4">
-</video>
-</div>
-</div>
+<!-- [FASE3-DP01] Social proof removido — métricas não comprovadas -->
 </div>
 </div>
 </div>
 </section>
 
-<!-- MÉTRICAS VISUAIS (dados reais via /api/analytics/public-stats) -->
-<section class="metrics section--dark">
-<div class="container">
-<div style="display:flex;justify-content:center;margin-bottom:12px"><span style="display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:.72rem;color:#34d399;font-weight:600;letter-spacing:.3px"><span style="width:7px;height:7px;background:#10b981;border-radius:50%;display:inline-block;animation:ctaPulse 2s infinite"></span> DADOS EM TEMPO REAL</span></div>
-<div class="metrics__grid">
-<div class="metric-card anim"><div class="metric-card__number text-grad-g" id="dynamicLeads" data-count="340">0</div><div class="metric-card__label">Leads capturados automaticamente</div></div>
-<div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicConversations" data-count="151">0</div><div class="metric-card__label">Conversas processadas pela IA</div></div>
-<div class="metric-card anim"><div class="metric-card__number text-grad-g">24h</div><div class="metric-card__label">Online, vendendo sem parar</div></div>
-<div class="metric-card anim"><div class="metric-card__number text-grad" id="dynamicAssistants" data-count="80">0</div><div class="metric-card__label">Assistentes ativos na plataforma</div></div>
-</div>
-</div>
-</section>
+
+
+
+<!-- ===== FASE 5 — BLOCO 02: PROBLEMA → SOLUÇÃO (CORAL) ===== -->
+<div class="f5-section f5-section--coral">
+<div class="f5-orb f5-orb--coral"></div>
 
 <!-- O VERDADEIRO PROBLEMA -->
-<section class="pain section--surface" id="pain">
+<section class="pain" id="pain" style="padding:80px 0;background:transparent">
 <div class="container">
 <div class="pain__header">
 <span class="section-tag" style="background:rgba(239,68,68,.12);color:#f87171;border-color:rgba(239,68,68,.2)">O VERDADEIRO PROBLEMA</span>
@@ -1001,14 +2212,14 @@ img{max-width:100%;height:auto;display:block}
 </section>
 
 <!-- FRASE DOMINANTE 1 -->
-<section class="dominance section--dark">
+<section class="dominance" style="background:transparent">
 <div class="container">
 <p class="dominance__text">Página parada não vende.<br><em>Vendedor automático vende.</em></p>
 </div>
 </section>
 
 <!-- ENQUANTO VOCÊ DORMIA -->
-<section class="stats-dor section--surface">
+<section class="stats-dor" style="background:transparent">
 <div class="container">
 <div class="stats-dor__box anim">
 <div class="stats-dor__title"><i class="fas fa-chart-bar" style="color:var(--purple-l);margin-right:6px"></i> Enquanto você dormia hoje…</div>
@@ -1038,14 +2249,20 @@ img{max-width:100%;height:auto;display:block}
 </section>
 
 <!-- MICROCOPY 1 -->
-<section class="microcopy section--dark">
+<section class="microcopy" style="background:transparent">
 <div class="container">
 <p class="microcopy__text"><i class="fas fa-lightbulb"></i> Seu visitante não quer ler. Quer conversar.</p>
 </div>
 </section>
+</div><!-- /BLOCO 02 CORAL -->
+
+<!-- ===== FASE 5 — BLOCO 03: COMO FUNCIONA + MECANISMO (BLUE) ===== -->
+<div class="f5-section f5-section--blue">
+<div class="f5-orb f5-orb--lilas"></div>
 
 <!-- COMO FUNCIONA -->
-<section class="how section--surface" id="how">
+<div id="como-funciona"></div>
+<section class="how" id="how" style="padding:80px 0;background:transparent">
 <div class="container">
 <div class="how__header">
 <span class="section-tag">SIMPLES DEMAIS</span>
@@ -1078,37 +2295,26 @@ img{max-width:100%;height:auto;display:block}
 <p>Responde, quebra objeções, captura leads e conduz para ação — 24h por dia.</p>
 </div>
 </div>
-<div style="max-width:380px;margin:40px auto 0;text-align:center" class="anim">
-<p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic"><i class="fas fa-film" style="color:var(--purple-l);margin-right:4px"></i> Veja na prática como é simples:</p>
+<div style="max-width:680px;margin:40px auto 0;text-align:center" class="anim">
+<p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic"><i class="fas fa-desktop" style="color:var(--purple-l);margin-right:4px"></i> Veja na prática a interface de configuração:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
-<video class="lazy-video" controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#000">
-<source data-src="demo-setup.mp4" type="video/mp4">
-</video>
+<img loading="lazy" src="proof-assistentes-v2.jpg" alt="Painel administrativo LinkMágico — Configuração de assistente" style="width:100%;border-radius:18px;display:block">
 </div>
-<p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-bolt" style="color:var(--green-l);margin-right:4px"></i> Setup real — menos de 2 minutos do zero à página vendendo</p>
+<p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-check-circle" style="color:var(--green-l);margin-right:4px"></i> Interface real da plataforma — assistente configurado em menos de 2 minutos</p>
 </div>
 </div>
 </section>
 
-<!-- WALKTHROUGH COMPLETO -->
-<section class="walkthrough section--dark">
-<div class="container">
-<div class="walkthrough__wrap anim">
-<span class="section-tag section-tag--green"><i class="fas fa-video"></i> VEJA COM SEUS OLHOS</span>
-<h2 class="section-title">A plataforma completa <span class="text-grad">por dentro</span></h2>
-<p class="section-subtitle">Assista o walkthrough real do LinkMágico v7.0 — do painel às conversas automáticas funcionando.</p>
-<div class="walkthrough__video">
-<video class="lazy-video" controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000">
-<source data-src="walkthrough-v7.mp4" type="video/mp4">
-</video>
-</div>
-<p style="color:var(--green-l);font-size:.82rem;margin-top:14px;font-weight:600"><i class="fas fa-check-circle"></i> Gravação real da plataforma — sem edição, sem enrolação</p>
-</div>
-</div>
-</section>
+</div><!-- /BLOCO 03 AZUL -->
+
+<!-- ===== FASE 5 — BLOCO 07: DEMONSTRAÇÃO + PROVAS (CREAM) ===== -->
+<div class="f5-section f5-section--cream">
+<div class="f5-orb f5-orb--lilas"></div>
+
+<!-- [FASE3-DP05] Walkthrough removido — vídeo não aprovado para publicação -->
 
 <!-- MECANISMO ÚNICO — COMO FUNCIONA POR DENTRO -->
-<section class="mech section--surface" id="mecanismo">
+<section class="mech" id="mecanismo" style="padding:80px 0;background:transparent">
 <div class="container">
 <div style="text-align:center;margin-bottom:50px">
 <span class="section-tag"><i class="fas fa-microchip"></i> TECNOLOGIA PROPRIETÁRIA</span>
@@ -1206,7 +2412,7 @@ img{max-width:100%;height:auto;display:block}
 </section>
 
 <!-- DEMONSTRAÇÃO REAL -->
-<section class="demo section--dark" id="demo">
+<section class="demo" id="demo" style="padding:80px 0;background:transparent">
 <div class="container">
 <div class="demo__header">
 <span class="section-tag section-tag--green"><i class="fas fa-circle" style="font-size:.5rem;animation:ctaPulse 2s infinite"></i> CONVERSA DE VENDA AO VIVO</span>
@@ -1255,14 +2461,12 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div>
 </div>
-<div style="max-width:380px;margin:36px auto 0;text-align:center" class="anim">
-<p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic"><i class="fas fa-chart-bar" style="color:var(--purple-l);margin-right:4px"></i> Veja o CRM real capturando leads automaticamente:</p>
+<div style="max-width:680px;margin:36px auto 0;text-align:center" class="anim">
+<p style="color:var(--muted);font-size:.82rem;margin-bottom:12px;font-style:italic"><i class="fas fa-chart-bar" style="color:var(--purple-l);margin-right:4px"></i> Veja o CRM capturando leads em tempo real:</p>
 <div style="overflow:hidden;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,.45);border:1px solid rgba(124,58,237,.18)">
-<video class="lazy-video" controls playsinline preload="metadata"  style="width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#000">
-<source data-src="demo-crm.mp4" type="video/mp4">
-</video>
+<img loading="lazy" src="proof-leads-v2.png" alt="CRM LinkMágico — Leads qualificados em tempo real" style="width:100%;border-radius:18px;display:block">
 </div>
-<p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-crosshairs" style="color:var(--green-l);margin-right:4px"></i> Cada conversa vira um lead rastreável no seu painel</p>
+<p style="color:var(--green-l);font-size:.78rem;margin-top:10px;font-weight:600"><i class="fas fa-check-circle" style="color:var(--green-l);margin-right:4px"></i> Visualização real do CRM — leads qualificados automaticamente por nível de interesse</p>
 </div>
 <div style="text-align:center;margin-top:40px">
 <a href="https://linkmagico.app.br/l/fJhlvm" class="btn btn--primary" target="_blank"><i class="fas fa-external-link-alt"></i> Ver o vendedor automático ao vivo</a>
@@ -1270,266 +2474,26 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </section>
 
-<!-- DOG FOODING — CASE REAL DO PRÓPRIO LINKMÁGICO -->
-<section class="dogfood section--dark" id="case-real">
-<div class="container">
-<div class="dogfood__header">
-<span class="dogfood__badge"><i class="fas fa-circle"></i> CASE REAL — DADOS DO PRÓPRIO LINKMÁGICO</span>
-<h2 class="section-title">Nós não prometemos resultados.<br><span class="text-grad-g">Nós mostramos os nossos.</span></h2>
-<p class="section-subtitle" style="margin:0 auto">Esses são os dados <strong>reais</strong> do chatbot do próprio site LinkMágico. Screenshots direto do painel administrativo — sem edição, sem enfeite.</p>
-</div>
 
-<div class="dogfood__stats">
-<div class="dogfood__stat anim">
-<div class="dogfood__stat-num text-grad-g">315+</div>
-<div class="dogfood__stat-label">Leads capturados automaticamente</div>
-<div class="dogfood__stat-sub">↑ 18 só hoje</div>
-</div>
-<div class="dogfood__stat anim">
-<div class="dogfood__stat-num text-grad">3.522</div>
-<div class="dogfood__stat-label">Acessos nos assistentes</div>
-<div class="dogfood__stat-sub">3 assistentes ativos</div>
-</div>
-<div class="dogfood__stat anim">
-<div class="dogfood__stat-num text-grad-g">3.069</div>
-<div class="dogfood__stat-label">Leads gerados pelos assistentes</div>
-<div class="dogfood__stat-sub">Taxa de conversão: 87%</div>
-</div>
-<div class="dogfood__stat anim">
-<div class="dogfood__stat-num" style="color:#fbbf24">100%</div>
-<div class="dogfood__stat-label">Taxa de conversão CTAs</div>
-<div class="dogfood__stat-sub">169 CTAs · 230 Checkouts</div>
-</div>
-</div>
 
-<div class="dogfood__gallery">
-<div class="dogfood__proof anim">
-<img src="proof-analytics.png" alt="Dashboard real do LinkMágico — 315 leads, 230 assistentes, 154 conversas" loading="lazy">
-<div class="dogfood__proof-caption"><i class="fas fa-check-circle"></i> Painel real — 315 leads capturados, 154 conversas processadas hoje</div>
-</div>
-<div class="dogfood__proof anim">
-<img src="proof-assistentes.png" alt="3 assistentes ativos com milhares de acessos e leads" loading="lazy">
-<div class="dogfood__proof-caption"><i class="fas fa-check-circle"></i> 3 assistentes ativos — 3.522 acessos e 3.069 leads reais</div>
-</div>
-<div class="dogfood__proof anim">
-<img src="proof-leads.png" alt="Leads Estruturados — 78 total, 59 Hot, 11 Warm, 8 Cold" loading="lazy">
-<div class="dogfood__proof-caption"><i class="fas fa-check-circle"></i> Leads qualificados automaticamente — Hot, Warm e Cold</div>
-</div>
-<div class="dogfood__proof anim">
-<img src="proof-conversas.png" alt="Histórico real de conversas com leads — dados anonimizados" loading="lazy">
-<div class="dogfood__proof-caption"><i class="fas fa-check-circle"></i> Conversas reais — IA quebrando objeções e conduzindo à compra</div>
-</div>
-</div>
 
-<div class="dogfood__context">
-<div class="dogfood__context-box anim">
-<p class="dogfood__context-text">
-<strong>"Nós comemos nossa própria comida."</strong><br><br>
-O chatbot que você viu na página inicial deste site é um assistente LinkMágico real. Ele capturou <em>315+ leads</em>, processou <em>154+ conversas por dia</em> e gerou <em>230 checkouts</em> — tudo automaticamente, sem intervenção humana.<br><br>
-Se funciona para nós, funciona para você.
-</p>
-</div>
-<div style="margin-top:24px">
-<a href="#pricing" class="btn btn--cta"><i class="fas fa-bolt"></i> Quero esses resultados para meu negócio</a>
-</div>
-</div>
-</div>
-</section>
 
-<!-- PROVA SOCIAL -->
-<section class="testimonials section--surface" id="depoimentos">
-<div class="container">
-<div class="testimonials__header">
-<span class="section-tag section-tag--green"><i class="fas fa-users"></i> QUEM JÁ USA</span>
-<h2 class="section-title">Quem ativou o vendedor automático <span class="text-grad-g">já está colhendo resultados</span></h2>
-<p class="section-subtitle">Veja o que dizem profissionais que transformaram suas páginas com o LinkMágico.</p>
-</div>
-<div class="testimonials__grid">
-<div class="test-card anim">
-<span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
-<div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-<p class="test-card__text">"Ativei o LinkMágico na minha landing page e em 48h já tinha <strong>23 leads novos</strong> no CRM — leads que antes iam embora sem falar nada. Na primeira semana, <strong>3 viraram clientes</strong>. O ROI já se pagou no primeiro dia."</p>
-<div class="test-card__author">
-<img loading="lazy" src="testimonial-marcos.webp" alt="Marcos R. — Gestor de Tráfego, cliente LinkMágico" class="test-card__photo">
-<div><div class="test-card__name">Marcos R.</div><div class="test-card__role">Gestor de Tráfego</div></div>
-</div>
-</div>
-<div class="test-card anim">
-<span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
-<div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-<p class="test-card__text">"Eu perdia vendas porque meus alunos tinham dúvidas às 23h. Com o LinkMágico, <strong>minha taxa de resposta foi de 0% fora do horário para 100%</strong>. No primeiro mês, <strong>fiz 8 vendas</strong> que vieram direto de conversas do chat."</p>
-<div class="test-card__author">
-<img loading="lazy" src="testimonial-camila.webp" alt="Camila S. — Infoprodutora de Cursos Online, cliente LinkMágico" class="test-card__photo">
-<div><div class="test-card__name">Camila S.</div><div class="test-card__role">Infoprodutora — Cursos Online</div></div>
-</div>
-</div>
-<div class="test-card anim">
-<span class="test-card__badge"><i class="fas fa-check-circle"></i> Verificado</span>
-<div class="test-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-<p class="test-card__text">"Meus pacientes perguntam horários de madrugada. Antes eu perdia esses contatos. Agora o LinkMágico captura o telefone e <strong>já recuperei 14 agendamentos</strong> que teriam sido perdidos. Acordo com a agenda preenchida."</p>
-<div class="test-card__author">
-<img loading="lazy" src="testimonial-rafael.webp" alt="Rafael M. — Dentista e proprietário de Clínica Odontológica, cliente LinkMágico" class="test-card__photo">
-<div><div class="test-card__name">Rafael M.</div><div class="test-card__role">Dentista — Clínica Odontológica</div></div>
-</div>
-</div>
-</div>
-</div>
-</section>
 
-<!-- MÓDULOS -->
-<section class="modules section--surface" id="modules">
-<div class="container">
-<div class="modules__header">
-<span class="section-tag">O QUE MUDA</span>
-<h2 class="section-title">O que muda quando sua página ganha <span class="text-grad">um vendedor automático?</span></h2>
-<p class="section-subtitle">Não é sobre tecnologia. É sobre transformar páginas estáticas em páginas que vendem.</p>
-</div>
-<div class="modules__grid" id="modulesGrid">
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-comments"></i></div><h3>Responde dúvidas automaticamente</h3><p>Visitante perguntou? O vendedor responde instantaneamente.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-shield-alt"></i></div><h3>Quebra objeções durante a conversa</h3><p>Preço, garantia, confiança — tudo respondido automaticamente.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-crosshairs"></i></div><h3>Conduz para compra</h3><p>A conversa leva o visitante até checkout ou agendamento.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-chart-bar"></i></div><h3>Captura leads automaticamente</h3><p>Nome, email e telefone entram no CRM durante a conversa.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-bolt"></i></div><h3>Funciona 24h por dia</h3><p>Enquanto você dorme, seu vendedor automático continua trabalhando.</p></div>
-<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-tag"></i></div><h3>White Label completo</h3><p>Sua marca, suas cores e sua identidade visual no chat.</p></div>
-</div>
-</div>
-</section>
-
-<!-- MICROCOPY 2 -->
-<section class="microcopy section--dark">
-<div class="container">
-<p class="microcopy__text"><i class="fas fa-lightbulb"></i> Seu tráfego já existe. Falta um vendedor.</p>
-</div>
-</section>
-
-<!-- PRA QUEM É -->
-<section class="audience section--dark" id="audience">
-<div class="container">
-<div class="audience__header">
-<span class="section-tag">QUEM PRECISA</span>
-<h2 class="section-title">Quem precisa de um <span class="text-grad">vendedor automático?</span></h2>
-<p class="section-subtitle">Se você tem uma página e recebe visitantes — o LinkMágico transforma ela em um vendedor.</p>
-</div>
-<div class="audience__grid" id="audienceGrid">
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-bullhorn"></i></div><div><h3>Gestores de Tráfego</h3><p>Transforme cliques de anúncios em conversas que convertem.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-graduation-cap"></i></div><div><h3>Infoprodutores</h3><p>Sua página ganha um vendedor que responde e converte automaticamente.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-building"></i></div><div><h3>Agências</h3><p>Entregue vendedores automáticos white label para clientes.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-laptop-code"></i></div><div><h3>SaaS</h3><p>Conduza visitantes até trial e demonstrações.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-shopping-cart"></i></div><div><h3>E-commerce</h3><p>Ajude visitantes a escolher produtos e chegar até o carrinho.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-handshake"></i></div><div><h3>Afiliados</h3><p>Seu link responde dúvidas e conduz visitantes para compra.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-map-marker-alt"></i></div><div><h3>Negócios Locais</h3><p>Agendamentos, dúvidas e contatos acontecendo automaticamente.</p></div></div>
-<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-wrench"></i></div><div><h3>Prestadores de Serviço</h3><p>Transforme pedidos de orçamento em conversas de venda.</p></div></div>
-</div>
-</div>
-</section>
-
-<!-- PARA QUEM NÃO É -->
-<section class="not-for section--dark">
-<div class="container">
-<div class="not-for__box anim">
-<div class="not-for__title"><i class="fas fa-ban" style="color:#f87171"></i> O LinkMágico <span style="color:#f87171">NÃO</span> é para todo mundo</div>
-<p class="not-for__sub">Queremos que você entre sabendo exatamente o que esperar.</p>
-<div class="not-for__grid">
-<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem quer resultados sem ter uma página ou oferta real</span></div>
-<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem já tem uma página, produto ou serviço e quer converter mais</span></div>
-<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem não está disposto a investir nem 2 minutos no setup</span></div>
-<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem quer um vendedor trabalhando 24h sem contratar ninguém</span></div>
-<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem espera um bot genérico com respostas robóticas</span></div>
-<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem quer uma IA treinada no próprio negócio, com conversa natural</span></div>
-<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem procura milagre sem tráfego nem audiência</span></div>
-<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem já investe em tráfego e quer parar de perder visitantes</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- MANIFESTO DE CATEGORIA -->
-<section class="manifesto section--dark">
-<div class="container">
-<div class="manifesto__box anim">
-<div class="manifesto__big">Links estáticos são de 2019.<br><span class="text-grad">O futuro é conversa.</span></div>
-<p class="manifesto__sub">Todo criador, gestor e infoprodutor ainda usa páginas que não conversam. Visitantes chegam, leem sozinhos e vão embora. O LinkMágico é o primeiro vendedor automático que transforma qualquer link em uma conversa de venda — 24 horas por dia.</p>
-</div>
-</div>
-</section>
-
-<!-- INTEGRAÇÕES -->
-<section class="integrations section--surface">
-<div class="container" style="text-align:center">
-<span class="section-tag"><i class="fas fa-plug"></i> FUNCIONA COM AS FERRAMENTAS QUE VOCÊ JÁ USA</span>
-<h2 class="section-title" style="margin-top:16px">Integra com suas <span class="text-grad">plataformas favoritas</span></h2>
-<p class="section-subtitle">O LinkMágico se conecta nativamente com as maiores plataformas do mercado digital brasileiro.</p>
-<div class="integrations__logos">
-<div class="integrations__item"><img loading="lazy" src="logo-hotmart.svg" alt="Hotmart"><span>Hotmart</span></div>
-<div class="integrations__item"><img loading="lazy" src="logo-kiwify.svg" alt="Kiwify"><span>Kiwify</span></div>
-<div class="integrations__item"><img loading="lazy" src="logo-rdstation.svg" alt="RD Station"><span>RD Station</span></div>
-<div class="integrations__item"><img loading="lazy" src="logo-activecampaign.svg" alt="ActiveCampaign"><span>ActiveCampaign</span></div>
-<div class="integrations__item"><img loading="lazy" src="logo-zapier.svg" alt="Zapier"><span>Zapier</span></div>
-
-<div class="integrations__item"><img loading="lazy" src="logo-stripe.svg" alt="Stripe"><span>Stripe</span></div>
-<div class="integrations__item"><img loading="lazy" src="logo-wordpress.svg" alt="WordPress"><span>WordPress</span></div>
-</div>
-</div>
-</section>
-
-<!-- CASES -->
-<section class="cases section--dark" id="cases">
-<div class="container">
-<div class="cases__header">
-<span class="section-tag">CONVERSAS QUE VENDEM</span>
-<h2 class="section-title">Conversas reais em <span class="text-grad">cada tipo de negócio</span></h2>
-<p class="section-subtitle">O visitante clicou. O LinkMágico conduziu a conversa automaticamente.</p>
-</div>
-<div class="cases__grid">
-<div class="case-card anim">
-<div class="case-card__icon"><i class="fas fa-graduation-cap"></i></div>
-<h3>Curso Online</h3>
-<p>Visitante clicou com dúvida. O vendedor automático respondeu e conduziu para a matrícula.</p>
-<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Sim! O curso começa do zero e tem 7 dias de garantia. Quer garantir sua vaga agora?"</div>
-</div>
-<div class="case-card anim">
-<div class="case-card__icon"><i class="fas fa-hospital"></i></div>
-<h3>Clínica / Consultório</h3>
-<p>Paciente perguntou horários às 23h. O LinkMágico respondeu e capturou o contato.</p>
-<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Atendemos de segunda a sábado. Posso agendar um horário para você?"</div>
-</div>
-<div class="case-card anim">
-<div class="case-card__icon"><i class="fas fa-bullhorn"></i></div>
-<h3>Gestor de Tráfego</h3>
-<p>Lead do anúncio clicou com dúvida fora do horário. O LinkMágico respondeu automaticamente e converteu.</p>
-<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Vi que você clicou no anúncio. O produto tem garantia e entrega imediata. Quer ativar?"</div>
-</div>
-<div class="case-card anim">
-<div class="case-card__icon"><i class="fas fa-gem"></i></div>
-<h3>Produto Digital</h3>
-<p>Visitante desconfiou "é golpe?". O vendedor automático quebrou a objeção com dados reais.</p>
-<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "O pagamento é via Hotmart, plataforma segura. Tem 7 dias de garantia total."</div>
-</div>
-<div class="case-card anim">
-<div class="case-card__icon"><i class="fas fa-building"></i></div>
-<h3>Agência</h3>
-<p>Ofereça o LinkMágico como serviço para seus clientes — com sua marca. Receita recorrente.</p>
-<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> Configure vendedores automáticos com a marca dos seus clientes e cobre pelo serviço.</div>
-</div>
-<div class="case-card anim">
-<div class="case-card__icon"><i class="fas fa-home"></i></div>
-<h3>Imobiliária</h3>
-<p>Visitante clicou para perguntar sobre imóvel. O LinkMágico respondeu e agendou a visita.</p>
-<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Esse apartamento tem 3 quartos, 2 vagas. Quer agendar uma visita esta semana?"</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- MICROCOPY 4 -->
-<section class="microcopy section--dark">
-<div class="container">
-<p class="microcopy__text"><i class="fas fa-bolt"></i> Todo clique pode virar uma conversa. Toda conversa pode virar uma venda.</p>
-</div>
-</section>
 
 <!-- TESTE COM SEU LINK -->
-<section class="test-link section--surface" id="testar">
+</div><!-- /BLOCO 07 CREAM -->
+
+
+
+<!-- ===== FASE 5 — BLOCO 05: TESTAR + DEMOS + CLIENTE FANTASMA (VIOLET) ===== -->
+
+<div class="f5-section f5-section--violet">
+
+<div class="f5-orb f5-orb--magenta"></div>
+
+
+
+<section class="test-link" id="testar" style="padding:80px 0;background:transparent">
 <div class="container">
 <div class="test-link__box anim">
 <span class="section-tag"><i class="fas fa-magic"></i> MAGIA INSTANTÂNEA</span>
@@ -1548,35 +2512,35 @@ Se funciona para nós, funciona para você.
 </div>
 </section>
 
-<!-- DEMOS PRÉ-CONFIGURADAS -->
-<section class="section--dark" style="padding:80px 0" id="demos">
+<!-- EXEMPLOS DE FLUXOS POR SEGMENTO -->
+<section style="padding:80px 0;background:transparent" id="demos">
 <div class="container">
 <div style="text-align:center;margin-bottom:50px">
-<span class="section-tag section-tag--green"><i class="fas fa-play-circle"></i> DEMOS AO VIVO</span>
-<h2 class="section-title">Veja <span class="text-grad">funcionando agora</span> — sem cadastro</h2>
-<p class="section-subtitle" style="margin:0 auto">Clique em qualquer nicho e veja o vendedor automático respondendo clientes reais. Zero fricção.</p>
+<span class="section-tag section-tag--green"><i class="fas fa-comments"></i> EXEMPLOS POR NICHO</span>
+<h2 class="section-title">Exemplos de <span class="text-grad">fluxos e abordagens</span> por segmento</h2>
+<p class="section-subtitle" style="margin:0 auto">Veja como o Chat-Vendedor IA conduz a conversa de acordo com as necessidades de cada nicho de negócio.</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;margin:0 auto">
 <div onclick="openDemoChat('infoproduto','Academia Digital Pro')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(124,58,237,.2)">
 <div class="case-card__icon"><i class="fas fa-graduation-cap"></i></div>
 <h3>Curso Digital</h3>
 <p style="font-size:.82rem;color:var(--muted)">Infoproduto com perguntas de alunos</p>
-<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:var(--purple-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
+<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:var(--purple-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-comments"></i> Ver exemplo de conversa</div>
 </div>
 <div onclick="openDemoChat('negocio_local','Clínica Bella Estética')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(16,185,129,.2)">
 <div class="case-card__icon"><i class="fas fa-hospital"></i></div>
 <h3>Clínica Estética</h3>
 <p style="font-size:.82rem;color:var(--muted)">Negócio local com agendamento</p>
-<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--green-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
+<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--green-l);padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-comments"></i> Ver exemplo de conversa</div>
 </div>
 <div onclick="openDemoChat('ecommerce','TechStore Brasil')" class="case-card anim" style="cursor:pointer;text-align:center;border-color:rgba(245,158,11,.2)">
 <div class="case-card__icon"><i class="fas fa-shopping-bag"></i></div>
 <h3>Loja Virtual</h3>
 <p style="font-size:.82rem;color:var(--muted)">E-commerce com dúvidas de compra</p>
-<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:#fbbf24;padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-play"></i> Ver demo ao vivo</div>
+<div style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:#fbbf24;padding:8px 16px;border-radius:20px;font-size:.78rem;font-weight:600"><i class="fas fa-comments"></i> Ver exemplo de conversa</div>
 </div>
 </div>
-<p style="text-align:center;margin-top:24px;color:var(--muted);font-size:.82rem"><i class="fas fa-info-circle" style="color:var(--green)"></i> Clique em qualquer card acima e teste a IA ao vivo, sem sair desta página.</p>
+<p style="text-align:center;margin-top:24px;color:var(--muted);font-size:.82rem"><i class="fas fa-info-circle" style="color:var(--green)"></i> Clique em qualquer card acima para visualizar o fluxo de atendimento por nicho.</p>
 
 <!-- DEMO CHAT MODAL -->
 <div id="demoChatOverlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:9999;align-items:center;justify-content:center;animation:fadeIn .3s ease">
@@ -1600,7 +2564,7 @@ Se funciona para nós, funciona para você.
 </section>
 
 <!-- CLIENTE FANTASMA — BLOCO ISOLADO (zero impacto em SEO/CSS/JS existente) -->
-<section class="ghost-cta-section section--surface" id="cliente-fantasma" style="padding:80px 0;position:relative;overflow:hidden">
+<section class="ghost-cta-section" id="cliente-fantasma" style="padding:80px 0;position:relative;overflow:hidden;background:transparent">
 <style>
 .ghost-cta-section{text-align:center}
 .ghost-cta-box{max-width:720px;margin:0 auto;padding:48px 32px;background:linear-gradient(145deg,rgba(26,16,53,.6),rgba(13,26,47,.4));border:1px solid rgba(139,92,246,.2);border-radius:24px;position:relative}
@@ -1640,55 +2604,172 @@ Se funciona para nós, funciona para você.
 </div>
 </section>
 
-<!-- AUTORIDADE -->
-<section class="authority section--dark" id="quem-criou">
+<!-- PRA QUEM É -->
+</div><!-- /BLOCO 05 VIOLET -->
+
+
+
+<!-- ===== FASE 5 — BLOCO 04: ECOSSISTEMA + FEATURES (MINT) ===== -->
+
+<div class="f5-section f5-section--mint">
+
+<div class="f5-orb f5-orb--mint"></div>
+
+
+
+<section class="audience" id="audience" style="padding:80px 0;background:transparent">
 <div class="container">
-<div class="authority__grid">
-<div class="authority__photo-wrap anim">
-<img loading="lazy" src="edvaldo-foto.png" alt="Edvaldo — Criador do LinkMágico" class="authority__photo">
+<div class="audience__header">
+<span class="section-tag">QUEM PRECISA</span>
+<h2 class="section-title">Quem precisa de um <span class="text-grad">vendedor automático?</span></h2>
+<p class="section-subtitle">Se você tem uma página e recebe visitantes — o LinkMágico transforma ela em um vendedor.</p>
 </div>
-<div class="anim">
-<span class="authority__tag"><i class="fas fa-user-shield"></i> SOBRE O FUNDADOR</span>
-<h2 class="authority__name">Edvaldo Luiz da Silva</h2>
-<p class="authority__role">Fundador do LinkMágico · Pesquisador em IA Aplicada</p>
-<p class="authority__text">O LinkMágico nasceu da minha experiência prática na gestão comercial. Acompanhei empresas e criadores investindo fortunas em tráfego, mas <strong>perdendo clientes todos os dias porque os visitantes chegavam em páginas frias e sem suporte.</strong></p>
-<p class="authority__text">Apliquei meu conhecimento acadêmico e técnico para construir a solução definitiva: transformar um simples link em um <strong>vendedor automático</strong>, treinado no seu negócio e focado 100% em conversão e objeções, trabalhando 24 horas por dia.</p>
-<div class="authority__credentials">
-<span class="authority__cred" style="color:var(--green-l)"><i class="fas fa-graduation-cap"></i> Formação: Gestão Comercial & Tecnologia em IA (UNINOVE)</span>
-<span class="authority__cred"><i class="fas fa-certificate"></i> Credenciais Verificáveis em Automação</span>
-<span class="authority__cred"><i class="fas fa-code-branch"></i> Arquiteto de Software e IA</span>
-<span class="authority__cred"><i class="fas fa-check-circle"></i> 18 meses de Pesquisa & Desenvolvimento</span>
+<div class="audience__grid" id="audienceGrid">
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-bullhorn"></i></div><div><h3>Gestores de Tráfego</h3><p>Transforme cliques de anúncios em conversas que convertem.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-graduation-cap"></i></div><div><h3>Infoprodutores</h3><p>Sua página ganha um vendedor que responde e converte automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-building"></i></div><div><h3>Agências</h3><p>Entregue vendedores automáticos white label para clientes.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-laptop-code"></i></div><div><h3>SaaS</h3><p>Conduza visitantes até trial e demonstrações.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-shopping-cart"></i></div><div><h3>E-commerce</h3><p>Ajude visitantes a escolher produtos e chegar até o carrinho.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-handshake"></i></div><div><h3>Afiliados</h3><p>Seu link responde dúvidas e conduz visitantes para compra.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-map-marker-alt"></i></div><div><h3>Negócios Locais</h3><p>Agendamentos, dúvidas e contatos acontecendo automaticamente.</p></div></div>
+<div class="aud-card anim"><div class="aud-card__icon"><i class="fas fa-wrench"></i></div><div><h3>Prestadores de Serviço</h3><p>Transforme pedidos de orçamento em conversas de venda.</p></div></div>
 </div>
-<a href="https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182" target="_blank" class="btn btn--secondary" style="margin-top:20px;display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-color:rgba(10,102,194,0.3)">
-<i class="fab fa-linkedin" style="font-size:1.3rem;color:#0a66c2"></i> Conectar no LinkedIn
-</a>
-<p style="font-size:.95rem;color:var(--text);margin-bottom:14px;margin-top:36px;font-weight:700"><i class="fas fa-camera" style="color:var(--purple-l);margin-right:4px"></i> A estrutura real por trás da mágica:</p>
-<style>
-.bastidores-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.bastidores-grid img{width:100%;height:120px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid rgba(100,150,255,.12);transition:transform .3s,box-shadow .3s;cursor:pointer}
-.bastidores-grid img:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(30,107,255,.25);z-index:2}
-@media(max-width:768px){.bastidores-grid{grid-template-columns:repeat(3,1fr)}.bastidores-grid img{height:90px}}
-@media(max-width:480px){.bastidores-grid{grid-template-columns:repeat(2,1fr)}.bastidores-grid img{height:80px}}
-</style>
-<div class="bastidores-grid">
-<img loading="lazy" src="GITHUB.png" alt="Código-fonte e Versionamento" title="Repositório GitHub">
-<img loading="lazy" src="printV2rdlinkedin.png" alt="Arquitetura de Servidor" title="Servidores e Requisições">
-<img loading="lazy" src="printdashboardlinkedin.png" alt="Dashboard de Analytics" title="Painel de Métricas">
-<img loading="lazy" src="prinSitelinkedin.png" alt="Interface Principal" title="Aplicação em Funcionamento">
-<img loading="lazy" src="CENTRALDEAJUDa.png" alt="Central de Ajuda" title="Central de Ajuda Integrada">
-<img loading="lazy" src="comunidadelk.png" alt="Comunidade" title="Comunidade de Membros">
-<img loading="lazy" src="cytre.png" alt="Código do Chat Widget" title="Código-Fonte do Widget de Chat">
-<img loading="lazy" src="df.png" alt="Follow-Up Worker" title="Worker de Automação e Follow-Up">
-<img loading="lazy" src="sCASD.png" alt="Arquitetura SaaS" title="Documentação Técnica e Stack">
-<img loading="lazy" src="xqcw.png" alt="Painel de Integrações" title="Dashboard de Integrações e Widget">
 </div>
+</section>
+
+<!-- PARA QUEM NÃO É -->
+<section class="not-for" style="padding:60px 0;background:transparent">
+<div class="container">
+<div class="not-for__box anim">
+<div class="not-for__title"><i class="fas fa-ban" style="color:#f87171"></i> O LinkMágico <span style="color:#f87171">NÃO</span> é para todo mundo</div>
+<p class="not-for__sub">Queremos que você entre sabendo exatamente o que esperar.</p>
+<div class="not-for__grid">
+<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem quer resultados sem ter uma página ou oferta real</span></div>
+<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem já tem uma página, produto ou serviço e quer converter mais</span></div>
+<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem não está disposto a investir nem 2 minutos no setup</span></div>
+<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem quer um vendedor trabalhando 24h sem contratar ninguém</span></div>
+<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem espera um bot genérico com respostas robóticas</span></div>
+<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem quer uma IA treinada no próprio negócio, com conversa natural</span></div>
+<div class="not-for__item not-for__item--no"><i class="fas fa-times-circle"></i><span>Quem procura milagre sem tráfego nem audiência</span></div>
+<div class="not-for__item not-for__item--yes"><i class="fas fa-check-circle"></i><span>Quem já investe em tráfego e quer parar de perder visitantes</span></div>
 </div>
 </div>
 </div>
 </section>
 
+<!-- MÓDULOS -->
+<section class="modules" id="modules" style="padding:80px 0;background:transparent">
+<div class="container">
+<div class="modules__header">
+<span class="section-tag">O QUE MUDA</span>
+<h2 class="section-title">O que muda quando sua página ganha <span class="text-grad">um vendedor automático?</span></h2>
+<p class="section-subtitle">Não é sobre tecnologia. É sobre transformar páginas estáticas em páginas que vendem.</p>
+</div>
+<div class="modules__grid" id="modulesGrid">
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-comments"></i></div><h3>Responde dúvidas automaticamente</h3><p>Visitante perguntou? O vendedor responde instantaneamente.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-shield-alt"></i></div><h3>Quebra objeções durante a conversa</h3><p>Preço, garantia, confiança — tudo respondido automaticamente.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-crosshairs"></i></div><h3>Conduz para compra</h3><p>A conversa leva o visitante até checkout ou agendamento.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-chart-bar"></i></div><h3>Captura leads automaticamente</h3><p>Nome, email e telefone entram no CRM durante a conversa.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-bolt"></i></div><h3>Funciona 24h por dia</h3><p>Enquanto você dorme, seu vendedor automático continua trabalhando.</p></div>
+<div class="mod-card anim"><div class="mod-card__icon"><i class="fas fa-tag"></i></div><h3>White Label completo</h3><p>Sua marca, suas cores e sua identidade visual no chat.</p></div>
+</div>
+</div>
+</section>
+
+<!-- [FASE3] Microcopy 2 removido — redundante -->
+
+<!-- CASES -->
+<section class="cases" id="cases" style="padding:80px 0;background:transparent">
+<div class="container">
+<div class="cases__header">
+<span class="section-tag">CONVERSAS QUE VENDEM</span>
+<h2 class="section-title">Conversas reais em <span class="text-grad">cada tipo de negócio</span></h2>
+<p class="section-subtitle">O visitante clicou. O LinkMágico conduziu a conversa automaticamente.</p>
+</div>
+<div class="cases__grid">
+<div class="case-card anim">
+<div class="case-card__icon"><i class="fas fa-graduation-cap"></i></div>
+<h3>Curso Online</h3>
+<p>Visitante clicou com dúvida. O vendedor automático respondeu e conduziu para a matrícula.</p>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Sim! O curso começa do zero e tem 7 dias de garantia. Quer garantir sua vaga agora?"</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon"><i class="fas fa-hospital"></i></div>
+<h3>Clínica / Consultório</h3>
+<p>Paciente perguntou horários às 23h. O LinkMágico respondeu e capturou o contato.</p>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Atendemos de segunda a sábado. Posso agendar um horário para você?"</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon"><i class="fas fa-bullhorn"></i></div>
+<h3>Gestor de Tráfego</h3>
+<p>Lead do anúncio clicou com dúvida fora do horário. O LinkMágico respondeu automaticamente e converteu.</p>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Vi que você clicou no anúncio. O produto tem garantia e entrega imediata. Quer ativar?"</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon"><i class="fas fa-gem"></i></div>
+<h3>Produto Digital</h3>
+<p>Visitante desconfiou "é golpe?". O vendedor automático quebrou a objeção com dados reais.</p>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "O pagamento é processado em ambiente seguro com criptografia e conta com 7 dias de garantia."</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon"><i class="fas fa-building"></i></div>
+<h3>Agência</h3>
+<p>Ofereça o LinkMágico como serviço para seus clientes — com sua marca. Receita recorrente.</p>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> Configure vendedores automáticos com a marca dos seus clientes e cobre pelo serviço.</div>
+</div>
+<div class="case-card anim">
+<div class="case-card__icon"><i class="fas fa-home"></i></div>
+<h3>Imobiliária</h3>
+<p>Visitante clicou para perguntar sobre imóvel. O LinkMágico respondeu e agendou a visita.</p>
+<div class="case-card__example"><i class="fas fa-quote-left" style="color:var(--purple-l);font-size:.7rem;margin-right:4px"></i> "Esse apartamento tem 3 quartos, 2 vagas. Quer agendar uma visita esta semana?"</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- [FASE3] Microcopy 4 removido — redundante -->
+
+<!-- INTEGRAÇÕES -->
+<section class="integrations" style="padding:50px 0;background:transparent">
+<div class="container" style="text-align:center">
+<span class="section-tag"><i class="fas fa-plug"></i> FUNCIONA COM AS FERRAMENTAS QUE VOCÊ JÁ USA</span>
+<h2 class="section-title" style="margin-top:16px">Integra com suas <span class="text-grad">plataformas favoritas</span></h2>
+<p class="section-subtitle">Conecte seu vendedor automático às ferramentas de checkout, CRM e automação compatíveis, utilizando integrações disponíveis, webhooks e ferramentas de conexão.</p>
+<div class="integrations__logos">
+<div class="integrations__item"><img loading="lazy" src="logo-hotmart.svg" alt="Hotmart"><span>Hotmart</span></div>
+<div class="integrations__item"><img loading="lazy" src="logo-kiwify.svg" alt="Kiwify"><span>Kiwify</span></div>
+<div class="integrations__item"><img loading="lazy" src="logo-rdstation.svg" alt="RD Station"><span>RD Station</span></div>
+<div class="integrations__item"><img loading="lazy" src="logo-activecampaign.svg" alt="ActiveCampaign"><span>ActiveCampaign</span></div>
+<div class="integrations__item"><img loading="lazy" src="logo-zapier.svg" alt="Zapier"><span>Zapier</span></div>
+
+<div class="integrations__item"><img loading="lazy" src="logo-stripe.svg" alt="Stripe"><span>Stripe</span></div>
+<div class="integrations__item"><img loading="lazy" src="logo-wordpress.svg" alt="WordPress"><span>WordPress</span></div>
+</div>
+</div>
+</section>
+
+<!-- MANIFESTO DE CATEGORIA -->
+<section class="manifesto" style="padding:60px 0;background:transparent">
+<div class="container">
+<div class="manifesto__box anim">
+<div class="manifesto__big">Links estáticos são de 2019.<br><span class="text-grad">O futuro é conversa.</span></div>
+<p class="manifesto__sub">Todo criador, gestor e infoprodutor ainda usa páginas que não conversam. Visitantes chegam, leem sozinhos e vão embora. O LinkMágico é o primeiro vendedor automático que transforma qualquer link em uma conversa de venda — 24 horas por dia.</p>
+</div>
+</div>
+</section>
+
 <!-- PRICING -->
-<section class="pricing section--surface" id="pricing">
+</div><!-- /BLOCO 04 MINT -->
+
+
+
+<!-- ===== FASE 5 — BLOCO 08: PLANOS + WHITELABEL (CLEAN) ===== -->
+
+<div class="f5-section f5-section--clean">
+
+
+
+<section class="pricing" id="pricing" style="padding:80px 0;background:transparent">
 <div class="container">
 <div style="text-align:center;margin-bottom:40px">
 <span class="section-tag section-tag--green"><i class="fas fa-tag"></i> INVESTIMENTO QUE SE PAGA SOZINHO</span>
@@ -1767,193 +2848,9 @@ Se funciona para nós, funciona para você.
 </section>
 
 <!-- FAQ -->
-<!-- BÔNUS: E-BOOK NUTRIÇÃO DE LEADS -->
-<section class="section--dark" id="bonus-ebook" style="padding:80px 0;position:relative;overflow:hidden">
-<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 50%, rgba(124,58,237,.08) 0%, transparent 60%);pointer-events:none"></div>
-<div class="container" style="position:relative;z-index:1">
-<div style="text-align:center;margin-bottom:40px">
-<span class="section-tag"><i class="fas fa-gift"></i> BÔNUS EXCLUSIVO GRATUITO</span>
-<h2 class="section-title">Baixe grátis o E-book<br><span class="text-grad">Nutrição de Leads</span></h2>
-<p class="section-subtitle" style="margin:0 auto;text-align:center">149 páginas com estratégias práticas para transformar visitantes em clientes — escrito por Edvaldo L.S., criador do LinkMágico.</p>
-</div>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:900px;margin:0 auto;align-items:center">
-
-<!-- Lado esquerdo: Conteúdo do ebook -->
-<div style="text-align:left">
-<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:20px">
-<p style="font-size:.95rem;color:var(--text);font-weight:700;margin-bottom:16px"><i class="fas fa-book-open" style="color:var(--purple-l);margin-right:8px"></i> O que você vai aprender:</p>
-<div style="display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span>Como funciona o <strong style="color:var(--text)">funil de vendas</strong> e como agir em cada etapa</span></div>
-<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">Segmentação de leads</strong> — frios, mornos e quentes</span></div>
-<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">Automação de marketing</strong> com e-mail e chat</span></div>
-<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">Templates prontos</strong> para 5 nichos (Finanças, Fitness, Cursos, Imóveis, SaaS)</span></div>
-<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">IA Conversacional</strong> — o futuro da nutrição de leads</span></div>
-<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">Estudo de caso real</strong> — aumento de 317% nas conversões</span></div>
-</div>
-</div>
-<div style="display:flex;gap:16px;flex-wrap:wrap">
-<div style="display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)"><i class="fas fa-file-pdf" style="color:#ef4444"></i> 149 páginas</div>
-<div style="display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)"><i class="fas fa-clipboard-list" style="color:var(--purple-l)"></i> 5 capítulos + bônus</div>
-<div style="display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)"><i class="fas fa-robot" style="color:var(--green)"></i> Atualizado 2026</div>
-</div>
-</div>
-
-<!-- Lado direito: Formulário -->
-<div>
-<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden">
-<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--green))"></div>
-<p style="font-size:1.1rem;font-weight:800;text-align:center;margin-bottom:6px;font-family:'Space Grotesk',sans-serif"><i class="fas fa-download" style="color:var(--green)"></i> Download Gratuito</p>
-<p style="font-size:.82rem;color:var(--muted);text-align:center;margin-bottom:24px">Preencha abaixo e baixe instantaneamente</p>
-
-<form id="ebook-form" style="display:flex;flex-direction:column;gap:14px" onsubmit="return handleEbookDownload(event)">
-<div>
-<label style="font-size:.78rem;color:var(--muted);font-weight:600;display:block;margin-bottom:4px"><i class="fas fa-user" style="margin-right:4px"></i> Seu nome</label>
-<input type="text" name="nome" required placeholder="Ex: João Silva" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border)'">
-</div>
-<div>
-<label style="font-size:.78rem;color:var(--muted);font-weight:600;display:block;margin-bottom:4px"><i class="fas fa-envelope" style="margin-right:4px"></i> Seu melhor e-mail</label>
-<input type="email" name="email" required placeholder="Ex: joao@email.com" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border)'">
-</div>
-<div>
-<label style="font-size:.78rem;color:var(--muted);font-weight:600;display:block;margin-bottom:4px"><i class="fab fa-whatsapp" style="margin-right:4px;color:var(--green)"></i> Seu WhatsApp</label>
-<input type="tel" name="whatsapp" required placeholder="Ex: (11) 99999-9999" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border)'">
-</div>
-<button type="submit" class="btn btn--cta" style="width:100%;margin-top:6px;font-size:1rem;padding:16px">
-<i class="fas fa-download"></i> Baixar E-book Grátis
-</button>
-</form>
-<p style="font-size:.72rem;color:var(--muted);text-align:center;margin-top:12px"><i class="fas fa-lock" style="margin-right:4px"></i> Seus dados estão seguros. Não enviamos spam.</p>
-<div id="ebook-success" style="display:none;text-align:center;padding:20px 0">
-<div style="font-size:48px;margin-bottom:12px">🎉</div>
-<p style="font-size:1.1rem;font-weight:700;color:var(--green);margin-bottom:8px">Download iniciado!</p>
-<p style="font-size:.85rem;color:var(--muted)">Confira sua pasta de downloads.</p>
-<a href="https://drive.google.com/uc?export=download&id=18LYz9GeNcy77evwS5464m1x7Jwe6E01Y" class="btn btn--primary" style="margin-top:16px;font-size:.85rem;padding:12px 20px" download><i class="fas fa-download"></i> Baixar novamente</a>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<style>
-@media(max-width:768px){
-  #bonus-ebook .container > div:first-of-type + div { grid-template-columns:1fr !important; }
-}
-#bonus-ebook input::placeholder { color: var(--muted); opacity: 0.6; }
-</style>
-
-<script>
-function handleEbookDownload(e){
-  e.preventDefault();
-  var form = document.getElementById('ebook-form');
-  var btn = form.querySelector('button[type=submit]');
-  var nome = form.querySelector('[name=nome]').value;
-  var email = form.querySelector('[name=email]').value;
-  var whatsapp = form.querySelector('[name=whatsapp]').value;
-  
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-  
-  // Backup no localStorage
-  var leads = JSON.parse(localStorage.getItem('ebook_leads') || '[]');
-  leads.push({nome:nome, email:email, whatsapp:whatsapp, data:new Date().toISOString()});
-  localStorage.setItem('ebook_leads', JSON.stringify(leads));
-  
-  // Envia para Google Sheets via Image GET (sem CORS, funciona em todos os navegadores)
-  var sheetUrl = 'https://script.google.com/macros/s/AKfycby6hHy1-t83IpA0ASH0YfkBd3LbfeBLobjrdDMtthIxuI-ks3KYAglcWgukier7tqaP/exec';
-  var params = '?nome=' + encodeURIComponent(nome) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(whatsapp);
-  var img = new Image();
-  img.src = sheetUrl + params;
-  
-  // Inicia download do PDF
-  setTimeout(function(){
-    var downloadUrl = 'https://drive.google.com/uc?export=download&id=18LYz9GeNcy77evwS5464m1x7Jwe6E01Y';
-    var a = document.createElement('a');
-    a.href = downloadUrl;
-    a.target = '_blank';
-    a.click();
-    form.style.display = 'none';
-    document.getElementById('ebook-success').style.display = 'block';
-  }, 500);
-  
-  return false;
-}
-</script>
-</section>
-
-
-<section class="faq section--dark" id="faq">
-<div class="container">
-<div class="faq__header">
-<span class="section-tag">DÚVIDAS FREQUENTES</span>
-<h2 class="section-title">Perguntas frequentes sobre o LinkMágico</h2>
-</div>
-<div class="faq__list">
-<div class="faq-item"><button class="faq-item__q"><span>Funciona pra qualquer nicho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim. O LinkMágico aprende sobre qualquer produto ou serviço automaticamente — infoprodutos, SaaS, clínicas, restaurantes, e-commerce, consultoria. Basta colar o link e ele vira o vendedor automático da sua página.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>Preciso saber programar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. Se você sabe copiar e colar um link, consegue ativar. O setup leva 2 minutos.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>O LinkMágico inicia conversa sozinho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. O visitante inicia a conversa clicando no link, botão ou widget. Depois disso, o LinkMágico assume automaticamente — respondendo dúvidas, conduzindo para ação e capturando leads.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>Posso trocar de plano ou cancelar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Você pode fazer upgrade, downgrade ou cancelar a qualquer momento sem burocracia, direto pelo seu painel.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>O pagamento é seguro?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim, processamos os pagamentos de forma totalmente segura através da Stripe (a mesma plataforma usada por Amazon e Google).</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>O CRM está realmente incluso?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>100% incluso. Pipeline visual de oportunidades, classificação de leads, histórico de conversas, exportação. Você vê exatamente quem queria comprar.</p></div></div>
-<div class="faq-item"><button class="faq-item__q"><span>Funciona sem página de vendas?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Funciona para qualquer negócio que recebe visitantes — o vendedor automático tira dúvidas, agenda e captura leads sem precisar de checkout.</p></div></div>
-</div>
-</div>
-</section>
-
-<!-- PROGRAMA DE AFILIADOS — INDIQUE E GANHE -->
-<section class="affil section--surface" id="afiliados">
-<div class="container">
-<div style="text-align:center;margin-bottom:50px">
-<span class="section-tag" style="background:rgba(245,158,11,.1);color:#fbbf24;border-color:rgba(245,158,11,.2)"><i class="fas fa-handshake"></i> PROGRAMA DE PARCEIROS</span>
-<h2 class="section-title">Indique o LinkMágico. <span style="background:linear-gradient(135deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Ganhe comissão recorrente.</span></h2>
-<p class="section-subtitle" style="margin:0 auto">Compartilhe seu link exclusivo e receba 20% de comissão recorrente em cada plano pago — enquanto o indicado for cliente.</p>
-</div>
-<div class="affil__box anim">
-<div class="affil__head">
-<div class="affil__badge"><i class="fas fa-lock"></i> 20% de comissão recorrente</div>
-<h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:8px">Indique e Ganhe</h3>
-<p style="color:var(--muted);font-size:.9rem">Cada pessoa que assinar um plano pago pelo seu link gera comissão mensal para você — sem limite.</p>
-</div>
-<div class="affil__steps">
-<div class="affil__step">
-<div class="affil__step-num">1</div>
-<h3>Compartilhe</h3>
-<p>Envie seu link exclusivo para amigos, colegas e redes sociais.</p>
-</div>
-<div class="affil__step">
-<div class="affil__step-num">2</div>
-<h3>Eles se cadastram</h3>
-<p>O indicado cria uma conta grátis usando seu link de referência.</p>
-</div>
-<div class="affil__step">
-<div class="affil__step-num">3</div>
-<h3>Você ganha</h3>
-<p>Quando o indicado assinar um plano pago, você recebe 20% de comissão — todo mês.</p>
-</div>
-</div>
-<div class="affil__sim">
-<div class="affil__sim-title"><i class="fas fa-coins" style="color:#fbbf24;margin-right:6px"></i> Simulação de Ganhos</div>
-<table class="affil__table">
-<thead><tr><th>Se indicar</th><th>Plano</th><th>Valor</th><th>Sua comissão</th></tr></thead>
-<tbody>
-<tr><td>5 clientes</td><td>Starter (R$29)</td><td>R$145/mês</td><td class="affil__comm">R$29/mês</td></tr>
-<tr><td>5 clientes</td><td>Pro (R$69)</td><td>R$345/mês</td><td class="affil__comm">R$69/mês</td></tr>
-<tr><td>10 clientes</td><td>Pro (R$69)</td><td>R$690/mês</td><td class="affil__comm">R$138/mês</td></tr>
-<tr><td>20 clientes</td><td>Mix</td><td>~R$1.000/mês</td><td class="affil__comm">~R$200/mês</td></tr>
-</tbody>
-</table>
-</div>
-<div class="affil__foot">
-<a href="https://linkmagico.app.br/signup.html" class="btn btn--primary" style="background:linear-gradient(135deg,#f59e0b,#f97316);padding:14px 32px;font-size:.95rem" target="_blank"><i class="fas fa-user-plus"></i> Criar Conta Grátis e Começar a Indicar</a>
-<p style="color:var(--muted);font-size:.78rem"><i class="fas fa-gift" style="color:#fbbf24"></i> Ao criar sua conta gratuita, você acessa o programa "Indique e Ganhe" direto no painel.</p>
-</div>
-</div>
-</div>
-</section>
 
 <!-- WHITELABEL — BLOCO PARA AGÊNCIAS E GESTORES DE TRÁFEGO -->
-<section class="section--dark" id="whitelabel" style="padding:80px 0;position:relative;overflow:hidden">
+<section id="whitelabel" style="padding:80px 0;position:relative;overflow:hidden;background:transparent">
 <!-- Background decorativo -->
 <div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.08) 0%,transparent 70%);pointer-events:none"></div>
 <div style="position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(16,185,129,.06) 0%,transparent 70%);pointer-events:none"></div>
@@ -2081,15 +2978,260 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 </div>
 </section>
 
+<!-- BÔNUS: E-BOOK NUTRIÇÃO DE LEADS -->
+</div><!-- /BLOCO 08 CLEAN -->
+
+
+
+<!-- ===== FASE 5 — BLOCO 10: BÔNUS + AUTORIDADE + AFILIADOS (MAGENTA) ===== -->
+
+<div class="f5-section f5-section--magenta">
+
+<div class="f5-orb f5-orb--magenta"></div>
+
+
+
+<section id="bonus-ebook" style="padding:80px 0;position:relative;overflow:hidden;background:transparent">
+<div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 50%, rgba(124,58,237,.08) 0%, transparent 60%);pointer-events:none"></div>
+<div class="container" style="position:relative;z-index:1">
+<div style="text-align:center;margin-bottom:40px">
+<span class="section-tag"><i class="fas fa-gift"></i> BÔNUS EXCLUSIVO GRATUITO</span>
+<h2 class="section-title">Baixe grátis o E-book<br><span class="text-grad">Nutrição de Leads</span></h2>
+<p class="section-subtitle" style="margin:0 auto;text-align:center">149 páginas com estratégias práticas para transformar visitantes em clientes — escrito por Edvaldo L.S., criador do LinkMágico.</p>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:900px;margin:0 auto;align-items:center">
+
+<!-- Lado esquerdo: Conteúdo do ebook -->
+<div style="text-align:left">
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:20px">
+<p style="font-size:.95rem;color:var(--text);font-weight:700;margin-bottom:16px"><i class="fas fa-book-open" style="color:var(--purple-l);margin-right:8px"></i> O que você vai aprender:</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span>Como funciona o <strong style="color:var(--text)">funil de vendas</strong> e como agir em cada etapa</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">Segmentação de leads</strong> — frios, mornos e quentes</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">Automação de marketing</strong> com e-mail e chat</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">Templates prontos</strong> para 5 nichos (Finanças, Fitness, Cursos, Imóveis, SaaS)</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">IA Conversacional</strong> — o futuro da nutrição de leads</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--muted)"><i class="fas fa-check-circle" style="color:var(--green);margin-top:3px;flex-shrink:0"></i><span><strong style="color:var(--text)">Estudo de caso real</strong> — aumento de 317% nas conversões</span></div>
+</div>
+</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)"><i class="fas fa-file-pdf" style="color:#ef4444"></i> 149 páginas</div>
+<div style="display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)"><i class="fas fa-clipboard-list" style="color:var(--purple-l)"></i> 5 capítulos + bônus</div>
+<div style="display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)"><i class="fas fa-robot" style="color:var(--green)"></i> Atualizado 2026</div>
+</div>
+</div>
+
+<!-- Lado direito: Formulário -->
+<div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--green))"></div>
+<p style="font-size:1.1rem;font-weight:800;text-align:center;margin-bottom:6px;font-family:'Space Grotesk',sans-serif"><i class="fas fa-download" style="color:var(--green)"></i> Download Gratuito</p>
+<p style="font-size:.82rem;color:var(--muted);text-align:center;margin-bottom:24px">Preencha abaixo e baixe instantaneamente</p>
+
+<form id="ebook-form" style="display:flex;flex-direction:column;gap:14px" onsubmit="return handleEbookDownload(event)">
+<div>
+<label style="font-size:.78rem;color:var(--muted);font-weight:600;display:block;margin-bottom:4px"><i class="fas fa-user" style="margin-right:4px"></i> Seu nome</label>
+<input type="text" name="nome" required placeholder="Ex: João Silva" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border)'">
+</div>
+<div>
+<label style="font-size:.78rem;color:var(--muted);font-weight:600;display:block;margin-bottom:4px"><i class="fas fa-envelope" style="margin-right:4px"></i> Seu melhor e-mail</label>
+<input type="email" name="email" required placeholder="Ex: joao@email.com" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border)'">
+</div>
+<div>
+<label style="font-size:.78rem;color:var(--muted);font-weight:600;display:block;margin-bottom:4px"><i class="fas fa-phone" style="margin-right:4px"></i> Seu telefone</label>
+<input type="tel" name="whatsapp" required placeholder="Ex: (11) 99999-9999" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.9rem;font-family:inherit;outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--purple)'" onblur="this.style.borderColor='var(--border)'">
+</div>
+<button type="submit" class="btn btn--cta" style="width:100%;margin-top:6px;font-size:1rem;padding:16px">
+<i class="fas fa-download"></i> Baixar E-book Grátis
+</button>
+</form>
+<p style="font-size:.72rem;color:var(--muted);text-align:center;margin-top:12px"><i class="fas fa-lock" style="margin-right:4px"></i> Seus dados estão seguros. Não enviamos spam.</p>
+<div id="ebook-success" style="display:none;text-align:center;padding:20px 0">
+<div style="font-size:48px;margin-bottom:12px">🎉</div>
+<p style="font-size:1.1rem;font-weight:700;color:var(--green);margin-bottom:8px">Download iniciado!</p>
+<p style="font-size:.85rem;color:var(--muted)">Confira sua pasta de downloads.</p>
+<a href="https://drive.google.com/uc?export=download&id=18LYz9GeNcy77evwS5464m1x7Jwe6E01Y" class="btn btn--primary" style="margin-top:16px;font-size:.85rem;padding:12px 20px" download><i class="fas fa-download"></i> Baixar novamente</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<style>
+@media(max-width:768px){
+  #bonus-ebook .container > div:first-of-type + div { grid-template-columns:1fr !important; }
+}
+#bonus-ebook input::placeholder { color: var(--muted); opacity: 0.6; }
+</style>
+
+<script>
+function handleEbookDownload(e){
+  e.preventDefault();
+  var form = document.getElementById('ebook-form');
+  var btn = form.querySelector('button[type=submit]');
+  var nome = form.querySelector('[name=nome]').value;
+  var email = form.querySelector('[name=email]').value;
+  var whatsapp = form.querySelector('[name=whatsapp]').value;
+  
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+  
+  // Backup no localStorage
+  var leads = JSON.parse(localStorage.getItem('ebook_leads') || '[]');
+  leads.push({nome:nome, email:email, whatsapp:whatsapp, data:new Date().toISOString()});
+  localStorage.setItem('ebook_leads', JSON.stringify(leads));
+  
+  // Envia para Google Sheets via Image GET (sem CORS, funciona em todos os navegadores)
+  var sheetUrl = 'https://script.google.com/macros/s/AKfycby6hHy1-t83IpA0ASH0YfkBd3LbfeBLobjrdDMtthIxuI-ks3KYAglcWgukier7tqaP/exec';
+  var params = '?nome=' + encodeURIComponent(nome) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(whatsapp);
+  var img = new Image();
+  img.src = sheetUrl + params;
+  
+  // Inicia download do PDF
+  setTimeout(function(){
+    var downloadUrl = 'https://drive.google.com/uc?export=download&id=18LYz9GeNcy77evwS5464m1x7Jwe6E01Y';
+    var a = document.createElement('a');
+    a.href = downloadUrl;
+    a.target = '_blank';
+    a.click();
+    form.style.display = 'none';
+    document.getElementById('ebook-success').style.display = 'block';
+  }, 500);
+  
+  return false;
+}
+</script>
+</section>
+
+<!-- AUTORIDADE -->
+<section class="authority" id="quem-criou" style="padding:80px 0;background:transparent">
+<div class="container">
+<div class="authority__grid">
+<div class="authority__photo-wrap anim">
+<img loading="lazy" src="edvaldo-foto.png" alt="Edvaldo — Criador do LinkMágico" class="authority__photo">
+</div>
+<div class="anim">
+<span class="authority__tag"><i class="fas fa-user-shield"></i> SOBRE O FUNDADOR</span>
+<h2 class="authority__name">Edvaldo Luiz da Silva</h2>
+<p class="authority__role">Fundador do LinkMágico · Pesquisador em IA Aplicada</p>
+<p class="authority__text">O LinkMágico nasceu da minha experiência prática na gestão comercial. Acompanhei empresas e criadores investindo fortunas em tráfego, mas <strong>perdendo clientes todos os dias porque os visitantes chegavam em páginas frias e sem suporte.</strong></p>
+<p class="authority__text">Apliquei meu conhecimento acadêmico e técnico para construir a solução definitiva: transformar um simples link em um <strong>vendedor automático</strong>, treinado no seu negócio e focado 100% em conversão e objeções, trabalhando 24 horas por dia.</p>
+<div class="authority__credentials">
+<span class="authority__cred" style="color:var(--green-l)"><i class="fas fa-graduation-cap"></i> Formação: Gestão Comercial & Tecnologia em IA (UNINOVE)</span>
+<span class="authority__cred"><i class="fas fa-certificate"></i> Credenciais Verificáveis em Automação</span>
+<span class="authority__cred"><i class="fas fa-code-branch"></i> Arquiteto de Software e IA</span>
+<span class="authority__cred"><i class="fas fa-check-circle"></i> 18 meses de Pesquisa & Desenvolvimento</span>
+</div>
+<a href="https://www.linkedin.com/in/edvaldo-luiz-da-silva-a01300182" target="_blank" class="btn btn--secondary" style="margin-top:20px;display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-color:rgba(10,102,194,0.3)">
+<i class="fab fa-linkedin" style="font-size:1.3rem;color:#0a66c2"></i> Conectar no LinkedIn
+</a>
+<p style="font-size:.95rem;color:var(--text);margin-bottom:14px;margin-top:36px;font-weight:700"><i class="fas fa-camera" style="color:var(--purple-l);margin-right:4px"></i> A estrutura real por trás da mágica:</p>
+<style>
+.bastidores-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.bastidores-grid img{width:100%;height:120px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid rgba(100,150,255,.12);transition:transform .3s,box-shadow .3s;cursor:pointer}
+.bastidores-grid img:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(30,107,255,.25);z-index:2}
+@media(max-width:768px){.bastidores-grid{grid-template-columns:repeat(3,1fr)}.bastidores-grid img{height:90px}}
+@media(max-width:480px){.bastidores-grid{grid-template-columns:repeat(2,1fr)}.bastidores-grid img{height:80px}}
+</style>
+<div class="bastidores-grid">
+<img loading="lazy" src="GITHUB.png" alt="Código-fonte e Versionamento" title="Repositório GitHub">
+<img loading="lazy" src="printV2rdlinkedin.png" alt="Arquitetura de Servidor" title="Servidores e Requisições">
+<img loading="lazy" src="printdashboardlinkedin.png" alt="Dashboard de Analytics" title="Painel de Métricas">
+<img loading="lazy" src="prinSitelinkedin.png" alt="Interface Principal" title="Aplicação em Funcionamento">
+<img loading="lazy" src="CENTRALDEAJUDa.png" alt="Central de Ajuda" title="Central de Ajuda Integrada">
+<img loading="lazy" src="comunidadelk.png" alt="Comunidade" title="Comunidade de Membros">
+<img loading="lazy" src="cytre.png" alt="Código do Chat Widget" title="Código-Fonte do Widget de Chat">
+<img loading="lazy" src="df.png" alt="Follow-Up Worker" title="Worker de Automação e Follow-Up">
+<img loading="lazy" src="sCASD.png" alt="Arquitetura SaaS" title="Documentação Técnica e Stack">
+<img loading="lazy" src="xqcw.png" alt="Painel de Integrações" title="Dashboard de Integrações e Widget">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROGRAMA DE PARCEIROS E INDICAÇÃO -->
+<section class="affil" id="afiliados" style="padding:80px 0;background:transparent">
+<div class="container">
+<div style="text-align:center;margin-bottom:50px">
+<span class="section-tag" style="background:rgba(245,158,11,.1);color:#fbbf24;border-color:rgba(245,158,11,.2)"><i class="fas fa-handshake"></i> PROGRAMA DE PARCEIROS</span>
+<h2 class="section-title">Programa de <span style="background:linear-gradient(135deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Parceiros e Indicação</span></h2>
+<p class="section-subtitle" style="margin:0 auto">Conheça as possibilidades de parceria e indicação do LinkMágico.</p>
+</div>
+<div class="affil__box anim">
+<div class="affil__head">
+<h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:8px">Parceria e Indicação</h3>
+<p style="color:var(--muted);font-size:.9rem">Recomende a tecnologia do LinkMágico para sua rede de contatos e acompanhe as novidades pelo painel.</p>
+</div>
+<div class="affil__steps">
+<div class="affil__step">
+<div class="affil__step-num">1</div>
+<h3>Indique</h3>
+<p>Compartilhe o LinkMágico com colegas, clientes e redes de contato.</p>
+</div>
+<div class="affil__step">
+<div class="affil__step-num">2</div>
+<h3>Cadastro</h3>
+<p>O indicado cria uma conta e explora a plataforma na prática.</p>
+</div>
+<div class="affil__step">
+<div class="affil__step-num">3</div>
+<h3>Benefícios no painel</h3>
+<p>Acompanhe regras, oportunidades e recursos disponíveis diretamente no painel.</p>
+</div>
+</div>
+<div class="affil__foot">
+<a href="https://linkmagico.app.br/signup.html" class="btn btn--primary" style="background:linear-gradient(135deg,#f59e0b,#f97316);padding:14px 32px;font-size:.95rem" target="_blank"><i class="fas fa-user-plus"></i> Criar Conta e Acessar Parcerias</a>
+<p style="color:var(--muted);font-size:.78rem"><i class="fas fa-info-circle" style="color:#fbbf24"></i> Ao criar sua conta, consulte as condições e recursos de indicação disponíveis no painel do usuário.</p>
+</div>
+</div>
+</div>
+</section>
+
+</div><!-- /BLOCO 10 MAGENTA -->
+
+<!-- ===== FASE 5 — BLOCO 09: FAQ + CONFIANÇA (WARM) ===== -->
+<div class="f5-section f5-section--warm">
+
+<section class="faq" id="faq" style="padding:80px 0;background:transparent">
+<div class="container">
+<div class="faq__header">
+<span class="section-tag">DÚVIDAS FREQUENTES</span>
+<h2 class="section-title">Perguntas frequentes sobre o LinkMágico</h2>
+</div>
+<div class="faq__list">
+<div class="faq-item"><button class="faq-item__q"><span>Funciona pra qualquer nicho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim. O LinkMágico aprende sobre qualquer produto ou serviço automaticamente — infoprodutos, SaaS, clínicas, restaurantes, e-commerce, consultoria. Basta colar o link e ele vira o vendedor automático da sua página.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Preciso saber programar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. Se você sabe copiar e colar um link, consegue ativar. O setup leva 2 minutos.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>O LinkMágico inicia conversa sozinho?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Não. O visitante inicia a conversa clicando no link, botão ou widget. Depois disso, o LinkMágico assume automaticamente — respondendo dúvidas, conduzindo para ação e capturando leads.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Posso trocar de plano ou cancelar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Você pode fazer upgrade, downgrade ou cancelar a qualquer momento sem burocracia, direto pelo seu painel.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>O pagamento é seguro?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim, processamos os pagamentos de forma totalmente segura através da Stripe (a mesma plataforma usada por Amazon e Google).</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>O CRM está realmente incluso?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>100% incluso. Pipeline visual de oportunidades, classificação de leads, histórico de conversas, exportação. Você vê exatamente quem queria comprar.</p></div></div>
+<div class="faq-item"><button class="faq-item__q"><span>Funciona sem página de vendas?</span><i class="fas fa-chevron-down"></i></button><div class="faq-item__a"><p>Sim! Funciona para qualquer negócio que recebe visitantes — o vendedor automático tira dúvidas, agenda e captura leads sem precisar de checkout.</p></div></div>
+</div>
+</div>
+</section>
+
 <!-- FRASE DOMINANTE 3 -->
-<section class="dominance section--surface">
+<section class="dominance" style="padding:48px 0;background:transparent">
 <div class="container">
 <p class="dominance__text">Toda página deveria ter um vendedor.<br><em>A sua agora pode ter.</em></p>
 </div>
 </section>
 
 <!-- CTA FINAL -->
-<section class="final-cta section--dark" id="final">
+</div><!-- /BLOCO 09 WARM -->
+
+
+
+<!-- ===== FASE 5 — CTA FINAL (VIOLET) ===== -->
+
+<div class="f5-section f5-section--violet">
+
+
+
+<section class="final-cta" id="final" style="padding:80px 0;background:transparent">
 <div class="container">
 <div class="final-cta__box anim">
 <span class="section-tag section-tag--green"><i class="fas fa-bolt"></i> DECISÃO</span>
@@ -2108,13 +3250,17 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 </section>
 
 <!-- MICROCOPY FOOTER -->
-<section class="microcopy section--surface">
+<section class="microcopy" style="padding:20px 0;background:transparent">
 <div class="container">
 <p class="microcopy__text"><i class="fas fa-circle" style="color:var(--purple)"></i> Seu link agora sabe vender.</p>
 </div>
 </section>
+</div><!-- /CTA FINAL VIOLET -->
 
-</main>`n<!-- FOOTER -->`n<footer class="footer">
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
 <div class="container">
 <div class="footer__inner">
 <div class="footer__brand"><i class="fas fa-bolt" style="color:var(--purple-l)"></i> Link<span class="logo-highlight">Mágico</span></div>
@@ -2124,7 +3270,7 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 <a href="/blog/">Blog</a>
 <a href="https://linkmagico.app.br/api-docs" target="_blank">API Docs</a>
 <a href="https://wa.me/5511925312151" target="_blank">WhatsApp</a>
-<a href="https://www.instagram.com/linkmagico.ia" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+<a href="https://www.instagram.com/linkmagicoai" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
 <a href="https://www.youtube.com/@LinkMagicoOficial" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
 <a href="https://www.facebook.com/profile.php?id=61595467466253" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
 </div>
@@ -2146,7 +3292,41 @@ Você paga <strong style="color:var(--text)">R$ 97/mês</strong> (Business) e re
 document.addEventListener('DOMContentLoaded',function(){
 // Header scroll
 var h=document.querySelector('.header');
-window.addEventListener('scroll',function(){h.classList.toggle('scrolled',window.scrollY>80)});
+window.addEventListener('scroll',function(){
+  h.classList.toggle('scrolled',window.scrollY>80);
+  // [FASE4.3] Esconder floating CTA no Hero
+  document.body.classList.toggle('scrolled-past-hero',window.scrollY>600);
+});
+
+// [FASE4.3] Menu hamburger mobile
+var hamburger=document.querySelector('.nav__hamburger');
+var navMenu=document.querySelector('.nav__menu');
+if(hamburger&&navMenu){
+  hamburger.addEventListener('click',function(){
+    var isOpen=navMenu.classList.toggle('open');
+    hamburger.classList.toggle('active',isOpen);
+    hamburger.setAttribute('aria-expanded',isOpen);
+    document.body.style.overflow=isOpen?'hidden':'';
+  });
+  navMenu.querySelectorAll('.nav__link').forEach(function(link){
+    link.addEventListener('click',function(){
+      navMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+  // [FASE4.3.2] Fechar menu com Escape
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&navMenu.classList.contains('open')){
+      navMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+      hamburger.focus();
+    }
+  });
+}
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
@@ -2224,8 +3404,6 @@ document.querySelectorAll('.metric-card__number[data-count]').forEach(function(e
 
 console.log('LinkMágico — Novo site carregado')});
 </script>
-
-</main>
 
 <!-- LinkMágico Chatbot Widget v2.0 - Design Moderno -->
 <script>
