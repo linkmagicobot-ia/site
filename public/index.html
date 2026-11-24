@@ -2809,7 +2809,7 @@ Seu navegador não suporta o elemento de vídeo.
 <li><i class="fas fa-check"></i> API & Webhooks</li>
 
 </ul>
-<a href="#pricing" class="btn btn--secondary" style="width:100%;margin-top:20px">Assinar Starter</a>
+<a href="https://linkmagico.app.br/signup.html" class="btn btn--secondary" data-plan="starter" style="width:100%;margin-top:20px">Assinar Starter</a>
 </div>
 
 <!-- PRO -->
@@ -2824,7 +2824,7 @@ Seu navegador não suporta o elemento de vídeo.
 <!-- [SANEAMENTO] WhatsApp removido dos planos - canal indisponível -->
 <li><i class="fas fa-check"></i> Remover "Powered by"</li>
 </ul>
-<a href="#pricing" class="btn btn--cta" style="width:100%;margin-top:20px">Assinar Pro</a>
+<a href="https://linkmagico.app.br/signup.html" class="btn btn--cta" data-plan="pro" style="width:100%;margin-top:20px">Assinar Pro</a>
 </div>
 
 <!-- BUSINESS -->
@@ -2838,7 +2838,7 @@ Seu navegador não suporta o elemento de vídeo.
 <!-- [SANEAMENTO] WhatsApp removido dos planos - canal indisponível -->
 <li><i class="fas fa-check"></i> WhiteLabel completo</li>
 </ul>
-<a href="#pricing" class="btn btn--secondary" style="width:100%;margin-top:20px">Assinar Business</a>
+<a href="https://linkmagico.app.br/signup.html" class="btn btn--secondary" data-plan="business" style="width:100%;margin-top:20px">Assinar Business</a>
 </div>
 
 </div>
@@ -3716,6 +3716,87 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 </script>
+<!-- Modal de orientação para planos pagos -->
+<style>
+.plan-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:100000;align-items:center;justify-content:center;animation:planFadeIn .25s ease}
+.plan-modal-overlay.plan-modal-open{display:flex}
+.plan-modal{background:#fff;border-radius:20px;max-width:440px;width:calc(100% - 32px);padding:40px 32px 32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.18);animation:planScaleIn .3s ease;text-align:center}
+.plan-modal__close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;border:none;background:#f3f4f6;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:18px;transition:all .2s}
+.plan-modal__close:hover{background:#e5e7eb;color:#1f2937}
+.plan-modal__icon{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#ede9fe,#ddd6fe);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:24px;color:#7c3aed}
+.plan-modal__title{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#1e1b30;margin-bottom:8px;line-height:1.3}
+.plan-modal__plan-name{color:#7c3aed;font-weight:700}
+.plan-modal__text{font-size:.95rem;color:#4a4560;line-height:1.6;margin-bottom:28px}
+.plan-modal__cta{display:block;width:100%;padding:14px 24px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;font-size:1rem;font-weight:600;border:none;border-radius:50px;cursor:pointer;text-decoration:none;text-align:center;transition:all .2s;font-family:'Inter',sans-serif}
+.plan-modal__cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,58,237,.3)}
+.plan-modal__secondary{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:16px;font-size:.88rem;color:#6b6180}
+.plan-modal__secondary a{color:#7c3aed;text-decoration:none;font-weight:600;transition:color .2s}
+.plan-modal__secondary a:hover{color:#6d28d9;text-decoration:underline}
+.plan-modal__dismiss{display:block;margin:16px auto 0;background:none;border:none;color:#9ca3af;font-size:.85rem;cursor:pointer;padding:6px 12px;transition:color .2s;font-family:'Inter',sans-serif}
+.plan-modal__dismiss:hover{color:#6b7280}
+@keyframes planFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes planScaleIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@media(max-width:480px){.plan-modal{padding:32px 20px 24px;max-width:calc(100% - 24px)}.plan-modal__title{font-size:1.2rem}.plan-modal__text{font-size:.9rem}}
+</style>
+
+<div class="plan-modal-overlay" id="planModalOverlay" role="dialog" aria-modal="true" aria-labelledby="planModalTitle">
+  <div class="plan-modal">
+    <button class="plan-modal__close" id="planModalClose" aria-label="Fechar">✕</button>
+    <div class="plan-modal__icon"><i class="fas fa-rocket"></i></div>
+    <h3 class="plan-modal__title" id="planModalTitle">Seu próximo passo é começar pelo Free!</h3>
+    <p class="plan-modal__text" id="planModalText"></p>
+    <a href="https://linkmagico.app.br/signup.html" class="plan-modal__cta" target="_blank">Começar Grátis</a>
+    <div class="plan-modal__secondary">Já tenho conta? <a href="https://linkmagico.app.br/login.html" target="_blank">Entrar</a></div>
+    <button class="plan-modal__dismiss" id="planModalDismiss">Agora não</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('planModalOverlay');
+  var textEl = document.getElementById('planModalText');
+  var closeBtn = document.getElementById('planModalClose');
+  var dismissBtn = document.getElementById('planModalDismiss');
+
+  var messages = {
+    starter: 'Você escolheu o plano <strong class="plan-modal__plan-name">Starter</strong>. Para começar a utilizar o LinkMágico, primeiro crie sua conta gratuita.\n\nDepois de acessar a plataforma, você poderá conhecer os recursos e as opções de planos disponíveis.',
+    pro: 'Você escolheu o plano <strong class="plan-modal__plan-name">Pro</strong>. Primeiro, crie sua conta gratuita no LinkMágico para iniciar sua experiência na plataforma.',
+    business: 'Você escolheu o plano <strong class="plan-modal__plan-name">Business</strong>. Para começar, crie sua conta gratuita no LinkMágico.\n\nDepois de entrar na plataforma, você poderá conhecer as opções disponíveis para sua conta.'
+  };
+
+  function openModal(plan) {
+    var msg = messages[plan];
+    if (!msg) return;
+    textEl.innerHTML = msg.replace(/\n\n/g, '<br><br>');
+    overlay.classList.add('plan-modal-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.classList.remove('plan-modal-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('a[data-plan]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal(this.getAttribute('data-plan'));
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  dismissBtn.addEventListener('click', closeModal);
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('plan-modal-open')) closeModal();
+  });
+})();
+</script>
+
 </body>
 </html>
 
