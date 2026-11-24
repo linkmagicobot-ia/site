@@ -1221,11 +1221,11 @@ body:not(.scrolled-past-hero) .floating-cta{
 /* --- 5.23 Smooth transitions between ALL blocks (all light now) --- */
 .f5-section + .f5-section{margin-top:-8px}
 
-/* Hero → Coral: gentle fade from hero dark to coral warm */
+/* Hero → Coral: transição suave lavanda → off-white → pêssego */
 .hero.section--dark + .f5-section--coral{position:relative}
 .hero.section--dark + .f5-section--coral::before{
-  content:'';display:block;height:100px;margin-top:-2px;
-  background:linear-gradient(to bottom,#0a0a18 0%,#1a1035 8%,#2d1f4a 18%,#4a3568 28%,#7c5a90 38%,#b088a8 48%,#d8b8c8 58%,#f0d8d0 68%,#fff0ea 80%,#fff5f0 90%,#fff8f5 100%);
+  content:'';display:block;height:80px;margin-top:-2px;
+  background:linear-gradient(to bottom,#f8f5ff 0%,#faf6fd 20%,#fdfaf9 45%,#fefaf7 65%,#fff5f0 85%,#fff8f5 100%);
   pointer-events:none;position:relative;z-index:1
 }
 
@@ -1832,6 +1832,8 @@ div .ghost-cta-box{
 /* 5.29.14 — Footer permanece escuro (design original) */
 .footer,.footer *{/* não alterar */}
 
+/* 5.29.15 — Base clara do main (previne vazamento do body escuro entre seções) */
+main{background:#fefcfa}
 
 /* ===== FIM FASE 5 — DESIGN SYSTEM ===== */
 </style>
